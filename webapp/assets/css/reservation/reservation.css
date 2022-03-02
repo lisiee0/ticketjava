@@ -1,0 +1,109 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
+
+body{
+	font-family: 'Noto Sans KR', sans-serif;
+}
+
+.clearfix{*zoom:1;}
+.clearfix:before, .clearfix:after {display: block; content: ""; line-height: 0;}
+.clearfix:after {clear: both;}
+
+html, body, div, span,h1, h2, h3, h4, h5, h6, p, a, img, strong, ol, ul, 
+li, fieldset, form, label, legend, table, tbody, tfoot, thead, tr, th, td{
+ 	margin: 0; 
+ 	padding: 0;
+ }
+ 
+#containerBody {
+  display: grid;
+  grid-template-columns: 1.5fr 0.5fr;
+  grid-template-rows: 55px 45px 1.0fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+  	"header header"
+    "menubar menubar"
+    "main side";
+   width:950px;
+   height:750px;
+}
+
+#header {grid-area: header; }
+#menubar { grid-area: menubar; }
+#main { grid-area: main; }
+
+#containerBody #header h1{
+	font-weight:800;
+	margin-top:18px;
+	margin-left:25px;
+	font-size:18px;
+}
+ 
+#containerBody ul{
+	list-style:none;
+}
+
+#containerBody #menubar ul #curMenu{
+	background-color: #6697f2;
+}
+
+#containerBody #menubar ul li {
+	float : left;
+	padding : 12px 10px;
+	margin-right : 0px;
+	border-right:1px solid white;
+	background-color:gray;
+	width:237px;
+	height:45px;
+	text-align:center;
+	color : white;
+	
+	font-size:15px;
+	font-weight:500;
+}
+
+#containerBody #menubar ul #lastMenu{
+	width:239px;
+	margin-right : 0px;
+}
+
+
+#containerBody #main {
+	margin : 0px 20px 0px 0px;
+	padding:20px;
+	border-right:1px solid #ccc;
+	background-color:#f5f5f5;
+	
+}
+
+#containerBody #main h2{
+	font-size:21px;
+	margin:5px 0px 15px 0px;
+	font-weight:900;
+}
+
+#containerBody #main #seatPlan img  {
+	width: 100%;
+	height: 550px;
+}
+
+#containerBody #side{
+	margin:10px 10px 0px 0px;
+}
+
+#containerBody #side h2{
+	font-size:16px;
+	font-weight:bolder;
+	margin:10px 0px 10px 10px;
+}
+
+#containerBody #side #button button{
+	border-style:solid;
+	border-radius:5px;
+	font-weight:bold;
+	font-size:16px;
+}
+
+

@@ -1,0 +1,54 @@
+@charset "UTF-8";
+
+
+
+#formArea h1{
+	margin-bottom:50px;
+	font-size:26px;
+	font-weight:900;
+}
+
+#formArea .nav a{
+	padding: 20px 20px;
+	font-size:16px;
+	color:black;
+}
+
+#formArea #findForm{
+	margin:30px 0px 30px 10px;
+	font-size:14px;
+}
+
+#formArea #findForm table{
+	width:100%;
+}
+
+#formArea #findForm table th{
+	font-size:14px;
+}
+#formArea #findForm table td{
+	
+	padding: 10px 10px 10px 0px;
+}
+
+#formArea #findForm #nextBtn{
+	margin-top:40px;
+	text-align:center;
+}
+
+#formArea #findForm #nextBtn button{
+	width:110px;
+}
+
+#formArea #findForm #findResult{
+	padding:20px 20px 20px 40px;
+	margin:40px 5px;
+	border:1px solid #ccc;
+	min-height:100px;
+}
+
+
+
+#formArea #findForm #findResult span.right{
+	float:right;
+}

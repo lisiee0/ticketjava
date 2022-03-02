@@ -1,0 +1,133 @@
+@charset "UTF-8";
+
+#side {
+display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 2fr 0.2fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "price"
+    "button";
+  grid-area: side;
+}
+
+#price { grid-area: price; }
+#button { grid-area: button; }
+
+#containerBody #main{
+	overflow:auto;
+}
+
+#containerBody #main h2 {
+	margin:10px 0px;
+	font-size:16px;
+	font-weight:bolder;
+}
+
+#containerBody #main table,
+#containerBody #main tr,
+#containerBody #main th,
+#containerBody #main td{
+	border:1px solid #ccc;
+}
+
+#containerBody #main #disOpt table{
+	border-collapse:collapse;
+	border-color:#ccc;
+	width:100%;
+	margin-bottom:20px;
+	background-color:white;
+}
+
+#containerBody #main #disOpt table th{
+	text-align:center;
+	padding:10px 0px;
+}
+#containerBody #main #disOpt table td{
+	padding-left:10px;
+}
+
+#containerBody #main #disOpt table select{
+	border-radius:0px;
+	border:0px;
+}
+
+#containerBody #main #guide{
+	background-color:white;
+	padding:10px;
+}
+
+
+#containerBody #side #price .right{
+	text-align:right;
+}
+
+#containerBody #side #price #choiceTable{
+	border:1px solid #ccc;
+	padding:15px;
+	margin: 10px 0px 10px 0px;
+	height:190px;
+	overflow:auto;
+}
+
+#containerBody #side #price #choiceTable table{
+	width:100%;
+}
+
+#containerBody #side #price #choiceTable table td{
+	padding-bottom:5px;
+}
+
+
+#containerBody #side #price #reInfo{
+	margin:0px 5px;
+}
+
+#containerBody #side #price #reInfo td{
+	font-weight:100;
+}
+
+#containerBody #side #price #reInfo table{
+	width:100%;
+}
+
+#containerBody #side #price #reInfo table tr{
+	height:30px;
+	border-bottom: 1px solid #ccc;
+}
+
+
+
+#containerBody #side #price #reInfo table #payTr{
+	border-top: 2px solid #aaa;
+	border-bottom: 2px solid #aaa;
+}
+#containerBody #side #price #reInfo table #payment{
+	color:red;
+	font-weight:bold;
+}
+
+
+#containerBody #side #button{
+	margin:5px 5px 10px 5px;
+}
+
+#containerBody #side #button button{
+	border-radius:5px;
+	font-weight:bold;
+	border-width:1px;
+	border-style:solid;
+	width:48%;
+	height:40px;
+}
+
+
+#containerBody #side #button .btn-outline-primary{
+	float:left;
+}
+
+#containerBody #side #button #nextBtn{
+	float:right;
+}
+

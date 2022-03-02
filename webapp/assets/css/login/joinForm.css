@@ -1,0 +1,45 @@
+@charset "UTF-8";
+
+
+#containerMain{
+	grid-template-columns: 0.8fr 600px 0.8fr;
+}
+
+
+#containerMain #formArea table{
+	width:100%;
+}
+
+#containerMain #formArea table tr{
+	height:50px;
+	padding:10px 0px;
+}
+
+#containerMain #formArea table th{
+	font-size:14px;
+}
+
+#containerMain #formArea table td{
+	padding: 5px 0px;
+}
+
+#containerMain #formArea .form-control{
+	display:inline;
+}
+
+
+#containerMain #formArea input[type=checkbox],
+#containerMain #formArea input[type=radio]{
+	width:15px;
+	height:15px;
+}
+
+#containerMain #formArea td.outlineBtn{
+	padding-left:10px;
+}
+
+
+
+
+
+

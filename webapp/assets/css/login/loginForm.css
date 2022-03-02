@@ -1,0 +1,27 @@
+@charset "UTF-8";
+
+
+#containerMain #formArea input,
+#containerMain #formArea button{
+	width:100%;
+	height:50px;
+	margin-bottom:30px;
+}
+#containerMain #formArea #loginBtn{
+	font-size:18px;
+	letter-spacing:1px;
+}
+
+
+#containerMain #formArea .helper{
+	width:31%;
+	height:35px;
+	display:inline;
+	margin-right:14px;
+}
+
+
+#containerMain #formArea #lastBtn{
+	margin-right:0px;
+}
+

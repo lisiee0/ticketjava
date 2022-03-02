@@ -1,0 +1,85 @@
+@charset "UTF-8";
+
+#side {  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 0.2fr 1.0fr 0.6fr 0.6fr  0.3fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "tabOption"
+    "section"
+    "interval"
+    "count"
+    "button";
+  grid-area: side;
+}
+
+#tabOption { grid-area: tabOption; }
+#section { grid-area: section; }
+#interval { grid-area: interval; }
+#count { grid-area: count; }
+#button { grid-area: button; }
+
+#containerBody #menubar ul li{
+	width:100%;
+}
+
+#containerBody #side{
+	margin:10px 10px 0px 0px;
+}
+
+#containerBody #side p{
+	padding-left:10px;
+}
+
+#containerBody #tabOption li{
+	width:50%;
+}
+
+#containerBody #tabOption button{
+	padding:5px 0px;
+	border-width:1px;
+	border-style:solid;
+	width:100%;
+}
+
+
+#containerBody #section{
+	margin-top:10px;
+	
+}
+#containerBody #section #sectionBtn{
+	height:175px;
+	overflow:auto;
+}
+
+#containerBody #section label.btn{
+	background-color:#eee;
+	border: 1px solid white;
+	width:46%;
+	height:40px;
+	margin:10px 5px 5px 0px;
+	color:#aaa;
+	font-size:15px;
+}
+
+#containerBody #section label.active{
+  color: white;
+  background-color: #6697f2;
+}
+
+
+#containerBody #side select{
+	width:95%;
+	margin:5px 0px 5px 0px;
+}
+
+#containerBody #button{
+	margin:5px;
+}
+
+#containerBody #button button{
+	width:100%;
+	height:50px;
+}
+

@@ -1,0 +1,39 @@
+@charset "UTF-8";
+
+/* 푸터(footer) */
+
+/* 푸터가 있는 곳 어두운 바탕 */
+.footerbox {margin : 100px 0px 0px 0px; height:530px; background-color:#333333; }
+
+/* 로고 */
+.footerLogo {
+	margin : 80px 0px 0px 0px; 
+}
+
+/* 프로젝트 티켓자바 : 글로벌IT 팀프로젝트 3조 */
+.footerTitle h4 {
+	margin : 10px 0px 0px 0px; 
+	font-size: 25px; font-weight: bold;
+	color:#999999;
+}
+
+/* 개발자 contacts */
+.footerTitle h3 {
+	margin : 20px 0px 0px 0px; 
+	font-size: 20px; font-weight: bold;
+	color:#cccccc;
+}
+
+/* 개발자 깃허브주소 */
+.footerContacts {
+	margin : 10px 0px 0px 0px; 
+	font-size: 15px; font-weight: bold;
+	color:#cccccc;
+}
+
+/* 최하단 코멘트 */
+.footerComments {
+	margin : 20px 0px 0px 0px;
+	font-size: 12px;
+	color:#999999;
+}
