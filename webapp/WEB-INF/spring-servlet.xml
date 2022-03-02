@@ -12,4 +12,44 @@
 	<context:component-scan base-package="com.javaex.controller" />
 	<context:component-scan base-package="com.ticketjava.controller" />
 
+<<<<<<< HEAD
+=======
+	<!--기본뷰리졸버 -->
+	<bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="viewClass" value="org.springframework.web.servlet.view.JstlView" />
+		<property name="prefix" value="/WEB-INF/views/" />
+		<property name="suffix" value=".jsp" />
+		<property name="order" value="1" />
+	</bean>
+
+	<!-- 서블릿컨테이너의 디폴트서블릿 위임 핸들러 -->
+	<mvc:default-servlet-handler />
+	<mvc:annotation-driven />
+
+	<mvc:annotation-driven>
+		<mvc:message-converters>
+			<bean class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
+				<property name="supportedMediaTypes">
+					<list>
+						<value>application/json; charset=UTF-8</value>
+					</list>
+				</property>
+			</bean>
+		</mvc:message-converters>
+	</mvc:annotation-driven>
+
+	<!--멀티파트리졸버 -->
+	<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		<!--최대업로드가능한바이트크기 -->
+		<property name="maxUploadSize" value="52428800" />
+		<!--디스크에임시파일을생성하기전에메모리에보관할수있는최대바이트크기 -->
+		<property name="maxInMemorySize" value="52428800" />
+		<!--defaultEncoding -->
+		<property name="defaultEncoding" value="utf-8" />
+	</bean>
+	
+	<!--url매핑-->
+	<mvc:resources mapping="/upload/**" location="file:C:/javaStudy/upload/" />
+
+>>>>>>> branch 'master' of https://github.com/lisiee0/ticketjava.git
 </beans>
