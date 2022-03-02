@@ -7,11 +7,11 @@
 <title>TicketJava layout 표준 그리드</title>
 
 <!-- 부트스트랩 (원준이 커스텀 컬러 #6697f2 primary) -->
-<link href="assets/bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css">
+<link href="${pageContext.request.contextPath}/assets/bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css">
 
 <!-- 개인 css -->
-<link href="assets/css/bm/bmNewTab.css" rel="stylesheet">
-<link href="assets/css/bm/bmDisAdd.css" rel="stylesheet">
+<link href="${pageContext.request.contextPath}/assets/css/bm/bmNewTab.css" rel="stylesheet">
+<link href="${pageContext.request.contextPath}/assets/css/bm/bmDisAdd.css" rel="stylesheet">
 
 </head>
 

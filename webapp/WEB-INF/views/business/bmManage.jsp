@@ -7,15 +7,15 @@
 <title>TicketJava Standard layout include</title>
 
 <!-- 부트스트랩 Bootstrap core CSS -->
-<link href="assets/bootstrap/css/bootstrap.css" rel="stylesheet">
+<link href="${pageContext.request.contextPath}/assets/bootstrap/css/bootstrap.css" rel="stylesheet">
 
 <!-- 기본 css -->
-<link href="assets/css/ticketjavaCommon.css" rel="stylesheet" type="text/css">
-<link href="assets/css/ticketjavaCommonAside.css" rel="stylesheet" type="text/css">
-<link href="assets/css/ticketjavaCommonFooter.css" rel="stylesheet" type="text/css">
+<link href="${pageContext.request.contextPath}/assets/css/ticketjavaCommon.css" rel="stylesheet" type="text/css">
+<link href="${pageContext.request.contextPath}/assets/css/ticketjavaCommonAside.css" rel="stylesheet" type="text/css">
+<link href="${pageContext.request.contextPath}/assets/css/ticketjavaCommonFooter.css" rel="stylesheet" type="text/css">
 
 <!-- 개인 css (폴더로 관리 권장 ex assets/css/mypage/ticketing.css) -->
-<link href="assets/css/mypage/ticketjavaMypageCommon.css" rel="stylesheet" type="text/css">
+<link href="${pageContext.request.contextPath}/assets/css/mypage/ticketjavaMypageCommon.css" rel="stylesheet" type="text/css">
 
 </head>
 
