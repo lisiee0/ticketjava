@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>TicketJava 마이페이지 문의내역</title>
+<title>TicketJava 마이페이지 예매내역</title>
 
 <!-- 부트스트랩 Bootstrap core CSS -->
 <link href="assets/bootstrap/css/bootstrap.css" rel="stylesheet">
@@ -107,11 +107,13 @@ div {
 			<div class="container zp">
 			
 
+				<div class="row">
 					<!-- .col-xs-2 어사이드 자리 시작 -->
+					<div class="col-xs-2">
 
 					
 						<!-- aside -->
-						<div id="container" class="col-xs-2 clearfix zp no-drag no-ghost">
+						<div id="container" class="clearfix">
 							<div id="aside">
 								<h2>마이페이지</h2>
 								<ul>
@@ -127,12 +129,14 @@ div {
 							</div>
 						</div>
 						<!-- //aside -->
-					
-
-					<!-- 어사이드 종료 -->
+						
+											
+					</div> <!-- .col-xs-2 어사이드 종료 -->
 
 					<!-- .col-xs-10컨텐츠 출력 자리 시작 -->
-					<div class="col-xs-10 zp">
+					<div class="col-xs-10">
+					
+					
 					
 					
 						<!-- content -->
@@ -140,155 +144,75 @@ div {
 
 							<!-- content-head -->
 							<div id="content-head">
-								<h3>문의내역</h3>
+								<h3>예매내역</h3>
 								<div id="location">
 									<ul>
 										<li>홈</li>
-										<li>나의활동</li>
-										<li class="last">문의내역</li>
+										<li>마이페이지</li>
+										<li class="last">예매내역</li>
 									</ul>
 								</div>
-								<div class="clear"><!-- 파란줄 출력 --></div>
+								<div class="clear"></div>
 							</div>
 							<!-- //content-head -->
 
-						<!-- content body -->
-						<div id="board">
-							<div id="list">
-								<table>
-									<thead>
-										<tr>
-											<th>예매번호</th>
-											<th>상품명</th>
-											<th>문의내용</th>
-											<th>작성일</th>
-											<th>답변</th>
-										</tr>
-									</thead>
-									<form action="" name="" method="get">
-									<tbody>
-										
-										<tr>
-											<td>123</td>
-											<td class="text-left"><a href="#">뮤지컬 라이온킹 오리지널 내한..</a></td>
-											<td>문의 드립니다</td>
-											<td>2020-12-23</td>
-											<td><a href="#">답변 대기</a></td>
-										</tr>
-											
-										<tr>
-											<td>123</td>
-											<td class="text-left"><a href="#">뮤지컬 라이온킹 오리지널 내한..</a></td>
-											<td>문의 드립니다</td>
-											<td>2020-12-23</td>
-											<td><a href="#">답변 완료</a></td>
-										</tr>
-											
-										<tr>
-											<td>123</td>
-											<td class="text-left"><a href="#">뮤지컬 라이온킹 오리지널 내한..</a></td>
-											<td>문의 드립니다</td>
-											<td>2020-12-23</td>
-											<td><a href="#">답변 대기</a></td>
-										</tr>
-											
-										<tr>
-											<td>123</td>
-											<td class="text-left"><a href="#">뮤지컬 라이온킹 오리지널 내한..</a></td>
-											<td>문의 드립니다</td>
-											<td>2020-12-23</td>
-											<td><a href="#">답변 완료</a></td>
-										</tr>
-											
-										<tr>
-											<td>123</td>
-											<td class="text-left"><a href="#">뮤지컬 라이온킹 오리지널 내한..</a></td>
-											<td>문의 드립니다</td>
-											<td>2020-12-23</td>
-											<td><a href="#">답변 대기</a></td>
-										</tr>
-											
-										<tr>
-											<td>123</td>
-											<td class="text-left"><a href="#">뮤지컬 라이온킹 오리지널 내한..</a></td>
-											<td>문의 드립니다</td>
-											<td>2020-12-23</td>
-											<td><a href="#">답변 완료</a></td>
-										</tr>
-											
-										<tr>
-											<td>123</td>
-											<td class="text-left"><a href="#">뮤지컬 라이온킹 오리지널 내한..</a></td>
-											<td>문의 드립니다</td>
-											<td>2020-12-23</td>
-											<td><a href="#">답변 대기</a></td>
-										</tr>
-											
-										<tr>
-											<td>123</td>
-											<td class="text-left"><a href="#">뮤지컬 라이온킹 오리지널 내한..</a></td>
-											<td>문의 드립니다</td>
-											<td>2020-12-23</td>
-											<td><a href="#">답변 완료</a></td>
-										</tr>
-											
-										<tr>
-											<td>123</td>
-											<td class="text-left"><a href="#">뮤지컬 라이온킹 오리지널 내한..</a></td>
-											<td>문의 드립니다</td>
-											<td>2020-12-23</td>
-											<td><a href="#">답변 대기</a></td>
-										</tr>
-											
-										<tr>
-											<td>123</td>
-											<td class="text-left"><a href="#">뮤지컬 라이온킹 오리지널 내한..</a></td>
-											<td>문의 드립니다</td>
-											<td>2020-12-23</td>
-											<td><a href="#">답변 완료</a></td>
-										</tr>
-												
+							<!-- content body -->
+							<div id="board">
+								<div id="list">
+									<table>
+										<thead>
+											<tr>
+												<th>예매번호</th>
+												<th>예매일</th>
+												<th>상품명</th>
+												<th>관람일/매수</th>
+												<th>현재상태</th>
+												<th>관리</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>123</td>
+												<td>2020-12-23</td>
+												<td class="text-left"><a href="#">뮤지컬 라이온킹 오리지널 내한..</a></td>
+												<td>2020-12-23/2매</td>
+												<td>예매</td>
+												<td><button type="button" class="btn btn-primary">취소</button></td>
+											</tr>
 
-									</tbody>
-										</form>
-								</table>
-								
-								<div id="paging">
-									<ul>
-										<li><a href="">◀</a></li>
-										<li><a href="">1</a></li>
-										<li><a href="">2</a></li>
-										<li><a href="">3</a></li>
-										<li><a href="">4</a></li>
-										<li class="active"><a href="">5</a></li>
-										<li><a href="">6</a></li>
-										<li><a href="">7</a></li>
-										<li><a href="">8</a></li>
-										<li><a href="">9</a></li>
-										<li><a href="">10</a></li>
-										<li><a href="">▶</a></li>
-									</ul>
-									
-									<div class="clear"></div>
-								</div>	
-								<div id="row" class="searchBox">
-									<div class="col-xs-8"></div>
-									<div class="col-xs-2"><input type="text" class="form-control formSearchBoard" placeholder="문의내역 검색" value=""></div>
-									<div class="col-xs-2"><form class="">
-									<button type="submit" class="btn-primary formSearchBoardButton">검색</button>
-								</form></div>
-								
+											<tr>
+												<td>123</td>
+												<td>2020-12-23</td>
+												<td class="text-left"><a href="#">뮤지컬 라이온킹 오리지널 내한..</a></td>
+												<td>2020-12-23/2매</td>
+												<td>예매</td>
+												<td><button type="button" class="btn btn-primary">취소</button></td>
+											</tr>
+
+											<tr>
+												<td>123</td>
+												<td>2020-12-23</td>
+												<td class="text-left"><a href="#">뮤지컬 라이온킹 오리지널 내한..</a></td>
+												<td>2020-12-23/2매</td>
+												<td>예매</td>
+												<td><button type="button" class="btn btn-primary">취소</button></td>
+											</tr>
+										</tbody>
+									</table>
 								</div>
 							</div>
-						</div>
-						<!-- //content body -->
-				
+							<!-- //content body -->
+
 						</div>
 						<!-- //content -->
-					
-					</div>
-					<!-- .col-xs-10컨텐츠 출력 자리 종료 -->
 
+					
+					
+					
+					
+					</div> <!-- .col-xs-10 컨텐츠 종료 -->
+				</div>
+				<!-- 어사이드 컨텐츠 그리드 종료 -->
 			</div>
 			<!-- container 종료 -->
 		</div>

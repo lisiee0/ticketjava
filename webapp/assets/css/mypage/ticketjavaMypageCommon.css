@@ -55,6 +55,7 @@ textarea{font-size:12px;}
 	border-top: 2px solid #808080; 
     border-bottom: 2px solid #808080;
     background-color: #DDDDDD; 
+
 }
 
 #board #list table>thead>tr>th {
@@ -109,6 +110,7 @@ textarea{font-size:12px;}
 /* 검색버튼 */
 .searchBox {
 	margin : 20px 0px 0px 0px;
+	
 }
 
 .formSearchBoard {
@@ -122,6 +124,9 @@ textarea{font-size:12px;}
 	height: 25px;
 	float: right;
 }
+
+
+
 
 
 

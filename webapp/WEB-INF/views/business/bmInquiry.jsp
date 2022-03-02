@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,9 +12,11 @@
 <link href="assets/css/ticketjavaCommon.css" rel="stylesheet" type="text/css">
 <link href="assets/css/ticketjavaCommonAside.css" rel="stylesheet" type="text/css">
 <link href="assets/css/ticketjavaCommonFooter.css" rel="stylesheet" type="text/css">
+<link href="assets/css/mypage/ticketjavaMypageCommon.css" rel="stylesheet" type="text/css">
 
 <!-- 개인 css (폴더로 관리 권장 ex assets/css/mypage/ticketing.css) -->
-<link href="assets/css/mypage/ticketjavaMypageCommon.css" rel="stylesheet" type="text/css">
+<link href="assets/css//bm/bmInquiry.css" rel="stylesheet" type="text/css">
+
 
 </head>
 

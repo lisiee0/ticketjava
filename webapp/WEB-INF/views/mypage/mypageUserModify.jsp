@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>TicketJava 마이페이지 문의내역</title>
+<title>TicketJava 마이페이지 회원정보수정</title>
 
 <!-- 부트스트랩 Bootstrap core CSS -->
 <link href="assets/bootstrap/css/bootstrap.css" rel="stylesheet">
@@ -17,6 +17,10 @@
 
 <!-- 개인 css (폴더로 관리 권장 ex assets/css/mypage/ticketing.css) -->
 <link href="assets/css/mypage/ticketjavaMypageCommon.css" rel="stylesheet" type="text/css">
+
+<link href="assets/css/login/member.css" rel="stylesheet">
+<link href="assets/css/login/modifyForm.css" rel="stylesheet">
+
 
 </head>
 
@@ -107,11 +111,13 @@ div {
 			<div class="container zp">
 			
 
+				<div class="row">
 					<!-- .col-xs-2 어사이드 자리 시작 -->
+					<div class="col-xs-2">
 
 					
 						<!-- aside -->
-						<div id="container" class="col-xs-2 clearfix zp no-drag no-ghost">
+						<div id="container" class="clearfix">
 							<div id="aside">
 								<h2>마이페이지</h2>
 								<ul>
@@ -127,168 +133,124 @@ div {
 							</div>
 						</div>
 						<!-- //aside -->
-					
-
-					<!-- 어사이드 종료 -->
+						
+											
+					</div> <!-- .col-xs-2 어사이드 종료 -->
 
 					<!-- .col-xs-10컨텐츠 출력 자리 시작 -->
-					<div class="col-xs-10 zp">
+					<div class="col-xs-10">
 					
 					
-						<!-- content -->
-						<div id="content">
-
-							<!-- content-head -->
-							<div id="content-head">
-								<h3>문의내역</h3>
-								<div id="location">
-									<ul>
-										<li>홈</li>
-										<li>나의활동</li>
-										<li class="last">문의내역</li>
-									</ul>
-								</div>
-								<div class="clear"><!-- 파란줄 출력 --></div>
+						<!-- content-head -->
+						<div id="content-head">
+							<h3>회원정보수정</h3>
+							<div id="location">
+								<ul>
+									<li>홈</li>
+									<li>마이페이지</li>
+									<li class="last">회원정보수정</li>
+								</ul>
 							</div>
-							<!-- //content-head -->
-
-						<!-- content body -->
-						<div id="board">
-							<div id="list">
-								<table>
-									<thead>
-										<tr>
-											<th>예매번호</th>
-											<th>상품명</th>
-											<th>문의내용</th>
-											<th>작성일</th>
-											<th>답변</th>
-										</tr>
-									</thead>
-									<form action="" name="" method="get">
-									<tbody>
-										
-										<tr>
-											<td>123</td>
-											<td class="text-left"><a href="#">뮤지컬 라이온킹 오리지널 내한..</a></td>
-											<td>문의 드립니다</td>
-											<td>2020-12-23</td>
-											<td><a href="#">답변 대기</a></td>
-										</tr>
-											
-										<tr>
-											<td>123</td>
-											<td class="text-left"><a href="#">뮤지컬 라이온킹 오리지널 내한..</a></td>
-											<td>문의 드립니다</td>
-											<td>2020-12-23</td>
-											<td><a href="#">답변 완료</a></td>
-										</tr>
-											
-										<tr>
-											<td>123</td>
-											<td class="text-left"><a href="#">뮤지컬 라이온킹 오리지널 내한..</a></td>
-											<td>문의 드립니다</td>
-											<td>2020-12-23</td>
-											<td><a href="#">답변 대기</a></td>
-										</tr>
-											
-										<tr>
-											<td>123</td>
-											<td class="text-left"><a href="#">뮤지컬 라이온킹 오리지널 내한..</a></td>
-											<td>문의 드립니다</td>
-											<td>2020-12-23</td>
-											<td><a href="#">답변 완료</a></td>
-										</tr>
-											
-										<tr>
-											<td>123</td>
-											<td class="text-left"><a href="#">뮤지컬 라이온킹 오리지널 내한..</a></td>
-											<td>문의 드립니다</td>
-											<td>2020-12-23</td>
-											<td><a href="#">답변 대기</a></td>
-										</tr>
-											
-										<tr>
-											<td>123</td>
-											<td class="text-left"><a href="#">뮤지컬 라이온킹 오리지널 내한..</a></td>
-											<td>문의 드립니다</td>
-											<td>2020-12-23</td>
-											<td><a href="#">답변 완료</a></td>
-										</tr>
-											
-										<tr>
-											<td>123</td>
-											<td class="text-left"><a href="#">뮤지컬 라이온킹 오리지널 내한..</a></td>
-											<td>문의 드립니다</td>
-											<td>2020-12-23</td>
-											<td><a href="#">답변 대기</a></td>
-										</tr>
-											
-										<tr>
-											<td>123</td>
-											<td class="text-left"><a href="#">뮤지컬 라이온킹 오리지널 내한..</a></td>
-											<td>문의 드립니다</td>
-											<td>2020-12-23</td>
-											<td><a href="#">답변 완료</a></td>
-										</tr>
-											
-										<tr>
-											<td>123</td>
-											<td class="text-left"><a href="#">뮤지컬 라이온킹 오리지널 내한..</a></td>
-											<td>문의 드립니다</td>
-											<td>2020-12-23</td>
-											<td><a href="#">답변 대기</a></td>
-										</tr>
-											
-										<tr>
-											<td>123</td>
-											<td class="text-left"><a href="#">뮤지컬 라이온킹 오리지널 내한..</a></td>
-											<td>문의 드립니다</td>
-											<td>2020-12-23</td>
-											<td><a href="#">답변 완료</a></td>
-										</tr>
-												
-
-									</tbody>
-										</form>
-								</table>
-								
-								<div id="paging">
-									<ul>
-										<li><a href="">◀</a></li>
-										<li><a href="">1</a></li>
-										<li><a href="">2</a></li>
-										<li><a href="">3</a></li>
-										<li><a href="">4</a></li>
-										<li class="active"><a href="">5</a></li>
-										<li><a href="">6</a></li>
-										<li><a href="">7</a></li>
-										<li><a href="">8</a></li>
-										<li><a href="">9</a></li>
-										<li><a href="">10</a></li>
-										<li><a href="">▶</a></li>
-									</ul>
-									
-									<div class="clear"></div>
-								</div>	
-								<div id="row" class="searchBox">
-									<div class="col-xs-8"></div>
-									<div class="col-xs-2"><input type="text" class="form-control formSearchBoard" placeholder="문의내역 검색" value=""></div>
-									<div class="col-xs-2"><form class="">
-									<button type="submit" class="btn-primary formSearchBoardButton">검색</button>
-								</form></div>
-								
-								</div>
-							</div>
+							<div class="clear"></div>
 						</div>
-						<!-- //content body -->
+						<!-- //content-head -->
 				
-						</div>
-						<!-- //content -->
 					
-					</div>
-					<!-- .col-xs-10컨텐츠 출력 자리 종료 -->
+		<div id="containerMain">
+			<div></div>
+			<div id="formArea">
+				<table>
+					<colgroup>
+						<col style="width:25%">
+						<col style="">
+						<col style="">
+						<col style="width:25%">
+					</colgroup>
+					<tr>
+						<th>아이디</th>
+						<td colspan="3"><input class="form-control" type="text" placeholder="guest1234"></td>
+						<td class="outlineBtn"></td>
+					</tr>
+					
+					<tr>
+						<th>비밀번호</th>
+						<td colspan="3"><input class="form-control" type="password" placeholder="현재 비밀번호를 입력하세요" autofocus></td>
+					</tr>
+				
+					<tr>
+						<th>비밀번호 변경</th>
+						<td colspan="3"><input type="checkbox"> 비밀번호 변경하려면 체크박스를 선택 해주세요.</td>
+					</tr>
+					
+					<tr>
+						<th></th>
+						<td colspan="3"><input class="form-control" type="password" placeholder="변경할 비밀번호를 입력하세요"></td>
+					</tr>					
 
+					<tr>
+						<th></th>
+						<td colspan="3"><input class="form-control" type="password" placeholder="변경할 비밀번호를 다시 입력하세요"></td>
+					</tr>					
+					
+					<tr>
+						<th>전화번호</th>
+						<td colspan="3"><input class="form-control" type="text" placeholder="01012345678"></td>
+					</tr>
+					
+					<tr>
+						<th>주소</th>
+						<td><input class="form-control" type="text" placeholder="우편번호" readonly></td>
+						<td colspan="2" class="outlineBtn"><button class="form-control btn-outline-primary" type="button">우편번호 찾기</button></td>
+					</tr>
+				
+					<tr>
+						<td></td>
+						<td colspan="3"><input class="form-control" type="text" placeholder="주소"></td>
+					</tr>
+					
+					<tr>
+						<td></td>
+						<td colspan="3"><input class="form-control" type="text" placeholder="상세주소"></td>
+					</tr>
+					
+					<tr>
+						<th>이메일</th>
+						<td colspan="2"><input class="form-control" type="text" placeholder="이메일"></td>
+						<td class="outlineBtn"><button class="form-control btn-outline-primary" type="button">인증번호 발송</button></td>
+					</tr>
+					
+					<tr>
+						<th></th>
+						<td colspan="2"><input class="form-control" type="text" placeholder="인증번호"></td>
+						<td class="outlineBtn"><button class="form-control btn-outline-primary" type="button">확인</button></td>
+					</tr>
+					
+					<tr>
+						<td colspan="4">
+							<label class="checkbox-inline">
+							  <input type="checkbox" value="option1"> 약관 동의
+							</label>
+						</td>
+					</tr>
+					<tr>
+						<td colspan="4"><button id="joinBtn" class="form-control btn-primary">회원정보 수정</button></td>
+					</tr>
+				</table>
+			</div>
+			
+			
+			<div></div>
+			
+		</div>
+		<!-- //containerMain  -->
+
+
+					
+					
+					
+					</div> <!-- .col-xs-10 컨텐츠 종료 -->
+				</div>
+				<!-- 어사이드 컨텐츠 그리드 종료 -->
 			</div>
 			<!-- container 종료 -->
 		</div>

@@ -1,0 +1,89 @@
+@charset "UTF-8";
+
+/* 할인정보 추가 */
+#result > h2 {
+    /* border: 1px solid; */
+    font-size: 32px;
+    font-weight: bolder;
+    padding: 30px 0 25px 20px;
+}
+
+/* ol > h3 */
+.addTop ol h3 {
+    /* border: 1px solid; */
+    font-weight: bold;
+    font-size: 26px;
+    padding: 5px 0 5px 20px;
+}
+/* ol > li */
+.addTop ol li {
+    /* border: 1px solid; */
+    font-size: 16px;
+    padding: 5px 0 15px 40px;
+
+}
+/* table */
+#result .disTable{
+    /* border: 10px solid; */
+    margin: 15px 0px 0px 0px;
+}
+
+#result .disTable #dateDiscount,
+#result .disTable #dateDiscount2 {
+    /* border: 1px solid; */
+    width: 95%;
+    margin: 0px 0px 0px 20px;
+}
+
+
+/* table 할인테이블 */
+
+/* dateDiscount */
+#result .disTable #dateDiscount {
+    margin-bottom: 15px;
+    }
+
+#result .disTable #dateDiscount .dateHead {
+    text-align: center;
+
+}
+#result .disTable #dateDiscount .disHalf {
+    padding-left: 10px;
+}
+
+/* dateDiscount2 */
+#result .disTable #dateDiscount2 .disHalf {
+    /* border: 1px solid; */
+    }
+
+#result .disTable #dateDiscount2 .dateHead {
+    text-align: center;
+
+}
+#result .disTable #dateDiscount2 .disHalf {
+    padding-left: 10px;
+}
+
+/* distable2 */
+#result .disTable{
+    /* border: 10px solid; */
+    margin: 15px 0px 0px 0px;
+}
+
+#result .disTable table {
+    /* border: 1px solid; */
+    width: 95%;
+    margin: 0px 0px 10px 20px;
+}
+#result .disTable .disFont{
+    color: red;
+    font-weight: bold;
+}
+
+/* 적용버튼 */
+#result #submitBtn {
+    margin: 70px 0px 15px 210px
+}
+#result #submitBtn #submitBtn2{
+    width: 80px;
+}
