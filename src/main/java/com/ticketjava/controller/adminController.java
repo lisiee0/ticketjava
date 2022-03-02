@@ -11,7 +11,7 @@ public class adminController {
 	public String admin() {
 		System.out.println("adminController/admin()");
 		
-		return "/WEB-INF/views/admin/adminPage.jsp";
+		return "admin/adminPage";
 	}
 	
 	@RequestMapping("/TheaterAdd")

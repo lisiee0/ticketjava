@@ -12,8 +12,7 @@
 	<context:component-scan base-package="com.javaex.controller" />
 	<context:component-scan base-package="com.ticketjava.controller" />
 
-<<<<<<< HEAD
-=======
+
 	<!--기본뷰리졸버 -->
 	<bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<property name="viewClass" value="org.springframework.web.servlet.view.JstlView" />
@@ -51,5 +50,4 @@
 	<!--url매핑-->
 	<mvc:resources mapping="/upload/**" location="file:C:/javaStudy/upload/" />
 
->>>>>>> branch 'master' of https://github.com/lisiee0/ticketjava.git
 </beans>
