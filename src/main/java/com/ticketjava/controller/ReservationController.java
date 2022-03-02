@@ -9,7 +9,7 @@ public class ReservationController {
 
 	@RequestMapping("/selecetion")
 	public String selection() {
-		return "/WEB-INF/views/reservation/selection.jsp";
+		return "reservation/selection";
 	}
 	
 	
