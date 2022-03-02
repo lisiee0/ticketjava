@@ -1,0 +1,60 @@
+@charset "UTF-8";
+
+#map {width: 300px;}
+#posterArea, #calArea, #mapArea {padding: 0px;}
+
+.pageMenu {
+	font-size: 29px;
+	font-weight: bold;
+	/* width: 1000px; */
+	padding: 0px;
+	margin: 0px 0px 10px 0px;
+}
+
+.section {
+	box-shadow: 0px 2px rgba(0, 0, 0, 0.1);
+	padding-bottom: 15px;
+	margin: 10px 0px 15px 0px;
+}
+
+.formSection {
+	border-bottom: 1.5px #f0f0f0 solid;
+	padding-bottom: 10px;
+	margin-bottom: 10px;
+}
+
+.formMargin {
+	margin-bottom: 10px;	
+}
+
+.position {
+	float: right;
+	width: 120px;
+	margin: 0px 0px 10px 0px;
+}
+
+.form-text {
+	font-size: 15px;
+	text-align: left;
+	padding: 6px 15px;
+}
+
+.cateMenu {
+	font-size: 17px;
+	font-weight: bold;
+	margin: 0px 0px 8px 0px;
+}
+
+.bgc {
+	box-shadow: 0px 2px rgba(0, 0, 0, 0.1);
+	background-color: #f6f6f6;
+	margin: 0px 0px 15px 0px;
+}
+
+.np {
+	padding: 0px;
+}
+
+.fb {
+	font-weight: bold;
+}

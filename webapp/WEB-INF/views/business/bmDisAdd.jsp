@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!doctype html>
 <html>
 
@@ -18,9 +20,7 @@
 	<div id="wrapMain">
 		<div></div>
 		<!-- 창 -->
-
 		<div id="result">
-
 			<!-- head -->
 			<h2>할인정보 추가</h2>
 
