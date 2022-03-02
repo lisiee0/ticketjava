@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 <!DOCTYPE html>
 <html>
@@ -205,13 +205,7 @@
 		</div>
 		<!-- 컨텐츠 구역 종료 -->
 
-		<div class="container-fluid footerbox"> <!-- 푸터 구역 시작 -->
-			
-			<div class="container">
-				<div class="container-fluid" id="footer">푸터 내용이 들어갈 자리</div>
-				<!-- 푸터 내용 종료 -->
-			</div>
-		</div> <!-- 푸터 구역 종료 -->
+		<c:import url="/WEB-INF/views/include/footer.jsp"></c:import>
 
 	</div>
 	<!-- //wrap -->

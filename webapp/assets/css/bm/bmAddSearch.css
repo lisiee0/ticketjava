@@ -1,0 +1,50 @@
+@charset "UTF-8";
+
+/* 검색박스 */
+#wrapMain #searchBox {
+
+    margin: 35px 10px 0px 10px;
+    border: 1px solid;
+}
+
+/* 결과창 */
+#wrapMain #searchText{
+	margin-top:20px;
+	padding-bottom: 20px;
+	text-align:center;
+	border-bottom:2px solid #ccc;
+}
+#wrapMain #searchText span {
+	font-size:18px;
+	font-weight:900;
+}
+
+/* searchResult */
+#wrapMain #searchResult {
+    width: 95%;
+    background-color: #ffffff;
+    margin: 0px 0px 0px 10px;
+}
+
+#wrapMain #searchResult table{
+    /* border: 1px solid; */
+	width: 95%;
+	height:100px;
+    margin: 18px 10px 0px 10px;
+	border-bottom:2px solid #ccc;
+
+}
+
+#wrapMain #searchResult th#tdwhere{
+	padding: 0px 0px px 10px;
+	vertical-align:middle;
+}
+
+/* endResult */
+#wrapMain #endResult table {
+    width: 95%;
+	height:110px;
+    background-color: #ffffff;
+    margin: 0px 0px 0px 10px;
+
+}
