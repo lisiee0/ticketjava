@@ -9,18 +9,10 @@
 
 <!-- 부트스트랩 Bootstrap core CSS -->
 <link href="${pageContext.request.contextPath}/assets/bootstrap/css/bootstrap.css" rel="stylesheet">
-
 <link href="${pageContext.request.contextPath}/assets/css/main/search.css" rel="stylesheet">
-
 
 </head>
 
-<style>
-/* div 그리드 출력 (레이아웃 이해를 돕기 위한 코드) */
-div {
-	border: 0px solid black;
-}
-</style>
 
 <body>
 	<div id="wrap">
