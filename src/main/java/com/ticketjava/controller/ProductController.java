@@ -12,4 +12,5 @@ public class ProductController {
 		return "product/productInfo";
 	}
 
+	
 }
