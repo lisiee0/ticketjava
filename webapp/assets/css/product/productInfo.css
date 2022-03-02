@@ -1,0 +1,258 @@
+@charset "UTF-8";
+
+/**********************************************/
+/* info */
+/**********************************************/
+
+.fixwidth {
+	width: 1000px;
+	padding: 0px;
+}
+
+#mainPoster, #cal {width: 250px;}
+
+
+#infoPic, #mapInfo {
+	padding: 0px 0px 20px 0px;
+}
+
+#infoDetail img{
+	width: 735px;
+}
+
+#infoTable {
+	font-size: 15px;
+	text-align: left;
+	padding: 0px;
+	margin: 0px 0px 0px 30px;
+}
+
+#infoTable tr {
+	height: 40px;
+}
+
+#infoTable tr>th {
+	font-size: 17px;
+	vertical-align: top;
+	width: 130px;
+}
+
+#infoTable tr>td {
+	vertical-align: top;
+	width: 200px;
+	padding: 1px 0px 0px 0px;
+}
+
+
+#priceTable tr>td {
+	height: 35px;
+	width: 80px;
+}
+
+#priceTable tr {
+	font-size: 14px;
+	text-align: left;
+}
+
+.review-qna {
+	font-size: 14px;
+	text-align: center;
+}
+
+#review, #qna {
+	height: 100px;
+	margin: 20px 0px 0px 0px;
+}
+.review-qna th{
+	font-size: 16px;
+	text-align: center;
+}
+
+.imgArea {
+	width: 237px;
+}
+
+.imgArea .poster {
+	width: 237px;
+}
+
+.rank-list .rank-poster {
+	width: 140px;
+}
+
+.imgArea .region-poster {
+	width: 207px;
+}
+
+.rankingTable {
+	margin-bottom: 20px;
+}
+
+.rankingTable th {
+	font-size: 25px;
+	text-align: left;
+	vertical-align: top;
+	width: 80px;
+}
+
+.rankingTable .nextBtn {
+	width: 50px;
+}
+
+
+.floatLeft {
+	width: 300px;
+	float: left;
+}
+
+.floatRight {
+	margin: 0px;
+	float: right;
+}
+
+.regionList {
+	list-style: none;
+	float: left;
+	font-size: 15px;
+	vertical-align: bottom;
+	padding: 12px 0px 0px 0px;
+	margin: 10px 0px 0px 15px;
+}
+
+.productInfo {
+	box-shadow: 0px 2px rgba(0, 0, 0, 0.1);
+	background-color: #f6f6f6;
+	width: 237px;
+	height: 100px;
+}
+
+.productInfo .title, .theater-info .title {
+	font-size: 15px;
+	font-weight: bolder;
+}
+
+.list-width {
+	width: 237px;
+	margin: 0px 17px 17px 0px;
+}
+
+.scroll {
+	font-size: 17px;
+	font-weight: bold;
+	padding: 0px 20px 0px 0px;
+}
+
+.nav>li>a {
+  	position: relative;
+  	display: block;
+  	padding: 5px 0px;
+}
+
+.rank-list div {
+	width: 140px;
+	margin: 0px 15px;
+}
+
+.btnArea, .btnSize {
+	width: 20px;
+	height: 40px;
+}
+.lastbtn {
+	padding-left: 10px;
+}
+
+.list-bgc {
+	box-shadow: 0px 2px rgba(0, 0, 0, 0.1);
+	background-color: #f6f6f6;
+	padding: 20px 15px 15px 15px;
+	margin: 0px 0px 15px 0px;
+}
+
+.logoArea div {
+	width: 177px;
+	height: 70px;
+}
+
+.logoArea, .theater-logo {
+	width: 177px;
+	height: 70px;
+	margin: 0px 17px 17px 0px;
+}
+
+.pd {
+	padding: 17px 17px 0px 21px;
+}
+
+.last-logo {
+	margin: 0px 0px 17px 1px;
+}
+
+#theater-map {
+	width: 485px;
+}
+
+#logo {
+	width: 165px;
+	height: 156px;
+}
+
+.div-border {
+	font-size: 14px;
+	background-color: #f6f6f6;
+	height: 160px;
+	border: 2px solid #d3d3d3;
+	padding: 0px;
+}
+
+.theater-info {
+	padding: 20px;
+}
+
+.avail-product {
+	width: 186px;
+	margin: 0px 17px 15px 0px;
+}
+
+.avail-poster, .avail-posterArea, .avp {
+	width: 186px;
+}
+
+.last {
+	margin: 0px 0px 0px 1px;
+}
+
+.poster-small-area {
+	margin: 20px 10px;
+	width: 145px;
+	height: 160px;
+}
+
+.poster-small {
+	width: 145px;
+	height: 160px;
+}
+
+.information {
+	font-size: 15px;
+	text-align: left;
+	height: 160px;
+	padding: 20px 10px 20px 25px;		
+}
+
+.information .title {
+	font-size: 16px;
+	font-weight: bolder;
+	margin: 0px 0px 50px 0px;
+}
+
+.btn-area {
+	width: 200px;
+	height: 200px;
+}
+
+.btn-position {
+	width: 150px;
+	height: 35px;
+	margin-left: 70px;
+	margin-top: 80px;
+}

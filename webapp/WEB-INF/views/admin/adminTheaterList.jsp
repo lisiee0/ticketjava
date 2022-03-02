@@ -85,7 +85,6 @@
 		<div class="container-fluid zp">
 			<div class="container"> 
 				<div class="row">
-				
 					<!-- .col-xs-2 어사이드 자리 시작 -->
 					<div class="col-xs-2 np">
 						<div id="admin-aside">
@@ -100,100 +99,68 @@
 		
 					<!-- .col-xs-10컨텐츠 출력 자리 시작 -->
 					<div class="col-xs-10 admin-content">
-						<div class="col-xs-12">
-							<!-- content-head -->
-							<div class="row">
-								<h3 class="pageMenu adminsection">공연장 등록</h3>
-							</div>
-							<!-- //content-head -->
-						</div>
-						
+						<!-- content-head -->
 						<div class="col-xs-12 np">
-							<div id="board">
-							
-								<form action="" method="" class="form-horizontal">
-	
-	   								<!-- 공연장명 -->
-									<div class="form-group">
-										<div class="col-xs-2"></div>
-									    <label class="form-text col-xs-2" for="">공연장명</label>
-									    <div class="col-xs-6">
-									    	<input type="text" class="form-control" id="" placeholder="공연장명을 입력하세요">
-									    </div>
-									    <div class="col-xs-2"></div>
-									</div>
-	
-	   								<!-- 시설명 -->
-									<div class="form-group">
-										<div class="col-xs-2"></div>
-									    <label class="form-text col-xs-2" for="">시설명</label>
-									    <div class="col-xs-6">
-									    	<!-- + 누르면 반복 -->
-									    	<input type="text" class="form-control formZipcode" id="" placeholder="시설명">&nbsp;
-									    	<br>
-									    	
-									    	<input type="text" class="form-control formZipcode" id="" placeholder="시설명">&nbsp;
-									    	<span class="glyphicon glyphicon-plus"></span>
-									    </div>
-									    <div class="col-xs-2"></div>
-									</div>
+							<h3 class="pageMenu adminsection">공연장 목록</h3>
 
-								
-									<!-- 공연장 주소 -->
-									<div class="form-group">
-										<div class="col-xs-2"></div>
-									    <label class="form-text col-xs-2" for="">공연장주소</label>
-									    <div class="col-xs-6">
-									    	<input type="text" class="form-control col-xs-4 formZipcode" id="" placeholder="">
-									    	<div class="col-xs-4"> </div>
-									    	<button type="button" class="btn btn-primary col-xs-4 formZipcode">우편번호찾기</button>
-									    	
-									    	<input type="text" class="form-control formMargin" id="" placeholder="">
-									    	<input type="text" class="form-control formMargin" id="" placeholder="">
-									    </div>
-									    <div class="col-xs-2"></div>
-									</div>
+							<button type="button" class="btn btn-primary position">공연장 등록</button>
+						</div>
+						<!-- //content-head -->
+				
+						<!-- content body -->
+						<div id="list">
+							<table class="table listTable">
+								<thead>
+									<tr class="info">
+										<th>공연장명</th>
+										<th>시설명</th>
+										<th>주소</th>
+										<th>대표번호</th>
+										<th>홈페이지</th>
+										<th>관리</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>예술의전당</td>
+										<td>오페라극장</td>
+										<td class="text-left">서울특별시 서초구 서초동</td>
+										<td>02-1234-5678</td>
+										<td>www.sac.co.kr</td>
+										<td><span class="glyphicon glyphicon-trash"></span></td>
+									</tr>
 									
+									<tr>
+										<td>예술의전당</td>
+										<td>오페라극장</td>
+										<td class="text-left">서울특별시 서초구 서초동</td>
+										<td>02-1234-5678</td>
+										<td>www.sac.co.kr</td>
+										<td><span class="glyphicon glyphicon-trash"></span></td>
+									</tr>
 									
-									<!-- 대표번호 -->
-									<div class="form-group">
-										<div class="col-xs-2"></div>
-									    <label class="form-text col-xs-2" for="">대표번호</label>
-									    <div class="col-xs-6">
-									    	<input type="text" class="form-control" id="" placeholder="대표번호를 입력하세요">
-									    </div>
-									    <div class="col-xs-2"></div>
-									</div>
+									<tr>
+										<td>예술의전당</td>
+										<td>오페라극장</td>
+										<td class="text-left">서울특별시 서초구 서초동</td>
+										<td>02-1234-5678</td>
+										<td>www.sac.co.kr</td>
+										<td><span class="glyphicon glyphicon-trash"></span></td>
+									</tr>
 									
-									<!-- 홈페이지 -->
-									<div class="form-group">
-										<div class="col-xs-2"></div>
-									    <label class="form-text col-xs-2" for="">홈페이지</label>
-									    <div class="col-xs-6">
-									    	<input type="text" class="form-control" id="" placeholder="홈페이지를 입력하세요">
-									    </div>
-									    <div class="col-xs-2"></div>
-									</div>
-									
-									<!-- 공연장사진 -->
-									<div class="form-group">
-										<div class="col-xs-2"></div>
-									    <label class="form-text col-xs-2" for="">공연장로고</label>
-									    <div class="col-xs-6">
-									    	<input type="file" id="file">
-									    </div>
-									    <div class="col-xs-2"></div>
-									</div>
-									
-									<div id="btnLocation">
-	                          			<button type="submit" class="btn btn-primary" id="addbtn">공연장 등록</button>
-	                          		</div>
-		                      </form>
-								
-							</div>
-							<!-- content body -->
+									<tr>
+										<td>세종문화회관</td>
+										<td>대극장</td>
+										<td class="text-left">서울특별시 종로구 광화문로</td>
+										<td>02-2222-33333</td>
+										<td>www.kingsejong.co.kr</td>
+										<td><span class="glyphicon glyphicon-trash"></span></td>
+									</tr>
+								</tbody>					
+							</table>
 						</div>
 						<!-- // content body -->
+						
 					</div>
 					<!-- 컨텐츠 종료 -->
 				</div>		

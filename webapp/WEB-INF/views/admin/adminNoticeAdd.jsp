@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -91,8 +92,8 @@
 						<div id="admin-aside">
 							<h2 class="admin-pageMenu">관리페이지</h2>
 							<ul class="clearfix">
-								<li class="currentPage menubar-line">공연장 목록</li>
-								<li>공연장 공지사항</li>
+								<li class="menubar-line">공연장 목록</li>
+								<li class="currentPage">공연장 공지사항</li>
 							</ul>
 						</div>
 					</div>
@@ -103,7 +104,7 @@
 						<div class="col-xs-12">
 							<!-- content-head -->
 							<div class="row">
-								<h3 class="pageMenu adminsection">공연장 등록</h3>
+								<h3 class="pageMenu adminsection">공지사항 등록</h3>
 							</div>
 							<!-- //content-head -->
 						</div>
@@ -113,80 +114,32 @@
 							
 								<form action="" method="" class="form-horizontal">
 	
-	   								<!-- 공연장명 -->
+									<!-- 공연장 -->
 									<div class="form-group">
 										<div class="col-xs-2"></div>
-									    <label class="form-text col-xs-2" for="">공연장명</label>
+									    <label class="form-text col-xs-2" for="">공연장</label>
 									    <div class="col-xs-6">
-									    	<input type="text" class="form-control" id="" placeholder="공연장명을 입력하세요">
+									    	<select class="form-control">
+									    		<option>예술의전당</option>
+									    		<option>세종문화회관</option>
+									    	</select>
 									    </div>
 									    <div class="col-xs-2"></div>
 									</div>
 	
-	   								<!-- 시설명 -->
+	   								<!-- 공지사항 -->
 									<div class="form-group">
 										<div class="col-xs-2"></div>
-									    <label class="form-text col-xs-2" for="">시설명</label>
+									    <label class="form-text col-xs-2" for="">공지사항</label>
 									    <div class="col-xs-6">
-									    	<!-- + 누르면 반복 -->
-									    	<input type="text" class="form-control formZipcode" id="" placeholder="시설명">&nbsp;
-									    	<br>
-									    	
-									    	<input type="text" class="form-control formZipcode" id="" placeholder="시설명">&nbsp;
-									    	<span class="glyphicon glyphicon-plus"></span>
-									    </div>
-									    <div class="col-xs-2"></div>
-									</div>
-
-								
-									<!-- 공연장 주소 -->
-									<div class="form-group">
-										<div class="col-xs-2"></div>
-									    <label class="form-text col-xs-2" for="">공연장주소</label>
-									    <div class="col-xs-6">
-									    	<input type="text" class="form-control col-xs-4 formZipcode" id="" placeholder="">
-									    	<div class="col-xs-4"> </div>
-									    	<button type="button" class="btn btn-primary col-xs-4 formZipcode">우편번호찾기</button>
-									    	
-									    	<input type="text" class="form-control formMargin" id="" placeholder="">
-									    	<input type="text" class="form-control formMargin" id="" placeholder="">
+									    	<input type="text" class="form-control" id="" placeholder="공지사항을 입력하세요">
 									    </div>
 									    <div class="col-xs-2"></div>
 									</div>
 									
-									
-									<!-- 대표번호 -->
-									<div class="form-group">
-										<div class="col-xs-2"></div>
-									    <label class="form-text col-xs-2" for="">대표번호</label>
-									    <div class="col-xs-6">
-									    	<input type="text" class="form-control" id="" placeholder="대표번호를 입력하세요">
-									    </div>
-									    <div class="col-xs-2"></div>
-									</div>
-									
-									<!-- 홈페이지 -->
-									<div class="form-group">
-										<div class="col-xs-2"></div>
-									    <label class="form-text col-xs-2" for="">홈페이지</label>
-									    <div class="col-xs-6">
-									    	<input type="text" class="form-control" id="" placeholder="홈페이지를 입력하세요">
-									    </div>
-									    <div class="col-xs-2"></div>
-									</div>
-									
-									<!-- 공연장사진 -->
-									<div class="form-group">
-										<div class="col-xs-2"></div>
-									    <label class="form-text col-xs-2" for="">공연장로고</label>
-									    <div class="col-xs-6">
-									    	<input type="file" id="file">
-									    </div>
-									    <div class="col-xs-2"></div>
-									</div>
 									
 									<div id="btnLocation">
-	                          			<button type="submit" class="btn btn-primary" id="addbtn">공연장 등록</button>
+	                          			<button type="submit" class="btn btn-primary" id="addbtn">공지사항 등록</button>
 	                          		</div>
 		                      </form>
 								

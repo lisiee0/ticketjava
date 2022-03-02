@@ -15,7 +15,7 @@
 
 <!-- 개인 css -->
 <link href="${pageContext.request.contextPath}/assets/css/indcom.css" rel="stylesheet">
-<link href="${pageContext.request.contextPath}/assets/css/admin.css" rel="stylesheet">
+<link href="${pageContext.request.contextPath}/assets/css/admin/admin.css" rel="stylesheet">
 
 </head>
 
@@ -85,13 +85,14 @@
 		<div class="container-fluid zp">
 			<div class="container"> 
 				<div class="row">
+				
 					<!-- .col-xs-2 어사이드 자리 시작 -->
 					<div class="col-xs-2 np">
 						<div id="admin-aside">
 							<h2 class="admin-pageMenu">관리페이지</h2>
 							<ul class="clearfix">
-								<li class="currentPage menubar-line">공연장 목록</li>
-								<li>공연장 공지사항</li>
+								<li class="menubar-line">공연장 목록</li>
+								<li class="currentPage">공연장 공지사항</li>
 							</ul>
 						</div>
 					</div>
@@ -99,68 +100,49 @@
 		
 					<!-- .col-xs-10컨텐츠 출력 자리 시작 -->
 					<div class="col-xs-10 admin-content">
-						<!-- content-head -->
-						<div class="col-xs-12 np">
-							<h3 class="pageMenu adminsection">공연장 목록</h3>
-
-							<button type="button" class="btn btn-primary position">공연장 등록</button>
+						<div class="col-xs-12">
+							<!-- content-head -->
+							<div class="row">
+								<h3 class="pageMenu adminsection">공지사항 수정</h3>
+							</div>
+							<!-- //content-head -->
 						</div>
-						<!-- //content-head -->
-				
-						<!-- content body -->
-						<div id="list">
-							<table class="table listTable">
-								<thead>
-									<tr class="info">
-										<th>공연장명</th>
-										<th>시설명</th>
-										<th>주소</th>
-										<th>대표번호</th>
-										<th>홈페이지</th>
-										<th>관리</th>
-									</tr>
-								</thead>
-								<tbody>
-									<tr>
-										<td>예술의전당</td>
-										<td>오페라극장</td>
-										<td class="text-left">서울특별시 서초구 서초동</td>
-										<td>02-1234-5678</td>
-										<td>www.sac.co.kr</td>
-										<td><span class="glyphicon glyphicon-trash"></span></td>
-									</tr>
+						
+						<div class="col-xs-12 np">
+							<div id="board">
+							
+								<form action="" method="" class="form-horizontal">
+	
+									<!-- 공연장 -->
+									<div class="form-group">
+										<div class="col-xs-2"></div>
+									    <label class="form-text col-xs-2" for="">공연장</label>
+									    <div class="col-xs-6">
+											<p class="font-m">예술의전당</p>
+									    </div>
+									    <div class="col-xs-2"></div>
+									</div>
+	
+	   								<!-- 공지사항 -->
+									<div class="form-group">
+										<div class="col-xs-2"></div>
+									    <label class="form-text col-xs-2" for="">공지사항</label>
+									    <div class="col-xs-6">
+									    	<input type="text" class="form-control" id="" placeholder="공지사항을 입력하세요">
+									    </div>
+									    <div class="col-xs-2"></div>
+									</div>
 									
-									<tr>
-										<td>예술의전당</td>
-										<td>오페라극장</td>
-										<td class="text-left">서울특별시 서초구 서초동</td>
-										<td>02-1234-5678</td>
-										<td>www.sac.co.kr</td>
-										<td><span class="glyphicon glyphicon-trash"></span></td>
-									</tr>
 									
-									<tr>
-										<td>예술의전당</td>
-										<td>오페라극장</td>
-										<td class="text-left">서울특별시 서초구 서초동</td>
-										<td>02-1234-5678</td>
-										<td>www.sac.co.kr</td>
-										<td><span class="glyphicon glyphicon-trash"></span></td>
-									</tr>
-									
-									<tr>
-										<td>세종문화회관</td>
-										<td>대극장</td>
-										<td class="text-left">서울특별시 종로구 광화문로</td>
-										<td>02-2222-33333</td>
-										<td>www.kingsejong.co.kr</td>
-										<td><span class="glyphicon glyphicon-trash"></span></td>
-									</tr>
-								</tbody>					
-							</table>
+									<div id="btnLocation">
+	                          			<button type="submit" class="btn btn-primary" id="addbtn">공지사항 수정</button>
+	                          		</div>
+		                      </form>
+								
+							</div>
+							<!-- content body -->
 						</div>
 						<!-- // content body -->
-						
 					</div>
 					<!-- 컨텐츠 종료 -->
 				</div>		

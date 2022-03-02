@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -103,7 +104,7 @@
 						<div class="col-xs-12">
 							<!-- content-head -->
 							<div class="row">
-								<h3 class="pageMenu adminsection">공연장 등록</h3>
+								<h3 class="pageMenu adminsection">공연장 수정</h3>
 							</div>
 							<!-- //content-head -->
 						</div>
@@ -133,7 +134,10 @@
 									    	<br>
 									    	
 									    	<input type="text" class="form-control formZipcode" id="" placeholder="시설명">&nbsp;
-									    	<span class="glyphicon glyphicon-plus"></span>
+									    	<br>
+									    	
+									    	<input type="text" class="form-control formZipcode" id="" placeholder="시설명">&nbsp;
+									    	<span class="glyphicon glyphicon-plus"></span><br>
 									    </div>
 									    <div class="col-xs-2"></div>
 									</div>
@@ -186,7 +190,7 @@
 									</div>
 									
 									<div id="btnLocation">
-	                          			<button type="submit" class="btn btn-primary" id="addbtn">공연장 등록</button>
+	                          			<button type="submit" class="btn btn-primary" id="addbtn">공연장 수정</button>
 	                          		</div>
 		                      </form>
 								
