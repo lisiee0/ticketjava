@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,8 +17,21 @@
 <!-- 개인 css (폴더로 관리 권장 ex assets/css/mypage/ticketing.css) -->
 <link href="assets/css/mypage/ticketjavaMypageCommon.css" rel="stylesheet" type="text/css">
 
+<link href="assets/css/mypage/mypageTicketingAndCancel.css" rel="stylesheet" type="text/css">
+
+
+<!-- 년월일 선택 하는 스크립트 -->
+<script src="http://code.jquery.com/jquery-1.9.0.min.js"></script>
+<script src="assets/js/mypage/mypageTicketingAndCancel.js"></script>
+
 </head>
 
+<style>
+/* div 그리드 출력 (레이아웃 이해를 돕기 위한 코드) */
+div {
+	border: 0px solid black;
+}
+</style>
 
 <body>
 	<div id="wrap">
@@ -98,172 +113,151 @@
 			<div class="container zp">
 
 
-				<!-- .col-xs-2 어사이드 자리 시작 -->
+				<div class="row">
+					<!-- .col-xs-2 어사이드 자리 시작 -->
+					<div class="col-xs-2">
 
 
-				<!-- aside -->
-				<div id="container" class="col-xs-2 clearfix zp no-drag no-ghost">
-					<div id="aside">
-						<h2>사업자 페이지</h2>
-						<ul>
-							<li><h3>공연 관리</h3></li>
-							<li><a href="#">공연 등록</a></li>
-							<li><a href="#">공연 수정</a></li>
-						</ul>
-						<ul>
-							<li><h3>문의 관리</h3></li>
-							<li><a href="#">문의내역</a></li>
-						</ul>
-					</div>
-				</div>
-				<!-- //aside -->
-
-
-				<!-- 어사이드 종료 -->
-
-				<!-- .col-xs-10컨텐츠 출력 자리 시작 -->
-				<div class="col-xs-10 zp">
-
-
-					<!-- content -->
-					<div id="content">
-
-						<!-- content-head -->
-						<div id="content-head">
-							<h3>문의내역</h3>
-							<div id="location">
+						<!-- aside -->
+						<div id="container" class="clearfix">
+							<div id="aside">
+								<h2>마이페이지</h2>
 								<ul>
-									<li>홈</li>
-									<li>사업자 페이지</li>
-									<li class="last">문의 내역</li>
+									<li><h3>예매내역</h3></li>
+									<li><a href="#">예매내역/취소</a></li>
+									<li><a href="#">취소알림 내역</a></li>
+								</ul>
+								<ul>
+									<li><h3>나의활동</h3></li>
+									<li><a href="#">후기관리</a></li>
+									<li><a href="#">문의내역</a></li>
 								</ul>
 							</div>
-							<div class="clear">
-								<!-- 파란줄 출력 -->
-							</div>
 						</div>
-						<!-- //content-head -->
-
-						<!-- content body -->
-						<div id="board">
-							<div id="list">
-								<table>
-									<colgroup>
-										<col style="width: 8%;">
-										<col style="width: 23%;">
-										<col style="">
-										<col style="">
-										<col style="">
-										<col style="">
-										<col style="width: 7%;">
-									</colgroup>
-									<thead>
-										<tr>
-											<th>공연 번호</th>
-											<th>공연 명</th>
-											<th>문의 내용</th>
-											<th>사용자 ID</th>
-											<th>작성일</th>
-											<th>답변 여부</th>
-											<th>삭제</th>
-										</tr>
-									</thead>
-									<form action="" name="" method="get">
-										<tbody>
-
-											<tr>
-												<td>001</td>
-												<td class="text-left"><a href="#">뮤지컬 라이온킹 오리지널 내한..</a></td>
-												<td><a href="#">문의 드립니다 </a></td>
-												<td>abcde</td>
-												<td>2020-12-23</td>
-												<td><a href="#">답변 대기</a></td>
-												<td><a href="#">삭제</a></td>
-											</tr>
-											<tr>
-												<td>001</td>
-												<td class="text-left"><a href="#">뮤지컬 라이온킹 오리지널 내한..</a></td>
-												<td><a href="#">문의 드립니다 </a></td>
-												<td>abcde</td>
-												<td>2020-12-23</td>
-												<td><a href="#">답변 대기</a></td>
-												<td><a href="#">삭제</a></td>
-											</tr>
-											<tr>
-												<td>001</td>
-												<td class="text-left"><a href="#">뮤지컬 라이온킹 오리지널 내한..</a></td>
-												<td><a href="#">문의 드립니다 </a></td>
-												<td>abcde</td>
-												<td>2020-12-23</td>
-												<td><a href="#">답변 완료</a></td>
-												<td><a href="#">삭제</a></td>
-											</tr>
-											<tr>
-												<td>001</td>
-												<td class="text-left"><a href="#">뮤지컬 라이온킹 오리지널 내한..</a></td>
-												<td><a href="#">문의 드립니다 </a></td>
-												<td>abcde</td>
-												<td>2020-12-23</td>
-												<td><a href="#">답변 완료</a></td>
-												<td><a href="#">삭제</a></td>
-											</tr>
-											<tr>
-												<td>001</td>
-												<td class="text-left"><a href="#">뮤지컬 라이온킹 오리지널 내한..</a></td>
-												<td><a href="#">문의 드립니다 </a></td>
-												<td>abcde</td>
-												<td>2020-12-23</td>
-												<td><a href="#">답변 완료</a></td>
-												<td><a href="#">삭제</a></td>
-											</tr>
-
-
-
-
-										</tbody>
-									</form>
-								</table>
-
-								<div id="paging">
-									<ul>
-										<li><a href="">◀</a></li>
-										<li><a href="">1</a></li>
-										<li><a href="">2</a></li>
-										<li><a href="">3</a></li>
-										<li><a href="">4</a></li>
-										<li class="active"><a href="">5</a></li>
-										<li><a href="">6</a></li>
-										<li><a href="">7</a></li>
-										<li><a href="">8</a></li>
-										<li><a href="">9</a></li>
-										<li><a href="">10</a></li>
-										<li><a href="">▶</a></li>
-									</ul>
-
-									<div class="clear"></div>
-								</div>
-								<div id="row" class="searchBox">
-									<div class="col-xs-8"></div>
-									<div class="col-xs-2">
-										<input type="text" class="form-control formSearchBoard" placeholder="문의내역 검색" value="">
-									</div>
-									<div class="col-xs-2">
-										<form class="">
-											<button type="submit" class="btn-primary formSearchBoardButton">검색</button>
-										</form>
-									</div>
-
-								</div>
-							</div>
-						</div>
-						<!-- //content body -->
+						<!-- //aside -->
 
 					</div>
-					<!-- //content -->
+					<!-- .col-xs-2 어사이드 종료 -->
 
+					<!-- .col-xs-10컨텐츠 출력 자리 시작 -->
+					<div class="col-xs-10">
+
+
+
+
+						<!-- content -->
+						<div id="content">
+
+							<!-- content-head -->
+							<div id="content-head">
+								<h3>예매내역</h3>
+								<div id="location">
+									<ul>
+										<li>홈</li>
+										<li>마이페이지</li>
+										<li class="last">예매내역/취소</li>
+									</ul>
+								</div>
+								<div class="clear"></div>
+							</div>
+							<!-- //content-head -->
+
+							<!-- content body -->
+							<div class="ticketingDate">
+								<form action="" name="" method="get">
+									<div>
+										기간선택
+										<!-- 1일을 기준으로 기간 날짜를 결정 1달 30일 페이지 기본값 7일-->
+										<label for="rdo-duration">7일</label> <input type="radio" id="rdo-week" name="duration" value="7" checked> <label for="rdo-duration">1개월</label> <input type="radio" id="rdo-month" name="duration" value="30"> <label for="rdo-duration">3개월</label> <input type="radio" id="rdo-3month" name="duration" value="60">
+
+									</div>
+									<div>
+										조회기간 <select name="durationType">
+											<option value="">구분</option>
+											<option value="TicketBuy">예매일</option>
+											<option value="TicketUse">관람일</option>
+										</select> <select id="yearBox" name="year"></select>
+										<!-- yearBox는 클라의 현재 년도를 js로 받아와서 select방식 출력 -->
+										<select id="monthBox" name="month">
+											<option value="">해당월선택</option>
+											<option value="1jan">01월</option>
+											<option value="2feb">02월</option>
+											<option value="3mar">03월</option>
+											<option value="4apr">04월</option>
+											<option value="5may">05월</option>
+											<option value="6jun">06월</option>
+											<option value="7">07월</option>
+											<option value="8">08월</option>
+											<option value="9">09월</option>
+											<option value="10">10월</option>
+											<option value="11">11월</option>
+											<option value="12">12월</option>
+										</select> <input type="date" value="2022-02-23">
+
+										<button type="button" class="btn btn-primary">조회</button>
+									</div>
+								</form>
+							</div>
+
+							<div id="board">
+								<div id="list">
+									<table>
+										<thead>
+											<tr>
+												<th>예매번호</th>
+												<th>예매일</th>
+												<th>상품명</th>
+												<th>관람일/매수</th>
+												<th>현재상태</th>
+												<th>관리</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>123</td>
+												<td>2020-12-23</td>
+												<td class="text-left"><a href="#">뮤지컬 라이온킹 오리지널 내한..</a></td>
+												<td>2020-12-23/2매</td>
+												<td>예매</td>
+												<td><button type="button" class="btn btn-primary">취소</button></td>
+											</tr>
+
+											<tr>
+												<td>123</td>
+												<td>2020-12-23</td>
+												<td class="text-left"><a href="#">뮤지컬 라이온킹 오리지널 내한..</a></td>
+												<td>2020-12-23/2매</td>
+												<td>예매</td>
+												<td><button type="button" class="btn btn-primary">취소</button></td>
+											</tr>
+
+											<tr>
+												<td>123</td>
+												<td>2020-12-23</td>
+												<td class="text-left"><a href="#">뮤지컬 라이온킹 오리지널 내한..</a></td>
+												<td>2020-12-23/2매</td>
+												<td>예매</td>
+												<td><button type="button" class="btn btn-primary">취소</button></td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+
+
+							</div>
+							<!-- //content body -->
+
+						</div>
+						<!-- //content -->
+
+
+
+
+
+					</div>
+					<!-- .col-xs-10 컨텐츠 종료 -->
 				</div>
-				<!-- .col-xs-10컨텐츠 출력 자리 종료 -->
-
+				<!-- row 어사이드 컨텐츠 그리드 종료 -->
 			</div>
 			<!-- container 종료 -->
 		</div>
@@ -330,4 +324,10 @@
 	<!-- wrap 종료 -->
 
 </body>
+
+
+<!-- 제이쿼리 core JavaScript 페이지 로딩 향상을 위해 해당코드는 body가 끝나는곳에 둘것 -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+
 </html>

@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,21 +13,28 @@
 <link href="assets/css/ticketjavaCommon.css" rel="stylesheet" type="text/css">
 <link href="assets/css/ticketjavaCommonAside.css" rel="stylesheet" type="text/css">
 <link href="assets/css/ticketjavaCommonFooter.css" rel="stylesheet" type="text/css">
-<link href="assets/css/mypage/ticketjavaMypageCommon.css" rel="stylesheet" type="text/css">
 
 <!-- 개인 css (폴더로 관리 권장 ex assets/css/mypage/ticketing.css) -->
-<link href="assets/css//bm/bmInquiry.css" rel="stylesheet" type="text/css">
+<link href="assets/css/mypage/ticketjavaMypageCommon.css" rel="stylesheet" type="text/css">
+<link href="assets/css/mypage/mypageUserReview.css" rel="stylesheet" type="text/css">
+
 
 
 </head>
 
+<style>
+/* div 그리드 출력 (레이아웃 이해를 돕기 위한 코드) */
+div {
+	border: 0px solid black;
+}
+</style>
 
 <body>
 	<div id="wrap">
 		<!-- 헤더 header 구역 시작 (로그인 로고 검색창) -->
 		<div class="container-fluid zp">
 			<div class="container">
-
+			
 				<div class="row">
 					<!-- 로그인 회원가입 그리드 시작 -->
 					<div class="col-xs-9"></div>
@@ -42,14 +51,14 @@
 					</div>
 				</div>
 				<!-- 로그인 회원가입 그리드 종료 -->
-
+				
 			</div>
 			<!-- container 종료 -->
 
 
 			<div class="container">
 				<div class="row">
-
+				
 					<!-- 로고 검색자리 그리드 시작 -->
 					<div class="col-xs-3 no-drag no-ghost" id="ticketJavaLogo">
 						<a href=""><img src="assets/image/index/ticketjava_main_logo.png"></a>
@@ -72,7 +81,7 @@
 		<!-- 네비바 구역 시작 -->
 		<div class="container-fluid zp navbox">
 			<div class="container nav">
-
+			
 				<!-- 네비바 자리 그리드없음 중앙 정렬 1000px 파란색 줄 -->
 				<nav id="navnav" class="navbar navbar-expand-lg navbar-dark bg-primary btn-primary no-drag">
 					<div id="navbar" class="" role="navigation">
@@ -98,130 +107,109 @@
 		<!-- 컨텐츠 구역 시작 -->
 		<div class="container-fluid zp">
 			<div class="container zp">
+			
 
+				<div class="row">
+					<!-- .col-xs-2 어사이드 자리 시작 -->
+					<div class="col-xs-2">
 
-				<!-- .col-xs-2 어사이드 자리 시작 -->
+					
+						<!-- aside -->
+						<div id="container" class="clearfix">
+							<div id="aside">
+								<h2>마이페이지</h2>
+								<ul>
+									<li><h3>예매내역</h3></li>
+									<li><a href="#">예매내역/취소</a></li>
+									<li><a href="#">취소알림 내역</a></li>
+								</ul>
+								<ul>
+									<li><h3>나의활동</h3></li>
+									<li><a href="#">후기관리</a></li>
+									<li><a href="#">문의내역</a></li>
+								</ul>
+							</div>
+						</div>
+						<!-- //aside -->
+						
+											
+					</div> <!-- .col-xs-2 어사이드 종료 -->
 
-
-				<!-- aside -->
-				<div id="container" class="col-xs-2 clearfix zp no-drag no-ghost">
-					<div id="aside">
-						<h2>사업자 페이지</h2>
-						<ul>
-							<li><h3>공연 관리</h3></li>
-							<li><a href="#">공연 등록</a></li>
-							<li><a href="#">공연 수정</a></li>
-						</ul>
-						<ul>
-							<li><h3>문의 관리</h3></li>
-							<li><a href="#">문의내역</a></li>
-						</ul>
-					</div>
-				</div>
-				<!-- //aside -->
-
-
-				<!-- 어사이드 종료 -->
-
-				<!-- .col-xs-10컨텐츠 출력 자리 시작 -->
-				<div class="col-xs-10 zp">
-
-
-					<!-- content -->
-					<div id="content">
+					<!-- .col-xs-10컨텐츠 출력 자리 시작 -->
+					<div class="col-xs-10">
+					
+					
+					
+						<!-- content -->
+						<div id="content">
 
 						<!-- content-head -->
 						<div id="content-head">
-							<h3>공연 목록</h3>
+							<h3>후기 관리</h3>
 							<div id="location">
 								<ul>
 									<li>홈</li>
-									<li>사업자 페이지</li>
-									<li class="last">공연 목록</li>
+									<li>마이페이지</li>
+									<li class="last">후기 관리</li>
 								</ul>
 							</div>
-							<div class="clear">
-								<!-- 파란줄 출력 -->
-							</div>
+							<div class="clear"></div>
 						</div>
 						<!-- //content-head -->
-
+				
 						<!-- content body -->
 						<div id="board">
 							<div id="list">
 								<table>
-									<colgroup>
-										<col style="width: 8%;">
-										<col style="width: 23%;">
-										<col style="">
-										<col style="">
-										<col style="">
-										<col style="width: 7%;">
-										<col style="width: 7%;">
-									</colgroup>
 									<thead>
 										<tr>
-											<th>공연 번호</th>
-											<th>공연명</th>
-											<th>공연장</th>
-											<th>공연 기간</th>
-											<th>공연 노출</th>
-											<th>할인</th>
-											<th>수정</th>
-											<th>삭제</th>
+											<th>예매번호</th>
+											<th>상품명</th>
+											<th>후기내용</th>
+											<th>만족도</th>
+											<th>작성일</th>
+											<th>관리</th>
 										</tr>
 									</thead>
 									<form action="" name="" method="get">
-										<tbody>
-
-											<tr>
-												<td>002</td>
-												<td class=""><a href="#">뮤지컬 라이온킹 오리지널 내한..</a></td>
-												<td><a href="#">세종문화회관</a></td>
-												<td>20-01-01 ~ 20-01-10</td>
-												<td><input type="checkbox"> <a href="#">확인</a></td>
-												<td><a href="#">할인 유무</a></td>
-												<td><a href="#">수정</a></td>
-												<td><a href="#">삭제</a></td>
-											</tr>
-											<tr>
-												<td>001</td>
-												<td class=""><a href="#">뮤지컬〈썸씽로튼〉(Musical.. </a></td>
-												<td><a href="#">세종문화회관</a></td>
-												<td>20-01-01 ~ 20-01-10</td>
-												<td><input type="checkbox"> <a href="#">확인</a></td>
-												<td><a href="#">할인 유무</a></td>
-												<td><a href="#">수정</a></td>
-												<td><a href="#">삭제</a></td>
-											</tr>
-
-
-										</tbody>
-									</form>
-								</table>
-
-								<div id="row" class="searchBox">
-									<div class="col-xs-8"></div>
-									<div class="col-xs-2">
-										<input type="text" class="form-control formSearchBoard" placeholder="공연 검색창" value="">
-									</div>
-									<div class="col-xs-2">
-										<form class="">
-											<button type="submit" class="btn-primary formSearchBoardButton">공연 등록</button>
+									<tbody>
+										
+										<tr>
+											<td>123</td>
+											<td class="text-left"><a href="#">뮤지컬 라이온킹 오리지널 내한..</a></td>
+											<td>잘 봤습니다</td>
+											<td>만족(if satis=3)</td>
+											<td>2020-12-23</td>
+											<td><button class="btn btn-primary btnM" type="submit" id="btn-submit">수정</button><button class="btn btn-primary" type="submit" id="btn-submit">삭제</button></td>
+										</tr>
+											
+										<tr>
+											<td>123</td>
+											<td class="text-left"><a href="#">뮤지컬 라이온킹 오리지널 내한..</a></td>
+											<td>별로네요 </td>
+											<td>불만족(if satis=1)</td>
+											<td>2020-12-23</td>
+											<td><button class="btn btn-primary btnM" type="submit" id="btn-submit">수정</button><button class="btn btn-primary" type="submit" id="btn-submit">삭제</button></td>
+										</tr>
+												
+										
+										
+									</tbody>
 										</form>
-									</div>
-
-								</div>
+								</table>
 							</div>
 						</div>
 						<!-- //content body -->
+				
+						</div>
+						<!-- //content -->
 
-					</div>
-					<!-- //content -->
-
+					
+					
+					
+					</div> <!-- .col-xs-10 컨텐츠 종료 -->
 				</div>
-				<!-- .col-xs-10컨텐츠 출력 자리 종료 -->
-
+				<!-- 어사이드 컨텐츠 그리드 종료 -->
 			</div>
 			<!-- container 종료 -->
 		</div>
