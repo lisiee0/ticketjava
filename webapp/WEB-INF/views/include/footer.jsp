@@ -20,7 +20,7 @@
 			<div class="footerTitle">
 				<h4>
 					프로젝트 티켓자바 : 글로벌IT 팀프로젝트 3조
-					</h3>
+					</h4>
 					<h3>개발자 contacts</h3>
 			</div>
 			<div class="footerContacts form-horizontal">
