@@ -20,7 +20,6 @@
 	<div id="wrapMain">
 		<div></div>
 		<!-- 창 -->
-
 		<div id="result">
 
 			<!-- head -->
