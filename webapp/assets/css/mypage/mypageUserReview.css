@@ -1,0 +1,6 @@
+@charset "UTF-8";
+
+/* 관리 버튼 사이 벌리기 */
+.btnM {
+	margin: 0px 5px 0px 0px;
+}
