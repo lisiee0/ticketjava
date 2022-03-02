@@ -1,0 +1,163 @@
+@charset "UTF-8";
+
+#side {  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr 0.5fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "price"
+    "choice"
+    "button";
+  grid-area: side;
+}
+
+#price { grid-area: price; }
+#choice { grid-area: choice; }
+#button { grid-area: button; }
+
+#containerBody #side table{
+	width:100%;
+}
+
+#containerBody #side #price #priceTable,
+#containerBody #side #choice #choiceTable{
+	border:1px solid #ccc;
+	padding:15px;
+	margin: 10px 0px 10px 0px;
+}
+
+
+#containerBody #side #price #priceTable{
+	height:180px;
+}
+
+#containerBody #side #price #priceTable .seatColor{
+	width:10px;
+	height:10px;
+}
+#containerBody #side #price #priceTable .vipSeat{
+	background-color:#ed6b6b;
+}
+#containerBody #side #price #priceTable .rSeat{
+	background-color:#879ec8;
+}
+#containerBody #side #price #priceTable .sSeat{
+	background-color:#76bd91;
+}
+#containerBody #side #price #priceTable .aSeat{
+	background-color:#cddb6a;
+}
+#containerBody #side #price #priceTable .bSeat{
+	background-color:#f4a777;
+}
+
+
+#containerBody #side #price #priceTable .remaining {
+	color:red;
+	text-align:right;
+}
+
+
+#containerBody #side #choice #choiceTable{
+	height:190px;
+	overflow:auto;
+}
+
+#containerBody #side #choice #choiceTable table td{
+	padding-bottom:5px;
+}
+
+#containerBody #side #choice #choiceTable #right{
+	text-align:right;
+}
+
+#containerBody #side #button{
+	margin:5px;
+}
+
+#containerBody #side #button button{
+	margin: 0px 0px 10px 0px;
+	width:100%;
+	height:50px;
+}
+
+
+
+
+
+/* #seatPlanDiv{
+	margin:40px;
+	padding:10px;
+	border-radius:10px;
+	background-color:white;
+	
+	테두리 그림자
+	box-shadow: 0 0 10px rgba(0,0,0,0.6);
+	-moz-box-shadow: 0 0 10px rgba(0,0,0,0.6);
+	-webkit-box-shadow: 0 0 10px rgba(0,0,0,0.6);
+	-o-box-shadow: 0 0 10px rgba(0,0,0,0.6);
+	
+	드래그 방지
+	-ms-user-select: none; 
+	-moz-user-select: -moz-none;
+	-khtml-user-select: none;
+	-webkit-user-select: none;
+	user-select: none;
+}
+
+#seatPlanDiv div#stageArea{
+	text-align:center;
+	width:40%;
+	height:30px;
+	color:white;
+	background-color:#474747;
+	border-radius:20px;
+	margin: 10px 0px 20px 170px;
+	font-size:17px;
+}
+
+
+#seatPlanDiv table td{
+	padding:2px;
+}
+
+#seatPlanDiv label{
+	width:15px;
+	height:15px;
+}
+
+
+input[type="checkbox"] {
+   display: none;
+}
+
+input.vip[type="checkbox"]+label {
+    display: block;
+    width: 15px;
+    height: 15px;
+    background: url('../image/vip.jpg') no-repeat 0 0px / contain;
+}
+
+input.r[type="checkbox"]+label {
+    display: block;
+    width: 15px;
+    height: 15px;
+    background: url('../image/r.jpg') no-repeat 0 0px / contain;
+}
+
+input[type='checkbox']:checked+label {
+    background: url('../image/chosen.jpg') no-repeat 0 0px / contain;
+}
+
+input[type='checkbox']:disabled+label {
+    background: url('../image/disabled.jpg') no-repeat 0 0px / contain;
+}
+
+input.n[type="checkbox"]:disabled+label {
+    display: block;
+    width: 15px;
+    height: 15px;
+    background: url('../image/none.jpg') no-repeat 0 0px / contain;
+}
+ */

@@ -1,0 +1,101 @@
+@charset "UTF-8";
+
+/* 좌석배치도 */
+#seatPlan{
+	width:100%;
+	height:560px;
+	overflow:auto;	
+	background-color:gray;
+}
+
+#seatPlanDiv{
+	width:88%;
+	margin:40px;
+	padding:10px;
+	border-radius:10px;
+	background-color:white;
+	
+	/*테두리 그림자*/
+	box-shadow: 0 0 10px rgba(0,0,0,0.6);
+	-moz-box-shadow: 0 0 10px rgba(0,0,0,0.6);
+	-webkit-box-shadow: 0 0 10px rgba(0,0,0,0.6);
+	-o-box-shadow: 0 0 10px rgba(0,0,0,0.6);
+	
+	/*드래그 방지*/
+	-ms-user-select: none; 
+	-moz-user-select: -moz-none;
+	-khtml-user-select: none;
+	-webkit-user-select: none;
+	user-select: none;
+	min-height:450px;
+}
+
+#seatPlanDiv div#stageArea{
+	text-align:center;
+	width:40%;
+	height:30px;
+	color:white;
+	background-color:#474747;
+	border-radius:20px;
+	margin: 10px 0px 40px 170px;
+	font-size:17px;
+}
+#seatPlanDiv table{
+	margin-left: auto; 
+	margin-right: auto;
+}
+
+#seatPlanDiv table td{
+	padding:2px;
+}
+
+#seatPlanDiv label{
+	width:15px;
+	height:15px;
+}
+
+input[type="checkbox"] {
+   display: none;
+}
+
+
+input[type="checkbox"]+label {
+	display: block;
+    width: 15px;
+    height: 15px;
+}
+
+
+input.v[type="checkbox"]+label {
+    background: url('../../image/seatType/vip.jpg') no-repeat 0 0px / contain;
+}
+
+input.r[type="checkbox"]+label {
+    background: url('../../image/seatType/r.jpg') no-repeat 0 0px / contain;
+}
+
+input.s[type="checkbox"]+label {
+    background: url('../../image/seatType/s.jpg') no-repeat 0 0px / contain;
+}
+
+input.a[type="checkbox"]+label {
+    background: url('../../image/seatType/a.jpg') no-repeat 0 0px / contain;
+}
+
+input.b[type="checkbox"]+label {
+    background: url('../../image/seatType/b.jpg') no-repeat 0 0px / contain;
+}
+
+input[type='checkbox']:checked+label {
+    background: url('../../image/seatType/chosen.jpg') no-repeat 0 0px / contain;
+}
+
+input[type='checkbox']:disabled+label {
+    background: url('../../image/seatType/disabled.jpg') no-repeat 0 0px / contain;
+    cursor:not-allowed;
+}
+
+input.n[type="checkbox"]:disabled+label {
+    background: url('../../image/seatType/none.jpg') no-repeat 0 0px / contain;
+    cursor : default 
+}

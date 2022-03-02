@@ -1,0 +1,24 @@
+@charset "UTF-8";
+
+#containerBody #main table{
+	width:100%;
+	margin-bottom:30px;
+	border-collapse:collapse;
+	background-color:white;
+}
+
+#containerBody #main table tr{
+	border:1px solid #ccc;
+	height:50px;
+}
+
+#containerBody #main table td,
+#containerBody #main table th{
+	border:0px;
+	padding:10px;
+}
+
+#containerBody #main #agreeChk td{
+	font-size:12px;
+}
+

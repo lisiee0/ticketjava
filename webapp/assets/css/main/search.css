@@ -1,0 +1,73 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
+
+body{
+	font-family: 'Noto Sans KR', sans-serif;
+}
+
+.clearfix{*zoom:1;}
+.clearfix:before, .clearfix:after {display: block; content: ""; line-height: 0;}
+.clearfix:after {clear: both;}
+
+html, body, div, span,h1, h2, h3, h4, h5, h6, p, a, img, strong, ol, ul, 
+li, fieldset, form, label, legend, table, tbody, tfoot, thead, tr, th, td{
+ 	margin: 0; 
+ 	padding: 0;
+ }
+ 
+#containerMain {  display: grid;
+  grid-template-columns: 1fr 1000px 1fr;
+  grid-template-rows: 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    ". search .";
+}
+
+
+#containerMain #searchText{
+	margin-top:60px;
+	padding-bottom: 30px;
+	text-align:center;
+	border-bottom:2px solid #ccc;
+}
+
+#containerMain #searchText p{
+	font-size:20px;
+}
+ 
+#containerMain #searchText span {
+	font-weight:900;
+	color:#6697f2;
+}
+
+
+#containerMain #searchResult table{
+	width:100%;
+	height:180px;
+	border-bottom:2px solid #ccc;
+}
+
+#containerMain #searchResult table th{
+	text-align:left;
+	padding:20px 0px 0px 20px;
+	font-size:18px;
+}
+
+#containerMain #searchResult table td{
+	vertical-align:bottom;
+	padding:0px 0px 25px 20px;
+	font-size:15px;
+	color:#999;
+}
+
+#containerMain #searchResult table td#tdImg{
+	padding: 10px 10px;
+	vertical-align:middle;
+}
+
+#containerMain #searchResult img{
+	width:100%;
+	height:93%;
+}
