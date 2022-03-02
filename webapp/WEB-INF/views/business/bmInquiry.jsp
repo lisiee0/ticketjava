@@ -1,3 +1,4 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,9 +12,11 @@
 <link href="assets/css/ticketjavaCommon.css" rel="stylesheet" type="text/css">
 <link href="assets/css/ticketjavaCommonAside.css" rel="stylesheet" type="text/css">
 <link href="assets/css/ticketjavaCommonFooter.css" rel="stylesheet" type="text/css">
+<link href="assets/css/mypage/ticketjavaMypageCommon.css" rel="stylesheet" type="text/css">
 
 <!-- 개인 css (폴더로 관리 권장 ex assets/css/mypage/ticketing.css) -->
-<link href="assets/css/mypage/ticketjavaMypageCommon.css" rel="stylesheet" type="text/css">
+<link href="assets/css//bm/bmInquiry.css" rel="stylesheet" type="text/css">
+
 
 </head>
 
@@ -130,12 +133,12 @@
 
 						<!-- content-head -->
 						<div id="content-head">
-							<h3>문의내역</h3>
+							<h3>공연 목록</h3>
 							<div id="location">
 								<ul>
 									<li>홈</li>
 									<li>사업자 페이지</li>
-									<li class="last">문의 내역</li>
+									<li class="last">공연 목록</li>
 								</ul>
 							</div>
 							<div class="clear">
@@ -154,17 +157,18 @@
 										<col style="">
 										<col style="">
 										<col style="">
-										<col style="">
+										<col style="width: 7%;">
 										<col style="width: 7%;">
 									</colgroup>
 									<thead>
 										<tr>
 											<th>공연 번호</th>
-											<th>공연 명</th>
-											<th>문의 내용</th>
-											<th>사용자 ID</th>
-											<th>작성일</th>
-											<th>답변 여부</th>
+											<th>공연명</th>
+											<th>공연장</th>
+											<th>공연 기간</th>
+											<th>공연 노출</th>
+											<th>할인</th>
+											<th>수정</th>
 											<th>삭제</th>
 										</tr>
 									</thead>
@@ -172,84 +176,39 @@
 										<tbody>
 
 											<tr>
-												<td>001</td>
-												<td class="text-left"><a href="#">뮤지컬 라이온킹 오리지널 내한..</a></td>
-												<td><a href="#">문의 드립니다 </a></td>
-												<td>abcde</td>
-												<td>2020-12-23</td>
-												<td><a href="#">답변 대기</a></td>
+												<td>002</td>
+												<td class=""><a href="#">뮤지컬 라이온킹 오리지널 내한..</a></td>
+												<td><a href="#">세종문화회관</a></td>
+												<td>20-01-01 ~ 20-01-10</td>
+												<td><input type="checkbox"> <a href="#">확인</a></td>
+												<td><a href="#">할인 유무</a></td>
+												<td><a href="#">수정</a></td>
 												<td><a href="#">삭제</a></td>
 											</tr>
 											<tr>
 												<td>001</td>
-												<td class="text-left"><a href="#">뮤지컬 라이온킹 오리지널 내한..</a></td>
-												<td><a href="#">문의 드립니다 </a></td>
-												<td>abcde</td>
-												<td>2020-12-23</td>
-												<td><a href="#">답변 대기</a></td>
+												<td class=""><a href="#">뮤지컬〈썸씽로튼〉(Musical.. </a></td>
+												<td><a href="#">세종문화회관</a></td>
+												<td>20-01-01 ~ 20-01-10</td>
+												<td><input type="checkbox"> <a href="#">확인</a></td>
+												<td><a href="#">할인 유무</a></td>
+												<td><a href="#">수정</a></td>
 												<td><a href="#">삭제</a></td>
 											</tr>
-											<tr>
-												<td>001</td>
-												<td class="text-left"><a href="#">뮤지컬 라이온킹 오리지널 내한..</a></td>
-												<td><a href="#">문의 드립니다 </a></td>
-												<td>abcde</td>
-												<td>2020-12-23</td>
-												<td><a href="#">답변 완료</a></td>
-												<td><a href="#">삭제</a></td>
-											</tr>
-											<tr>
-												<td>001</td>
-												<td class="text-left"><a href="#">뮤지컬 라이온킹 오리지널 내한..</a></td>
-												<td><a href="#">문의 드립니다 </a></td>
-												<td>abcde</td>
-												<td>2020-12-23</td>
-												<td><a href="#">답변 완료</a></td>
-												<td><a href="#">삭제</a></td>
-											</tr>
-											<tr>
-												<td>001</td>
-												<td class="text-left"><a href="#">뮤지컬 라이온킹 오리지널 내한..</a></td>
-												<td><a href="#">문의 드립니다 </a></td>
-												<td>abcde</td>
-												<td>2020-12-23</td>
-												<td><a href="#">답변 완료</a></td>
-												<td><a href="#">삭제</a></td>
-											</tr>
-
-
 
 
 										</tbody>
 									</form>
 								</table>
 
-								<div id="paging">
-									<ul>
-										<li><a href="">◀</a></li>
-										<li><a href="">1</a></li>
-										<li><a href="">2</a></li>
-										<li><a href="">3</a></li>
-										<li><a href="">4</a></li>
-										<li class="active"><a href="">5</a></li>
-										<li><a href="">6</a></li>
-										<li><a href="">7</a></li>
-										<li><a href="">8</a></li>
-										<li><a href="">9</a></li>
-										<li><a href="">10</a></li>
-										<li><a href="">▶</a></li>
-									</ul>
-
-									<div class="clear"></div>
-								</div>
 								<div id="row" class="searchBox">
 									<div class="col-xs-8"></div>
 									<div class="col-xs-2">
-										<input type="text" class="form-control formSearchBoard" placeholder="문의내역 검색" value="">
+										<input type="text" class="form-control formSearchBoard" placeholder="공연 검색창" value="">
 									</div>
 									<div class="col-xs-2">
 										<form class="">
-											<button type="submit" class="btn-primary formSearchBoardButton">검색</button>
+											<button type="submit" class="btn-primary formSearchBoardButton">공연 등록</button>
 										</form>
 									</div>
 
