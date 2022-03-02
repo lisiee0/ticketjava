@@ -1,10 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>    
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>TicketJava Standard layout include</title>
+<title>TicketJava 마이페이지 후기관리</title>
 
 <!-- 부트스트랩 Bootstrap core CSS -->
 <link href="assets/bootstrap/css/bootstrap.css" rel="stylesheet">
@@ -17,8 +18,6 @@
 <!-- 개인 css (폴더로 관리 권장 ex assets/css/mypage/ticketing.css) -->
 <link href="assets/css/mypage/ticketjavaMypageCommon.css" rel="stylesheet" type="text/css">
 <link href="assets/css/mypage/mypageUserReview.css" rel="stylesheet" type="text/css">
-
-
 
 </head>
 
