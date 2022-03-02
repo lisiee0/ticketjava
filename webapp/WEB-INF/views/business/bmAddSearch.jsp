@@ -11,8 +11,8 @@
 
 <!-- 개인 css -->
 
-<link href="${pageContext.request.contextPath}/assets/css/bmNewTab.css" rel="stylesheet">
-<link href="${pageContext.request.contextPath}/assets/css/bmAddSearch.css" rel="stylesheet">
+<link href="${pageContext.request.contextPath}/assets/css/bm/bmNewTab.css" rel="stylesheet">
+<link href="${pageContext.request.contextPath}/assets/css/bm/bmAddSearch.css" rel="stylesheet">
 
 </head>
 
