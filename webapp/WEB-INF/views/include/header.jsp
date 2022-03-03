@@ -24,6 +24,7 @@
 
 							<li><a href="#">로그인</a></li>
 							<li><a href="#">회원가입</a></li>
+							<li><a href="mypage/ticketingList">황10님 웰컴</a></li>
 						</ul>
 					</div>
 				</div>

@@ -1,11 +1,10 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>    
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>티켓자바 TicketJava 당신의 인생작을 티켓자바로 만나보세요! </title>
+<title>티켓자바 TicketJava 당신의 인생작을 티켓자바로 만나보세요!</title>
 
 <!-- 부트스트랩 Bootstrap core CSS -->
 <link href="assets/bootstrap/css/bootstrap.css" rel="stylesheet">
@@ -32,21 +31,21 @@
 		<div class="container-fluid zp">
 			<div class="container zp">
 
-						<div id="container" class="col-xs-12 clearfix zp no-drag no-ghost">
-							
-							<div id="index">
-								<h1>티켓자바 인덱스 페이지 제작중 커밍쑨</h1>
-								
-								<H3>아마도 동영상이 들어갈 자리 </H3>
-								
-								<H3>동적인 숫자가 효과가 들어갈 자리</H3>
-								
-								<H3>티켓자바 서비스에 대한 설명을 위한 자리</H3>
-								
-							</div>
-							<!-- //index -->
-						</div>
-						
+				<div id="container" class="col-xs-12 clearfix zp no-drag no-ghost">
+
+					<div id="index">
+						<h1>티켓자바 인덱스 페이지 제작중 커밍쑨</h1>
+
+						<H3>아마도 동영상이 들어갈 자리</H3>
+
+						<H3>동적인 숫자가 효과가 들어갈 자리</H3>
+
+						<H3>티켓자바 서비스에 대한 설명을 위한 자리</H3>
+
+					</div>
+					<!-- //index -->
+				</div>
+
 
 			</div>
 			<!-- container 종료 -->
