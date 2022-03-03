@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="admin">
 	
-	<insert id="theaterAdd" parameterType="AdminVo">
+	<insert id="theaterAdd" parameterType="TheaterVo">
 		<![CDATA[
 			insert into theater
 			values (seq_theater_no.nextval, #{theaterName}, #{postCode}, #{address}, #{address2}, '0', '0', #{phone}, #{homePage}, 'logo');		
