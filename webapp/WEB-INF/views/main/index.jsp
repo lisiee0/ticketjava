@@ -7,11 +7,11 @@
 <title>티켓자바 TicketJava 당신의 인생작을 티켓자바로 만나보세요!</title>
 
 <!-- 부트스트랩 Bootstrap core CSS -->
-<link href="assets/bootstrap/css/bootstrap.css" rel="stylesheet">
+<link href="${pageContext.request.contextPath}/assets/bootstrap/css/bootstrap.css" rel="stylesheet">
 
 <!-- 기본 css -->
-<link href="assets/css/ticketjavaCommon.css" rel="stylesheet" type="text/css">
-<link href="assets/css/ticketjavaCommonFooter.css" rel="stylesheet" type="text/css">
+<link href="${pageContext.request.contextPath}/assets/css/ticketjavaCommon.css" rel="stylesheet" type="text/css">
+<link href="${pageContext.request.contextPath}/assets/css/ticketjavaCommonFooter.css" rel="stylesheet" type="text/css">
 
 <!-- 개인 css (폴더로 관리 권장 ex assets/css/mypage/ticketing.css) -->
 <link href="" rel="stylesheet" type="text/css">
