@@ -39,5 +39,15 @@
 		]]>
 	</insert>
 	
+	<select id="selectAuthUser" parameterType="UserVo" resultType="UserVo">
+		<![CDATA[
+			select id,
+				   name
+			from users
+			where id = #{id} and
+				  password = #{password}	
+		]]>
+	</select>
+	
 	
 </mapper>

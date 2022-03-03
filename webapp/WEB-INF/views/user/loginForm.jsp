@@ -31,15 +31,17 @@
 				<div id="containerMain">
 					<div></div>
 					<div id="formArea">
-						<input class="form-control" type="text" placeholder="아이디">
-						<input class="form-control" type="password" placeholder="패스워드">
-						<button id="loginBtn" class="form-control btn-primary" type="button">로그인</button>
-						
+						<form action="${pageContext.request.contextPath}/user/login" action="post">
+							<input class="form-control" name="id" type="text" placeholder="아이디">
+							<input class="form-control" name="password" type="password" placeholder="패스워드">
+							<button id="loginBtn" class="form-control btn-primary" type="submit">로그인</button>
+						</form>	
 						<div id="helperArea">
 							<button class="form-control btn-default helper" type="button">아이디 찾기</button>
 							<button class="form-control btn-default helper" type="button">비밀번호 찾기</button>
 							<button id="lastBtn" class="form-control helper" type="button">회원가입</button>
 						</div>
+						
 					</div>
 					<div></div>
 				</div>

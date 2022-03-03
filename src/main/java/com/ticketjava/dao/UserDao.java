@@ -20,5 +20,9 @@ public class UserDao {
 		sqlSession.insert("user.insertBizman", userVo);
 		
 	}
+
+	public UserVo selectAuthUser(UserVo userVo) {
+		return sqlSession.selectOne("user.selectAuthUser", userVo);
+	}
 	
 }

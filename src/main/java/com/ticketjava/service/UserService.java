@@ -22,4 +22,8 @@ public class UserService {
 		
 	}
 
+	public UserVo getAuthUser(UserVo userVo) {
+		return userDao.selectAuthUser(userVo);
+	}
+
 }
