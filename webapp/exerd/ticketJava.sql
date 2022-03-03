@@ -153,6 +153,59 @@ ALTER TABLE hall
 			theater_no
 		);
 
+/* seat 테이블 *********************************************************************/		
+		
+
+/* 좌석 */
+DROP TABLE seat 
+	CASCADE CONSTRAINTS;
+
+/* 좌석 */
+CREATE TABLE seat (
+	seat_no NUMBER NOT NULL, /* 좌석번호 */
+	hall_no NUMBER, /* 시설번호 */
+	grade NUMBER, /* 등급 */
+	section NUMBER, /* 구역 */
+	col VARCHAR2(30), /* 열 */
+	num VARCHAR2(100), /* 번호 */
+	status NUMBER /* 상태(사용중) */
+);
+
+COMMENT ON TABLE seat IS '좌석';
+
+COMMENT ON COLUMN seat.seat_no IS '좌석번호';
+
+COMMENT ON COLUMN seat.hall_no IS '시설번호';
+
+COMMENT ON COLUMN seat.grade IS '등급';
+
+COMMENT ON COLUMN seat.section IS '구역';
+
+COMMENT ON COLUMN seat.col IS '열';
+
+COMMENT ON COLUMN seat.num IS '번호';
+
+COMMENT ON COLUMN seat.status IS '상태(사용중)';
+
+
+ALTER TABLE seat
+	ADD
+		CONSTRAINT PK_seat
+		PRIMARY KEY (
+			seat_no
+		);
+
+ALTER TABLE seat
+	ADD
+		CONSTRAINT FK_hall_TO_seat
+		FOREIGN KEY (
+			hall_no
+		)
+		REFERENCES hall (
+			hall_no
+		);
+
+
 /* product 테이블 *********************************************************************/
 		
 
@@ -572,57 +625,7 @@ ALTER TABLE qna
 		
 		
 		
-/* seat 테이블 *********************************************************************/		
-		
 
-/* 좌석 */
-DROP TABLE seat 
-	CASCADE CONSTRAINTS;
-
-/* 좌석 */
-CREATE TABLE seat (
-	seat_no NUMBER NOT NULL, /* 좌석번호 */
-	hall_no NUMBER, /* 시설번호 */
-	grade NUMBER, /* 등급 */
-	section NUMBER, /* 구역 */
-	col VARCHAR2(30), /* 열 */
-	num VARCHAR2(100), /* 번호 */
-	status NUMBER /* 상태(사용중) */
-);
-
-COMMENT ON TABLE seat IS '좌석';
-
-COMMENT ON COLUMN seat.seat_no IS '좌석번호';
-
-COMMENT ON COLUMN seat.hall_no IS '시설번호';
-
-COMMENT ON COLUMN seat.grade IS '등급';
-
-COMMENT ON COLUMN seat.section IS '구역';
-
-COMMENT ON COLUMN seat.col IS '열';
-
-COMMENT ON COLUMN seat.num IS '번호';
-
-COMMENT ON COLUMN seat.status IS '상태(사용중)';
-
-
-ALTER TABLE seat
-	ADD
-		CONSTRAINT PK_seat
-		PRIMARY KEY (
-			seat_no
-		);
-
-ALTER TABLE seat
-	ADD
-		CONSTRAINT FK_hall_TO_seat
-		FOREIGN KEY (
-			hall_no
-		)
-		REFERENCES hall (
-			hall_no
-		);
 		
 		
 		
