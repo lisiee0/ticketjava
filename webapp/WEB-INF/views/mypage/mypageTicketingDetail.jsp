@@ -19,77 +19,13 @@
 </head>
 
 
-<style>
-/* div 그리드 출력 (레이아웃 이해를 돕기 위한 코드) */
-div {
-	border: 0px solid black;
-}
-</style>
 <body>
 	<div id="wrap">
+
 		<!-- 헤더 header 구역 시작 (로그인 로고 검색창) -->
-		<div class="container-fluid zp">
-			<div class="container">
-				<div class="row">
-					<!-- 로그인 회원가입 그리드 시작 -->
-					<div class="col-xs-9" />
-					<div class="col-xs-3 zp">
-						<div id="header" class="clearfix no-drag no-ghost">
-							<ul>
-								<li><a href="#"> <img src="assets/image/index/bell-normal.png" /></li>
-								<li><a href="#"> <img src="assets/image/index/bell-new.png" /></li>
-								<li><a href="#">로그인</a></li>
-								<li><a href="#">회원가입</a></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				<!-- 로그인 회원가입 그리드 종료 -->
-			</div>
-			<!-- container 종료 -->
-			<div class="container">
-				<div class="row">
-					<!-- 로고 검색자리 그리드 시작 -->
-					<div class="col-xs-3 no-drag no-ghost" id="ticketJavaLogo">
-						<a href=""> <img src="assets/image/index/ticketjava_main_logo.png" />
-					</div>
-					<div class="col-xs-9" id="serachBar">
-						<form class="form-horizontal">
-							<input type="text" class="form-control dis vm" placeholder="내가 찾는 티켓은.." value="">
-							<button type="submit" class="btn btn-primary index-search">티켓잡으러검색</button>
-						</form>
-					</div>
-				</div>
-				<!-- 로고 검색자리 그리드 종료 -->
-			</div>
-			<!-- container 종료 -->
-		</div>
-		<!-- 헤더 구역 종료 (로그인 로고 검색창) -->
-		<!-- 네비바 구역 시작 -->
-		<div class="container-fluid zp navbox">
-			<div class="container nav">
-				<!-- 네비바 자리 그리드없음 중앙 정렬 1000px 파란색 줄 -->
-				<nav id="navnav" class="navbar navbar-expand-lg navbar-dark bg-primary btn-primary no-drag">
-					<div id="navbar" class="" role="navigation">
-						<ul class="clearfix">
-							<li class="nav-item"><a href="">뮤지컬</a></li>
-							<li class="nav-item"><a href="">연극</a></li>
-							<li class="nav-item"><a href="">콘서트</a></li>
-							<li class="nav-item"><a href="">스포츠</a></li>
-							<li class="nav-item"><a href="">전시</a></li>
-							<li class="nav-item"><a href=""> <span class="smallFont">공연장</span>
-							</a></li>
-							<li class="nav-item"><a href=""> <span class="smallFont">지역</span>
-							</a></li>
-							<li id="last-nav-item" class="nav-item"><a href=""> <span class="smallFont">랭킹</span>
-							</a></li>
-						</ul>
-					</div>
-				</nav>
-			</div>
-			<!-- container 종료 -->
-		</div>
+		<c:import url="/WEB-INF/views/include/header.jsp"></c:import>
 		<!-- 네비바 구역 종료 -->
+		
 		<!-- 컨텐츠 구역 시작 -->
 		<div class="container-fluid zp">
 			<div class="container zp">
@@ -239,55 +175,11 @@ div {
 			<!-- container 종료 -->
 		</div>
 		<!-- 컨텐츠 구역 종료 -->
+		
 		<!-- 푸터 구역 시작 -->
-		<div class="container-fluid zp footerbox">
-			<div class="container zp" id="footer">
-				<div class="footerLogo no-drag no-ghost">
-					<img src="assets/image/index/ticketjava_footer_logo.png">
-				</div>
-				<div class="footerTitle">
-					<h4>
-						프로젝트 티켓자바 : 글로벌IT 팀프로젝트 3조
-						</h3>
-						<h3>개발자 contacts</h3>
-				</div>
-				<div class="footerContacts form-horizontal">
-					<div class="form-group">
-						<label class="col-md-2 form-text text-large bold">08_홀수_서한규</label> <span class="col-md-2">| copymach</span> <span class="col-md-2">https://github.com/copymach</span> <span class="col-md-6" />
-					</div>
-					<div class="form-group">
-						<label class="col-md-2 form-text text-large bold">14_홀수_유호준</label> <span class="col-md-2">| lisiee0</span> <span class="col-md-2">https://github.com/lisiee0</span> <span class="col-md-6" />
-					</div>
-					<div class="form-group">
-						<label class="col-md-2 form-text text-large bold">20_홀수_이원준</label> <span class="col-md-2">| squirrelchipmunk</span> <span class="col-md-2">https://github.com/squirrelchipmunk</span> <span class="col-md-6" />
-					</div>
-					<div class="form-group">
-						<label class="col-md-2 form-text text-large bold">04_홀수_구민석</label> <span class="col-md-2">| 9Mzz</span> <span class="col-md-2">https://github.com/9Mzz</span> <span class="col-md-6" />
-					</div>
-				</div>
-				<div class="footerComments">
-					<table>
-						<tr>
-							<td>Own your Ticket!</td>
-						</tr>
-						<tr>
-							<td>We are glad to help getting The Ticket with The TicketJava.</td>
-						</tr>
-						<tr>
-							<td>Thank you for visit The TicketJava.</td>
-						</tr>
-						<tr>
-							<td>This Website had build by 4men with The Passion at 2022 Feb.</td>
-						</tr>
-						<tr>
-							<td>The TicketJava team has All of rights reserved.</td>
-						</tr>
-					</table>
-				</div>
-			</div>
-			<!-- 푸터 내용 종료 -->
-		</div>
+		<c:import url="/WEB-INF/views/include/footer.jsp"></c:import>
 		<!-- 푸터 구역 종료 -->
+		
 	</div>
 	<!-- wrap 종료 -->
 </body>
