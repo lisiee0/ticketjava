@@ -13,6 +13,11 @@ public class AdminService {
 	private TheaterDao td;
 	
 	public void theaterAdd(TheaterVo vo) {
+		vo.setLatitude("123.123");
+		vo.setLongitude("123.123");
+		vo.setLogoPath("logopath");
+		
+		System.out.println(vo);
 		td.theaterAdd(vo);
 	}
 

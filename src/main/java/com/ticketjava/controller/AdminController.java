@@ -23,23 +23,23 @@ public class AdminController {
 	}
 	
 	@RequestMapping("/theaterAddpage")
-	public String TheaterAddpage() {
-		System.out.println("adminController/TheaterAddpage()");
+	public String theaterAddpage() {
+		System.out.println("adminController/theaterAddpage()");
 		
 		return "admin/adminTheaterAdd";
 	}
 	
 	@RequestMapping("/theaterAdd")
-	public String TheaterAdd(@ModelAttribute TheaterVo vo) {
-		System.out.println("adminController/TheaterAdd()");
+	public String theaterAdd(@ModelAttribute TheaterVo vo) {
+		System.out.println("adminController/theaterAdd()");
 		
 		adminService.theaterAdd(vo);
 		System.out.println("add complete");
 		return "admin/adminTheaterAdd";
 	}
 	
-	@RequestMapping("/TheaterModify")
-	public String TheaterModify() {
+	@RequestMapping("/theaterModify")
+	public String theaterModify() {
 		System.out.println("adminController/TheaterModify()");
 		
 		return "admin/adminTheaterModify";

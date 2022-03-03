@@ -5,7 +5,7 @@
 	<insert id="theaterAdd" parameterType="TheaterVo">
 		<![CDATA[
 			insert into theater
-			values (seq_theater_no.nextval, #{theaterName}, #{postCode}, #{address}, #{address2}, '0', '0', #{phone}, #{homePage}, 'logo');		
+			values (seq_theater_no.nextval, #{theaterName}, #{postCode}, #{address}, #{address2}, #{latitude}, #{longitude}, #{phone}, #{homePage}, #{logoPath})	
 		]]>
 	</insert>
 	
