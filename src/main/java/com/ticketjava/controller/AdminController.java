@@ -32,8 +32,11 @@ public class AdminController {
 	@RequestMapping("/theaterAdd")
 	public String theaterAdd(@ModelAttribute TheaterVo vo) {
 		System.out.println("adminController/theaterAdd()");
-		
+		System.out.println(vo);
+		System.out.println(vo.getHallName());
 		adminService.theaterAdd(vo);
+		
+		
 		System.out.println("add complete");
 		return "admin/adminTheaterAdd";
 	}

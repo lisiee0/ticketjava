@@ -18,6 +18,7 @@
 <link href="${pageContext.request.contextPath}/assets/css/indcom.css" rel="stylesheet">
 <link href="${pageContext.request.contextPath}/assets/css/admin/admin.css" rel="stylesheet">
 
+<script type="text/javascript" src="${pageContext.request.contextPath}/assets/jquery/jquery-1.12.4.js"></script>
 </head>
 
 <body>
@@ -57,7 +58,7 @@
 						<div class="col-xs-12 np">
 							<div id="board">
 							
-								<form action="${pageContext.request.contextPath}/admin/theaterAdd" method="get" class="form-horizontal">
+								<form action="${pageContext.request.contextPath}/admin/theaterAdd" method="post" class="form-horizontal">
 	
 	   								<!-- 공연장명 -->
 									<div class="form-group">
@@ -69,20 +70,21 @@
 									    <div class="col-xs-2"></div>
 									</div>
 	
-<!-- 	   								시설명
+   									<!-- 시설명 -->
 									<div class="form-group">
 										<div class="col-xs-2"></div>
 									    <label class="form-text col-xs-2" for="">시설명</label>
 									    <div class="col-xs-6">
-									    	+ 누르면 반복
-									    	<input type="text" class="form-control formZipcode" name="hallName" placeholder="시설명">&nbsp;
-									    	<br>
 									    	
-									    	<input type="text" class="form-control formZipcode" name="" placeholder="시설명">&nbsp;
-									    	<span class="glyphicon glyphicon-plus"></span>
+								    		<input type="text" class="form-control formZipcode" name="hallName" placeholder="시설명">&nbsp;
+								    		<span id="add-hallName" class="glyphicon glyphicon-plus"></span><br>
+									    	<!-- + 누르면 반복 -->
+									    	<div id="hallNameArea">
+									    	</div>
+
 									    </div>
 									    <div class="col-xs-2"></div>
-									</div> -->
+									</div>
 
 								
 									<!-- 공연장 주소 -->
@@ -153,5 +155,20 @@
 	<!-- //wrap -->
 
 </body>
+
+
+<script>
+
+// 시설명+ 버튼 클릭할때
+$("#add-hallName").on("click", function() {
+	$("#hallNameArea").append('<input type="text" class="form-control formZipcode" name="hallName" placeholder="시설명"><br>');
+});
+
+
+
+</script>
+
+
+
 
 </html>

@@ -14,6 +14,6 @@ public class TheaterDao {
 	
 	
 	public void theaterAdd(TheaterVo vo) {
-		sqlsession.insert("admin.theaterAdd", vo);
+		sqlsession.insert("theater.theaterAdd", vo);
 	}
 }
