@@ -11,7 +11,7 @@ public class UserVo {
 	private String address;
 	private String address2;
 	private String email;
-	private String usertype;
+	private int usertype;
 	private String joindate;
 	private String bizno;
 	private String salt;
@@ -20,7 +20,7 @@ public class UserVo {
 	}
 
 	public UserVo(int userNo, String id, String password, String name, String phone, String postcode, String address,
-			String address2, String email, String usertype, String joindate, String bizno, String salt) {
+			String address2, String email, int usertype, String joindate, String bizno, String salt) {
 		this.userNo = userNo;
 		this.id = id;
 		this.password = password;
@@ -108,11 +108,11 @@ public class UserVo {
 		this.email = email;
 	}
 
-	public String getUsertype() {
+	public int getUsertype() {
 		return usertype;
 	}
 
-	public void setUsertype(String usertype) {
+	public void setUsertype(int usertype) {
 		this.usertype = usertype;
 	}
 

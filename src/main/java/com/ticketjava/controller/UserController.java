@@ -29,8 +29,10 @@ public class UserController {
 	
 	@RequestMapping("/join")
 	public String join(@ModelAttribute UserVo userVo) {
+		System.out.println("join()");
+		
 		userService.join(userVo);
-		return "user/joinForm";
+		return "redirect:loginForm";
 	}
 	
 	

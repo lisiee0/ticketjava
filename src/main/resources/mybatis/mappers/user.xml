@@ -2,5 +2,42 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="user">
 	
+	<insert id="insertPersonal" parameterType="UserVo" >
+		<![CDATA[
+			insert into users (user_no, id, password, name, phone, postcode, address, address2, email, usertype, joindate)
+			values(seq_user_no.nextval,
+				   #{id},
+				   #{password},
+				   #{name},
+				   #{phone},
+				   #{postcode},
+				   #{address},
+				   #{address2},
+				   #{email},
+				   #{usertype},
+				   sysdate
+			)
+		]]>
+	</insert>
+	
+	<insert id="insertBizman" parameterType="UserVo" >
+		<![CDATA[
+			insert into users (user_no, id, password, name, phone, postcode, address, address2, email, usertype, joindate, bizno)
+			values(seq_user_no.nextval,
+				   #{id},
+				   #{password},
+				   #{name},
+				   #{phone},
+				   #{postcode},
+				   #{address},
+				   #{address2},
+				   #{email},
+				   #{usertype},
+				   sysdate,
+				   #{bizno}
+			)
+		]]>
+	</insert>
+	
 	
 </mapper>

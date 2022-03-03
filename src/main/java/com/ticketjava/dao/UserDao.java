@@ -12,8 +12,13 @@ public class UserDao {
 	@Autowired
 	private SqlSession sqlSession;
 	
-	public void insert(UserVo userVo) {
-		sqlSession.insert("user.insert", userVo);
+	public void insertPersonal(UserVo userVo) {
+		sqlSession.insert("user.insertPersonal", userVo);
+	}
+
+	public void insertBizman(UserVo userVo) {
+		sqlSession.insert("user.insertBizman", userVo);
+		
 	}
 	
 }

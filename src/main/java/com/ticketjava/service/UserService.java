@@ -13,7 +13,12 @@ public class UserService {
 	private UserDao userDao;
 	
 	public void join(UserVo userVo) {
-		userDao.insert(userVo);
+		
+		if (userVo.getUsertype() == 1)
+			userDao.insertPersonal(userVo);
+		else { // == 2
+			userDao.insertBizman(userVo);
+		}
 		
 	}
 
