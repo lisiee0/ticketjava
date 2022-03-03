@@ -40,7 +40,7 @@
 			
 				<!-- 로고 검색자리 그리드 시작 -->
 				<div class="col-xs-3 no-drag no-ghost" id="ticketJavaLogo">
-					<a href=""><img src="${pageContext.request.contextPath}/assets/image/index/ticketjava_main_logo.png"></a>
+					<a href="http://localhost:8088/ticketjava/"><img src="${pageContext.request.contextPath}/assets/image/index/ticketjava_main_logo.png"></a>
 				</div>
 				<div class="col-xs-9" id="serachBar">
 					<form class="form-horizontal">
