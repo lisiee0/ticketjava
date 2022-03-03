@@ -135,11 +135,13 @@ COMMENT ON COLUMN hall.theater_no IS '공연장번호';
 
 COMMENT ON COLUMN hall.hallname IS '시설명';
 
-CREATE UNIQUE INDEX PK_hall
-	ON hall (
-		hall_no ASC
-	);
 
+ALTER TABLE hall
+	ADD
+		CONSTRAINT PK_hall
+		PRIMARY KEY (
+			hall_no
+		);
 
 ALTER TABLE hall
 	ADD
