@@ -49,7 +49,8 @@
 						<div class="col-xs-12 np">
 							<h3 class="pageMenu adminsection">공연장 목록</h3>
 
-							<button type="button" class="btn btn-primary position">공연장 등록</button>
+							<a href="${pageContext.request.contextPath}/admin/theaterAddpage" class="btn btn-primary position">공연장 등록</a>
+
 						</div>
 						<!-- //content-head -->
 				
