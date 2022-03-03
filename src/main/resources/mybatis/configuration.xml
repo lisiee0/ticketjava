@@ -2,8 +2,17 @@
 <!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
 	<typeAliases>
+		<typeAlias alias="ReservationVo" type="com.ticketjava.vo.ReservationVo" />
+		<typeAlias alias="UserVo" type="com.ticketjava.vo.UserVo" />
+		<typeAlias alias="BusinessVo" type="com.ticketjava.vo.BusinessVo" />
+		<typeAlias alias="AdminVo" type="com.ticketjava.vo.AdminVo" />
+		<typeAlias alias="MypageVo" type="com.ticketjava.vo.MypageVo" />
 	</typeAliases>
 	<mappers>
 		<mapper resource="mybatis/mappers/reservation.xml" />
+		<mapper resource="mybatis/mappers/user.xml" />
+		<mapper resource="mybatis/mappers/business.xml" />
+		<mapper resource="mybatis/mappers/admin.xml" />
+		<mapper resource="mybatis/mappers/mypage.xml" />
 	</mappers>
 </configuration>
