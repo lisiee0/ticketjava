@@ -23,8 +23,8 @@
 	<!--oracle datasource -->
 	<bean id="oracleDatasource" class="oracle.jdbc.pool.OracleDataSource" destroy-method="close">
 		<property name="URL" value="jdbc:oracle:thin:@localhost:1521:xe" />
-		<property name="user" value="jblog" />
-		<property name="password" value="jblog" />
+		<property name="user" value="ticketjava" />
+		<property name="password" value="ticketjava" />
 		<property name="connectionCachingEnabled" value="true" />
 		<qualifier value="main-db" />
 	</bean>
