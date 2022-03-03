@@ -1,4 +1,4 @@
-package com.tricketjava.service;
+package com.ticketjava.service;
 
 public class BusinessService {
 
