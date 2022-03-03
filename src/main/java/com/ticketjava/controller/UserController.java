@@ -29,7 +29,7 @@ public class UserController {
 		if(authUser != null) {
 			model.addAttribute("authUser", authUser);
 		}
-		return "redirect:/search";
+		return "redirect:/";
 	}
 	
 	
@@ -43,7 +43,7 @@ public class UserController {
 		System.out.println("join()");
 		
 		userService.join(userVo);
-		return "redirect:loginForm";
+		return "redirect:/";
 	}
 	
 	
