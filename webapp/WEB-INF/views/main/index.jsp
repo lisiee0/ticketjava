@@ -13,8 +13,8 @@
 <link href="${pageContext.request.contextPath}/assets/css/ticketjavaCommon.css" rel="stylesheet" type="text/css">
 <link href="${pageContext.request.contextPath}/assets/css/ticketjavaCommonFooter.css" rel="stylesheet" type="text/css">
 
-<!-- 개인 css (폴더로 관리 권장 ex assets/css/mypage/ticketing.css) -->
-<link href="" rel="stylesheet" type="text/css">
+<!-- 메인페이지 디자인 css  -->
+<link href="assets/css/ticketjavaIndexDesign.css" rel="stylesheet" type="text/css">
 
 </head>
 
@@ -29,26 +29,32 @@
 
 		<!-- 컨텐츠 구역 시작 -->
 		<div class="container-fluid zp">
-			<div class="container zp">
-
-				<div id="container" class="col-xs-12 clearfix zp no-drag no-ghost">
-
-					<div id="index">
-						<h1>티켓자바 인덱스 페이지 제작중 커밍쑨</h1>
-
-						<H3>아마도 동영상이 들어갈 자리</H3>
-
-						<H3>동적인 숫자가 효과가 들어갈 자리</H3>
-
-						<H3>티켓자바 서비스에 대한 설명을 위한 자리</H3>
-
-					</div>
-					<!-- //index -->
-				</div>
 
 
+			<!-- 영상 재생 -->
+			<div class="mainVideo">
+				<!-- 영상재생이 안될때 대신 보여주는 이미지 -->
+				<img src="assets/image/index/thumbnail_ticketjava_desktop.png">
+				<video loop="" muted="" autoplay="" playsinline="" webkit-playsinline="true">
+					<source type="video/mp4" src="assets/video/video_index.mp4">
+				</video>
 			</div>
-			<!-- container 종료 -->
+
+			<!-- 영상 코멘트 및 버튼 -->
+			<div class="mainVideoOverlay">
+				<div class="mainVideoComment">
+					<h1>
+						당신의 인생작품을<br>놓치지 마세요
+					</h1>
+				</div>
+				<div class="mainVideoButton">
+					<p>
+						<a href="#">예매하러가기</a>
+					</p>
+				</div>
+			</div>
+
+
 		</div>
 		<!-- 컨텐츠 구역 종료 -->
 

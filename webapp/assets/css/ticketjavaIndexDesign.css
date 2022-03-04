@@ -1,0 +1,43 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
+
+
+/* 메인 비디오 제어 */
+.mainVideo {
+	display: flex; justify-content: center; align-items: center; width: 100%; height: 770px; background: #F7F8FA; position: relative;
+}
+
+.mainVideo img {
+	width: 100%; height: 770px; object-fit: cover; position: absolute; top: 0; left: 0;
+}
+
+.mainVideo video{
+	display: flex; object-fit: cover; width: 100%; height: 770px; z-index: 10	
+}
+
+
+/* 메인 비디오 코멘트 제어 */
+.mainVideoOverlay {
+	display: flex; flex-direction: column; align-self: center; position: absolute; top: 434px; left: 0; right: 0; margin: 0px auto; width: 1440px; z-index: 20;
+}
+
+.mainVideoComment {
+	min-width: 1440px; margin-left: 220px;
+}
+
+.mainVideoComment h1 {	
+	display: flex; flex-direction: column; align-self: flex-start; font-weight: 600; letter-spacing: 0.2px; font-size: 67px; line-height: 87px; color: white;
+}
+
+.mainVideoButton {
+	display: flex; cursor: pointer; align-items: center; justify-content: center; width: 190px; height: 70px; margin-top: 60px; margin-left: 220px; border-radius: 5px; background: #6A92FE;
+}
+
+.mainVideoButton p {
+	font-weight: 600; letter-spacing: -0.2px; font-size: 21px; line-height: 48px; color: #FFFFFF;
+}
+
+.mainVideoButton p>a {
+	color:white; text-decoration:none;
+}
+
