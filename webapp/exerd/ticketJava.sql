@@ -164,10 +164,10 @@ DROP TABLE seat
 CREATE TABLE seat (
 	seat_no NUMBER NOT NULL, /* 좌석번호 */
 	hall_no NUMBER, /* 시설번호 */
-	grade NUMBER, /* 등급 */
-	section NUMBER, /* 구역 */
-	col VARCHAR2(30), /* 열 */
-	num VARCHAR2(100), /* 번호 */
+	grade VARCHAR2(10), /* 등급 */
+	section VARCHAR2(10), /* 구역 */
+	col NUMBER, /* 열 */
+	num NUMBER, /* 번호 */
 	status NUMBER /* 상태(사용중) */
 );
 
@@ -756,8 +756,8 @@ CREATE TABLE selseat (
 	selseat_no NUMBER NOT NULL, /* 선택좌석 번호 */
 	rez_no NUMBER NOT NULL, /* 예매번호 */
 	dc_no NUMBER, /* 할인 번호 */
-	grade NUMBER, /* 좌석등급 */
-	section NUMBER, /* 구역 */
+	grade VARCHAR2(10), /* 좌석등급 */
+	section VARCHAR2(10), /* 구역 */
 	col NUMBER, /* 열 */
 	num NUMBER, /* 번호 */
 	payment NUMBER, /* 결제금액 */
