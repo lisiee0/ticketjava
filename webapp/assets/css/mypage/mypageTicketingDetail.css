@@ -4,7 +4,7 @@
 
 /* 컨텐츠 영역 정렬 마진 */
 .ticketingDetail {
-	margin: 0px 0px 0px 0px;
+	margin: 20px 0px 0px 0px; 
 }
 
 /* 섹션 제목 */
@@ -17,7 +17,8 @@ h4 {
 /* 티켓 제목 */
 h5 {
 	font-size: 18px;
-	margin:40px 0px 20px 0px;
+	margin:0px 0px 20px 0px;
+	padding: 50px 0px 0px 0px;
 	text-align:center;
 }
 

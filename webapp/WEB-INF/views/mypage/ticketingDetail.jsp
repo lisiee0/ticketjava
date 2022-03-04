@@ -53,7 +53,7 @@
 										<li class="last">예매내역/취소</li>
 									</ul>
 								</div>
-								<div class="clear" />
+								<div class="clear">
 							</div>
 							<!-- //content-head -->
 							<!-- content body -->

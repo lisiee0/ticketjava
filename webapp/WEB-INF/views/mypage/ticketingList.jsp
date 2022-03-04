@@ -111,6 +111,39 @@
 											</tr>
 										</tbody>
 									</table>
+									
+									
+									
+								<div id="paging">
+									<ul>
+										<li><a href="">◀</a></li>
+										<li><a href="">1</a></li>
+										<li><a href="">2</a></li>
+										<li><a href="">3</a></li>
+										<li><a href="">4</a></li>
+										<li class="active"><a href="">5</a></li>
+										<li><a href="">6</a></li>
+										<li><a href="">7</a></li>
+										<li><a href="">8</a></li>
+										<li><a href="">9</a></li>
+										<li><a href="">10</a></li>
+										<li><a href="">▶</a></li>
+									</ul>
+
+									<div class="clear"></div>
+								</div>
+								<div id="row" class="searchBox">
+									<div class="col-xs-8"></div>
+									<div class="col-xs-2">
+										<input type="text" class="form-control formSearchBoard" placeholder="문의내역 검색" value="">
+									</div>
+									<div class="col-xs-2">
+										<form class="">
+											<button type="submit" class="btn-primary formSearchBoardButton">검색</button>
+										</form>
+									</div>
+									
+									
 								</div>
 							</div>
 							<!-- //content body -->
