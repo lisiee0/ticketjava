@@ -40,13 +40,18 @@ public class ReservationService {
 			int num = Integer.parseInt(arr[3]);
 			
 			SelseatVo selseatVo = new SelseatVo();
+			selseatVo.setRezNo(reservationVo.getRezNo());
 			selseatVo.setGrade(grade);
 			selseatVo.setSection(section);
 			selseatVo.setCol(col);
 			selseatVo.setNum(num);
 			
 			selseatDao.insertPre(selseatVo);
+			selseatNoList.add(selseatVo.getSelseatNo());
 		}
+		map.put("selseatNoList", selseatNoList);
+		
+		System.out.println(map);
 	}
 	
 	

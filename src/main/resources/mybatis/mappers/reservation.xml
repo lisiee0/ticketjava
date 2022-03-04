@@ -4,7 +4,7 @@
 	
 	<insert id="insertPre" parameterType="ReservationVo">
 	    <selectKey resultType="int" keyProperty="rezNo" order="BEFORE">
-	        SELECT seq_rez_no.nextval FROM dual;       
+	        SELECT seq_rez_no.nextval FROM dual       
 	    </selectKey>    
 	    
 	    INSERT INTO reserve( rez_no , status)
