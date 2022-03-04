@@ -19,19 +19,24 @@ public class BusinessController {
 	// 공연 목록
 	@RequestMapping("/")
 	public String bmInquiry(Model model) {
-
+		System.out.println("BusinessController/bmInquiry");
+		
+		
 		return "business/bmInquiry";
 	}
 
 	// 공연 추가
 	@RequestMapping("/bmAdd")
 	public String bmAdd(@ModelAttribute BusinessVo businessVo) {
+		System.out.println("BusinessController/bmAdd");
+		
 		return "business/bmAdd";
 	}
 
 	//공연 검색
 	@RequestMapping("/bmAddSearch")
 	public String bmAddSearch() {
+		System.out.println("BusinessController/bmAddSearch");
 
 		return "business/bmAddSearch";
 	}
@@ -39,6 +44,7 @@ public class BusinessController {
 	//공연 할인정보 추가
 	@RequestMapping("/bmDisAdd")
 	public String bmDisAdd() {
+		System.out.println("BusinessController/bmDisAdd");
 
 		return "business/bmDisAdd";
 	}
@@ -46,6 +52,7 @@ public class BusinessController {
 	//문의내역 관리
 	@RequestMapping("/bmManage")
 	public String bmManage() {
+		System.out.println("BusinessController/bmManage");
 
 		return "business/bmManage";
 	}
