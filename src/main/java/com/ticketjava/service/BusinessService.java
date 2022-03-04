@@ -7,13 +7,13 @@ import com.ticketjava.dao.BusinessDao;
 import com.ticketjava.vo.BusinessVo;
 
 @Service
-public class BusinessService  {
+public class BusinessService {
 
 	@Autowired
 	private BusinessDao businessDao;
-	
-//	public void bmAdd(BusinessVo businessVo) {
-//		businessDao.insert(businessVo);
-//	}
+
+	public void bmAdd(BusinessVo businessVo) {
+		businessDao.insert(businessVo);
+	}
 
 }
