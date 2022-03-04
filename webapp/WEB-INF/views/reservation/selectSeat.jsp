@@ -48,17 +48,8 @@
 				
 				<div id="seatPlanDiv">
 					<div id="stageArea">stage</div>
-					<table>
-						<tbody id="seatArea">
-							
-						</tbody>
-					</table>
+					
 				</div>
-				<div style="position:relative; top:-10px; left:300px;">
-					A
-				</div>
-				
-				
 				
 			</div>
 		</div>
@@ -117,25 +108,64 @@
 							<col style="width:28%">
 							<col style="">
 						</colgroup>
-						<tr>
+						<!-- <tr>
 							<td>VIP석</td>
 							<td id="right">A구역 1열 4번</td>
-						</tr>
-						<tr>
-							<td>S석</td>
-							<td id="right">B구역 4열 12번</td>
-						</tr>
+						</tr> -->
+						
 					</table>
+					
 				</div>
 			</div>
 			
 			<div id="button">
-				<button class="btn-primary" type="button" id="nextBtn" class="btn">다음단계 </button> 
+				
+				<form id="seatForm" action="${pageContext.request.contextPath}/reservation/selectQuantity" method="post">
+				
+					<button class="btn-primary" type="submit" id="nextBtn" class="btn">다음단계 </button>
+				</form>
 				<button class="btn-default">취소표 알림</button>
 			</div>
 		</div>
 	</div>
 </body>
 
+<script type="text/javascript">
+	
+$('#seatPlanDiv').on('change','table td input[type=checkbox]' ,function(){
+	if(this.checked){
+		var grade= $(this).attr("class");
+		if(grade == 'v')
+			grade = "vip";
+		var section = $(this).attr('data-section');
+		var col =  $(this).attr('data-col');
+		var num = $(this).attr('data-num');
+		
+		
+		
+		$('#choiceTable table').append(
+				'<tr id="tr'+$(this).attr('id')+'"><td>'+grade.toUpperCase()+
+				'석</td><td id="right">'+section+'구역 '+col+'열 '+num+'번</td></tr>'
+		);
+		
+		$('#seatForm').append(
+				'<input id="sel'+$(this).attr('id')+'" type="hidden" name="sel" value="'+grade+','+section+','+col+','+num+'">');
+	}
+});
+
+
+$('#seatPlanDiv').on('change','table td input[type=checkbox]' ,function(){
+	if(! this.checked){
+		$('#tr'+$(this).attr('id')).remove();
+		$('#sel'+$(this).attr('id')).remove();
+	}
+	
+	
+});
+
+
+
+
+</script>
 
 </html>

@@ -2,6 +2,7 @@ package com.ticketjava.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 @RequestMapping("/reservation")
@@ -13,7 +14,9 @@ public class ReservationController {
 	}
 	
 	@RequestMapping("/selectQuantity")
-	public String selectQuantity() {
+	public String selectQuantity(@RequestParam("sel") String[] sel) {
+		
+		
 		return "reservation/selectQuantity";
 	}
 	
