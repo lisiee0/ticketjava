@@ -3,7 +3,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>헤더</title>
+<title>티켓자바 헤더</title>
 <link href="${pageContext.request.contextPath}/assets/css/ticketjavaCommon.css" rel="stylesheet" type="text/css">
 </head>
 <body>
@@ -18,8 +18,8 @@
 					<div class="col-xs-3 zp">
 						<div id="header" class="clearfix no-drag no-ghost">
 							<ul>
-								<li><a href="#"><img src="assets/image/index/bell-normal.png"></a></li>
-								<li><a href="#"><img src="assets/image/index/bell-new.png"></a></li>
+								<li><a href="${pageContext.request.contextPath}/mypage/ticketingList"><img src="${pageContext.request.contextPath}/assets/image/index/bell-normal.png"></a></li>
+								<li><a href="${pageContext.request.contextPath}/mypage/ticketingList"><img src="${pageContext.request.contextPath}/assets/image/index/bell-new.png"></a></li>
 
 								<li><a href="#">로그인</a></li>
 								<li><a href="#">회원가입</a></li>
@@ -38,7 +38,7 @@
 				
 					<!-- 로고 검색자리 그리드 시작 -->
 					<div class="col-xs-3 no-drag no-ghost" id="ticketJavaLogo">
-						<a href=""><img src="assets/image/index/ticketjava_main_logo.png"></a>
+						<a href="http://localhost:8088/ticketjava/"><img src="${pageContext.request.contextPath}/assets/image/index/ticketjava_main_logo.png"></a>
 					</div>
 					<div class="col-xs-9" id="serachBar">
 						<form class="form-horizontal">

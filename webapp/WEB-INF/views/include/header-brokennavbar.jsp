@@ -29,11 +29,11 @@
 				</div>
 			</div>
 			<!-- 로그인 회원가입 그리드 종료 -->
-
+		
 		</div>
 		<!-- container 종료 -->
-
-
+		
+		
 		<div class="container">
 			<div class="row">
 
