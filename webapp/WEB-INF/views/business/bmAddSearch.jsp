@@ -40,7 +40,7 @@
 					</colgroup>
 
 					<tr>
-						<th id="tdwhere">세종문화회관 1관</th>
+						<th id="tdwhere" name="theaterName">세종문화회관 1관</th>
 						<td>
 							<button class="btn-primary">선택</button>
 						</td>
@@ -54,27 +54,15 @@
 					</colgroup>
 
 					<tr>
-						<th id="tdwhere">세종문화회관 2관</th>
+						<th id="tdwhere" name="theaterName">세종문화회관 2관</th>
 						<td>
 							<button class="btn-primary">선택</button>
 						</td>
 					</tr>
 
 				</table>
-				<table>
-					<colgroup>
-						<col style="width: 83%">
-						<col style="width: 17%">
-					</colgroup>
 
-					<tr>
-						<th id="tdwhere">세종문화회관 3관</th>
-						<td>
-							<button class="btn-primary">선택</button>
-						</td>
-					</tr>
-
-				</table>
+				
 				<table>
 					<colgroup>
 						<col style="width: 83%">
