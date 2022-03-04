@@ -10,4 +10,22 @@
 	</insert>
 	
 	
+	<select id="getHallList" resultType="HallVo">
+		<![CDATA[
+			select			t.theater_no theaterNo, 
+							theatername, 
+							postcode, 
+							address, 
+							address2, 
+							phone, 
+							homepage, 
+							logopath, 
+							hallname, 
+							hall_no hallNo
+			from 			theater t, hall h
+			where 			t.theater_no= h.theater_no
+			order by 		theaterNo desc, hall_no desc
+		]]>
+	</select>
+	
 </mapper>

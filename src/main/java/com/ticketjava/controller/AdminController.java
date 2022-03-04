@@ -16,33 +16,33 @@ public class AdminController {
 	@Autowired
 	private AdminService adminService;
 	
+	// 관리자 페이지 main - 등록된 공연장 리스트 불러오기
 	@RequestMapping("/")
 	public String admin(Model model) {
-		System.out.println("adminController/admin()");
 
-		model.addAttribute("tList", adminService.getList());
-		
+		model.addAttribute("hallList", adminService.getList());
 		return "admin/adminTheaterList";
 	}
 	
+	
+	// 공연장 등록양식 불러오기
 	@RequestMapping("/theaterAddpage")
 	public String theaterAddpage() {
-		System.out.println("adminController/theaterAddpage()");
 		
 		return "admin/adminTheaterAdd";
 	}
 	
+	
+	// 공연장 등록
 	@RequestMapping("/theaterAdd")
 	public String theaterAdd(@ModelAttribute TheaterVo vo) {
-		System.out.println("adminController/theaterAdd()");
-		
+
 		adminService.theaterAdd(vo);
-		
-		
-		
-		return "admin/adminTheaterList";
+		return "redirect:/admin/";
 	}
 	
+	
+	// 공연장 수정
 	@RequestMapping("/theaterModify")
 	public String theaterModify() {
 		System.out.println("adminController/TheaterModify()");
@@ -50,24 +50,35 @@ public class AdminController {
 		return "admin/adminTheaterModify";
 	}
 	
-	@RequestMapping("/TheaterNoticeList")
+	
+	public String theaterDelete() {
+		System.out.println("adminController/TheaterDelete()");
+		
+		return "";
+	}
+	
+	/*
+	@RequestMapping("/adminNoticeList")
 	public String TheaterNoticeList() {
 		System.out.println("adminController/TheaterNoticeList()");
 		
 		return "admin/adminNoticeList";
 	}
 	
-	@RequestMapping("/TheaterNoticeAdd")
+	
+	@RequestMapping("/adminNoticeAdd")
 	public String TheaterNoticeAdd() {
 		System.out.println("adminController/TheaterNoticeAdd()");
 		
 		return "admin/adminNoticeAdd";
 	}
 	
-	@RequestMapping("/TheaterNoticeModify")
+	
+	@RequestMapping("/adminNoticeModify")
 	public String TheaterNoticeModify() {
 		System.out.println("adminController/TheaterNoticeModify()");
 		
 		return "admin/adminNoticeModify";
 	}
+	*/
 }

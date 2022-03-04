@@ -33,7 +33,7 @@
 	</select>
 	
 	
-	<select id="getList" resultType="TheaterVo">
+	<select id="getTheaterList" resultType="TheaterVo">
 		<![CDATA[
 			select			t.theater_no theaterNo,
 							theaterName,

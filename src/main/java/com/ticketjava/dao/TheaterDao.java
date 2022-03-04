@@ -25,7 +25,7 @@ public class TheaterDao {
 	}
 	
 	
-	public List<TheaterVo> getList() {
+	public List<TheaterVo> getTheaterList() {
 		return sqlsession.selectList("theater.getList");
 		
 	}

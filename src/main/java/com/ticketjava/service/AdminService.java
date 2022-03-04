@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.ticketjava.dao.HallDao;
 import com.ticketjava.dao.TheaterDao;
+import com.ticketjava.vo.HallVo;
 import com.ticketjava.vo.TheaterVo;
 
 @Service
@@ -40,8 +41,8 @@ public class AdminService {
 		}	
 	}
 	
-	public List<TheaterVo> getList() {
-		return td.getList();
+	public List<HallVo> getList() {
+		return hd.getHallList();
 	}
 
 

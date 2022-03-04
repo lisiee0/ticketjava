@@ -56,7 +56,7 @@
 				
 						<!-- content body -->
 						<div id="list">
-							<table class="table listTable">
+							<table class="table listTable table-hover">
 								<thead>
 									<tr class="info">
 										<th>공연장명</th>
@@ -68,7 +68,7 @@
 									</tr>
 								</thead>
 								<tbody id="tList">
-									<c:forEach items="${tList}" var="vo">
+									<c:forEach items="${hallList}" var="vo">
 										<tr>
 											<td>${vo.theaterName}</td>
 											<td>${vo.hallName}</td>
@@ -76,8 +76,8 @@
 											<td>${vo.phone}</td>
 											<td>${vo.homePage}</td>
 											<td>
-												<span class="glyphicon glyphicon-pencil">수정</span>&nbsp;&nbsp;
-												<span class="glyphicon glyphicon-trash">삭제</span>
+												<a href="${pageContext.request.contextPath}/admin/theaterModify?hallNo=${vo.hallNo}"><span class="glyphicon glyphicon-pencil">수정</span></a>&nbsp;&nbsp;
+												<a href="${pageContext.request.contextPath}/admin/theaterDelete?hallNo=${vo.hallNo}"><span class="glyphicon glyphicon-trash">삭제</span></a>
 											</td>
 										</tr>
 									</c:forEach>
