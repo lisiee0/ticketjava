@@ -33,10 +33,7 @@
 		<div class="container-fluid zp">
 			<div class="container zp">
 
-
 				<!-- .col-xs-2 어사이드 자리 시작 -->
-
-
 				<!-- aside -->
 				<div id="container" class="col-xs-2 clearfix zp no-drag no-ghost">
 					<div id="aside">
@@ -90,6 +87,7 @@
 										<col style="">
 										<col style="">
 										<col style="">
+										<col style="width: 15%">
 										<col style="width: 7%;">
 										<col style="width: 7%;">
 									</colgroup>
@@ -100,35 +98,23 @@
 											<th>공연장</th>
 											<th>공연 기간</th>
 											<th>공연 노출</th>
-											<th>할인</th>
+											<th>할인 정보</th>
 											<th>수정</th>
 											<th>삭제</th>
 										</tr>
 									</thead>
 									<form action="" name="" method="get">
 										<tbody>
-
 											<tr>
 												<td>002</td>
-												<td class=""><a href="#">뮤지컬 라이온킹 오리지널 내한..</a></td>
-												<td><a href="#">세종문화회관</a></td>
+												<td class=""><a href="#" name="prodName">뮤지컬 라이온킹 오리지널 내한..</a></td>
+												<td><a href="#" name="theaterName">세종문화회관</a></td>
 												<td>20-01-01 ~ 20-01-10</td>
 												<td><input type="checkbox"> <a href="#">확인</a></td>
-												<td><a href="#">할인 유무</a></td>
+												<td><a href="${pageContext.request.contextPath}/bm/bmDisAdd">이벤트 할인 추가</a></td>
 												<td><a href="#">수정</a></td>
 												<td><a href="#">삭제</a></td>
 											</tr>
-											<tr>
-												<td>001</td>
-												<td class=""><a href="#">뮤지컬〈썸씽로튼〉(Musical.. </a></td>
-												<td><a href="#">세종문화회관</a></td>
-												<td>20-01-01 ~ 20-01-10</td>
-												<td><input type="checkbox"> <a href="#">확인</a></td>
-												<td><a href="#">할인 유무</a></td>
-												<td><a href="#">수정</a></td>
-												<td><a href="#">삭제</a></td>
-											</tr>
-
 
 										</tbody>
 									</form>

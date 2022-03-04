@@ -67,42 +67,20 @@
 										<th>관리</th>
 									</tr>
 								</thead>
-								<tbody>
-									<tr>
-										<td>예술의전당</td>
-										<td>오페라극장</td>
-										<td class="text-left">서울특별시 서초구 서초동</td>
-										<td>02-1234-5678</td>
-										<td>www.sac.co.kr</td>
-										<td><span class="glyphicon glyphicon-trash"></span></td>
-									</tr>
-									
-									<tr>
-										<td>예술의전당</td>
-										<td>오페라극장</td>
-										<td class="text-left">서울특별시 서초구 서초동</td>
-										<td>02-1234-5678</td>
-										<td>www.sac.co.kr</td>
-										<td><span class="glyphicon glyphicon-trash"></span></td>
-									</tr>
-									
-									<tr>
-										<td>예술의전당</td>
-										<td>오페라극장</td>
-										<td class="text-left">서울특별시 서초구 서초동</td>
-										<td>02-1234-5678</td>
-										<td>www.sac.co.kr</td>
-										<td><span class="glyphicon glyphicon-trash"></span></td>
-									</tr>
-									
-									<tr>
-										<td>세종문화회관</td>
-										<td>대극장</td>
-										<td class="text-left">서울특별시 종로구 광화문로</td>
-										<td>02-2222-33333</td>
-										<td>www.kingsejong.co.kr</td>
-										<td><span class="glyphicon glyphicon-trash"></span></td>
-									</tr>
+								<tbody id="tList">
+									<c:forEach items="${tList}" var="vo">
+										<tr>
+											<td>${vo.theaterName}</td>
+											<td>${vo.hallName}</td>
+											<td class="text-center">${vo.address}<br>${vo.address2}</td>
+											<td>${vo.phone}</td>
+											<td>${vo.homePage}</td>
+											<td>
+												<span class="glyphicon glyphicon-pencil">수정</span>&nbsp;&nbsp;
+												<span class="glyphicon glyphicon-trash">삭제</span>
+											</td>
+										</tr>
+									</c:forEach>
 								</tbody>					
 							</table>
 						</div>
@@ -119,6 +97,7 @@
 
 	</div>
 	<!-- //wrap -->
+
 
 </body>
 

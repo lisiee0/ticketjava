@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+`<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 <!DOCTYPE html>
@@ -90,7 +90,7 @@
 											<input type="text" class="form-control" id="addWhere" name="" placeholder="세종문화회관 1관" readonly>
 										</div>
 										<div class="col-md-3">
-											<a href="${pageContext.request.contextPath}/bm/bmInquiry" class="btn btn-primary">검색</a>
+											<a href="${pageContext.request.contextPath}/bm/bmAddSearch" class="btn btn-primary">검색</a>
 										</div>
 									</div>
 								</div>

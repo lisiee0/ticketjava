@@ -1,5 +1,7 @@
 package com.ticketjava.dao;
 
+import java.util.List;
+
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -20,6 +22,12 @@ public class TheaterDao {
 	
 	public TheaterVo selectTheater(TheaterVo vo) {
 		return sqlsession.selectOne("theater.selectTheater", vo);
+	}
+	
+	
+	public List<TheaterVo> getList() {
+		return sqlsession.selectList("theater.getList");
+		
 	}
 	
 	
