@@ -29,6 +29,7 @@
 				<li><h3>예매내역</h3></li>
 				<li><a href="${pageContext.request.contextPath}/mypage/ticketingList">예매내역/취소</a></li>
 				<li><a href="${pageContext.request.contextPath}/mypage/ticketAlram">취소알림 내역</a></li>
+				<li><a href="${pageContext.request.contextPath}/mypage/ticketingDetail">디테일(개발용)</a></li>
 			</ul>
 			<ul>
 				<li><h3>나의활동</h3></li>
