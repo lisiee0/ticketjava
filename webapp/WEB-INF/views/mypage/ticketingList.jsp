@@ -36,26 +36,12 @@
 					<!-- .col-xs-2 어사이드 자리 시작 -->
 					<div class="col-xs-2">
 
-
+						
 						<!-- aside -->
-						<div id="container" class="clearfix">
-							<div id="aside">
-								<h2>마이페이지</h2>
-								<ul>
-									<li><h3>예매내역</h3></li>
-									<li><a href="#">예매내역/취소</a></li>
-									<li><a href="#">취소알림 내역</a></li>
-								</ul>
-								<ul>
-									<li><h3>나의활동</h3></li>
-									<li><a href="#">후기관리</a></li>
-									<li><a href="#">문의내역</a></li>
-								</ul>
-							</div>
-						</div>
+						<c:import url="/WEB-INF/views/include/asideMypage.jsp"></c:import>
 						<!-- //aside -->
-
-
+						
+						
 					</div>
 					<!-- .col-xs-2 어사이드 종료 -->
 

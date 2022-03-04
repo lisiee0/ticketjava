@@ -23,6 +23,7 @@ public class MypageController {
 		return "mypage/asking";
 	}
 	
+	
 //	마이페이지 티켓알람
 	@RequestMapping("/ticketAlram")
 	public String ticketAlram() {
@@ -30,12 +31,14 @@ public class MypageController {
 		return "mypage/ticketAlram";
 	}
 	
+	
 //	티케팅 
 	@RequestMapping("/ticketingAndCancel")
 	public String ticketingAndCancel() {
 		System.out.println("MypageController ticketingAndCancel");
 		return "mypage/ticketingAndCancel";
 	}
+	
 	
 //	예매 상세페이지
 	@RequestMapping("/ticketingDetail")
@@ -68,7 +71,5 @@ public class MypageController {
 		return "mypage/userOut";
 	}
 	
-		
 	
-		
 } // The end of MypageController 
