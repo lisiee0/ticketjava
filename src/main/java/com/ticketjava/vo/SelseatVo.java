@@ -6,19 +6,18 @@ public class SelseatVo {
 	private int rezNo;
 	private int dcNo;
 
-	private int grade;
-	private int section;
+	private String grade;
+	private String section;
 	private int col;
 	private int num;
-	
+
 	private int payment;
 	private int status;
-	
-	
+
 	public SelseatVo() {
 	}
-	
-	public SelseatVo(int selseatNo, int rezNo, int dcNo, int grade, int section, int col, int num, int payment,
+
+	public SelseatVo(int selseatNo, int rezNo, int dcNo, String grade, String section, int col, int num, int payment,
 			int status) {
 		this.selseatNo = selseatNo;
 		this.rezNo = rezNo;
@@ -55,19 +54,19 @@ public class SelseatVo {
 		this.dcNo = dcNo;
 	}
 
-	public int getGrade() {
+	public String getGrade() {
 		return grade;
 	}
 
-	public void setGrade(int grade) {
+	public void setGrade(String grade) {
 		this.grade = grade;
 	}
 
-	public int getSection() {
+	public String getSection() {
 		return section;
 	}
 
-	public void setSection(int section) {
+	public void setSection(String section) {
 		this.section = section;
 	}
 
@@ -109,9 +108,5 @@ public class SelseatVo {
 				+ ", section=" + section + ", col=" + col + ", num=" + num + ", payment=" + payment + ", status="
 				+ status + "]";
 	}
-	
-	
-	
-	
-	
+
 }

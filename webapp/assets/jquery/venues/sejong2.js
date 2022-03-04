@@ -14,7 +14,7 @@ $(document).ready(function(){
 	var seatMap = [];
 	
 	var sectionA = [
-		'vvvv',
+		'vvvo',
 		'vvvv',
 		'rrrr',
 		'rrrr',

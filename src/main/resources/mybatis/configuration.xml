@@ -8,6 +8,7 @@
 		<typeAlias alias="TheaterVo" type="com.ticketjava.vo.TheaterVo" />
 		<typeAlias alias="HallVo" type="com.ticketjava.vo.HallVo" />
 		<typeAlias alias="MypageVo" type="com.ticketjava.vo.MypageVo" />
+		<typeAlias alias="SelseatVo" type="com.ticketjava.vo.SelseatVo" />
 	</typeAliases>
 	<mappers>
 		<mapper resource="mybatis/mappers/reservation.xml" />
@@ -16,5 +17,6 @@
 		<mapper resource="mybatis/mappers/theater.xml" />
 		<mapper resource="mybatis/mappers/hall.xml" />
 		<mapper resource="mybatis/mappers/mypage.xml" />
+		<mapper resource="mybatis/mappers/selseat.xml" />
 	</mappers>
 </configuration>

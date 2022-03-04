@@ -2,5 +2,14 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="reservation">
 	
+	<insert id="insertPre" parameterType="ReservationVo">
+	    <selectKey resultType="int" keyProperty="rezNo" order="BEFORE">
+	        SELECT seq_rez_no.nextval FROM dual;       
+	    </selectKey>    
+	    
+	    INSERT INTO reserve( rez_no , status)
+	    VALUES(#{rezNo}, 2)
+	</insert>  
+	
 	
 </mapper>
