@@ -110,25 +110,14 @@
 
 											<tr>
 												<td>002</td>
-												<td class=""><a href="#">뮤지컬 라이온킹 오리지널 내한..</a></td>
-												<td><a href="#">세종문화회관</a></td>
+												<td class=""><a href="#" name="prodName">뮤지컬 라이온킹 오리지널 내한..</a></td>
+												<td><a href="#" name="theaterName">세종문화회관</a></td>
 												<td>20-01-01 ~ 20-01-10</td>
 												<td><input type="checkbox"> <a href="#">확인</a></td>
-												<td><a href="#">할인 유무</a></td>
+												<td><a href="${pageContext.request.contextPath}/bm/bmDisAdd">할인 유무</a></td>
 												<td><a href="#">수정</a></td>
 												<td><a href="#">삭제</a></td>
 											</tr>
-											<tr>
-												<td>001</td>
-												<td class=""><a href="#">뮤지컬〈썸씽로튼〉(Musical.. </a></td>
-												<td><a href="#">세종문화회관</a></td>
-												<td>20-01-01 ~ 20-01-10</td>
-												<td><input type="checkbox"> <a href="#">확인</a></td>
-												<td><a href="#">할인 유무</a></td>
-												<td><a href="#">수정</a></td>
-												<td><a href="#">삭제</a></td>
-											</tr>
-
 
 										</tbody>
 									</form>

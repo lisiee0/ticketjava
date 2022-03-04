@@ -29,52 +29,14 @@
 			<div class="addTop">
 				<ol>
 					<h3>상품명</h3>
-					<li>라이온 킹</li>
+					<li name="prodName">라이온 킹</li>
 				</ol>
 			</div>
 			<div class="addTop">
 				<ol>
 					<h3>공연장</h3>
-					<li>세종문화회관 1관</li>
+					<li name="hallname">세종문화회관 1관</li>
 				</ol>
-			</div>
-
-			<!-- 할인 시작 -->
-			<div class="addTop">
-				<ol>
-					<h3>일반 할인</h3>
-				</ol>
-			</div>
-
-			<!-- 할인 적용된 리스트 -->
-			<div class="disTable">
-				<table id="dateDiscount">
-					<colgroup>
-						<col style="">
-						<col style="">
-						<col style="">
-						<col style="">
-						<col style="width: 10%;">
-					</colgroup>
-					<tr>
-						<th class="dateHead disHalf" colspan="2">기간</th>
-						<th class="dateHead">할인</th>
-						<th class="dateHead">가격</th>
-					</tr>
-					<tr>
-						<td><input class="form-control disBtn" type="text" placeholder="시작일"></td>
-						<td><input class="form-control disBtn disHalf" type="text" placeholder="종료일"></td>
-						<td><input class="form-control disBtn" type="text" placeholder="할인율"></td>
-						<td><input class="form-control disBtn" type="text" placeholder="% 또는 원"></td>
-						<td>
-							<button class="btn btn-default" type="button">+</button>
-						</td>
-					</tr>
-					<tr>
-						<td colspan="4"><input class="form-control" type="text" placeholder="할인 설명"></td>
-					</tr>
-
-				</table>
 			</div>
 
 			<!-- 할인 시작 -->
@@ -86,13 +48,13 @@
 
 			<!-- 할인 적용된 리스트 -->
 			<div class="disTable">
-				<table id="dateDiscount2">
+				<table id="dateDiscount">
 					<colgroup>
 						<col style="">
 						<col style="">
 						<col style="">
+						<col style="width: 75%">
 						<col style="">
-						<col style="width: 10%;">
 					</colgroup>
 					<tr>
 						<th class="dateHead disHalf" colspan="2">기간</th>
@@ -100,10 +62,13 @@
 						<th class="dateHead">가격</th>
 					</tr>
 					<tr>
-						<td><input class="form-control disBtn" type="text" placeholder="시작일"></td>
-						<td><input class="form-control disBtn disHalf" type="text" placeholder="종료일"></td>
-						<td><input class="form-control disBtn" type="text" placeholder="할인율"></td>
-						<td><input class="form-control disBtn" type="text" placeholder="% 또는 원"></td>
+						<td><input class="form-control" type="date" name="beginDc"></td>
+						<td><input class="form-control" type="date" name="endDc"></td>
+						<td><select class="form-control">
+								<option value="0" name="dcType">%</option>
+								<option value="1" name="dcType">원</option>
+						</select></td>
+						<td><input class="form-control" type="text" name="dcRate" placeholder="% 또는 원"></td>
 						<td>
 							<button class="btn btn-default" type="button">+</button>
 						</td>
@@ -114,6 +79,8 @@
 
 				</table>
 			</div>
+
+
 
 			<div class="disTable">
 				<table>
