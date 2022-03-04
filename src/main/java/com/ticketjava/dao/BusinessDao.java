@@ -12,9 +12,9 @@ public class BusinessDao {
 	@Autowired
 	private SqlSession sqlSession;
 	
-	public void insert(BusinessVo businessVo) {
-		sqlSession.insert("business.insert", businessVo);
-	}
+//	public void insert(BusinessVo businessVo) {
+//		sqlSession.insert("business.insert", businessVo);
+//	}
 	
 	
 }

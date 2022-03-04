@@ -12,9 +12,8 @@ public class BusinessService  {
 	@Autowired
 	private BusinessDao businessDao;
 	
-	public void bmAdd(BusinessVo businessVo) {
-		businessDao.insert(businessVo);
-		
-	}
+//	public void bmAdd(BusinessVo businessVo) {
+//		businessDao.insert(businessVo);
+//	}
 
 }

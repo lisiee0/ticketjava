@@ -19,6 +19,7 @@
 <!-- 개인 css (폴더로 관리 권장 ex assets/css/mypage/ticketing.css) -->
 <link href="${pageContext.request.contextPath}/assets/css/bm/mysite.css" rel="stylesheet">
 
+<script type="text/javascript" src="${pageContext.request.contextPath}/assets/jquery/jquery-1.12.4.js"></script>
 
 
 </head>
@@ -77,7 +78,7 @@
 
 					<div id="board">
 
-						<form action="" method="" class="form-horizontal">
+						<form action="${pageContext.request.contextPath}/bm/bmInquiry	" method="post" class="form-horizontal">
 
 							<!-- 공연장명 -->
 							<div class="form-group">
@@ -86,12 +87,10 @@
 								<div class="col-md-8">
 									<div class="form-group">
 										<div class="col-md-4">
-											<input type="text" class="form-control" id="addWhere" placeholder="세종문화회관 1관" readonly>
+											<input type="text" class="form-control" id="addWhere" name="" placeholder="세종문화회관 1관" readonly>
 										</div>
 										<div class="col-md-3">
-											<a href="#">
-												<button type="button" class="btn btn-primary" id="addbtn">검색</button>
-											</a>
+											<a href="${pageContext.request.contextPath}/bm/bmInquiry" class="btn btn-primary">검색</a>
 										</div>
 									</div>
 								</div>
@@ -99,9 +98,9 @@
 
 							<!-- 공연 제목 -->
 							<div class="form-group">
-								<label class="form-text col-md-2 form-id" for="">공연 제목</label>
+								<label class="form-text col-md-2 form-id" for="">공연명</label>
 								<div class="col-md-6">
-									<input type="text" class="form-control" id="" placeholder="공연 제목을 입력해주세요">
+									<input type="text" class="form-control" id="" name="prodName" placeholder="공연 제목을 입력해주세요">
 								</div>
 							</div>
 
@@ -111,11 +110,11 @@
 
 								<div class="col-md-3">
 									<select class="form-control">
-										<option value="" selected="selected">연극</option>
-										<option value="">뮤지컬</option>
-										<option value="">콘서트</option>
-										<option value="">스포츠</option>
-										<option value="">전시</option>
+										<option value="1" name="prodType" selected="selected">연극</option>
+										<option value="2" name="prodType">뮤지컬</option>
+										<option value="3" name="prodType">콘서트</option>
+										<option value="4" name="prodType">스포츠</option>
+										<option value="5" name="prodType">전시</option>
 									</select>
 								</div>
 							</div>
@@ -124,10 +123,10 @@
 							<div class="form-group">
 								<label class="form-text col-md-2 form-id" for="">공연 기간</label>
 								<div class="col-md-4">
-									<input type="text" class="form-control" id="" placeholder="시작일 2022/01/01">
+									<input type="date" class="form-control" id="" name="beginShow">
 								</div>
 								<div class="col-md-4">
-									<input type="text" class="form-control" id="" placeholder="종료일">
+									<input type="date" class="form-control" id="" name="endShow">
 								</div>
 							</div>
 
@@ -135,10 +134,10 @@
 							<div class="form-group">
 								<label class="form-text col-md-2 form-id" for="">예매 기간</label>
 								<div class="col-md-4">
-									<input type="text" class="form-control" id="" placeholder="시작일 2022/01/01">
+									<input type="date" class="form-control" id="" name="beginRez">
 								</div>
 								<div class="col-md-4">
-									<input type="text" class="form-control" id="" placeholder="종료일">
+									<input type="date" class="form-control" id="" name="endRez">
 								</div>
 							</div>
 
@@ -146,7 +145,7 @@
 							<div class="form-group">
 								<label class="form-text col-md-2 form-id" for="">공연 시작시간</label>
 								<div class="col-md-4">
-									<input type="text" class="form-control" id="" placeholder="공연 시작시간을 입력해주세요">
+									<input type="time" class="form-control" id="" name="showTime">
 								</div>
 							</div>
 
@@ -154,7 +153,7 @@
 							<div class="form-group">
 								<label class="form-text col-md-2 form-id" for="">관람 시간</label>
 								<div class="col-md-4">
-									<input type="text" class="form-control" id="" placeholder="관람 시간을 입력해주세요">
+									<input type="text" class="form-control" id="" name="viewTime">
 								</div>
 							</div>
 
@@ -162,19 +161,19 @@
 							<div class="form-group">
 								<label class="form-text col-md-2 form-id" for="">관람 등급</label>
 								<div class="col-md-1">
-									<label for="all">전체</label> <input type="radio" id="ageall" name="" value="">
+									<label for="ageall">전체</label> <input type="radio" id="ageall" name="viewGrade" value="1">
 								</div>
 								<div class="col-md-1">
-									<label for="all">8세</label> <input type="radio" id="age8" name="age" value="">
+									<label for="age8">8세</label> <input type="radio" id="age8" name="viewGrade" value="2">
 								</div>
 								<div class="col-md-1">
-									<label for="all">12세</label> <input type="radio" id="age12" name="age" value="">
+									<label for="age12">12세</label> <input type="radio" id="age12" name="viewGrade" value="3">
 								</div>
 								<div class="col-md-1">
-									<label for="all">15세</label> <input type="radio" id="age15" name="age" value="">
+									<label for="age15">15세</label> <input type="radio" id="age15" name="viewGrade" value="4">
 								</div>
 								<div class="col-md-1">
-									<label for="all">18세</label> <input type="radio" id="age18" name="age" value="">
+									<label for="age15">18세</label> <input type="radio" id="age15" name="viewGrade" value="5">
 								</div>
 							</div>
 
@@ -186,67 +185,33 @@
 									<!-- VIP석 -->
 									<div class="form-group">
 										<div class="col-md-4">
-											<input type="text" class="form-control" id="" placeholder="VIP석" readonly>
+											<input type="text" class="form-control" id="" name=grade value="" placeholder="VIP석" readonly>
 										</div>
 										<div class="col-md-4">
-											<input type="text" class="form-control" id="" placeholder="140,000원">
+											<input type="text" class="form-control" id="" name="price" placeholder="가격을 입력해주세요">
 										</div>
 										<div class="col-md-1">
 											<button type="button" class="btn" id="addbtn">-</button>
 										</div>
 
 									</div>
-									<!-- R석 -->
-									<div class="form-group">
-										<div class="col-md-4">
-											<input type="text" class="form-control" id="" placeholder="R석" readonly>
-										</div>
-										<div class="col-md-4">
-											<input type="text" class="form-control" id="" placeholder="120,000원">
-										</div>
-										<div class="col-md-1">
-											<button type="button" class="btn" id="addbtn">-</button>
-										</div>
-									</div>
-									<!-- S석 -->
-									<div class="form-group">
-										<div class="col-md-4">
-											<input type="text" class="form-control" id="" placeholder="S석" readonly>
-										</div>
-										<div class="col-md-4">
-											<input type="text" class="form-control" id="" placeholder="80,000원">
-										</div>
-										<div class="col-md-1">
-											<button type="button" class="btn" id="addbtn">-</button>
-										</div>
-									</div>
-									<!-- A석 -->
-									<div class="form-group">
-										<div class="col-md-4">
-											<input type="text" class="form-control" id="" placeholder="A석" readonly>
-										</div>
-										<div class="col-md-4">
-											<input type="text" class="form-control" id="" placeholder="50,000원">
-										</div>
-										<div class="col-md-1">
-											<button type="button" class="btn" id="addbtn">-</button>
-										</div>
-									</div>
+
 									<!-- 좌석끝 -->
-									<!-- A석 -->
+
+									<!-- 좌석 선택 -->
 									<div class="form-group">
 										<div class="col-md-4">
 											<select class="form-control">
-												<option value="">VIP석</option>
-												<option value="">R석</option>
-												<option value="">S석</option>
-												<option value="">A석</option>
-												<option value="">B석</option>
+												<option name="grade" value="1">VIP석</option>
+												<option name="grade" value="2">R석</option>
+												<option name="grade" value="3">S석</option>
+												<option name="grade" value="4">A석</option>
+												<option name="grade" value="5">B석</option>
 												<option value="" selected="selected">좌석</option>
 											</select>
 										</div>
 										<div class="col-md-4">
-											<input type="text" class="form-control" id="" placeholder="80,000원">
+											<input type="text" class="form-control" id="" name="price" value="">
 										</div>
 										<div class="col-md-1">
 											<button type="button" class="btn" id="addbtn">+</button>
@@ -260,7 +225,7 @@
 							<div class="form-group">
 								<label class="form-text col-md-2 form-id" for="">공지사항</label>
 								<div class="col-md-8">
-									<textarea id="" name="" class="form-control textWay" placeholder="내용을 입력해주세요"></textarea>
+									<textarea class="form-control textWay" name="notice" value="" placeholder="내용을 입력해주세요"></textarea>
 								</div>
 							</div>
 
@@ -272,10 +237,10 @@
 									<!-- VIP석 -->
 									<div class="form-group">
 										<div class="col-md-4">
-											<input type="text" class="form-control" id="" placeholder="할인 구분">
+											<input type="text" class="form-control" name="dcname" value="" placeholder="할인 설명">
 										</div>
 										<div class="col-md-3">
-											<input type="text" class="form-control" id="" placeholder="할인율 (%)">
+											<input type="text" class="form-control" name="dcrate" value="" placeholder="할인율 (%)">
 										</div>
 										<div class="col-md-1"></div>
 										<div class="col-md-1">
@@ -292,7 +257,7 @@
 							<div class="form-group">
 								<label class="form-text col-md-2 form-id" for="">공연 포스터</label>
 								<div class="col-md-8">
-									<input type="file" id="file">
+									<input type="file" id="" name="posterpath" value="">
 								</div>
 							</div>
 
@@ -300,7 +265,7 @@
 							<div class="form-group">
 								<label class="form-text col-md-2 form-id" for="">공연 정보</label>
 								<div class="col-md-8">
-									<input type="file" id="file">
+									<input type="file" id="" name="pordpath" value="">
 								</div>
 							</div>
 
@@ -308,7 +273,7 @@
 							<div class="form-group">
 								<label class="form-text col-md-2 form-id" for="">캐스팅 정보</label>
 								<div class="col-md-8">
-									<input type="file" id="file">
+									<input type="file" id="" name="castingpath" value="">
 								</div>
 							</div>
 
@@ -316,7 +281,7 @@
 							<div class="form-group">
 								<label class="form-text col-md-2 form-id" for="">부가 정보</label>
 								<div class="col-md-8">
-									<input type="file" id="file">
+									<input type="file" id="" name="addedpath" value="">
 								</div>
 							</div>
 
@@ -325,7 +290,7 @@
 							<div class="form-group">
 								<label class="form-text col-md-2 form-id" for="">예매/취소 안내</label>
 								<div class="col-md-8">
-									<textarea id="" name="" class="form-control textWay" placeholder="내용을 입력해주세요"></textarea>
+									<textarea id="" name="" class="form-control textWay" name="cancelInfo" value="" placeholder="내용을 입력해주세요"></textarea>
 								</div>
 							</div>
 

@@ -4,8 +4,6 @@ public class BusinessVo {
 
 	// 필드
 	private int prodNo;
-	private int userNo;
-	private int hallNo;
 	private String prodName;
 	private int prodType;
 	private String beginShow;
@@ -24,12 +22,10 @@ public class BusinessVo {
 	public BusinessVo() {
 	}
 
-	public BusinessVo(int prodNo, int userNo, int hallNo, String prodName, int prodType, String beginShow,
-			String endShow, String beginRez, String endRez, String showTime, int viewTime, int viewGrade, String notice,
-			String cancelInfo, int status, String posterPath) {
+	public BusinessVo(int prodNo, String prodName, int prodType, String beginShow, String endShow, String beginRez,
+			String endRez, String showTime, int viewTime, int viewGrade, String notice, String cancelInfo, int status,
+			String posterPath) {
 		this.prodNo = prodNo;
-		this.userNo = userNo;
-		this.hallNo = hallNo;
 		this.prodName = prodName;
 		this.prodType = prodType;
 		this.beginShow = beginShow;
@@ -44,30 +40,14 @@ public class BusinessVo {
 		this.status = status;
 		this.posterPath = posterPath;
 	}
-
 	// 메소드
+
 	public int getProdNo() {
 		return prodNo;
 	}
 
 	public void setProdNo(int prodNo) {
 		this.prodNo = prodNo;
-	}
-
-	public int getUserNo() {
-		return userNo;
-	}
-
-	public void setUserNo(int userNo) {
-		this.userNo = userNo;
-	}
-
-	public int getHallNo() {
-		return hallNo;
-	}
-
-	public void setHallNo(int hallNo) {
-		this.hallNo = hallNo;
 	}
 
 	public String getProdName() {
@@ -177,11 +157,10 @@ public class BusinessVo {
 	// 메소드
 	@Override
 	public String toString() {
-		return "BusinessVo [prodNo=" + prodNo + ", userNo=" + userNo + ", hallNo=" + hallNo + ", prodName=" + prodName
-				+ ", prodType=" + prodType + ", beginShow=" + beginShow + ", endShow=" + endShow + ", beginRez="
-				+ beginRez + ", endRez=" + endRez + ", showTime=" + showTime + ", viewTime=" + viewTime + ", viewGrade="
-				+ viewGrade + ", notice=" + notice + ", cancelInfo=" + cancelInfo + ", status=" + status
-				+ ", posterPath=" + posterPath + "]";
+		return "BusinessVo [prodNo=" + prodNo + ", prodName=" + prodName + ", prodType=" + prodType + ", beginShow="
+				+ beginShow + ", endShow=" + endShow + ", beginRez=" + beginRez + ", endRez=" + endRez + ", showTime="
+				+ showTime + ", viewTime=" + viewTime + ", viewGrade=" + viewGrade + ", notice=" + notice
+				+ ", cancelInfo=" + cancelInfo + ", status=" + status + ", posterPath=" + posterPath + "]";
 	}
 
 }

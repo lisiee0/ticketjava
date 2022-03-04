@@ -140,9 +140,7 @@
 										<input type="text" class="form-control formSearchBoard" placeholder="공연 검색창" value="">
 									</div>
 									<div class="col-xs-2">
-										<form class="">
-											<button type="submit" class="btn-primary formSearchBoardButton">공연 등록</button>
-										</form>
+										<a href="${pageContext.request.contextPath}/bm/bmAdd" class="btn btn-primary position">공연 등록</a>
 									</div>
 
 								</div>

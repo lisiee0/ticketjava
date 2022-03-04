@@ -16,7 +16,6 @@ public class BusinessController {
 
 	@RequestMapping("/bmAdd")
 	public String bmAdd(@ModelAttribute BusinessVo businessVo) {
-		businessService.bmAdd(businessVo);
 		return "business/bmAdd";
 	}
 
