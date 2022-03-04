@@ -16,4 +16,11 @@ public class TheaterDao {
 	public void theaterAdd(TheaterVo vo) {
 		sqlsession.insert("theater.theaterAdd", vo);
 	}
+	
+	
+	public TheaterVo selectTheater(TheaterVo vo) {
+		return sqlsession.selectOne("theater.selectTheater", vo);
+	}
+	
+	
 }

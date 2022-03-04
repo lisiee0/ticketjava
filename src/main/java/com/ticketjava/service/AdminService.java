@@ -3,6 +3,7 @@ package com.ticketjava.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.ticketjava.dao.HallDao;
 import com.ticketjava.dao.TheaterDao;
 import com.ticketjava.vo.TheaterVo;
 
@@ -11,24 +12,33 @@ public class AdminService {
 	
 	@Autowired
 	private TheaterDao td;
+	@Autowired
+	private HallDao hd;
 	
 	public void theaterAdd(TheaterVo vo) {
+		// 임시데이터 넣기
+		vo.setLatitude("0");
+		vo.setLongitude("0");
+		vo.setLogoPath("path");
 		
-		// 등록하고 셀렉트원으로 가져와서 theaterNo를 가지고 반복문 사용하여 시설 i개 추가 
-		// 등록 
+		
 		td.theaterAdd(vo);
-		// 등록했던거 가져오기
+		td.selectTheater(vo); // 추가한 theater.no 가져오기
+
+		String[] hallArray= vo.getHallName().split(","); // 시설명 나누기
 		
-		// 시설 추가 i번 반복
-		
-		// 시설명 배열로 받았을때 나누기
-		String[] hallArray= vo.getHallName().split(",");
-		
-		for (int i = 0; i<hallArray.length; i++) {
-	            System.out.println(hallArray[i]);
+		if (hallArray.length>1) { // 시설명이 2개이상일때
+			for (int i= 0; i<hallArray.length; i++) {
+				vo.setHallName(hallArray[i]);
+				hd.hallAdd(vo);
+			}
 		}
+		else { // 시설명이 1개일때
+			hd.hallAdd(vo);
+		}
+
 		
-		System.out.println(vo);
+	
 		
 	}
 

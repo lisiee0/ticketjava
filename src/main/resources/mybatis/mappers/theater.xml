@@ -3,10 +3,36 @@
 <mapper namespace="theater">
 	
 	<insert id="theaterAdd" parameterType="TheaterVo">
+	
+		<selectKey keyProperty="theaterNo" resultType="int" order="BEFORE">	
+			select seq_theater_no.nextval from dual
+		</selectKey>
+		
 		<![CDATA[
 			insert into theater
-			values (seq_theater_no.nextval, #{theaterName}, #{postCode}, #{address}, #{address2}, #{latitude}, #{longitude}, #{phone}, #{homePage}, #{logoPath})	
+			values (#{theaterNo}, #{theaterName}, #{postCode}, #{address}, #{address2}, #{latitude}, #{longitude}, #{phone}, #{homePage}, #{logoPath})	
 		]]>
 	</insert>
 	
+	
+	<select id="selectTheater" parameterType="TheaterVo" resultType="TheaterVo">
+		<![CDATA[
+			select			theater_no,
+							theatername, 
+							postcode, 
+							address, 
+							address2, 
+							latitude, 
+							longitude, 
+							phone, 
+							homepage, 
+							logopath
+			from			theater
+			where			theater_no= #{theaterNo}
+		]]>
+	</select>
+	
 </mapper>
+
+
+

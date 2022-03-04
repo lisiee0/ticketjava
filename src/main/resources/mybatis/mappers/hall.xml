@@ -4,8 +4,8 @@
 
 	<insert id="hallAdd" parameterType="TheaterVo">
 		<![CDATA[
-			
-		
+			insert into hall
+			values (seq_hall_no.nextval, #{theaterNo}, #{hallName})
 		]]>
 	</insert>
 
