@@ -83,6 +83,7 @@ div.nav{
 
 #navbar ul>li#last-nav-item{
 	margin-right:0px;
+	margin-left: 11px;
 }
 
 
@@ -90,7 +91,7 @@ div.nav{
     color: white;
 }
 .nav-item a:hover{
-
+	color:white;
 	text-decoration:none;
 }
 
