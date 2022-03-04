@@ -1,5 +1,7 @@
 package com.ticketjava.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -35,11 +37,12 @@ public class AdminService {
 		}
 		else { // 시설명이 1개일때
 			hd.hallAdd(vo);
-		}
-
-		
-	
-		
+		}	
 	}
+	
+	public List<TheaterVo> getList() {
+		return td.getList();
+	}
+
 
 }

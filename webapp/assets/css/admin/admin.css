@@ -78,3 +78,7 @@
 	font-weight: bold;
 	padding-top: 6px;
 }
+
+#tList tr>td {
+	vertical-align: middle;
+}

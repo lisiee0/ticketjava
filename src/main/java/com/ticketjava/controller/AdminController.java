@@ -2,6 +2,7 @@ package com.ticketjava.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -16,8 +17,10 @@ public class AdminController {
 	private AdminService adminService;
 	
 	@RequestMapping("/")
-	public String admin() {
+	public String admin(Model model) {
 		System.out.println("adminController/admin()");
+
+		model.addAttribute("tList", adminService.getList());
 		
 		return "admin/adminTheaterList";
 	}
@@ -34,6 +37,8 @@ public class AdminController {
 		System.out.println("adminController/theaterAdd()");
 		
 		adminService.theaterAdd(vo);
+		
+		
 		
 		return "admin/adminTheaterList";
 	}

@@ -15,5 +15,6 @@ public class HallDao {
 	public void hallAdd(TheaterVo vo) {
 		sqlSession.insert("hall.hallAdd", vo);
 	}
+	
 
 }

@@ -8,5 +8,6 @@
 			values (seq_hall_no.nextval, #{theaterNo}, #{hallName})
 		]]>
 	</insert>
-
+	
+	
 </mapper>
