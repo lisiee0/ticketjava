@@ -761,7 +761,8 @@ CREATE TABLE selseat (
 	col NUMBER, /* 열 */
 	num NUMBER, /* 번호 */
 	payment NUMBER, /* 결제금액 */
-	status NUMBER /* 상태 */
+	status NUMBER, /* 상태 */
+	pretime date /* 선점시간 */
 );
 
 COMMENT ON TABLE selseat IS '예매내역별 선택 좌석';
