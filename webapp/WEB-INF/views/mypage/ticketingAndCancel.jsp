@@ -1,6 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>    
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,22 +7,22 @@
 <title>TicketJava 마이페이지 예매내역 및 취소</title>
 
 <!-- 부트스트랩 Bootstrap core CSS -->
-<link href="assets/bootstrap/css/bootstrap.css" rel="stylesheet">
+<link href="${pageContext.request.contextPath}/assets/bootstrap/css/bootstrap.css" rel="stylesheet">
 
 <!-- 기본 css -->
-<link href="assets/css/ticketjavaCommon.css" rel="stylesheet" type="text/css">
-<link href="assets/css/ticketjavaCommonAside.css" rel="stylesheet" type="text/css">
-<link href="assets/css/ticketjavaCommonFooter.css" rel="stylesheet" type="text/css">
+<link href="${pageContext.request.contextPath}/assets/css/ticketjavaCommon.css" rel="stylesheet" type="text/css">
+<link href="${pageContext.request.contextPath}/assets/css/ticketjavaCommonAside.css" rel="stylesheet" type="text/css">
+<link href="${pageContext.request.contextPath}/assets/css/ticketjavaCommonFooter.css" rel="stylesheet" type="text/css">
 
 <!-- 개인 css (폴더로 관리 권장 ex assets/css/mypage/ticketing.css) -->
-<link href="assets/css/mypage/ticketjavaMypageCommon.css" rel="stylesheet" type="text/css">
+<link href="${pageContext.request.contextPath}/assets/css/mypage/ticketjavaMypageCommon.css" rel="stylesheet" type="text/css">
 
-<link href="assets/css/mypage/mypageTicketingAndCancel.css" rel="stylesheet" type="text/css">
+<link href="${pageContext.request.contextPath}/assets/css/mypage/mypageTicketingAndCancel.css" rel="stylesheet" type="text/css">
 
 
 <!-- 년월일 선택 하는 스크립트 -->
 <script src="http://code.jquery.com/jquery-1.9.0.min.js"></script>
-<script src="assets/js/mypage/mypageTicketingAndCancel.js"></script>
+<script src="${pageContext.request.contextPath}/assets/js/mypage/mypageTicketingAndCancel.js"></script>
 
 </head>
 
@@ -44,25 +43,10 @@
 					<!-- .col-xs-2 어사이드 자리 시작 -->
 					<div class="col-xs-2">
 
-
 						<!-- aside -->
-						<div id="container" class="clearfix">
-							<div id="aside">
-								<h2>마이페이지</h2>
-								<ul>
-									<li><h3>예매내역</h3></li>
-									<li><a href="#">예매내역/취소</a></li>
-									<li><a href="#">취소알림 내역</a></li>
-								</ul>
-								<ul>
-									<li><h3>나의활동</h3></li>
-									<li><a href="#">후기관리</a></li>
-									<li><a href="#">문의내역</a></li>
-								</ul>
-							</div>
-						</div>
+						<c:import url="/WEB-INF/views/include/asideMypage.jsp"></c:import>
 						<!-- //aside -->
-
+						
 					</div>
 					<!-- .col-xs-2 어사이드 종료 -->
 
@@ -95,7 +79,9 @@
 									<div>
 										기간선택
 										<!-- 1일을 기준으로 기간 날짜를 결정 1달 30일 페이지 기본값 7일-->
-										<label for="rdo-duration">7일</label> <input type="radio" id="rdo-week" name="duration" value="7" checked> <label for="rdo-duration">1개월</label> <input type="radio" id="rdo-month" name="duration" value="30"> <label for="rdo-duration">3개월</label> <input type="radio" id="rdo-3month" name="duration" value="60">
+										<label for="rdo-duration">7일</label> <input type="radio" id="rdo-week" name="duration" value="7" checked> <label for="rdo-duration">1개월</label> <input
+											type="radio" id="rdo-month" name="duration" value="30"
+										> <label for="rdo-duration">3개월</label> <input type="radio" id="rdo-3month" name="duration" value="60">
 
 									</div>
 									<div>
@@ -177,14 +163,10 @@
 						</div>
 						<!-- //content -->
 
-
-
-
-
 					</div>
 					<!-- .col-xs-10 컨텐츠 종료 -->
 				</div>
-				<!-- row 어사이드 컨텐츠 그리드 종료 -->
+				<!-- 어사이드 컨텐츠 그리드 종료 -->
 			</div>
 			<!-- container 종료 -->
 		</div>
@@ -198,7 +180,6 @@
 	<!-- wrap 종료 -->
 
 </body>
-
 
 <!-- 제이쿼리 core JavaScript 페이지 로딩 향상을 위해 해당코드는 body가 끝나는곳에 둘것 -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
