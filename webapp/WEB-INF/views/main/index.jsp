@@ -28,7 +28,7 @@
 
 
 		<!-- 컨텐츠 구역 시작 -->
-		<div class="container-fluid zp">
+		<article class="container-fluid zp">
 
 			<!-- 영상 재생 구역 시작 -->
 			<section class="productVideo">
@@ -194,7 +194,7 @@
 			</section>
 			<!-- 작품 리스트 Gallery 구역 종료 -->
 
-		</div>
+		</article>
 		<!-- 컨텐츠 구역 종료 -->
 
 
