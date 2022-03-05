@@ -44,6 +44,14 @@ public class AdminService {
 	public List<HallVo> getList() {
 		return hd.getHallList();
 	}
-
+	
+	
+	public HallVo getHall(int hallNo) {
+		return hd.getHall(hallNo);
+	}
+	
+	public void modifyHall(HallVo vo) {
+		hd.modifyHall(vo);
+	}
 
 }

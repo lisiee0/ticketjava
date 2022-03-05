@@ -76,7 +76,7 @@
 											<td>${vo.phone}</td>
 											<td>${vo.homePage}</td>
 											<td>
-												<a href="${pageContext.request.contextPath}/admin/theaterModify?hallNo=${vo.hallNo}"><span class="glyphicon glyphicon-pencil">수정</span></a>&nbsp;&nbsp;
+												<a href="${pageContext.request.contextPath}/admin/theaterModifyForm?hallNo=${vo.hallNo}"><span class="glyphicon glyphicon-pencil">수정</span></a>&nbsp;&nbsp;
 												<a href="${pageContext.request.contextPath}/admin/theaterDelete?hallNo=${vo.hallNo}"><span class="glyphicon glyphicon-trash">삭제</span></a>
 											</td>
 										</tr>

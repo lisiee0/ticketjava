@@ -24,5 +24,13 @@ public class HallDao {
 		return sqlSession.selectList("hall.getHallList");
 	}
 	
-
+	
+	public HallVo getHall(int hallNo) {
+		return sqlSession.selectOne("hall.getHall", hallNo);
+	}
+	
+	
+	public void modifyHall(HallVo vo) {
+		sqlSession.update("hall.update", vo);
+	}
 }

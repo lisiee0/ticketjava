@@ -5,8 +5,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.ticketjava.service.AdminService;
+import com.ticketjava.vo.HallVo;
 import com.ticketjava.vo.TheaterVo;
 
 @Controller
@@ -42,12 +44,25 @@ public class AdminController {
 	}
 	
 	
-	// 공연장 수정
-	@RequestMapping("/theaterModify")
-	public String theaterModify() {
-		System.out.println("adminController/TheaterModify()");
+	// 공연장 수정양식 불러오기
+	@RequestMapping("/theaterModifyForm")
+	public String theaterModifyForm(@RequestParam("hallNo") int hallNo, Model model ) {
+		System.out.println("adminController/theaterModifyForm()");
+		
+		model.addAttribute("hallVo", adminService.getHall(hallNo));
 		
 		return "admin/adminTheaterModify";
+	}
+	
+	
+	// 공연장 수정
+	@RequestMapping("/theaterModify")
+	public String theaterModify(@ModelAttribute HallVo vo) {
+		System.out.println("adminController/theaterModify");
+		
+		System.out.println(vo);
+		
+		return "redirect:/admin/";
 	}
 	
 	
