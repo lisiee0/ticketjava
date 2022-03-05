@@ -403,5 +403,30 @@
 	font-family: 'Noto Sans KR', sans-serif;
 }
 
+/* 티켓자바 서비스 소개 */
+.ticketjavaAbout {
+	margin:50px 0px 0px 0px;
+	overflow:hidden;
+    	
+}
+
+.ticketbox {
+	border: 10px solid black;
+	margin: 0px 30px 0px 30px;
+}
+
+.ticketBorderMid {
+	background-color:#F9BD4B; height:400px;
+	margin:0px 0px 0px 0px; 
+}
+
+.ticketBorderMid div {
+	height:400px;
+}
+
+
+
+
+
 
 
