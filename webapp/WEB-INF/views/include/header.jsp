@@ -9,7 +9,7 @@
 <body>
 
 		<!-- 헤더 header 구역 시작 (로그인 로고 검색창) -->
-		<div class="container-fluid zp">
+		<header class="container-fluid zp">
 			<div class="container">
 			
 				<div class="row">
@@ -51,16 +51,16 @@
 				<!-- 로고 검색자리 그리드 종료 -->
 			</div>
 			<!-- container 종료 -->
-		</div>
+		</header>
 		<!-- 헤더 구역 종료 (로그인 로고 검색창) -->
 
 
 		<!-- 네비바 구역 시작 -->
-		<div class="container-fluid zp navbox">
+		<nav class="container-fluid zp navbox">
 			<div class="container nav">
 			
 				<!-- 네비바 자리 그리드없음 중앙 정렬 1000px 파란색 줄 -->
-				<nav id="navnav" class="navbar navbar-expand-lg navbar-dark bg-primary btn-primary no-drag">
+				<div id="navnav" class="navbar navbar-expand-lg navbar-dark bg-primary btn-primary no-drag">
 					<div id="navbar" class="" role="navigation">
 						<ul class="clearfix">
 							<li class="nav-item"><a href="">뮤지컬</a></li>
@@ -73,11 +73,11 @@
 							<li id="last-nav-item" class="nav-item"><a href=""><span class="smallFont">랭킹</span></a></li>
 						</ul>
 					</div>
-				</nav>
+				</div>
 
 			</div>
 			<!-- container 종료 -->
-		</div>
+		</nav>
 		<!-- 네비바 구역 종료 -->
 
 
