@@ -32,29 +32,60 @@
 
 			<!-- 영상 재생 구역 시작 -->
 			<section class="productVideo">
-			<div class="mainVideo">
-				<!-- 영상재생이 안될때 대신 보여주는 이미지 -->
-				<img src="assets/image/index/thumbnail_ticketjava_desktop.png">
-				<video loop="" muted="" autoplay="" playsinline="" webkit-playsinline="true">
-					<source type="video/mp4" src="assets/video/video_index.mp4">
-				</video>
-			</div>
+				<div class="mainVideo">
+					<!-- 영상재생이 안될때 대신 보여주는 이미지 -->
+					<img src="assets/image/index/thumbnail_ticketjava_desktop.png">
+					<video loop="" muted="" autoplay="" playsinline="" webkit-playsinline="true">
+						<source type="video/mp4" src="assets/video/video_index.mp4">
+					</video>
+				</div>
 
-			<!-- 영상 코멘트 및 버튼 -->
-			<div class="mainVideoOverlay">
-				<div class="mainVideoComment">
-					<h1>
-						당신의 인생작품을<br>놓치지 마세요
-					</h1>
+				<!-- 영상 코멘트 및 버튼 -->
+				<div class="mainVideoOverlay">
+					<div class="mainVideoComment">
+						<h1>
+							당신의 인생작품을<br>놓치지 마세요
+						</h1>
+					</div>
+					<div class="mainVideoButton">
+						<p>
+							<a href="#">예매하러가기</a>
+						</p>
+					</div>
 				</div>
-				<div class="mainVideoButton">
-					<p>
-						<a href="#">예매하러가기</a>
-					</p>
-				</div>
-			</div>
 			</section>
 			<!-- 영상 재생 구역 종료 -->
+
+
+			<!-- 카운터 numbering 구역 시작 -->
+			<section class="numbering">
+				<div class="container">
+					<div class="row">
+						<div class="col-sm-3 col-xs-6"></div>
+						<div class="col-sm-3 col-xs-6 text-center counter-item">
+							<h3>지금까지</h3>
+							<p class="counter" data-to="377" data-speed="2000">0</p>
+							<h3>
+								분이 <br>티켓자바를 통해 <br>원하는 작품을 만나셨습니다!
+							</h3>
+						</div>
+
+						<div class="col-sm-3 col-xs-6 text-center counter-item">
+							<h4>티켓자바로 본 누적 작품 시간</h4>
+							<br>
+							<h2>
+								<p class="counter" data-to="1525204" data-speed="2000">0</p>
+								분
+							</h2>
+						</div>
+						<div class="col-sm-3 col-xs-6"></div>
+
+					</div>
+				</div>
+			</section>
+			<!-- 카운터 numbering 구역 종료 -->
+
+
 
 			<!-- 작품 리스트 Gallery 구역 시작 -->
 			<section class="productGallery">
@@ -210,5 +241,10 @@
 <!-- 갤러리 기능을 위한 js -->
 <script src="${pageContext.request.contextPath}/assets/js/ajax1.12.4jquery.min.js"></script>
 <script src="${pageContext.request.contextPath}/assets/js/indexProductGallery.js"></script>
+
+<!-- 카운터 기능을 위한 js -->
+<script src="${pageContext.request.contextPath}/assets/js/jquery.countTo.min.js"></script>
+<script src="${pageContext.request.contextPath}/assets/js/indexCounter.js"></script>
+
 
 </html>

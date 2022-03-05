@@ -103,7 +103,6 @@
 
 
 /*  메인페이지 공연 갤러리 제어 */
-
 .productGallery {
 	height:100%;
 	
@@ -343,4 +342,66 @@
 	position: absolute;
 	width: 45px;
 }
+
+
+/* 메인페이지 카운터 기능 제어 */
+.site-section {
+   padding: 100px 0 140px;
+}
+
+.section-map-feature {
+    padding-top: 250px;
+    background: #071021 url(../img/map.png) no-repeat top center / cover; 
+}
+
+.section-map-feature h2 {
+    padding-bottom: 30px;
+    margin: 0;
+}
+
+.section-map-feature h2,
+.section-map-feature p {
+    color: #fff;
+}
+
+.section-map-feature .btn {
+    margin: 80px 0 215px;
+}
+
+
+/* 메인페이지 카운터 메시지 제어 */
+.numbering {
+	margin: 40px 0px 40px 0px;
+}
+
+.counter {
+    margin-bottom: 30px;
+    font-size: 40px;
+    font-weight: 300;
+    line-height: 1;
+}
+
+
+.counter-item h3 {
+    margin: 0;
+    font-size: 30px;
+    color: #0960d7;
+	font-family: 'Noto Sans KR', sans-serif;
+}
+
+.counter-item h4 {
+    margin: 0;
+    font-size: 40px;
+    color: #0960d7;
+	font-family: 'Noto Sans KR', sans-serif;
+}
+
+.counter-item  p {
+	margin: 0px auto;
+	padding: 0px auto;
+	font-size:40px;
+	font-family: 'Noto Sans KR', sans-serif;
+}
+
+
 
