@@ -30,8 +30,8 @@
 		<!-- 컨텐츠 구역 시작 -->
 		<div class="container-fluid zp">
 
-
 			<!-- 영상 재생 구역 시작 -->
+			<section class="productVideo">
 			<div class="mainVideo">
 				<!-- 영상재생이 안될때 대신 보여주는 이미지 -->
 				<img src="assets/image/index/thumbnail_ticketjava_desktop.png">
@@ -53,12 +53,11 @@
 					</p>
 				</div>
 			</div>
+			</section>
 			<!-- 영상 재생 구역 종료 -->
 
-
-
 			<!-- 작품 리스트 Gallery 구역 시작 -->
-			<div class="productGallery">
+			<section class="productGallery">
 				<div class="product section-padding" data-scroll-index='3'>
 
 					<!-- container-fluid row 시작 -->
@@ -192,7 +191,7 @@
 					</div>
 					<!-- container-fluid row 종료 -->
 				</div>
-			</div>
+			</section>
 			<!-- 작품 리스트 Gallery 구역 종료 -->
 
 		</div>

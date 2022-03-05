@@ -10,7 +10,7 @@
 </head>
 <body>
 <!-- 푸터 구역 시작 -->
-	<div class="container-fluid zp footerbox">
+	<footer class="container-fluid zp footerbox">
 		<div class="container zp" id="footer">
 
 			<div class="footerLogo no-drag no-ghost">
@@ -62,7 +62,7 @@
 			</div>		
 		</div>
 		<!-- 푸터 내용 종료 -->
-	</div>
+	</footer>
 	<!-- 푸터 구역 종료 -->
 </body>
 </html>
