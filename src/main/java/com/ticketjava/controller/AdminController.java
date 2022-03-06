@@ -71,6 +71,7 @@ public class AdminController {
 		return "redirect:/admin/";
 	}
 	
+	
 	/*
 	@RequestMapping("/adminNoticeList")
 	public String TheaterNoticeList() {
