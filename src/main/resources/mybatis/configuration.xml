@@ -10,6 +10,8 @@
 		<typeAlias alias="NoticeVo" type="com.ticketjava.vo.NoticeVo" />
 		<typeAlias alias="MypageVo" type="com.ticketjava.vo.MypageVo" />
 		<typeAlias alias="SelseatVo" type="com.ticketjava.vo.SelseatVo" />
+		<typeAlias alias="SeatpriceVo" type="com.ticketjava.vo.SeatpriceVo" />
+		<typeAlias alias="DiscountVo" type="com.ticketjava.vo.DiscountVo" />
 	</typeAliases>
 	<mappers>
 		<mapper resource="mybatis/mappers/reservation.xml" />
@@ -20,5 +22,7 @@
 		<mapper resource="mybatis/mappers/notice.xml" />
 		<mapper resource="mybatis/mappers/mypage.xml" />
 		<mapper resource="mybatis/mappers/selseat.xml" />
+		<mapper resource="mybatis/mappers/seatprice.xml" />
+		<mapper resource="mybatis/mappers/discount.xml" />
 	</mappers>
 </configuration>
