@@ -57,6 +57,60 @@
 			<!-- 영상 재생 구역 종료 -->
 
 
+
+			<!-- 티켓모양 종이질감 블루 구역 시작 -->
+			<section class="container-fluid zp ticketjavaAbout">
+
+				<div class="ticketBorderTop zp" style="background-image: URL(assets/image/index/ticket_border_top_blue.png); background-repeat: repeat-x; height: 40px; width: 100%;"></div>
+
+				<div class="ticketBorderMid" style="background-image: URL(assets/image/index/orange_paper-texture_blue.png); background-repeat: repeat; height: 400px; width: 100%;">
+
+					<div class="ticketbox">
+
+
+						<!-- 카운터 numbering 구역 시작 -->
+						<section class="numbering text-center">
+							<div class="container">
+								<div class="row">
+									<div class="col-sm-3 col-xs-6"></div>
+									<div class="col-sm-3 col-xs-6 text-center counter-item">
+										<h3>지금까지</h3>
+										<p class="counter" data-to="377" data-speed="2000">0</p>
+										<h3>
+											분이 <br>티켓자바를 통해 <br>원하는 작품을 만나셨습니다!
+										</h3>
+									</div>
+
+									<div class="col-sm-3 col-xs-6 text-center counter-item">
+										<h4>티켓자바로 본 누적 작품 시간</h4>
+										<br>
+										<h2>
+											<p class="counter" data-to="1525204" data-speed="2000">0</p>
+											분
+										</h2>
+									</div>
+									<div class="col-sm-3 col-xs-6"></div>
+
+								</div>
+							</div>
+						</section>
+						<!-- 카운터 numbering 구역 종료 -->
+
+
+
+					</div>
+					<!-- //ticketbox -->
+				</div>
+				<!-- // ticketBorderMid -->
+
+				<div style="background-image: URL(assets/image/index/ticket_border_bottom_blue.png); background-repeat: repeat-x; height: 100px; width: 100%;"></div>
+
+			</section>
+			<!-- 티켓모양 종이질감 블루 구역 종료 -->
+
+
+
+
 			<!-- 티켓모양 종이질감 구역 시작 -->
 			<section class="container-fluid zp ticketjavaAbout">
 
