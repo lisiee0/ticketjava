@@ -73,23 +73,23 @@ public class AdminController {
 	}
 	
 	
-	/*
-	@RequestMapping("/adminNoticeList")
-	public String TheaterNoticeList() {
+	
+	@RequestMapping("/noticeList")
+	public String noticeList() {
 		System.out.println("adminController/TheaterNoticeList()");
 		
 		return "admin/adminNoticeList";
 	}
 	
 	
-	@RequestMapping("/adminNoticeAdd")
+	@RequestMapping("/noticeAdd")
 	public String TheaterNoticeAdd() {
 		System.out.println("adminController/TheaterNoticeAdd()");
 		
 		return "admin/adminNoticeAdd";
 	}
 	
-	
+	/*
 	@RequestMapping("/adminNoticeModify")
 	public String TheaterNoticeModify() {
 		System.out.println("adminController/TheaterNoticeModify()");
