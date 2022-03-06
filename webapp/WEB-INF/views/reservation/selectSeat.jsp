@@ -146,8 +146,6 @@ $('#seatPlanDiv').on('change','table td input[type=checkbox]' ,function(){
 				'석</td><td id="right">'+section+'구역 '+col+'열 '+num+'번</td></tr>'
 		);
 		
-		$('#seatForm').append(
-				'<input id="sel'+$(this).attr('id')+'" type="hidden" name="sel" value="'+grade+','+section+','+col+','+num+'">');
 	}
 });
 
@@ -155,7 +153,6 @@ $('#seatPlanDiv').on('change','table td input[type=checkbox]' ,function(){
 $('#seatPlanDiv').on('change','table td input[type=checkbox]' ,function(){
 	if(! this.checked){
 		$('#tr'+$(this).attr('id')).remove();
-		$('#sel'+$(this).attr('id')).remove();
 	}
 	
 	
@@ -164,9 +161,7 @@ $('#seatPlanDiv').on('change','table td input[type=checkbox]' ,function(){
 $('#nextBtn').on('click', function(){
 	
 	var chkbox = $('[type=checkbox]:checked').get();
-	
 	var selectList = [];
-	
 	
 	for(var i=0; i< chkbox.length; i++) {
 		var e = $('[type=checkbox]:checked').eq(i);
@@ -184,12 +179,8 @@ $('#nextBtn').on('click', function(){
 			col:col,
 			num:num				
 		};
-		
-		
 		selectList.push(preoccupyVo);
 	}
-	
-	console.log(selectList);
 	
 	$.ajax({
 		url: "${pageContext.request.contextPath}/reservation/preoccupy",
@@ -197,8 +188,16 @@ $('#nextBtn').on('click', function(){
 		traditional: true,
 		data: {data: JSON.stringify(selectList) },
 		dataType: "json",
-		success : function(result){
-			console.log(result);
+		success : function(sel){
+			console.log(sel.rezNo);
+			console.log(sel.selseatNoList);
+			
+			$('#seatForm').append('<input type="hidden" name="rezNo" value="'+sel.rezNo+'">');
+			for(var selseatNo of sel.selseatNoList){
+				$('#seatForm').append('<input type="hidden" name="selseatNo" value="'+selseatNo+'">');
+			}
+			
+			$('#seatForm').submit();
 		},
 		error : function(XHR, status, error) {
 			console.error(status + " : " + error);

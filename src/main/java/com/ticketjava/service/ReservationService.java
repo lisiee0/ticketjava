@@ -1,6 +1,8 @@
 package com.ticketjava.service;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,6 +10,8 @@ import org.springframework.stereotype.Service;
 
 import com.ticketjava.dao.ReservationDao;
 import com.ticketjava.dao.SelseatDao;
+import com.ticketjava.vo.ReservationVo;
+import com.ticketjava.vo.SelseatVo;
 
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
@@ -21,21 +25,7 @@ public class ReservationService {
 	@Autowired
 	private SelseatDao selseatDao;
 
-	public void preoccupy(String data) {
-		
-		JSONArray array = JSONArray.fromObject(data);
-		JSONObject obj = (JSONObject)array.get(0);
-		
-		Map<String, Object> selectMap = new HashMap<>();
-		selectMap.put("grade", obj.get("grade"));
-		selectMap.put("section", obj.get("section"));
-		selectMap.put("col", obj.get("col"));
-		selectMap.put("num", obj.get("num"));
-		
-		System.out.println(selectMap);
-		
-		
-		/*
+	public Map<String, Object> preoccupy(String data) {
 		Map<String, Object> map= new HashMap<>(); 
 		
 		ReservationVo reservationVo = new ReservationVo();
@@ -44,12 +34,15 @@ public class ReservationService {
 		map.put("rezNo", reservationVo.getRezNo());
 		
 		List<Integer> selseatNoList = new ArrayList<>();
-		for(String str: sel) {
-			String[] arr = str.split(",");
-			String grade = arr[0];
-			String section = arr[1];
-			int col = Integer.parseInt(arr[2]);
-			int num = Integer.parseInt(arr[3]);
+		
+		JSONArray array = JSONArray.fromObject(data);
+		for(int i=0; i<array.size(); i++) {
+			JSONObject obj = (JSONObject)array.get(i);
+			
+			String grade = (String) obj.get("grade");
+			String section = (String) obj.get("section");
+			int col = Integer.parseInt(String.valueOf(obj.get("col")));
+			int num = Integer.parseInt(String.valueOf(obj.get("num")));
 			
 			SelseatVo selseatVo = new SelseatVo();
 			selseatVo.setRezNo(reservationVo.getRezNo());
@@ -63,8 +56,8 @@ public class ReservationService {
 		}
 		map.put("selseatNoList", selseatNoList);
 		
-		System.out.println(map);
-		*/
+		return map;
+		
 	}
 	
 	

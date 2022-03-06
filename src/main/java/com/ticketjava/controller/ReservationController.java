@@ -28,24 +28,20 @@ public class ReservationController {
 	}
 	
 	@RequestMapping("/selectQuantity")
-	public String selectQuantity() {
-		/*
-		 	or(String str : sel)
-			System.out.println(str);
-		*/
-		
+	public String selectQuantity(@RequestParam("rezNo") int rezNo,
+								 @RequestParam("selseatNo") int [] selseatNo) {
+		System.out.println(rezNo);
+		System.out.println(selseatNo);
 		
 		return "reservation/selectQuantity";
 	}
 	
 	@ResponseBody
 	@RequestMapping("/preoccupy")
-	public String preoccupy(@RequestParam String data){
+	public Map<String, Object> preoccupy(@RequestParam String data){
 
-		reservationService.preoccupy(data);
-
-		
-		return "성공";
+		Map<String, Object> map = reservationService.preoccupy(data);
+		return map;
 	}
 	
 	@RequestMapping("/confirmReservation")
