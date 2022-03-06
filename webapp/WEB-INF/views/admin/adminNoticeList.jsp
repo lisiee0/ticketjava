@@ -37,8 +37,8 @@
 						<div id="admin-aside">
 							<h2 class="admin-pageMenu">관리페이지</h2>
 							<ul class="clearfix">
-								<li class="menubar-line">공연장 목록</li>
-								<li class="currentPage">공연장 공지사항</li>
+								<li class="menubar-line"><a href="${pageContext.request.contextPath}/admin/">공연장 목록</a></li>
+								<li class="currentPage"><a href="${pageContext.request.contextPath}/admin/noticeList">공연장 공지사항</a></li>
 							</ul>
 						</div>
 					</div>
@@ -50,7 +50,7 @@
 						<div class="col-xs-12 np">
 							<h3 class="pageMenu adminsection">공연장 공지사항</h3>
 
-							<button type="button" class="btn btn-primary position">공지사항 등록</button>
+							<a href="${pageContext.request.contextPath}/admin/noticeAdd" class="btn btn-primary position">공지사항 등록</a>
 						</div>
 						<!-- //content-head -->
 				

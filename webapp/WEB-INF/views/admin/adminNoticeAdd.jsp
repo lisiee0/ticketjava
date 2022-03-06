@@ -37,8 +37,8 @@
 						<div id="admin-aside">
 							<h2 class="admin-pageMenu">관리페이지</h2>
 							<ul class="clearfix">
-								<li class="menubar-line">공연장 목록</li>
-								<li class="currentPage">공연장 공지사항</li>
+								<li class="menubar-line"><a href="${pageContext.request.contextPath}/admin/">공연장 목록</a></li>
+								<li class="currentPage"><a href="${pageContext.request.contextPath}/admin/noticeList">공연장 공지사항</a></li>
 							</ul>
 						</div>
 					</div>
