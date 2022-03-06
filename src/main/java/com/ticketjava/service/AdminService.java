@@ -50,12 +50,19 @@ public class AdminService {
 		return hd.getHall(hallNo);
 	}
 	
+	
 	public void modifyHall(HallVo vo) {
 		hd.modifyHall(vo);
 	}
 	
+	
 	public void deleteHall(HallVo vo) {
 		hd.deleteHall(vo);
+	}
+	
+	
+	public List<TheaterVo> selectList() {
+		return td.selectList();
 	}
 
 }

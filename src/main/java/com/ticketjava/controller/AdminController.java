@@ -82,11 +82,20 @@ public class AdminController {
 	}
 	
 	
-	@RequestMapping("/noticeAdd")
-	public String TheaterNoticeAdd() {
-		System.out.println("adminController/TheaterNoticeAdd()");
+	@RequestMapping("/noticeAddForm")
+	public String noticeAddForm(Model model) {
+		System.out.println("adminController/noticeAddForm()");
 		
+		model.addAttribute("selectList", adminService.selectList());
 		return "admin/adminNoticeAdd";
+	}
+	
+	
+	@RequestMapping("/noticeAdd")
+	public String noticeAdd() {
+		System.out.println("adminController/noticeAdd()");
+		
+		return "redirect:/admin/noticeList";
 	}
 	
 	/*

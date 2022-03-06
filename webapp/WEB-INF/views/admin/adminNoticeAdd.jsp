@@ -57,7 +57,7 @@
 						<div class="col-xs-12 np">
 							<div id="board">
 							
-								<form action="" method="" class="form-horizontal">
+								<form action="${pageContext.request.contextPath}/admin/noticeAdd" method="post" class="form-horizontal">
 	
 									<!-- 공연장 -->
 									<div class="form-group">

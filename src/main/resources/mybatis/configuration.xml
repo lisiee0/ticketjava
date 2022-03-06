@@ -7,6 +7,7 @@
 		<typeAlias alias="BusinessVo" type="com.ticketjava.vo.BusinessVo" />
 		<typeAlias alias="TheaterVo" type="com.ticketjava.vo.TheaterVo" />
 		<typeAlias alias="HallVo" type="com.ticketjava.vo.HallVo" />
+		<typeAlias alias="NoticeVo" type="com.ticketjava.vo.NoticeVo" />
 		<typeAlias alias="MypageVo" type="com.ticketjava.vo.MypageVo" />
 		<typeAlias alias="SelseatVo" type="com.ticketjava.vo.SelseatVo" />
 	</typeAliases>
@@ -16,6 +17,7 @@
 		<mapper resource="mybatis/mappers/business.xml" />
 		<mapper resource="mybatis/mappers/theater.xml" />
 		<mapper resource="mybatis/mappers/hall.xml" />
+		<mapper resource="mybatis/mappers/notice.xml" />
 		<mapper resource="mybatis/mappers/mypage.xml" />
 		<mapper resource="mybatis/mappers/selseat.xml" />
 	</mappers>

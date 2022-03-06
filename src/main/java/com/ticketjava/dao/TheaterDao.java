@@ -30,5 +30,9 @@ public class TheaterDao {
 		
 	}
 	
+	public List<TheaterVo> selectList() {
+		return sqlsession.selectList("theater.selectList");
+	}
+	
 	
 }
