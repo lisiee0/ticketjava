@@ -59,6 +59,17 @@ public class ReservationService {
 		return map;
 		
 	}
+
+	public Map<String, Object> selList(int rezNo, int[] selseatNo) {
+		Map<String, Object> map = new HashMap<>();
+		map.put("rezNo", rezNo);
+		List<SelseatVo> selList = selseatDao.selectSelList(selseatNo);
+		map.put("selList", selList);
+		
+		System.out.println(selList);
+		
+		return map;
+	}
 	
 	
 	

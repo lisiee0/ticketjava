@@ -1,5 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix = "fn" uri = "http://java.sun.com/jsp/jstl/functions" %>
+
+    
 <!DOCTYPE html>
 <html>
 <head>
@@ -159,14 +163,12 @@
 							<col style="width:28%">
 							<col style="">
 						</colgroup>
-						<tr>
-							<td>VIP석</td>
-							<td class="right">A구역 1열 4번</td>
-						</tr>
-						<tr>
-							<td>S석</td>
-							<td class="right">B구역 4열 12번</td>
-						</tr>
+						<c:forEach items="${selMap.selList}" var="vo">
+							<tr>
+								<td>${fn:toUpperCase(vo.grade)}석</td>
+								<td class="right">${vo.section}구역 ${vo.col}열 ${vo.num}번</td>
+							</tr>
+						</c:forEach>
 					</table>
 				</div>
 				

@@ -6,10 +6,10 @@
 	    <selectKey resultType="int" keyProperty="rezNo" order="BEFORE">
 	        SELECT seq_rez_no.nextval FROM dual       
 	    </selectKey>    
-	    
-	    INSERT INTO reserve( rez_no , status)
-	    VALUES(#{rezNo}, 2)
+	    <![CDATA[
+		    INSERT INTO reserve( rez_no , status)
+		    VALUES(#{rezNo}, 2)
+	    ]]>
 	</insert>  
-	
 	
 </mapper>

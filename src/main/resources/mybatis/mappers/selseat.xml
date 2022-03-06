@@ -6,10 +6,26 @@
 	    <selectKey resultType="int" keyProperty="selseatNo" order="BEFORE">
 	        SELECT seq_selseat_no.nextval FROM dual     
 	    </selectKey>    
-	    
-	    INSERT INTO selseat( selseat_no , rez_no, grade, section, col, num, status, pretime )
-	    			VALUES(#{selseatNo}, #{rezNo}, #{grade},#{section} , #{col}, #{num}, 2, sysdate )
+	    <![CDATA[
+		    INSERT INTO selseat( selseat_no , rez_no, grade, section, col, num, status, pretime )
+		    			VALUES(#{selseatNo}, #{rezNo}, #{grade},#{section} , #{col}, #{num}, 2, sysdate )
+		]]>
 	</insert>  
 	
+	<select id="selectSelList" parameterType="map" resultType="SelseatVo">
+		<![CDATA[
+			select selseat_no selseatNo,
+				   grade,
+				   section,
+				   col,
+				   num
+			from selseat
+			where selseat_no in
+		]]>
+		<foreach collection="array" item="item" index="index" open="(" close=")" separator=",">
+			#{item}
+		</foreach>
+		
+	</select>
 	
 </mapper>
