@@ -17,34 +17,34 @@ public class MypageController {
 	
 	
 //	마이페이지 문의내역
-	@RequestMapping("/asking")
+	@RequestMapping("/reserveAsking")
 	public String asking() {
-		System.out.println("MypageController asking");
-		return "mypage/asking";
+		System.out.println("MypageController reserveAsking 문의내역");
+		return "mypage/reserveAsking";
 	}
 	
 	
-//	마이페이지 티켓알람
-	@RequestMapping("/ticketAlram")
+//	마이페이지 취소 티켓알람
+	@RequestMapping("/reserveAlram")
 	public String ticketAlram() {
-		System.out.println("MypageController ticketAlram");
-		return "mypage/ticketAlram";
+		System.out.println("MypageController reserveAlram 취소 티켓알람");
+		return "mypage/reserveAlram";
 	}
 	
 	
-//	티케팅 
-	@RequestMapping("/ticketingAndCancel")
+//	마이페이지 예매내역 및 취소 
+	@RequestMapping("/reserveAndCancel")
 	public String ticketingAndCancel() {
-		System.out.println("MypageController ticketingAndCancel");
-		return "mypage/ticketingAndCancel";
+		System.out.println("MypageController reserveAndCancel 예매내역 및 취소");
+		return "mypage/reserveAndCancel";
 	}
 	
 	
 //	예매 상세페이지
-	@RequestMapping("/ticketingDetail")
+	@RequestMapping("/reserveDetail")
 	public String ticketingDetail() {
-		System.out.println("MypageController ticketingDetail");
-		return "mypage/ticketingDetail";
+		System.out.println("MypageController reserveDetail 예매 상세페이지");
+		return "mypage/reserveDetail";
 	}
 	
 	

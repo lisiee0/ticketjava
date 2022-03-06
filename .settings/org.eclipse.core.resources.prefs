@@ -1,4 +1,4 @@
 eclipse.preferences.version=1
 encoding//webapp/WEB-INF/views/main/index.jsp=UTF-8
-encoding//webapp/WEB-INF/views/mypage/asking.jsp=UTF-8
-encoding//webapp/WEB-INF/views/mypage/ticketAlram.jsp=UTF-8
+encoding//webapp/WEB-INF/views/mypage/reserveAlram.jsp=UTF-8
+encoding//webapp/WEB-INF/views/mypage/reserveAsking.jsp=UTF-8
