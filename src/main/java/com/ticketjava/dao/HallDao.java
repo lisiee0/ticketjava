@@ -33,4 +33,5 @@ public class HallDao {
 	public void modifyHall(HallVo vo) {
 		sqlSession.update("hall.update", vo);
 	}
+	
 }
