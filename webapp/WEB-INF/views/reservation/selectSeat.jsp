@@ -122,7 +122,7 @@
 				
 				<form id="seatForm" action="${pageContext.request.contextPath}/reservation/selectQuantity" method="post">
 				
-					<button class="btn-primary" type="submit" id="nextBtn" class="btn">다음단계 </button>
+					<button class="btn-primary" type="button" id="nextBtn" class="btn">다음단계 </button>
 				</form>
 				<button class="btn-default">취소표 알림</button>
 			</div>
@@ -141,8 +141,6 @@ $('#seatPlanDiv').on('change','table td input[type=checkbox]' ,function(){
 		var col =  $(this).attr('data-col');
 		var num = $(this).attr('data-num');
 		
-		
-		
 		$('#choiceTable table').append(
 				'<tr id="tr'+$(this).attr('id')+'"><td>'+grade.toUpperCase()+
 				'석</td><td id="right">'+section+'구역 '+col+'열 '+num+'번</td></tr>'
@@ -160,6 +158,53 @@ $('#seatPlanDiv').on('change','table td input[type=checkbox]' ,function(){
 		$('#sel'+$(this).attr('id')).remove();
 	}
 	
+	
+});
+
+$('#nextBtn').on('click', function(){
+	
+	var chkbox = $('[type=checkbox]:checked').get();
+	
+	var selectList = [];
+	
+	
+	for(var i=0; i< chkbox.length; i++) {
+		var e = $('[type=checkbox]:checked').eq(i);
+		
+		var grade= e.attr("class");
+		if(grade == 'v')
+			grade = "vip";
+		var section = e.attr('data-section');
+		var col = e.attr('data-col');
+		var num = e.attr('data-num');
+		
+		var preoccupyVo = {
+			grade:grade,
+			section:section,
+			col:col,
+			num:num				
+		};
+		
+		
+		selectList.push(preoccupyVo);
+	}
+	
+	console.log(selectList);
+	
+	$.ajax({
+		url: "${pageContext.request.contextPath}/reservation/preoccupy",
+		type : "post",
+		traditional: true,
+		data: {data: JSON.stringify(selectList) },
+		dataType: "json",
+		success : function(result){
+			console.log(result);
+		},
+		error : function(XHR, status, error) {
+			console.error(status + " : " + error);
+		}
+	});
+	 
 	
 });
 
