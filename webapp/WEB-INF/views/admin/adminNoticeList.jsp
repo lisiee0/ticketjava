@@ -50,38 +50,39 @@
 						<div class="col-xs-12 np">
 							<h3 class="pageMenu adminsection">공연장 공지사항</h3>
 
-							<a href="${pageContext.request.contextPath}/admin/noticeAdd" class="btn btn-primary position">공지사항 등록</a>
+							<a href="${pageContext.request.contextPath}/admin/noticeAddForm" class="btn btn-primary position">공지사항 등록</a>
 						</div>
 						<!-- //content-head -->
 				
 						<!-- content body -->
 						<div id="list">
 							<table class="table listTable">
+								<colgroup>
+									<col width="14.5%">
+									<col width="51%">
+									<col width="20">
+									<col width="14.5%">
+								</colgroup>
 								<thead>
 									<tr class="info">
-										<th>공연장</th>
+										<th>공연장명</th>
 										<th>공지사항</th>
+										<th>등록일</th>
 										<th>관리</th>
 									</tr>
 								</thead>
 								<tbody>
-									<tr>
-										<td>예술의전당</td>
-										<td>2022년 아티스트 공개 모집</td>
-										<td><span class="glyphicon glyphicon-trash"></span></td>
-									</tr>
-									
-									<tr>
-										<td>예술의전당</td>
-										<td>2022년 전반기 예산 사용계획</td>
-										<td><span class="glyphicon glyphicon-trash"></span></td>
-									</tr>
-									
-									<tr>
-										<td>세종문화회관</td>
-										<td>지하철 5호선 8번출구 유지보수공사 일정</td>
-										<td><span class="glyphicon glyphicon-trash"></span></td>
-									</tr>
+									<c:forEach items="${noticeList}" var="vo">
+										<tr>
+											<td>${vo.theaterName}</td>
+											<td>${vo.content}</td>
+											<td>${vo.regDate}</td>
+											<td>
+												<a href="${pageContext.request.contextPath}/admin/noticeModifyForm?noticeNo=${vo.noticeNo}"><span class="glyphicon glyphicon-pencil">수정</span></a>&nbsp;&nbsp;
+												<a href="${pageContext.request.contextPath}/admin/noticeDelete?noticeNo=${vo.noticeNo}"><span class="glyphicon glyphicon-trash">삭제</span></a>
+											</td>
+										</tr>
+									</c:forEach>
 								</tbody>					
 							</table>
 						</div>

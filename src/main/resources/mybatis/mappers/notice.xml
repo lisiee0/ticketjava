@@ -1,7 +1,26 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="notice">
-
+	
+	<insert id="noticeAdd" parameterType="NoticeVo">
+		<![CDATA[
+			insert into notice
+			values 		(seq_notice_no.nextval, #{theaterNo}, #{content}, sysdate)
+		]]>
+	</insert>
+	
+	<select id="getNoticeList" resultType="NoticeVo">
+		<![CDATA[
+			select			notice_no noticeNo, 
+							n.theater_no theaterNo, 
+							theatername, 
+							content, 
+							to_char(regdate, 'YYYY-MM-DD HH24:MI:SS') regDate
+			from			notice n, theater t
+			where			n.theater_no= t.theater_no
+			order by 		theaterNo desc, regDate desc
+		]]>
+	</select>
 </mapper>
 
 

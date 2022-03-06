@@ -62,11 +62,13 @@
 									<!-- 공연장 -->
 									<div class="form-group">
 										<div class="col-xs-2"></div>
-									    <label class="form-text col-xs-2" for="">공연장</label>
+									    <label class="form-text col-xs-2">공연장</label>
 									    <div class="col-xs-6">
-									    	<select class="form-control">
-									    		<option>예술의전당</option>
-									    		<option>세종문화회관</option>
+									    	<select class="form-control" name="theaterNo">
+									    		<option selected>공연장을 선택해주세요.</option>
+									    		<c:forEach items="${selectList}" var="vo">
+									    			<option value="${vo.theaterNo}">${vo.theaterName}</option>
+									    		</c:forEach>
 									    	</select>
 									    </div>
 									    <div class="col-xs-2"></div>
@@ -77,7 +79,7 @@
 										<div class="col-xs-2"></div>
 									    <label class="form-text col-xs-2" for="">공지사항</label>
 									    <div class="col-xs-6">
-									    	<input type="text" class="form-control" id="" placeholder="공지사항을 입력하세요">
+									    	<input type="text" class="form-control" name="content" placeholder="공지사항을 입력하세요">
 									    </div>
 									    <div class="col-xs-2"></div>
 									</div>

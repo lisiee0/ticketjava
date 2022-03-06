@@ -6,8 +6,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.ticketjava.dao.HallDao;
+import com.ticketjava.dao.NoticeDao;
 import com.ticketjava.dao.TheaterDao;
 import com.ticketjava.vo.HallVo;
+import com.ticketjava.vo.NoticeVo;
 import com.ticketjava.vo.TheaterVo;
 
 @Service
@@ -17,6 +19,8 @@ public class AdminService {
 	private TheaterDao td;
 	@Autowired
 	private HallDao hd;
+	@Autowired
+	private NoticeDao nd;
 	
 	public void theaterAdd(TheaterVo vo) {
 		// 임시데이터 넣기
@@ -61,8 +65,20 @@ public class AdminService {
 	}
 	
 	
+	public List<NoticeVo> getNoticeList() {
+		return nd.getNoticeList();
+	}
+	
+	
 	public List<TheaterVo> selectList() {
 		return td.selectList();
 	}
+	
+	
+	public void noticeAdd(NoticeVo vo) {
+		nd.noticeAdd(vo);
+	}
+	
+	
 
 }

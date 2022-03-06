@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.ticketjava.service.AdminService;
 import com.ticketjava.vo.HallVo;
+import com.ticketjava.vo.NoticeVo;
 import com.ticketjava.vo.TheaterVo;
 
 @Controller
@@ -47,10 +48,8 @@ public class AdminController {
 	// 공연장 수정양식 불러오기
 	@RequestMapping("/theaterModifyForm")
 	public String theaterModifyForm(@RequestParam("hallNo") int hallNo, Model model ) {
-		System.out.println("adminController/theaterModifyForm()");
 		
 		model.addAttribute("hallVo", adminService.getHall(hallNo));
-		
 		return "admin/adminTheaterModify";
 	}
 	
@@ -73,28 +72,29 @@ public class AdminController {
 	}
 	
 	
-	
+	// 공지사항 리스트 불러오기
 	@RequestMapping("/noticeList")
-	public String noticeList() {
-		System.out.println("adminController/TheaterNoticeList()");
+	public String noticeList(Model model) {
 		
+		model.addAttribute("noticeList", adminService.getNoticeList());
 		return "admin/adminNoticeList";
 	}
 	
 	
+	// 공지사항 등록양식 불러오기
 	@RequestMapping("/noticeAddForm")
 	public String noticeAddForm(Model model) {
-		System.out.println("adminController/noticeAddForm()");
 		
 		model.addAttribute("selectList", adminService.selectList());
 		return "admin/adminNoticeAdd";
 	}
 	
 	
+	// 공지사항 등록
 	@RequestMapping("/noticeAdd")
-	public String noticeAdd() {
-		System.out.println("adminController/noticeAdd()");
+	public String noticeAdd(@ModelAttribute NoticeVo vo) {
 		
+		adminService.noticeAdd(vo);
 		return "redirect:/admin/noticeList";
 	}
 	
