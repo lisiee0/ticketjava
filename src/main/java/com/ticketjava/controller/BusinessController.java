@@ -21,6 +21,7 @@ public class BusinessController {
 	public String bmInquiry(Model model) {
 		System.out.println("BusinessController/bmInquiry");
 		
+		model.addAttribute(null, model);
 		
 		return "business/bmInquiry";
 	}

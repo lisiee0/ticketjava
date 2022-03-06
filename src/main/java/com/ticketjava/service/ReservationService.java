@@ -1,8 +1,6 @@
 package com.ticketjava.service;
 
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,8 +8,9 @@ import org.springframework.stereotype.Service;
 
 import com.ticketjava.dao.ReservationDao;
 import com.ticketjava.dao.SelseatDao;
-import com.ticketjava.vo.ReservationVo;
-import com.ticketjava.vo.SelseatVo;
+
+import net.sf.json.JSONArray;
+import net.sf.json.JSONObject;
 
 @Service
 public class ReservationService {
@@ -22,8 +21,21 @@ public class ReservationService {
 	@Autowired
 	private SelseatDao selseatDao;
 
-	public void preoccupy(String[] sel) {
+	public void preoccupy(String data) {
 		
+		JSONArray array = JSONArray.fromObject(data);
+		JSONObject obj = (JSONObject)array.get(0);
+		
+		Map<String, Object> selectMap = new HashMap<>();
+		selectMap.put("grade", obj.get("grade"));
+		selectMap.put("section", obj.get("section"));
+		selectMap.put("col", obj.get("col"));
+		selectMap.put("num", obj.get("num"));
+		
+		System.out.println(selectMap);
+		
+		
+		/*
 		Map<String, Object> map= new HashMap<>(); 
 		
 		ReservationVo reservationVo = new ReservationVo();
@@ -52,6 +64,7 @@ public class ReservationService {
 		map.put("selseatNoList", selseatNoList);
 		
 		System.out.println(map);
+		*/
 	}
 	
 	

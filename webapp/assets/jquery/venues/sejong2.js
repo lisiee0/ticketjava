@@ -26,13 +26,13 @@ $(document).ready(function(){
 	seatMap.push(sectionA);
 	
 	var sectionB = [
-		'vvvv',
-		'vvvv',
-		'rrrr',
-		'rrrr',
-		'rrrr',
-		'rrrr',
-		'rrrr'
+		'nnnnvvnnnn',
+		'nnnvvvvnnn',
+		'nnnrrrrnnn',
+		'nnrrrrrrnn',
+		'nnrrrrrrnn',
+		'rrrrrrrrrr',
+		'rrrrrrrrrr'
 	];
 	seatMap.push(sectionB);
 	
@@ -121,8 +121,12 @@ $(document).ready(function(){
 		else{
 			$('#seatArea'+sectionCh+' #col'+col).append(
 				'<td><input class="'+seat+'" type="checkbox" id="seat'+seatno+
-				'" data-section="'+sectionCh+'" data-col="'+(col+1)+'" data-num="'+num+++'" ><label for="seat'+seatno+'"></label> </td>'
+				'" data-section="'+sectionCh+'" data-col="'+(col+1)+'" data-num="'+num+'" ><label for="seat'+seatno+'"></label> </td>'
 			);
+		}
+		
+		if(seat != "num"){
+			num++;
 		}
 		
 		seatno++;

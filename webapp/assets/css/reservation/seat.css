@@ -50,12 +50,13 @@
 	top:300px;
 	left:190px;
 	transform: rotate(35deg);
+	z-index:1;
 }
 
 #seatPlanDiv table#seatAreaB{
 	position:absolute;
 	top:330px;
-	left:300px;
+	left:245px;
 }
 
 

@@ -14,6 +14,8 @@ public class BusinessService {
 
 	public void bmAdd(BusinessVo businessVo) {
 		businessDao.insert(businessVo);
+		
+		
 	}
 
 }
