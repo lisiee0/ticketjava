@@ -58,18 +58,17 @@ public class AdminController {
 	// 공연장 수정
 	@RequestMapping("/theaterModify")
 	public String theaterModify(@ModelAttribute HallVo vo) {
-		System.out.println("adminController/theaterModify");
 		
-		System.out.println(vo);
-		
+		adminService.modifyHall(vo);
 		return "redirect:/admin/";
 	}
 	
 	
-	public String theaterDelete() {
-		System.out.println("adminController/TheaterDelete()");
+	@RequestMapping("/theaterDelete")
+	public String theaterDelete(@ModelAttribute HallVo vo) {
 		
-		return "";
+		adminService.deleteHall(vo);
+		return "redirect:/admin/";
 	}
 	
 	/*

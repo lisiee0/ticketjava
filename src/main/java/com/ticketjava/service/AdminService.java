@@ -53,5 +53,9 @@ public class AdminService {
 	public void modifyHall(HallVo vo) {
 		hd.modifyHall(vo);
 	}
+	
+	public void deleteHall(HallVo vo) {
+		hd.deleteHall(vo);
+	}
 
 }
