@@ -773,7 +773,7 @@ COMMENT ON COLUMN selseat.rez_no IS '예매번호';
 
 COMMENT ON COLUMN selseat.dc_no IS '할인 번호';
 
-COMMENT ON COLUMN selseat.grade IS '좌석등급';
+COMMENT ON COLUMN selseat.` IS '좌석등급';
 
 COMMENT ON COLUMN selseat.section IS '구역';
 
@@ -874,7 +874,7 @@ DROP TABLE seatprice
 CREATE TABLE seatprice (
 	seatprice_no NUMBER NOT NULL, /* 등급별가격 번호 */
 	prod_no NUMBER NOT NULL, /* 공연번호 */
-	grade NUMBER, /* 좌석등급 */
+	grade varchar2(10), /* 좌석등급 */
 	price NUMBER /* 가격 */
 );
 
