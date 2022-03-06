@@ -64,6 +64,7 @@ public class AdminController {
 	}
 	
 	
+	// 공연장 삭제
 	@RequestMapping("/theaterDelete")
 	public String theaterDelete(@ModelAttribute HallVo vo) {
 		
