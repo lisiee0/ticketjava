@@ -18,8 +18,8 @@
 					<div class="col-xs-3 zp">
 						<div id="header" class="clearfix no-drag no-ghost">
 							<ul>
-								<li><a href="${pageContext.request.contextPath}/mypage/ticketingList"><img src="${pageContext.request.contextPath}/assets/image/index/bell-normal.png"></a></li>
-								<li><a href="${pageContext.request.contextPath}/mypage/ticketingList"><img src="${pageContext.request.contextPath}/assets/image/index/bell-new.png"></a></li>
+								<li><a href="${pageContext.request.contextPath}/mypage/reserveList"><img src="${pageContext.request.contextPath}/assets/image/index/bell-normal.png"></a></li>
+								<li><a href="${pageContext.request.contextPath}/mypage/reserveList"><img src="${pageContext.request.contextPath}/assets/image/index/bell-new.png"></a></li>
 
 								<li><a href="${pageContext.request.contextPath}/user/loginForm">로그인</a></li>
 								<li><a href="${pageContext.request.contextPath}/user/joinForm">회원가입</a></li>

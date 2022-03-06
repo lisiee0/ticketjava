@@ -9,11 +9,11 @@ public class MypageController {
 
 	
 //	마이페이지 예매내역
-	@RequestMapping("/ticketingList")
+	@RequestMapping("/reserveList")
 	public String ticketingList() {
-		System.out.println("MypageController ticketingList");
-		return "mypage/ticketingList";
-	} // MypageController
+		System.out.println("MypageController reserveList 예매내역");
+		return "mypage/reserveList";
+	} 
 	
 	
 //	마이페이지 문의내역

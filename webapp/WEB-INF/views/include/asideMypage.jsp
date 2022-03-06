@@ -27,7 +27,7 @@
 			<h2>마이페이지</h2>
 			<ul>
 				<li><h3>예매내역</h3></li>
-				<li><a href="${pageContext.request.contextPath}/mypage/ticketingList">예매내역/취소</a></li>
+				<li><a href="${pageContext.request.contextPath}/mypage/reserveList">예매내역/취소</a></li>
 				<li><a href="${pageContext.request.contextPath}/mypage/ticketAlram">취소알림 내역</a></li>
 				<li><a href="${pageContext.request.contextPath}/mypage/ticketingDetail">디테일(개발용)</a></li>
 			</ul>
