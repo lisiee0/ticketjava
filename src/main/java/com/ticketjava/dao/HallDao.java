@@ -34,4 +34,8 @@ public class HallDao {
 		sqlSession.update("hall.update", vo);
 	}
 	
+	
+	public void deleteHall(HallVo vo) {
+		sqlSession.delete("hall.delete", vo);
+	}
 }

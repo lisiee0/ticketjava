@@ -66,7 +66,7 @@
 										<div class="col-xs-2"></div>
 									    <label class="form-text col-xs-2" for="">공연장명</label>
 									    <div class="col-xs-6">
-									    	<input type="text" class="form-control" name="theaterName" placeholder="${hallVo.theaterName}" value="${hallVo.theaterName}" readonly>
+									    	<input type="text" class="form-control" name="theaterName" placeholder="${hallVo.theaterName}" readonly>
 									    </div>
 									    <div class="col-xs-2"></div>
 									</div>
@@ -87,12 +87,12 @@
 										<div class="col-xs-2"></div>
 										<label class="form-text col-xs-2">공연장주소</label>
 										<div class="col-xs-6">
-											<input id="sample6_postcode" type="text" class="form-control col-xs-4 formZipcode" name="postCode" placeholder="${hallVo.postCode}" value="${hallVo.postCode}" readonly>
+											<input id="sample6_postcode" type="text" class="form-control col-xs-4 formZipcode" name="postCode" placeholder="${hallVo.postCode}" readonly>
 											<div class="col-xs-4"></div>
 											<button type="button" class="btn btn-primary col-xs-4 formZipcode" onclick="sample6_execDaumPostcode()">우편번호찾기</button>
 
-											<input id="sample6_address" type="text" class="form-control formMargin" name="address" placeholder="${hallVo.address}" value="${hallVo.address}" readonly>
-											<input id="sample6_detailAddress" type="text" class="form-control formMargin" name="address2" placeholder="${hallVo.address2}" value="${hallVo.address}">
+											<input id="sample6_address" type="text" class="form-control formMargin" name="address" placeholder="${hallVo.address}" readonly>
+											<input id="sample6_detailAddress" type="text" class="form-control formMargin" name="address2" placeholder="${hallVo.address2}" readonly>
 										</div>
 										<div class="col-xs-2"></div>
 									</div>
@@ -103,7 +103,7 @@
 										<div class="col-xs-2"></div>
 									    <label class="form-text col-xs-2" for="">대표번호</label>
 									    <div class="col-xs-6">
-									    	<input type="text" class="form-control" name="phone" placeholder="${hallVo.phone}" value="${hallVo.phone}">
+									    	<input type="text" class="form-control" name="phone" placeholder="${hallVo.phone}" readonly>
 									    </div>
 									    <div class="col-xs-2"></div>
 									</div>
@@ -113,20 +113,11 @@
 										<div class="col-xs-2"></div>
 									    <label class="form-text col-xs-2" for="">홈페이지</label>
 									    <div class="col-xs-6">
-									    	<input type="text" class="form-control" name="homePage" placeholder="${hallVo.homePage}" value="${hallVo.homePage}">
+									    	<input type="text" class="form-control" name="homePage" placeholder="${hallVo.homePage}" readonly>
 									    </div>
 									    <div class="col-xs-2"></div>
 									</div>
 									
-									<!-- 공연장사진 -->
-									<div class="form-group">
-										<div class="col-xs-2"></div>
-									    <label class="form-text col-xs-2" for="">공연장로고</label>
-									    <div class="col-xs-6">
-									    	<input type="file" name="file" value="">
-									    </div>
-									    <div class="col-xs-2"></div>
-									</div>
 									
 									<div id="btnLocation">
 	                          			<button type="submit" class="btn btn-primary" id="modbtn">공연장 수정</button>

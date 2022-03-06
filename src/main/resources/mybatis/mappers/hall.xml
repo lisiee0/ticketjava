@@ -47,5 +47,20 @@
 		]]>
 	</select>
 	
+	<update id="update" parameterType="HallVo">
+		<![CDATA[
+			update			hall
+			set 			hallname= #{hallName}
+			where 			hall_no= #{hallNo}
+		]]>
+	</update>
+	
+	
+	<delete id="delete" parameterType="HallVo">
+		<![CDATA[
+			delete from hall
+			where 		hall_no= #{hallNo}
+		]]>
+	</delete>
 	
 </mapper>
