@@ -15,5 +15,9 @@ public class BusinessDao {
 	public void insert(BusinessVo businessVo) {
 		sqlSession.insert("business.insert", businessVo);
 	}
+	
+	public void selectOne() {
+		return ;
+	}
 
 }
