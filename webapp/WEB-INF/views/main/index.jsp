@@ -72,7 +72,9 @@
 						<section class="numbering text-center">
 							<div class="container">
 								<div class="row">
-									<div class="col-sm-3 col-xs-6"></div>
+									<div class="col-sm-3 col-xs-6">
+										<img src="assets/image/index/dancerRightSide.png" width="200px">
+									</div>
 									<div class="col-sm-3 col-xs-6 text-center counter-item">
 										<h3>지금까지</h3>
 										<p class="counter" data-to="377" data-speed="2000">0</p>
@@ -89,7 +91,9 @@
 											분
 										</h2>
 									</div>
-									<div class="col-sm-3 col-xs-6"></div>
+									<div class="col-sm-3 col-xs-6">
+										<img src="assets/image/index/stamp_certi.png">
+									</div>
 
 								</div>
 							</div>
@@ -107,6 +111,7 @@
 
 			</section>
 			<!-- 티켓모양 종이질감 블루 구역 종료 -->
+
 
 
 
