@@ -28,6 +28,7 @@ public class AdminService {
 	@Autowired
 	private NoticeDao nd;
 	
+	
 	public void theaterAdd(TheaterVo vo, MultipartFile file) {
 		// 임시데이터 넣기
 		vo.setLatitude("0");
@@ -42,7 +43,6 @@ public class AdminService {
 		
 		// 업로드
 		try {
-			
 			byte[] fileData= file.getBytes();
 			OutputStream out= new FileOutputStream(filePath);
 			BufferedOutputStream bout= new BufferedOutputStream(out);
@@ -53,9 +53,9 @@ public class AdminService {
 		catch (IOException e) {
 			e.printStackTrace();
 		}
-
-		vo.setLogoPath(saveName);
 		
+		// 공연장로고 설정
+		vo.setLogoPath(saveName);
 		
 		td.theaterAdd(vo);
 		td.selectTheater(vo); // 추가한 theater.no 가져오기
@@ -71,8 +71,8 @@ public class AdminService {
 		else { // 시설명이 1개일때
 			hd.hallAdd(vo);
 		}
-
 	}
+	
 	
 	public List<HallVo> getList() {
 		return hd.getHallList();
@@ -113,9 +113,11 @@ public class AdminService {
 		return nd.getNotice(noticeNo);
 	}
 	
+	
 	public void noticeModify(NoticeVo vo) {
 		nd.noticeModify(vo);
 	}
+	
 	
 	public void noticeDelete(int noticeNo) {
 		nd.noticeDelete(noticeNo);
