@@ -12,14 +12,25 @@ import com.ticketjava.vo.BusinessVo;
 public class BusinessDao {
 
 	@Autowired
-	private SqlSession sqlSession;
+	private SqlSession sqlsession;
 
-	public void bmInsert(BusinessVo businessVo) {
-		sqlSession.insert("business.insert", businessVo);
+	// 공연 추가
+	public void bmAdd(BusinessVo vo) {
+		sqlsession.insert("bm.bmAdd", vo);
+	}
+
+	// 공연 선택
+	public BusinessVo selectBusiness(BusinessVo vo) {
+
+		return sqlsession.selectOne("bm.selectBm", vo);
+	}
+
+	// 공연 리스트
+	public List<BusinessVo> getbmList() {
+
+		return sqlsession.selectList("bm.getList");
 	}
 	
-	public List<BusinessVo> getbmList(){
-		return sqlSession.selectList("business");
-	}
-	
+	//공연 
+
 }
