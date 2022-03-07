@@ -19,10 +19,8 @@ public class BusinessController {
 
 	// 공연 목록
 	@RequestMapping(value="/", method= {RequestMethod.GET, RequestMethod.POST})
-	public String bmInquiry(Model model) {
+	public String bmInquiry() {
 		System.out.println("BusinessController/bmInquiry");
-		
-		model.addAttribute(null, model);
 		
 		return "business/bmInquiry";
 	}

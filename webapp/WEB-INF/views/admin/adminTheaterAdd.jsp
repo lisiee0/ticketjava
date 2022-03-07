@@ -60,7 +60,7 @@
 						<div class="col-xs-12 np">
 							<div id="board">
 
-								<form action="${pageContext.request.contextPath}/admin/theaterAdd" method="post" enctype="multipart/form-data" class="form-horizontal">
+								<form action="${pageContext.request.contextPath}/admin/theaterAdd" method="post" class="form-horizontal">
 
 									<!-- 공연장명 -->
 									<div class="form-group">
@@ -78,7 +78,9 @@
 										<label class="form-text col-xs-2" for="">시설명</label>
 										<div class="col-xs-6">
 
-											<input type="text" class="form-control formZipcode" name="hallName" placeholder="시설명">&nbsp; <span id="add-hallName" class="glyphicon glyphicon-plus"></span><br>
+											<input type="text" class="form-control formZipcode" name="hallName" placeholder="시설명">
+											&nbsp; 
+											<span id="add-hallName" class="glyphicon glyphicon-plus"></span><br>
 											<!-- + 누르면 반복 -->
 											<div id="hallNameArea"></div>
 
@@ -122,15 +124,15 @@
 										<div class="col-xs-2"></div>
 									</div>
 
-									<!-- 공연장로고 -->
+									<!-- 									공연장사진
 									<div class="form-group">
 										<div class="col-xs-2"></div>
 									    <label class="form-text col-xs-2" for="">공연장로고</label>
 									    <div class="col-xs-6">
-									    	<input type="file" id="file" name="file">
+									    	<input type="file" id="file">
 									    </div>
 									    <div class="col-xs-2"></div>
-									</div>
+									</div> -->
 
 									<div id="btnLocation">
 										<button type="submit" class="btn btn-primary" id="addbtn">공연장 등록</button>
@@ -211,6 +213,8 @@ function sample6_execDaumPostcode() {
         }
     }).open();
 }
+
+
 
 </script>
 

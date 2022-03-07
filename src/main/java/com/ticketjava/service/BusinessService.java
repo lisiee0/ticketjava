@@ -11,12 +11,6 @@ public class BusinessService {
 
 	@Autowired
 	private BusinessDao businessDao;
-
 	
-	public void insert(BusinessVo businessVo) {
-		
-
-		
-	}
 
 }

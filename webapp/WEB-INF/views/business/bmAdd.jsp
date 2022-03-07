@@ -1,4 +1,4 @@
-`<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 <!DOCTYPE html>
@@ -182,22 +182,6 @@
 								<label class="form-text col-md-2 form-id" for="">등급별 가격</label>
 								<!-- 가격 -->
 								<div class="col-md-8">
-									<!-- VIP석 -->
-									<div class="form-group">
-										<div class="col-md-4">
-											<input type="text" class="form-control" id="" name=grade value="" placeholder="VIP석" readonly>
-										</div>
-										<div class="col-md-4">
-											<input type="text" class="form-control" id="" name="price" placeholder="가격을 입력해주세요">
-										</div>
-										<div class="col-md-1">
-											<button type="button" class="btn" id="addbtn">-</button>
-										</div>
-
-									</div>
-
-									<!-- 좌석끝 -->
-
 									<!-- 좌석 선택 -->
 									<div class="form-group">
 										<div class="col-md-4">
@@ -211,12 +195,33 @@
 											</select>
 										</div>
 										<div class="col-md-4">
-											<input type="text" class="form-control" id="" name="price" value="">
+											<input type="text" class="form-control" name="price" value="">
 										</div>
-										<div class="col-md-1">
-											<button type="button" class="btn" id="addbtn">+</button>
-										</div>
+										&nbsp;
+										<button type="button" id="addGrade" class="btn">+</button>
+										<br>
+
+										<!--  -->
 									</div>
+
+
+									<div id="bmNameArea"></div>
+
+
+									<!-- 선택된 좌석 -->
+
+									<div class="form-group">
+										<div class="col-md-4">
+											<input type="text" class="form-control" id="" name=grade value="" placeholder="VIP석" readonly>
+										</div>
+										<div class="col-md-4">
+											<input type="text" class="form-control" id="" name="price" placeholder="가격을 입력해주세요">
+										</div>
+										&nbsp;
+										<button type="button" id="delGrade" class="btn">-</button>
+									</div>
+
+									<!-- 좌석끝 -->
 
 								</div>
 							</div>
@@ -265,7 +270,7 @@
 							<div class="form-group">
 								<label class="form-text col-md-2 form-id" for="">공연 정보</label>
 								<div class="col-md-8">
-									<input type="file" id="" name="pordpath" value="">
+									<input type="file" id="" name="prodPath" value="">
 								</div>
 							</div>
 
@@ -273,7 +278,7 @@
 							<div class="form-group">
 								<label class="form-text col-md-2 form-id" for="">캐스팅 정보</label>
 								<div class="col-md-8">
-									<input type="file" id="" name="castingpath" value="">
+									<input type="file" id="" name="castingPaht" value="">
 								</div>
 							</div>
 
@@ -281,7 +286,7 @@
 							<div class="form-group">
 								<label class="form-text col-md-2 form-id" for="">부가 정보</label>
 								<div class="col-md-8">
-									<input type="file" id="" name="addedpath" value="">
+									<input type="file" id="" name="addedPath" value="">
 								</div>
 							</div>
 
@@ -318,4 +323,41 @@
 	<!-- wrap 종료 -->
 
 </body>
+
+<script type="text/javascript">
+
+//추가 버튼
+$("#addGrade").on("click", function() {
+	
+	
+	$("#bmNameArea").append(
+		'<div class="form-group">'
+		
+			+'<div class="col-md-4">'
+				+'<input type="text" class="form-control" id="" name="grade" value="" placeholder="VIP석" readonly>'
+			+'</div>'
+			+'<div class="col-md-4">'
+				+'<input type="text" class="form-control" id="" name="price" placeholder="가격을 입력해주세요">'
+			+'</div>'
+			+'&nbsp;'
+			+'<button type="button" id="addbtn" class="btn">-</button>'
+		+'</div>'
+		);
+
+});
+
+$("#delGrade").on("click", function() {
+	
+	
+	$("#bmNameArea").remove();
+
+});
+
+
+</script>
+
+
+
+
+
 </html>
