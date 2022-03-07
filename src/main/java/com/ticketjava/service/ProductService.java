@@ -1,22 +1,30 @@
 package com.ticketjava.service;
 
-import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.ticketjava.dao.NoticeDao;
 import com.ticketjava.dao.TheaterDao;
-import com.ticketjava.vo.TheaterVo;
 
 @Service
 public class ProductService {
 	
 	@Autowired
 	private TheaterDao td;
+	@Autowired
+	private NoticeDao nd;
 	
 	
-	public List<TheaterVo> getTheaterList() {
-		return td.getTheaterList();
+	public Map<String, Object> getList() {
+		
+		Map<String, Object> listMap= new HashMap<String, Object>();
+		listMap.put("tList", td.getTheaterList());
+		listMap.put("nList", nd.getNoticeList());
+		
+		return listMap;
 	}
 
 }

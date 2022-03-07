@@ -24,8 +24,7 @@ public class ProductController {
 	@RequestMapping("/theaterList")
 	public String theaterList(Model model) {
 		
-		
-		model.addAttribute("theaterList", productService.getTheaterList());
+		model.addAttribute("listMap", productService.getList());
 		return "product/theater";
 	}
 

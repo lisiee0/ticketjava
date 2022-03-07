@@ -42,7 +42,7 @@
 						<div class="row">
 							<ul class="nav navbar-nav pd">
 							
-								<c:forEach items="${theaterList}" var="vo" varStatus="status">
+								<c:forEach items="${listMap.tList}" var="vo" varStatus="status">
 									<c:if test="${status.count%5 eq 0}">
 										<li class="logoaArea">
 											<div>
@@ -68,17 +68,12 @@
 							<div class="col-xs-6 np">
 								<h4 class="cateMenu">공연장 공지사항</h4>
 								<table class="table">
-									<tr class="">
-										<td><span class="glyphicon glyphicon-info-sign"></span>&nbsp;[예술의전당]2022년 아티스트 공개 모집</td>
-									</tr>
-									
-									<tr class="">
-										<td><span class="glyphicon glyphicon-info-sign"></span>&nbsp;[예술의전당]2022년 전반기 예산 사용계획</td>
-									</tr>
-									
-									<tr class="">
-										<td><span class="glyphicon glyphicon-info-sign"></span>&nbsp;[세종문화회관]지하철 5호선 8번출구 유지보수공사 계획</td>
-									</tr>					
+									<c:forEach items="${listMap.nList}" var="vo">
+										<tr>
+											<td><span class="glyphicon glyphicon-info-sign"></span>&nbsp;[${vo.theaterName}] ${vo.content}</td>
+										</tr>
+									</c:forEach>
+				
 								</table>
 							</div>
 						
