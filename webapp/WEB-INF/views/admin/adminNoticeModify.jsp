@@ -57,14 +57,14 @@
 						<div class="col-xs-12 np">
 							<div id="board">
 							
-								<form action="" method="" class="form-horizontal">
+								<form action="${pageContext.request.contextPath}/admin/noticeModify" method="post" class="form-horizontal">
 	
 									<!-- 공연장 -->
 									<div class="form-group">
 										<div class="col-xs-2"></div>
-									    <label class="form-text col-xs-2" for="">공연장</label>
+									    <label class="form-text col-xs-2" for="">공연장명</label>
 									    <div class="col-xs-6">
-											<p class="font-m">예술의전당</p>
+											<p class="font-m">${getNotice.theaterName}</p>
 									    </div>
 									    <div class="col-xs-2"></div>
 									</div>
@@ -74,7 +74,7 @@
 										<div class="col-xs-2"></div>
 									    <label class="form-text col-xs-2" for="">공지사항</label>
 									    <div class="col-xs-6">
-									    	<input type="text" class="form-control" id="" placeholder="공지사항을 입력하세요">
+									    	<input type="text" class="form-control" name="content" placeholder="${getNotice.content}">
 									    </div>
 									    <div class="col-xs-2"></div>
 									</div>
@@ -83,6 +83,7 @@
 									<div id="btnLocation">
 	                          			<button type="submit" class="btn btn-primary" id="addbtn">공지사항 수정</button>
 	                          		</div>
+	                          		<input type="hidden" name="noticeNo" value="${getNotice.noticeNo}">
 		                      </form>
 								
 							</div>

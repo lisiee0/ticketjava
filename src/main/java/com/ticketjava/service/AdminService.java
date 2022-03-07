@@ -80,5 +80,16 @@ public class AdminService {
 	}
 	
 	
-
+	public NoticeVo getNotice(int noticeNo) {
+		return nd.getNotice(noticeNo);
+	}
+	
+	public void noticeModify(NoticeVo vo) {
+		nd.noticeModify(vo);
+	}
+	
+	public void noticeDelete(int noticeNo) {
+		nd.noticeDelete(noticeNo);
+	}
+	
 }

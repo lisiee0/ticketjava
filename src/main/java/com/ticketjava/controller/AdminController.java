@@ -98,12 +98,31 @@ public class AdminController {
 		return "redirect:/admin/noticeList";
 	}
 	
-	/*
-	@RequestMapping("/adminNoticeModify")
-	public String TheaterNoticeModify() {
-		System.out.println("adminController/TheaterNoticeModify()");
+	
+	// 공지사항 수정양식 불러오기
+	@RequestMapping("/noticeModifyForm")
+	public String noticeModifyForm(@RequestParam("noticeNo") int noticeNo, Model model) {
 		
+		model.addAttribute("getNotice", adminService.getNotice(noticeNo));
 		return "admin/adminNoticeModify";
 	}
-	*/
+	
+	
+	// 공지사항 수정
+	@RequestMapping("/noticeModify")
+	public String noticeModify(@ModelAttribute NoticeVo vo) {
+		
+		adminService.noticeModify(vo);
+		return "redirect:/admin/noticeList";
+	}
+	
+	
+	// 공지사항 삭제
+	@RequestMapping("/noticeDelete")
+	public String noticeDelete(@RequestParam("noticeNo") int noticeNo) {
+		
+		adminService.noticeDelete(noticeNo);
+		return "redirect:/admin/noticeList";
+	}
+	
 }

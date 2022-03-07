@@ -21,6 +21,37 @@
 			order by 		theaterNo desc, regDate desc
 		]]>
 	</select>
+	
+	<update id="noticeModify" parameterType="NoticeVo">
+		<![CDATA[
+			update			notice
+			set				content= #{content}
+			where 			notice_no= #{noticeNo}
+		]]>
+	</update>
+	
+	
+	<select id="getNotice" parameterType="NoticeVo" resultType="NoticeVo">
+		<![CDATA[
+			select			notice_no noticeNo, 
+							n.theater_no theaterNo, 
+							theatername, 
+							content, 
+							to_char(regdate, 'YYYY-MM-DD HH24:MI:SS') regDate
+			from			notice n, theater t
+			where 			n.theater_no= t.theater_no
+			and 			notice_no= #{noticeNo}
+		]]>
+	</select>
+	
+	
+	<delete id="noticeDelete" parameterType="NoticeVo">
+		<![CDATA[
+			delete from notice
+			where 		notice_no= #{noticeNo}
+		]]>
+	</delete>
+	
 </mapper>
 
 

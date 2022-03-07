@@ -24,5 +24,17 @@ public class NoticeDao {
 		return sqlSession.selectList("notice.getNoticeList");
 	}
 	
+	
+	public NoticeVo getNotice(int noticeNo) {
+		return sqlSession.selectOne("notice.getNotice", noticeNo);
+	}
+	
+	public void noticeModify(NoticeVo vo) {
+		sqlSession.update("notice.noticeModify", vo);
+	}
+	
+	public void noticeDelete(int noticeNo) {
+		sqlSession.delete("notice.noticeDelete", noticeNo);
+	}
 
 }
