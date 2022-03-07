@@ -106,7 +106,7 @@
 						</tr>
 						<tr id="payTr">
 							<td>총결제</td>
-							<td class="right" id="payment">120,000</td>
+							<td class="right" id="payment"></td>
 						</tr>
 					</table>
 				</div>
@@ -123,7 +123,6 @@
 </body>
 
 <script type="text/javascript">
-	var totalPrice = 0;
 	var discountList;
 	
 	$(document).ready(function(){
@@ -154,8 +153,6 @@
 			}
 		});
 		
-		
-		
 		$.ajax({
 			url: "${pageContext.request.contextPath}/discount/discountList",
 			type : "post",
@@ -181,24 +178,18 @@
 		
 		setDropdown();
 		
-		/* $.ajax({
-			url: "${pageContext.request.contextPath}/dis/selseatList",
-			type : "post",
-			dataType: "json",
-			success : function(dicount){
-
-			},
-			error : function(XHR, status, error) {
-				console.error(status + " : " + error);
-			}
-		}); */
 	});
 	
-	/* $('#disOpt').on('change','select',function(){
-		console.log( $(this).val());
-	}); */
+	$('#disOpt').on('change','select',function(){
+		var totalPrice=0;
+		var selectList = $('select');
+		for(var i=0;i <selectList.length; i++){
+			totalPrice += Number(selectList.eq(i).val()) * Number( selectList.eq(i).parent().siblings('td.dcPrice').text() );
+		}
+		$('#payment').text(totalPrice);
+	});
 	
-	
+	/* 할인 옵션 테이블 그리기 */
 	function renderDisOpt(grade, count, gradeprice){
 		var str = '';
 		
@@ -215,7 +206,7 @@
 		str +='	<tr>'
 		str +='		<th>일반(정가)</th>'
 		str +='		<td>일반</td>'
-		str +='		<td>'+gradeprice+'</td>'
+		str +='		<td class="dcPrice">'+gradeprice+'</td>'
 		str +='		<td><select class="form-control"></select></td>'
 		str +='	</tr>'
 		
@@ -223,28 +214,47 @@
 			
 			str +='	<tr>'
 			if(discountList[i].beginDc == null) {
-				str +='		<th>일반할인</th>'
+				str +='		<th class="commonDc'+grade+'">일반할인</th>'
 			}else{
-				str +='		<th>이벤트할인</th>'
+				str +='		<th class="eventDc'+grade+'">이벤트할인</th>'
 			}
 			str +='		<td>'+discountList[i].dcName+'</td>'
 			if(discountList[i].dcType == "0"){
-				str +='		<td>'+(gradeprice*(100-discountList[i].dcRate)/100)+'</td>'
+				str +='		<td class="dcPrice">'+(gradeprice*(100-discountList[i].dcRate)/100)+'</td>'
 			}else{
-				str +='		<td>'+(gradeprice-discountList[i].dcRate)+'</td>'
+				str +='		<td class="dcPrice">'+(gradeprice-discountList[i].dcRate)+'</td>'
 			}
 			
 			str +='		<td><select class="form-control"></select></td>'
 			str +='	</tr>'
 		}
-		
-		
 		str +='</table>';
-		
 		$("#disOpt").append(str);
+		
+		
+		/*  rowspan */
+		var className='commonDc'+grade;
+		$("." + className).each(function() {
+	        var rows = $("." + className + ":contains('" + $(this).text() + "')");
+	        if (rows.length > 1) {
+	            rows.eq(0).attr("rowspan", rows.length);
+	            rows.not(":eq(0)").remove();
+	        }
+	    });
+		var className='eventDc'+grade;
+		$("." + className).each(function() {
+	        var rows = $("." + className + ":contains('" + $(this).text() + "')");
+	        if (rows.length > 1) {
+	            rows.eq(0).attr("rowspan", rows.length);
+	            rows.not(":eq(0)").remove();
+	        }
+	    });
+		/* /rowspan */
+
 		
 	};
 	
+	/* select dropdown */
 	function setDropdown() {
 		var disOptList = $('#disOpt table');
 		
