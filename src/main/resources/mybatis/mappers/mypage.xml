@@ -8,6 +8,29 @@ alter table selseat add CONSTRAINT FK_reserve_TO_selseat foreign key (rez_no) RE
 -->
 
 <mapper namespace="mypage">
-	
-	
+
+<select id="reserveList" resultType="ReservationVo">
+<![CDATA[
+select  r.rez_no rezNo
+        , to_char(r.rezdate, 'yy-mm-dd hh24:mi') rezDate
+        , r.prod_no prodNo
+        , p.prodname prodName
+        , to_char(r.viewdate, 'yy-mm-dd hh24:mi') viewDate
+        , r.status status
+from reserve r, product p
+]]>	
+</select>
+
+
+<!--  예매 매수 카운터 (예매번호) 그룹바이 회원번호 -->
+<select id="ticketCount" resultType="ReservationVo">
+<![CDATA[
+select count(r.rez_no) ticketCount
+from reserve r , selseat ss
+where r.rez_no = ss.selseat_no
+group by r.rez_no
+]]>	
+</select>
+
+
 </mapper>
