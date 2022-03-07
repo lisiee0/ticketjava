@@ -27,7 +27,7 @@
 		<!-- 네비바 종료 -->
 		
 
-				<!-- 컨텐츠 구역 시작 -->
+		<!-- 컨텐츠 구역 시작 -->
 		<div class="container-fluid zp">
 			<div class="container">
 				<div class="row">
@@ -41,65 +41,22 @@
 					<div class="container bgc">
 						<div class="row">
 							<ul class="nav navbar-nav pd">
-								<li class="logoaArea">
-									<div>
-										<img class="theater-logo img-thumbnail img-rounded" src="assets/image/theater-logo.png">
-									</div>
-								</li>
+							
+								<c:forEach items="${theaterList}" var="vo" varStatus="status">
+									<c:if test="${status.count%5 eq 0}">
+										<li class="logoaArea">
+											<div>
+												<img class="theater-logo img-thumbnail img-rounded last-logo" data-no="${vo.theaterNo}" src="${pageContext.request.contextPath}/upload/${vo.logoPath}">
+											</div>
+										</li>
+									</c:if>
+									<li class="logoaArea">
+										<div>
+											<img class="theater-logo img-thumbnail img-rounded" data-no="${vo.theaterNo}" src="${pageContext.request.contextPath}/upload/${vo.logoPath}">
+										</div>
+									</li>
+								</c:forEach>
 								
-								<li class="logoaArea">
-									<div>
-										<img class="theater-logo img-thumbnail img-rounded" src="assets/image/theater-logo.png">
-									</div>
-								</li>
-								
-								<li class="logoaArea">
-									<div>
-										<img class="theater-logo img-thumbnail img-rounded" src="assets/image/theater-logo.png">
-									</div>
-								</li>
-								
-								<li class="logoaArea">
-									<div>
-										<img class="theater-logo img-thumbnail img-rounded" src="assets/image/theater-logo.png">
-									</div>
-								</li>
-								
-								<li class="logoaArea">
-									<div>
-										<img class="theater-logo img-thumbnail img-rounded last-logo" src="assets/image/theater-logo.png">
-									</div>
-								</li>
-								
-								<li class="logoaArea">
-									<div>
-										<img class="theater-logo img-thumbnail img-rounded" src="assets/image/theater-logo.png">
-									</div>
-								</li>
-								
-								<li class="logoaArea">
-									<div>
-										<img class="theater-logo img-thumbnail img-rounded" src="assets/image/theater-logo.png">
-									</div>
-								</li>
-								
-								<li class="logoaArea">
-									<div>
-										<img class="theater-logo img-thumbnail img-rounded" src="assets/image/theater-logo.png">
-									</div>
-								</li>
-								
-								<li class="logoaArea">
-									<div>
-										<img class="theater-logo img-thumbnail img-rounded" src="assets/image/theater-logo.png">
-									</div>
-								</li>
-								
-								<li class="logoaArea">
-									<div>
-										<img class="theater-logo img-thumbnail img-rounded last-logo" src="assets/image/theater-logo.png">
-									</div>
-								</li>
 							</ul>
 						</div>
 					</div>
@@ -137,6 +94,7 @@
 			</div> 
 		</div>
 		<!-- 컨텐츠 구역 종료 -->
+								
 		
 		<c:import url="/WEB-INF/views/include/footer.jsp"></c:import>
 		
