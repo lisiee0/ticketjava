@@ -148,7 +148,7 @@ $(document).ready(function(){
 	
 	
 	$.ajax({
-		url: "${pageContext.request.contextPath}/reservation/selseatList",
+		url: "${pageContext.request.contextPath}/selseat/selseatList",
 		type : "post",
 		dataType: "json",
 		success : function(selseatList){

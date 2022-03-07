@@ -10,6 +10,8 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 
+<script src="${pageContext.request.contextPath}/assets/jquery/jquery-1.12.4.js"></script>
+
 <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/bootstrap/css/bootstrap.css">
 <link href="${pageContext.request.contextPath}/assets/css/reservation/reservation.css" rel="stylesheet" type="text/css">
 <link href="${pageContext.request.contextPath}/assets/css/reservation/reservation4.css" rel="stylesheet" type="text/css">
@@ -39,7 +41,7 @@
 			<h2>티켓종류, 할인, 매수 선택</h2>
 			<div id="disOpt">
 
-				<table id="disTable">
+				<%-- <table>
 					<colgroup>
 						<col style="width:30%">
 						<col style="width:40%">
@@ -78,52 +80,14 @@
 						<td><select class="form-control 0-10"></select></td>
 					</tr>
 
-				</table>
+				</table> --%>
 
-				<table id="disTable">
-					<colgroup>
-						<col style="width:30%">
-						<col style="width:40%">
-						<col style="width:15%">
-						<col style="">
-					</colgroup>
-					<tr>
-						<th colspan="4">S석을 <span class="text-primary">3</span>매 선택하셨습니다.</th>
-					</tr>
-					<tr>
-						<th>일반</th>
-						<td>일반</td>
-						<td>정가</td>
-						<td><select class="form-control 0-10"></select></td>
-					</tr>
-					<tr>
-						<th rowspan="2">일반할인</th>
-						<td>국가유공자 할인</td>
-						<td>30%</td>
-						<td><select class="form-control 0-10"></select></td>
-					</tr>
-					<tr>
-						<td>재관람 할인</td>
-						<td>40%</td>
-						<td><select class="form-control 0-10"></select></td>
-					</tr>
-					<tr>
-						<th rowspan="2">이벤트할인</th>
-						<td>타임세일</td>
-						<td>50%</td>
-						<td><select class="form-control 0-10"></select></td>
-					</tr>
-					<tr>
-						<td>문화의날</td>
-						<td>50%</td>
-						<td><select class="form-control 0-10"></select></td>
-					</tr>
-				</table>
+				
 			</div>
 
 			<h2>안내 사항</h2>
 			<div id="guide">
-				<* 예매자는 본 안내페이지의 모든 내용을 숙지 및 동의한 것으로 간주합니다.
+				예매자는 본 안내페이지의 모든 내용을 숙지 및 동의한 것으로 간주합니다.
 
 				〈관람 안내〉
 				*서울 공연은 현 정부의 방역지침에 따라, 공연 중 배우들의 객석 동선은 진행되지 않으니 예매에 참고 하시기 바랍니다.
@@ -207,5 +171,92 @@
 		</div>
 	</div>
 </body>
+
+<script type="text/javascript">
+	$(document).ready(function(){
+		
+		var gradeCount={
+				vip:0,
+				r:0,
+				s:0,
+				a:0,
+				b:0
+		};
+		
+		<c:forEach items="${map.selList}" var="vo">
+			gradeCount.${vo.grade} = gradeCount.${vo.grade}+1;
+		</c:forEach>
+		
+		
+		for(var i in gradeCount) {
+			if(gradeCount[i] > 0) {
+				renderDisopt(i, gradeCount[i]);
+			}
+		}
+		
+		
+		
+		/* $.ajax({
+			url: "${pageContext.request.contextPath}/dis/selseatList",
+			type : "post",
+			dataType: "json",
+			success : function(dicount){
+
+				
+			},
+			error : function(XHR, status, error) {
+				console.error(status + " : " + error);
+			}
+		}); */
+	});
+	
+	function renderDisopt(grade, count){
+		var str = '';
+		
+	
+		str +='<table>'
+		str +='	<colgroup>'
+		str +='		<col style="width:30%">'
+		str +='		<col style="width:40%">'
+		str +='		<col style="width:15%">'
+		str +='		<col style="">'
+		str +='	</colgroup>'
+		str +='	<tr>'
+		str +='		<th colspan="4">'+grade.toUpperCase()+'석을 <span class="text-primary">'+count+'</span>매 선택하셨습니다.</th>'
+		str +='	</tr>'
+		str +='	<tr>'
+		str +='		<th>일반</th>'
+		str +='		<td>일반</td>'
+		str +='		<td>정가</td>'
+		str +='		<td><select class="form-control 0-10"></select></td>'
+		str +='	</tr>'
+		str +='	<tr>'
+		str +='		<th rowspan="2">일반할인</th>'
+		str +='		<td>국가유공자 할인</td>'
+		str +='		<td>30%</td>'
+		str +='		<td><select class="form-control 0-10"></select></td>'
+		str +='	</tr>'
+		str +='	<tr>'
+		str +='		<td>재관람 할인</td>'
+		str +='		<td>40%</td>'
+		str +='		<td><select class="form-control 0-10"></select></td>'
+		str +='	</tr>'
+		str +='	<tr>'
+		str +='		<th rowspan="2">이벤트할인</th>'
+		str +='		<td>타임세일</td>'
+		str +='		<td>50%</td>'
+		str +='		<td><select class="form-control 0-10"></select></td>'
+		str +='	</tr>'
+		str +='	<tr>'
+		str +='		<td>문화의날</td>'
+		str +='		<td>50%</td>'
+		str +='		<td><select class="form-control 0-10"></select></td>'
+		str +='	</tr>'
+		str +='</table>';
+		
+		$("#disOpt").append(str);
+		
+	}
+</script>
 
 </html>

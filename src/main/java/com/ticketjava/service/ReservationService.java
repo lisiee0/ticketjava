@@ -66,8 +66,6 @@ public class ReservationService {
 		List<SelseatVo> selList = selseatDao.selectSelList(selseatNo);
 		map.put("selList", selList);
 		
-		System.out.println(selList);
-		
 		return map;
 	}
 
@@ -77,7 +75,6 @@ public class ReservationService {
 		if(rezNoList.size() >0) {
 			reservationDao.deletePre(rezNoList);
 		}
-		System.out.println(rezNoList);
 	}
 	
 	
