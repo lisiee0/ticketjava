@@ -1,5 +1,6 @@
 package com.ticketjava.controller;
 
+import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,6 +11,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.ticketjava.service.ReservationService;
+import com.ticketjava.service.SelseatService;
+import com.ticketjava.vo.SelseatVo;
 
 
 @Controller
@@ -18,11 +21,21 @@ public class ReservationController {
 
 	@Autowired
 	private ReservationService reservationService;
+	@Autowired
+	private SelseatService selseatService;
 	
 	@RequestMapping("/selectSeat")
-	public String selectSeat() {
+	public String selectSeat(Model model) {
+		
 		return "reservation/selectSeat";
 	}
+	
+	@ResponseBody
+	@RequestMapping("selseatList")
+	public List<SelseatVo> selseatList(){
+		return selseatService.selList();
+	}
+	
 	
 	@RequestMapping("/selectQuantity")
 	public String selectQuantity(@RequestParam("rezNo") int rezNo,

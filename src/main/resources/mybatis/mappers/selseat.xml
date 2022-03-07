@@ -37,5 +37,18 @@
 		
 	</select>
 	
+	<select id="selectList" resultType="SelseatVo">
+		<![CDATA[
+			select grade,
+			       section,
+			       col,
+			       num
+			from selseat s, reserve r
+			where s.rez_no = r.rez_no and
+			      prod_no = 1
+		]]>
+		
+	</select>
+	
 	
 </mapper>

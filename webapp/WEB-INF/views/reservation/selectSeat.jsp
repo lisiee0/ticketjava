@@ -145,6 +145,31 @@ $(document).ready(function(){
 			console.error(status + " : " + error);
 		}
 	});
+	
+	
+	$.ajax({
+		url: "${pageContext.request.contextPath}/reservation/selseatList",
+		type : "post",
+		dataType: "json",
+		success : function(selseatList){
+
+			for(var selseat of selseatList){
+				var grade = selseat.grade;
+				if(grade == 'vip')
+					grade = 'v';
+				var section = selseat.section;
+				var col = selseat.col;
+				var num = selseat.num;
+				
+				$('[class='+grade+'][data-section='+section+'][data-col='+col+'][data-num='+num+']').attr("disabled",true);
+			}
+			
+		},
+		error : function(XHR, status, error) {
+			console.error(status + " : " + error);
+		}
+	});
+	
 });
 
 
