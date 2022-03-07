@@ -82,34 +82,23 @@
 												<th>관리</th>
 											</tr>
 										</thead>
+										
+										
+										<c:forEach items="${requestScope.reserveList}" var="reserveList">
 										<tbody>
 											<tr>
-												<td>123</td>
-												<td>2020-12-23</td>
-												<td class="text-left"><a href="#">뮤지컬 라이온킹 오리지널 내한..</a></td>
-												<td>2020-12-23/2매</td>
-												<td>예매</td>
-												<td><button type="button" class="btn btn-primary">취소</button></td>
+												<td>${reserveList.rezNo}</td>
+												<td>${reserveList.rezDate}</td>
+												<td class="text-left"><a href="#">${reserveList.prodName}</a></td>
+												<td>${reserveList.viewDate} / 2매</td>
+												<td>${reserveList.status}</td>
+												<td><button type="submit" class="btn btn-primary" onclick="location.href='ticketjava/mypage/reserveDetail?prodNo=${reserveList.prodNo}'">자세히</button></td>
 											</tr>
 
-											<tr>
-												<td>123</td>
-												<td>2020-12-23</td>
-												<td class="text-left"><a href="#">뮤지컬 라이온킹 오리지널 내한..</a></td>
-												<td>2020-12-23/2매</td>
-												<td>예매</td>
-												<td><button type="button" class="btn btn-primary">취소</button></td>
-											</tr>
-
-											<tr>
-												<td>123</td>
-												<td>2020-12-23</td>
-												<td class="text-left"><a href="#">뮤지컬 라이온킹 오리지널 내한..</a></td>
-												<td>2020-12-23/2매</td>
-												<td>예매</td>
-												<td><button type="button" class="btn btn-primary">취소</button></td>
-											</tr>
 										</tbody>
+										</c:forEach>										
+										
+										
 									</table>
 									
 									
