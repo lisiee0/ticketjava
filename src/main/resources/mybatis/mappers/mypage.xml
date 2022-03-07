@@ -1,5 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 
+삭제없이 바꾸려면
+alter table selseat drop CONSTRAINT FK_reserve_TO_selseat;
+alter table selseat add CONSTRAINT FK_reserve_TO_selseat foreign key (rez_no) REFERENCES reserve (rez_no) on delete cascade;
+-->
+
 <mapper namespace="mypage">
 	
 	
