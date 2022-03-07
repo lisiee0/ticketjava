@@ -35,7 +35,7 @@
 	
 	<select id="getList" resultType="TheaterVo">
 		<![CDATA[
-			select			t.theater_no theaterNo,
+			select 			t.theater_no theaterNo,
 							theaterName,
 							postcode,
 							address, 
