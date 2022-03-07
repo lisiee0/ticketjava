@@ -801,7 +801,7 @@ ALTER TABLE selseat
 		)
 		REFERENCES reserve (
 			rez_no
-		);
+		) on delete cascade;
 
 ALTER TABLE selseat
 	ADD
