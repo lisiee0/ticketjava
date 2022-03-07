@@ -124,6 +124,7 @@
 
 <script type="text/javascript">
 	var discountList;
+	var totalAmount=0;
 	
 	$(document).ready(function(){
 		var gradeCount={
@@ -172,6 +173,7 @@
 		for(var i in gradeCount) {
 			if(gradeCount[i] > 0) {
 				renderDisOpt(i, gradeCount[i], seatpriceList[gradeNum].price);
+				totalAmount += gradeCount[i];
 			}
 			gradeNum++;
 		}
@@ -181,6 +183,21 @@
 	});
 	
 	$('#disOpt').on('change','select',function(){
+		
+		var thisTable = $(this).closest('#disOpt table');			// 선택한 드롭다운의 테이블에서
+		var gradeCount = Number(thisTable.find('.count').text());	// 등급 매수
+		var tableSelect =  thisTable.find('select');				// 테이블 안의 모든 드롭다운
+		
+		var selCount = 0;
+		for(var i=0; i<tableSelect.length; i++) {
+			selCount += Number(tableSelect.eq(i).val());
+		}
+		
+		if(selCount > gradeCount){
+			$(this).val('0');
+			alert('매수를 다시 선택해주세요');
+		}
+		
 		var totalPrice=0;
 		var selectList = $('select');
 		for(var i=0;i <selectList.length; i++){
@@ -193,7 +210,7 @@
 	function renderDisOpt(grade, count, gradeprice){
 		var str = '';
 		
-		str +='<table id="dis'+grade+'">'
+		str +='<table id="disOpt'+grade+'">'
 		str +='	<colgroup>'
 		str +='		<col style="width:30%">'
 		str +='		<col style="width:40%">'
