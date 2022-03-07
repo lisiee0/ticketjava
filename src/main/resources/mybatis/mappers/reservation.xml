@@ -7,9 +7,23 @@
 	        SELECT seq_rez_no.nextval FROM dual       
 	    </selectKey>    
 	    <![CDATA[
-		    INSERT INTO reserve( rez_no , status)
-		    VALUES(#{rezNo}, 2)
+		    INSERT INTO reserve( rez_no , prod_no, status)
+		    VALUES(#{rezNo}, 1 , 2)
 	    ]]>
 	</insert>  
+	
+	<delete id="deletePre" parameterType="map">
+		
+		<![CDATA[
+			delete
+			from reserve
+			where rez_no in
+		]]>
+		<foreach collection="list" item="item" index="index" open="(" close=")" separator=",">
+			#{item}
+		</foreach>
+		
+		
+	</delete>
 	
 </mapper>

@@ -30,8 +30,8 @@ public class ReservationController {
 								 Model model) {
 		System.out.println(rezNo);
 		System.out.println(selseatNo);
-		Map<String, Object> selMap = reservationService.selList( rezNo,selseatNo);
-		model.addAttribute("selMap", selMap);
+		Map<String, Object> map = reservationService.selList( rezNo,selseatNo);
+		model.addAttribute("map", map);
 		
 		return "reservation/selectQuantity";
 	}
@@ -43,6 +43,14 @@ public class ReservationController {
 		Map<String, Object> map = reservationService.preoccupy(data);
 		return map;
 	}
+	
+	@ResponseBody
+	@RequestMapping("/preDel")
+	public String preDel() {
+		reservationService.preDel();
+		return "성공";
+	}
+	
 	
 	@RequestMapping("/confirmReservation")
 	public String confirmReservation() {

@@ -131,6 +131,23 @@
 </body>
 
 <script type="text/javascript">
+
+$(document).ready(function(){
+	$.ajax({
+		url: "${pageContext.request.contextPath}/reservation/preDel",
+		type : "post",
+		dataType: "json",
+		success : function(){
+			console.log("선점 지우기 완료");
+			
+		},
+		error : function(XHR, status, error) {
+			console.error(status + " : " + error);
+		}
+	});
+});
+
+
 	
 $('#seatPlanDiv').on('change','table td input[type=checkbox]' ,function(){
 	if(this.checked){

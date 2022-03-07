@@ -28,4 +28,14 @@
 		
 	</select>
 	
+	<select id="selectTimeOver" resultType="int">
+		<![CDATA[
+			select  distinct rez_no
+			from selseat
+			where (sysdate-pretime)*24*60*60 > 600
+		]]>
+		
+	</select>
+	
+	
 </mapper>

@@ -70,6 +70,15 @@ public class ReservationService {
 		
 		return map;
 	}
+
+	public void preDel() {
+		List<Integer> rezNoList = selseatDao.selectTimeOver();
+		
+		if(rezNoList.size() >0) {
+			reservationDao.deletePre(rezNoList);
+		}
+		System.out.println(rezNoList);
+	}
 	
 	
 	

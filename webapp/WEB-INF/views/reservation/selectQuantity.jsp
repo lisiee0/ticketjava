@@ -163,7 +163,7 @@
 							<col style="width:28%">
 							<col style="">
 						</colgroup>
-						<c:forEach items="${selMap.selList}" var="vo">
+						<c:forEach items="${map.selList}" var="vo">
 							<tr>
 								<td>${fn:toUpperCase(vo.grade)}석</td>
 								<td class="right">${vo.section}구역 ${vo.col}열 ${vo.num}번</td>
