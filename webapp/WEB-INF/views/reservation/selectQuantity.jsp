@@ -124,6 +124,7 @@
 
 <script type="text/javascript">
 	var totalPrice = 0;
+	var discountList;
 	
 	$(document).ready(function(){
 		var gradeCount={
@@ -154,7 +155,7 @@
 		});
 		
 		
-		var discountList;
+		
 		$.ajax({
 			url: "${pageContext.request.contextPath}/discount/discountList",
 			type : "post",
@@ -177,20 +178,6 @@
 			}
 			gradeNum++;
 		}
-		
-		/* $.ajax({
-			url: "${pageContext.request.contextPath}/dis/selseatList",
-			type : "post",
-			dataType: "json",
-			success : function(dicount){
-	
-			},
-			error : function(XHR, status, error) {
-				console.error(status + " : " + error);
-			}
-		}); */
-		
-		
 		
 		setDropdown();
 		
@@ -231,28 +218,27 @@
 		str +='		<td>'+gradeprice+'</td>'
 		str +='		<td><select class="form-control"></select></td>'
 		str +='	</tr>'
-		str +='	<tr>'
-		str +='		<th rowspan="2">일반할인</th>'
-		str +='		<td>국가유공자 할인</td>'
-		str +='		<td>30%</td>'
-		str +='		<td><select class="form-control"></select></td>'
-		str +='	</tr>'
-		str +='	<tr>'
-		str +='		<td>재관람 할인</td>'
-		str +='		<td>40%</td>'
-		str +='		<td><select class="form-control"></select></td>'
-		str +='	</tr>'
-		str +='	<tr>'
-		str +='		<th rowspan="2">이벤트할인</th>'
-		str +='		<td>타임세일</td>'
-		str +='		<td>50%</td>'
-		str +='		<td><select class="form-control"></select></td>'
-		str +='	</tr>'
-		str +='	<tr>'
-		str +='		<td>문화의날</td>'
-		str +='		<td>50%</td>'
-		str +='		<td><select class="form-control"></select></td>'
-		str +='	</tr>'
+		
+		for(var i=0; i< discountList.length; i++) {
+			
+			str +='	<tr>'
+			if(discountList[i].beginDc == null) {
+				str +='		<th>일반할인</th>'
+			}else{
+				str +='		<th>이벤트할인</th>'
+			}
+			str +='		<td>'+discountList[i].dcName+'</td>'
+			if(discountList[i].dcType == "0"){
+				str +='		<td>'+(gradeprice*(100-discountList[i].dcRate)/100)+'</td>'
+			}else{
+				str +='		<td>'+(gradeprice-discountList[i].dcRate)+'</td>'
+			}
+			
+			str +='		<td><select class="form-control"></select></td>'
+			str +='	</tr>'
+		}
+		
+		
 		str +='</table>';
 		
 		$("#disOpt").append(str);
