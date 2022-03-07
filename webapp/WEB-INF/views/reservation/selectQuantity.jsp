@@ -40,79 +40,29 @@
 			
 			<h2>티켓종류, 할인, 매수 선택</h2>
 			<div id="disOpt">
-
-				<%-- <table>
-					<colgroup>
-						<col style="width:30%">
-						<col style="width:40%">
-						<col style="width:15%">
-						<col style="">
-					</colgroup>
-					<tr>
-						<th colspan="4">VIP석을 <span class="text-primary">1</span>매 선택하셨습니다.</th>
-					</tr>
-					<tr>
-						<th>일반</th>
-						<td>일반</td>
-						<td>정가</td>
-						<td><select class="form-control 0-10"></select></td>
-					</tr>
-					<tr>
-						<th rowspan="2">일반할인</th>
-						<td>국가유공자 할인</td>
-						<td>30%</td>
-						<td><select class="form-control 0-10"></select></td>
-					</tr>
-					<tr>
-						<td>재관람 할인</td>
-						<td>40%</td>
-						<td><select class="form-control 0-10"></select></td>
-					</tr>
-					<tr>
-						<th rowspan="2">이벤트할인</th>
-						<td>타임세일</td>
-						<td>50%</td>
-						<td><select class="form-control 0-10"></select></td>
-					</tr>
-					<tr>
-						<td>문화의날</td>
-						<td>50%</td>
-						<td><select class="form-control 0-10"></select></td>
-					</tr>
-
-				</table> --%>
-
 				
 			</div>
 
 			<h2>안내 사항</h2>
 			<div id="guide">
-				예매자는 본 안내페이지의 모든 내용을 숙지 및 동의한 것으로 간주합니다.
-
-				〈관람 안내〉
-				*서울 공연은 현 정부의 방역지침에 따라, 공연 중 배우들의 객석 동선은 진행되지 않으니 예매에 참고 하시기 바랍니다.
-				
-				* 본 상품은 사전배송불가 상품 입니다.
+				예매자는 본 안내페이지의 모든 내용을 숙지 및 동의한 것으로 간주합니다. <br>
+				〈관람 안내〉<br>
+				*서울 공연은 현 정부의 방역지침에 따라, 공연 중 배우들의 객석 동선은 진행되지 않으니 예매에 참고 하시기 바랍니다. <br>
+				* 본 상품은 사전배송불가 상품 입니다. <br>
 				* 관람 연령 / 티켓 수령 / 공연 관람 안내 미숙지로 인한 책임은 관람자 본인에게 있으며,
-				예매 티켓의 취소/변경/환불은 불가하오니 각별히 유의하시기 바랍니다.
-				
+				예매 티켓의 취소/변경/환불은 불가하오니 각별히 유의하시기 바랍니다. <br>
 				* 8세 이상 관람가 (2015년 12월 31일 이전 출생자 관람 가능)
 				8세 미만(2016월 1월 1일 이후 출생자) 아동의 경우 티켓 유무, 보호자 동반 유무와 관계없이 입장 불가합니다.
 				초등학생의 경우 생년월일이 확인 가능한 증빙자료로 나이 확인 후 입장이 가능하며,
 				육안으로 나이 확인은 불가하오니 티켓 수령 시 미리 준비해 주시기 바랍니다.
-				이와 관련 공연 당일 현장 취소/변경/환불은 불가 하오니 예매 시 유의 바랍니다.
-				
-				* 본 공연의 객석운영은 정부정책에 따라 추후 변경 될 수 있습니다.
-				* 가변석(단계 격상에 따라 취소되는 좌석)을 포함하여 좌석 운영됩니다. 예매 전 '좌석 운영 안내'를 숙지하여 주시기 바랍니다.
-				
+				이와 관련 공연 당일 현장 취소/변경/환불은 불가 하오니 예매 시 유의 바랍니다. <br>
+				* 본 공연의 객석운영은 정부정책에 따라 추후 변경 될 수 있습니다.<br>
+				* 가변석(단계 격상에 따라 취소되는 좌석)을 포함하여 좌석 운영됩니다. 예매 전 '좌석 운영 안내'를 숙지하여 주시기 바랍니다.<br>
 				* 티켓은 공연시작 1시간 30분전부터 수령 가능하며, 공연 시작 후 입장이 제한됩니다.
-				관람당일 전관람객 대상, 마스크 착용/체온측정 및 전자출입명부(QR) 작성을 의무화하고 있어
-				평소보다 많은 시간이 소요되오니 충분한 시간을 가지고 공연장을 찾아 주시기 바랍니다.
-				
+				관람당일 전관람객 대상, 마스크 착용/체온측정 및 전자출입명부(QR) 작성을 의무화하고 있어<br>
 				* 현장에서 확인이 필요한 할인을 받으신 경우,
-				할인증빙자료 미지참시 차액지불 하셔야 하오니 꼭 지참 부탁 드립니다.
-				
-				* 공연장 주변 교통이 매우 혼잡하며 주차장이 협소하므로 가급적 대중교통 이용 바랍니다.
+				할인증빙자료 미지참시 차액지불 하셔야 하오니 꼭 지참 부탁 드립니다.<br>
+				* 공연장 주변 교통이 매우 혼잡하며 주차장이 협소하므로 가급적 대중교통 이용 바랍니다.<br>
 			</div>
 
 		</div>
@@ -173,8 +123,9 @@
 </body>
 
 <script type="text/javascript">
+	var totalPrice = 0;
+	
 	$(document).ready(function(){
-		
 		var gradeCount={
 				vip:0,
 				r:0,
@@ -187,14 +138,61 @@
 			gradeCount.${vo.grade} = gradeCount.${vo.grade}+1;
 		</c:forEach>
 		
+		var seatpriceList;
+		$.ajax({
+			url: "${pageContext.request.contextPath}/seatprice/seatpriceList",
+			type : "post",
+			data : {prodNo:1},
+			dataType: "json",
+			async:false, /* 변수를 꺼내기 위한 설정 */
+			success : function(result){
+				seatpriceList = result;
+			},
+			error : function(XHR, status, error) {
+				console.error(status + " : " + error);
+			}
+		});
 		
+		
+		var discountList;
+		$.ajax({
+			url: "${pageContext.request.contextPath}/discount/discountList",
+			type : "post",
+			data : {prodNo:1},
+			dataType: "json",
+			async:false,
+			success : function(result){
+				discountList = result;
+			},
+			error : function(XHR, status, error) {
+				console.error(status + " : " + error);
+			}
+		});
+		console.log(discountList);
+		
+		var gradeNum=0;
 		for(var i in gradeCount) {
 			if(gradeCount[i] > 0) {
-				renderDisopt(i, gradeCount[i]);
+				renderDisOpt(i, gradeCount[i], seatpriceList[gradeNum].price);
 			}
+			gradeNum++;
 		}
 		
+		/* $.ajax({
+			url: "${pageContext.request.contextPath}/dis/selseatList",
+			type : "post",
+			dataType: "json",
+			success : function(dicount){
+	
+			},
+			error : function(XHR, status, error) {
+				console.error(status + " : " + error);
+			}
+		}); */
 		
+		
+		
+		setDropdown();
 		
 		/* $.ajax({
 			url: "${pageContext.request.contextPath}/dis/selseatList",
@@ -202,7 +200,6 @@
 			dataType: "json",
 			success : function(dicount){
 
-				
 			},
 			error : function(XHR, status, error) {
 				console.error(status + " : " + error);
@@ -210,11 +207,15 @@
 		}); */
 	});
 	
-	function renderDisopt(grade, count){
+	/* $('#disOpt').on('change','select',function(){
+		console.log( $(this).val());
+	}); */
+	
+	
+	function renderDisOpt(grade, count, gradeprice){
 		var str = '';
 		
-	
-		str +='<table>'
+		str +='<table id="dis'+grade+'">'
 		str +='	<colgroup>'
 		str +='		<col style="width:30%">'
 		str +='		<col style="width:40%">'
@@ -222,41 +223,54 @@
 		str +='		<col style="">'
 		str +='	</colgroup>'
 		str +='	<tr>'
-		str +='		<th colspan="4">'+grade.toUpperCase()+'석을 <span class="text-primary">'+count+'</span>매 선택하셨습니다.</th>'
+		str +='		<th colspan="4">'+grade.toUpperCase()+'석을 <span class="text-primary count">'+count+'</span>매 선택하셨습니다.</th>'
 		str +='	</tr>'
 		str +='	<tr>'
-		str +='		<th>일반</th>'
+		str +='		<th>일반(정가)</th>'
 		str +='		<td>일반</td>'
-		str +='		<td>정가</td>'
-		str +='		<td><select class="form-control 0-10"></select></td>'
+		str +='		<td>'+gradeprice+'</td>'
+		str +='		<td><select class="form-control"></select></td>'
 		str +='	</tr>'
 		str +='	<tr>'
 		str +='		<th rowspan="2">일반할인</th>'
 		str +='		<td>국가유공자 할인</td>'
 		str +='		<td>30%</td>'
-		str +='		<td><select class="form-control 0-10"></select></td>'
+		str +='		<td><select class="form-control"></select></td>'
 		str +='	</tr>'
 		str +='	<tr>'
 		str +='		<td>재관람 할인</td>'
 		str +='		<td>40%</td>'
-		str +='		<td><select class="form-control 0-10"></select></td>'
+		str +='		<td><select class="form-control"></select></td>'
 		str +='	</tr>'
 		str +='	<tr>'
 		str +='		<th rowspan="2">이벤트할인</th>'
 		str +='		<td>타임세일</td>'
 		str +='		<td>50%</td>'
-		str +='		<td><select class="form-control 0-10"></select></td>'
+		str +='		<td><select class="form-control"></select></td>'
 		str +='	</tr>'
 		str +='	<tr>'
 		str +='		<td>문화의날</td>'
 		str +='		<td>50%</td>'
-		str +='		<td><select class="form-control 0-10"></select></td>'
+		str +='		<td><select class="form-control"></select></td>'
 		str +='	</tr>'
 		str +='</table>';
 		
 		$("#disOpt").append(str);
 		
-	}
+	};
+	
+	function setDropdown() {
+		var disOptList = $('#disOpt table');
+		
+		for(var i=0; i<disOptList.length; i++){
+			var count = disOptList.eq(i).find('.count').text();
+			
+			for(var j=0; j<=count; j++) {
+				disOptList.eq(i).find('select').append('<option value="'+j+'">'+j+'</option>');
+			}
+		}
+	};
+	
 </script>
 
 </html>

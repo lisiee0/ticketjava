@@ -20,7 +20,7 @@ public class SeatpriceController {
 	
 	@ResponseBody
 	@RequestMapping("/seatpriceList")
-	public List<SeatpriceVo> seatpriceList(@RequestParam(value="prodNo", required=false, defaultValue="1") int prodNo ) {
+	public List<SeatpriceVo> seatpriceList(@RequestParam(value="prodNo") int prodNo ) {
 		
 		return seatpriceService.seatpriceList(prodNo);
 	}

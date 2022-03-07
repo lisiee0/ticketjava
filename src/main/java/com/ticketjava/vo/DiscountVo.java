@@ -7,20 +7,20 @@ public class DiscountVo {
 	private String dcName;
 	private String beginDc;
 	private String endDc;
-	private int dcrate;
-	private String dctype;
+	private int dcRate;
+	private String dcType;
 
 	public DiscountVo() {
 	}
 
-	public DiscountVo(int dcNo, int prodNo, String dcName, String beginDc, String endDc, int dcrate, String dctype) {
+	public DiscountVo(int dcNo, int prodNo, String dcName, String beginDc, String endDc, int dcRate, String dcType) {
 		this.dcNo = dcNo;
 		this.prodNo = prodNo;
 		this.dcName = dcName;
 		this.beginDc = beginDc;
 		this.endDc = endDc;
-		this.dcrate = dcrate;
-		this.dctype = dctype;
+		this.dcRate = dcRate;
+		this.dcType = dcType;
 	}
 
 	public int getDcNo() {
@@ -63,26 +63,26 @@ public class DiscountVo {
 		this.endDc = endDc;
 	}
 
-	public int getDcrate() {
-		return dcrate;
+	public int getdcRate() {
+		return dcRate;
 	}
 
-	public void setDcrate(int dcrate) {
-		this.dcrate = dcrate;
+	public void setdcRate(int dcRate) {
+		this.dcRate = dcRate;
 	}
 
-	public String getDctype() {
-		return dctype;
+	public String getdcType() {
+		return dcType;
 	}
 
-	public void setDctype(String dctype) {
-		this.dctype = dctype;
+	public void setdcType(String dcType) {
+		this.dcType = dcType;
 	}
 
 	@Override
 	public String toString() {
 		return "DiscountVo [dcNo=" + dcNo + ", prodNo=" + prodNo + ", dcName=" + dcName + ", beginDc=" + beginDc
-				+ ", endDc=" + endDc + ", dcrate=" + dcrate + ", dctype=" + dctype + "]";
+				+ ", endDc=" + endDc + ", dcRate=" + dcRate + ", dcType=" + dcType + "]";
 	}
 
 }
