@@ -98,11 +98,11 @@
 						</tr>
 						<tr>
 							<td>티켓금액</td>
-							<td class="right">150,000</td>
+							<td class="right" id="ticketPrice"></td>
 						</tr>
 						<tr>
-							<td>할인</td>
-							<td class="right">60,000</td>
+							<td>수수료</td>
+							<td class="right" id="commission">2000</td>
 						</tr>
 						<tr id="payTr">
 							<td>총결제</td>
@@ -124,7 +124,6 @@
 
 <script type="text/javascript">
 	var discountList;
-	var totalAmount=0;
 	
 	$(document).ready(function(){
 		var gradeCount={
@@ -173,7 +172,6 @@
 		for(var i in gradeCount) {
 			if(gradeCount[i] > 0) {
 				renderDisOpt(i, gradeCount[i], seatpriceList[gradeNum].price);
-				totalAmount += gradeCount[i];
 			}
 			gradeNum++;
 		}
@@ -195,15 +193,20 @@
 		
 		if(selCount > gradeCount){
 			$(this).val('0');
-			alert('매수를 다시 선택해주세요');
+			alert('매수의 합이 '+gradeCount+'이(가) 되도록 다시 선택해주세요.');
 		}
 		
-		var totalPrice=0;
+		var ticketPrice=0;
 		var selectList = $('select');
 		for(var i=0;i <selectList.length; i++){
-			totalPrice += Number(selectList.eq(i).val()) * Number( selectList.eq(i).parent().siblings('td.dcPrice').text() );
+			ticketPrice += Number(selectList.eq(i).val()) * Number( selectList.eq(i).parent().siblings('td.dcPrice').text() );
 		}
-		$('#payment').text(totalPrice);
+		$('#ticketPrice').text(ticketPrice);
+		
+		var commission = Number($('#commission').text());
+		var payment = ticketPrice + commission;
+		$('#payment').text(payment);
+		
 	});
 	
 	/* 할인 옵션 테이블 그리기 */
