@@ -60,7 +60,7 @@
 						<div class="col-xs-12 np">
 							<div id="board">
 
-								<form action="${pageContext.request.contextPath}/admin/theaterAdd" method="post" class="form-horizontal">
+								<form action="${pageContext.request.contextPath}/admin/theaterAdd" method="post" enctype="multipart/form-data" class="form-horizontal">
 
 									<!-- 공연장명 -->
 									<div class="form-group">
@@ -122,15 +122,15 @@
 										<div class="col-xs-2"></div>
 									</div>
 
-									<!-- 									공연장사진
+									<!-- 공연장로고 -->
 									<div class="form-group">
 										<div class="col-xs-2"></div>
 									    <label class="form-text col-xs-2" for="">공연장로고</label>
 									    <div class="col-xs-6">
-									    	<input type="file" id="file">
+									    	<input type="file" id="file" name="file">
 									    </div>
 									    <div class="col-xs-2"></div>
-									</div> -->
+									</div>
 
 									<div id="btnLocation">
 										<button type="submit" class="btn btn-primary" id="addbtn">공연장 등록</button>
@@ -211,8 +211,6 @@ function sample6_execDaumPostcode() {
         }
     }).open();
 }
-
-
 
 </script>
 

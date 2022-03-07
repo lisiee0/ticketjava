@@ -6,6 +6,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.ticketjava.service.AdminService;
 import com.ticketjava.vo.HallVo;
@@ -38,9 +39,10 @@ public class AdminController {
 	
 	// 공연장 등록
 	@RequestMapping("/theaterAdd")
-	public String theaterAdd(@ModelAttribute TheaterVo vo) {
-
-		adminService.theaterAdd(vo);
+	public String theaterAdd(@ModelAttribute TheaterVo vo,
+							@RequestParam("file") MultipartFile file) {
+		
+		adminService.theaterAdd(vo, file);
 		return "redirect:/admin/";
 	}
 	

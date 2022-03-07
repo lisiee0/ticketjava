@@ -1,9 +1,15 @@
 package com.ticketjava.service;
 
+import java.io.BufferedOutputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.OutputStream;
 import java.util.List;
+import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.ticketjava.dao.HallDao;
 import com.ticketjava.dao.NoticeDao;
@@ -22,11 +28,33 @@ public class AdminService {
 	@Autowired
 	private NoticeDao nd;
 	
-	public void theaterAdd(TheaterVo vo) {
+	public void theaterAdd(TheaterVo vo, MultipartFile file) {
 		// 임시데이터 넣기
 		vo.setLatitude("0");
 		vo.setLongitude("0");
-		vo.setLogoPath("path");
+		
+		// 공연장 로고 저장
+		String saveDir= "C:\\javaStudy\\upload";
+		String orgName= file.getOriginalFilename(); // 원본파일명
+		String exName= orgName.substring(orgName.lastIndexOf(".")); // 확장자
+		String saveName= System.currentTimeMillis()+UUID.randomUUID().toString()+exName; // 저장파일명
+		String filePath= saveDir+"\\"+saveName;
+		
+		// 업로드
+		try {
+			
+			byte[] fileData= file.getBytes();
+			OutputStream out= new FileOutputStream(filePath);
+			BufferedOutputStream bout= new BufferedOutputStream(out);
+			
+			bout.write(fileData);
+			bout.close();
+		}
+		catch (IOException e) {
+			e.printStackTrace();
+		}
+
+		vo.setLogoPath(saveName);
 		
 		
 		td.theaterAdd(vo);
@@ -42,7 +70,8 @@ public class AdminService {
 		}
 		else { // 시설명이 1개일때
 			hd.hallAdd(vo);
-		}	
+		}
+
 	}
 	
 	public List<HallVo> getList() {
