@@ -2,5 +2,13 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="seatprice">
 	
+	<select id="selectList" parameterType="int">
+		<![CDATA[
+			select grade,
+				   price
+			from seatprice
+			where prod_no = #{prodNo}
+		]]>
+	</select>
 	
 </mapper>
