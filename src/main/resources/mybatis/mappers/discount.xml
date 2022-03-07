@@ -11,6 +11,7 @@
 				   dctype dcType
 			from discount
 			where prod_no = #{prodNo}
+			order by begindc desc ,dctype, dcrate
 		]]>
 	</select>
 	
