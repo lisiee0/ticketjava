@@ -19,17 +19,19 @@ public class SelseatController {
 	private SelseatService selseatService;
 	
 	@ResponseBody
-	@RequestMapping("selseatList")
+	@RequestMapping("/selseatList")
 	public List<SelseatVo> selseatList(){
 		return selseatService.selList();
 	}
 	
 	
 	@ResponseBody
-	@RequestMapping("modifyDcPay")
+	@RequestMapping("/modifyDcPay")
 	public String modifyDcPay(@RequestParam String data){
 		selseatService.modifyDcPay(data);
 		
 		return "성공";
 	}
+	
+	
 }

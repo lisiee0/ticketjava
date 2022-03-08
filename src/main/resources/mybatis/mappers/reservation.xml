@@ -32,6 +32,25 @@
 		]]>
 	</update>
 	
+	<select id="selectByRezNo" parameterType="int" resultType="ReservationVo">
+		<![CDATA[
+			select totalPayment
+			from reserve
+			where rez_no = #{rezNo}
+		]]>
+	</select>
+	
+	
+	<update id="updateInfo" parameterType="ReservationVo">
+		<![CDATA[
+			update reserve
+			set phone = #{phone},
+				email = #{email},
+				status = 1
+			where rez_no = #{rezNo}
+		]]>
+	</update>
+	
 	
 	
 </mapper>

@@ -25,4 +25,13 @@ public class ReservationDao {
 	public void updatePayment(ReservationVo reservationVo) {
 		sqlSession.update("reservation.updatePayment",reservationVo);	
 	}
+
+	public ReservationVo selectByRezNo(int rezNo) {
+		return sqlSession.selectOne("reservation.selectByRezNo", rezNo);
+	}
+
+	public void updateInfo(ReservationVo reservationVo) {
+		sqlSession.update("reservation.updateInfo",reservationVo);
+		
+	}
 }

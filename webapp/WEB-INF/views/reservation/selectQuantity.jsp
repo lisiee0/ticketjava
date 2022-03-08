@@ -77,7 +77,7 @@
 							<col style="width:28%">
 							<col style="">
 						</colgroup>
-						<c:forEach items="${map.selList}" var="vo">
+						<c:forEach items="${selList}" var="vo">
 							<tr>
 								<td>${fn:toUpperCase(vo.grade)}석</td>
 								<td class="right">${vo.section}구역 ${vo.col}열 ${vo.num}번</td>
@@ -114,10 +114,10 @@
 			</div>
 			<div id="button">
 				<div class="clearfix" id="prevNext">
-					<form action="${pageContext.request.contextPath}/reservation/confirmReservation" method="post">
-						
+					<form id="dcForm" action="${pageContext.request.contextPath}/reservation/confirmReservation" method="post">
+						<input type="hidden" name="prodNo" value="1">
 						<input type="hidden" name="rezNo" value="${param.rezNo}">
-						<c:forEach items="${map.selList}" var="vo">
+						<c:forEach items="${selList}" var="vo">
 							<input type="hidden" name="selseatNo" value="${vo.selseatNo}">
 						</c:forEach>
 						<button class="btn-outline-primary" type="button" id="prevBtn">이전단계 </button>
@@ -141,7 +141,7 @@
 				b:0
 		};
 		
-		<c:forEach items="${map.selList}" var="vo">
+		<c:forEach items="${selList}" var="vo">
 			gradeCount.${vo.grade} = gradeCount.${vo.grade}+1;
 		</c:forEach>
 		
@@ -239,7 +239,7 @@
 		};
 		
 		/* 선택 좌석마다 할인옵션 부여 */
-		<c:forEach items="${map.selList}" var="vo">
+		<c:forEach items="${selList}" var="vo">
 			var grade = '${vo.grade}';
 			var disOptSelect = $('#disOpt'+grade+' select');
 			
@@ -289,7 +289,7 @@
 			data: {data: JSON.stringify(jsonData) },
 			dataType: "json",
 			success : function(result){
-				
+				$('#dcForm').submit();
 			},
 			error : function(XHR, status, error) {
 				console.error(status + " : " + error);

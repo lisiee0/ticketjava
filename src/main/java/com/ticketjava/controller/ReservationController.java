@@ -1,5 +1,7 @@
 package com.ticketjava.controller;
 
+import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,7 +13,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.ticketjava.service.ReservationService;
+import com.ticketjava.service.SelseatService;
 import com.ticketjava.vo.ReservationVo;
+import com.ticketjava.vo.SelseatVo;
 
 
 @Controller
@@ -21,6 +25,8 @@ public class ReservationController {
 	@Autowired
 	private ReservationService reservationService;
 	
+	@Autowired
+	private SelseatService selseatService;
 	
 	@RequestMapping("/selectSeat")
 	public String selectSeat() {
@@ -46,8 +52,8 @@ public class ReservationController {
 	public String selectQuantity(/*@RequestParam("rezNo") int rezNo,*/
 								 @RequestParam("selseatNo") int [] selseatNo,
 								 Model model) {
-		Map<String, Object> map = reservationService.selList(selseatNo);
-		model.addAttribute("map", map);
+		List<SelseatVo> selList = selseatService.selList(selseatNo);
+		model.addAttribute("selList", selList);
 		
 		return "reservation/selectQuantity";
 	}
@@ -60,8 +66,19 @@ public class ReservationController {
 	}
 	
 	@RequestMapping("/confirmReservation")
-	public String confirmReservation() {
+	public String confirmReservation(@RequestParam("rezNo") int rezNo,
+									 @RequestParam("selseatNo") int [] selseatNo,
+									 Model model) {
+		Map<String, Object> map = reservationService.confirmReservation(rezNo, selseatNo);
+		model.addAttribute("map", map);
 		return "reservation/confirmReservation";
+	}
+	
+	@ResponseBody
+	@RequestMapping("/finalPayment")
+	public String modifyInfo(@ModelAttribute ReservationVo reservationVo) {
+		reservationService.finalPayment(reservationVo);
+		return "";
 	}
 	
 	

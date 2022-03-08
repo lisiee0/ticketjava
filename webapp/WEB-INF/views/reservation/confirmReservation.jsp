@@ -1,16 +1,21 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix = "fn" uri = "http://java.sun.com/jsp/jstl/functions" %>
+    
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
 
+<script src="${pageContext.request.contextPath}/assets/jquery/jquery-1.12.4.js"></script>
+
 <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/bootstrap/css/bootstrap.css">
 <link href="${pageContext.request.contextPath}/assets/css/reservation/reservation.css" rel="stylesheet" type="text/css">
 <link href="${pageContext.request.contextPath}/assets/css/reservation/reservation4.css" rel="stylesheet" type="text/css">
 <link href="${pageContext.request.contextPath}/assets/css/reservation/reservation5.css" rel="stylesheet" type="text/css">
-<script src="${pageContext.request.contextPath}/assets/jquery/jquery-1.12.4.js"></script>
+
 
 </head>
 
@@ -45,11 +50,11 @@
 						<th>이름</th>
 						<td>황일영</td>
 						<th>휴대폰 번호</th>
-						<td><input class="form-control" type="text" value="01012345678"></td>
+						<td><input id="phone" class="form-control" type="text" value="01012345678"></td>
 					</tr>
 					<tr>
 						<th>이메일</th>
-						<td colspan="3"><input class="form-control" type="text" value="asd@naver.com" size="80"></td>
+						<td colspan="3"><input id="email" class="form-control" type="text" value="asd@naver.com" size="80"></td>
 					</tr>
 				</table>				
 			</div>
@@ -84,14 +89,20 @@
 							<col style="width:28%">
 							<col style="">
 						</colgroup>
-						<tr>
+						<c:forEach items="${map.selList}" var="vo">
+							<tr>
+								<td>${fn:toUpperCase(vo.grade)}석</td>
+								<td class="right">${vo.section}구역 ${vo.col}열 ${vo.num}번</td>
+							</tr>
+						</c:forEach>
+						<!-- <tr>
 							<td>VIP석</td>
 							<td class="right">A구역 1열 4번</td>
 						</tr>
 						<tr>
 							<td>S석</td>
 							<td class="right">B구역 4열 12번</td>
-						</tr>
+						</tr> -->
 					</table>
 				</div>
 				
@@ -107,15 +118,15 @@
 						</tr>
 						<tr>
 							<td>티켓금액</td>
-							<td class="right">150,000</td>
+							<td class="right">${map.rezVo.totalPayment-2000}</td>
 						</tr>
 						<tr>
-							<td>할인</td>
-							<td class="right">60,000</td>
+							<td>수수료</td>
+							<td class="right">2000</td>
 						</tr>
 						<tr id="payTr">
 							<td>총결제</td>
-							<td class="right" id="payment">120,000</td>
+							<td class="right" id="payment">${map.rezVo.totalPayment}</td>
 						</tr>
 					</table>
 				</div>
@@ -123,12 +134,56 @@
 			</div>
 			<div id="button">
 				<div class="clearfix" id="prevNext">
-					<button class="btn-outline-primary" type="button" id="prevBtn">이전단계 </button>
-					<button class="btn-primary" type="button" id="nextBtn">결제하기 </button> 
+					<button class="btn-outline-primary" type="button" id="prevBtn">이전단계</button>
+					<button class="btn-primary" type="button" id="paymentBtn">결제하기 </button> 
 				</div>
 			</div>
 		</div>
 	</div>
 </body>
 
+<script type="text/javascript">
+	$('#paymentBtn').on('click', function(){
+		var rezNo = <c:out value="${param.rezNo}" />;
+		var phone = $('#phone').val();
+		var email = $('#email').val();
+		
+		
+		var rezVo = {
+			rezNo:rezNo,
+			phone:phone,
+			email:email
+		};
+		
+		console.log(rezVo);
+		$.ajax({
+			url: "${pageContext.request.contextPath}/reservation/finalPayment",
+			type : "post",
+			data : rezVo,
+			dataType: "json",
+			success : function(result){
+				
+			},
+			error : function(XHR, status, error) {
+				console.error(status + " : " + error);
+			}
+		});
+		
+		
+		/* 
+		$.ajax({
+			url: "${pageContext.request.contextPath}/reservation/modifyStatus",
+			type : "post",
+			data : {rezNo: rezNo},
+			dataType: "json",
+			success : function(result){
+			},
+			error : function(XHR, status, error) {
+				console.error(status + " : " + error);
+			}
+		}); */
+		
+	});
+</script>
+	
 </html>

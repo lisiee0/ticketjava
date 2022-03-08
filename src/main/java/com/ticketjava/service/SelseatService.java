@@ -21,6 +21,11 @@ public class SelseatService {
 		return selseatDao.selectList();
 	}
 
+	public List<SelseatVo> selList(int[] selseatNo) {
+		return selseatDao.selectSelList(selseatNo);
+	}
+
+	
 	public void modifyDcPay(String data) {
 		
 		JSONArray array = JSONArray.fromObject(data);

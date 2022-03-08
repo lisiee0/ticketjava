@@ -121,7 +121,7 @@
 			<div id="button">
 				
 				<form id="seatForm" action="${pageContext.request.contextPath}/reservation/selectQuantity" method="post">
-				
+					<input type="hidden" name="prodNo" value="1">
 					<button class="btn-primary" type="button" id="nextBtn" class="btn">다음단계 </button>
 				</form>
 				<button class="btn-default">취소표 알림</button>
@@ -138,7 +138,6 @@ $(document).ready(function(){
 		type : "post",
 		dataType: "json",
 		success : function(){
-			console.log("선점 지우기 완료");
 			
 		},
 		error : function(XHR, status, error) {

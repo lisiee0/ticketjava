@@ -64,4 +64,12 @@
 		]]>
 	</update>
 	
+	<update id="updateStatus" parameterType="int">
+		<![CDATA[
+			update selseat
+			set status = 1
+			where rez_no = #{rezNo}
+		]]>
+	</update>
+	
 </mapper>

@@ -40,6 +40,10 @@ public class SelseatDao {
 		sqlSession.update("selseat.updateDcPay", selseatVo);
 		
 	}
+
+	public void updateStatus(int rezNo) {
+		sqlSession.update("selseat.updateStatus", rezNo);
+	}
 	
 	
 }

@@ -60,15 +60,6 @@ public class ReservationService {
 		
 	}
 
-	public Map<String, Object> selList(int[] selseatNo) {
-		Map<String, Object> map = new HashMap<>();
-		
-		List<SelseatVo> selList = selseatDao.selectSelList(selseatNo);
-		map.put("selList", selList);
-		
-		return map;
-	}
-
 	public void preDel() {
 		List<Integer> rezNoList = selseatDao.selectTimeOver();
 		
@@ -80,6 +71,20 @@ public class ReservationService {
 
 	public void modifyPayment(ReservationVo reservationVo) {
 		reservationDao.updatePayment(reservationVo);
+	}
+
+	public Map<String, Object> confirmReservation(int rezNo, int[] selseatNo) {
+		Map<String, Object> map = new HashMap<>();
+		ReservationVo reservationVo = reservationDao.selectByRezNo(rezNo);
+		map.put("rezVo", reservationVo);
+		List<SelseatVo> selList = selseatDao.selectSelList(selseatNo);
+		map.put("selList", selList);
+		return map;
+	}
+
+	public void finalPayment(ReservationVo reservationVo) {
+		reservationDao.updateInfo(reservationVo);
+		selseatDao.updateStatus(reservationVo.getRezNo());	
 		
 	}
 	
