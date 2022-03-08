@@ -24,7 +24,7 @@
 								<li><a href="${pageContext.request.contextPath}/user/loginForm">로그인</a></li>
 								<li><a href="${pageContext.request.contextPath}/user/joinForm">회원가입</a></li>
 								<!-- 개발용 임시 메뉴 bm 사업자 adm 관리자 -->
-								<li><a href="${pageContext.request.contextPath}/bm/bmAdd">bm</a></li>
+								<li><a href="${pageContext.request.contextPath}/bm/">bm</a></li>
 								<li><a href="${pageContext.request.contextPath}/admin/">adm</a></li>
 							</ul>
 						</div>
