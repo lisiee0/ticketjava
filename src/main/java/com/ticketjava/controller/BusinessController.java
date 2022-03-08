@@ -24,6 +24,7 @@ public class BusinessController {
 		System.out.println("BusinessController/bmInquiry");
 
 	
+		model.addAttribute("bmList", businessService.getList());
 		return "business/bmInquiry";
 	}
 
