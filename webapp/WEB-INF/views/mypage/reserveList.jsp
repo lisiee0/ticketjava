@@ -90,9 +90,18 @@
 												<td>${reserveList.rezNo}</td>
 												<td>${reserveList.rezDate}</td>
 												<td class="text-left"><a href="#">${reserveList.prodName}</a></td>
-												<td>${reserveList.viewDate} / 2매</td>
-												<td>${reserveList.status}</td>
-												<td><button type="submit" class="btn btn-primary" onclick="location.href='ticketjava/mypage/reserveDetail?prodNo=${reserveList.prodNo}'">자세히</button></td>
+												<td>${reserveList.viewDate} / ${reserveList.ticketCount}매</td>
+												
+												<c:choose>
+														<c:when test="${reserveList.status eq 1}">
+															<td>예매중</td>
+														</c:when>
+															<c:otherwise>
+															<td>취소중</td>
+														</c:otherwise>
+												</c:choose>
+												
+												<td><button type="submit" class="btn btn-primary" onclick="location.href='reserveDetail?prodNo=${reserveList.prodNo}'">자세히</button></td>
 											</tr>
 
 										</tbody>

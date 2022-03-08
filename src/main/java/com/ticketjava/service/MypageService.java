@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.ticketjava.dao.MypageDao;
-import com.ticketjava.vo.ReservationVo;
+import com.ticketjava.vo.ReserveDetailVo;
 
 @Service
 public class MypageService {
@@ -14,10 +14,15 @@ public class MypageService {
 	@Autowired
 	private MypageDao mypageDao;
 	
-	public List<ReservationVo> getReserveList () {
+	
+	public List<ReserveDetailVo> getReserveList () {
 		System.out.println("MypageService getReserveList");
 		return mypageDao.getReserveList();
 	}
+	
+	
+
+
 	
 	
 } // The end of MypageService

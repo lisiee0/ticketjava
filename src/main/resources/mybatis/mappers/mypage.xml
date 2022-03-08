@@ -1,36 +1,59 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<!-- 
-삭제없이 바꾸려면
-alter table selseat drop CONSTRAINT FK_reserve_TO_selseat;
-alter table selseat add CONSTRAINT FK_reserve_TO_selseat foreign key (rez_no) REFERENCES reserve (rez_no) on delete cascade;
--->
+<!-- 삭제없이 바꾸려면 alter table selseat drop CONSTRAINT FK_reserve_TO_selseat; 
+	alter table selseat add CONSTRAINT FK_reserve_TO_selseat foreign key (rez_no) 
+	REFERENCES reserve (rez_no) on delete cascade; -->
 
 <mapper namespace="mypage">
 
-<select id="reserveList" resultType="ReservationVo">
+	<select id="reserveList" resultType="ReservationVo"
+		parameterType="ReservationVo">
+	<![CDATA[
+
+select r.rez_no rezNo, 
+       to_char(r.rezdate, 'yy-mm-dd hh24:mi') rezDate,
+        r.prod_no prodNo,
+       p.prodname prodName,
+     to_char(r.viewdate, 'yy-mm-dd hh24:mi') viewDate,
+       r.ticketCount ticketCount,
+       r.status status
+from (select r.rez_no,
+               r.rezdate,
+               r.viewdate,
+               r.status,
+               r.prod_no,
+               count(s.selseat_no) ticketCount
+        from reserve r, selseat s
+        where r.rez_no = s.rez_no
+        group by r.rez_no, r.rezdate, r.viewdate, r.status, r.prod_no) r, product p
+where r.prod_no = p.prod_no
+
+	]]>
+	</select>
+
+	<select id="reserveListDetail" resultType="ReservationVo"
+		parameterType="ReservationVo">
+
 <![CDATA[
-select  r.rez_no rezNo
-        , to_char(r.rezdate, 'yy-mm-dd hh24:mi') rezDate
-        , r.prod_no prodNo
-        , p.prodname prodName
-        , to_char(r.viewdate, 'yy-mm-dd hh24:mi') viewDate
-        , r.status status
-from reserve r, product p
-]]>	
-</select>
+select  u.user_no userNo,
+        p.prodname prodname, 
+        r.viewdate viewdate,
+        th.theatername theatername,
+        h.hallname hallname,
+        r.rezdate rezdate,
+        u.name name,
+        r.rez_no rezNo,
+        s.grade grade, 
+        s.selseat_no selseatNo,
+        s.section section, 
+        s.col col,
+        s.status status,
+        s.payment payment
+from product p, reserve r, theater th, hall h, selseat s, users u
+where u.user_no = 4 and r.rez_no = 1
 
-
-<!--  예매 매수 카운터 (예매번호) 그룹바이 회원번호 -->
-<select id="ticketCount" resultType="ReservationVo">
-<![CDATA[
-select count(r.rez_no) ticketCount
-from reserve r , selseat ss
-where r.rez_no = ss.selseat_no
-group by r.rez_no
-]]>	
-</select>
-
+]]>
+	</select>
 
 </mapper>

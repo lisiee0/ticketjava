@@ -8,7 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.ticketjava.service.MypageService;
-import com.ticketjava.vo.ReservationVo;
+import com.ticketjava.vo.ReserveDetailVo;
 
 @Controller
 @RequestMapping("/mypage")
@@ -22,13 +22,15 @@ public class MypageController {
 	public String ticketingList(Model model) {
 		System.out.println("MypageController reserveList 예매내역");
 		
-		List<ReservationVo> reserveList = mypageService.getReserveList();
+		List<ReserveDetailVo> reserveList = mypageService.getReserveList();
 		
 //		DS에서 리스트 데이터 공유하는 model
 		model.addAttribute("reserveList",reserveList);
+		System.out.println("MypageController reserveList "+reserveList);
 		return "mypage/reserveList";
 	} 
 	
+		
 	
 //	마이페이지 문의내역
 	@RequestMapping("/reserveAsking")
