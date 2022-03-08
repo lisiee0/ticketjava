@@ -50,5 +50,18 @@
 		
 	</select>
 	
+	<update id="updateDcPay" parameterType="SelseatVo">
+		<![CDATA[
+			update selseat
+			set
+		]]>
+				<if test="dcNo != 0">
+					dc_no = #{dcNo},
+				</if>
+		<![CDATA[
+				payment = #{payment}
+			where selseat_no = #{selseatNo}		
+		]]>
+	</update>
 	
 </mapper>

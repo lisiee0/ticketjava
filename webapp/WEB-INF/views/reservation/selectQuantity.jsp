@@ -238,6 +238,7 @@
 				totalPayment: totalPayment
 		};
 		
+		/* 선택 좌석마다 할인옵션 부여 */
 		<c:forEach items="${map.selList}" var="vo">
 			var grade = '${vo.grade}';
 			var disOptSelect = $('#disOpt'+grade+' select');
@@ -266,6 +267,7 @@
 		
 		console.log(jsonData);
 		
+		/* 예매번호로 최종결제금액 저장 */
 		$.ajax({
 			url: "${pageContext.request.contextPath}/reservation/modifyPayment",
 			type : "post",
@@ -279,6 +281,20 @@
 			}
 		});
 		
+		/* 선택 좌석별 할인, 결제금액 저장 */
+		$.ajax({
+			url: "${pageContext.request.contextPath}/selseat/modifyDcPay",
+			type : "post",
+			traditional: true,
+			data: {data: JSON.stringify(jsonData) },
+			dataType: "json",
+			success : function(result){
+				
+			},
+			error : function(XHR, status, error) {
+				console.error(status + " : " + error);
+			}
+		});
 		
 	});
 	
@@ -342,11 +358,11 @@
 	            rows.not(":eq(0)").remove();
 	        }
 	    });
-		/* /rowspan */
+		
 
 	};
 	
-	/* select dropdown */
+	/* select 최대 수량 */
 	function setDropdown() {
 		var disOptList = $('#disOpt table');
 		

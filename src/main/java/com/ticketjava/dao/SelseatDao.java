@@ -35,6 +35,11 @@ public class SelseatDao {
 	public List<SelseatVo> selectList() {
 		return sqlSession.selectList("selseat.selectList");
 	}
+
+	public void updateDcPay(SelseatVo selseatVo) {
+		sqlSession.update("selseat.updateDcPay", selseatVo);
+		
+	}
 	
 	
 }
