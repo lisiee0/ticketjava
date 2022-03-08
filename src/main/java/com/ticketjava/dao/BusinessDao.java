@@ -16,21 +16,33 @@ public class BusinessDao {
 
 	// 공연 추가
 	public void bmAdd(BusinessVo vo) {
+
 		sqlsession.insert("bm.bmAdd", vo);
 	}
 
-	// 공연 선택
-	public BusinessVo selectBusiness(BusinessVo vo) {
-
-		return sqlsession.selectOne("bm.selectBm", vo);
-	}
-
 	// 공연 리스트
-	public List<BusinessVo> getbmList() {
+	public List<BusinessVo> getBmList() {
 
 		return sqlsession.selectList("bm.getList");
 	}
+
+	// 공연 선택
+	public BusinessVo getBm(int prodNo) {
+		
+		return sqlsession.selectOne("bm.getBm", prodNo);
+	}
+
+	// 공연 수정
+	public void bmModify(BusinessVo vo) {
+		
+		sqlsession.update("bm.moodify", vo);
+	}
 	
-	//공연 
+	//공연 삭제
+	public void bmDelete(BusinessVo vo) {
+		
+		sqlsession.delete("bm.delete", vo);
+	}
+	
 
 }

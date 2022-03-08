@@ -19,9 +19,10 @@ public class BusinessController {
 
 	// 공연 목록
 	@RequestMapping(value="/", method= {RequestMethod.GET, RequestMethod.POST})
-	public String bmInquiry() {
+	public String bmInquiry(Model model) {
 		System.out.println("BusinessController/bmInquiry");
-		
+
+	
 		return "business/bmInquiry";
 	}
 
@@ -31,6 +32,14 @@ public class BusinessController {
 		System.out.println("BusinessController/bmAdd");
 
 		return "business/bmAdd";
+	}
+	
+	// 공연 수정
+	@RequestMapping(value="bmModify", method= {RequestMethod.GET, RequestMethod.POST})
+	public String bmModify(@ModelAttribute BusinessVo businessVo) {
+		System.out.println("BusinessController/bmAdd");
+
+		return "business/bmModify";
 	}
 
 	// 공연 검색
