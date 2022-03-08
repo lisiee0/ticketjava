@@ -33,39 +33,38 @@ public class BusinessService {
 	}
 
 	// 공연 추가
-//	public void bmAdd(ProductVo vo, MultipartFile file) {
-//		System.out.println("bmAdd.FileService()");
-//
-//		String saveDir = "C:\\javaStudy\\upload";
-//
-//		// 정보 추출
-//		// 파일관련 정보 추출
-//
-//		// 원본파일이름
-//		String orgName = file.getOriginalFilename();
-//
-//		// 확장자
-//		String exName = file.getOriginalFilename().substring(file.getOriginalFilename().lastIndexOf("."));
-//
-//		// 저장파일이름
-//		String saveName = System.currentTimeMillis() + UUID.randomUUID().toString() + exName;
-//
-//		// 파일패스 생성
-//		String filePath = saveDir + "\\" + saveName;
-//
-//		// 파일 저장
-//		try {
-//			byte[] fileData = file.getBytes();
-//			OutputStream out = new FileOutputStream(filePath);
-//			BufferedOutputStream bout = new BufferedOutputStream(out);
-//
-//			bout.write(fileData);
-//			bout.close();
-//		} catch (IOException e) {
-//			e.printStackTrace();
-//		}
-//
-//	}
+	public void bmAdd(ProductVo vo, MultipartFile file) {
+		System.out.println("bmAdd.FileService()");
+
+		String saveDir = "C:\\javaStudy\\upload";
+
+		// 파일관련 정보 추출
+
+		// 원본파일이름
+		String orgName = file.getOriginalFilename();
+
+		// 확장자
+		String exName = file.getOriginalFilename().substring(file.getOriginalFilename().lastIndexOf("."));
+
+		// 저장파일이름
+		String saveName = System.currentTimeMillis() + UUID.randomUUID().toString() + exName;
+
+		// 파일패스 생성
+		String filePath = saveDir + "\\" + saveName;
+
+		// 파일 저장
+		try {
+			byte[] fileData = file.getBytes();
+			OutputStream out = new FileOutputStream(filePath);
+			BufferedOutputStream bout = new BufferedOutputStream(out);
+
+			bout.write(fileData);
+			bout.close();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+
+	}
 
 	// 공연 목록 수정 public void bmModify(ProductVo vo) { pd.bmModify(vo); }
 

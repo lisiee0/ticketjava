@@ -87,7 +87,7 @@
 								<div class="col-md-8">
 									<div class="form-group">
 										<div class="col-md-4">
-											<input type="text" class="form-control" id="addWhere" name="" placeholder="세종문화회관 1관" readonly>
+											<input type="text" class="form-control" id="addWhere" name="theaterName" readonly>
 										</div>
 										<div class="col-md-3">
 											<a href="${pageContext.request.contextPath}/bm/bmAddSearch" class="btn btn-primary">검색</a>
@@ -123,10 +123,10 @@
 							<div class="form-group">
 								<label class="form-text col-md-2 form-id" for="">공연 기간</label>
 								<div class="col-md-4">
-									<input type="date" class="form-control" id="" name="beginShow">
+									<input type="date" class="form-control" name="beginShow">
 								</div>
 								<div class="col-md-4">
-									<input type="date" class="form-control" id="" name="endShow">
+									<input type="date" class="form-control" name="endShow">
 								</div>
 							</div>
 
@@ -134,10 +134,10 @@
 							<div class="form-group">
 								<label class="form-text col-md-2 form-id" for="">예매 기간</label>
 								<div class="col-md-4">
-									<input type="date" class="form-control" id="" name="beginRez">
+									<input type="date" class="form-control" name="beginRez">
 								</div>
 								<div class="col-md-4">
-									<input type="date" class="form-control" id="" name="endRez">
+									<input type="date" class="form-control" name="endRez">
 								</div>
 							</div>
 
@@ -145,7 +145,7 @@
 							<div class="form-group">
 								<label class="form-text col-md-2 form-id" for="">공연 시작시간</label>
 								<div class="col-md-4">
-									<input type="time" class="form-control" id="" name="showTime">
+									<input type="time" class="form-control" name="showTime">
 								</div>
 							</div>
 
@@ -161,19 +161,19 @@
 							<div class="form-group">
 								<label class="form-text col-md-2 form-id" for="">관람 등급</label>
 								<div class="col-md-1">
-									<label for="ageall">전체</label> <input type="radio" id="ageall" name="viewGrade" value="1">
+									<label for="ageall">전체</label> <input type="radio" name="viewGrade" value="1">
 								</div>
 								<div class="col-md-1">
-									<label for="age8">8세</label> <input type="radio" id="age8" name="viewGrade" value="2">
+									<label for="age8">8세</label> <input type="radio" name="viewGrade" value="2">
 								</div>
 								<div class="col-md-1">
-									<label for="age12">12세</label> <input type="radio" id="age12" name="viewGrade" value="3">
+									<label for="age12">12세</label> <input type="radio" name="viewGrade" value="3">
 								</div>
 								<div class="col-md-1">
-									<label for="age15">15세</label> <input type="radio" id="age15" name="viewGrade" value="4">
+									<label for="age15">15세</label> <input type="radio" name="viewGrade" value="4">
 								</div>
 								<div class="col-md-1">
-									<label for="age15">18세</label> <input type="radio" id="age15" name="viewGrade" value="5">
+									<label for="age15">18세</label> <input type="radio" name="viewGrade" value="5">
 								</div>
 							</div>
 
@@ -198,19 +198,19 @@
 											<input type="text" class="form-control" name="price" value="">
 										</div>
 										&nbsp;
+										<!-- 등급별 가격 추가 -->
 										<button type="button" id="addGrade" class="btn">+</button>
 										<br>
 
-										<!--  -->
 									</div>
 
 									<!-- 선택된 좌석 -->
 									<div class="form-group">
 										<div class="col-md-4">
-											<input type="text" class="form-control" id="" placeholder="VIP석" readonly>
+											<input type="text" class="form-control" placeholder="VIP석" readonly>
 										</div>
 										<div class="col-md-4">
-											<input type="text" class="form-control" id="" placeholder="140,000원">
+											<input type="text" class="form-control" placeholder="140,000원">
 										</div>
 										<div class="col-md-1">
 											<button type="button" class="btn" id="delGrade">-</button>
@@ -228,7 +228,7 @@
 							<div class="form-group">
 								<label class="form-text col-md-2 form-id" for="">공지사항</label>
 								<div class="col-md-8">
-									<textarea class="form-control textWay" name="notice" value="" placeholder="내용을 입력해주세요"></textarea>
+									<textarea class="form-control textWay" name="notice" placeholder="내용을 입력해주세요"></textarea>
 								</div>
 							</div>
 
@@ -328,14 +328,12 @@
 			.on(
 					"click",
 					function() {
-						var num = $("#selGrade").val();
-
+						var gra = $("#selGrade").val();
 						$("#bmNameArea")
 								.append(
 										'<div class="form-group">'
-
 												+ '<div class="col-md-4">'
-												+ '<input type="text" class="form-control" id="" name="grade" value="'+num+'" placeholder="" readonly>'
+												+ '<input type="text" class="form-control" id="" name="grade" value="'+gra+'" placeholder="" readonly>'
 												+ '</div>'
 												+ '<div class="col-md-4">'
 												+ '<input type="text" class="form-control" id="" name="price" placeholder="가격을 입력해주세요">'
@@ -343,14 +341,27 @@
 												+ '&nbsp;'
 												+ '<button type="button" id="delGrade" class="btn">-</button>'
 												+ '</div>');
-
 					});
 
+	//삭제 버튼
 	$("#delGrade").on("click", function() {
-
 		$("#bmNameArea").empty();
-
 	});
+
+	//새탭에서 열기 
+	//부모
+	var newWindow;
+
+	function open_Page() {
+		newWindow = window.open("Doit_1.html", "Doit",
+				"height=100,width=200,resizable=yes");
+	}
+
+	function receiver_onclick() {
+		alert("자식창에 있는 폼의 TEXT를 받아옵니다.");
+		3.
+		document.frm1.txtReceiver.value = newWindow.document.frm1.txtSender.value;
+	}
 </script>
 
 

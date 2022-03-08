@@ -19,25 +19,25 @@ public class BusinessController {
 	BusinessService businessService;
 
 	// 공연 목록
-	@RequestMapping(value="/", method= {RequestMethod.GET, RequestMethod.POST})
+	@RequestMapping(value = "/", method = { RequestMethod.GET, RequestMethod.POST })
 	public String bmInquiry(Model model) {
 		System.out.println("BusinessController/bmInquiry");
 
-	
 		model.addAttribute("bmList", businessService.getProductList());
 		return "business/bmInquiry";
 	}
+	//
 
 	// 공연 추가
-	@RequestMapping(value="bmAdd", method= {RequestMethod.GET, RequestMethod.POST})
+	@RequestMapping(value = "bmAdd", method = { RequestMethod.GET, RequestMethod.POST })
 	public String bmAdd(@ModelAttribute ProductVo productVo) {
 		System.out.println("BusinessController/bmAdd");
 
 		return "business/bmAdd";
 	}
-	
+
 	// 공연 수정
-	@RequestMapping(value="bmModify", method= {RequestMethod.GET, RequestMethod.POST})
+	@RequestMapping(value = "bmModify", method = { RequestMethod.GET, RequestMethod.POST })
 	public String bmModify(@ModelAttribute ProductVo productVo) {
 		System.out.println("BusinessController/bmAdd");
 
@@ -45,7 +45,7 @@ public class BusinessController {
 	}
 
 	// 공연 검색
-	@RequestMapping(value="bmAddSearch", method= {RequestMethod.GET, RequestMethod.POST})
+	@RequestMapping(value = "bmAddSearch", method = { RequestMethod.GET, RequestMethod.POST })
 	public String bmAddSearch() {
 		System.out.println("BusinessController/bmAddSearch");
 
@@ -56,13 +56,13 @@ public class BusinessController {
 	@RequestMapping("/discount")
 	public String bmDisAdd(@RequestParam("prodNo") int prodNo, Model model) {
 		System.out.println("BusinessController/bmDisAdd");
-		
+
 		model.addAttribute("prodDis", businessService.selectProdDiscount(prodNo));
 		return "business/bmDisAdd";
 	}
 
 	// 문의내역 관리
-	@RequestMapping(value="bmManage", method= {RequestMethod.GET, RequestMethod.POST})
+	@RequestMapping(value = "bmManage", method = { RequestMethod.GET, RequestMethod.POST })
 	public String bmManage() {
 		System.out.println("BusinessController/bmManage");
 
