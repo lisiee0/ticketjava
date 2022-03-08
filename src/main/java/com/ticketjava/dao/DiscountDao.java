@@ -27,4 +27,10 @@ public class DiscountDao {
 	public DiscountVo selectProdHall(int prodNo) {
 		return sqlSession.selectOne("discount.selectProdHall", prodNo);
 	}
+	
+	// 이벤트 할인창에서 가져오는 이벤트할인 리스트 (상시할인 제외)
+	public List<DiscountVo> getList() {
+		return sqlSession.selectList("discount.getList");
+	}
+	
 }

@@ -12,7 +12,7 @@ import com.ticketjava.service.DiscountService;
 import com.ticketjava.vo.DiscountVo;
 
 @Controller
-@RequestMapping("/discount")
+@RequestMapping("/bm/discount")
 public class DiscountController {
 
 	@Autowired
@@ -24,5 +24,12 @@ public class DiscountController {
 		return discountService.discountList(prodNo);
 	}
 	
+	@ResponseBody
+	@RequestMapping("/getList")
+	public List<DiscountVo> getList() {
+		System.out.println("dcController/getList()");
+		
+		return discountService.getList();
+	}
 	
 }

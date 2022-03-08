@@ -19,4 +19,8 @@ public class DiscountService {
 	}
 	
 	
+	public List<DiscountVo> getList() {
+		return discountDao.getList();
+	}
+	
 }

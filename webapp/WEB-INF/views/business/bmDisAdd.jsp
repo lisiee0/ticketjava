@@ -1,4 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
 <!doctype html>
 <html>
 
@@ -12,6 +14,9 @@
 <!-- 개인 css -->
 <link href="${pageContext.request.contextPath}/assets/css/bm/bmNewTab.css" rel="stylesheet">
 <link href="${pageContext.request.contextPath}/assets/css/bm/bmDisAdd.css" rel="stylesheet">
+
+
+<script type="text/javascript" src="${pageContext.request.contextPath}/assets/jquery/jquery-1.12.4.js"></script>
 
 </head>
 
@@ -27,23 +32,18 @@
 
 			<!-- 상품명/공연장/할인 적용 -->
 			<div class="addTop">
-				<ol>
-					<h3>상품명</h3>
-					<li name="prodName">${prodDis.prodHallName.prodName}</li>
-				</ol>
+				<h3>상품명</h3>
+				<p>${prodDis.prodHallName.prodName}</p>
 			</div>
+			
 			<div class="addTop">
-				<ol>
-					<h3>공연장</h3>
-					<li name="hallname">${prodDis.prodHallName.hallName}</li>
-				</ol>
+				<h3>공연장</h3>
+				<p>${prodDis.prodHallName.hallName}</p>
 			</div>
 
 			<!-- 할인 시작 -->
 			<div class="addTop">
-				<ol>
-					<h3>이벤트 할인</h3>
-				</ol>
+				<h3>이벤트 할인</h3>
 			</div>
 
 			<!-- 할인 적용된 리스트 -->
@@ -64,9 +64,9 @@
 					<tr>
 						<td><input class="form-control" type="date" name="beginDc"></td>
 						<td><input class="form-control" type="date" name="endDc"></td>
-						<td><select class="form-control">
-								<option value="0" name="dcType">%</option>
-								<option value="1" name="dcType">원</option>
+						<td><select class="form-control" name="dcType">
+								<option value="0">%</option>
+								<option value="1">원</option>
 						</select></td>
 						<td><input class="form-control" type="text" name="dcRate" placeholder="% 또는 원"></td>
 						<td>
@@ -82,80 +82,13 @@
 
 
 
-			<div class="disTable">
-				<table>
-					<colgroup>
-						<col style="width: 55%;">
-						<col style="width: 15%;">
-						<col style="width: 20%;">
-						<col style="width: 10%;">
-					</colgroup>
-					<tr>
-						<td>20년 01월 01일 ~ 20년 01월 2일</td>
-						<td class="disFont">10%</td>
-						<td>금메달 할인</td>
-						<td>
-							<button class="btn btn-outline-primary" type="button">삭제</button>
-						</td>
-					</tr>
-				</table>
-				<table>
-					<colgroup>
-						<col style="width: 55%;">
-						<col style="width: 15%;">
-						<col style="width: 20%;">
-						<col style="width: 10%;">
-					</colgroup>
-					<tr>
-						<td>20년 01월 01일 ~ 20년 01월 2일</td>
-						<td class="disFont">20%</td>
-						<td>주말 할인</td>
-						<td>
-							<button class="btn btn-outline-primary" type="button">삭제</button>
-						</td>
-					</tr>
-				</table>
-				<table>
-					<colgroup>
-						<col style="width: 55%;">
-						<col style="width: 15%;">
-						<col style="width: 20%;">
-						<col style="width: 10%;">
-					</colgroup>
-					<tr>
-						<td>20년 01월 01일 ~ 20년 01월 2일</td>
-						<td class="disFont">10%</td>
-						<td>명절 할인</td>
-						<td>
-							<button class="btn btn-outline-primary" type="button">삭제</button>
-						</td>
-					</tr>
-				</table>
-				<table>
-					<colgroup>
-						<col style="width: 55%;">
-						<col style="width: 15%;">
-						<col style="width: 20%;">
-						<col style="width: 10%;">
-					</colgroup>
-					<tr>
-						<td>20년 01월 01일 ~ 20년 01월 2일</td>
-						<td class="disFont">5000원</td>
-						<td>깜짝 할인</td>
-						<td>
-							<button class="btn btn-outline-primary" type="button">삭제</button>
-						</td>
-					</tr>
-				</table>
+			<div id="listArea" class="disTable">
 
 			</div>
 
 			<!-- 적용버튼 -->
 			<div id="submitBtn">
-				<button id="submitBtn2" " class="
-                        btn=" btn"
-                        btn-default" type="
-                        button"="button"">적용</button>
+				<button id="submitBtn2" class="btn btn-default" type="button">적용</button>
 			</div>
 
 		</div>
@@ -167,5 +100,72 @@
 	<!-- wrap 끝 -->
 
 </body>
+
+<script>
+
+	$(document).ready(function() {
+		// 이벤트 할인리스트 출력
+		fetchList();
+	});
+
+	
+	
+	// 리스트 출력
+	function fetchList() {
+
+		$.ajax({
+
+			url : "${pageContext.request.contextPath}/bm/discount/getList",
+			type : "post",
+			// contentType : "application/json",
+			// data : {name: "홍길동"},
+
+			dataType : "json",
+			success : function(dList) {
+				/*성공시 처리해야될 코드 작성*/
+				console.log(dList);
+
+				for (var i = 0; i < dList.length; i++) {
+					render(dList[i], "down"); // 이벤트 할인 리스트 그리기
+				}
+
+			},
+			error : function(XHR, status, error) {
+				console.error(status + " : " + error);
+			}
+		});
+	};
+
+	
+	// 리스트 그리기
+	function render(vo, updown) {
+
+		var str = '';
+		str += ' <table> ';
+		str += ' 	<colgroup> ';
+		str += ' 		<col style="width: 55%;"> ';
+		str += ' 		<col style="width: 10%;"> ';
+		str += ' 		<col style="width: 25%;"> ';
+		str += ' 		<col style="width: 10%;"> ';
+		str += ' 	</colgroup> ';
+		str += ' 	<tr> ';
+		str += ' 		<td>'+vo.beginDc+' ~ '+vo.endDc+'</td> ';
+		str += ' 		<td>'+vo.dcRate+'</td> ';
+		str += ' 		<td>'+vo.dcName+'</td> ';
+		str += ' 		<td><button class="btn btn-outline-primary" type="button">삭제</button></td> ';
+		str += ' 	</tr> ';
+		str += ' </table> ';
+
+		if (updown == 'down') {
+			$("#listArea").append(str);
+		} else if (updown == 'up') {
+			$("#listArea").prepend(str);
+		} else {
+			console.log("updown error");
+		}
+	};
+</script>
+
+
 
 </html>
