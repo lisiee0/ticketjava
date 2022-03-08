@@ -24,13 +24,13 @@ public class BusinessController {
 		System.out.println("BusinessController/bmInquiry");
 
 	
-		//model.addAttribute("bmList", businessService.getList());
+		model.addAttribute("bmList", businessService.getProductList());
 		return "business/bmInquiry";
 	}
 
 	// 공연 추가
 	@RequestMapping(value="bmAdd", method= {RequestMethod.GET, RequestMethod.POST})
-	public String bmAdd(@ModelAttribute ProductVo businessVo) {
+	public String bmAdd(@ModelAttribute ProductVo productVo) {
 		System.out.println("BusinessController/bmAdd");
 
 		return "business/bmAdd";
@@ -38,7 +38,7 @@ public class BusinessController {
 	
 	// 공연 수정
 	@RequestMapping(value="bmModify", method= {RequestMethod.GET, RequestMethod.POST})
-	public String bmModify(@ModelAttribute ProductVo businessVo) {
+	public String bmModify(@ModelAttribute ProductVo productVo) {
 		System.out.println("BusinessController/bmAdd");
 
 		return "business/bmModify";

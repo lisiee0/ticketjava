@@ -1,14 +1,24 @@
 package com.ticketjava.dao;
 
+import java.util.List;
+
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+
+import com.ticketjava.vo.ProductVo;
 
 @Repository
 public class ProductDao {
 
 	@Autowired
 	private SqlSession sqlsession;
+	
+	//공연 리스트
+	public List<ProductVo> getProductList(){
+		
+		return sqlsession.selectList("product.getProductList");
+	}
 	
 
 	/*

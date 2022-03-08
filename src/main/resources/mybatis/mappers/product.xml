@@ -30,8 +30,9 @@
 				    AND p.hall_no = h.hall_no
 			ORDER BY
 				    prodNo DESC,
-				    userNo DESC;
-		]]>
+				    userNo DESC
+		
+		]]>	
 	</select>
 
 

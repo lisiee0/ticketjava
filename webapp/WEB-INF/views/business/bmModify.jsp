@@ -44,7 +44,7 @@
 						<h2>사업자 페이지</h2>
 						<ul>
 							<li><h3>공연 관리</h3></li>
-							<li><a href="#">공연 등록</a></li>
+							<li><a href="${pageContext.request.contextPath}/bm/">공연 목록</a></li>
 							<li><a href="#">공연 수정</a></li>
 						</ul>
 						<ul>
@@ -299,7 +299,7 @@
 
 							<!-- 공연 등록! -->
 							<div id="btnLocation">
-								<button type="submit" class="btn btn-primary" id="addbtn">공연 등록</button>
+								<button type="submit" class="btn btn-primary" id="addbtn">수정 완료</button>
 							</div>
 
 						</form>

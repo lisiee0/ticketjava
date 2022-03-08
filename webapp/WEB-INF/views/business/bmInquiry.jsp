@@ -40,7 +40,7 @@
 						<h2>사업자 페이지</h2>
 						<ul>
 							<li><h3>공연 관리</h3></li>
-							<li><a href="#">공연 등록</a></li>
+							<li><a href="${pageContext.request.contextPath}/bm/">공연 목록</a></li>
 							<li><a href="#">공연 수정</a></li>
 						</ul>
 						<ul>
@@ -104,24 +104,23 @@
 										</tr>
 									</thead>
 									<tbody>
-									
-									
-									</tbody>
-									<form action="" name="" method="get">
-										<tbody>
+										<c:forEach items="${proList}" var="vo">
 											<tr>
 												<td>002</td>
-												<td class=""><a href="#" name="prodName">뮤지컬 라이온킹 오리지널 내한..</a></td>
-												<td><a href="#" name="theaterName">세종문화회관</a></td>
-												<td>20-01-01 ~ 20-01-10</td>
+												<td class=""><a href="#" name="prodName">${vo.prodName}</a></td>
+												<td><a href="#" name="theaterName">${vo.theaterName}</a></td>
+												<td>${vo.beginShow} ~ ${vo.endShow}</td>
 												<td><input type="checkbox"> <a href="#">확인</a></td>
 												<td><a href="${pageContext.request.contextPath}/bm/discount?prodNo=1">이벤트 할인 추가</a></td>
 												<td><a href="#">수정</a></td>
 												<td><a href="#">삭제</a></td>
 											</tr>
 
-										</tbody>
-									</form>
+										</c:forEach>
+
+									</tbody>
+
+
 								</table>
 
 								<div id="row" class="searchBox">
