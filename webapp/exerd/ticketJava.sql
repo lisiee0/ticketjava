@@ -311,6 +311,7 @@ CREATE TABLE reserve (
 	viewdate DATE, /* 관람일 */
 	phone VARCHAR2(40), /* 휴대폰번호 */
 	email VARCHAR2(100), /* 이메일 */
+	totalPayment NUMBER,
 	status NUMBER /* 상태 (예매 or 취소) */
 );
 

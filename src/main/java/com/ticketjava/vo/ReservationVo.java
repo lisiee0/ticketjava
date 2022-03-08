@@ -13,12 +13,13 @@ public class ReservationVo {
 	private String status;
 	private int ticketCount; // 예매 매수
 	private String prodName;
+	private int totalPayment;
 
 	public ReservationVo() {
 	}
 
 	public ReservationVo(int rezNo, int prodNo, int userNo, String rezDate, String viewDate, String phone, String email,
-			String status, int ticketCount, String prodName) {
+			String status, int ticketCount, String prodName, int totalPayment) {
 		this.rezNo = rezNo;
 		this.prodNo = prodNo;
 		this.userNo = userNo;
@@ -29,6 +30,7 @@ public class ReservationVo {
 		this.status = status;
 		this.ticketCount = ticketCount;
 		this.prodName = prodName;
+		this.totalPayment = totalPayment;
 	}
 
 	public int getRezNo() {
@@ -111,11 +113,19 @@ public class ReservationVo {
 		this.prodName = prodName;
 	}
 
+	public int getTotalPayment() {
+		return totalPayment;
+	}
+
+	public void setTotalPayment(int totalPayment) {
+		this.totalPayment = totalPayment;
+	}
+
 	@Override
 	public String toString() {
 		return "ReservationVo [rezNo=" + rezNo + ", prodNo=" + prodNo + ", userNo=" + userNo + ", rezDate=" + rezDate
 				+ ", viewDate=" + viewDate + ", phone=" + phone + ", email=" + email + ", status=" + status
-				+ ", ticketCount=" + ticketCount + ", prodName=" + prodName + "]";
+				+ ", ticketCount=" + ticketCount + ", prodName=" + prodName + ", totalPayment=" + totalPayment + "]";
 	}
 
 } // The end of ReservationVo
