@@ -185,12 +185,12 @@
 									<!-- 좌석 선택 -->
 									<div class="form-group">
 										<div class="col-md-4">
-											<select class="form-control">
-												<option name="grade" value="1">VIP석</option>
-												<option name="grade" value="2">R석</option>
-												<option name="grade" value="3">S석</option>
-												<option name="grade" value="4">A석</option>
-												<option name="grade" value="5">B석</option>
+											<select class="form-control" id="selGrade">
+												<option name="grade" value="VIP">VIP석</option>
+												<option name="grade" value="R">R석</option>
+												<option name="grade" value="S">S석</option>
+												<option name="grade" value="A">A석</option>
+												<option name="grade" value="B">B석</option>
 												<option value="" selected="selected">좌석</option>
 											</select>
 										</div>
@@ -204,22 +204,20 @@
 										<!--  -->
 									</div>
 
-
-									<div id="bmNameArea"></div>
-
-
 									<!-- 선택된 좌석 -->
-
 									<div class="form-group">
 										<div class="col-md-4">
-											<input type="text" class="form-control" id="" name=grade value="" placeholder="VIP석" readonly>
+											<input type="text" class="form-control" id="" placeholder="VIP석" readonly>
 										</div>
 										<div class="col-md-4">
-											<input type="text" class="form-control" id="" name="price" placeholder="가격을 입력해주세요">
+											<input type="text" class="form-control" id="" placeholder="140,000원">
 										</div>
-										&nbsp;
-										<button type="button" id="delGrade" class="btn">-</button>
+										<div class="col-md-1">
+											<button type="button" class="btn" id="delGrade">-</button>
+										</div>
 									</div>
+									<!-- 좌석추가 jquery -->
+									<div id="bmNameArea"></div>
 
 									<!-- 좌석끝 -->
 
@@ -325,35 +323,34 @@
 </body>
 
 <script type="text/javascript">
+	//추가 버튼
+	$("#addGrade")
+			.on(
+					"click",
+					function() {
+						var num = $("#selGrade").val();
 
-//추가 버튼
-$("#addGrade").on("click", function() {
-	
-	
-	$("#bmNameArea").append(
-		'<div class="form-group">'
-		
-			+'<div class="col-md-4">'
-				+'<input type="text" class="form-control" id="" name="grade" value="" placeholder="VIP석" readonly>'
-			+'</div>'
-			+'<div class="col-md-4">'
-				+'<input type="text" class="form-control" id="" name="price" placeholder="가격을 입력해주세요">'
-			+'</div>'
-			+'&nbsp;'
-			+'<button type="button" id="addbtn" class="btn">-</button>'
-		+'</div>'
-		);
+						$("#bmNameArea")
+								.append(
+										'<div class="form-group">'
 
-});
+												+ '<div class="col-md-4">'
+												+ '<input type="text" class="form-control" id="" name="grade" value="'+num+'" placeholder="" readonly>'
+												+ '</div>'
+												+ '<div class="col-md-4">'
+												+ '<input type="text" class="form-control" id="" name="price" placeholder="가격을 입력해주세요">'
+												+ '</div>'
+												+ '&nbsp;'
+												+ '<button type="button" id="delGrade" class="btn">-</button>'
+												+ '</div>');
 
-$("#delGrade").on("click", function() {
-	
-	
-	$("#bmNameArea").remove();
+					});
 
-});
+	$("#delGrade").on("click", function() {
 
+		$("#bmNameArea").empty();
 
+	});
 </script>
 
 
