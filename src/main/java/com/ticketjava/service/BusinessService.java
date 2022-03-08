@@ -60,5 +60,16 @@ public class BusinessService {
 		return BusinessDao.getBmList();
 	}
 	
+	//공연 목록 수정
+	public void bmModify(BusinessVo vo) {
+		BusinessDao.bmModify(vo);
+	}
+	
+	//공연 목록 삭제
+	public void bmDelete (BusinessVo vo) {
+		BusinessDao.bmDelete(vo);
+	}
+	
+	
 
 }
