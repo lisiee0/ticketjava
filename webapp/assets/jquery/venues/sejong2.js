@@ -26,13 +26,13 @@ $(document).ready(function(){
 	seatMap.push(sectionA);
 	
 	var sectionB = [
-		'nnnnvvnnnn',
-		'nnnvvvvnnn',
-		'nnnrrrrnnn',
-		'nnrrrrrrnn',
-		'nnrrrrrrnn',
-		'rrrrrrrrrr',
-		'rrrrrrrrrr'
+		'vvvvvv',
+		'vvvvvv',
+		'rrrrrr',
+		'rrrrrr',
+		'rrrrrr',
+		'aaaaaa',
+		'bbbbbb'
 	];
 	seatMap.push(sectionB);
 	

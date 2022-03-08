@@ -114,8 +114,10 @@
 			</div>
 			<div id="button">
 				<div class="clearfix" id="prevNext">
-					<button class="btn-outline-primary" type="button" id="prevBtn">이전단계 </button>
-					<button class="btn-primary" type="button" id="nextBtn">다음단계 </button> 
+					<form action="${pageContext.request.contextPath}/reservation/confirmReservation" method="post">
+						<button class="btn-outline-primary" type="button" id="prevBtn">이전단계 </button>
+						<button class="btn-primary" type="button" id="nextBtn">다음단계 </button> 
+					</form>
 				</div>
 			</div>
 		</div>
@@ -209,6 +211,10 @@
 		
 	});
 	
+	$('#nextBtn').on("click", function(){
+		
+	});
+	
 	/* 할인 옵션 테이블 그리기 */
 	function renderDisOpt(grade, count, gradeprice){
 		var str = '';
@@ -238,7 +244,7 @@
 			}else{
 				str +='		<th class="eventDc'+grade+'">이벤트할인</th>'
 			}
-			str +='		<td>'+discountList[i].dcName+'</td>'
+			str +='		<td id="dcName" data-dcname="'+discountList[i].dcNo+'">'+discountList[i].dcName+'</td>'
 			if(discountList[i].dcType == "0"){
 				str +='		<td class="dcPrice">'+(gradeprice*(100-discountList[i].dcRate)/100)+'</td>'
 			}else{
