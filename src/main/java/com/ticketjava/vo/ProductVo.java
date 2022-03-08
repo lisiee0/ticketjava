@@ -21,6 +21,7 @@ public class ProductVo {
 	private String cancelInfo; // 예매/취소안내
 	private int status; // 노출 여부
 	private String posterPath; // 포스터 이미지 경로
+	private String theaterName; // 공연장명
 
 	// 생성자
 	public ProductVo() {
@@ -28,7 +29,7 @@ public class ProductVo {
 
 	public ProductVo(int prodNo, int userNo, int hallNo, String prodName, int prodType, String beginShow,
 			String endShow, String beginRez, String endRez, String showTime, int viewTime, int viewGrade, String notice,
-			String cancelInfo, int status, String posterPath) {
+			String cancelInfo, int status, String posterPath, String theaterName) {
 		this.prodNo = prodNo;
 		this.userNo = userNo;
 		this.hallNo = hallNo;
@@ -45,6 +46,7 @@ public class ProductVo {
 		this.cancelInfo = cancelInfo;
 		this.status = status;
 		this.posterPath = posterPath;
+		this.theaterName = theaterName;
 	}
 
 	// 메소드
@@ -176,14 +178,22 @@ public class ProductVo {
 		this.posterPath = posterPath;
 	}
 
+	public String getTheaterName() {
+		return theaterName;
+	}
+
+	public void setTheaterName(String theaterName) {
+		this.theaterName = theaterName;
+	}
+
 	// 메소드
 	@Override
 	public String toString() {
-		return "BusinessVo [prodNo=" + prodNo + ", userNo=" + userNo + ", hallNo=" + hallNo + ", prodName=" + prodName
+		return "ProductVo [prodNo=" + prodNo + ", userNo=" + userNo + ", hallNo=" + hallNo + ", prodName=" + prodName
 				+ ", prodType=" + prodType + ", beginShow=" + beginShow + ", endShow=" + endShow + ", beginRez="
 				+ beginRez + ", endRez=" + endRez + ", showTime=" + showTime + ", viewTime=" + viewTime + ", viewGrade="
 				+ viewGrade + ", notice=" + notice + ", cancelInfo=" + cancelInfo + ", status=" + status
-				+ ", posterPath=" + posterPath + "]";
+				+ ", posterPath=" + posterPath + ", theaterName=" + theaterName + "]";
 	}
 
 }

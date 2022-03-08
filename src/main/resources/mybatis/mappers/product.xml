@@ -2,35 +2,20 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="product">
 
-	<select id="getProductList" resultType="ProductVo">
+	<select id="getProductList" resultType="productVo">
 		<![CDATA[
-			SELECT
-				    p.prod_no    prodNo,
-				    u.user_no    userNo,
-				    h.hall_no    hallNo,
-				    p.prodname   prodName,
-				    p.prodtype   prodType,
-				    p.beginshow  beginShow,
-				    p.endshow    endShow,
-				    p.beginrez   beginRez,
-				    p.endrez     endRez,
-				    p.showtime   showTime,
-				    p.viewtime   viewTime,
-				    p.viewgrade  viewGrade,
-				    p.notice     notice,
-				    p.cancelinfo cancelInfo,
-				    p.status     status,
-				    p.posterpath posterPath
-			FROM
-				    product p,
-				    users   u,
-				    hall    h
-			WHERE
-				    p.user_no = u.user_no
-				    AND p.hall_no = h.hall_no
-			ORDER BY
-				    prodNo DESC,
-				    userNo DESC
+			select  prod_no prodNo,
+			        t.theatername theaterName,
+			        prodname prodName,
+			        beginshow beginShow,
+			        endshow endShow,
+			        status status
+			        
+			from    product p,
+			        theater t,
+			        hall h
+			where   p.hall_no = h.hall_no
+			        and h.theater_no = t.theater_no
 		
 		]]>	
 	</select>

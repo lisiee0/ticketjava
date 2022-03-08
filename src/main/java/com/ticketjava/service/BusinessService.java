@@ -27,6 +27,7 @@ public class BusinessService {
 
 	// 공연 목록 불러오기
 	public List<ProductVo> getProductList() {
+		System.out.println("BusinessServiece/bmInquiry");
 
 		return pd.getProductList();
 	}

@@ -16,6 +16,8 @@ public class ProductDao {
 	
 	//공연 리스트
 	public List<ProductVo> getProductList(){
+		System.out.println("BusinessDaor/bmInquiry");
+		System.out.println(sqlsession.selectList("product.getProductList"));
 		
 		return sqlsession.selectList("product.getProductList");
 	}

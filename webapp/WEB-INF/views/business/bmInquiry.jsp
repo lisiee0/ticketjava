@@ -104,14 +104,14 @@
 										</tr>
 									</thead>
 									<tbody>
-										<c:forEach items="${proList}" var="vo">
+										<c:forEach items="${bmList}" var="vo">
 											<tr>
 												<td>002</td>
 												<td class=""><a href="#" name="prodName">${vo.prodName}</a></td>
 												<td><a href="#" name="theaterName">${vo.theaterName}</a></td>
 												<td>${vo.beginShow} ~ ${vo.endShow}</td>
 												<td><input type="checkbox"> <a href="#">확인</a></td>
-												<td><a href="${pageContext.request.contextPath}/bm/discount?${vo.prodNo}">이벤트 할인 추가</a></td>
+												<td><a href="${pageContext.request.contextPath}/bm/discount?prodNo=1">이벤트 할인 추가</a></td>
 												<td><a href="#">수정</a></td>
 												<td><a href="#">삭제</a></td>
 											</tr>
