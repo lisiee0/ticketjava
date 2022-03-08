@@ -24,8 +24,7 @@ public class BusinessService {
 	private ProductDao pd;
 	@Autowired
 	private DiscountDao dd;
-	@Autowired
-	private HallDao hd;
+
 
 	// 공연 추가
 	public void bmAdd(ProductVo vo, MultipartFile file) {
