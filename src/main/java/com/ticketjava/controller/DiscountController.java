@@ -12,7 +12,7 @@ import com.ticketjava.service.DiscountService;
 import com.ticketjava.vo.DiscountVo;
 
 @Controller
-@RequestMapping("/bm/discount")
+@RequestMapping("/discount")
 public class DiscountController {
 
 	@Autowired

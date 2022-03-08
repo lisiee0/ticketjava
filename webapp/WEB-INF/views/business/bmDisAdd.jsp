@@ -115,7 +115,7 @@
 
 		$.ajax({
 
-			url : "${pageContext.request.contextPath}/bm/discount/getList",
+			url : "${pageContext.request.contextPath}/discount/getList",
 			type : "post",
 			// contentType : "application/json",
 			// data : {name: "홍길동"},
