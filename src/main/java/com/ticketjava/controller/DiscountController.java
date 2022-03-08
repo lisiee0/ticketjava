@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -24,12 +25,27 @@ public class DiscountController {
 		return discountService.discountList(prodNo);
 	}
 	
+	
 	@ResponseBody
 	@RequestMapping("/getList")
 	public List<DiscountVo> getList() {
-		System.out.println("dcController/getList()");
 		
 		return discountService.getList();
 	}
 	
+	
+	@ResponseBody
+	@RequestMapping("/addDis")
+	public DiscountVo addDis(@ModelAttribute DiscountVo vo) {
+				
+		return discountService.addDis(vo);
+	}
+	
+	@ResponseBody
+	@RequestMapping("/delDis")
+	public int delDis(@ModelAttribute DiscountVo vo) {
+
+		discountService.delDis(vo);
+		return vo.getDcNo();
+	}
 }

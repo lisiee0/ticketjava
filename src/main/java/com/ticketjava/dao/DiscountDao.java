@@ -33,4 +33,18 @@ public class DiscountDao {
 		return sqlSession.selectList("discount.getList");
 	}
 	
+	
+	public void addDis(DiscountVo vo) {
+		sqlSession.insert("discount.addDis", vo);
+	}
+	
+	public DiscountVo getDis(int dcNo) {
+		return sqlSession.selectOne("discount.getDis", dcNo);
+	}
+	
+	public int delDis(DiscountVo vo) {
+		sqlSession.delete("discount.delDis", vo);
+		return vo.getDcNo();
+	}
+	
 }

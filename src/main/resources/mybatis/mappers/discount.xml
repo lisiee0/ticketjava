@@ -64,5 +64,39 @@
 	</select>
 	
 	
+	<!-- 이벤트할인 추가 -->
+	<insert id="addDis" parameterType="DiscountVo">
+		<selectKey keyProperty="dcNo" resultType="int" order="BEFORE">	
+			select seq_dc_no.nextval from dual
+		</selectKey>
+		
+		<![CDATA[
+			insert into	 discount
+			values		 (#{dcNo}, #{prodNo}, #{dcName}, #{beginDc}, #{endDc}, #{dcRate}, #{dcType})
+		]]>
+	</insert>
+	
+	
+	<select id="getDis" parameterType="DiscountVo" resultType="DiscountVo">
+		<![CDATA[
+			select			dc_no dcNo,
+     						prod_no prodNo,
+     						dcname,
+     						to_char(begindc, 'YYYY"년"MM"월"DD"일"') beginDc,
+     						to_char(enddc, 'YYYY"년"MM"월"DD"일"') endDc,
+     						dcrate,
+     						dctype
+			from 			discount
+			where 			dc_no= #{dcNo}
+		]]>
+	</select>
+	
+	
+	<delete id="delDis" parameterType="DiscountVo">
+		<![CDATA[
+			delete from discount
+			where 		dc_no= #{dcNo}
+		]]>
+	</delete>
 	
 </mapper>

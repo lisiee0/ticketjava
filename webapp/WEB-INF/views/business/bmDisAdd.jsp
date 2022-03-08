@@ -26,7 +26,7 @@
 		<!-- 창 -->
 
 		<div id="result">
-
+			
 			<!-- head -->
 			<h2>할인정보 추가</h2>
 
@@ -62,21 +62,22 @@
 						<th class="dateHead">가격</th>
 					</tr>
 					<tr>
-						<td><input class="form-control" type="date" name="beginDc"></td>
-						<td><input class="form-control" type="date" name="endDc"></td>
-						<td><select class="form-control" name="dcType">
+						<td><input id="beginDc" class="form-control" type="date" name="beginDc"></td>
+						<td><input id="endDc" class="form-control" type="date" name="endDc"></td>
+						<td><select id="dcType" class="form-control" name="dcType">
 								<option value="0">%</option>
 								<option value="1">원</option>
 						</select></td>
-						<td><input class="form-control" type="text" name="dcRate" placeholder="% 또는 원"></td>
+						<td><input id="dcRate" class="form-control" type="text" name="dcRate" placeholder="% 또는 원"></td>
 						<td>
-							<button class="btn btn-default" type="button">+</button>
+							<button id="addBtn" class="btn btn-default" type="button">+</button>
 						</td>
 					</tr>
 					<tr>
-						<td colspan="4"><input class="form-control" type="text" placeholder="할인 설명"></td>
+						<td colspan="4">
+							<input id="dcName" class="form-control" type="text" placeholder="할인 설명">
+						</td>
 					</tr>
-
 				</table>
 			</div>
 
@@ -108,6 +109,72 @@
 		fetchList();
 	});
 
+	// '등록'버튼 클릭될때
+	$("#addBtn").on("click", function() {
+		// 데이터 수집
+		var beginDc = $("#beginDc").val();
+		var endDc = $("#endDc").val();
+		var dcType = $("#dcType").val();
+		var dcRate = $("#dcRate").val();
+		var dcName = $("#dcName").val();
+		var prodNo = '<c:out value="${param.prodNo}"/>';
+
+		// 객체 만들기
+		var DiscountVo = {
+			beginDc : beginDc,
+			endDc : endDc,
+			dcType : dcType,
+			dcRate : dcRate,
+			dcName : dcName,
+			prodNo : prodNo
+		};
+
+		$.ajax({
+
+			url : "${pageContext.request.contextPath}/discount/addDis",
+			type : "post",
+			// contentType : "application/json",
+			data : DiscountVo,
+
+			dataType : "json",
+			success : function(DiscountVo) {
+				/*성공시 처리해야될 코드 작성*/
+				render(DiscountVo, "up");
+
+				// 입력 데이터 초기화
+				$("#beginDc").val("");
+				$("#endDc").val("");
+				$("#dcType").val("");
+				$("#dcRate").val("");
+				$("#dcName").val("");
+			},
+			error : function(XHR, status, error) {
+				console.error(status + " : " + error);
+			}
+		});
+	});
+	
+	// '삭제' 버튼눌렀을때
+	$("#listArea").on("click", "#delBtn", function() {
+		var no= $(this).data("no");
+		
+		$.ajax({
+
+			url : "${pageContext.request.contextPath}/discount/delDis",
+			type : "post",
+			// contentType : "application/json",
+			data : { dcNo : no },
+
+			dataType : "json",
+			success : function(dcNo) {
+				/*성공시 처리해야될 코드 작성*/
+				$("#a"+dcNo).remove();
+			},
+			error : function(XHR, status, error) {
+				console.error(status + " : " + error);
+			}
+		});	
+	});
 	
 	
 	// 리스트 출력
@@ -141,7 +208,7 @@
 	function render(vo, updown) {
 
 		var str = '';
-		str += ' <table> ';
+		str += ' <table id="a'+vo.dcNo+'"> ';
 		str += ' 	<colgroup> ';
 		str += ' 		<col style="width: 55%;"> ';
 		str += ' 		<col style="width: 10%;"> ';
@@ -152,7 +219,7 @@
 		str += ' 		<td>'+vo.beginDc+' ~ '+vo.endDc+'</td> ';
 		str += ' 		<td>'+vo.dcRate+'</td> ';
 		str += ' 		<td>'+vo.dcName+'</td> ';
-		str += ' 		<td><button class="btn btn-outline-primary" type="button">삭제</button></td> ';
+		str += ' 		<td><button id="delBtn" class="btn btn-outline-primary" type="button" data-no="'+vo.dcNo+'">삭제</button></td> ';
 		str += ' 	</tr> ';
 		str += ' </table> ';
 
