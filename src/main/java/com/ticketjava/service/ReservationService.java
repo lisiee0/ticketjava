@@ -76,6 +76,12 @@ public class ReservationService {
 			reservationDao.deletePre(rezNoList);
 		}
 	}
+
+
+	public void modifyPayment(ReservationVo reservationVo) {
+		reservationDao.updatePayment(reservationVo);
+		
+	}
 	
 	
 	

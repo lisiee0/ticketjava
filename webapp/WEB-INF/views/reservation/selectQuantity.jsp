@@ -240,35 +240,44 @@
 		
 		<c:forEach items="${map.selList}" var="vo">
 			var grade = '${vo.grade}';
-			
 			var disOptSelect = $('#disOpt'+grade+' select');
 			
 			for(var i=0; i<disOptSelect.length; i++){
-				var selectVal = Number(disOptSelect.eq(i).val());
+				var select = disOptSelect.eq(i);
+				var selectVal = Number(select.val());
 				if(selectVal > 0){
-					if( Number(disOptSelect.eq(i).attr('data-assignment')) < selectVal) {
+					
+					if( Number(select.attr('data-assignment')) < selectVal) {
+						select.attr('data-assignment', (Number(select.attr('data-assignment'))+1) );
 						
-						disOptSelect.eq(i).attr('data-assignment', (Number(disOptSelect.eq(i).attr('data-assignment')+1) ));
+						var dcNo = select.closest('tr').find('.dcName').attr('data-dcno');
+						var payment = select.closest('tr').find('.dcPrice').text();
+						var selseat = {
+								selseatNo : ${vo.selseatNo},
+								dcNo : dcNo,
+								payment : payment
+						};
+						jsonData.push(selseat);
+						break;
 					}
 				}
 			}
-				
-			var selseat = {
-					selseatNo : ${vo.selseatNo}
-			};
-			jsonData.push(selseat);
 		</c:forEach>
 		
+		console.log(jsonData);
 		
-		
-		
-		/* console.log(jsonData); */
-		
-		/* var selseat={
-				selseatNo:,
-				dcNo:,
-				payment:,
-		} */
+		$.ajax({
+			url: "${pageContext.request.contextPath}/reservation/modifyPayment",
+			type : "post",
+			data : rezVo,
+			dataType: "json",
+			success : function(result){
+				
+			},
+			error : function(XHR, status, error) {
+				console.error(status + " : " + error);
+			}
+		});
 		
 		
 	});
@@ -289,7 +298,7 @@
 		str +='	</tr>'
 		str +='	<tr>'
 		str +='		<th>일반(정가)</th>'
-		str +='		<td>일반</td>'
+		str +='		<td class="dcName" data-dcno="0">일반</td>'
 		str +='		<td class="dcPrice">'+gradeprice+'</td>'
 		str +='		<td><select class="form-control" data-assignment="0"></select></td>'
 		str +='	</tr>'
@@ -302,7 +311,7 @@
 			}else{
 				str +='		<th class="eventDc'+grade+'">이벤트할인</th>'
 			}
-			str +='		<td id="dcName" data-dcno="'+discountList[i].dcNo+'">'+discountList[i].dcName+'</td>'
+			str +='		<td class="dcName" data-dcno="'+discountList[i].dcNo+'">'+discountList[i].dcName+'</td>'
 			if(discountList[i].dcType == "0"){
 				str +='		<td class="dcPrice">'+(gradeprice*(100-discountList[i].dcRate)/100)+'</td>'
 			}else{

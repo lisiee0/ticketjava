@@ -22,8 +22,16 @@
 		<foreach collection="list" item="item" index="index" open="(" close=")" separator=",">
 			#{item}
 		</foreach>
-		
-		
 	</delete>
+	
+	<update id="updatePayment" parameterType="ReservationVo">
+		<![CDATA[
+			update reserve
+			set totalPayment = #{totalPayment}
+			where rez_no = #{rezNo}
+		]]>
+	</update>
+	
+	
 	
 </mapper>

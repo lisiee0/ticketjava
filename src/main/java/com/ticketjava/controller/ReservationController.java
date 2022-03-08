@@ -5,11 +5,13 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.ticketjava.service.ReservationService;
+import com.ticketjava.vo.ReservationVo;
 
 
 @Controller
@@ -25,6 +27,21 @@ public class ReservationController {
 		return "reservation/selectSeat";
 	}
 	
+	@ResponseBody
+	@RequestMapping("/preDel")
+	public String preDel() {
+		reservationService.preDel();
+		return "성공";
+	}
+	
+	@ResponseBody
+	@RequestMapping("/preoccupy")
+	public Map<String, Object> preoccupy(@RequestParam String data){
+
+		Map<String, Object> map = reservationService.preoccupy(data);
+		return map;
+	}
+	
 	@RequestMapping("/selectQuantity")
 	public String selectQuantity(/*@RequestParam("rezNo") int rezNo,*/
 								 @RequestParam("selseatNo") int [] selseatNo,
@@ -36,20 +53,11 @@ public class ReservationController {
 	}
 	
 	@ResponseBody
-	@RequestMapping("/preoccupy")
-	public Map<String, Object> preoccupy(@RequestParam String data){
-
-		Map<String, Object> map = reservationService.preoccupy(data);
-		return map;
-	}
-	
-	@ResponseBody
-	@RequestMapping("/preDel")
-	public String preDel() {
-		reservationService.preDel();
+	@RequestMapping("/modifyPayment")
+	public String modifyPayment(@ModelAttribute ReservationVo reservationVo) {
+		reservationService.modifyPayment(reservationVo);
 		return "성공";
 	}
-	
 	
 	@RequestMapping("/confirmReservation")
 	public String confirmReservation() {

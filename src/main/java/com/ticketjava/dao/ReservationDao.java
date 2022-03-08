@@ -21,4 +21,8 @@ public class ReservationDao {
 	public void deletePre(List<Integer> rezNoList) {
 		sqlSession.delete("reservation.deletePre", rezNoList);
 	}
+
+	public void updatePayment(ReservationVo reservationVo) {
+		sqlSession.update("reservation.updatePayment",reservationVo);	
+	}
 }
