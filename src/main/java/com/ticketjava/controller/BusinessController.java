@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.ticketjava.service.BusinessService;
-import com.ticketjava.vo.BusinessVo;
+import com.ticketjava.vo.ProductVo;
 
 @Controller
 @RequestMapping("/bm")
@@ -29,7 +29,7 @@ public class BusinessController {
 
 	// 공연 추가
 	@RequestMapping(value="bmAdd", method= {RequestMethod.GET, RequestMethod.POST})
-	public String bmAdd(@ModelAttribute BusinessVo businessVo) {
+	public String bmAdd(@ModelAttribute ProductVo businessVo) {
 		System.out.println("BusinessController/bmAdd");
 
 		return "business/bmAdd";
@@ -37,7 +37,7 @@ public class BusinessController {
 	
 	// 공연 수정
 	@RequestMapping(value="bmModify", method= {RequestMethod.GET, RequestMethod.POST})
-	public String bmModify(@ModelAttribute BusinessVo businessVo) {
+	public String bmModify(@ModelAttribute ProductVo businessVo) {
 		System.out.println("BusinessController/bmAdd");
 
 		return "business/bmModify";

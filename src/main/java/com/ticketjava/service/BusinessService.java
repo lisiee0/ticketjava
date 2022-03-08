@@ -13,7 +13,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.ticketjava.dao.BusinessDao;
 import com.ticketjava.dao.DiscountDao;
-import com.ticketjava.vo.BusinessVo;
+import com.ticketjava.vo.ProductVo;
 import com.ticketjava.vo.DiscountVo;
 
 @Service
@@ -27,7 +27,7 @@ public class BusinessService {
 	private BusinessDao BusinessDao;
 
 	// 공연 추가
-	public void bmAdd(BusinessVo vo, MultipartFile file) {
+	public void bmAdd(ProductVo vo, MultipartFile file) {
 		System.out.println("bmAdd.FileService()");
 
 		String saveDir = "C:\\javaStudy\\upload";
@@ -62,22 +62,22 @@ public class BusinessService {
 	}
 
 	// 공연 목록 불러오기
-	public List<BusinessVo> getList(){
+	public List<ProductVo> getList(){
 		return BusinessDao.getBmList();
 	}
 	
 	//공연 목록 수정
-	public void bmModify(BusinessVo vo) {
+	public void bmModify(ProductVo vo) {
 		BusinessDao.bmModify(vo);
 	}
 	
 	//공연 목록 삭제
-	public void bmDelete (BusinessVo vo) {
+	public void bmDelete (ProductVo vo) {
 		BusinessDao.bmDelete(vo);
 	}
 	
 	
-	public DiscountVo selectProdDiscount(int prodNo) {
+	public List<DiscountVo> selectProdDiscount(int prodNo) {
 		return dd.selectProdDiscount(prodNo);
 	}
 

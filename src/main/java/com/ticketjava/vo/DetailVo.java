@@ -1,6 +1,6 @@
 package com.ticketjava.vo;
 
-public class BusinessDetailVo {
+public class DetailVo {
 
 	// 필드
 	private int detailNo; // 상세정보 번호
@@ -12,10 +12,10 @@ public class BusinessDetailVo {
 	private String addedPath; // 부가 정보
 
 	// 생성자
-	public BusinessDetailVo() {
+	public DetailVo() {
 	}
 
-	public BusinessDetailVo(int detailNo, int prodNo, String prodPath, String castingPaht, String addedPath) {
+	public DetailVo(int detailNo, int prodNo, String prodPath, String castingPaht, String addedPath) {
 		this.detailNo = detailNo;
 		this.prodNo = prodNo;
 		this.prodPath = prodPath;

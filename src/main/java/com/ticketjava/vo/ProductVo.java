@@ -1,6 +1,6 @@
 package com.ticketjava.vo;
 
-public class BusinessVo {
+public class ProductVo {
 
 	// 필드
 	private int prodNo; // 공연번호
@@ -23,10 +23,10 @@ public class BusinessVo {
 	private String posterPath; // 포스터 이미지 경로
 
 	// 생성자
-	public BusinessVo() {
+	public ProductVo() {
 	}
 
-	public BusinessVo(int prodNo, int userNo, int hallNo, String prodName, int prodType, String beginShow,
+	public ProductVo(int prodNo, int userNo, int hallNo, String prodName, int prodType, String beginShow,
 			String endShow, String beginRez, String endRez, String showTime, int viewTime, int viewGrade, String notice,
 			String cancelInfo, int status, String posterPath) {
 		this.prodNo = prodNo;

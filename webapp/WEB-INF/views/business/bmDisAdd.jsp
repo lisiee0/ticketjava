@@ -29,13 +29,13 @@
 			<div class="addTop">
 				<ol>
 					<h3>상품명</h3>
-					<li name="prodName">라이온 킹</li>
+					<li name="prodName">${prodDis.prodName}</li>
 				</ol>
 			</div>
 			<div class="addTop">
 				<ol>
 					<h3>공연장</h3>
-					<li name="hallname">세종문화회관 1관</li>
+					<li name="hallname">${prodDis.hallName}</li>
 				</ol>
 			</div>
 

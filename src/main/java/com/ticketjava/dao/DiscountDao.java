@@ -20,7 +20,7 @@ public class DiscountDao {
 	}
 	
 	
-	public DiscountVo selectProdDiscount(int prodNo) {
-		return sqlSession.selectOne("discount.selectProdDiscount", prodNo);
+	public List<DiscountVo> selectProdDiscount(int prodNo) {
+		return sqlSession.selectList("discount.selectProdDiscount", prodNo);
 	}
 }
