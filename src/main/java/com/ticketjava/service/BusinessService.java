@@ -11,7 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.ticketjava.dao.BusinessDao;
+import com.ticketjava.dao.ProductDao;
 import com.ticketjava.dao.DiscountDao;
 import com.ticketjava.vo.ProductVo;
 import com.ticketjava.vo.DiscountVo;
@@ -20,11 +20,11 @@ import com.ticketjava.vo.DiscountVo;
 public class BusinessService {
 
 	@Autowired
-	private BusinessDao businessDao;
+	private ProductDao businessDao;
 	@Autowired
 	private DiscountDao dd;
 
-	private BusinessDao BusinessDao;
+	private ProductDao BusinessDao;
 
 	// 공연 추가
 	public void bmAdd(ProductVo vo, MultipartFile file) {

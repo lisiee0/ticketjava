@@ -9,7 +9,7 @@ import org.springframework.stereotype.Repository;
 import com.ticketjava.vo.ProductVo;
 
 @Repository
-public class BusinessDao {
+public class ProductDao {
 
 	@Autowired
 	private SqlSession sqlsession;
