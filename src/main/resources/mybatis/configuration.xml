@@ -4,7 +4,7 @@
 	<typeAliases>
 		<typeAlias alias="ReservationVo" type="com.ticketjava.vo.ReservationVo" />
 		<typeAlias alias="UserVo" type="com.ticketjava.vo.UserVo" />
-		<typeAlias alias="BusinessVo" type="com.ticketjava.vo.BusinessVo" />
+		<typeAlias alias="ProductVo" type="com.ticketjava.vo.ProductVo" />
 		<typeAlias alias="TheaterVo" type="com.ticketjava.vo.TheaterVo" />
 		<typeAlias alias="HallVo" type="com.ticketjava.vo.HallVo" />
 		<typeAlias alias="NoticeVo" type="com.ticketjava.vo.NoticeVo" />
@@ -16,7 +16,7 @@
 	<mappers>
 		<mapper resource="mybatis/mappers/reservation.xml" />
 		<mapper resource="mybatis/mappers/user.xml" />
-		<mapper resource="mybatis/mappers/business.xml" />
+		<mapper resource="mybatis/mappers/product.xml" />
 		<mapper resource="mybatis/mappers/theater.xml" />
 		<mapper resource="mybatis/mappers/hall.xml" />
 		<mapper resource="mybatis/mappers/notice.xml" />
