@@ -10,10 +10,14 @@ public class DiscountVo {
 	private int dcRate;
 	private String dcType;
 
+	private String prodName;
+	private String hallName;
+
 	public DiscountVo() {
 	}
 
-	public DiscountVo(int dcNo, int prodNo, String dcName, String beginDc, String endDc, int dcRate, String dcType) {
+	public DiscountVo(int dcNo, int prodNo, String dcName, String beginDc, String endDc, int dcRate, String dcType,
+			String prodName, String hallName) {
 		this.dcNo = dcNo;
 		this.prodNo = prodNo;
 		this.dcName = dcName;
@@ -21,6 +25,8 @@ public class DiscountVo {
 		this.endDc = endDc;
 		this.dcRate = dcRate;
 		this.dcType = dcType;
+		this.prodName = prodName;
+		this.hallName = hallName;
 	}
 
 	public int getDcNo() {
@@ -63,26 +69,43 @@ public class DiscountVo {
 		this.endDc = endDc;
 	}
 
-	public int getdcRate() {
+	public int getDcRate() {
 		return dcRate;
 	}
 
-	public void setdcRate(int dcRate) {
+	public void setDcRate(int dcRate) {
 		this.dcRate = dcRate;
 	}
 
-	public String getdcType() {
+	public String getDcType() {
 		return dcType;
 	}
 
-	public void setdcType(String dcType) {
+	public void setDcType(String dcType) {
 		this.dcType = dcType;
+	}
+
+	public String getProdName() {
+		return prodName;
+	}
+
+	public void setProdName(String prodName) {
+		this.prodName = prodName;
+	}
+
+	public String getHallName() {
+		return hallName;
+	}
+
+	public void setHallName(String hallName) {
+		this.hallName = hallName;
 	}
 
 	@Override
 	public String toString() {
 		return "DiscountVo [dcNo=" + dcNo + ", prodNo=" + prodNo + ", dcName=" + dcName + ", beginDc=" + beginDc
-				+ ", endDc=" + endDc + ", dcRate=" + dcRate + ", dcType=" + dcType + "]";
+				+ ", endDc=" + endDc + ", dcRate=" + dcRate + ", dcType=" + dcType + ", prodName=" + prodName
+				+ ", hallName=" + hallName + "]";
 	}
-
+	
 }

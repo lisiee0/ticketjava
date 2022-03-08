@@ -29,13 +29,13 @@
 			<div class="addTop">
 				<ol>
 					<h3>상품명</h3>
-					<li name="prodName">${prodDis.prodName}</li>
+					<li name="prodName">${prodDis.prodHallName.prodName}</li>
 				</ol>
 			</div>
 			<div class="addTop">
 				<ol>
 					<h3>공연장</h3>
-					<li name="hallname">${prodDis.hallName}</li>
+					<li name="hallname">${prodDis.prodHallName.hallName}</li>
 				</ol>
 			</div>
 

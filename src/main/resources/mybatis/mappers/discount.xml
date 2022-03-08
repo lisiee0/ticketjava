@@ -36,4 +36,17 @@
 		]]>
 	</select>
 	
+	<!-- 특정공연 이름&공연장 불러오기 -->
+	<select id="selectProdHall" parameterType="DiscountVo" resultType="DiscountVo">
+		<![CDATA[
+			select distinct prodname, hallname
+			from 			product p, hall h, discount d
+			where 			p.hall_no= h.hall_no
+			and 			p.prod_no= d.prod_no
+			and 			d.prod_no= #{prodNo}
+		]]>
+	</select>
+	
+	
+	
 </mapper>

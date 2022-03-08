@@ -23,4 +23,8 @@ public class DiscountDao {
 	public List<DiscountVo> selectProdDiscount(int prodNo) {
 		return sqlSession.selectList("discount.selectProdDiscount", prodNo);
 	}
+	
+	public DiscountVo selectProdHall(int prodNo) {
+		return sqlSession.selectOne("discount.selectProdHall", prodNo);
+	}
 }

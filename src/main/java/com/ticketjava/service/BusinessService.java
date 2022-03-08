@@ -4,27 +4,28 @@ import java.io.BufferedOutputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
-import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.ticketjava.dao.ProductDao;
 import com.ticketjava.dao.DiscountDao;
+import com.ticketjava.dao.HallDao;
+import com.ticketjava.dao.ProductDao;
 import com.ticketjava.vo.ProductVo;
-import com.ticketjava.vo.DiscountVo;
 
 @Service
 public class BusinessService {
 
 	@Autowired
-	private ProductDao businessDao;
+	private ProductDao pd;
 	@Autowired
 	private DiscountDao dd;
-
-	private ProductDao BusinessDao;
+	@Autowired
+	private HallDao hd;
 
 	// 공연 추가
 	public void bmAdd(ProductVo vo, MultipartFile file) {
@@ -46,8 +47,8 @@ public class BusinessService {
 
 		// 파일패스 생성
 		String filePath = saveDir + "\\" + saveName;
-		
-		//파일 저장
+
+		// 파일 저장
 		try {
 			byte[] fileData = file.getBytes();
 			OutputStream out = new FileOutputStream(filePath);
@@ -60,25 +61,22 @@ public class BusinessService {
 		}
 
 	}
-
-	// 공연 목록 불러오기
-	public List<ProductVo> getList(){
-		return BusinessDao.getBmList();
-	}
 	
-	//공연 목록 수정
-	public void bmModify(ProductVo vo) {
-		BusinessDao.bmModify(vo);
-	}
+	  // 공연 목록 불러오기 public List<ProductVo> getList(){ return pd.getBmList(); }
+	  
+	  //공연 목록 수정 public void bmModify(ProductVo vo) { pd.bmModify(vo); }
+	  
+	  //공연 목록 삭제 public void bmDelete (ProductVo vo) { pd.bmDelete(vo); }
+	  
+	  
 	
-	//공연 목록 삭제
-	public void bmDelete (ProductVo vo) {
-		BusinessDao.bmDelete(vo);
-	}
-	
-	
-	public List<DiscountVo> selectProdDiscount(int prodNo) {
-		return dd.selectProdDiscount(prodNo);
-	}
-
+	  public Map<String, Object> selectProdDiscount(int prodNo) {
+		  
+		  Map<String, Object> prodDis= new HashMap<String, Object>();
+		  prodDis.put("dList", dd.selectProdDiscount(prodNo));
+		  prodDis.put("prodHallName", dd.selectProdHall(prodNo));
+		  
+		  return prodDis;
+	  }
+	 
 }

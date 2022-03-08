@@ -24,7 +24,7 @@ public class BusinessController {
 		System.out.println("BusinessController/bmInquiry");
 
 	
-		model.addAttribute("bmList", businessService.getList());
+		//model.addAttribute("bmList", businessService.getList());
 		return "business/bmInquiry";
 	}
 
@@ -57,9 +57,7 @@ public class BusinessController {
 	public String bmDisAdd(@RequestParam("prodNo") int prodNo, Model model) {
 		System.out.println("BusinessController/bmDisAdd");
 		
-		
 		model.addAttribute("prodDis", businessService.selectProdDiscount(prodNo));
-
 		return "business/bmDisAdd";
 	}
 
