@@ -6,6 +6,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.ticketjava.service.BusinessService;
 import com.ticketjava.vo.BusinessVo;
@@ -42,9 +43,12 @@ public class BusinessController {
 	}
 
 	// 공연 할인정보 추가
-	@RequestMapping(value="bmDisAdd", method= {RequestMethod.GET, RequestMethod.POST})
-	public String bmDisAdd() {
+	@RequestMapping("/discount")
+	public String bmDisAdd(@RequestParam("prodNo") int prodNo, Model model) {
 		System.out.println("BusinessController/bmDisAdd");
+		
+		
+		model.addAttribute("prodDis", businessService.selectProdDiscount(prodNo));
 
 		return "business/bmDisAdd";
 	}

@@ -16,4 +16,24 @@
 		]]>
 	</select>
 	
+	
+	<!-- 특정공연 이벤트할인 등록창 -->
+	<select id="selectProdDiscount" parameterType="DiscountVo" resultType="DiscountVo">
+		<![CDATA[
+			select			prodname, 
+							hallname, 
+							dcname,
+							d.dc_no dcNo, 
+							d.prod_no prodNo, 
+							begindc, 
+							enddc, 
+							dcrate, 
+							dctype
+			from 			product p, hall h, discount d
+			where 			p.hall_no= h.hall_no
+			and 			p.prod_no= d.prod_no
+			and 			d.prod_no= #{prodNo}
+		]]>
+	</select>
+	
 </mapper>

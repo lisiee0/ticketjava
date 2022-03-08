@@ -111,7 +111,7 @@
 												<td><a href="#" name="theaterName">세종문화회관</a></td>
 												<td>20-01-01 ~ 20-01-10</td>
 												<td><input type="checkbox"> <a href="#">확인</a></td>
-												<td><a href="${pageContext.request.contextPath}/bm/bmDisAdd">이벤트 할인 추가</a></td>
+												<td><a href="${pageContext.request.contextPath}/bm/bmDisAdd?prodNo=1">이벤트 할인 추가</a></td>
 												<td><a href="#">수정</a></td>
 												<td><a href="#">삭제</a></td>
 											</tr>
