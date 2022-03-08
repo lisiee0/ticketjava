@@ -4,7 +4,7 @@
 	
 	<select id="selectList" parameterType="int" resultType="DiscountVo">
 		<![CDATA[
-			select dc_no dcNo
+			select dc_no dcNo,
 				   dcname dcName,
 				   begindc beginDc,
 				   enddc endDc,
