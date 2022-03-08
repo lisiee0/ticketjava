@@ -26,10 +26,10 @@ public class ReservationController {
 	}
 	
 	@RequestMapping("/selectQuantity")
-	public String selectQuantity(@RequestParam("rezNo") int rezNo,
+	public String selectQuantity(/*@RequestParam("rezNo") int rezNo,*/
 								 @RequestParam("selseatNo") int [] selseatNo,
 								 Model model) {
-		Map<String, Object> map = reservationService.selList( rezNo,selseatNo);
+		Map<String, Object> map = reservationService.selList(selseatNo);
 		model.addAttribute("map", map);
 		
 		return "reservation/selectQuantity";

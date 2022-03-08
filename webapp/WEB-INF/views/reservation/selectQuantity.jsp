@@ -115,6 +115,11 @@
 			<div id="button">
 				<div class="clearfix" id="prevNext">
 					<form action="${pageContext.request.contextPath}/reservation/confirmReservation" method="post">
+						
+						<input type="hidden" name="rezNo" value="${param.rezNo}">
+						<c:forEach items="${map.selList}" var="vo">
+							<input type="hidden" name="selseatNo" value="${vo.selseatNo}">
+						</c:forEach>
 						<button class="btn-outline-primary" type="button" id="prevBtn">이전단계 </button>
 						<button class="btn-primary" type="button" id="nextBtn">다음단계 </button> 
 					</form>
@@ -126,7 +131,7 @@
 
 <script type="text/javascript">
 	var discountList;
-	
+	var totalTicket = 0;
 	$(document).ready(function(){
 		var gradeCount={
 				vip:0,
@@ -168,12 +173,12 @@
 				console.error(status + " : " + error);
 			}
 		});
-		console.log(discountList);
 		
 		var gradeNum=0;
 		for(var i in gradeCount) {
 			if(gradeCount[i] > 0) {
 				renderDisOpt(i, gradeCount[i], seatpriceList[gradeNum].price);
+				totalTicket += gradeCount[i];
 			}
 			gradeNum++;
 		}
@@ -213,6 +218,59 @@
 	
 	$('#nextBtn').on("click", function(){
 		
+		var allSelect = $('select');
+		var ticketCount = 0;  // 선택한 티켓 매수
+		for(var i=0; i<allSelect.length; i++){
+			ticketCount +=  Number(allSelect.eq(i).val());
+		}
+		// 총 티켓수만큼 선택했는지 확인
+		if(totalTicket != ticketCount){
+			alert('매수를 모두 선택해주세요');
+			return false;
+		}
+		
+		var jsonData = [];
+		var rezNo = <c:out value="${param.rezNo}" />;
+		var totalPayment = Number($('#payment').text());
+		
+		var rezVo = {
+				rezNo: rezNo,
+				totalPayment: totalPayment
+		};
+		
+		<c:forEach items="${map.selList}" var="vo">
+			var grade = '${vo.grade}';
+			
+			var disOptSelect = $('#disOpt'+grade+' select');
+			
+			for(var i=0; i<disOptSelect.length; i++){
+				var selectVal = Number(disOptSelect.eq(i).val());
+				if(selectVal > 0){
+					if( Number(disOptSelect.eq(i).attr('data-assignment')) < selectVal) {
+						
+						disOptSelect.eq(i).attr('data-assignment', (Number(disOptSelect.eq(i).attr('data-assignment')+1) ));
+					}
+				}
+			}
+				
+			var selseat = {
+					selseatNo : ${vo.selseatNo}
+			};
+			jsonData.push(selseat);
+		</c:forEach>
+		
+		
+		
+		
+		/* console.log(jsonData); */
+		
+		/* var selseat={
+				selseatNo:,
+				dcNo:,
+				payment:,
+		} */
+		
+		
 	});
 	
 	/* 할인 옵션 테이블 그리기 */
@@ -233,7 +291,7 @@
 		str +='		<th>일반(정가)</th>'
 		str +='		<td>일반</td>'
 		str +='		<td class="dcPrice">'+gradeprice+'</td>'
-		str +='		<td><select class="form-control"></select></td>'
+		str +='		<td><select class="form-control" data-assignment="0"></select></td>'
 		str +='	</tr>'
 		
 		for(var i=0; i< discountList.length; i++) {
@@ -244,14 +302,14 @@
 			}else{
 				str +='		<th class="eventDc'+grade+'">이벤트할인</th>'
 			}
-			str +='		<td id="dcName" data-dcname="'+discountList[i].dcNo+'">'+discountList[i].dcName+'</td>'
+			str +='		<td id="dcName" data-dcno="'+discountList[i].dcNo+'">'+discountList[i].dcName+'</td>'
 			if(discountList[i].dcType == "0"){
 				str +='		<td class="dcPrice">'+(gradeprice*(100-discountList[i].dcRate)/100)+'</td>'
 			}else{
 				str +='		<td class="dcPrice">'+(gradeprice-discountList[i].dcRate)+'</td>'
 			}
 			
-			str +='		<td><select class="form-control"></select></td>'
+			str +='		<td><select class="form-control" data-assignment="0"></select></td>'
 			str +='	</tr>'
 		}
 		str +='</table>';
@@ -277,7 +335,6 @@
 	    });
 		/* /rowspan */
 
-		
 	};
 	
 	/* select dropdown */

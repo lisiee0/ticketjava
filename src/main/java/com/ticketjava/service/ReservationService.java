@@ -60,9 +60,9 @@ public class ReservationService {
 		
 	}
 
-	public Map<String, Object> selList(int rezNo, int[] selseatNo) {
+	public Map<String, Object> selList(int[] selseatNo) {
 		Map<String, Object> map = new HashMap<>();
-		map.put("rezNo", rezNo);
+		
 		List<SelseatVo> selList = selseatDao.selectSelList(selseatNo);
 		map.put("selList", selList);
 		
