@@ -15,6 +15,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.ticketjava.dao.DiscountDao;
 import com.ticketjava.dao.ProductDao;
+import com.ticketjava.vo.DetailVo;
 import com.ticketjava.vo.ProductVo;
 
 @Service
@@ -33,8 +34,8 @@ public class BusinessService {
 	}
 
 	// 공연 추가
-	public void bmAdd(ProductVo vo, MultipartFile file) {
-		System.out.println("bmAdd.FileService()");
+	public void bmUpload(MultipartFile file, DetailVo vo) {
+		System.out.println("BusinessServiece/FileService()");
 
 		String saveDir = "C:\\javaStudy\\upload";
 
@@ -52,6 +53,11 @@ public class BusinessService {
 		// 파일패스 생성
 		String filePath = saveDir + "\\" + saveName;
 
+		// 파일 사이즈
+		long fileSize = file.getSize();
+		
+		DetailVo dvo = new DetailVo(vo.posterPath, vo.prodPath, vo.castingPath, vo.addPath);
+
 		// 파일 저장
 		try {
 			byte[] fileData = file.getBytes();
@@ -63,7 +69,10 @@ public class BusinessService {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-
+		
+		//db 저장
+		
+		pd.productAdd(dvo);
 	}
 
 	// 공연 목록 수정 public void bmModify(ProductVo vo) { pd.bmModify(vo); }

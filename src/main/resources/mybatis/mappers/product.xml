@@ -7,8 +7,8 @@
 			select  prod_no prodNo,
 			        t.theatername theaterName,
 			        prodname prodName,
-			        beginshow beginShow,
-			        endshow endShow,
+                    to_char(beginshow, 'YYYY-MM-DD') beginShow,
+                    to_char(endshow, 'YYYY-MM-DD') endShow,
 			        status status
 			        
 			from    product p,

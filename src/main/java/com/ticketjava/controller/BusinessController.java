@@ -7,8 +7,10 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.ticketjava.service.BusinessService;
+import com.ticketjava.vo.DetailVo;
 import com.ticketjava.vo.ProductVo;
 
 @Controller
@@ -34,6 +36,17 @@ public class BusinessController {
 		System.out.println("BusinessController/bmAdd");
 
 		return "business/bmAdd";
+	}
+	
+	//공연 업로드만
+	@RequestMapping(value = "bmUpload", method = { RequestMethod.GET, RequestMethod.POST })
+	public String bmUpload(@RequestParam("file") MultipartFile file,
+							@ModelAttribute DetailVo detailVo,
+							Model model) {
+		System.out.println("BusinessController/bmAdd");
+
+		businessService.bmUpload(file, detailVo);
+		return "business/bmUpload";
 	}
 
 	// 공연 수정

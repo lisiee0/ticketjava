@@ -16,6 +16,7 @@ public class DetailVo {
 	public int price; // 가격
 	public String notice; // 공지사항
 	public String posterPath; // 포스터 이미지 경로
+	public String prodPath; // 공연 정보
 	public String castingPath; // 캐스팅 정보
 	public String addPath; // 부가 정보
 	public String cancelInfo; // 예매/취소 안내
@@ -24,9 +25,19 @@ public class DetailVo {
 	public DetailVo() {
 	}
 
+	// 업로드 필드
+	public DetailVo(String posterPath, String prodPath, String castingPath, String addPath) {
+		super();
+		this.posterPath = posterPath;
+		this.prodPath = prodPath;
+		this.castingPath = castingPath;
+		this.addPath = addPath;
+	}
+
+	// 일반 필드
 	public DetailVo(String theaterName, String prodName, int prodType, String beginShow, String endShow,
 			String beginRez, String endrez, int showTime, int viewGrade, String grade, int price, String notice,
-			String posterPath, String castingPath, String addPath, String cancelInfo) {
+			String posterPath, String prodPath, String castingPath, String addPath, String cancelInfo) {
 		this.theaterName = theaterName;
 		this.prodName = prodName;
 		this.prodType = prodType;
@@ -40,6 +51,7 @@ public class DetailVo {
 		this.price = price;
 		this.notice = notice;
 		this.posterPath = posterPath;
+		this.prodPath = prodPath;
 		this.castingPath = castingPath;
 		this.addPath = addPath;
 		this.cancelInfo = cancelInfo;
@@ -150,6 +162,14 @@ public class DetailVo {
 		this.posterPath = posterPath;
 	}
 
+	public String getProdPath() {
+		return prodPath;
+	}
+
+	public void setProdPath(String prodPath) {
+		this.prodPath = prodPath;
+	}
+
 	public String getCastingPath() {
 		return castingPath;
 	}
@@ -180,8 +200,8 @@ public class DetailVo {
 		return "DetailVo [theaterName=" + theaterName + ", prodName=" + prodName + ", prodType=" + prodType
 				+ ", beginShow=" + beginShow + ", endShow=" + endShow + ", beginRez=" + beginRez + ", endrez=" + endrez
 				+ ", showTime=" + showTime + ", viewGrade=" + viewGrade + ", grade=" + grade + ", price=" + price
-				+ ", notice=" + notice + ", posterPath=" + posterPath + ", castingPath=" + castingPath + ", addPath="
-				+ addPath + ", cancelInfo=" + cancelInfo + "]";
+				+ ", notice=" + notice + ", posterPath=" + posterPath + ", prodPath=" + prodPath + ", castingPath="
+				+ castingPath + ", addPath=" + addPath + ", cancelInfo=" + cancelInfo + "]";
 	}
 
 }
