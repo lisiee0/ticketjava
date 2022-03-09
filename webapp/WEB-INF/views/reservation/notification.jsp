@@ -136,6 +136,43 @@
 		for(var i=1; i<=10 ; i++){
 			$("#side #count select").append('<option>'+i+'</option>');
 		}
+		
+		
+		$('input[type=checkbox]').on('click',function(){
+			return false;
+		});
+		
+		
+		var viewDate = '${param.viewDate}';
+		var prodNo = '${param.prodNo}';
+		var rezVo = {
+				viewDate: viewDate ,
+				prodNo: prodNo
+		};
+		$.ajax({
+			url: "${pageContext.request.contextPath}/selseat/occupyList",
+			type : "post",
+			data : rezVo,
+			dataType: "json",
+			success : function(selseatList){
+
+				for(var selseat of selseatList){
+					var grade = selseat.grade;
+					if(grade == 'vip')
+						grade = 'v';
+					var section = selseat.section;
+					var col = selseat.col;
+					var num = selseat.num;
+					
+					$('[class='+grade+'][data-section='+section+'][data-col='+col+'][data-num='+num+']').attr("disabled",true);
+				}
+				
+			},
+			error : function(XHR, status, error) {
+				console.error(status + " : " + error);
+			}
+		});
+		
 	});
 	
 </script>
