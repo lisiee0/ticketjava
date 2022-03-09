@@ -34,7 +34,7 @@ public class BusinessService {
 	}
 
 	// 공연 추가
-	public void bmUpload(MultipartFile file, DetailVo vo) {
+	public void productAdd(MultipartFile file, DetailVo vo) {
 		System.out.println("BusinessServiece/FileService()");
 
 		String saveDir = "C:\\javaStudy\\upload";

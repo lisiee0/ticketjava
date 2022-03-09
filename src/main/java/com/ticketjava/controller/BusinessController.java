@@ -45,8 +45,8 @@ public class BusinessController {
 							Model model) {
 		System.out.println("BusinessController/bmAdd");
 
-		businessService.bmUpload(file, detailVo);
-		return "business/bmUpload";
+		businessService.productAdd(file, detailVo);
+		return "redirect:/business/bmInquiry";
 	}
 
 	// 공연 수정

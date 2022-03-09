@@ -4,20 +4,28 @@
 
 	<select id="getProductList" resultType="productVo">
 		<![CDATA[
-			select  prod_no prodNo,
-			        t.theatername theaterName,
-			        prodname prodName,
-                    to_char(beginshow, 'YYYY-MM-DD') beginShow,
-                    to_char(endshow, 'YYYY-MM-DD') endShow,
-			        status status
+			select  	prod_no prodNo,
+			        	t.theatername theaterName,
+			        	prodname prodName,
+	                    to_char(beginshow, 'YYYY-MM-DD') beginShow,
+	                    to_char(endshow, 'YYYY-MM-DD') endShow,
+			        	status status
 			        
-			from    product p,
-			        theater t,
-			        hall h
-			where   p.hall_no = h.hall_no
-			        and h.theater_no = t.theater_no
+			from    	product p,
+			        	theater t,
+			        	hall h
+			where   	p.hall_no = h.hall_no
+			       	and h.theater_no = t.theater_no
 		
-		]]>	
+		]]>
+	</select>
+
+	<select id="productAdd" resultType="productVo">
+		<![CDATA[
+			insert into detail
+			values 		(seq_detail_no.nextval, #{prodPath}, #{castingPath}, #{addPath})
+
+		]]>
 	</select>
 
 
