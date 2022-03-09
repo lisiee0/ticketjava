@@ -240,10 +240,10 @@
 									<!-- VIP석 -->
 									<div class="form-group">
 										<div class="col-md-4">
-											<input type="text" class="form-control" name="dcname" value="" placeholder="할인 설명">
+											<input type="text" class="form-control" name="dcname" id="dcName1" value="" placeholder="할인 설명">
 										</div>
 										<div class="col-md-3">
-											<input type="text" class="form-control" name="dcrate" value="" placeholder="할인율 (%)">
+											<input type="text" class="form-control" name="dcrate" id="dcRate1" value="" placeholder="할인율 (%)">
 										</div>
 										<div class="col-md-1"></div>
 										<div class="col-md-1">
@@ -251,8 +251,11 @@
 										</div>
 
 									</div>
-									<div class="form-group form-data">지역 거주자 할인(20%)</div>
-									<div class="form-group form-data">재관람 할인(30%)</div>
+									<div class="form-group form-data">할인 정보</div>
+									<div id="bmDisArea"></div>
+
+
+
 								</div>
 							</div>
 
@@ -348,21 +351,20 @@
 		$("#bmNameArea").empty();
 	});
 
-	
-	//새탭에서 열기 
-	//부모
-	var newWindow;
+	//할인정보 추가
+	$("#addDis").on(
+			"click",
+			function() {
 
-	function open_Page() {
-		newWindow = window.open("Doit_1.html", "Doit",
-				"height=100,width=200,resizable=yes");
-	}
+				var disN = $("#dcName1").val();
+				var disR = $("#dcRate1").val();
 
-	function receiver_onclick() {
-		alert("자식창에 있는 폼의 TEXT를 받아옵니다.");
-		3.
-		document.frm1.txtReceiver.value = newWindow.document.frm1.txtSender.value;
-	}
+				console.log(disN);
+
+				$("#bmDisArea").append(
+						'<div class="form-group form-data">' + disN + ' ('
+								+ disR + '%)' + '</div>');
+			});
 </script>
 
 
