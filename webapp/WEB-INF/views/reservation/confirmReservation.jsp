@@ -171,7 +171,7 @@
 			data : rezVo,
 			dataType: "json",
 			success : function(result){
-				
+				alert('예매 완료');
 			},
 			error : function(XHR, status, error) {
 				console.error(status + " : " + error);

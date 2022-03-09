@@ -37,7 +37,7 @@
 		
 	</select>
 	
-	<select id="selectList" resultType="SelseatVo">
+	<select id="selectOccupy" resultType="SelseatVo" parameterType="ReservationVo">
 		<![CDATA[
 			select grade,
 			       section,
@@ -45,7 +45,8 @@
 			       num
 			from selseat s, reserve r
 			where s.rez_no = r.rez_no and
-			      prod_no = 1
+			      prod_no = #{prodNo} and
+			      viewDate = #{viewDate}
 		]]>
 		
 	</select>

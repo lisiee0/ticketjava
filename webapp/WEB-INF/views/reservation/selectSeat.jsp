@@ -145,6 +145,8 @@
 </body>
 
 <script type="text/javascript">
+var viewDate = '${param.viewDate}';
+var prodNo = '${param.prodNo}';
 
 $(document).ready(function(){
 	$.ajax({
@@ -159,10 +161,14 @@ $(document).ready(function(){
 		}
 	});
 	
-	
+	var rezVo = {
+			viewDate: viewDate ,
+			prodNo: prodNo
+	};
 	$.ajax({
-		url: "${pageContext.request.contextPath}/selseat/selseatList",
+		url: "${pageContext.request.contextPath}/selseat/occupyList",
 		type : "post",
+		data : rezVo,
 		dataType: "json",
 		success : function(selseatList){
 
@@ -198,7 +204,7 @@ $('#seatPlanDiv').on('change','table td input[type=checkbox]' ,function(){
 		
 		$('#choiceTable table').append(
 				'<tr id="tr'+$(this).attr('id')+'"><td>'+grade.toUpperCase()+
-				'석</td><td id="right">'+section+'구역 '+col+'열 '+num+'번</td></tr>'
+				'석</td><td class="right">'+section+'구역 '+col+'열 '+num+'번</td></tr>'
 		);
 		
 	}
@@ -217,9 +223,6 @@ $('#nextBtn').on('click', function(){
 	
 	var chkbox = $('[type=checkbox]:checked').get();
 	var selectList = [];
-	
-	var viewDate = '${param.viewDate}';
-	var prodNo = '${param.prodNo}';
 	
 	var rezVo = {
 			viewDate: viewDate ,

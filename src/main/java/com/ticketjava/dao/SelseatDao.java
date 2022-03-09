@@ -7,6 +7,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import com.ticketjava.vo.ReservationVo;
 import com.ticketjava.vo.SelseatVo;
 
 @Repository
@@ -32,8 +33,8 @@ public class SelseatDao {
 		return sqlSession.selectList("selseat.selectTimeOver");
 	}
 
-	public List<SelseatVo> selectList() {
-		return sqlSession.selectList("selseat.selectList");
+	public List<SelseatVo> selectOccupy(ReservationVo reservationVo) {
+		return sqlSession.selectList("selseat.selectOccupy", reservationVo);
 	}
 
 	public void updateDcPay(SelseatVo selseatVo) {

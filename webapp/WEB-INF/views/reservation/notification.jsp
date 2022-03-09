@@ -32,7 +32,20 @@
 		</div>
 		
 		<div id="main">
-			<h2> 좌석별 구역 </h2>
+			<div id="prodInfo">
+				<table>
+					<colgroup>
+						<col style="width:45%">
+						<col style="">
+						<col style="width:25%">
+					</colgroup>
+					<tr>
+						<td><h2>뮤지컬 라이온 킹</h2></td>
+						<td id="theaterName" class="right">세종문화회관 1관 세종문화회관 1관</td>
+						<td class="right">2022년 03월 10일 15:00</td>
+					</tr>
+				</table>
+			</div>
 			<div id="seatPlan">
 				<!-- <img src="C:\JavaStudy\upload\seat.jpg" alt="이미지 없음">  --> <!-- html 코드 -->
 				

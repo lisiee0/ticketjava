@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.ticketjava.dao.SelseatDao;
+import com.ticketjava.vo.ReservationVo;
 import com.ticketjava.vo.SelseatVo;
 
 import net.sf.json.JSONArray;
@@ -17,8 +18,8 @@ public class SelseatService {
 	@Autowired
 	private SelseatDao selseatDao;
 	
-	public List<SelseatVo> selList() {
-		return selseatDao.selectList();
+	public List<SelseatVo> occupyList(ReservationVo reservationVo) {
+		return selseatDao.selectOccupy(reservationVo);
 	}
 
 	public List<SelseatVo> selList(int[] selseatNo) {
