@@ -210,7 +210,7 @@
 											<input type="text" class="form-control" placeholder="VIP석" readonly>
 										</div>
 										<div class="col-md-4">
-											<input type="text" class="form-control" placeholder="140,000원">
+											<input type="text" class="form-control" placeholder="가격을 입력해주세요">
 										</div>
 										<div class="col-md-1">
 											<button type="button" class="btn" id="delGrade">-</button>
@@ -247,7 +247,7 @@
 										</div>
 										<div class="col-md-1"></div>
 										<div class="col-md-1">
-											<button type="button" class="btn" id="addbtn">+</button>
+											<button type="button" class="btn" id="addDis">+</button>
 										</div>
 
 									</div>
@@ -348,6 +348,7 @@
 		$("#bmNameArea").empty();
 	});
 
+	
 	//새탭에서 열기 
 	//부모
 	var newWindow;
