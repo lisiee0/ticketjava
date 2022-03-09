@@ -44,8 +44,9 @@ public class BusinessController {
 							@ModelAttribute DetailVo detailVo,
 							Model model) {
 		System.out.println("BusinessController/bmAdd");
+		System.out.println(file);
 
-		businessService.productAdd(file, detailVo);
+//		businessService.productAdd(file, detailVo);
 		return "redirect:/business/bmInquiry";
 	}
 

@@ -78,7 +78,7 @@
 
 					<div id="board">
 
-						<form action="${pageContext.request.contextPath}/bm/bmInquiry	" method="post" class="form-horizontal" enctype="multipart/form-data">
+						<form action="${pageContext.request.contextPath}/bm/bmInquiry" method="post" class="form-horizontal" enctype="multipart/form-data">
 
 
 							<!-- 공연 포스터 -->
@@ -89,29 +89,29 @@
 								</div>
 							</div>
 
-							<!-- 공연 정보 -->
-							<div class="form-group">
-								<label class="form-text col-md-2 form-id" for="">공연 정보</label>
-								<div class="col-md-8">
-									<input type="file" id="" name="prodPath" value="">
-								</div>
-							</div>
+<!-- 							공연 정보 -->
+<!-- 							<div class="form-group"> -->
+<!-- 								<label class="form-text col-md-2 form-id" for="">공연 정보</label> -->
+<!-- 								<div class="col-md-8"> -->
+<!-- 									<input type="file" id="" name="prodPath" value=""> -->
+<!-- 								</div> -->
+<!-- 							</div> -->
 
-							<!-- 캐스팅 정보 -->
-							<div class="form-group">
-								<label class="form-text col-md-2 form-id" for="">캐스팅 정보</label>
-								<div class="col-md-8">
-									<input type="file" id="" name="castingPaht" value="">
-								</div>
-							</div>
+<!-- 							캐스팅 정보 -->
+<!-- 							<div class="form-group"> -->
+<!-- 								<label class="form-text col-md-2 form-id" for="">캐스팅 정보</label> -->
+<!-- 								<div class="col-md-8"> -->
+<!-- 									<input type="file" id="" name="castingPaht" value=""> -->
+<!-- 								</div> -->
+<!-- 							</div> -->
 
-							<!-- 부가 정보 -->
-							<div class="form-group">
-								<label class="form-text col-md-2 form-id" for="">부가 정보</label>
-								<div class="col-md-8">
-									<input type="file" id="" name="addedPath" value="">
-								</div>
-							</div>
+<!-- 							부가 정보 -->
+<!-- 							<div class="form-group"> -->
+<!-- 								<label class="form-text col-md-2 form-id" for="">부가 정보</label> -->
+<!-- 								<div class="col-md-8"> -->
+<!-- 									<input type="file" id="" name="addedPath" value=""> -->
+<!-- 								</div> -->
+<!-- 							</div> -->
 
 
 							<!-- 공연 등록! -->
