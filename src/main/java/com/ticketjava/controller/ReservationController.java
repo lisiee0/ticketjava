@@ -1,8 +1,9 @@
 package com.ticketjava.controller;
 
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -42,9 +43,8 @@ public class ReservationController {
 	
 	@ResponseBody
 	@RequestMapping("/preoccupy")
-	public Map<String, Object> preoccupy(@RequestParam String data){
-
-		Map<String, Object> map = reservationService.preoccupy(data);
+	public Map<String, Object> preoccupy(@RequestParam String data, HttpSession session){
+		Map<String, Object> map = reservationService.preoccupy(data, session);
 		return map;
 	}
 	

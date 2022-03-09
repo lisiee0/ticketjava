@@ -58,6 +58,30 @@ display: grid;
 	padding:10px;
 }
 
+#containerBody #side #price #prodInfo{
+	font-size:15px;
+	font-weight:900;
+}
+
+#containerBody #side #price #prodInfo table {
+	width:100%;
+	table-layout: fixed;
+}
+
+#containerBody #side #price #prodInfo img{
+	width:100%;
+	height:50px;
+}
+
+#containerBody #side #price #prodInfo #prodName{
+	padding-top:3px;
+	padding-left:10px;
+	vertical-align:top;
+	
+	overflow:hidden;
+	white-space : nowrap;
+	text-overflow: ellipsis;
+}
 
 #containerBody #side #price .right{
 	text-align:right;
@@ -66,7 +90,7 @@ display: grid;
 #containerBody #side #price #choiceTable{
 	border:1px solid #ccc;
 	padding:15px;
-	margin: 10px 0px 10px 0px;
+	margin: 20px 0px 10px 0px;
 	height:190px;
 	overflow:auto;
 }

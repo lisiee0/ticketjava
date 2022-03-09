@@ -5,6 +5,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -12,6 +14,7 @@ import com.ticketjava.dao.ReservationDao;
 import com.ticketjava.dao.SelseatDao;
 import com.ticketjava.vo.ReservationVo;
 import com.ticketjava.vo.SelseatVo;
+import com.ticketjava.vo.UserVo;
 
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
@@ -25,24 +28,42 @@ public class ReservationService {
 	@Autowired
 	private SelseatDao selseatDao;
 
-	public Map<String, Object> preoccupy(String data) {
+	public Map<String, Object> preoccupy(String data, HttpSession session) {
 		Map<String, Object> map= new HashMap<>(); 
+		UserVo authUser = (UserVo)session.getAttribute("AuthUser");
+		JSONArray array = JSONArray.fromObject(data);
+		JSONObject rezObj = (JSONObject)array.get(0);
+		
+		int prodNo = Integer.parseInt(String.valueOf(rezObj.get("prodNo")));
+		String viewDate = (String)rezObj.get("viewDate");
+		
+		int userNo;
+		if(authUser == null)
+			userNo = 1;
+		else 
+			userNo = authUser.getUserNo();
 		
 		ReservationVo reservationVo = new ReservationVo();
-		reservationDao.insertPre(reservationVo);
+		reservationVo.setUserNo(userNo);
+		reservationVo.setProdNo(prodNo);
+		reservationVo.setViewDate(viewDate);
 		
+		reservationDao.insertPre(reservationVo);
 		map.put("rezNo", reservationVo.getRezNo());
 		
 		List<Integer> selseatNoList = new ArrayList<>();
 		
-		JSONArray array = JSONArray.fromObject(data);
-		for(int i=0; i<array.size(); i++) {
-			JSONObject obj = (JSONObject)array.get(i);
+		
+		
+		
+		
+		for(int i=1; i<array.size(); i++) {
+			JSONObject selObj = (JSONObject)array.get(i);
 			
-			String grade = (String) obj.get("grade");
-			String section = (String) obj.get("section");
-			int col = Integer.parseInt(String.valueOf(obj.get("col")));
-			int num = Integer.parseInt(String.valueOf(obj.get("num")));
+			String grade = (String) selObj.get("grade");
+			String section = (String) selObj.get("section");
+			int col = Integer.parseInt(String.valueOf(selObj.get("col")));
+			int num = Integer.parseInt(String.valueOf(selObj.get("num")));
 			
 			SelseatVo selseatVo = new SelseatVo();
 			selseatVo.setRezNo(reservationVo.getRezNo());

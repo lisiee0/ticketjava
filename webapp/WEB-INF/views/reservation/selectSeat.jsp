@@ -41,7 +41,21 @@
 		
 		
 		<div id="main">
-			<h2>뮤지컬 라이온 킹</h2>
+			<div id="prodInfo">
+				<table>
+					<colgroup>
+						<col style="width:45%">
+						<col style="">
+						<col style="width:25%">
+					</colgroup>
+					<tr>
+						<td><h2>뮤지컬 라이온 킹</h2></td>
+						<td id="theaterName" class="right">세종문화회관 1관 세종문화회관 1관</td>
+						<td class="right">2022년 03월 10일 15:00</td>
+					</tr>
+				</table>
+			</div>
+			
 							
 			<div id="seatPlan">
 				<!-- <img src="C:\JavaStudy\upload\seat.jpg" alt="이미지 없음">  --> <!-- html 코드 -->
@@ -204,6 +218,16 @@ $('#nextBtn').on('click', function(){
 	var chkbox = $('[type=checkbox]:checked').get();
 	var selectList = [];
 	
+	var viewDate = '${param.viewDate}';
+	var prodNo = '${param.prodNo}';
+	
+	var rezVo = {
+			viewDate: viewDate ,
+			prodNo: prodNo
+	};
+	selectList.push(rezVo);
+	console.log(rezVo);
+
 	for(var i=0; i< chkbox.length; i++) {
 		var e = $('[type=checkbox]:checked').eq(i);
 		

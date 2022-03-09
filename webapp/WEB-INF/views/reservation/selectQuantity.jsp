@@ -70,7 +70,16 @@
 		<div id="side">
 			<div id="price">
 				<h2>예매정보</h2>
-				
+				<div id="prodInfo">
+					<table>
+						<col style="width:18%">
+						<col style="">
+						<tr>
+							<td id="poster"><img src="${pageContext.request.contextPath}/assets/image/seatType/a.jpg"></td>
+							<td id="prodName">라이온 킹 라이온 킹 라이온 킹 라이온 킹 라이온 킹 라이온 킹</td>
+						</tr>
+					</table>
+				</div>
 				<div id="choiceTable">
 					<table>
 						<colgroup>

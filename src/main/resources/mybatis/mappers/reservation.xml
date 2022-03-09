@@ -7,8 +7,8 @@
 	        SELECT seq_rez_no.nextval FROM dual       
 	    </selectKey>    
 	    <![CDATA[
-		    INSERT INTO reserve( rez_no , prod_no, status)
-		    VALUES(#{rezNo}, 1 , 2)
+		    INSERT INTO reserve( rez_no , prod_no, user_no ,rezDate, viewDate, status)
+		    VALUES(#{rezNo}, #{prodNo} , #{userNo},sysdate , #{viewDate} ,2)
 	    ]]>
 	</insert>  
 	

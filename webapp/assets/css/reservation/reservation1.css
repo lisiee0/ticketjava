@@ -16,6 +16,27 @@
 #choice { grid-area: choice; }
 #button { grid-area: button; }
 
+.right{
+	text-align:right;
+}
+
+#containerBody #main #prodInfo table{
+	width:100%;
+	table-layout: fixed;
+	margin-bottom:20px;
+}
+#containerBody #main #prodInfo table #theaterName{
+	border-right:1px solid #ccc;
+	padding-right:12px;
+}
+
+
+#containerBody #main #prodInfo table td{
+	overflow:hidden;
+	white-space : nowrap;
+	text-overflow: ellipsis;
+}
+
 #containerBody #side table{
 	width:100%;
 }
@@ -68,9 +89,6 @@
 	padding-bottom:5px;
 }
 
-#containerBody #side #choice #choiceTable #right{
-	text-align:right;
-}
 
 #containerBody #side #button{
 	margin:5px;
