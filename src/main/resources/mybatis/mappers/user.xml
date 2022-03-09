@@ -41,7 +41,7 @@
 	
 	<select id="selectAuthUser" parameterType="UserVo" resultType="UserVo">
 		<![CDATA[
-			select id,
+			select user_no userNo,
 				   name
 			from users
 			where id = #{id} and
