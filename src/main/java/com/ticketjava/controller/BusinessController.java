@@ -50,22 +50,12 @@ public class BusinessController {
 
 	// 공연 업로드만
 	@RequestMapping(value = "bmUpload", method = { RequestMethod.GET, RequestMethod.POST })
-	public String bmUpload(@RequestParam("file") MultipartFile[] file, @ModelAttribute DetailVo detailVo,HttpServletRequest request, Model model) {
-
-		
-		//MultipartFile[] file
-		for (int i = 0; i < file.length; i++) {
-			String fileName = request.getParameter("file");
-			System.out.println(i);
-			System.out.println(file[i].getOriginalFilename());
-
-		}
-
+	public String bmUpload(@RequestParam("file") MultipartFile[] file, 
+							@ModelAttribute ProductVo productVo,
+							@ModelAttribute DetailVo detailVo,HttpServletRequest request, Model model) {
 		
 		System.out.println("BusinessController/bmAdd");
-		
-
-//		businessService.bmUpload(file, detailVo);
+		businessService.bmUpload(file, productVo, detailVo);
 		return "business/bmInquiry";
 	}
 

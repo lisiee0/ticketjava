@@ -97,22 +97,21 @@
 								</div>
 							</div>
 
-<!-- 							캐스팅 정보 -->
-<!-- 							<div class="form-group"> -->
-<!-- 								<label class="form-text col-md-2 form-id" for="">캐스팅 정보</label> -->
-<!-- 								<div class="col-md-8"> -->
-<!-- 									<input type="file" id="" name="castingPaht" value=""> -->
-<!-- 								</div> -->
-<!-- 							</div> -->
+							<!--캐스팅 정보 -->
+							<div class="form-group">
+								<label class="form-text col-md-2 form-id" for="">캐스팅 정보</label>
+								<div class="col-md-8">
+									<input type="file" id="" name="file" value="">
+								</div>
+							</div>
 
-<!-- 							부가 정보 -->
-<!-- 							<div class="form-group"> -->
-<!-- 								<label class="form-text col-md-2 form-id" for="">부가 정보</label> -->
-<!-- 								<div class="col-md-8"> -->
-<!-- 									<input type="file" id="" name="addedPath" value=""> -->
-<!-- 								</div> -->
-<!-- 							</div> -->
-
+							<!-- 부가 정보 -->
+							<div class="form-group">
+								<label class="form-text col-md-2 form-id" for="">부가 정보</label>
+								<div class="col-md-8">
+									<input type="file" id="" name="file" value="">
+								</div>
+							</div>
 
 							<!-- 공연 등록! -->
 							<div id="btnLocation">
