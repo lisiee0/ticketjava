@@ -1,5 +1,7 @@
 package com.ticketjava.controller;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -38,16 +40,32 @@ public class BusinessController {
 		return "business/bmAdd";
 	}
 	
+	//공연 등록 폼
+	@RequestMapping(value = "bmForm")
+    public String bmForm() {
+        System.out.println("BusinessController/form()");
+
+        return "business/bmForm";
+    }
+	
 	//공연 업로드만
 	@RequestMapping(value = "bmUpload", method = { RequestMethod.GET, RequestMethod.POST })
-	public String bmUpload(@RequestParam("file") MultipartFile file,
+	public String bmUpload(@RequestParam("file")
+								MultipartFile[] file,
 							@ModelAttribute DetailVo detailVo,
 							Model model) {
+		
+		for(int i=0; i<file.length; i++) {
+			System.out.println(i);
+			
+		}
+		
 		System.out.println("BusinessController/bmAdd");
-		System.out.println(file);
+		System.out.println(file.length);
 
-//		businessService.productAdd(file, detailVo);
-		return "redirect:/business/bmInquiry";
+
+		businessService.bmUpload(file, detailVo);
+		return "business/bmInquiry";
 	}
 
 	// 공연 수정

@@ -34,7 +34,7 @@ public class BusinessService {
 	}
 
 	// 공연 추가
-	public void productAdd(MultipartFile file, DetailVo vo) {
+	public void bmUpload(MultipartFile file, DetailVo detailVo) {
 		System.out.println("BusinessServiece/FileService()");
 
 		String saveDir = "C:\\javaStudy\\upload";
@@ -55,8 +55,8 @@ public class BusinessService {
 
 		// 파일 사이즈
 		long fileSize = file.getSize();
-		
-		DetailVo dvo = new DetailVo(vo.posterPath, vo.prodPath, vo.castingPath, vo.addPath);
+
+		DetailVo dvo = new DetailVo(detailVo.posterPath, detailVo.prodPath, detailVo.castingPath, detailVo.addPath);
 
 		// 파일 저장
 		try {
@@ -69,9 +69,9 @@ public class BusinessService {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		
-		//db 저장
-		
+
+		// db 저장
+
 		pd.productAdd(dvo);
 	}
 
