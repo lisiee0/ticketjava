@@ -137,25 +137,39 @@
 							<h4 class="cateMenu">관람후기</h4>
 							<table class="table review-qna">
 								<colgroup>
-									<col width="60%">
-									<col width="20%">
-									<col width="20%">
+									<col width="55%">
+									<col width="15%">
+									<col width="15%">
+									<col width="15%">
 								</colgroup>
 								<tr class="info">
 									<th>내용</th>
 									<th>작성자</th>
 									<th>작성일</th>
+									<th>평점</th>
 								</tr>
 								<tr>
 									<td>중학생 때 A석 먼 발치에서 보고 감동받아 지금 뮤지컬배우의 꿈을 꾸게 되었네요.<br>
 										그 이후로 아이다를 보지 못했는데, 19년도에 그랜드파이널을 놓치고 너무 아쉬운 마음이 가득이었습니다.</td>
 									<td>abcdefg</td>
 									<td>22-02-22</td>
+									<td>
+										<span class="star">★★★★★
+									  	<span>★★★★★</span>
+									  	<input type="range" value="7" step="1" min="0" max="10">
+										</span>
+									</td>
 								</tr>
 								<tr>
 									<td>다시보고싶습니다</td>
 									<td>dasdasd</td>
 									<td>22-02-24</td>
+									<td>
+										<span class="star">★★★★★
+									  	<span>★★★★★</span>
+									  	<input type="range" value="10" step="1" min="0" max="10">
+										</span>
+									</td>
 								</tr>
 							</table>
 							<button type="button" class="btn btn-primary position">후기작성</button>
@@ -167,6 +181,11 @@
 					<div class="container bgc">
 						<div class="row">
 							<textarea class="form-control" id="review" placeholder="후기를 남겨주세요"></textarea><br>
+							<span class="star">
+							  ★★★★★
+							  <span>★★★★★</span>
+							  <input id="" type="range" oninput="drawStar(this)" value="1" step="1" min="0" max="10">
+							</span>
 							<button type="button" class="btn btn-primary position">등록</button>
 						</div>
 					</div>
@@ -283,6 +302,10 @@
 		window.open('${pageContext.request.contextPath}/reservation/selectSeat?prodNo='+prodNo+'&viewDate='+viewDate, 'reserve', 'width=1100, height=800, left=300, top=100');
 	});
 	
+	
+	 const drawStar = (target) => {
+		    document.querySelector('.star span').style.width = '${value * 10}%'; /*value 수정*/
+	  }
 	
 </script>
 </html>
