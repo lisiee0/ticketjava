@@ -8,6 +8,7 @@
 				   price
 			from seatprice
 			where prod_no = #{prodNo}
+			order by price desc
 		]]>
 	</select>
 	

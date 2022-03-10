@@ -1,10 +1,6 @@
 @charset "UTF-8";
 
-
+/* 예매내역 날짜 선택 바 */
 .ticketingDate {
-	margin: 10px 0px 0px 50px;
+	margin: 10px 0px 20px 50px;
 }	
-
-
-
-

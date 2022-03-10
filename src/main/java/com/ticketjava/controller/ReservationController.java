@@ -14,9 +14,11 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.ticketjava.service.ReservationService;
+import com.ticketjava.service.SeatpriceService;
 import com.ticketjava.service.SelseatService;
 import com.ticketjava.vo.ReservationVo;
 import com.ticketjava.vo.RezProdInfoVo;
+import com.ticketjava.vo.SeatpriceVo;
 import com.ticketjava.vo.SelseatVo;
 
 
@@ -30,12 +32,16 @@ public class ReservationController {
 	@Autowired
 	private SelseatService selseatService;
 	
+	@Autowired
+	private SeatpriceService seatpriceService;
+	
 	@RequestMapping("/selectSeat")
 	public String selectSeat(@RequestParam("prodNo") int prodNo,
 							 Model model) {
+		List<SeatpriceVo> seatpriceList = seatpriceService.seatpriceList(prodNo);
+		model.addAttribute("seatpriceList", seatpriceList);
+		
 		RezProdInfoVo rezProdInfo = reservationService.rezProdInfo(prodNo);
-		System.out.println(prodNo);
-		System.out.println(rezProdInfo);
 		model.addAttribute("rezProdInfo", rezProdInfo);
 		
 		return "reservation/selectSeat";
@@ -56,9 +62,12 @@ public class ReservationController {
 	}
 	
 	@RequestMapping("/selectQuantity")
-	public String selectQuantity(
+	public String selectQuantity(@RequestParam("prodNo") int prodNo,
 								 @RequestParam("selseatNo") int [] selseatNo,
 								 Model model) {
+		RezProdInfoVo rezProdInfo = reservationService.rezProdInfo(prodNo);
+		model.addAttribute("rezProdInfo", rezProdInfo);
+		
 		List<SelseatVo> selList = selseatService.selList(selseatNo);
 		model.addAttribute("selList", selList);
 		
@@ -73,9 +82,13 @@ public class ReservationController {
 	}
 	
 	@RequestMapping("/confirmReservation")
-	public String confirmReservation(@RequestParam("rezNo") int rezNo,
+	public String confirmReservation(@RequestParam("prodNo") int prodNo,
+									 @RequestParam("rezNo") int rezNo,
 									 @RequestParam("selseatNo") int [] selseatNo,
 									 Model model) {
+		RezProdInfoVo rezProdInfo = reservationService.rezProdInfo(prodNo);
+		model.addAttribute("rezProdInfo", rezProdInfo);
+		
 		Map<String, Object> map = reservationService.confirmReservation(rezNo, selseatNo);
 		model.addAttribute("map", map);
 		return "reservation/confirmReservation";

@@ -60,18 +60,18 @@
 							<div class="ticketingDetail">
 								<h4>예매정보 상세</h4>
 								<h5>티켓명 : 뮤지컬 라이온 킹 인터내셔널 투어 － 서울（Musical The Lion King）</h5>
+								<h6>예매번호 : t20220310 </h6>
 								<table>
 									<tbody>
 										<tr>
 											<th>관람일시</th>
 											<td>2022.03.17(목) 13:30</td>
 											<th>장소</th>
-											<td>예술의전당 오페라극장</td>
+											<td>예술의전당 오페라극장(theatername hallname)</td>
 										</tr>
 										<tr>
 											<th>좌석</th>
-											<td>객석 1층 5열 17 <br>객석 1층 5열 17
-											</td>
+											<td>객석 1층 5열 17 <br>객석 1층 5열 17</td>
 											<th>예매일</th>
 											<td>2022.03.02</td>
 										</tr>
@@ -89,24 +89,27 @@
 										<tbody>
 											<tr>
 												<th scope="col"><input type="checkbox" disabled></th>
-												<th scope="col">예매번호</th>
+												
 												<th scope="col">좌석등급</th>
+												<th scope="col">권종</th>
 												<th scope="col">좌석번호</th>
 												<th scope="col">가격</th>
 												<th scope="col">예매상태</th>
 											</tr>
 											<tr>
 												<td><input type="checkbox" />
-												<td class="nav-item">t20220302</td>
+
 												<td class="nav-item">S석</td>
+												<td class="nav-item">재관람할인</td>
 												<td class="nav-item">1층A블럭 12열5번</td>
 												<td class="nav-item">175,000원</td>
 												<td class="nav-item">취소됨</td>
 											</tr>
 											<tr>
 												<td><input type="checkbox" />
-												<td>t20220302</td>
+												
 												<td>R석</td>
+												<td>vip할인</td>
 												<td>1층A블럭 12열5번</td>
 												<td>175,000원</td>
 												<td class="nav-item">예매중</td>

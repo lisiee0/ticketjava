@@ -2,6 +2,7 @@ package com.ticketjava.vo;
 
 public class RezProdInfoVo {
 
+	private int hallNo;
 	private String prodName;
 	private String place;
 	private String showTime;
@@ -10,7 +11,9 @@ public class RezProdInfoVo {
 	public RezProdInfoVo() {
 	}
 
-	public RezProdInfoVo(String prodName, String place, String showTime, String posterPath) {
+
+	public RezProdInfoVo(int hallNo, String prodName, String place, String showTime, String posterPath) {
+		this.hallNo = hallNo;
 		this.prodName = prodName;
 		this.place = place;
 		this.showTime = showTime;
@@ -49,10 +52,23 @@ public class RezProdInfoVo {
 		this.posterPath = posterPath;
 	}
 
+
+	public int getHallNo() {
+		return hallNo;
+	}
+
+
+	public void setHallNo(int hallNo) {
+		this.hallNo = hallNo;
+	}
+
+
 	@Override
 	public String toString() {
-		return "RezProdInfoVo [prodName=" + prodName + ", place=" + place + ", showTime=" + showTime + ", posterPath="
-				+ posterPath + "]";
+		return "RezProdInfoVo [hallNo=" + hallNo + ", prodName=" + prodName + ", place=" + place + ", showTime="
+				+ showTime + ", posterPath=" + posterPath + "]";
 	}
+
+	
 
 }

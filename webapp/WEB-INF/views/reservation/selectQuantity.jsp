@@ -74,9 +74,9 @@
 					<table>
 						<col style="width:18%">
 						<col style="">
-						<tr>
-							<td id="poster"><img src="${pageContext.request.contextPath}/assets/image/seatType/a.jpg"></td>
-							<td id="prodName">라이온 킹 라이온 킹 라이온 킹 라이온 킹 라이온 킹 라이온 킹</td>
+						<tr> 
+							<td id="poster"><img src="${pageContext.request.contextPath}/assets/image/seatType/${rezProdInfo.posterPath}"></td>
+							<td id="prodName"> ${rezProdInfo.prodName} </td>
 						</tr>
 					</table>
 				</div>
@@ -103,7 +103,7 @@
 						</colgroup>
 						<tr>
 							<td>일시</td>
-							<td class="right">2022.02.25(금) 19:30</td>
+							<td class="right">${param.viewDate} ${rezProdInfo.showTime}</td>
 						</tr>
 						<tr>
 							<td>티켓금액</td>
@@ -124,7 +124,8 @@
 			<div id="button">
 				<div class="clearfix" id="prevNext">
 					<form id="dcForm" action="${pageContext.request.contextPath}/reservation/confirmReservation" method="post">
-						<input type="hidden" name="prodNo" value="1">
+						<input type="hidden" name="prodNo" value="${param.prodNo}">
+						<input type="hidden" name="viewDate" value="${param.viewDate}">
 						<input type="hidden" name="rezNo" value="${param.rezNo}">
 						<c:forEach items="${selList}" var="vo">
 							<input type="hidden" name="selseatNo" value="${vo.selseatNo}">

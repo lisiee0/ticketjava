@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix = "fn" uri = "http://java.sun.com/jsp/jstl/functions" %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,7 +13,7 @@
 <script src="${pageContext.request.contextPath}/assets/bootstrap/js/bootstrap.js"></script>
 
 <!-- <script src="assets/bootstrap/js/sejong1.js"></script> -->
-<script src="${pageContext.request.contextPath}/assets/jquery/venues/sejong2.js"></script>
+<script src="${pageContext.request.contextPath}/assets/jquery/venues/venue${rezProdInfo.hallNo}.js"></script>
 
 <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/bootstrap/css/bootstrap.css">
 <link href="${pageContext.request.contextPath}/assets/css/reservation/reservation.css" rel="stylesheet" type="text/css">
@@ -24,7 +27,7 @@
 <body>
 
 	<div id="containerBody">
-		
+		${rezProdInfo.hallNo}
 		<div id="header">
 			<h1>티켓자바 예매</h1>
 		</div>
@@ -39,14 +42,13 @@
 		</div>
 		
 		
-		
 		<div id="main">
 			<div id="prodInfo">
 				<table>
 					<colgroup>
 						<col style="width:45%">
 						<col style="">
-						<col style="width:25%">
+						<col style="width:19%">
 					</colgroup>
 					<tr>
 						<td><h2>${rezProdInfo.prodName}</h2></td>
@@ -79,7 +81,16 @@
 							<col style="width:40%">
 							<col style="width:25%">
 						</colgroup>
-						<tr>
+						
+						<c:forEach items="${seatpriceList}" var="vo">
+							<tr data-grade="${vo.grade}">
+								<td><div class="seatColor ${vo.grade}Seat"></div></td>
+								<td>${fn:toUpperCase(vo.grade)}석</td>
+								<td>${vo.price}원</td>
+								<td class="remaining">석</td>
+							</tr>
+						</c:forEach>
+						<!-- <tr>
 							<td><div class="seatColor vipSeat"></div></td>
 							<td>VIP석</td>
 							<td>140,000원</td>
@@ -108,7 +119,7 @@
 							<td>B석</td>
 							<td>60,000원</td>
 							<td class="remaining">30석</td>
-						</tr>
+						</tr> -->
 						
 					</table>
 				</div>
@@ -135,10 +146,11 @@
 			<div id="button">
 				
 				<form id="seatForm" action="${pageContext.request.contextPath}/reservation/selectQuantity" method="post">
-					<input type="hidden" name="prodNo" value="1">
+					<input type="hidden" name="prodNo" value="${param.prodNo}">
+					<input type="hidden" name="viewDate" value="${param.viewDate}">
 					<button class="btn-primary" type="button" id="nextBtn" class="btn">다음단계 </button>
 				</form>
-				<button class="btn-default">취소표 알림</button>
+				<button id="cancelNotiBtn" class="btn-default">취소표 알림</button>
 			</div>
 		</div>
 	</div>
@@ -169,6 +181,7 @@ $(document).ready(function(){
 		url: "${pageContext.request.contextPath}/selseat/occupyList",
 		type : "post",
 		data : rezVo,
+		async : false,
 		dataType: "json",
 		success : function(selseatList){
 
@@ -188,6 +201,31 @@ $(document).ready(function(){
 			console.error(status + " : " + error);
 		}
 	});
+	
+	var gradeList = $('#priceTable tr');
+	for(var i=0; i<gradeList.length; i++){
+		var gradetr = gradeList.eq(i);
+		var grade = gradetr.data('grade');
+		if(grade=='vip'){
+			grade = 'v';
+		}
+		
+		/* var remaining = 0; */
+		
+		var notOccupy = $('#seatPlanDiv input[type=checkbox].'+grade+':not(:disabled)');
+		var remaining = notOccupy.length;
+		
+		for(var j=0; j<notOccupy.length;j++){
+			var n = notOccupy.eq(j);
+			console.log(n.is(':disabled'));
+			console.log(n.data('col')+' '+n.data('num'));
+		}
+		
+		gradetr.find('.remaining').text(remaining+'석');
+	}
+	
+	var disabledList = $('input[type="checkbox"]').prop('disabled');
+	console.log(disabledList);
 	
 });
 
@@ -275,7 +313,9 @@ $('#nextBtn').on('click', function(){
 	
 });
 
-
+$('#cancelNotiBtn').on('click',function(){
+	location.href = '${pageContext.request.contextPath}/reservation/notification?prodNo='+prodNo+'&viewDate='+viewDate;
+});
 
 
 </script>

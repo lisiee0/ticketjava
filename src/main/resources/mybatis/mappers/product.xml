@@ -20,13 +20,15 @@
 		]]>
 	</select>
 
+	<!-- product -->
 	<select id="productAdd" resultType="productVo">
 		<![CDATA[
-			insert into detail
-			values 		(seq_detail_no.nextval, #{prodPath}, #{castingPath}, #{addPath})
+			insert into product
+			values 		
 
 		]]>
 	</select>
+
 
 
 </mapper>

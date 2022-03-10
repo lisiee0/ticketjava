@@ -27,6 +27,10 @@ public class ProductVo {
 	public ProductVo() {
 	}
 
+	public ProductVo(String posterPath) {
+		this.posterPath = posterPath;
+	}
+
 	public ProductVo(int prodNo, int userNo, int hallNo, String prodName, int prodType, String beginShow,
 			String endShow, String beginRez, String endRez, String showTime, int viewTime, int viewGrade, String notice,
 			String cancelInfo, int status, String posterPath, String theaterName) {
@@ -48,6 +52,8 @@ public class ProductVo {
 		this.posterPath = posterPath;
 		this.theaterName = theaterName;
 	}
+
+
 
 	// 메소드
 	public int getProdNo() {
