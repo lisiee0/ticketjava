@@ -13,6 +13,7 @@ import org.springframework.stereotype.Service;
 import com.ticketjava.dao.ReservationDao;
 import com.ticketjava.dao.SelseatDao;
 import com.ticketjava.vo.ReservationVo;
+import com.ticketjava.vo.RezProdInfoVo;
 import com.ticketjava.vo.SelseatVo;
 import com.ticketjava.vo.UserVo;
 
@@ -107,6 +108,10 @@ public class ReservationService {
 		reservationDao.updateInfo(reservationVo);
 		selseatDao.updateStatus(reservationVo.getRezNo());	
 		
+	}
+
+	public RezProdInfoVo rezProdInfo(int prodNo) {
+		return reservationDao.selectRezProdInfo(prodNo);
 	}
 	
 	

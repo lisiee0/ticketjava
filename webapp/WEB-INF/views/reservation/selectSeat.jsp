@@ -49,9 +49,9 @@
 						<col style="width:25%">
 					</colgroup>
 					<tr>
-						<td><h2>뮤지컬 라이온 킹</h2></td>
-						<td id="theaterName" class="right">세종문화회관 1관 세종문화회관 1관</td>
-						<td class="right">2022년 03월 10일 15:00</td>
+						<td><h2>${rezProdInfo.prodName}</h2></td>
+						<td id="theaterName" class="right">${rezProdInfo.place}</td>
+						<td class="right">${param.viewDate} ${rezProdInfo.showTime}</td>
 					</tr>
 				</table>
 			</div>

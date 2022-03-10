@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.ticketjava.vo.ReservationVo;
+import com.ticketjava.vo.RezProdInfoVo;
 
 @Repository
 public class ReservationDao {
@@ -33,5 +34,9 @@ public class ReservationDao {
 	public void updateInfo(ReservationVo reservationVo) {
 		sqlSession.update("reservation.updateInfo",reservationVo);
 		
+	}
+
+	public RezProdInfoVo selectRezProdInfo(int prodNo) {
+		return sqlSession.selectOne("reservation.selectRezProdInfo", prodNo);
 	}
 }
