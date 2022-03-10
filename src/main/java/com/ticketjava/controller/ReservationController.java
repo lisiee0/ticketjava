@@ -34,8 +34,6 @@ public class ReservationController {
 	public String selectSeat(@RequestParam("prodNo") int prodNo,
 							 Model model) {
 		RezProdInfoVo rezProdInfo = reservationService.rezProdInfo(prodNo);
-		System.out.println(prodNo);
-		System.out.println(rezProdInfo);
 		model.addAttribute("rezProdInfo", rezProdInfo);
 		
 		return "reservation/selectSeat";
@@ -56,9 +54,12 @@ public class ReservationController {
 	}
 	
 	@RequestMapping("/selectQuantity")
-	public String selectQuantity(
+	public String selectQuantity(@RequestParam("prodNo") int prodNo,
 								 @RequestParam("selseatNo") int [] selseatNo,
 								 Model model) {
+		RezProdInfoVo rezProdInfo = reservationService.rezProdInfo(prodNo);
+		model.addAttribute("rezProdInfo", rezProdInfo);
+		
 		List<SelseatVo> selList = selseatService.selList(selseatNo);
 		model.addAttribute("selList", selList);
 		
@@ -73,9 +74,13 @@ public class ReservationController {
 	}
 	
 	@RequestMapping("/confirmReservation")
-	public String confirmReservation(@RequestParam("rezNo") int rezNo,
+	public String confirmReservation(@RequestParam("prodNo") int prodNo,
+									 @RequestParam("rezNo") int rezNo,
 									 @RequestParam("selseatNo") int [] selseatNo,
 									 Model model) {
+		RezProdInfoVo rezProdInfo = reservationService.rezProdInfo(prodNo);
+		model.addAttribute("rezProdInfo", rezProdInfo);
+		
 		Map<String, Object> map = reservationService.confirmReservation(rezNo, selseatNo);
 		model.addAttribute("map", map);
 		return "reservation/confirmReservation";

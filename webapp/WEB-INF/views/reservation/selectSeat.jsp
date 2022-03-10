@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -39,14 +40,13 @@
 		</div>
 		
 		
-		
 		<div id="main">
 			<div id="prodInfo">
 				<table>
 					<colgroup>
 						<col style="width:45%">
 						<col style="">
-						<col style="width:25%">
+						<col style="width:19%">
 					</colgroup>
 					<tr>
 						<td><h2>${rezProdInfo.prodName}</h2></td>
@@ -135,7 +135,8 @@
 			<div id="button">
 				
 				<form id="seatForm" action="${pageContext.request.contextPath}/reservation/selectQuantity" method="post">
-					<input type="hidden" name="prodNo" value="1">
+					<input type="hidden" name="prodNo" value="${param.prodNo}">
+					<input type="hidden" name="viewDate" value="${param.viewDate}">
 					<button class="btn-primary" type="button" id="nextBtn" class="btn">다음단계 </button>
 				</form>
 				<button class="btn-default">취소표 알림</button>

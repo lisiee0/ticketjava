@@ -87,8 +87,8 @@
 						<col style="width:18%">
 						<col style="">
 						<tr>
-							<td id="poster"><img src="${pageContext.request.contextPath}/assets/image/seatType/a.jpg"></td>
-							<td id="prodName">라이온 킹 라이온 킹 라이온 킹 라이온 킹 라이온 킹 라이온 킹</td>
+							<td id="poster"><img src="${pageContext.request.contextPath}/assets/image/seatType/${rezProdInfo.posterPath}"></td>
+							<td id="prodName"> ${rezProdInfo.prodName} </td>
 						</tr>
 					</table>
 				</div>
@@ -123,7 +123,7 @@
 						</colgroup>
 						<tr>
 							<td>일시</td>
-							<td class="right">2022.02.25(금) 19:30</td>
+							<td class="right">${param.viewDate} ${rezProdInfo.showTime}</td>
 						</tr>
 						<tr>
 							<td>티켓금액</td>
@@ -172,6 +172,8 @@
 			dataType: "json",
 			success : function(result){
 				alert('예매 완료');
+				opener.location.href = "${pageContext.request.contextPath}/mypage/reserveDetail?rezNo="+rezNo;
+				window.close();				
 			},
 			error : function(XHR, status, error) {
 				console.error(status + " : " + error);
