@@ -70,140 +70,143 @@
 							<!-- //content-head -->
 
 							<!-- content body -->
+							<div id="content-body">
+								<div class="ticketingDate">
+									<form action="" name="" method="get">
+										<div>
+											기간선택
+											<!-- 1일을 기준으로 기간 날짜를 결정 1달 30일 페이지 기본값 7일-->
+											<label for="rdo-duration">7일</label> <input type="radio" id="rdo-week" name="duration" value="7" checked> <label for="rdo-duration">1개월</label> <input
+												type="radio" id="rdo-month" name="duration" value="30"
+											> <label for="rdo-duration">3개월</label> <input type="radio" id="rdo-3month" name="duration" value="60">
 
-							<div class="ticketingDate">
-								<form action="" name="" method="get">
-									<div>
-										기간선택
-										<!-- 1일을 기준으로 기간 날짜를 결정 1달 30일 페이지 기본값 7일-->
-										<label for="rdo-duration">7일</label> <input type="radio" id="rdo-week" name="duration" value="7" checked> <label for="rdo-duration">1개월</label> <input
-											type="radio" id="rdo-month" name="duration" value="30"
-										> <label for="rdo-duration">3개월</label> <input type="radio" id="rdo-3month" name="duration" value="60">
-
-									</div>
-									<div>
-										조회기간 <select name="durationType">
-											<option value="">구분</option>
-											<option value="TicketBuy">예매일</option>
-											<option value="TicketUse">관람일</option>
-										</select> <select id="yearBox" name="year"></select>
-										<!-- yearBox는 클라의 현재 년도를 js로 받아와서 select방식 출력 -->
-										<select id="monthBox" name="month">
-											<option value="">해당월선택</option>
-											<option value="1jan">01월</option>
-											<option value="2feb">02월</option>
-											<option value="3mar">03월</option>
-											<option value="4apr">04월</option>
-											<option value="5may">05월</option>
-											<option value="6jun">06월</option>
-											<option value="7">07월</option>
-											<option value="8">08월</option>
-											<option value="9">09월</option>
-											<option value="10">10월</option>
-											<option value="11">11월</option>
-											<option value="12">12월</option>
-										</select> <input type="date" value="2022-02-23">
-
-										<button type="button" class="btn btn-primary">조회</button>
-									</div>
-								</form>
-							</div>
-
-							<div id="board">
-								<div id="list">
-									<table>
-										<thead>
-											<tr>
-												<th>예매번호</th>
-												<th>예매일</th>
-												<th>상품명</th>
-												<th>관람일/매수</th>
-												<th>현재상태</th>
-												<th>관리</th>
-											</tr>
-										</thead>
-
-
-										<c:forEach items="${requestScope.reserveList}" var="reserveList">
-											<tbody>
-												<tr>
-													<td>${reserveList.rezNo}</td>
-													<td>${reserveList.rezDate}</td>
-													<td class="text-left"><a href="#">${reserveList.prodName}</a></td>
-													<td>${reserveList.viewDate}/ ${reserveList.ticketCount}매</td>
-
-													<c:choose>
-														<c:when test="${reserveList.status eq 1}">
-															<td>예매중</td>
-														</c:when>
-														<c:otherwise>
-															<td>취소중</td>
-														</c:otherwise>
-													</c:choose>
-
-													<td><button type="submit" class="btn btn-primary" onclick="location.href='reserveDetail?prodNo=${reserveList.prodNo}'">자세히</button></td>
-												</tr>
-
-											</tbody>
-										</c:forEach>
-
-
-									</table>
-
-
-
-									<div id="paging">
-										<ul>
-											<li><a href="">◀</a></li>
-											<li><a href="">1</a></li>
-											<li><a href="">2</a></li>
-											<li><a href="">3</a></li>
-											<li><a href="">4</a></li>
-											<li class="active"><a href="">5</a></li>
-											<li><a href="">6</a></li>
-											<li><a href="">7</a></li>
-											<li><a href="">8</a></li>
-											<li><a href="">9</a></li>
-											<li><a href="">10</a></li>
-											<li><a href="">▶</a></li>
-										</ul>
-
-										<div class="clear"></div>
-									</div>
-									<div id="row" class="searchBox">
-										<div class="col-xs-8"></div>
-										<div class="col-xs-2">
-											<input type="text" class="form-control formSearchBoard" placeholder="문의내역 검색" value="">
 										</div>
-										<div class="col-xs-2">
-											<form class="">
-												<button type="submit" class="btn-primary formSearchBoardButton">검색</button>
-											</form>
+										<div>
+											조회기간 <select name="durationType">
+												<option value="">구분</option>
+												<option value="TicketBuy">예매일</option>
+												<option value="TicketUse">관람일</option>
+											</select> <select id="yearBox" name="year"></select>
+											<!-- yearBox는 클라의 현재 년도를 js로 받아와서 select방식 출력 -->
+											<select id="monthBox" name="month">
+												<option value="">해당월선택</option>
+												<option value="1jan">01월</option>
+												<option value="2feb">02월</option>
+												<option value="3mar">03월</option>
+												<option value="4apr">04월</option>
+												<option value="5may">05월</option>
+												<option value="6jun">06월</option>
+												<option value="7">07월</option>
+												<option value="8">08월</option>
+												<option value="9">09월</option>
+												<option value="10">10월</option>
+												<option value="11">11월</option>
+												<option value="12">12월</option>
+											</select> <input type="date" value="2022-02-23">
+
+											<button type="button" class="btn btn-primary">조회</button>
 										</div>
-
-
-									</div>
+									</form>
 								</div>
-								<!-- //content body -->
 
+								<div id="board">
+									<div id="list">
+										<table>
+											<thead>
+												<tr>
+													<th>예매번호</th>
+													<th>예매일</th>
+													<th>상품명</th>
+													<th>관람일/매수</th>
+													<th>현재상태</th>
+													<th>관리</th>
+												</tr>
+											</thead>
+
+
+											<c:forEach items="${requestScope.reserveList}" var="reserveList">
+												<tbody>
+													<tr>
+														<td>${reserveList.rezNo}</td>
+														<td>${reserveList.rezDate}</td>
+														<td class="text-left"><a href="#">${reserveList.prodName}</a></td>
+														<td>${reserveList.viewDate}/${reserveList.ticketCount}매</td>
+
+														<c:choose>
+															<c:when test="${reserveList.status eq 1}">
+																<td>예매중</td>
+															</c:when>
+															<c:otherwise>
+																<td>취소중</td>
+															</c:otherwise>
+														</c:choose>
+
+														<td><button type="submit" class="btn btn-primary" onclick="location.href='reserveDetail?prodNo=${reserveList.prodNo}'">자세히</button></td>
+													</tr>
+
+												</tbody>
+											</c:forEach>
+										</table>
+
+
+
+										<div id="paging">
+											<ul>
+												<li><a href="">◀</a></li>
+												<li><a href="">1</a></li>
+												<li><a href="">2</a></li>
+												<li><a href="">3</a></li>
+												<li><a href="">4</a></li>
+												<li class="active"><a href="">5</a></li>
+												<li><a href="">6</a></li>
+												<li><a href="">7</a></li>
+												<li><a href="">8</a></li>
+												<li><a href="">9</a></li>
+												<li><a href="">10</a></li>
+												<li><a href="">▶</a></li>
+											</ul>
+
+											<div class="clear"></div>
+										</div>
+										<div id="row" class="searchBox">
+											<div class="col-xs-8"></div>
+											<div class="col-xs-2">
+												<input type="text" class="form-control formSearchBoard" placeholder="문의내역 검색" value="">
+											</div>
+											<div class="col-xs-2">
+												<form class="">
+													<button type="submit" class="btn-primary formSearchBoardButton">검색</button>
+												</form>
+											</div>
+										</div>
+										<!-- //searchBox -->
+
+									</div>
+									<!-- //list -->
+
+								</div>
+								<!-- //board -->
 							</div>
-							<!-- //content -->
+							<!-- //content body -->
 
 						</div>
-						<!-- .col-xs-10 컨텐츠 종료 -->
+						<!-- //content -->
+
 					</div>
-					<!-- 어사이드 컨텐츠 그리드 종료 -->
+					<!-- .col-xs-10 컨텐츠 종료 -->
 				</div>
-				<!-- container 종료 -->
+				<!-- 어사이드 컨텐츠 그리드 종료 -->
 			</div>
-			<!-- 컨텐츠 구역 종료 -->
-
-			<!-- 푸터 구역 시작 -->
-			<c:import url="/WEB-INF/views/include/footer.jsp"></c:import>
-			<!-- 푸터 구역 종료 -->
-
+			<!-- container 종료 -->
 		</div>
-		<!-- wrap 종료 -->
+		<!-- 컨텐츠 구역 종료 -->
+
+		<!-- 푸터 구역 시작 -->
+		<c:import url="/WEB-INF/views/include/footer.jsp"></c:import>
+		<!-- 푸터 구역 종료 -->
+
+	</div>
+	<!-- wrap 종료 -->
 </body>
 
 <!-- 년월일 선택 하는 스크립트 -->
