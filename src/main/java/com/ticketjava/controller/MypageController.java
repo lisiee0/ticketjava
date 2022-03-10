@@ -40,12 +40,19 @@ public class MypageController {
 	}
 	
 	
-//	마이페이지 취소 티켓알람
+//	마이페이지 취소 티켓알람 내역
 	@RequestMapping("/reserveAlram")
 	public String ticketAlram() {
-		System.out.println("MypageController reserveAlram 취소 티켓알람");
+		System.out.println("MypageController reserveAlram 취소 티켓알람 내역");
 		return "mypage/reserveAlram";
 	}
+	
+//	마이페이지 취소 티켓알람 설정
+	@RequestMapping("/reserveAlramSet")
+	public String reserveAlramSet() {
+		System.out.println("MypageController reserveAlramSet 취소 티켓알람 설정");
+		return "mypage/reserveAlramSet";
+	}	
 	
 	
 //	마이페이지 예매내역 및 취소 

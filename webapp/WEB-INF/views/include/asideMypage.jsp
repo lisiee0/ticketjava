@@ -29,6 +29,7 @@
 				<li><h3>예매내역</h3></li>
 				<li><a href="${pageContext.request.contextPath}/mypage/reserveList">예매내역/취소</a></li>
 				<li><a href="${pageContext.request.contextPath}/mypage/reserveAlram">취소알림 내역</a></li>
+				<li><a href="${pageContext.request.contextPath}/mypage/reserveAlramSet">취소알림 설정</a></li>
 				<li><a href="${pageContext.request.contextPath}/mypage/reserveDetail">디테일(개발용)</a></li>
 			</ul>
 			<ul>

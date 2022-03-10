@@ -40,7 +40,7 @@
 						<!-- aside -->
 						<c:import url="/WEB-INF/views/include/asideMypage.jsp"></c:import>
 						<!-- //aside -->
-						
+
 
 					</div>
 					<!-- 어사이드 종료 -->
@@ -49,100 +49,92 @@
 					<div class="col-xs-10">
 
 
+
 						<!-- content -->
 						<div id="content">
 
 							<!-- content-head -->
 							<div id="content-head">
-								<h3>취소알림 내역</h3>
+								<h3>취소알림 설정</h3>
 								<div id="location">
 									<ul>
 										<li>홈</li>
 										<li>마이페이지</li>
-										<li class="last">취소알림 내역</li>
+										<li class="last">취소알림 설정</li>
 									</ul>
 								</div>
 								<div class="clear"></div>
 							</div>
 							<!-- //content-head -->
 
-							<!-- content body -->
+
 							<div id="board">
 								<div id="list">
 									<table>
 										<thead>
 											<tr>
 												<th>번호</th>
-												<!-- 예매취소 알림번호 -->
+												<!-- 취소알림 신청번호 -->
+												<th>알림신청일</th>
 												<th>상품명</th>
-												<th>좌석구분</th>
-												<th>예매일</th>
-												<th>관람일/매수</th>
+												<th>좌석/구역</th>
+												<th>알림간격</th>
+												<th>알림상태</th>
 											</tr>
 										</thead>
 										<tbody>
-											<tr>
-												<td>123</td>
-												<td class="text-left"><a href="#">뮤지컬 라이온킹 오리지널 내한..</a></td>
-												<td>B구역</td>
-												<td>2020-12-10</td>
-												<td>2020-12-23/2매</td>
-											</tr>
+											<form action="" name="" method="get">
+												<tr>
 
+													<td>123</td>
+													<td>2020-12-15</td>
+													<td class="text-left"><a href="#">뮤지컬 라이온킹 오리지널 내한..</a></td>
+													<td>A</td>
+													<td><select name="alertDuration">
+															<option name="10min" value="10min">10분</option>
+															<option name="1hour" value="60min">1시간</option>
+															<option name="2hour" value="120min">2시간</option>
+															<option name="6hour" value="360min">6시간</option>
+															<option name="12hour" value="720min">12시간</option>
+													</select>
+
+														<button type="button" class="btn btn-primary">변경</button></td>
+													<td><img src="assets/image/index/bell-off.png">
+														<button type="button" class="btn btn-primary">설정변경</button></td>
+
+												</tr>
+											</form>
 											<tr>
+
 												<td>123</td>
+												<td>2020-12-15</td>
 												<td class="text-left"><a href="#">뮤지컬 라이온킹 오리지널 내한..</a></td>
-												<td>A구역</td>
-												<td>2020-12-11</td>
-												<td>2020-12-25/2매</td>
+												<td>B, C</td>
+												<td><select name="alertDuration">
+														<option name="10min" value="10min">10분</option>
+														<option name="1hour" value="60min">1시간</option>
+														<option name="2hour" value="120min">2시간</option>
+														<option name="6hour" value="360min">6시간</option>
+														<option name="12hour" value="720min">12시간</option>
+												</select>
+
+													<button type="button" class="btn btn-primary">변경</button></td>
+												<td><img src="assets/image/index/bell-normal.png">
+													<button type="button" class="btn btn-primary">설정변경</button></td>
+												</form>
 											</tr>
 
 										</tbody>
 									</table>
-									
-								<div id="paging">
-									<ul>
-										<li><a href="">◀</a></li>
-										<li><a href="">1</a></li>
-										<li><a href="">2</a></li>
-										<li><a href="">3</a></li>
-										<li><a href="">4</a></li>
-										<li class="active"><a href="">5</a></li>
-										<li><a href="">6</a></li>
-										<li><a href="">7</a></li>
-										<li><a href="">8</a></li>
-										<li><a href="">9</a></li>
-										<li><a href="">10</a></li>
-										<li><a href="">▶</a></li>
-									</ul>
-
-									<div class="clear"></div>
 								</div>
-								<div id="row" class="searchBox">
-									<div class="col-xs-8"></div>
-									<div class="col-xs-2">
-										<input type="text" class="form-control formSearchBoard" placeholder="문의내역 검색" value="">
-									</div>
-									<div class="col-xs-2">
-										<form class="">
-											<button type="submit" class="btn-primary formSearchBoardButton">검색</button>
-										</form>
-									</div>
-									
-								</div>
-								<!-- //searchBox -->
-							</div>
-							<!-- //list -->
-
-
-									
-									
-							
 							</div>
 							<!-- //content body -->
 
 						</div>
 						<!-- //content -->
+
+
+
 
 					</div>
 					<!-- .col-xs-10 컨텐츠 종료 -->
