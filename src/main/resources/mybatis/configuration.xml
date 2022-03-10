@@ -3,6 +3,7 @@
 <configuration>
 	<typeAliases>
 		<typeAlias alias="ReservationVo" type="com.ticketjava.vo.ReservationVo" />
+		<typeAlias alias="ReserveDetailVo" type="com.ticketjava.vo.ReserveDetailVo" />
 		<typeAlias alias="UserVo" type="com.ticketjava.vo.UserVo" />
 		<typeAlias alias="ProductVo" type="com.ticketjava.vo.ProductVo" />
 		<typeAlias alias="TheaterVo" type="com.ticketjava.vo.TheaterVo" />

@@ -20,11 +20,18 @@ public class MypageDao {
 		
 		List<ReserveDetailVo> reserveList = sqlSession.selectList("mypage.reserveList");
 		
-		System.out.println("MypageDao reserveList "+reserveList);
 		return reserveList;
 	}
 	
 
-	
+//	예매내역 상세보기 
+	public List<ReserveDetailVo> getReserveDetail() {
+		System.out.println("MypageDao getReserveDetail 예매 상세내역보기");
+		
+		List<ReserveDetailVo> reserveDetail = sqlSession.selectList("mypage.reserveDetail");
+		
+		System.out.println("MypageDao reserveList "+reserveDetail);
+		return reserveDetail;
+	}
 	
 } // The end of MypageDao

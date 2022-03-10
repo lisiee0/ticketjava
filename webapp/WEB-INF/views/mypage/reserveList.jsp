@@ -123,7 +123,6 @@
 												</tr>
 											</thead>
 
-
 											<c:forEach items="${requestScope.reserveList}" var="reserveList">
 												<tbody>
 													<tr>

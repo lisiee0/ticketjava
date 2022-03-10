@@ -20,6 +20,10 @@ public class MypageService {
 		return mypageDao.getReserveList();
 	}
 	
+	public List<ReserveDetailVo> getReserveDetail () {
+		System.out.println("MypageService getReserveDetail");
+		return mypageDao.getReserveDetail();
+	}
 	
 
 

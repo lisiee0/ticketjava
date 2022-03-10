@@ -19,18 +19,30 @@ public class MypageController {
 	
 //	마이페이지 예매내역
 	@RequestMapping("/reserveList")
-	public String ticketingList(Model model) {
+	public String reserveList(Model model) {
 		System.out.println("MypageController reserveList 예매내역");
 		
 		List<ReserveDetailVo> reserveList = mypageService.getReserveList();
 		
 //		DS에서 리스트 데이터 공유하는 model
 		model.addAttribute("reserveList",reserveList);
-		System.out.println("MypageController reserveList "+reserveList);
+		
 		return "mypage/reserveList";
 	} 
 	
+//	예매 상세페이지
+	@RequestMapping("/reserveDetail")
+	public String reserveDetail(Model model) {
+		System.out.println("MypageController reserveDetail 예매 상세페이지");
 		
+		List<ReserveDetailVo> reserveDetail = mypageService.getReserveDetail();
+		
+//		DS에서 리스트 데이터 공유하는 model
+		model.addAttribute("reserveDetail",reserveDetail);
+		System.out.println("컨트로럴 reserveDetail "+reserveDetail);
+		return "mypage/reserveDetail";
+	}
+	
 	
 //	마이페이지 문의내역
 	@RequestMapping("/reserveAsking")
@@ -63,12 +75,7 @@ public class MypageController {
 	}
 	
 	
-//	예매 상세페이지
-	@RequestMapping("/reserveDetail")
-	public String ticketingDetail() {
-		System.out.println("MypageController reserveDetail 예매 상세페이지");
-		return "mypage/reserveDetail";
-	}
+
 	
 	
 //	후기 리뷰 관리
