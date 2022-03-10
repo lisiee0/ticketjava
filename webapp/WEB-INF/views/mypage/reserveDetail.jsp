@@ -60,6 +60,7 @@
 							<div class="ticketingDetail">
 								<h4>예매정보 상세</h4>
 								<h5>티켓명 : 뮤지컬 라이온 킹 인터내셔널 투어 － 서울（Musical The Lion King）</h5>
+								<h6>예매번호 : t20220310 </h6>
 								<table>
 									<tbody>
 										<tr>
@@ -89,7 +90,7 @@
 										<tbody>
 											<tr>
 												<th scope="col"><input type="checkbox" disabled></th>
-												<th scope="col">예매번호</th>
+												
 												<th scope="col">좌석등급</th>
 												<th scope="col">좌석번호</th>
 												<th scope="col">가격</th>
@@ -97,7 +98,7 @@
 											</tr>
 											<tr>
 												<td><input type="checkbox" />
-												<td class="nav-item">t20220302</td>
+
 												<td class="nav-item">S석</td>
 												<td class="nav-item">1층A블럭 12열5번</td>
 												<td class="nav-item">175,000원</td>
@@ -105,7 +106,7 @@
 											</tr>
 											<tr>
 												<td><input type="checkbox" />
-												<td>t20220302</td>
+												
 												<td>R석</td>
 												<td>1층A블럭 12열5번</td>
 												<td>175,000원</td>
