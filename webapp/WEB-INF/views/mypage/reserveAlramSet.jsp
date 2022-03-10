@@ -99,7 +99,7 @@
 													</select>
 
 														<button type="button" class="btn btn-primary">변경</button></td>
-													<td><img src="assets/image/index/bell-off.png">
+													<td><img src="${pageContext.request.contextPath}/assets/image/index/bell-off.png">
 														<button type="button" class="btn btn-primary">설정변경</button></td>
 
 												</tr>
@@ -119,7 +119,7 @@
 												</select>
 
 													<button type="button" class="btn btn-primary">변경</button></td>
-												<td><img src="assets/image/index/bell-normal.png">
+												<td><img src="${pageContext.request.contextPath}/assets/image/index/bell-normal.png">
 													<button type="button" class="btn btn-primary">설정변경</button></td>
 												</form>
 											</tr>
