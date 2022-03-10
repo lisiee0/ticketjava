@@ -24,10 +24,10 @@ public class ProductDao {
 	}
 
 	// 공연 추가(파일만)
-	public void bmUpload(ProductVo pvo) {
-		System.out.println(sqlsession.insert("product.bmUpload", pvo));
+	public void productUpload(ProductVo pvo) {
+		System.out.println(sqlsession.insert("product.productUpload", pvo));
 		
-		sqlsession.insert("product.bmupload", pvo);
+		sqlsession.insert("product.productUpload", pvo);
 	}
 
 }
