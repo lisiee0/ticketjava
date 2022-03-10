@@ -97,7 +97,7 @@
 			</div>
 			
 			<div id="button">
-				<form id="notiReqForm" action="${pageContext.request.contextPath}/notification/addNoti" method="post">
+				<form id="notiReqForm" action="${pageContext.request.contextPath}/notification/addNotireq" method="post">
 					<button id="notiReqBtn" type="button" class="btn-primary">알림 신청</button>
 					<input type="hidden" name="prodNo" value="${param.prodNo}">
 					<input type="hidden" name="viewDate" value="${param.viewDate}">

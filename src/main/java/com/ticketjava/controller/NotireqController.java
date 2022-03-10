@@ -1,5 +1,7 @@
 package com.ticketjava.controller;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -29,10 +31,10 @@ public class NotireqController {
 		model.addAttribute("rezProdInfo", rezProdInfo);
 		return "reservation/notireqForm";
 	}
-	@RequestMapping("/addNoti")
-	public String addNoti(@ModelAttribute NotireqVo notireqVo) {
+	@RequestMapping("/addNotireq")
+	public String addNotireq(@ModelAttribute NotireqVo notireqVo, HttpSession session) {
 		System.out.println(notireqVo);
-		
+		notireqService.addNotireq(notireqVo, session);
 		return "redirect:/mypage/reserveAlram";
 	}
 	

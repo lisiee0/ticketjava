@@ -688,7 +688,7 @@ CREATE TABLE notireq (
 	user_no NUMBER, /* 회원번호 */
 	prod_no NUMBER, /* 공연번호 */
 	viewdate DATE, /* 관람일 */
-	selsection NUMBER, /* 선택구역 */
+	selsection varchar2(10), /* 선택구역 */
 	interval NUMBER, /* 알림간격 */
 	notitimes NUMBER, /* 알림횟수 */
 	reqdate DATE, /* 신청일 */
