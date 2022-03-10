@@ -12,6 +12,7 @@
 		<typeAlias alias="SelseatVo" type="com.ticketjava.vo.SelseatVo" />
 		<typeAlias alias="SeatpriceVo" type="com.ticketjava.vo.SeatpriceVo" />
 		<typeAlias alias="DiscountVo" type="com.ticketjava.vo.DiscountVo" />
+		<typeAlias alias="RezProdInfoVo" type="com.ticketjava.vo.RezProdInfoVo" />
 	</typeAliases>
 	<mappers>
 		<mapper resource="mybatis/mappers/reservation.xml" />
