@@ -3,7 +3,9 @@ package com.ticketjava.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.ticketjava.service.ProductService;
 
@@ -26,6 +28,14 @@ public class ProductController {
 		
 		model.addAttribute("listMap", productService.getList());
 		return "product/theater";
+	}
+	
+	@RequestMapping("/test")
+	public void test(@RequestParam("viewDate") String test,
+					 @RequestParam("prodNo") String test1) {
+		
+		System.out.println(test);
+		System.out.println(test1);
 	}
 
 	

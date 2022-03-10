@@ -86,8 +86,12 @@
 						
 							<div class="col-xs-3 np" id="calArea">
 								<!-- 캘린더 api 구현 위치 -->
-								<img id="cal" src="/project/assets/image/cal.png">
-								<button type="button" class="btn btn-primary btn-block">예매하기</button>
+								<form id="rezArea" method="post" action="${pageContext.request.contextPath}/product/test">
+									<c:import url="/WEB-INF/views/include/calendar.jsp"></c:import>
+									<input type="hidden" name="prodNo" value="1">
+									<button type="submit" id="rezBtn" class="btn btn-primary btn-block">예매하기</button>
+								</form>
+							
 							</div>		
 						</div>
 					</div>
@@ -252,4 +256,25 @@
 	
 </body>
 
+
+<script>
+
+	$("#rezBtn").on("click", function() {
+		
+		var year= $('.-selected-').data('year');
+		var month= $('.-selected-').data('month');
+		var date= $('.-selected-').data('date');
+		
+		if(month<10) {
+			month= "0"+month;
+		}
+		if(date<10) {
+			date= "0"+date;
+		}
+		
+		$("#rezArea").append('<input type="hidden" name="viewDate" value="'+year+'-'+month+'-'+date+'">');
+	
+	});
+	
+</script>
 </html>
