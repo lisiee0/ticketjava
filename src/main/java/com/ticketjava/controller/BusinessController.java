@@ -39,32 +39,33 @@ public class BusinessController {
 
 		return "business/bmAdd";
 	}
-	
-	//공연 등록 폼
-	@RequestMapping(value = "bmForm")
-    public String bmForm() {
-        System.out.println("BusinessController/form()");
 
-        return "business/bmForm";
-    }
-	
-	//공연 업로드만
+	// 공연 등록 폼
+	@RequestMapping(value = "bmForm")
+	public String bmForm() {
+		System.out.println("BusinessController/form()");
+
+		return "business/bmForm";
+	}
+
+	// 공연 업로드만
 	@RequestMapping(value = "bmUpload", method = { RequestMethod.GET, RequestMethod.POST })
-	public String bmUpload(@RequestParam("file")
-								MultipartFile[] file,
-							@ModelAttribute DetailVo detailVo,
-							Model model) {
+	public String bmUpload(@RequestParam("file") MultipartFile[] file, @ModelAttribute DetailVo detailVo,HttpServletRequest request, Model model) {
+
 		
-		for(int i=0; i<file.length; i++) {
+		//MultipartFile[] file
+		for (int i = 0; i < file.length; i++) {
+			String fileName = request.getParameter("file");
 			System.out.println(i);
-			
+			System.out.println(file[i].getOriginalFilename());
+
 		}
+
 		
 		System.out.println("BusinessController/bmAdd");
-		System.out.println(file.length);
+		
 
-
-		businessService.bmUpload(file, detailVo);
+//		businessService.bmUpload(file, detailVo);
 		return "business/bmInquiry";
 	}
 
