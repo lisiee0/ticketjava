@@ -16,4 +16,8 @@ public class NotireqDao {
 		sqlSession.insert("notireq.insertNotireq", notireqVo);
 		
 	}
+
+	public int selectReqCount(NotireqVo notireqVo) {
+		return sqlSession.selectOne("selectReqCount", notireqVo);
+	}
 }

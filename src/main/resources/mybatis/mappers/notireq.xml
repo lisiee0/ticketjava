@@ -2,19 +2,30 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="notireq">
 		
+		<select id="selectReqCount" parameterType="NotireqVo" resultType="int">
+			<![CDATA[
+				select count(*)
+				from notireq
+				where prod_no = #{prodNo} and user_no = #{userNo}
+			]]>		
+		</select>
+		
 		<insert id="insertNotireq" parameterType="NotireqVo">
-			insert into notireq
-			values( seq_req_no.nextval,
-					#{userNo},
-					#{prodNo},
-					#{viewDate},
-					#{selSection},
-					#{interval},
-					#{notiTimes},
-					sysdate,
-					1
-				)
+			<![CDATA[
+				insert into notireq
+				values( seq_req_no.nextval,
+						#{userNo},
+						#{prodNo},
+						#{viewDate},
+						#{selSection},
+						#{interval},
+						#{notiTimes},
+						sysdate,
+						1
+					)
+			]]>				
 		</insert>
+		
 		
 </mapper>
 

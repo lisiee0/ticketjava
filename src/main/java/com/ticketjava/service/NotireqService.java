@@ -28,7 +28,11 @@ public class NotireqService {
 		}
 		
 		notireqVo.setUserNo(userNo);
-		notireqDao.insertNotireq(notireqVo);
+		
+		int count = notireqDao.selectReqCount(notireqVo);
+		
+		if(count<1)
+			notireqDao.insertNotireq(notireqVo);
 	}
 	
 }
