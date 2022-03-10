@@ -13,10 +13,10 @@ public class DetailDao {
 	private SqlSession sqlsession;
 	
 	//공연 상세정보 추가(파일만)
-	public void dtUpload(DetailVo dvo) {
-		System.out.println(sqlsession.insert("product.dtUpload", dvo));
+	public void detailUpload(DetailVo dvo) {
+		System.out.println(sqlsession.insert("product.detailUpload", dvo));
 		
-		sqlsession.insert("product.dtUpload", dvo);
+		sqlsession.insert("product.detailUpload", dvo);
 	}
 
 }

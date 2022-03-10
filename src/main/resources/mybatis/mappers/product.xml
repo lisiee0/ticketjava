@@ -20,12 +20,27 @@
 		]]>
 	</select>
 
-	<!-- product -->
-	<select id="productAdd" resultType="productVo">
+	<!-- product 테이벌 파일 추가 -->
+	<select id="productUpload" resultType="productVo">
 		<![CDATA[
-			insert into product
-			values 		
-
+			insert into 	product 
+			VALUES 		(seq_prod_no.nextval,
+						#{userNo},
+						#{halNo},
+						#{prodName},
+						#{prodType},
+						#{beginShow},
+						#{endShow},
+						#{beginRez},
+						#{endRez},
+						#{showTime},
+						#{viewTime},
+						#{viewGrade},
+						#{notice},
+						#{cancelInfo},
+						#{status},
+						#{posterPath}
+						)	
 		]]>
 	</select>
 

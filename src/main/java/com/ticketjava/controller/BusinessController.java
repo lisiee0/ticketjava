@@ -54,8 +54,8 @@ public class BusinessController {
 							@ModelAttribute ProductVo productVo,
 							@ModelAttribute DetailVo detailVo,HttpServletRequest request, Model model) {
 		
-		System.out.println("BusinessController/bmAdd");
-		businessService.bmUpload(file, productVo, detailVo);
+		System.out.println("BusinessController/bmUpload");
+		businessService.productUpload(file, productVo, detailVo);
 		return "business/bmInquiry";
 	}
 

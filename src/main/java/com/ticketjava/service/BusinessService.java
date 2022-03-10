@@ -38,7 +38,7 @@ public class BusinessService {
 	}
 
 	// 공연 추가
-	public void bmUpload(MultipartFile[] file, ProductVo productVo, DetailVo detailVo) {
+	public void productUpload(MultipartFile[] file, ProductVo productVo, DetailVo detailVo) {
 		System.out.println("BusinessServiece/FileService()");
 
 		String saveDir = "C:\\javaStudy\\upload";
@@ -53,7 +53,7 @@ public class BusinessService {
 			String orgName = file[i].getOriginalFilename();
 			
 			// 확장자
-			String exName = file[i].getOriginalFilename().substring(file[i].getOriginalFilename().lastIndexOf("."));
+			String exName = orgName.substring(orgName.lastIndexOf("."));
 
 			// 저장파일이름
 			String saveName = System.currentTimeMillis() + UUID.randomUUID().toString() + exName;
@@ -83,8 +83,8 @@ public class BusinessService {
 
 			// db 저장
 
-			pd.bmUpload(pvo);
-			td.dtUpload(dvo);
+			pd.productUpload(pvo);
+			td.detailUpload(dvo);
 			
 			
 			System.out.println(file[i].getOriginalFilename());
