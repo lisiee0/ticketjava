@@ -8,7 +8,7 @@
 
 <script src="${pageContext.request.contextPath}/assets/jquery/jquery-1.12.4.js"></script>
 <script src="${pageContext.request.contextPath}/assets/bootstrap/js/bootstrap.js"></script>
-<script src="${pageContext.request.contextPath}/assets/jquery/venues/sejong2.js"></script>
+<script src="${pageContext.request.contextPath}/assets/jquery/venues/venue1.js"></script>
 
 <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/bootstrap/css/bootstrap.css">
 <link href="${pageContext.request.contextPath}/assets/css/reservation/reservation.css" rel="stylesheet" type="text/css">
@@ -37,15 +37,16 @@
 					<colgroup>
 						<col style="width:45%">
 						<col style="">
-						<col style="width:25%">
+						<col style="width:19%">
 					</colgroup>
 					<tr>
-						<td><h2>뮤지컬 라이온 킹</h2></td>
-						<td id="theaterName" class="right">세종문화회관 1관 세종문화회관 1관</td>
-						<td class="right">2022년 03월 10일 15:00</td>
+						<td><h2>${rezProdInfo.prodName}</h2></td>
+						<td id="theaterName" class="right">${rezProdInfo.place}</td>
+						<td class="right">${param.viewDate} ${rezProdInfo.showTime}</td>
 					</tr>
 				</table>
 			</div>
+			
 			<div id="seatPlan">
 				<!-- <img src="C:\JavaStudy\upload\seat.jpg" alt="이미지 없음">  --> <!-- html 코드 -->
 				
@@ -72,7 +73,8 @@
 				
 				<h2>구역 선택</h2>
 				<div id="sectionBtn" data-toggle="buttons">
-					<label class="btn btn-primary">
+					
+					<!-- <label class="btn btn-primary">
 						<input type="radio" name="section" autocomplete="off"> A
 					</label>
 					<label class="btn btn-primary">
@@ -95,7 +97,7 @@
 					</label>
 					<label class="btn btn-primary">
 						<input type="radio" name="section" autocomplete="off"> H
-					</label>
+					</label> -->
 					
 				</div>
 			</div>
@@ -174,7 +176,31 @@
 			}
 		});
 		
+		var sectionTable = $('table tr th');
+		
+		for(var i=0; i<sectionTable.length;i++){
+			var section = sectionTable.eq(i).text();
+			
+			var notOccupy = $('#seatPlanDiv input[type=checkbox][data-section='+section+']:not(:disabled)');
+			var remaining = notOccupy.length;
+			
+			if(remaining > 0)
+				$('#sectionBtn').append('<label class="btn btn-primary" disabled><input type="radio" name="section" autocomplete="off">'+ section +'</label>');
+			else
+				$('#sectionBtn').append('<label class="btn btn-primary"><input type="radio" name="section" autocomplete="off">'+ section +'</label>');
+			
+			
+		}
+		
+		
 	});
+	
+	$('#sectionBtn').on('click','label', function(){
+		if(this.is(':disabled')){
+			return false;
+		}
+	});
+	
 	
 </script>
 

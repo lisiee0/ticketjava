@@ -215,12 +215,6 @@ $(document).ready(function(){
 		var notOccupy = $('#seatPlanDiv input[type=checkbox].'+grade+':not(:disabled)');
 		var remaining = notOccupy.length;
 		
-		for(var j=0; j<notOccupy.length;j++){
-			var n = notOccupy.eq(j);
-			console.log(n.is(':disabled'));
-			console.log(n.data('col')+' '+n.data('num'));
-		}
-		
 		gradetr.find('.remaining').text(remaining+'석');
 	}
 	
@@ -260,6 +254,12 @@ $('#seatPlanDiv').on('change','table td input[type=checkbox]' ,function(){
 $('#nextBtn').on('click', function(){
 	
 	var chkbox = $('[type=checkbox]:checked').get();
+	
+	if(chkbox.length <= 0){
+		alert('좌석을 선택해주세요');
+		return false;
+	}
+	
 	var selectList = [];
 	
 	var rezVo = {
