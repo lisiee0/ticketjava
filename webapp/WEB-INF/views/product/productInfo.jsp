@@ -36,7 +36,7 @@
 						<div class="row">
 							<!-- 포스터 위치 -->
 							<div class="col-xs-3 np">
-								<img id="mainPoster" src="/project/assets/image/aida.jpg">
+								<img id="mainPoster" src="${pageContext.request.contextPath}/assets/image/aida.jpg">
 							</div>
 							
 							<div class="col-xs-6 np" id="mainInfo">
@@ -119,13 +119,13 @@
 						<div class="row">
 							<div class="col-xs-9 np" id="infoDetail">
 								<p>공연정보</p>
-								<img src="/project/assets/image/info1.png">
+								<img src="${pageContext.request.contextPath}/assets/image/info1.png">
 								
 								<p>캐스팅정보</p>
-								<img src="/project/assets/image/info2.png">
+								<img src="${pageContext.request.contextPath}/assets/image/info2.png">
 								
 								<p>부가정보</p>
-								<img src="/project/assets/image/info3.png">
+								<img src="${pageContext.request.contextPath}/assets/image/info3.png">
 							</div>
 						</div>
 					</div>
@@ -177,7 +177,7 @@
 						<div class="row">
 							<h4 class="cateMenu">공연장 정보</h4>
 							<div id="mapArea" class="col-xs-4">
-								<img id="map" src="/project/assets/image/map.png">
+								<img id="map" src="${pageContext.request.contextPath}/assets/image/map.png">
 							</div>
 							<div class="col-xs-8">
 								<p><strong>[공연장 정보]</strong></p><br>
