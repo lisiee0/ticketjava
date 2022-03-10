@@ -86,10 +86,10 @@
 						
 							<div class="col-xs-3 np" id="calArea">
 								<!-- 캘린더 api 구현 위치 -->
-								<form id="rezArea" method="post" action="${pageContext.request.contextPath}/product/test">
+								<form id="rezArea" method="post" action="">
 									<c:import url="/WEB-INF/views/include/calendar.jsp"></c:import>
-									<input type="hidden" name="prodNo" value="1">
-									<button type="submit" id="rezBtn" class="btn btn-primary btn-block">예매하기</button>
+									<input id="prodNo" type="hidden" name="prodNo" value="1">
+									<button type="button" id="rezBtn" class="btn btn-primary btn-block">예매하기</button>
 								</form>
 							
 							</div>		
@@ -263,6 +263,7 @@
 		
 		var year= $('.-selected-').data('year');
 		var month= $('.-selected-').data('month');
+		month = month + 1;
 		var date= $('.-selected-').data('date');
 		
 		if(month<10) {
@@ -272,9 +273,16 @@
 			date= "0"+date;
 		}
 		
-		$("#rezArea").append('<input type="hidden" name="viewDate" value="'+year+'-'+month+'-'+date+'">');
+		/* $("#rezArea").append('<input type="hidden" name="viewDate" value="'+year+'-'+month+'-'+date+'">'); */
 	
+		var viewDate = year+'-'+month+'-'+date;
+		var prodNo = $('#prodNo').val();
+
+		console.log(viewDate+' '+prodNo);
+		
+		window.open('${pageContext.request.contextPath}/reservation/selectSeat?prodNo='+prodNo+'&viewDate='+viewDate, 'reserve', 'width=1100, height=800, left=300, top=100');
 	});
+	
 	
 </script>
 </html>
