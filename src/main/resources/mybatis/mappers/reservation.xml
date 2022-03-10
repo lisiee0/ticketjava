@@ -57,7 +57,8 @@
 			select prodName,
 			       (t.theatername||' '||h.hallname) place,
 			       to_char(showtime, 'hh24:mi') showTime,
-			       posterPath
+			       posterPath,
+			       p.hall_no hallNo
 			from product p, hall h, theater t
 			where prod_no = #{prodNo} and
 			      p.hall_no = h.hall_no and

@@ -14,9 +14,11 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.ticketjava.service.ReservationService;
+import com.ticketjava.service.SeatpriceService;
 import com.ticketjava.service.SelseatService;
 import com.ticketjava.vo.ReservationVo;
 import com.ticketjava.vo.RezProdInfoVo;
+import com.ticketjava.vo.SeatpriceVo;
 import com.ticketjava.vo.SelseatVo;
 
 
@@ -30,9 +32,15 @@ public class ReservationController {
 	@Autowired
 	private SelseatService selseatService;
 	
+	@Autowired
+	private SeatpriceService seatpriceService;
+	
 	@RequestMapping("/selectSeat")
 	public String selectSeat(@RequestParam("prodNo") int prodNo,
 							 Model model) {
+		List<SeatpriceVo> seatpriceList = seatpriceService.seatpriceList(prodNo);
+		model.addAttribute("seatpriceList", seatpriceList);
+		
 		RezProdInfoVo rezProdInfo = reservationService.rezProdInfo(prodNo);
 		model.addAttribute("rezProdInfo", rezProdInfo);
 		

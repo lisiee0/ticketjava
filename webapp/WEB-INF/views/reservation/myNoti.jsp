@@ -106,6 +106,7 @@
 			url: "${pageContext.request.contextPath}/selseat/occupyList",
 			type : "post",
 			data : rezVo,
+			async : false,
 			dataType: "json",
 			success : function(selseatList){
 
