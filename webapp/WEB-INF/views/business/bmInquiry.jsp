@@ -106,7 +106,7 @@
 									<tbody>
 										<c:forEach items="${bmList}" var="vo">
 											<tr>
-												<td>002</td>
+												<td>${vo.prodNo}</td>
 												<td class=""><a href="#" name="prodName">${vo.prodName}</a></td>
 												<td><a href="#" name="theaterName">${vo.theaterName}</a></td>
 												<td>${vo.beginShow} ~ ${vo.endShow}</td>

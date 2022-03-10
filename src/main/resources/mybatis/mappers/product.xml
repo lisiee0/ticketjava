@@ -26,7 +26,7 @@
 			insert into 	product 
 			VALUES 		(seq_prod_no.nextval,
 						#{userNo},
-						#{halNo},
+						#{hallNo},
 						#{prodName},
 						#{prodType},
 						#{beginShow},
