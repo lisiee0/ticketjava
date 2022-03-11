@@ -2,108 +2,113 @@
 
 /* 왼쪽바 */
 .form-horizontal .form-id {
-margin-left: 45px;
+		margin-left: 45px;
 }
 /* form-data 할인/배치도 정보 */
 .form-horizontal .form-data {
-    margin-top: 10px;
-    margin-left: 15px;
-    }
+		margin-top: 10px;
+		margin-left: 15px;
+}
 
 .currentPage {
-    color: #6697f2;
+		color: #6697f2;
 }
 
 #admin-aside {
-    background-color: #f0f0f0;
-    height: 500px;
-    /* border: 1px solid; */
+		background-color: #f0f0f0;
+		height: 500px;
+		/* border: 1px solid; */
 }
 
-#admin-aside ul > li {
-    font-size: 16px;
-    list-style: none;
-    margin: 30px 10px;
+#admin-aside ul>li {
+		font-size: 16px;
+		list-style: none;
+		margin: 30px 10px;
 }
+
 .admin-pageMenu {
-    font-size: 25px;
-    text-align: center;
-    color: #fff;
-    background-color: #6697f2;
-    padding: 10px;
-    margin-top: 10px;
+		font-size: 25px;
+		text-align: center;
+		color: #fff;
+		background-color: #6697f2;
+		padding: 10px;
+		margin-top: 10px;
 }
 
 #content-title {
-    padding: 10px 0 10px 5px;
+		padding: 10px 0 10px 5px;
 }
 
-.listTable,
-.listTable thead > tr > th {
-    text-align: center;
+.listTable, .listTable thead>tr>th {
+		text-align: center;
 }
 
 #file {
-    margin: 4px 0;
+		margin: 4px 0;
 }
 
 #btnLocation {
-    text-align: center;
+		text-align: center;
 }
 
 #map {
-    width: 337px;
+		width: 337px;
 }
-#calArea,
-#mapArea,
-#posterArea {
-    padding: 0;
+
+#calArea, #mapArea, #posterArea {
+		padding: 0;
 }
 
 .section {
-    border-bottom: 1.6px #6697f2 solid;
-    padding-bottom: 10px;
-    margin-bottom: 10px;
+		border-bottom: 1.6px #6697f2 solid;
+		padding-bottom: 10px;
+		margin-bottom: 10px;
 }
 
 .formSection {
-    border-bottom: 1.5px #f0f0f0 solid;
-    padding-bottom: 10px;
-    margin-bottom: 10px;
+		border-bottom: 1.5px #f0f0f0 solid;
+		padding-bottom: 10px;
+		margin-bottom: 10px;
 }
 
 .formMargin {
-    margin-bottom: 10px;
+		margin-bottom: 10px;
 }
 
 .formZipcode {
-    width: 130px;
-    margin-bottom: 10px;
+		width: 130px;
+		margin-bottom: 10px;
 }
 
 .position {
-    float: right;
-    width: 120px;
-    margin: 0 0 10px;
+		float: right;
+		width: 120px;
+		margin: 0 0 10px;
 }
 
 .form-text {
-    font-size: 15px;
-    text-align: left;
-    padding: 6px 15px;
+		font-size: 15px;
+		text-align: left;
+		padding: 6px 15px;
+}
+
+.dcBox {
+		padding-top: 15px;
+		padding-bottom: 15px;
+
 }
 
 .pageMenu {
-    font-size: 31px;
-    margin: 0 0 10px;
+		font-size: 31px;
+		margin: 0 0 10px;
 }
 
 .cateMenu {
-    font-size: 19px;
-    margin: 0 0 8px;
+		font-size: 19px;
+		margin: 0 0 8px;
 }
 
 /* 글 작성 자리 */
 .textWay {
-    padding-bottom: 240px;
+		padding-bottom: 240px;
 }

@@ -17,14 +17,13 @@ public class ProductDao {
 	// 공연 리스트 
 	public List<ProductVo> getProductList() {
 		System.out.println("ProductDao/getProductList");
-		System.out.println(sqlsession.selectList("product.getProductList"));
 
 		return sqlsession.selectList("product.getProductList");
 	}
 
-	// 공연 추가(파일만)
+	// 공연 추가
 	public void productUpload(ProductVo pvo) {
-		System.out.println("ProductDao");	
+		System.out.println("ProductDao/productUpload");	
 		System.out.println(pvo);
 		
 		sqlsession.insert("product.productUpload", pvo);

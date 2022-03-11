@@ -19,15 +19,22 @@
 		
 		]]>
 	</select>
+	
+	<!--  공연번호만 추가 -->
+	<insert id="proddnoUpload" parameterType="productVo">
+	
+	</insert>
 
 	<!-- product 테이벌 파일 추가 -->
 	<insert id="productUpload" parameterType="productVo">
 		<![CDATA[
-			insert into product	(prod_no, viewgrade, posterpath, cancelInfo) 
-            	values			(seq_prod_no.nextval, #{viewGrade}, #{posterPath}, #{cancelInfo})
+			insert into product	(prod_no, prodName, prodType, beginShow, endShow, beginRez, endRez, showTime, viewTime, viewgrade, notice, posterpath, cancelInfo) 
+            	values			(seq_prod_no.nextval, #{prodName}, #{prodType}, #{beginShow}, #{endShow}, #{beginRez}, #{endRez}, #{showTime}, #{viewTime}, #{viewGrade}, #{notice}, #{posterPath}, #{cancelInfo})
 			
 		]]>
 	</insert>
+	
+	
 
 
 

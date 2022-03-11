@@ -8,7 +8,7 @@ public class DiscountVo {
 	private String beginDc;
 	private String endDc;
 	private int dcRate;
-	private String dcType;
+	private int dcType;
 
 	private String prodName;
 	private String hallName;
@@ -16,7 +16,7 @@ public class DiscountVo {
 	public DiscountVo() {
 	}
 
-	public DiscountVo(int dcNo, int prodNo, String dcName, String beginDc, String endDc, int dcRate, String dcType,
+	public DiscountVo(int dcNo, int prodNo, String dcName, String beginDc, String endDc, int dcRate, int dcType,
 			String prodName, String hallName) {
 		this.dcNo = dcNo;
 		this.prodNo = prodNo;
@@ -77,11 +77,11 @@ public class DiscountVo {
 		this.dcRate = dcRate;
 	}
 
-	public String getDcType() {
+	public int getDcType() {
 		return dcType;
 	}
 
-	public void setDcType(String dcType) {
+	public void setDcType(int dcType) {
 		this.dcType = dcType;
 	}
 

@@ -13,6 +13,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.ticketjava.service.BusinessService;
 import com.ticketjava.vo.DetailVo;
+import com.ticketjava.vo.DiscountVo;
 import com.ticketjava.vo.ProductVo;
 
 @Controller
@@ -56,6 +57,10 @@ public class BusinessController {
 							HttpServletRequest request,
 							Model model) {
 		System.out.println("BusinessController/bmUpload");
+		System.out.println(productVo);
+		System.out.println(detailVo);
+		
+		
 		
 		businessService.productUpload(file, productVo, detailVo);
 		return "business/bmInquiry";

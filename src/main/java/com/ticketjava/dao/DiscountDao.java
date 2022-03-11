@@ -46,5 +46,12 @@ public class DiscountDao {
 		sqlSession.delete("discount.delDis", vo);
 		return vo.getDcNo();
 	}
+	//product 창에서 업로드 하는 상시 할인
+	public void discountUpload(DiscountVo disVo) {
+		System.out.println("DiscountDao/discountUpload");
+		
+		
+		sqlSession.insert("discount.discountUpload", disVo);
+	}
 	
 }

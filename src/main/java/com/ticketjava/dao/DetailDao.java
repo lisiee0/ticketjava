@@ -12,9 +12,9 @@ public class DetailDao {
 	@Autowired
 	private SqlSession sqlsession;
 	
-	//공연 상세정보 추가(파일만)
+	//공연 상세정보 추가
 	public void detailUpload(DetailVo dvo) {
-		System.out.println("DetailDao");	
+		System.out.println("DetailDao/detailUpload");	
 		System.out.println(dvo);
 		
 		sqlsession.insert("detail.detailUpload", dvo);

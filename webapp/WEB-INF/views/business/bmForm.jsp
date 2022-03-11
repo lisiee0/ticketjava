@@ -79,6 +79,67 @@
 					<div id="board">
 
 						<form action="${pageContext.request.contextPath}/bm/bmUpload" method="post" class="form-horizontal" enctype="multipart/form-data">
+							<!-- 공연 제목 -->
+							<div class="form-group">
+								<label class="form-text col-md-2 form-id" for="">공연명</label>
+								<div class="col-md-6">
+									<input type="text" class="form-control" id="" name="prodName" placeholder="공연 제목을 입력해주세요">
+								</div>
+							</div>
+
+							<!-- 공연 구분 -->
+							<div class="form-group">
+								<label class="form-text col-md-2 form-id" for="">공연 구분</label>
+
+								<div class="col-md-3">
+									<select class="form-control" name="prodType">
+										<option value="1" selected="selected">연극</option>
+										<option value="2">뮤지컬</option>
+										<option value="3">콘서트</option>
+										<option value="4">스포츠</option>
+										<option value="5">전시</option>
+									</select>
+								</div>
+							</div>
+
+							<!-- 공연 기간 -->
+							<div class="form-group">
+								<label class="form-text col-md-2 form-id" for="">공연 기간</label>
+								<div class="col-md-4">
+									<input type="date" class="form-control" name="beginShow">
+								</div>
+								<div class="col-md-4">
+									<input type="date" class="form-control" name="endShow">
+								</div>
+							</div>
+
+							<!--예매 기간 -->
+							<div class="form-group">
+								<label class="form-text col-md-2 form-id" for="">예매 기간</label>
+								<div class="col-md-4">
+									<input type="date" class="form-control" name="beginRez">
+								</div>
+								<div class="col-md-4">
+									<input type="date" class="form-control" name="endRez">
+								</div>
+							</div>
+
+							<!--공연 시작 시간-->
+							<div class="form-group">
+								<label class="form-text col-md-2 form-id" for="">공연 시작시간</label>
+								<div class="col-md-4">
+									<input type="time" class="form-control" name="showTime">
+								</div>
+							</div>
+
+							<!--관람 시간-->
+							<div class="form-group">
+								<label class="form-text col-md-2 form-id" for="">관람 시간</label>
+								<div class="col-md-4">
+									<input type="text" class="form-control" id="" name="viewTime">
+								</div>
+							</div>
+
 
 							<!--관람 등급-->
 							<div class="form-group">
@@ -99,6 +160,50 @@
 									<label for="age15">18세</label> <input type="radio" name="viewGrade" value="5">
 								</div>
 							</div>
+
+							<!-- 등급별 가격 자리 -->
+
+
+							<!-- 등급별 가격 자리 -->
+
+							<!--공지사항-->
+							<div class="form-group">
+								<label class="form-text col-md-2 form-id" for="">공지사항</label>
+								<div class="col-md-8">
+									<textarea class="form-control textWay" name="notice" placeholder="내용을 입력해주세요"></textarea>
+								</div>
+							</div>
+
+							<!-- 할인 정보 자리 -->
+							<!-- 							<div class="form-group"> -->
+							<!-- 								<label class="form-text col-md-2 form-id" for="">할인 정보</label> -->
+							<!-- 								정보 -->
+							<!-- 								<div class="col-md-8"> -->
+							<!-- 									<div class="form-group"> -->
+							<!-- 										<div class="col-md-4"> -->
+							<!-- 											<input type="text" class="form-control" name="dcName" id="dcName1" placeholder="할인 설명"> -->
+							<!-- 										</div> -->
+							<!-- 										<div class="col-md-2"> -->
+							<!-- 											<select class="form-control" name="dcType"> -->
+							<!-- 												<option value="0">%</option> -->
+							<!-- 												<option value="1">원</option> -->
+							<!-- 											</select> -->
+							<!-- 										</div> -->
+							<!-- 										<div class="col-md-3"> -->
+							<!-- 											<input type="text" class="form-control dcArea" name="dcRate" id="dcRate1" value="" placeholder="할인율(% 또는 원)"> -->
+							<!-- 										</div> -->
+
+							<!-- 										<div class="col-md-1"> -->
+							<!-- 											<button type="button" class="btn" id="addDis">+</button> -->
+							<!-- 										</div> -->
+
+							<!-- 									</div> -->
+							<!-- 									<div class="form-group form-data">할인 정보</div> -->
+							<!-- 									<div id="bmDisArea"></div> -->
+							<!-- 								</div> -->
+							<!-- 							</div> -->
+							<!-- 할인 정보 자리 -->
+
 
 							<!-- 공연 포스터 -->
 							<div class="form-group">
@@ -136,7 +241,7 @@
 							<div class="form-group">
 								<label class="form-text col-md-2 form-id" for="">예매/취소 안내</label>
 								<div class="col-md-8">
-									<textarea id="" name="" class="form-control textWay" name="cancelInfo" placeholder="내용을 입력해주세요"></textarea>
+									<textarea id="" class="form-control textWay" name="cancelInfo" placeholder="내용을 입력해주세요"></textarea>
 								</div>
 							</div>
 
@@ -202,12 +307,21 @@
 
 				var disN = $("#dcName1").val();
 				var disR = $("#dcRate1").val();
+				var disD = $("select[name=dcType]").val();
 
 				console.log(disN);
+				console.log(disD);
 
-				$("#bmDisArea").append(
-						'<div class="form-group form-data">' + disN + ' ('
-								+ disR + '%)' + '</div>');
+				if (disD == 0) {
+					$("#bmDisArea").append(
+							'<div class="form-group form-data">' + disN + ' ('
+									+ disR + '% 할인됨)' + '</div>');
+				} else {
+					$("#bmDisArea").append(
+							'<div class="form-group form-data">' + disN + ' ('
+									+ disR + '원 할인됨)' + '</div>');
+				}
+
 			});
 </script>
 

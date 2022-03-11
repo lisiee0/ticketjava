@@ -17,6 +17,7 @@ import com.ticketjava.dao.DetailDao;
 import com.ticketjava.dao.DiscountDao;
 import com.ticketjava.dao.ProductDao;
 import com.ticketjava.vo.DetailVo;
+import com.ticketjava.vo.DiscountVo;
 import com.ticketjava.vo.ProductVo;
 
 @Service
@@ -37,7 +38,9 @@ public class BusinessService {
 	}
 
 	// 공연 추가
-	public void productUpload(MultipartFile[] file, ProductVo productVo, DetailVo detailVo) {
+	public void productUpload(MultipartFile[] file, 
+							ProductVo productVo,
+							DetailVo detailVo) {
 		System.out.println("BusinessServiece/productUpload()");
 
 		
@@ -83,8 +86,6 @@ public class BusinessService {
 				e.printStackTrace();
 			}
 
-
-
 			System.out.println("파일 이름: " + file[i].getOriginalFilename());
 			
 			// db 저장
@@ -92,8 +93,6 @@ public class BusinessService {
 			td.detailUpload(detailVo);
 		}
 		
-
-
 	}
 	// 공연 목록 수정 public void bmModify(ProductVo vo) { pd.bmModify(vo); }
 
