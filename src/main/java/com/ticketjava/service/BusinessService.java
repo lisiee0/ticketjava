@@ -28,7 +28,6 @@ public class BusinessService {
 	private DetailDao td;
 	@Autowired
 	private DiscountDao dd;
-	
 
 	// 공연 목록 불러오기
 	public List<ProductVo> getProductList() {
@@ -42,16 +41,16 @@ public class BusinessService {
 		System.out.println("BusinessServiece/productUpload()");
 
 		String saveDir = "C:\\javaStudy\\upload";
-		
-		//MultipartFile[] file
+
+		// MultipartFile[] file
 		for (int i = 0; i < file.length; i++) {
-			System.out.println(i);
-			
+			System.out.println(i+"번째 파일");
+
 			// 파일관련 정보 추출
 
 			// 원본파일이름
 			String orgName = file[i].getOriginalFilename();
-			
+
 			// 확장자
 			String exName = orgName.substring(orgName.lastIndexOf("."));
 
@@ -61,13 +60,16 @@ public class BusinessService {
 			// 파일패스 생성
 			String filePath = saveDir + "\\" + saveName;
 
-			// 파일 사이즈
-			long fileSize = file[i].getSize();
+			// 파일 변수 가져오기
+			//DetailVo
+			detailVo.setAddedPath(filePath);
+			detailVo.setCastingPath(filePath);
+			detailVo.setProdPath(filePath);
+			td.detailUpload(detailVo);
 
-			//파일 변수 가져오기
-			ProductVo pvo = new ProductVo(productVo.getPosterPath());
-			DetailVo dvo = new DetailVo(detailVo.getProdPath(), detailVo.getCastingPath(), detailVo.getAddedPath());
-				
+			//ProductVo
+			productVo.setPosterPath(filePath);
+			pd.productUpload(productVo);
 
 			// 파일 저장
 			try {
@@ -83,11 +85,10 @@ public class BusinessService {
 
 			// db 저장
 
-			pd.productUpload(pvo);
-			td.detailUpload(dvo);
-			
-			
-			System.out.println(file[i].getOriginalFilename());
+//			pd.productUpload(pvo);
+//			td.detailUpload(dvo);
+
+			System.out.println("파일 이름: "+file[i].getOriginalFilename());
 
 		}
 
