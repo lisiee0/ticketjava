@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -18,9 +19,16 @@
 					<div class="col-xs-3 zp">
 						<div id="header" class="clearfix no-drag no-ghost">
 							<ul>
-								<li><a href="${pageContext.request.contextPath}/mypage/reserveList"><img src="${pageContext.request.contextPath}/assets/image/index/bell-normal.png"></a></li>
+								<c:choose>
+								<c:when test="${authUser eq null}">
+								<li><a href="${pageContext.request.contextPath}/mypage/reserveList"><img src="${pageContext.request.contextPath}/assets/image/index/bell-normal.png"></a></li>	
+								</c:when>
+								
+								<c:otherwise>
 								<li><a href="${pageContext.request.contextPath}/mypage/reserveList"><img src="${pageContext.request.contextPath}/assets/image/index/bell-new.png"></a></li>
-
+								</c:otherwise>
+								</c:choose>
+								
 								<li><a href="${pageContext.request.contextPath}/user/loginForm">로그인</a></li>
 								<li><a href="${pageContext.request.contextPath}/user/joinForm">회원가입</a></li>
 								<!-- 개발용 임시 메뉴 bm 사업자 adm 관리자 -->
