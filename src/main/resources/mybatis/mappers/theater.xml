@@ -38,7 +38,8 @@
 		<![CDATA[
 			select distinct t.theater_no theaterNo, 
 							theatername, 
-							logopath
+							logopath,
+							homepage
 			from 			theater t, hall h
 			where 			t.theater_no= h.theater_no
 		]]>

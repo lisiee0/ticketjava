@@ -43,18 +43,22 @@
 							<ul class="nav navbar-nav pd">
 							
 								<c:forEach items="${listMap.tList}" var="vo" varStatus="status">
-									<c:if test="${status.count%5 eq 0}">
+								<c:choose>
+									<c:when test="${status.count%5 eq 0}">
 										<li class="logoaArea">
 											<div>
-												<img class="theater-logo img-thumbnail img-rounded last-logo" data-no="${vo.theaterNo}" src="${pageContext.request.contextPath}/upload/${vo.logoPath}">
+												<a href="${vo.homePage}"><img class="theater-logo img-thumbnail img-rounded last-logo" data-no="${vo.theaterNo}" src="${pageContext.request.contextPath}/upload/${vo.logoPath}"></a>
 											</div>
 										</li>
-									</c:if>
-									<li class="logoaArea">
-										<div>
-											<img class="theater-logo img-thumbnail img-rounded" data-no="${vo.theaterNo}" src="${pageContext.request.contextPath}/upload/${vo.logoPath}">
-										</div>
-									</li>
+									</c:when>
+									<c:otherwise>
+										<li class="logoaArea">
+											<div>
+												<a href="${vo.homePage}"><img class="theater-logo img-thumbnail img-rounded" data-no="${vo.theaterNo}" src="${pageContext.request.contextPath}/upload/${vo.logoPath}"></a>
+											</div>
+										</li>
+									</c:otherwise>
+									</c:choose>
 								</c:forEach>
 								
 							</ul>
@@ -79,7 +83,7 @@
 						
 							<div class="col-xs-6">
 								<h4 class="cateMenu">전국 공연장지도</h4>
-								<img id="theater-map" src="/project/assets/image/theater-map.png">
+								<img id="theater-map" src="${pageContext.request.contextPath}/assets/image/test/theater-map.png">
 							</div>
 						</div>
 					</div>

@@ -79,7 +79,7 @@
 							<li class="nav-item"><a href="">콘서트</a></li>
 							<li class="nav-item"><a href="">스포츠</a></li>
 							<li class="nav-item"><a href="">전시</a></li>
-							<li class="nav-item"><a href=""><span class="smallFont">공연장</span></a></li>
+							<li class="nav-item"><a href="${pageContext.request.contextPath}/product/theaterList"><span class="smallFont">공연장</span></a></li>
 							<li class="nav-item"><a href=""><span class="smallFont">지역</span></a></li>
 							<li id="last-nav-item" class="nav-item"><a href=""><span class="smallFont">랭킹</span></a></li>
 						</ul>
