@@ -23,24 +23,9 @@
 	<!-- product 테이벌 파일 추가 -->
 	<insert id="productUpload" parameterType="productVo">
 		<![CDATA[
-			insert into 	product 
-			VALUES 		(seq_prod_no.nextval,
-						#{userNo},
-						#{hallNo},
-						#{prodName},
-						#{prodType},
-						#{beginShow},
-						#{endShow},
-						#{beginRez},
-						#{endRez},
-						#{showTime},
-						#{viewTime},
-						#{viewGrade},
-						#{notice},
-						#{cancelInfo},
-						#{status},
-						#{posterPath}
-						)	
+			insert into product	(prod_no, viewgrade, posterpath, cancelInfo) 
+            	values			(seq_prod_no.nextval, #{viewGrade}, #{posterPath}, #{cancelInfo})
+			
 		]]>
 	</insert>
 

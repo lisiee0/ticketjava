@@ -6,7 +6,6 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import com.ticketjava.vo.DetailVo;
 import com.ticketjava.vo.ProductVo;
 
 @Repository
@@ -25,7 +24,8 @@ public class ProductDao {
 
 	// 공연 추가(파일만)
 	public void productUpload(ProductVo pvo) {
-		System.out.println(sqlsession.insert("product.productUpload", pvo));
+		System.out.println("ProductDao");	
+		System.out.println(pvo);
 		
 		sqlsession.insert("product.productUpload", pvo);
 	}

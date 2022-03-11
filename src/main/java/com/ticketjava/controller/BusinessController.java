@@ -48,13 +48,15 @@ public class BusinessController {
 		return "business/bmForm";
 	}
 
-	// 공연 업로드만
+	// 공연 업로드
 	@RequestMapping(value = "bmUpload", method = { RequestMethod.GET, RequestMethod.POST })
 	public String bmUpload(@RequestParam("file") MultipartFile[] file, 
 							@ModelAttribute ProductVo productVo,
-							@ModelAttribute DetailVo detailVo,HttpServletRequest request, Model model) {
-		
+							@ModelAttribute DetailVo detailVo,
+							HttpServletRequest request,
+							Model model) {
 		System.out.println("BusinessController/bmUpload");
+		
 		businessService.productUpload(file, productVo, detailVo);
 		return "business/bmInquiry";
 	}

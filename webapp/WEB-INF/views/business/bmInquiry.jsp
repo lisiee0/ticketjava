@@ -107,7 +107,7 @@
 										<c:forEach items="${bmList}" var="vo">
 											<tr>
 												<td>${vo.prodNo}</td>
-												<td class=""><a href="#" name="prodName">${vo.prodName}</a></td>
+												<td class=""><a href="${pageContext.request.contextPath}/product/info?prodNo=7" name="prodName">${vo.prodName}</a></td>
 												<td><a href="#" name="theaterName">${vo.theaterName}</a></td>
 												<td>${vo.beginShow} ~ ${vo.endShow}</td>
 												<td><input type="checkbox"> <a href="#">확인</a></td>
@@ -129,7 +129,7 @@
 										<input type="text" class="form-control formSearchBoard" placeholder="공연 검색창" value="">
 									</div>
 									<div class="col-xs-2">
-										<a href="${pageContext.request.contextPath}/bm/bmAdd" class="btn btn-primary position">공연 등록</a>
+										<a href="${pageContext.request.contextPath}/bm/bmForm" class="btn btn-primary position">공연 등록</a>
 									</div>
 
 								</div>

@@ -80,6 +80,25 @@
 
 						<form action="${pageContext.request.contextPath}/bm/bmUpload" method="post" class="form-horizontal" enctype="multipart/form-data">
 
+							<!--관람 등급-->
+							<div class="form-group">
+								<label class="form-text col-md-2 form-id" for="">관람 등급</label>
+								<div class="col-md-1">
+									<label for="ageall">전체</label> <input type="radio" name="viewGrade" value="1">
+								</div>
+								<div class="col-md-1">
+									<label for="age8">8세</label> <input type="radio" name="viewGrade" value="2">
+								</div>
+								<div class="col-md-1">
+									<label for="age12">12세</label> <input type="radio" name="viewGrade" value="3">
+								</div>
+								<div class="col-md-1">
+									<label for="age15">15세</label> <input type="radio" name="viewGrade" value="4">
+								</div>
+								<div class="col-md-1">
+									<label for="age15">18세</label> <input type="radio" name="viewGrade" value="5">
+								</div>
+							</div>
 
 							<!-- 공연 포스터 -->
 							<div class="form-group">
@@ -113,6 +132,14 @@
 								</div>
 							</div>
 
+							<!--예매/취소 안내-->
+							<div class="form-group">
+								<label class="form-text col-md-2 form-id" for="">예매/취소 안내</label>
+								<div class="col-md-8">
+									<textarea id="" name="" class="form-control textWay" name="cancelInfo" placeholder="내용을 입력해주세요"></textarea>
+								</div>
+							</div>
+
 							<!-- 공연 등록! -->
 							<div id="btnLocation">
 								<button type="submit" class="btn btn-primary" id="addbtn">공연 등록</button>
@@ -142,4 +169,51 @@
 
 
 
+<script type="text/javascript">
+	//추가 버튼
+	$("#addGrade")
+			.on(
+					"click",
+					function() {
+						var gra = $("#selGrade").val();
+						$("#bmNameArea")
+								.append(
+										'<div class="form-group">'
+												+ '<div class="col-md-4">'
+												+ '<input type="text" class="form-control" id="" name="grade" value="'+gra+'" placeholder="" readonly>'
+												+ '</div>'
+												+ '<div class="col-md-4">'
+												+ '<input type="text" class="form-control" id="" name="price" placeholder="가격을 입력해주세요">'
+												+ '</div>'
+												+ '&nbsp;'
+												+ '<button type="button" id="delGrade" class="btn">-</button>'
+												+ '</div>');
+					});
+
+	//삭제 버튼
+	$("#delGrade").on("click", function() {
+		$("#bmNameArea").empty();
+	});
+
+	//할인정보 추가
+	$("#addDis").on(
+			"click",
+			function() {
+
+				var disN = $("#dcName1").val();
+				var disR = $("#dcRate1").val();
+
+				console.log(disN);
+
+				$("#bmDisArea").append(
+						'<div class="form-group form-data">' + disN + ' ('
+								+ disR + '%)' + '</div>');
+			});
+</script>
+
+
+
+
+
 </html>
+

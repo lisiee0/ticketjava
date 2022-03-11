@@ -78,7 +78,7 @@
 
 					<div id="board">
 
-						<form action="${pageContext.request.contextPath}/bm/bmInquiry	" method="post" class="form-horizontal">
+						<form action="${pageContext.request.contextPath}/bm/bmUpload	" method="post" class="form-horizontal">
 
 							<!-- 공연장명 -->
 							<div class="form-group">
@@ -296,7 +296,7 @@
 							<div class="form-group">
 								<label class="form-text col-md-2 form-id" for="">예매/취소 안내</label>
 								<div class="col-md-8">
-									<textarea id="" name="" class="form-control textWay" name="cancelInfo" value="" placeholder="내용을 입력해주세요"></textarea>
+									<textarea id="" name="" class="form-control textWay" name="cancelInfo" placeholder="내용을 입력해주세요"></textarea>
 								</div>
 							</div>
 

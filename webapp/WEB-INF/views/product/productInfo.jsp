@@ -88,7 +88,7 @@
 								<!-- 캘린더 api 구현 위치 -->
 								<form id="rezArea" method="post" action="">
 									<c:import url="/WEB-INF/views/include/calendar.jsp"></c:import>
-									<input id="prodNo" type="hidden" name="prodNo" value="1">
+									<input id="prodNo" type="hidden" name="prodNo" value="7">
 									<button type="button" id="rezBtn" class="btn btn-primary btn-block">예매하기</button>
 								</form>
 							
