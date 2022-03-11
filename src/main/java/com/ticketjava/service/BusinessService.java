@@ -40,6 +40,8 @@ public class BusinessService {
 	public void productUpload(MultipartFile[] file, ProductVo productVo, DetailVo detailVo) {
 		System.out.println("BusinessServiece/productUpload()");
 
+		
+		//파일업로드
 		String saveDir = "C:\\javaStudy\\upload";
 
 		// MultipartFile[] file
@@ -81,13 +83,16 @@ public class BusinessService {
 				e.printStackTrace();
 			}
 
+
+
+			System.out.println("파일 이름: " + file[i].getOriginalFilename());
+			
 			// db 저장
 			pd.productUpload(productVo);
 			td.detailUpload(detailVo);
-
-			System.out.println("파일 이름: " + file[i].getOriginalFilename());
-
 		}
+		
+
 
 	}
 	// 공연 목록 수정 public void bmModify(ProductVo vo) { pd.bmModify(vo); }

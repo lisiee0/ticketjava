@@ -296,7 +296,7 @@
 							<div class="form-group">
 								<label class="form-text col-md-2 form-id" for="">예매/취소 안내</label>
 								<div class="col-md-8">
-									<textarea id="" name="" class="form-control textWay" name="cancelInfo" value="" placeholder="내용을 입력해주세요"></textarea>
+									<textarea id="" name="" class="form-control textWay" name="cancelInfo" placeholder="내용을 입력해주세요"></textarea>
 								</div>
 							</div>
 
