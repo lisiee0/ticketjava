@@ -21,7 +21,7 @@
 	</select>
 
 	<!-- product 테이벌 파일 추가 -->
-	<select id="productUpload" resultType="productVo">
+	<insert id="productUpload" parameterType="productVo">
 		<![CDATA[
 			insert into 	product 
 			VALUES 		(seq_prod_no.nextval,
@@ -42,7 +42,7 @@
 						#{posterPath}
 						)	
 		]]>
-	</select>
+	</insert>
 
 
 

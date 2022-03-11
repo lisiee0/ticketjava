@@ -3,7 +3,7 @@
 <mapper namespace="detail">
 
 	<!-- detail테이블 파일 추가 -->
-	<select id="detailUpload" resultType="detailVo">
+	<insert id="detailUpload" parameterType="detailVo">
 		<![CDATA[
 			insert into 	detail 
 			VALUES 		(seq_detail_no.nextval, 
@@ -14,7 +14,7 @@
 						)
 
 		]]>
-	</select>
+	</insert>
 
 
 
