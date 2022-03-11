@@ -173,7 +173,7 @@
 		$.ajax({
 			url: "${pageContext.request.contextPath}/discount/discountList",
 			type : "post",
-			data : {prodNo:1},
+			data : {prodNo:${param.prodNo}},
 			dataType: "json",
 			async:false,
 			success : function(result){
