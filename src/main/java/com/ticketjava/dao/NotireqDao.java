@@ -17,7 +17,11 @@ public class NotireqDao {
 		
 	}
 
-	public int selectReqCount(NotireqVo notireqVo) {
-		return sqlSession.selectOne("selectReqCount", notireqVo);
+	public NotireqVo selectReq(NotireqVo notireqVo) {
+		return sqlSession.selectOne("notireq.selectReq", notireqVo);
+	}
+
+	public int deleteReq(NotireqVo notireqVo) {
+		return sqlSession.delete("notireq.deleteReq", notireqVo);
 	}
 }

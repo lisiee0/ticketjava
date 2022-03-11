@@ -2,22 +2,22 @@
 
 #side {  display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 0.2fr 1.0fr 0.5fr 0.5fr  0.3fr;
+  grid-template-rows: 1.1fr 0.4fr 0.4fr 0.6fr  0.3fr;
   gap: 0px 0px;
   grid-auto-flow: row;
   grid-template-areas:
-    "tabOption"
     "section"
     "interval"
     "count"
+    "myReq"
     "button";
   grid-area: side;
 }
 
-#tabOption { grid-area: tabOption; }
 #section { grid-area: section; }
 #interval { grid-area: interval; }
 #count { grid-area: count; }
+#myReq { grid-area: myReq; }
 #button { grid-area: button; }
 
 #containerBody #menubar ul li{
@@ -49,7 +49,7 @@
 	
 }
 #containerBody #section #sectionBtn{
-	height:175px;
+	height:185px;
 	overflow:auto;
 	text-align:center;
 }
@@ -77,6 +77,14 @@
 	width:95%;
 	margin:5px 0px 5px 0px;
 }
+
+
+
+#containerBody #side #myReq{
+	border-top:1px solid #ccc;
+	padding-top:12px;
+}
+
 
 #containerBody #button{
 	margin:5px;

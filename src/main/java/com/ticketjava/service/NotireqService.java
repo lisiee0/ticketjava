@@ -15,7 +15,7 @@ public class NotireqService {
 	@Autowired
 	private NotireqDao notireqDao;
 
-	public void addNotireq(NotireqVo notireqVo, HttpSession session) {
+	public String addNotireq(NotireqVo notireqVo, HttpSession session) {
 		
 		UserVo authUser = (UserVo)session.getAttribute("authUser");
 		int userNo;
@@ -29,10 +29,56 @@ public class NotireqService {
 		
 		notireqVo.setUserNo(userNo);
 		
-		int count = notireqDao.selectReqCount(notireqVo);
+		NotireqVo selectVo =  notireqDao.selectReq(notireqVo);
 		
-		if(count<1)
+		if(selectVo != null) {
+			return "fail";
+		}
+		else {
 			notireqDao.insertNotireq(notireqVo);
+			return "success";
+		}
+		
+	}
+
+	public NotireqVo myNotireq(NotireqVo notireqVo,HttpSession session) {
+		
+		UserVo authUser = (UserVo)session.getAttribute("authUser");
+		int userNo;
+		
+		if(authUser != null) {
+			userNo = authUser.getUserNo();
+		}
+		else {
+			userNo = 1;
+		}
+		notireqVo.setUserNo(userNo);
+		
+		NotireqVo selectVo = notireqDao.selectReq(notireqVo);
+		if( selectVo == null) {
+			selectVo = new NotireqVo();
+		}
+		
+		return selectVo;
+	}
+
+	public String reqDel(NotireqVo notireqVo, HttpSession session) {
+		UserVo authUser = (UserVo)session.getAttribute("authUser");
+		int userNo;
+		
+		if(authUser != null) {
+			userNo = authUser.getUserNo();
+		}
+		else {
+			userNo = 1;
+		}
+		notireqVo.setUserNo(userNo);
+		
+		int count = notireqDao.deleteReq(notireqVo);
+		if(count>0)
+			return "success";
+		else
+			return "fail";
 	}
 	
 }

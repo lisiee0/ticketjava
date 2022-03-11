@@ -22,7 +22,7 @@
 	<div id="containerBody">
 		
 		<div id="header">
-			<h1><a href="">예매페이지로 이동</a></h1>
+			<h1><a href="${pageContext.request.contextPath}/reservation/selectSeat?prodNo=${param.prodNo}&viewDate=${viewDate}">예매페이지로 이동</a></h1>
 		</div>
 		
 		<div id="menubar">
@@ -62,12 +62,12 @@
 		</div>
 		
 		<div id="side">
-			<div id="tabOption">
+			<!-- <div id="tabOption">
 				<ul class="nav nav-tabs">
 					<li class="nav item"><button class="btn-primary">알림 신청</button></li>
 					<li class="nav item"><button class="btn-outline-primary">나의 신청</button></li>
 				</ul>
-			</div>
+			</div> -->
 				
 			<div id="section"> 
 				
@@ -96,6 +96,11 @@
 				</select>
 			</div>
 			
+			<div id="myReq">
+				<h2>나의 신청</h2>
+				<p id="myReqText"></p> 
+			</div>
+			
 			<div id="button">
 				<form id="notiReqForm" action="${pageContext.request.contextPath}/notification/addNotireq" method="post">
 					<button id="notiReqBtn" type="button" class="btn-primary">알림 신청</button>
@@ -112,6 +117,8 @@
 </body>
 
 <script type="text/javascript">
+	var viewDate = '${param.viewDate}';
+	var prodNo = '${param.prodNo}';
 	$(document).ready(function(){
 		$("#side #count select").append('<option value="1000000">계속</option>');
 		for(var i=1; i<=10 ; i++){
@@ -124,8 +131,7 @@
 		});
 		
 		
-		var viewDate = '${param.viewDate}';
-		var prodNo = '${param.prodNo}';
+		
 		var rezVo = {
 				viewDate: viewDate ,
 				prodNo: prodNo
@@ -170,6 +176,43 @@
 			
 		}
 		
+		var notireqVo = {
+			prodNo : prodNo,
+			viewDate : viewDate
+		};
+		
+		$.ajax({
+			url: "${pageContext.request.contextPath}/notification/myNotireq",
+			type : "post",
+			data : notireqVo,
+			dataType: "json",
+			success : function(notireqVo){
+				console.log(notireqVo);
+				var selSection = notireqVo.selSection;
+				
+				if(selSection == null) {
+					return false;
+				}
+				
+				var interval = notireqVo.interval;
+				if(interval == 0)
+					interval = '간격 없음';
+				else
+					interval += '초';
+				var notiTimes = notireqVo.notiTimes;
+				if(notiTimes == 1000000)
+					notiTimes = '계속';
+				else
+					notiTimes += '회';
+				
+				
+				$('#myReqText').html(selSection+'구역 / '+interval+ ' / '+notiTimes+ '<span id="reqDel" class="glyphicon glyphicon-remove" aria-hidden="true" data-reqno="'+notireqVo.reqNo+'"></span>'  );
+			},
+			error : function(XHR, status, error) {
+				console.error(status + " : " + error);
+			}
+		});
+		
 	});
 	
 	$('#notiReqBtn').on('click',function(){
@@ -180,18 +223,69 @@
 			return false;
 		}
 		
-		$('#notiReqForm').append('<input type="hidden" name="selSection" value="'+selSection+'">');
-		
 		var interval = $('#interval select').val();
-		$('#notiReqForm').append('<input type="hidden" name="interval" value="'+interval+'">');
-		
 		var notiTimes = $('#count select').val();
-		$('#notiReqForm').append('<input type="hidden" name="notiTimes" value="'+notiTimes+'">');
 		
-		$('#notiReqForm').submit();
+		var notireqVo = {
+				prodNo:prodNo,
+				viewDate:viewDate,
+				selSection:selSection,
+				interval:interval,
+				notiTimes:notiTimes
+		}
+		
+		console.log(notireqVo);
+		$.ajax({
+			url: "${pageContext.request.contextPath}/notification/addNotireq",
+			type : "post",
+			data : notireqVo,
+			dataType: "json",
+			success : function(result){
+				if(result == 'fail')
+					alert('신청이 존재합니다');
+				else{
+					if(interval == 0)
+						interval = '간격 없음';
+					else
+						interval += '초';
+					if(notiTimes == 1000000)
+						notiTimes = '계속';
+					else
+						notiTimes += '회';
+					alert('신청됐습니다');
+					$('#myReqText').html(selSection+'구역 / '+interval+ ' / '+notiTimes+ '<span id="reqDel" class="glyphicon glyphicon-remove" aria-hidden="true"></span>'  );
+				}
+			},
+			error : function(XHR, status, error) {
+				console.error(status + " : " + error);
+			}
+		});
+		
 	});
+
+	$('#myReq').on('click','#reqDel',function(){
+		var notireqVo = {
+				prodNo:prodNo,
+				viewDate:viewDate
+		}
 		
+		$.ajax({
+			url: "${pageContext.request.contextPath}/notification/reqDel",
+			type : "post",
+			data : notireqVo,
+			dataType: "json",
+			success : function(result){
+				if(result == "success"){
+					alert('취소됐습니다');
+					$('#myReqText').html('');
+				}
+			},
+			error : function(XHR, status, error) {
+				console.error(status + " : " + error);
+			}
+		});
 		
+	});
 	
 	
 </script>

@@ -8,6 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.ticketjava.service.NotireqService;
 import com.ticketjava.service.ReservationService;
@@ -29,14 +30,30 @@ public class NotireqController {
 							   Model model) {
 		RezProdInfoVo rezProdInfo = reservationService.rezProdInfo(prodNo);
 		model.addAttribute("rezProdInfo", rezProdInfo);
+		
 		return "reservation/notireqForm";
 	}
+	
+	@ResponseBody
+	@RequestMapping("/myNotireq")
+	public NotireqVo myNotireq (@ModelAttribute NotireqVo notireqVo, HttpSession session) {
+		return notireqService.myNotireq(notireqVo, session);
+	}
+	
+	@ResponseBody
 	@RequestMapping("/addNotireq")
 	public String addNotireq(@ModelAttribute NotireqVo notireqVo, HttpSession session) {
 		System.out.println(notireqVo);
-		notireqService.addNotireq(notireqVo, session);
-		return "redirect:/mypage/reserveAlram";
+		return notireqService.addNotireq(notireqVo, session);
 	}
+	
+	@ResponseBody
+	@RequestMapping("/reqDel")
+	public String reqDel(@ModelAttribute NotireqVo notireqVo, HttpSession session) {
+		System.out.println(notireqVo);
+		return notireqService.reqDel(notireqVo, session);
+	}
+	
 	
 	
 	@RequestMapping("/myReq")

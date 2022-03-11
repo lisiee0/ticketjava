@@ -292,14 +292,12 @@
 			date= "0"+date;
 		}
 		
-		/* $("#rezArea").append('<input type="hidden" name="viewDate" value="'+year+'-'+month+'-'+date+'">'); */
-	
 		var viewDate = year+'-'+month+'-'+date;
 		var prodNo = $('#prodNo').val();
 
 		console.log(viewDate+' '+prodNo);
 		
-		window.open('${pageContext.request.contextPath}/reservation/selectSeat?prodNo='+prodNo+'&viewDate='+viewDate, 'reserve', 'width=1100, height=800, left=300, top=100');
+		window.open('${pageContext.request.contextPath}/reservation/selectSeat?prodNo='+prodNo+'&viewDate='+viewDate, 'reserve', 'width=960, height=800, left=300, top=100');
 	});
 	
 	

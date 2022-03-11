@@ -2,11 +2,14 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="notireq">
 		
-		<select id="selectReqCount" parameterType="NotireqVo" resultType="int">
+		<select id="selectReq" parameterType="NotireqVo" resultType="NotireqVo">
 			<![CDATA[
-				select count(*)
+				select req_no reqNo,
+					   selSection,
+					   interval,
+					   notiTimes
 				from notireq
-				where prod_no = #{prodNo} and user_no = #{userNo}
+				where prod_no = #{prodNo} and user_no = #{userNo} and viewDate = #{viewDate}
 			]]>		
 		</select>
 		
@@ -26,6 +29,12 @@
 			]]>				
 		</insert>
 		
+		<delete id="deleteReq" parameterType="NotireqVo">
+			<![CDATA[
+				delete from notireq
+				where prod_no = #{prodNo} and user_no = #{userNo} and viewDate = #{viewDate}
+			]]>			
+		</delete>
 		
 </mapper>
 
