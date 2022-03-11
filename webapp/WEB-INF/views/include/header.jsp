@@ -19,21 +19,35 @@
 					<div class="col-xs-3 zp">
 						<div id="header" class="clearfix no-drag no-ghost">
 							<ul>
-								<c:choose>
-								<c:when test="${authUser eq null}">
-								<li><a href="${pageContext.request.contextPath}/mypage/reserveList"><img src="${pageContext.request.contextPath}/assets/image/index/bell-normal.png"></a></li>	
-								</c:when>
-								
-								<c:otherwise>
+								<li><a href="${pageContext.request.contextPath}/mypage/reserveList"><img src="${pageContext.request.contextPath}/assets/image/index/bell-normal.png"></a></li>
 								<li><a href="${pageContext.request.contextPath}/mypage/reserveList"><img src="${pageContext.request.contextPath}/assets/image/index/bell-new.png"></a></li>
-								</c:otherwise>
+								<c:choose>
+									<c:when test="${authUser eq null}">
+										<li><a href="${pageContext.request.contextPath}/user/loginForm">로그인</a></li>
+										<li><a href="${pageContext.request.contextPath}/user/joinForm">회원가입</a></li>
+									</c:when>
+									
+									<c:when test="${authUser.usertype == 1}"> <!-- 개인 -->
+										<li><a href="${pageContext.request.contextPath}/user/loginForm">${authUser.name}님</a></li>
+										<li><a href="${pageContext.request.contextPath}/user/logout">로그아웃</a></li>
+									</c:when>
+									
+									<c:when test="${authUser.usertype == 2}"> <!-- 사업자  -->
+										<li><a href="${pageContext.request.contextPath}/bm/">${authUser.name}님</a></li>
+										<li><a href="${pageContext.request.contextPath}/user/logout">로그아웃</a></li>
+									</c:when>
+									
+									<c:otherwise> <!-- 사이트 관리자 -->
+										<li><a href="${pageContext.request.contextPath}/admin/">${authUser.name}님</a></li>
+										<li><a href="${pageContext.request.contextPath}/user/logout">로그아웃</a></li>
+									</c:otherwise>
+									
 								</c:choose>
 								
-								<li><a href="${pageContext.request.contextPath}/user/loginForm">로그인</a></li>
-								<li><a href="${pageContext.request.contextPath}/user/joinForm">회원가입</a></li>
+								
 								<!-- 개발용 임시 메뉴 bm 사업자 adm 관리자 -->
-								<li><a href="${pageContext.request.contextPath}/bm/">bm</a></li>
-								<li><a href="${pageContext.request.contextPath}/admin/">adm</a></li>
+								<%-- <li><a href="${pageContext.request.contextPath}/bm/">bm</a></li>
+								<li><a href="${pageContext.request.contextPath}/admin/">adm</a></li> --%>
 							</ul>
 						</div>
 					</div>
