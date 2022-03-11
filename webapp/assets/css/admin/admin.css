@@ -30,6 +30,11 @@
 	padding: 10px 0px;
 }
 
+.listTable {
+	table-layout: fixed;
+}
+
+
 .listTable, .listTable thead>tr>th {
 	text-align: center;
 }
@@ -81,4 +86,10 @@
 
 #tList tr>td {
 	vertical-align: middle;
+}
+
+#space {
+	overflow:hidden;
+	white-space : nowrap;
+	text-overflow: ellipsis;
 }

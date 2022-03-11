@@ -114,15 +114,17 @@
 													<td class="nav-item">예매중</td>
 												</tr>
 												
+											<c:forEach items="${requestScope.reserveDetail}" var="reserveDetail">									
 												<tr>
 													<td><input type="checkbox" />
-													<td class="nav-item">r석</td>
+													<td class="nav-item">${grade}</td>
 													<td class="nav-item">재관람할인</td>
 													<td class="nav-item">1층A블럭 12열5번</td>
 													<td class="nav-item">175,000원</td>
 													<td class="nav-item">취소됨</td>
 												</tr>
-												
+											</c:forEach>	
+											
 											</tbody>
 										</table>
 										<div class="btncancel">

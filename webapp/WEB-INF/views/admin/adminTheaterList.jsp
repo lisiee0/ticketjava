@@ -57,6 +57,14 @@
 						<!-- content body -->
 						<div id="list">
 							<table class="table listTable table-hover">
+							<colgroup>
+								<col width="13%">
+								<col width="13%">
+								<col width="33%">
+								<col width="13%">
+								<col width="13%">
+								<col width="15%">
+							</colgroup>
 								<thead>
 									<tr class="info">
 										<th>공연장명</th>
@@ -74,7 +82,7 @@
 											<td>${vo.hallName}</td>
 											<td class="text-center">${vo.address}<br>${vo.address2}</td>
 											<td>${vo.phone}</td>
-											<td>${vo.homePage}</td>
+											<td id="space">${vo.homePage}</td>
 											<td>
 												<a href="${pageContext.request.contextPath}/admin/theaterModifyForm?hallNo=${vo.hallNo}"><span class="glyphicon glyphicon-pencil">수정</span></a>&nbsp;&nbsp;
 												<a href="${pageContext.request.contextPath}/admin/theaterDelete?hallNo=${vo.hallNo}"><span class="glyphicon glyphicon-trash">삭제</span></a>

@@ -11,25 +11,25 @@
 	<select id="reserveList" resultType="ReservationVo" parameterType="ReservationVo">
 	<![CDATA[
 
-select	
+select
         u.user_no userNo,
         r.rez_no rezNo, 
-		to_char(r.rezdate, 'yy-mm-dd hh24:mi') rezDate,
-		r.prod_no prodNo,
-		p.prodname prodName,
-		to_char(r.viewdate, 'yy-mm-dd hh24:mi') viewDate,
-		r.ticketCount ticketCount,
-		r.status status
-		from (select r.rez_no,
-		               r.rezdate,
-		               r.viewdate,
-		               r.status,
-		               r.prod_no,
-		               count(s.selseat_no) ticketCount
-		        from reserve r, selseat s
-		        where r.rez_no = s.rez_no
-		        group by r.rez_no, r.rezdate, r.viewdate, r.status, r.prod_no) r, product p, users u
-where u.user_no = 4	
+        to_char(r.rezdate, 'yy-mm-dd hh24:mi') rezDate,
+        r.prod_no prodNo,
+        p.prodname prodName,
+        to_char(r.viewdate, 'yy-mm-dd hh24:mi') viewDate,
+        r.ticketCount ticketCount,
+        r.status status
+        from (select r.rez_no,
+                       r.rezdate,
+                       r.viewdate,
+                       r.status,
+                       r.prod_no,
+                       count(s.selseat_no) ticketCount
+                from reserve r, selseat s
+                where r.rez_no = s.rez_no
+                group by r.rez_no, r.rezdate, r.viewdate, r.status, r.prod_no) r, product p, users u
+where u.user_no = 6 
 
 	]]>
 	</select>
@@ -61,8 +61,8 @@ select  DISTINCT
         
 from	reserve r, selseat s, users u, product p, theater th, hall h
 where	r.rez_no = s.rez_no 
-and		u.user_no = 4 
-and		p.prod_no = 22
+and		u.user_no = 6
+and		p.prod_no = 5
 ]]>
 	</select>
 

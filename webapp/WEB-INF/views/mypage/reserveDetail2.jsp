@@ -114,7 +114,7 @@
 													<td class="nav-item">예매중</td>
 												</tr>
 												
-												<c:forEach items="${requestScope.reserveList}" var="reserveList">
+												<c:forEach items="${requestScope.reserveDetail}" var="reserveDetail">
 												<tr>
 													<td><input type="checkbox" />
 													<td class="nav-item">r석</td>
