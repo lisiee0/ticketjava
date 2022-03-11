@@ -74,44 +74,18 @@
 				<h2>구역 선택</h2>
 				<div id="sectionBtn" data-toggle="buttons">
 					
-					<!-- <label class="btn btn-primary">
-						<input type="radio" name="section" autocomplete="off"> A
-					</label>
-					<label class="btn btn-primary">
-						<input type="radio" name="section" autocomplete="off"> B
-					</label>
-					<label class="btn btn-primary">
-						<input type="radio" name="section" autocomplete="off"> C
-					</label>
-					<label class="btn btn-primary">
-						<input type="radio" name="section" autocomplete="off"> D
-					</label>
-					<label class="btn btn-primary">
-						<input type="radio" name="section" autocomplete="off"> E
-					</label>
-					<label class="btn btn-primary">
-						<input type="radio" name="section" autocomplete="off"> F
-					</label>
-					<label class="btn btn-primary">
-						<input type="radio" name="section" autocomplete="off"> G
-					</label>
-					<label class="btn btn-primary">
-						<input type="radio" name="section" autocomplete="off"> H
-					</label> -->
-					
 				</div>
 			</div>
 			
 			<div id="interval">
 				<h2>알림 간격</h2>
 				<select class="form-control">
-					<option>10초</option>
-					<option>1분</option>
-					<option>5분</option>
-					<option>10분</option>
-					<option>30분</option>
-					<option>60분</option>
-					<option>간격 없음</option>
+					<option value="0">간격 없음</option>
+					<option value="10">10초</option>
+					<option value="60">1분</option>
+					<option value="300">5분</option>
+					<option value="600">10분</option>
+					<option value="3600">60분</option>
 				</select>
 			</div>
 			
@@ -123,7 +97,12 @@
 			</div>
 			
 			<div id="button">
-				<button class="btn-primary">알림 신청</button>
+				<form id="notiReqForm" action="${pageContext.request.contextPath}/notification/addNotireq" method="post">
+					<button id="notiReqBtn" type="button" class="btn-primary">알림 신청</button>
+					<input type="hidden" name="prodNo" value="${param.prodNo}">
+					<input type="hidden" name="viewDate" value="${param.viewDate}">
+					
+				</form>
 			</div>
 		</div>
 		
@@ -134,9 +113,9 @@
 
 <script type="text/javascript">
 	$(document).ready(function(){
-		$("#side #count select").append('<option>계속</option>');
+		$("#side #count select").append('<option value="1000000">계속</option>');
 		for(var i=1; i<=10 ; i++){
-			$("#side #count select").append('<option>'+i+'</option>');
+			$("#side #count select").append('<option value="'+i+'">'+i+'</option>');
 		}
 		
 		
@@ -189,17 +168,30 @@
 			else
 				$('#sectionBtn').append('<label class="btn btn-primary"><input type="radio" name="section" autocomplete="off">'+ section +'</label>');
 			
-			
 		}
-		
 		
 	});
 	
-	$('#sectionBtn').on('click','label', function(){
-		if(this.is(':disabled')){
+	$('#notiReqBtn').on('click',function(){
+		var selSection = $('label.active').text();
+		
+		if(selSection == ''){
+			alert('구역을 선택해주세요');
 			return false;
 		}
+		
+		$('#notiReqForm').append('<input type="hidden" name="selSection" value="'+selSection+'">');
+		
+		var interval = $('#interval select').val();
+		$('#notiReqForm').append('<input type="hidden" name="interval" value="'+interval+'">');
+		
+		var notiTimes = $('#count select').val();
+		$('#notiReqForm').append('<input type="hidden" name="notiTimes" value="'+notiTimes+'">');
+		
+		$('#notiReqForm').submit();
 	});
+		
+		
 	
 	
 </script>

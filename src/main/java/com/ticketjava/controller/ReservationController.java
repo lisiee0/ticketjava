@@ -102,19 +102,4 @@ public class ReservationController {
 	}
 	
 	
-	@RequestMapping("/notification")
-	public String notification(@RequestParam("prodNo") int prodNo,
-							   Model model) {
-		RezProdInfoVo rezProdInfo = reservationService.rezProdInfo(prodNo);
-		model.addAttribute("rezProdInfo", rezProdInfo);
-		return "reservation/notification";
-	}
-	
-	@RequestMapping("/myNoti")
-	public String myNoti(@RequestParam("prodNo") int prodNo,
-			   			 Model model) {
-		RezProdInfoVo rezProdInfo = reservationService.rezProdInfo(prodNo);
-		model.addAttribute("rezProdInfo", rezProdInfo);
-		return "reservation/myNoti";
-	}
 }

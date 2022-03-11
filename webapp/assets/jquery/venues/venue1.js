@@ -71,7 +71,7 @@ $(document).ready(function(){
 	for(var section = 0; section < seatMap.length; section++ ){
 		
 		var sectionCh = String.fromCharCode(section+65);
-		$("#seatPlanDiv").append('<table id="seatArea'+sectionCh+'"> <tr> <th class="center" colspan="100%">'+ sectionCh +' </tr></thead> </table>');
+		$("#seatPlanDiv").append('<table id="seatArea'+sectionCh+'"> <tr> <th class="center" colspan="100%">'+ sectionCh +'</tr></thead> </table>');
 	
 		
 		for(var col=0; col<seatMap[section].length; col++) {

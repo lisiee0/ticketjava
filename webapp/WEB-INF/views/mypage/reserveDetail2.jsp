@@ -114,6 +114,7 @@
 													<td class="nav-item">예매중</td>
 												</tr>
 												
+												<c:forEach items="${requestScope.reserveList}" var="reserveList">
 												<tr>
 													<td><input type="checkbox" />
 													<td class="nav-item">r석</td>
@@ -122,6 +123,7 @@
 													<td class="nav-item">175,000원</td>
 													<td class="nav-item">취소됨</td>
 												</tr>
+												</c:forEach>
 												
 											</tbody>
 										</table>
