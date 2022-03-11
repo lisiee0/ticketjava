@@ -19,16 +19,18 @@
 					<div class="col-xs-3 zp">
 						<div id="header" class="clearfix no-drag no-ghost">
 							<ul>
-								<li><a href="${pageContext.request.contextPath}/mypage/reserveList"><img src="${pageContext.request.contextPath}/assets/image/index/bell-normal.png"></a></li>
-								<li><a href="${pageContext.request.contextPath}/mypage/reserveList"><img src="${pageContext.request.contextPath}/assets/image/index/bell-new.png"></a></li>
+								
 								<c:choose>
 									<c:when test="${authUser eq null}">
+										
 										<li><a href="${pageContext.request.contextPath}/user/loginForm">로그인</a></li>
 										<li><a href="${pageContext.request.contextPath}/user/joinForm">회원가입</a></li>
 									</c:when>
 									
 									<c:when test="${authUser.usertype == 1}"> <!-- 개인 -->
-										<li><a href="${pageContext.request.contextPath}/user/loginForm">${authUser.name}님</a></li>
+										<li><a href="${pageContext.request.contextPath}/mypage/reserveAlram"><img src="${pageContext.request.contextPath}/assets/image/index/bell-normal.png"></a></li>
+										<li><a href="${pageContext.request.contextPath}/mypage/reserveAlram"><img src="${pageContext.request.contextPath}/assets/image/index/bell-new.png"></a></li>
+										<li><a href="${pageContext.request.contextPath}/mypage/reserveList">${authUser.name}님</a></li>
 										<li><a href="${pageContext.request.contextPath}/user/logout">로그아웃</a></li>
 									</c:when>
 									
