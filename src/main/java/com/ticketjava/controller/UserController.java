@@ -34,6 +34,13 @@ public class UserController {
 		return "redirect:/";
 	}
 	
+	@RequestMapping("/logout")
+	public String logout(HttpSession session) {
+		session.removeAttribute("authUser");
+		return "redirect:/";
+	}
+	
+	
 	
 	@RequestMapping("/joinForm")
 	public String joinForm() {
