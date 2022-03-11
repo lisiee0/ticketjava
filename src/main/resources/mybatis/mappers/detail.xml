@@ -3,16 +3,10 @@
 <mapper namespace="detail">
 
 	<!-- detail테이블 파일 추가 -->
-	<insert id="detailUpload" parameterType="detailVo">
+	<insert id="detailUpload" parameterType="DetailVo">
 		<![CDATA[
-			insert into 	detail 
-			VALUES 		(seq_detail_no.nextval, 
-						#{prodNo}, 
-						#{prodPath},
-						#{castingPath}, 
-						#{addedPath}'
-						)
-
+			insert into detail	(DETAIL_NO, prodpath, castingpath, addedpath) 
+			values			(seq_detail_no.nextval, #{prodPath}, #{castingPath}, #{addedPath})
 		]]>
 	</insert>
 

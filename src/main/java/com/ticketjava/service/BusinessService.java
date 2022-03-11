@@ -44,7 +44,7 @@ public class BusinessService {
 
 		// MultipartFile[] file
 		for (int i = 0; i < file.length; i++) {
-			System.out.println(i+"번째 파일");
+			System.out.println(i + "번째 파일");
 
 			// 파일관련 정보 추출
 
@@ -61,15 +61,13 @@ public class BusinessService {
 			String filePath = saveDir + "\\" + saveName;
 
 			// 파일 변수 가져오기
-			//DetailVo
+			// ProductVo
+			productVo.setPosterPath(filePath);
+
+			// DetailVo
 			detailVo.setAddedPath(filePath);
 			detailVo.setCastingPath(filePath);
 			detailVo.setProdPath(filePath);
-			td.detailUpload(detailVo);
-
-			//ProductVo
-			productVo.setPosterPath(filePath);
-			pd.productUpload(productVo);
 
 			// 파일 저장
 			try {
@@ -84,11 +82,10 @@ public class BusinessService {
 			}
 
 			// db 저장
+			pd.productUpload(productVo);
+			td.detailUpload(detailVo);
 
-//			pd.productUpload(pvo);
-//			td.detailUpload(dvo);
-
-			System.out.println("파일 이름: "+file[i].getOriginalFilename());
+			System.out.println("파일 이름: " + file[i].getOriginalFilename());
 
 		}
 

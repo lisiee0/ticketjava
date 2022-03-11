@@ -81,6 +81,7 @@
 						<form action="${pageContext.request.contextPath}/bm/bmUpload" method="post" class="form-horizontal" enctype="multipart/form-data">
 
 
+
 							<!-- 공연 포스터 -->
 							<div class="form-group">
 								<label class="form-text col-md-2 form-id" for="">공연 포스터</label>

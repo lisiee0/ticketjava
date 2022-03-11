@@ -78,7 +78,7 @@
 
 					<div id="board">
 
-						<form action="${pageContext.request.contextPath}/bm/bmInquiry	" method="post" class="form-horizontal">
+						<form action="${pageContext.request.contextPath}/bm/bmUpload	" method="post" class="form-horizontal">
 
 							<!-- 공연장명 -->
 							<div class="form-group">
