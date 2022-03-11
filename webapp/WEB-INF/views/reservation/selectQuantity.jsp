@@ -159,7 +159,7 @@
 		$.ajax({
 			url: "${pageContext.request.contextPath}/seatprice/seatpriceList",
 			type : "post",
-			data : {prodNo:1},
+			data : {prodNo: ${param.prodNo}},
 			dataType: "json",
 			async:false, /* 변수를 꺼내기 위한 설정 */
 			success : function(result){
