@@ -107,7 +107,7 @@
 										<c:forEach items="${bmList}" var="vo">
 											<tr>
 												<td>${vo.prodNo}</td>
-												<td class=""><a href="${pageContext.request.contextPath}/product/info" name="prodName">${vo.prodName}</a></td>
+												<td class=""><a href="${pageContext.request.contextPath}/product/info?prodNo=7" name="prodName">${vo.prodName}</a></td>
 												<td><a href="#" name="theaterName">${vo.theaterName}</a></td>
 												<td>${vo.beginShow} ~ ${vo.endShow}</td>
 												<td><input type="checkbox"> <a href="#">확인</a></td>
