@@ -381,25 +381,26 @@
     line-height: 1;
 }
 
-
+/* 카운터 텍스트 - 지금까지 티켓자바를 만난 사람들 */
 .counter-item h3 {
     margin: 0;
-    font-size: 30px;
-    color: #0960d7;
+    font-size: 34px;
+    color: #ffffff ;
 	font-family: 'Noto Sans KR', sans-serif;
 }
 
+/* 카운터 텍스트 - 티켓자바로 본 작품의 누적 시간 */
 .counter-item h4 {
     margin: 0;
-    font-size: 40px;
-    color: #0960d7;
+    font-size: 45px;
+    color: #ffffff;
 	font-family: 'Noto Sans KR', sans-serif;
 }
 
 .counter-item  p {
 	margin: 0px auto;
 	padding: 0px auto;
-	font-size:40px;
+	font-size:70px;
 	font-family: 'Noto Sans KR', sans-serif;
 }
 
