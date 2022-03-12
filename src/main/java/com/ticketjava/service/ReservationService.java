@@ -124,14 +124,18 @@ public class ReservationService {
 	
 	
 //	마이페이지 예매 상세
-//	public Map<String, Object> getReserveDetail (int rezNo, int userNo) {
-//		System.out.println("ReservationService getReserveDetail");
+	public Map<String, Object> getReserveDetail (int rezNo, int userNo) {
+		System.out.println("ReservationService getReserveDetail");
 		
-//		map.put("reserveDetail", mypageDao.reserveDetail);
-//		map.put("reserveSeatList", mypageDao.reserveSeatList);
+		ReserveDetailVo reserveDetail = reservationDao.getReserveDetail(rezNo, userNo);
+		List<ReserveDetailVo> reserveSeatList = reservationDao.getReserveSeatList(rezNo);
 		
-//		return reservationDao.getReserveDetail();
-//	}
+		Map<String, Object> rMap = new HashMap<String, Object>();
+		rMap.put("reserveDetail", reserveDetail);
+		rMap.put("reserveSeatList", reserveSeatList);
+		
+		return rMap;
+	}
 	
 	
 	

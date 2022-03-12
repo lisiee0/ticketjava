@@ -93,7 +93,7 @@
 									<form action="requestCancelTicket" name="cancelticket" method="get">
 										<table>
 											<tbody>
-												
+
 												<tr>
 													<th scope="col"><input type="checkbox" disabled></th>
 													<th scope="col">좌석등급</th>
@@ -103,28 +103,29 @@
 													<th scope="col">가격</th>
 													<th scope="col">예매상태</th>
 												</tr>
+
+												<tr>
+													<td><input type="checkbox" />
+													<td class="nav-item">S석</td>
+													<td class="nav-item">재관람할인</td>
+													<td class="nav-item">B섹션</td>
+													<td class="nav-item">1층A블럭 12열5번</td>
+													<td class="nav-item">175,000원</td>
+													<td class="nav-item">취소됨</td>
+												</tr>
+
+												<c:forEach items="${requestScope.rMap.reserveSeatList}" var="reserveSeatList">
+													<tr>
+														<td><input type="checkbox" />
+														<td class="nav-item">S석</td>
+														<td class="nav-item">재관람할인</td>
+														<td class="nav-item">B섹션</td>
+														<td class="nav-item">1층A블럭 12열5번</td>
+														<td class="nav-item">175,000원</td>
+														<td class="nav-item">취소됨</td>
+													</tr>
+												</c:forEach>
 												
-												<tr>
-													<td><input type="checkbox" />
-													<td class="nav-item">S석</td>
-													<td class="nav-item">재관람할인</td>
-													<td class="nav-item">B섹션</td>
-													<td class="nav-item">1층A블럭 12열5번</td>
-													<td class="nav-item">175,000원</td>
-													<td class="nav-item">취소됨</td>
-												</tr>
-
-
-												<tr>
-													<td><input type="checkbox" />
-													<td class="nav-item">S석</td>
-													<td class="nav-item">재관람할인</td>
-													<td class="nav-item">B섹션</td>
-													<td class="nav-item">1층A블럭 12열5번</td>
-													<td class="nav-item">175,000원</td>
-													<td class="nav-item">취소됨</td>
-												</tr>
-
 											</tbody>
 
 										</table>

@@ -1,6 +1,7 @@
 package com.ticketjava.controller;
 
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -34,13 +35,13 @@ public class MypageController {
 	
 //	예매 상세페이지
 	@RequestMapping("/reserveDetail")
-	public String reserveDetail(Model model,@RequestParam("rezNo") int rezNo, @RequestParam("userNo") int userNo) {
+	public String reserveDetail(Model model,@RequestParam(value="rezNo") int rezNo, @RequestParam(value="userNo") int userNo) {
 		System.out.println("MypageController reserveDetail 예매 상세페이지");
-        
-//		List<ReserveDetailVo> reserveDetail = mypageService.getReserveDetail();
 		
-//		DS에서 리스트 데이터 공유하는 model
-//		model.addAttribute("reserveDetail",reserveDetail);
+		Map<String, Object> rMap = reservationService.getReserveDetail(rezNo, userNo);
+		
+		model.addAttribute("rMap", rMap);
+		
 //		System.out.println("컨트롤러 reserveDetail "+reserveDetail);
 		return "mypage/reserveDetail";
 	}
