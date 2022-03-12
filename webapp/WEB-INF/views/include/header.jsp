@@ -6,9 +6,6 @@
 <meta charset="UTF-8">
 <title>티켓자바 헤더</title>
 
-<!-- 부트스트랩 Bootstrap core CSS -->
-<link href="${pageContext.request.contextPath}/assets/bootstrap/css/bootstrap.css" rel="stylesheet">
-
 <link href="${pageContext.request.contextPath}/assets/css/ticketjavaCommon.css" rel="stylesheet" type="text/css">
 </head>
 
