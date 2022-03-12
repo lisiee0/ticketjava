@@ -5,8 +5,13 @@
 <head>
 <meta charset="UTF-8">
 <title>티켓자바 헤더</title>
+
+<!-- 부트스트랩 Bootstrap core CSS -->
+<link href="${pageContext.request.contextPath}/assets/bootstrap/css/bootstrap.css" rel="stylesheet">
+
 <link href="${pageContext.request.contextPath}/assets/css/ticketjavaCommon.css" rel="stylesheet" type="text/css">
 </head>
+
 <body>
 
 		<!-- 헤더 header 구역 시작 (로그인 로고 검색창) -->
@@ -40,7 +45,7 @@
 									</c:when>
 									
 									<c:otherwise> <!-- 사이트 관리자 -->
-										<li><a href="${pageContext.request.contextPath}/admin/">${authUser.name}님</a></li>
+										<li><a href="${pageContext.request.contextPath}/admin/"><span class="glyphicon glyphicon-cog"></span>&nbsp;${authUser.name}님</a></li>
 										<li><a href="${pageContext.request.contextPath}/user/logout">로그아웃</a></li>
 									</c:otherwise>
 									
