@@ -406,6 +406,19 @@
 /* 티켓자바 서비스 소개 */
 .ticketjavaAbout {
 	margin:50px 0px 0px 0px;
+}
+
+.ticketjavaAbout div {
+	margin:50px 10px 50px 0px;
+	text-align:center;
+	font-size:15px;
+	font-family: 'Noto Sans KR', sans-serif;
+}
+
+
+/* 티켓자바 파란표 블루티켓 넘버링 디자인 */
+.ticketjavaBlueTicket {
+	margin:50px 0px 0px 0px;
 	overflow:hidden;
     	
 }

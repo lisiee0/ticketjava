@@ -59,8 +59,18 @@
 
 
 
-			<!-- 티켓모양 종이질감 블루 구역 시작 -->
+			<!-- 티켓자바 서비스 소개 -->
 			<section class="container-fluid zp ticketjavaAbout">
+				<div>티켓자바는 어떤 서비스인가요?</div>
+				<div>티켓자바는 뮤지컬, 공연, 콘서트의 취소표를 알려주는 서비스입니다.</div>
+				<div>왜 티켓자바를 써야하나요?</div>
+				<div>지금까지 없었던 기능 언제 뜰지 모르는 취소표를 기다리지 마세요. 원하는 공연 원하는 시간 원하는 자리에 뜨는 취소 알림을 받아보세요.</div>
+			</section>
+
+
+
+			<!-- 티켓모양 종이질감 블루 구역 시작 -->
+			<section class="container-fluid zp ticketjavaBlueTicket">
 
 				<div class="ticketBorderTop zp" style="background-image: URL(assets/image/index/ticket_border_top_blue.png); background-repeat: repeat-x; height: 40px; width: 100%;"></div>
 
