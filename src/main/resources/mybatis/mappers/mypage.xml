@@ -34,6 +34,11 @@ where u.user_no= #{userNo}
 ]]>       
 	</select>
 
+<!-- 
+개발용
+where u.user_no= #{userNo}
+where u.user_no= 1
+ -->
 
 	<!-- 예매정보 상세 -->
 	<select id="reserveDetail" resultType="ReserveDetailVo" parameterType="ReserveDetailVo">
@@ -58,7 +63,7 @@ and     r.rez_no= #{rezNo}
 and     u.user_no= #{userNo}
 ]]>
 	</select>
-
+	
 <!-- 
 개발용
 and     r.rez_no= #{rezNo}
@@ -87,6 +92,11 @@ from	selseat
 where	rez_no = #{rezNo}
 ]]>
 	</select>
-
+	
+<!-- 
+개발용
+where	rez_no = #{rezNo}
+where	rez_no = 1
+ -->
 
 </mapper>

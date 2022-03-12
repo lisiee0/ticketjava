@@ -66,4 +66,100 @@
 		]]>
 	</select>
 	
+	
+	<!-- 마이페이지 예매내역 리스트 -->
+	<select id="reserveList" resultType="ReservationVo" parameterType="ReservationVo">
+	<![CDATA[
+select
+        u.user_no userNo,
+        r.rez_no rezNo, 
+        to_char(r.rezdate, 'yy-mm-dd hh24:mi') rezDate,
+        r.prod_no prodNo,
+        p.prodname prodName,
+        to_char(r.viewdate, 'yy-mm-dd hh24:mi') viewDate,
+        r.ticketCount ticketCount,
+        r.status status
+        
+from (select 
+				r.rez_no,
+				r.rezdate,
+				r.viewdate,
+				r.status,
+				r.prod_no,
+				count(s.selseat_no) ticketCount
+				
+      from		reserve r, selseat s
+      where		r.rez_no = s.rez_no
+      group by	r.rez_no, r.rezdate, r.viewdate, r.status, r.prod_no) r, product p, users u
+where u.user_no= #{userNo}
+]]>       
+	</select>
+
+<!-- 
+개발용
+where u.user_no= #{userNo}
+where u.user_no= 1
+ -->
+	
+	
+	<!-- 예매정보 상세 -->
+	<select id="reserveDetail" resultType="ReserveDetailVo" parameterType="ReserveDetailVo">
+<![CDATA[
+select 
+        u.user_no userNo,
+        p.prod_no prodNo,
+        u.name name,
+        p.prodname prodname, 
+        t.theatername theatername,
+        h.hallname hallname,
+        to_char(r.viewdate, 'yy-mm-dd hh24:mi') viewdate,
+        r.rez_no rezNo,
+        to_char(r.rezdate, 'yy-mm-dd hh24:mi') rezdate
+        
+from	reserve r, users u, product p, theater t, hall h
+where	r.user_no= u.user_no
+and     p.prod_no= r.prod_no
+and     p.hall_no= h.hall_no
+and     t.theater_no= h.theater_no
+and     r.rez_no= #{rezNo}
+and     u.user_no= #{userNo}
+]]>
+	</select>
+	
+<!-- 
+개발용
+and     r.rez_no= #{rezNo}
+and     u.user_no= #{userNo}
+and     r.rez_no= 56
+and     u.user_no= 1
+ -->
+
+
+	<!-- 예매 정보 상세 좌석 -->
+	<select id="reserveSeatList" resultType="ReserveDetailVo" parameterType="ReserveDetailVo">
+<![CDATA[
+select
+        selseat_no,
+        rez_no,
+        dc_no,
+        grade,
+        section,
+        col,
+        num,
+        payment,
+        status,
+        to_char(pretime, 'yy-mm-dd hh24:mi') pretime
+
+from	selseat 
+where	rez_no = #{rezNo}
+]]>
+	</select>
+	
+<!-- 
+개발용
+where	rez_no = #{rezNo}
+where	rez_no = 1
+ -->
+	
+	
 </mapper>

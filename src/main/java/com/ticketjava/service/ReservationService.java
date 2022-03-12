@@ -13,6 +13,7 @@ import org.springframework.stereotype.Service;
 import com.ticketjava.dao.ReservationDao;
 import com.ticketjava.dao.SelseatDao;
 import com.ticketjava.vo.ReservationVo;
+import com.ticketjava.vo.ReserveDetailVo;
 import com.ticketjava.vo.RezProdInfoVo;
 import com.ticketjava.vo.SelseatVo;
 import com.ticketjava.vo.UserVo;
@@ -113,7 +114,25 @@ public class ReservationService {
 	public RezProdInfoVo rezProdInfo(int prodNo) {
 		return reservationDao.selectRezProdInfo(prodNo);
 	}
+
+	
+	//	마이페이지 예매 리스트
+	public List<ReserveDetailVo> getReserveList (int userNo) {
+		System.out.println("ReservationService getReserveList");
+		return reservationDao.getReserveList(userNo);
+	}
+	
+	
+//	마이페이지 예매 상세
+//	public Map<String, Object> getReserveDetail (int rezNo, int userNo) {
+//		System.out.println("ReservationService getReserveDetail");
+		
+//		map.put("reserveDetail", mypageDao.reserveDetail);
+//		map.put("reserveSeatList", mypageDao.reserveSeatList);
+		
+//		return reservationDao.getReserveDetail();
+//	}
 	
 	
 	
-}
+} // The end of ReservationService

@@ -8,7 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.ticketjava.service.MypageService;
+import com.ticketjava.service.ReservationService;
 import com.ticketjava.vo.ReserveDetailVo;
 
 @Controller
@@ -16,17 +16,16 @@ import com.ticketjava.vo.ReserveDetailVo;
 public class MypageController {
 
 	@Autowired
-	private MypageService mypageService;
+	private ReservationService reservationService;
 	
 	
 //	마이페이지 예매내역
 	@RequestMapping("/reserveList")
-	public String reserveList(Model model) {
+	public String reserveList(Model model, @RequestParam(value="userNo") int userNo) {
 		System.out.println("MypageController reserveList 예매내역");
 		
-		List<ReserveDetailVo> reserveList = mypageService.getReserveList();
+		List<ReserveDetailVo> reserveList = reservationService.getReserveList(userNo);
 		
-//		DS에서 리스트 데이터 공유하는 model
 		model.addAttribute("reserveList",reserveList);
 		
 		return "mypage/reserveList";
@@ -76,9 +75,6 @@ public class MypageController {
 		System.out.println("MypageController reserveAndCancel 예매내역 및 취소");
 		return "mypage/reserveAndCancel";
 	}
-	
-	
-
 	
 	
 //	후기 리뷰 관리
