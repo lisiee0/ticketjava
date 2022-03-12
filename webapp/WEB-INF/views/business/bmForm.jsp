@@ -80,16 +80,16 @@
 
 						<form action="${pageContext.request.contextPath}/bm/bmUpload" method="post" class="form-horizontal" enctype="multipart/form-data">
 							<!-- 공연 제목 -->
-							
-<!-- 							<div class="form-group"> -->
-<!-- 								<label class="form-text col-md-2 form-id" for="">공연명</label> -->
-<!-- 								<div class="col-md-6"> -->
-<!-- 									<input type="text" class="form-control" id="" name="prodName" placeholder="공연 제목을 입력해주세요"> -->
-<!-- 								</div> -->
-<!-- 							</div> -->
 
-							<!-- 공연 구분 -->
-							
+							<div class="form-group">
+								<label class="form-text col-md-2 form-id" for="">공연명</label>
+								<div class="col-md-6">
+									<input type="text" class="form-control" id="" name="prodName" placeholder="공연 제목을 입력해주세요">
+								</div>
+							</div>
+
+							공연 구분
+
 							<div class="form-group">
 								<label class="form-text col-md-2 form-id" for="">공연 구분</label>
 
@@ -105,7 +105,7 @@
 							</div>
 
 							<!-- 공연 기간 -->
-							
+
 							<div class="form-group">
 								<label class="form-text col-md-2 form-id" for="">공연 기간</label>
 								<div class="col-md-4">
@@ -117,7 +117,7 @@
 							</div>
 
 							<!--예매 기간 -->
-							
+
 							<div class="form-group">
 								<label class="form-text col-md-2 form-id" for="">예매 기간</label>
 								<div class="col-md-4">
@@ -138,7 +138,7 @@
 							</div>
 
 							<!--관람 시간-->
-							
+
 							<div class="form-group">
 								<label class="form-text col-md-2 form-id" for="">관람 시간</label>
 								<div class="col-md-4">
@@ -148,7 +148,7 @@
 
 
 							<!--관람 등급-->
-							
+
 							<div class="form-group">
 								<label class="form-text col-md-2 form-id" for="">관람 등급</label>
 								<div class="col-md-1">
@@ -209,7 +209,7 @@
 							<!-- 									<div id="bmDisArea"></div> -->
 							<!-- 								</div> -->
 							<!-- 							</div> -->
-							
+
 							<!-- 할인 정보 자리 -->
 
 
@@ -308,29 +308,30 @@
 		$("#bmNameArea").empty();
 	});
 
-	//할인정보 추가
-	$("#addDis").on(
-			"click",
-			function() {
+	//할인정보 '+' 버튼 클릭될 떄
+	$("#addDis").on("click", function() {
 
-				var disN = $("#dcName1").val();
-				var disR = $("#dcRate1").val();
-				var disD = $("select[name=dcType]").val();
+		var disN = $("#dcName1").val();
+		var disR = $("#dcRate1").val();
+		var disD = $("select[name=dcType]").val();
 
-				console.log(disN);
-				console.log(disD);
+		console.log(disN);
+		console.log(disD);
 
-				if (disD == 0) {
-					$("#bmDisArea").append(
-							'<div class="form-group form-data">' + disN + ' ('
-									+ disR + '% 할인됨)' + '</div>');
-				} else {
-					$("#bmDisArea").append(
-							'<div class="form-group form-data">' + disN + ' ('
-									+ disR + '원 할인됨)' + '</div>');
-				}
+		if (disD == 0) {
+			$("#bmDisArea").append(
+					'<div class="form-group form-data">' + disN + ' ('
+							+ disR + '% 할인됨)' + '</div>');
+		} else {
+			$("#bmDisArea").append(
+					'<div class="form-group form-data">' + disN + ' ('
+							+ disR + '원 할인됨)' + '</div>');
+		}
 
-			});
+	});
+	
+	
+	
 </script>
 
 

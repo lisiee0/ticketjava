@@ -33,14 +33,6 @@ public class BusinessController {
 	}
 	//
 
-	// 공연 추가
-	@RequestMapping(value = "bmAdd", method = { RequestMethod.GET, RequestMethod.POST })
-	public String bmAdd(@ModelAttribute ProductVo productVo) {
-		System.out.println("BusinessController/bmAdd");
-
-		return "business/bmAdd";
-	}
-
 	// 공연 등록 폼
 	@RequestMapping(value = "bmForm")
 	public String bmForm() {
