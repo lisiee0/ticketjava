@@ -6,7 +6,6 @@
 
 <mapper namespace="mypage">
 
-
 	<!-- 예매내역 리스트 -->
 	<select id="reserveList" resultType="ReservationVo" parameterType="ReservationVo">
 	<![CDATA[
@@ -29,7 +28,7 @@ select
                 from reserve r, selseat s
                 where r.rez_no = s.rez_no
                 group by r.rez_no, r.rezdate, r.viewdate, r.status, r.prod_no) r, product p, users u
-where u.user_no = 6 
+
 
 	]]>
 	</select>
@@ -61,8 +60,8 @@ select  DISTINCT
         
 from	reserve r, selseat s, users u, product p, theater th, hall h
 where	r.rez_no = s.rez_no 
-and		u.user_no = 6
-and		p.prod_no = 5
+<!-- and		u.user_no = #{userNo}
+and		p.prod_no = #{prodNo} -->
 ]]>
 	</select>
 
