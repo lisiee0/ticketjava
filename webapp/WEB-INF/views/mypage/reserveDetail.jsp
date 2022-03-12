@@ -99,7 +99,7 @@
 												<th scope="col">좌석등급</th>
 												<th scope="col">권종</th>
 												<th scope="col">좌석섹션</th>
-												<th scope="col">좌석번호(col/no)</th>
+												<th scope="col">좌석번호(col/num)</th>
 												<th scope="col">가격</th>
 												<th scope="col">예매상태</th>
 											</tr>
