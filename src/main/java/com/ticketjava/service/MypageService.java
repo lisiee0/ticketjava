@@ -1,6 +1,7 @@
 package com.ticketjava.service;
 
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -20,9 +21,14 @@ public class MypageService {
 		return mypageDao.getReserveList();
 	}
 	
-	public List<ReserveDetailVo> getReserveDetail () {
+	public Map<String, Object> getReserveDetail (int rezNo, int userNo) {
 		System.out.println("MypageService getReserveDetail");
+		
+//		map.put("reserveDetail", mypageDao.reserveDetail);
+//		map.put("reserveSeatList", mypageDao.reserveSeatList);
+		
 		return mypageDao.getReserveDetail();
+		
 	}
 	
 

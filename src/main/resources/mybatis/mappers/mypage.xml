@@ -30,7 +30,8 @@ from (select
       from		reserve r, selseat s
       where		r.rez_no = s.rez_no
       group by	r.rez_no, r.rezdate, r.viewdate, r.status, r.prod_no) r, product p, users u
-	]]>
+where u.user_no= #{userNo}
+]]>       
 	</select>
 
 
@@ -58,9 +59,17 @@ and     u.user_no= #{userNo}
 ]]>
 	</select>
 
+<!-- 
+개발용
+and     r.rez_no= #{rezNo}
+and     u.user_no= #{userNo}
+and     r.rez_no= 56
+and     u.user_no= 1
+ -->
+
 
 	<!-- 예매 정보 상세 좌석 -->
-	<select id="reserveDetailSeat" resultType="ReserveDetailVo" parameterType="ReserveDetailVo">
+	<select id="reserveSeatList" resultType="ReserveDetailVo" parameterType="ReserveDetailVo">
 <![CDATA[
 select
         selseat_no,

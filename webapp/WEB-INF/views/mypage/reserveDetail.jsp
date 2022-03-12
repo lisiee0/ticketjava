@@ -60,89 +60,80 @@
 							<!-- content body -->
 							<div class="ticketingDetail">
 								<div class="rezInvoice">
-								<h4>normaluser1님의 예매정보</h4>
-								<h5>티켓명 : 뮤지컬 라이온 킹 인터내셔널 투어 － 서울（Musical The Lion King）</h5>
-								<h6>예매번호 : t20220310</h6>
-								<table>
-									<tbody>
-										<tr>
-											<th>관람일시</th>
-											<td>2022.03.17(목) 13:30</td>
-											<th>장소</th>
-											<td>예술의전당 오페라극장(theatername hallname)</td>
-										</tr>
-										<tr>
-											<th>좌석</th>
-											<td>객석 1층 5열 17 <br>객석 1층 5열 17
-											</td>
-											<th>예매일</th>
-											<td>2022.03.02</td>
-										</tr>
-										<tr>
-											<th>예매상태</th>
-											<td>예매완료</td>
-											<th>예매자</th>
-											<td>홍길동</td>
-										</tr>
-									</tbody>
-								</table>
-								</div>
-								<!-- //rezInvoice -->
-								
-								<div class="rezSeatList">
-								<h4>예매내역 및 좌석</h4>
-								<form action="requestCancelTicket" name="cancelticket" method="get">
+									<h4>normaluser1님의 예매정보</h4>
+									<h5>티켓명 : 뮤지컬 라이온 킹 인터내셔널 투어 － 서울（Musical The Lion King）</h5>
+
 									<table>
 										<tbody>
 											<tr>
-												<th scope="col"><input type="checkbox" disabled></th>
-												<th scope="col">좌석등급</th>
-												<th scope="col">권종</th>
-												<th scope="col">좌석섹션</th>
-												<th scope="col">좌석번호(col/num)</th>
-												<th scope="col">가격</th>
-												<th scope="col">예매상태</th>
+												<th>관람일시</th>
+												<td>2022.03.17(목) 13:30</td>
+												<th>장소</th>
+												<td>예술의전당 오페라극장(theatername hallname)</td>
 											</tr>
 											<tr>
-												<td><input type="checkbox" />
-												<td class="nav-item">S석</td>
-												<td class="nav-item">재관람할인</td>
-												<td class="nav-item">B섹션</td>
-												<td class="nav-item">1층A블럭 12열5번</td>
-												<td class="nav-item">175,000원</td>
-												<td class="nav-item">취소됨</td>
+												<th>예매상태</th>
+												<td>예매완료</td>
+												<th>예매일</th>
+												<td>2022.03.02</td>
 											</tr>
 											<tr>
-												<td><input type="checkbox" />
-												<td>R석</td>
-												<td>vip할인</td>
-												<td>1층A블럭 12열5번</td>
-												<td>175,000원</td>
-												<td class="nav-item">예매중</td>
+												<th>예매번호</th>
+												<td>t20220312</td>
+												<th>예매자</th>
+												<td>홍길동</td>
 											</tr>
+										</tbody>
+									</table>
+								</div>
+								<!-- //rezInvoice -->
 
-											<!-- 
-											<c:forEach items="${requestScope.reserveDetail}" var="reserveDetail">									
+								<div class="rezSeatList">
+									<h4>예매내역 및 좌석</h4>
+									<form action="requestCancelTicket" name="cancelticket" method="get">
+										<table>
+											<tbody>
+												<tr>
+													<th scope="col"><input type="checkbox" disabled></th>
+													<th scope="col">좌석등급</th>
+													<th scope="col">권종</th>
+													<th scope="col">좌석섹션</th>
+													<th scope="col">좌석번호(col/num)</th>
+													<th scope="col">가격</th>
+													<th scope="col">예매상태</th>
+												</tr>
 												<tr>
 													<td><input type="checkbox" />
-													<td class="nav-item">${grade}</td>
+													<td class="nav-item">S석</td>
 													<td class="nav-item">재관람할인</td>
+													<td class="nav-item">B섹션</td>
 													<td class="nav-item">1층A블럭 12열5번</td>
 													<td class="nav-item">175,000원</td>
 													<td class="nav-item">취소됨</td>
 												</tr>
-											</c:forEach>	
-											 -->
 
-										</tbody>
-									</table>
-									<div class="btncancel">
-										<button class="btn btn-primary" type="submit" value="" onclick="cancelCheck()">취소하기</button>
-									</div>
-								</form>
+
+												<tr>
+													<td><input type="checkbox" />
+													<td class="nav-item">S석</td>
+													<td class="nav-item">재관람할인</td>
+													<td class="nav-item">B섹션</td>
+													<td class="nav-item">1층A블럭 12열5번</td>
+													<td class="nav-item">175,000원</td>
+													<td class="nav-item">취소됨</td>
+												</tr>
+
+
+											</tbody>
+
+										</table>
+										<div class="btncancel">
+											<button class="btn btn-primary" type="submit" value="" onclick="cancelCheck()">취소하기</button>
+										</div>
+									</form>
 								</div>
 								<!-- //rezSeatList -->
-								
+
 								<div class="cancelRule">
 									<h4>취소 유의사항</h4>
 

@@ -23,15 +23,23 @@ public class MypageDao {
 		return reserveList;
 	}
 	
-
 //	예매내역 상세보기 
-	public List<ReserveDetailVo> getReserveDetail() {
+	public ReserveDetailVo getReserveDetail(int userNo, int rezNo) {
 		System.out.println("MypageDao getReserveDetail 예매 상세내역보기");
 		
-		List<ReserveDetailVo> reserveDetail = sqlSession.selectOne("mypage.reserveDetail");
-		
-		System.out.println("MypageDao reserveList "+reserveDetail);
-		return reserveDetail;
+		return sqlSession.selectOne("mypage.reserveDetail");
 	}
+	
+//	예매 좌석 리스트 
+	public List<ReserveDetailVo> getReserveSeatList(int rezNo) {
+		System.out.println("MypageDao getReserveSeat 예매 상세내역보기");
+		
+		List<ReserveDetailVo> reserveSeatList = sqlSession.selectList("mypage.reserveSeatList");
+		
+		System.out.println("MypageDao getReserveDetail "+reserveSeatList);
+		return reserveSeatList;
+	}
+	
+	
 	
 } // The end of MypageDao

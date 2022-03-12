@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.ticketjava.service.MypageService;
 import com.ticketjava.vo.ReserveDetailVo;
@@ -34,9 +35,9 @@ public class MypageController {
 	
 //	예매 상세페이지
 	@RequestMapping("/reserveDetail")
-	public String reserveDetail(Model model) {
+	public String reserveDetail(Model model,@RequestParam("rezNo") int rezNo, @RequestParam("userNo") int userNo) {
 		System.out.println("MypageController reserveDetail 예매 상세페이지");
-		
+        
 //		List<ReserveDetailVo> reserveDetail = mypageService.getReserveDetail();
 		
 //		DS에서 리스트 데이터 공유하는 model
