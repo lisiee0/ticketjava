@@ -9,7 +9,6 @@
 	<!-- 예매내역 리스트 -->
 	<select id="reserveList" resultType="ReservationVo" parameterType="ReservationVo">
 	<![CDATA[
-
 select
         u.user_no userNo,
         r.rez_no rezNo, 
@@ -19,75 +18,64 @@ select
         to_char(r.viewdate, 'yy-mm-dd hh24:mi') viewDate,
         r.ticketCount ticketCount,
         r.status status
-        from (select r.rez_no,
-                       r.rezdate,
-                       r.viewdate,
-                       r.status,
-                       r.prod_no,
-                       count(s.selseat_no) ticketCount
-                from reserve r, selseat s
-                where r.rez_no = s.rez_no
-                group by r.rez_no, r.rezdate, r.viewdate, r.status, r.prod_no) r, product p, users u
-
-
+        
+from (select 
+				r.rez_no,
+				r.rezdate,
+				r.viewdate,
+				r.status,
+				r.prod_no,
+				count(s.selseat_no) ticketCount
+				
+      from reserve r, selseat s
+      where r.rez_no = s.rez_no
+      group by r.rez_no, r.rezdate, r.viewdate, r.status, r.prod_no) r, product p, users u
 	]]>
 	</select>
 
 
-
 	<!-- 예매정보 상세 -->
 	<select id="reserveDetail" resultType="ReserveDetailVo" parameterType="ReserveDetailVo">
-
 <![CDATA[
-select  DISTINCT
-
+select 
         u.user_no userNo,
         p.prod_no prodNo,
         u.name name,
         p.prodname prodname, 
-        th.theatername theatername,
+        t.theatername theatername,
         h.hallname hallname,
         to_char(r.viewdate, 'yy-mm-dd hh24:mi') viewdate,
         r.rez_no rezNo,
-        to_char(r.rezdate, 'yy-mm-dd hh24:mi') rezdate,
-        s.selseat_no selseatNo,
-        s.grade grade, 
-        s.section section, 
-        s.col col,
-        s.num num,
-        s.payment payment,
-        s.status status
+        to_char(r.rezdate, 'yy-mm-dd hh24:mi') rezdate
         
-from	reserve r, selseat s, users u, product p, theater th, hall h
-where	r.rez_no = s.rez_no 
-<!-- and		u.user_no = #{userNo}
-and		p.prod_no = #{prodNo} -->
+from	reserve r, users u, product p, theater t, hall h
+where	r.user_no= u.user_no
+and     p.prod_no= r.prod_no
+and     p.hall_no= h.hall_no
+and     t.theater_no= h.theater_no
+and     r.rez_no= #{rezNo}
+and     u.user_no= #{userNo}
 ]]>
 	</select>
 
 
-
-
-	<select id="reserveListDetail2" resultType="ReservationVo" parameterType="ReservationVo">
-
+	<!-- 예매 정보 상세 좌석 -->
+	<select id="reserveDetailSeat" resultType="ReserveDetailVo" parameterType="ReserveDetailVo">
 <![CDATA[
-select  u.user_no userNo,
-        p.prodname prodname, 
-        r.viewdate viewdate,
-        th.theatername theatername,
-        h.hallname hallname,
-        r.rezdate rezdate,
-        u.name name,
-        r.rez_no rezNo,
-        s.grade grade, 
-        s.selseat_no selseatNo,
-        s.section section, 
-        s.col col,
-        s.status status,
-        s.payment payment
-from product p, reserve r, theater th, hall h, selseat s, users u
-where u.user_no = 4 and r.rez_no = 1
+select
+        selseat_no,
+        rez_no,
+        dc_no,
+        grade,
+        section,
+        col,
+        num,
+        payment,
+        status,
+        to_char(pretime, 'yy-mm-dd hh24:mi') pretime
 
+from	selseat 
+where	rez_no = #{rezNo}
 ]]>
 	</select>
 
