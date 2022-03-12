@@ -16,6 +16,14 @@ public class ProductController {
 	@Autowired
 	private ProductService productService;
 	
+	@RequestMapping("/musical")
+	public String musical() {
+		System.out.println("musical");
+		
+		return "product/pList";
+	}
+	
+	
 	@RequestMapping("/info")
 	public String productInfo() {
 		

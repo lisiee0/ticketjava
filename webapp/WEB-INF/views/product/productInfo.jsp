@@ -118,13 +118,14 @@
 					<div class="container section">
 						<div class="row">
 							<div class="col-xs-9 np" id="infoDetail">
-								<p>공연정보</p>
+								<p>[공지사항]</p>
+								<p>[공연정보]</p>
 								<img src="${pageContext.request.contextPath}/assets/image/test/info1.png">
 								
-								<p>캐스팅정보</p>
+								<p>[캐스팅정보]</p>
 								<img src="${pageContext.request.contextPath}/assets/image/test/info2.png">
 								
-								<p>부가정보</p>
+								<p>[부가정보]</p>
 								<img src="${pageContext.request.contextPath}/assets/image/test/info3.png">
 							</div>
 						</div>
