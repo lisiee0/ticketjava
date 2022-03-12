@@ -90,7 +90,7 @@
 				<div id="navnav" class="navbar navbar-expand-lg navbar-dark bg-primary btn-primary no-drag">
 					<div id="navbar" class="" role="navigation">
 						<ul class="clearfix">
-							<li class="nav-item"><a href="">뮤지컬</a></li>
+							<li class="nav-item"><a href="${pageContext.request.contextPath}/product/info">뮤지컬</a></li>
 							<li class="nav-item"><a href="">연극</a></li>
 							<li class="nav-item"><a href="">콘서트</a></li>
 							<li class="nav-item"><a href="">스포츠</a></li>
