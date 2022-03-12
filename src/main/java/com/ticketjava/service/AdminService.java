@@ -84,7 +84,36 @@ public class AdminService {
 	}
 	
 	
-	public void modifyHall(HallVo vo) {
+	public void modifyHall(HallVo vo, MultipartFile file) {
+		
+		if (file != null) { // 로고파일 수정
+			
+			String saveDir= "C:\\javaStudy\\upload";
+			String orgName= file.getOriginalFilename(); // 원본파일명
+			String exName= orgName.substring(orgName.lastIndexOf(".")); // 확장자
+			String saveName= System.currentTimeMillis()+UUID.randomUUID().toString()+exName; // 저장파일명
+			String filePath= saveDir+"\\"+saveName;
+			
+			// 업로드
+			try {
+				byte[] fileData= file.getBytes();
+				OutputStream out= new FileOutputStream(filePath);
+				BufferedOutputStream bout= new BufferedOutputStream(out);
+				
+				bout.write(fileData);
+				bout.close();
+			}
+			catch (IOException e) {
+				e.printStackTrace();
+			}
+			
+			vo.setLogoPath(saveName);
+		}
+		else {
+
+		}
+
+		td.modifyTheater(vo);
 		hd.modifyHall(vo);
 	}
 	

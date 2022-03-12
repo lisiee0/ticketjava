@@ -40,7 +40,7 @@ public class AdminController {
 	// 공연장 등록
 	@RequestMapping("/theaterAdd")
 	public String theaterAdd(@ModelAttribute TheaterVo vo,
-							@RequestParam("file") MultipartFile file) {
+							 @RequestParam("file") MultipartFile file) {
 		
 		adminService.theaterAdd(vo, file);
 		return "redirect:/admin/";
@@ -49,7 +49,7 @@ public class AdminController {
 	
 	// 공연장 수정양식 불러오기
 	@RequestMapping("/theaterModifyForm")
-	public String theaterModifyForm(@RequestParam("hallNo") int hallNo, Model model ) {
+	public String theaterModifyForm(@RequestParam("hallNo") int hallNo, Model model) {
 		
 		model.addAttribute("hallVo", adminService.getHall(hallNo));
 		return "admin/adminTheaterModify";
@@ -58,9 +58,9 @@ public class AdminController {
 	
 	// 공연장 수정
 	@RequestMapping("/theaterModify")
-	public String theaterModify(@ModelAttribute HallVo vo) {
-		
-		adminService.modifyHall(vo);
+	public String theaterModify(@ModelAttribute HallVo vo,
+								@RequestParam("file") MultipartFile file) {
+		adminService.modifyHall(vo, file);
 		return "redirect:/admin/";
 	}
 	

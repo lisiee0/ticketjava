@@ -4,6 +4,7 @@ public class HallVo {
 	
 	private int hallNo;
 	private String hallName;
+	private int theaterNo;
 	private String theaterName;
 	private String postCode;
 	private String address;
@@ -18,10 +19,11 @@ public class HallVo {
 	}
 
 
-	public HallVo(int hallNo, String hallName, String theaterName, String postCode, String address, String address2,
-			String phone, String homePage, String logoPath) {
+	public HallVo(int hallNo, String hallName, int theaterNo, String theaterName, String postCode, String address,
+			String address2, String phone, String homePage, String logoPath) {
 		this.hallNo = hallNo;
 		this.hallName = hallName;
+		this.theaterNo = theaterNo;
 		this.theaterName = theaterName;
 		this.postCode = postCode;
 		this.address = address;
@@ -49,6 +51,16 @@ public class HallVo {
 
 	public void setHallName(String hallName) {
 		this.hallName = hallName;
+	}
+
+
+	public int getTheaterNo() {
+		return theaterNo;
+	}
+
+
+	public void setTheaterNo(int theaterNo) {
+		this.theaterNo = theaterNo;
 	}
 
 
@@ -124,9 +136,12 @@ public class HallVo {
 
 	@Override
 	public String toString() {
-		return "HallVo [hallNo=" + hallNo + ", hallName=" + hallName + ", theaterName=" + theaterName + ", postCode="
-				+ postCode + ", address=" + address + ", address2=" + address2 + ", phone=" + phone + ", homePage="
-				+ homePage + ", logoPath=" + logoPath + "]";
+		return "HallVo [hallNo=" + hallNo + ", hallName=" + hallName + ", theaterNo=" + theaterNo + ", theaterName="
+				+ theaterName + ", postCode=" + postCode + ", address=" + address + ", address2=" + address2
+				+ ", phone=" + phone + ", homePage=" + homePage + ", logoPath=" + logoPath + "]";
 	}
+
+	
+	
 
 }

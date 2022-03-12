@@ -32,6 +32,20 @@
 		]]>
 	</select>
 	
+	<update id="update" parameterType="TheaterVo">
+		<![CDATA[
+			update			theater
+			set 			theatername= #{theaterName},
+							postcode= #{postCode},
+							address= #{address},
+							address2= #{address2},
+							phone= #{phone},
+							homepage= #{homePage},
+							logoPath= #{logoPath}
+			where 			theater_no= #{theaterNo}
+		]]>
+	</update>
+	
 	
 	<!-- theater.jsp에서 가져오는 theaterList -->
 	<select id="getList" resultType="TheaterVo">
@@ -54,6 +68,8 @@
 			where 			t.theater_no= h.theater_no
 		]]>
 	</select>
+	
+	
 	
 </mapper>
 
