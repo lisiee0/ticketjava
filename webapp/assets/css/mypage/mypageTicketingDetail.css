@@ -1,75 +1,86 @@
 @charset "UTF-8";
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
 
 /* 컨텐츠 영역 정렬 마진 */
 .ticketingDetail {
-	margin: 20px 0px 0px 0px; 
+	margin: 40px 0px 0px 50px;
 }
 
-/* 섹션 제목 */
-h4 {
-	font-family: 'Noto Sans KR', sans-serif; 
-	font-size: 20px;
-	font-weight: bold;
-	margin: 20px 0px 20px 0px;
-}	
-
-/* 티켓 제목 */
-h5 {
-	font-family: 'Noto Sans KR', sans-serif; 
-	font-size: 19px;
-	font-weight: bold;
-	margin: 0px 0px 20px 0px;
-	padding: 50px 0px 0px 0px;
-	text-align:center;
-}
-
-/* 예매번호 */
-h6 {
-	font-family: 'Noto Sans KR', sans-serif; 
-	font-size: 15px;
-	font-weight: bold;
-	margin: 0px 0px 20px 0px;
-	padding: 50px 0px 10px 0px;
-	text-align:left;
+.rezInvoice {
+	margin:10px 0px 10px 0px;
 }
 
 /* 예매정보 상세 테이블 정의 */
+
+/* 섹션 제목 */
+.ticketingDetail h4 {
+	font-family: 'Noto Sans KR', sans-serif;
+	font-size: 20px;
+	font-weight: bold;
+	margin: 20px 0px 20px 0px;
+}
+
+/* 티켓 제목 */
+.ticketingDetail h5 {
+	font-family: 'Noto Sans KR', sans-serif;
+	font-size: 20px;
+	font-weight: bold;
+	margin: 0px 0px 10px 0px;
+	padding: 50px 0px 0px 0px;
+	text-align: center;
+}
+
+/* 예매번호 */
+.ticketingDetail h6 {
+	font-family: 'Noto Sans KR', sans-serif;
+	font-size: 15px;
+	font-weight: bold;
+	margin: 0px 0px 20px 0px;
+	padding: 10px 0px 5px 0px;
+	text-align: left;
+}
+
 .ticketingDetail table {
-	width : 100%;
-	border-top : 1px solid black;
-	border-bottom : 1px solid black;
+	width: 100%;
+	border-top: 1px solid black;
+	border-bottom: 1px solid black;
 	margin: 20px 0px 30px 0px;
 	text-align: center;
 }
 
 .ticketingDetail table>tbody>tr>th {
 	font-size: 16px;
-	background-color:#f8f8f8;
+	background-color: #f8f8f8;
 	height: 50px;
 	text-align: center;
 }
+
 .ticketingDetail table>tbody>tr>td {
 	font-size: 14px;
-	background-color:#ffffff;
-	height : 50px;
+	background-color: #ffffff;
+	height: 50px;
 	padding: 0px 0px 0px 10px;
 }
 
 .noticeCancelRegulations {
-	padding:10px 0px 10px 10px; 
+	padding: 10px 0px 10px 10px;
 	font-size: 12px;
 	text-align: left;
-	background-color:#fcfcfc;
+	background-color: #fcfcfc;
 }
 
 .btncancel {
-	float:center;
+	float: center;
 	text-align: center;
 }
 
+/* 예매내역 및 취소 예매좌석 */
+.rezSeatList {
+	margin:10px 0px 10px 0px;
+}
 
-
-
-
+/* 취소 정책 알림 */
+.cancelRule {
+	margin: 10px 0px 0px 10px;
+}

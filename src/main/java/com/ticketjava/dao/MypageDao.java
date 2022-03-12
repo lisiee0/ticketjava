@@ -28,7 +28,7 @@ public class MypageDao {
 	public List<ReserveDetailVo> getReserveDetail() {
 		System.out.println("MypageDao getReserveDetail 예매 상세내역보기");
 		
-		List<ReserveDetailVo> reserveDetail = sqlSession.selectList("mypage.reserveDetail");
+		List<ReserveDetailVo> reserveDetail = sqlSession.selectOne("mypage.reserveDetail");
 		
 		System.out.println("MypageDao reserveList "+reserveDetail);
 		return reserveDetail;

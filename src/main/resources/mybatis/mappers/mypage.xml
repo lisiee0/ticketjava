@@ -27,9 +27,9 @@ from (select
 				r.prod_no,
 				count(s.selseat_no) ticketCount
 				
-      from reserve r, selseat s
-      where r.rez_no = s.rez_no
-      group by r.rez_no, r.rezdate, r.viewdate, r.status, r.prod_no) r, product p, users u
+      from		reserve r, selseat s
+      where		r.rez_no = s.rez_no
+      group by	r.rez_no, r.rezdate, r.viewdate, r.status, r.prod_no) r, product p, users u
 	]]>
 	</select>
 

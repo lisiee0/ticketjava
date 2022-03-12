@@ -17,6 +17,7 @@ public class MypageController {
 	@Autowired
 	private MypageService mypageService;
 	
+	
 //	마이페이지 예매내역
 	@RequestMapping("/reserveList")
 	public String reserveList(Model model) {
@@ -30,16 +31,17 @@ public class MypageController {
 		return "mypage/reserveList";
 	} 
 	
+	
 //	예매 상세페이지
 	@RequestMapping("/reserveDetail")
 	public String reserveDetail(Model model) {
 		System.out.println("MypageController reserveDetail 예매 상세페이지");
 		
-		List<ReserveDetailVo> reserveDetail = mypageService.getReserveDetail();
+//		List<ReserveDetailVo> reserveDetail = mypageService.getReserveDetail();
 		
 //		DS에서 리스트 데이터 공유하는 model
-		model.addAttribute("reserveDetail",reserveDetail);
-		System.out.println("컨트로럴 reserveDetail "+reserveDetail);
+//		model.addAttribute("reserveDetail",reserveDetail);
+//		System.out.println("컨트롤러 reserveDetail "+reserveDetail);
 		return "mypage/reserveDetail";
 	}
 	
