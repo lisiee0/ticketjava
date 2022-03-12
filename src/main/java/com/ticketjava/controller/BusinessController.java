@@ -57,7 +57,7 @@ public class BusinessController {
 							HttpServletRequest request,
 							Model model) {
 		System.out.println("BusinessController/bmUpload");
-		System.out.println(productVo);
+		System.out.println(productVo.getShowTime());
 		System.out.println(detailVo);
 		
 		
@@ -70,6 +70,7 @@ public class BusinessController {
 	@RequestMapping(value = "bmModify", method = { RequestMethod.GET, RequestMethod.POST })
 	public String bmModify(@ModelAttribute ProductVo productVo) {
 		System.out.println("BusinessController/bmAdd");
+	
 
 		return "business/bmModify";
 	}

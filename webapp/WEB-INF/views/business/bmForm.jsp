@@ -90,60 +90,61 @@
 
 							<!-- 공연 구분 -->
 							
-<!-- 							<div class="form-group"> -->
-<!-- 								<label class="form-text col-md-2 form-id" for="">공연 구분</label> -->
+							<div class="form-group">
+								<label class="form-text col-md-2 form-id" for="">공연 구분</label>
 
-<!-- 								<div class="col-md-3"> -->
-<!-- 									<select class="form-control" name="prodType"> -->
-<!-- 										<option value="1" selected="selected">연극</option> -->
-<!-- 										<option value="2">뮤지컬</option> -->
-<!-- 										<option value="3">콘서트</option> -->
-<!-- 										<option value="4">스포츠</option> -->
-<!-- 										<option value="5">전시</option> -->
-<!-- 									</select> -->
-<!-- 								</div> -->
-<!-- 							</div> -->
+								<div class="col-md-3">
+									<select class="form-control" name="prodType">
+										<option value="1" selected="selected">연극</option>
+										<option value="2">뮤지컬</option>
+										<option value="3">콘서트</option>
+										<option value="4">스포츠</option>
+										<option value="5">전시</option>
+									</select>
+								</div>
+							</div>
 
 							<!-- 공연 기간 -->
 							
-<!-- 							<div class="form-group"> -->
-<!-- 								<label class="form-text col-md-2 form-id" for="">공연 기간</label> -->
-<!-- 								<div class="col-md-4"> -->
-<!-- 									<input type="date" class="form-control" name="beginShow"> -->
-<!-- 								</div> -->
-<!-- 								<div class="col-md-4"> -->
-<!-- 									<input type="date" class="form-control" name="endShow"> -->
-<!-- 								</div> -->
-<!-- 							</div> -->
+							<div class="form-group">
+								<label class="form-text col-md-2 form-id" for="">공연 기간</label>
+								<div class="col-md-4">
+									<input type="date" class="form-control" name="beginShow">
+								</div>
+								<div class="col-md-4">
+									<input type="date" class="form-control" name="endShow">
+								</div>
+							</div>
 
 							<!--예매 기간 -->
 							
-<!-- 							<div class="form-group"> -->
-<!-- 								<label class="form-text col-md-2 form-id" for="">예매 기간</label> -->
-<!-- 								<div class="col-md-4"> -->
-<!-- 									<input type="date" class="form-control" name="beginRez"> -->
-<!-- 								</div> -->
-<!-- 								<div class="col-md-4"> -->
-<!-- 									<input type="date" class="form-control" name="endRez"> -->
-<!-- 								</div> -->
-<!-- 							</div> -->
+							<div class="form-group">
+								<label class="form-text col-md-2 form-id" for="">예매 기간</label>
+								<div class="col-md-4">
+									<input type="date" class="form-control" name="beginRez">
+								</div>
+								<div class="col-md-4">
+									<input type="date" class="form-control" name="endRez">
+								</div>
+							</div>
 
+							<!-- 오류남 -->
 							<!--공연 시작 시간-->
-<!-- 							<div class="form-group"> -->
-<!-- 								<label class="form-text col-md-2 form-id" for="">공연 시작시간</label> -->
-<!-- 								<div class="col-md-4"> -->
-<!-- 									<input type="time" class="form-control" name="showTime"> -->
-<!-- 								</div> -->
-<!-- 							</div> -->
+							<div class="form-group">
+								<label class="form-text col-md-2 form-id" for="">공연 시작시간</label>
+								<div class="col-md-4">
+									<input type="time" class="form-control" name="showTime">
+								</div>
+							</div>
 
 							<!--관람 시간-->
 							
-<!-- 							<div class="form-group"> -->
-<!-- 								<label class="form-text col-md-2 form-id" for="">관람 시간</label> -->
-<!-- 								<div class="col-md-4"> -->
-<!-- 									<input type="text" class="form-control" id="" name="viewTime"> -->
-<!-- 								</div> -->
-<!-- 							</div> -->
+							<div class="form-group">
+								<label class="form-text col-md-2 form-id" for="">관람 시간</label>
+								<div class="col-md-4">
+									<input type="text" class="form-control" id="" name="viewTime">
+								</div>
+							</div>
 
 
 							<!--관람 등급-->
