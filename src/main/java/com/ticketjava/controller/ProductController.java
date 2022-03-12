@@ -30,13 +30,6 @@ public class ProductController {
 		return "product/theater";
 	}
 	
-	@RequestMapping("/test")
-	public void test(@RequestParam("viewDate") String test,
-					 @RequestParam("prodNo") String test1) {
-		
-		System.out.println(test);
-		System.out.println(test1);
-	}
 
 	
 }
