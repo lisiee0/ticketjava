@@ -1,5 +1,7 @@
 package com.ticketjava.dao;
 
+import java.util.List;
+
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -23,6 +25,10 @@ public class UserDao {
 
 	public UserVo selectAuthUser(UserVo userVo) {
 		return sqlSession.selectOne("user.selectAuthUser", userVo);
+	}
+
+	public List<String> selectEmail(List<Integer> targetUserNo) {
+		return sqlSession.selectList("user.selectEmail", targetUserNo);
 	}
 	
 }

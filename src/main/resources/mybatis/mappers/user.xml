@@ -51,4 +51,15 @@
 	</select>
 	
 	
+	<select id="selectEmail" parameterType="map" resultType="String">
+		<![CDATA[
+			select email
+			from users
+			where user_no in
+		]]>
+				<foreach collection="list" item="item" open="(" close=")" separator=",">
+					#{item}
+				</foreach>
+	</select>
+	
 </mapper>

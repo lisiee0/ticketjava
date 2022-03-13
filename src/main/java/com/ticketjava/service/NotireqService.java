@@ -1,5 +1,6 @@
 package com.ticketjava.service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.http.HttpSession;
@@ -8,9 +9,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.ticketjava.dao.NotireqDao;
-import com.ticketjava.dao.ReservationDao;
 import com.ticketjava.dao.SelseatDao;
 import com.ticketjava.dao.UserDao;
+import com.ticketjava.util.JavaMail;
 import com.ticketjava.vo.NotiDataVo;
 import com.ticketjava.vo.NotireqVo;
 import com.ticketjava.vo.UserVo;
@@ -23,9 +24,6 @@ public class NotireqService {
 
 	@Autowired
 	private SelseatDao selseatDao;
-	
-	@Autowired
-	private ReservationDao reservationDao;
 	
 	@Autowired
 	private UserDao userDao;
@@ -124,15 +122,31 @@ public class NotireqService {
 		 //5. noti (결과 userNo 리스트 ) > 알림 번호(시퀀스), 내용 ( viewDate+showTime , prodName, section ) , 알림 시간 (sysdate)   
 		 								  
 		 //								    └ 링크(예매페이지 --> 취소 좌석 선택 (prodNo, viewDate, grade, section, col, num 으로 기본 선택) )
-		 								    
+		 						
+		
+		
+		
 		 // 6. Users (결과 userNo 리스트) > email로 내용 전송								    
+
+		
+
 		 
 			/*
 			 * List<String> emailList = userDao.
 			 */
+
 		
+		List<String> emailList = userDao.selectEmail(targetUserNo);
+		System.out.println(emailList);
+		
+		String[] mList = {"dldnjswns134@naver.com"};
+		List<String>mllist = new ArrayList<>();
+		
+		mllist.add(mList[0]);
+		JavaMail.sendMail(mllist, notiDataVo);
 		
 	}
+
 
 	public List<NotireqVo> myReqList(HttpSession session) {
 		UserVo authUser = (UserVo)session.getAttribute("authUser");
