@@ -84,13 +84,14 @@ div.nav{
 }
 
 #navbar  ul>li {  justify-content:flex; align-items:center; 
-				padding: 0px 0px 0px 0px; margin: 10px 92px 0px 0px; font-size: 19px; font-weight: bold;	display:inline;}
+				padding: 0px 0px 0px 0px; margin: 10px 93px 0px 0px; font-size: 19px; font-weight: bold;	display:inline;}
 #navbar  ul>li .smallFont{
 	font-size:15px;
 }
 
 #navbar ul>li#last-nav-item{
-	margin-right:0px;
+	margin-left: 3px;
+	margin-right: 0px;
 }
 
 
