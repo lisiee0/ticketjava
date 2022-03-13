@@ -64,12 +64,13 @@
 	</select>
 
 	<!-- 상시할인 추가 -->
-	<insert id="discountUpload" parameterType="DiscountVo">
+	<insert id="addAlwaysDis" parameterType="DiscountVo">
+		<selectKey keyProperty="dcNo, prodNo" resultType="int" order="BEFORE">
+			select seq_prod_no.nextval from dual
+		</selectKey>
 		<![CDATA[
-			insert into discount	(prod_no, dcname, dcrate, dctype) 
-			values				(#{prodNo}, #{dcName}, #{dcRate}, #{dcType})
-	
-		
+			insert into discount	(dc_no, prod_no, dcname, dcrate, dctype) 
+			values				(#{dcNo}, #{prodNo}, #{dcName}, #{dcRate}, #{dcType})
 		]]>
 	</insert>
 
@@ -85,9 +86,9 @@
 			values		 (#{dcNo}, #{prodNo}, #{dcName}, #{beginDc}, #{endDc}, #{dcRate}, #{dcType})
 		]]>
 	</insert>
-	
-	
-	
+
+
+
 
 
 

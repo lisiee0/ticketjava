@@ -31,7 +31,6 @@ public class BusinessController {
 		model.addAttribute("bmList", businessService.getProductList());
 		return "business/bmInquiry";
 	}
-	//
 
 	// 공연 등록 폼
 	@RequestMapping(value = "bmForm")
@@ -43,18 +42,16 @@ public class BusinessController {
 
 	// 공연 업로드
 	@RequestMapping(value = "bmUpload", method = { RequestMethod.GET, RequestMethod.POST })
-	public String bmUpload(@RequestParam("file") MultipartFile[] file, 
-							@ModelAttribute ProductVo productVo,
-							@ModelAttribute DetailVo detailVo,
-							HttpServletRequest request,
-							Model model) {
+	public String bmUpload(@RequestParam("file") MultipartFile[] file,
+						@ModelAttribute ProductVo productVo,
+						@ModelAttribute DetailVo detailVo,
+						@ModelAttribute DiscountVo discountVo,
+						HttpServletRequest request, Model model) {
 		System.out.println("BusinessController/bmUpload");
 		System.out.println(productVo.getShowTime());
 		System.out.println(detailVo);
-		
-		
-		
-		businessService.productUpload(file, productVo, detailVo);
+
+		businessService.productUpload(file, productVo, detailVo, discountVo);
 		return "business/bmInquiry";
 	}
 
@@ -62,7 +59,6 @@ public class BusinessController {
 	@RequestMapping(value = "bmModify", method = { RequestMethod.GET, RequestMethod.POST })
 	public String bmModify(@ModelAttribute ProductVo productVo) {
 		System.out.println("BusinessController/bmAdd");
-	
 
 		return "business/bmModify";
 	}

@@ -40,7 +40,8 @@ public class BusinessService {
 	// 공연 추가
 	public void productUpload(MultipartFile[] file, 
 							ProductVo productVo,
-							DetailVo detailVo) {
+							DetailVo detailVo,
+							DiscountVo discountVo) {
 		System.out.println("BusinessServiece/productUpload()");
 
 		
@@ -89,8 +90,9 @@ public class BusinessService {
 			System.out.println("파일 이름: " + file[i].getOriginalFilename());
 			
 			// db 저장
-			pd.productUpload(productVo);
-			td.detailUpload(detailVo);
+//			pd.productUpload(productVo);
+//			td.detailUpload(detailVo);
+//			dd.addAlwaysDis(discountVo);
 		}
 		
 	}

@@ -88,8 +88,7 @@
 								</div>
 							</div>
 
-							공연 구분
-
+							<!-- 공연 구분 -->
 							<div class="form-group">
 								<label class="form-text col-md-2 form-id" for="">공연 구분</label>
 
@@ -169,6 +168,53 @@
 							</div>
 
 							<!-- 등급별 가격 자리 -->
+							<!--좌석등급별 가격-->
+							
+<!-- 							<div class="form-group"> -->
+<!-- 								<label class="form-text col-md-2 form-id" for="">등급별 가격</label> -->
+<!-- 								가격 -->
+<!-- 								<div class="col-md-8"> -->
+<!-- 									좌석 선택 -->
+<!-- 									<div class="form-group"> -->
+<!-- 										<div class="col-md-4"> -->
+<!-- 											<select class="form-control" id="selGrade"> -->
+<!-- 												<option name="grade" value="VIP">VIP석</option> -->
+<!-- 												<option name="grade" value="R">R석</option> -->
+<!-- 												<option name="grade" value="S">S석</option> -->
+<!-- 												<option name="grade" value="A">A석</option> -->
+<!-- 												<option name="grade" value="B">B석</option> -->
+<!-- 												<option value="" selected="selected">좌석</option> -->
+<!-- 											</select> -->
+<!-- 										</div> -->
+<!-- 										<div class="col-md-4"> -->
+<!-- 											<input type="text" class="form-control" name="price" value=""> -->
+<!-- 										</div> -->
+<!-- 										&nbsp; -->
+<!-- 										등급별 가격 추가 -->
+<!-- 										<button type="button" id="addGrade" class="btn">+</button> -->
+<!-- 										<br> -->
+
+<!-- 									</div> -->
+
+<!-- 									선택된 좌석 -->
+<!-- 									<div class="form-group"> -->
+<!-- 										<div class="col-md-4"> -->
+<!-- 											<input type="text" class="form-control" placeholder="VIP석" readonly> -->
+<!-- 										</div> -->
+<!-- 										<div class="col-md-4"> -->
+<!-- 											<input type="text" class="form-control" placeholder="가격을 입력해주세요"> -->
+<!-- 										</div> -->
+<!-- 										<div class="col-md-1"> -->
+<!-- 											<button type="button" class="btn" id="delGrade">-</button> -->
+<!-- 										</div> -->
+<!-- 									</div> -->
+<!-- 									좌석추가 jquery -->
+<!-- 									<div id="bmNameArea"></div> -->
+
+<!-- 									좌석끝 -->
+
+<!-- 								</div> -->
+<!-- 							</div> -->
 
 
 							<!-- 등급별 가격 자리 -->
@@ -182,33 +228,32 @@
 							</div>
 
 							<!-- 할인 정보 자리 -->
-							<!-- 							<div class="form-group"> -->
-							<!-- 								<label class="form-text col-md-2 form-id" for="">할인 정보</label> -->
-							<!-- 								정보 -->
-							<!-- 								<div class="col-md-8"> -->
-							<!-- 									<div class="form-group"> -->
-							<!-- 										<div class="col-md-4"> -->
-							<!-- 											<input type="text" class="form-control" name="dcName" id="dcName1" placeholder="할인 설명"> -->
-							<!-- 										</div> -->
-							<!-- 										<div class="col-md-2"> -->
-							<!-- 											<select class="form-control" name="dcType"> -->
-							<!-- 												<option value="0">%</option> -->
-							<!-- 												<option value="1">원</option> -->
-							<!-- 											</select> -->
-							<!-- 										</div> -->
-							<!-- 										<div class="col-md-3"> -->
-							<!-- 											<input type="text" class="form-control dcArea" name="dcRate" id="dcRate1" value="" placeholder="할인율(% 또는 원)"> -->
-							<!-- 										</div> -->
+							<div class="form-group">
+								<label class="form-text col-md-2 form-id" for="">할인 정보</label>
+								<div class="col-md-8">
+									<div class="form-group">
+										<div class="col-md-4">
+											<input type="text" class="form-control" name="dcName" id="dcName" placeholder="할인 설명">
+										</div>
+										<div class="col-md-2">
+											<select class="form-control" name="dcType" id="dcType">
+												<option value="0">%</option>
+												<option value="1">원</option>
+											</select>
+										</div>
+										<div class="col-md-3">
+											<input type="text" class="form-control" name="dcRate" id="dcRate" placeholder="할인율(% 또는 원)">
+										</div>
 
-							<!-- 										<div class="col-md-1"> -->
-							<!-- 											<button type="button" class="btn" id="addDis">+</button> -->
-							<!-- 										</div> -->
+										<div class="col-md-1">
+											<button type="button" class="btn" id="addDis">+</button>
+										</div>
 
-							<!-- 									</div> -->
-							<!-- 									<div class="form-group form-data">할인 정보</div> -->
-							<!-- 									<div id="bmDisArea"></div> -->
-							<!-- 								</div> -->
-							<!-- 							</div> -->
+									</div>
+									<div class="form-group form-data">할인 정보</div>
+									<div id="bmDisArea"></div>
+								</div>
+							</div>
 
 							<!-- 할인 정보 자리 -->
 
@@ -283,25 +328,22 @@
 
 
 <script type="text/javascript">
-	//추가 버튼
-	$("#addGrade")
-			.on(
-					"click",
-					function() {
-						var gra = $("#selGrade").val();
-						$("#bmNameArea")
-								.append(
-										'<div class="form-group">'
-												+ '<div class="col-md-4">'
-												+ '<input type="text" class="form-control" id="" name="grade" value="'+gra+'" placeholder="" readonly>'
-												+ '</div>'
-												+ '<div class="col-md-4">'
-												+ '<input type="text" class="form-control" id="" name="price" placeholder="가격을 입력해주세요">'
-												+ '</div>'
-												+ '&nbsp;'
-												+ '<button type="button" id="delGrade" class="btn">-</button>'
-												+ '</div>');
-					});
+	//등급추가 버튼
+	$("#addGrade").on("click", function() {
+		var gra = $("#selGrade").val();
+		$("#bmNameArea")
+				.append(
+						'<div class="form-group">'
+								+ '<div class="col-md-4">'
+								+ '<input type="text" class="form-control" id="" name="grade" value="'+gra+'" placeholder="" readonly>'
+								+ '</div>'
+								+ '<div class="col-md-4">'
+								+ '<input type="text" class="form-control" id="" name="price" placeholder="가격을 입력해주세요">'
+								+ '</div>'
+								+ '&nbsp;'
+								+ '<button type="button" id="delGrade" class="btn">-</button>'
+								+ '</div>');
+	});
 
 	//삭제 버튼
 	$("#delGrade").on("click", function() {
@@ -311,27 +353,60 @@
 	//할인정보 '+' 버튼 클릭될 떄
 	$("#addDis").on("click", function() {
 
-		var disN = $("#dcName1").val();
-		var disR = $("#dcRate1").val();
-		var disD = $("select[name=dcType]").val();
+		//데이터 수집
+		var disN = $("#dcName").val();
+		var disR = $("#dcRate").val();
+		var disD = $("#dcType").val();
+		var prodNo = '<c:out value="${param.prodNo}"/>';
+		
+        //데이터 찍어보기
+        console.log(disN);
+        console.log(disR);
+        console.log(disD);
+        console.log(prodNo);
+        
 
-		console.log(disN);
-		console.log(disD);
+        //객체 만들기
+        var ProductVo ={
+                dcName : dcName,
+                dcRate : dcRate,
+                dctype : dcType,
+                prodNo : prodNo
+        };
 
+        //ajax
+        $.ajax({
+            url : "${pageContext.request.contextPath}/bm/bmForm",
+            type : "post",
+            contentType : "application/json",
+            data : ProductVo,
+            dataType : "json",
+            success : function(ProductVo) {
+                /성공시 처리해야될 코드 작성/
+                render(ProductVo, "up");
+                 // 입력 데이터 초기화
+                $("#dcName").val("");
+                $("#dcRate").val("");
+                $("#dctype").val("");
+            },
+            error : function(XHR, status, error) {
+                console.error(status + " : " + error);
+            }
+        });
+			
+
+	
 		if (disD == 0) {
 			$("#bmDisArea").append(
-					'<div class="form-group form-data">' + disN + ' ('
+				'<div class="form-group form-data">' + disN + ' ('
 							+ disR + '% 할인됨)' + '</div>');
 		} else {
 			$("#bmDisArea").append(
-					'<div class="form-group form-data">' + disN + ' ('
+				'<div class="form-group form-data">' + disN + ' ('
 							+ disR + '원 할인됨)' + '</div>');
 		}
-
+	
 	});
-	
-	
-	
 </script>
 
 
