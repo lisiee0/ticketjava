@@ -16,6 +16,7 @@ public class ProductController {
 	@Autowired
 	private ProductService productService;
 	
+	// '뮤지컬'페이지 뮤지컬 리스트
 	@RequestMapping("/musical")
 	public String musical() {
 		System.out.println("musical");
@@ -24,6 +25,7 @@ public class ProductController {
 	}
 	
 	
+	// 상품 상세보기
 	@RequestMapping("/info")
 	public String productInfo() {
 		
@@ -31,6 +33,7 @@ public class ProductController {
 	}
 	
 	
+	// '공연장'페이지  (공연장 & 공지사항 리스트)
 	@RequestMapping("/theaterList")
 	public String theaterList(Model model) {
 		
