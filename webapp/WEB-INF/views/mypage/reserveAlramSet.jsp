@@ -89,12 +89,28 @@
 												
 											<c:forEach items="${reqList}" var="vo"> 
 												<tr>
-													<td>${vo.reqNo}</td>
+													<td class="reqNo">${vo.reqNo}</td>
 													<td>${vo.reqDate}</td>
 													<td><a href="#">${vo.prodName}</a></td>
 													<td>${vo.selSection}</td>
 													<td>
-														${vo.interval} / ${vo.notiTimes}
+														<c:choose>
+															<c:when test="${vo.interval == 0}">
+																간격 없음
+															</c:when>
+															<c:otherwise> 
+																${vo.interval}초
+															</c:otherwise>
+														</c:choose>
+														/
+														<c:choose>
+															<c:when test="${vo.notiTimes == 1000000}">
+																계속
+															</c:when>
+															<c:otherwise> 
+																${vo.notiTimes}회
+															</c:otherwise>
+														</c:choose>
 													</td>
 													<td>
 														<button type="button" id="chgSetBtn" class="btn btn-primary" data-prodno="${vo.prodNo}" data-viewdate="${vo.viewDate}">설정 변경</button>
@@ -112,8 +128,6 @@
 												</tr>
 											</c:forEach>
 												
-												
-											
 											
 										</tbody>
 									</table>
@@ -152,34 +166,42 @@
 		window.open('${pageContext.request.contextPath}/notification/notireqForm?prodNo='+prodNo+'&viewDate='+viewDate,'notireqForm', 'width=970, height=800, left=300, top=100');
 	});
 	
-/* 	$('activeBtn').on('click',function(){
-	
+ 	$('#activeBtn').on('click',function(){
+		var status = $(this).attr('data-status');
+		var reqNo = $(this).closest('tr').find('.reqNo').text();
+		console.log(status);
+		
+		var notireqVo = {
+			reqNo : reqNo,
+			status : status
+		};
+		
 		$.ajax({
 			url: "${pageContext.request.contextPath}/notification/notiToggle",
 			type : "post",
-			data : {status:status},
+			data : notireqVo,
 			async : false,
 			dataType: "json",
-			success : function(selseatList){
-
-				for(var selseat of selseatList){
-					var grade = selseat.grade;
-					if(grade == 'vip')
-						grade = 'v';
-					var section = selseat.section;
-					var col = selseat.col;
-					var num = selseat.num;
-					
-					$('[class='+grade+'][data-section='+section+'][data-col='+col+'][data-num='+num+']').attr("disabled",true);
+			success : function(result){
+				if(result == 'success'){
+					if(status == 1) {
+						alert('알림 off');
+						$('#activeBtn').attr('src', "${pageContext.request.contextPath}/assets/image/index/bell-off.png");
+						$('#activeBtn').attr('data-status','0');
+					}
+					else{
+						alert('알림 on');
+						$('#activeBtn').attr('src', "${pageContext.request.contextPath}/assets/image/index/bell-normal.png");
+						$('#activeBtn').attr('data-status','1');
+					}
 				}
-				
 			},
 			error : function(XHR, status, error) {
 				console.error(status + " : " + error);
 			}
 		});
 		
-	}) */
+	})
 	
 </script>
 

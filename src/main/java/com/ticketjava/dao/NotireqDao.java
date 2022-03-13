@@ -30,4 +30,8 @@ public class NotireqDao {
 	public List<NotireqVo> selectReqList(int userNo) {
 		return sqlSession.selectList("notireq.selectReqList", userNo);
 	}
+
+	public int updateStatus(NotireqVo notireqVo) {
+		return sqlSession.update("notireq.updateStatus", notireqVo);
+	}
 }

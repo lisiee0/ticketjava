@@ -53,6 +53,25 @@
 			]]>			
 		</delete>
 		
+		<update id="updateStatus" parameterType="NotireqVo">
+			<![CDATA[
+				update notireq
+				set
+			]]>
+					<choose>
+						<when test="status == 1">
+							status = 0
+						</when>
+						<otherwise>
+							status = 1
+						</otherwise>
+					</choose>
+			<![CDATA[
+				where req_no = #{reqNo}
+			]]>
+		</update>
+		
+		
 </mapper>
 
 

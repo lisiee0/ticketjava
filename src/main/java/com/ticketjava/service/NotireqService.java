@@ -123,5 +123,15 @@ public class NotireqService {
 		
 		
 	}
+
+	public String notiToggle(NotireqVo notireqVo) {
+
+		int count = notireqDao.updateStatus(notireqVo);
+		
+		if (count>0)
+			return "success";
+		else
+			return "fail";
+	}
 	
 }

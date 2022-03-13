@@ -56,6 +56,12 @@ public class NotireqController {
 		return notireqService.reqDel(notireqVo, session);
 	}
 	
+	@ResponseBody
+	@RequestMapping("/notiToggle")
+	public String notiToggle(@ModelAttribute NotireqVo notireqVo) {
+		
+		return notireqService.notiToggle(notireqVo);
+	}
 	
 	
 	/*@RequestMapping("/myReq")
