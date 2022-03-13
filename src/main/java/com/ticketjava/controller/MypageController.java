@@ -8,6 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.ticketjava.service.ReservationService;
 import com.ticketjava.vo.ReserveDetailVo;
@@ -48,8 +49,9 @@ public class MypageController {
 	
 	
 //	예매 좌석 부분 취소
+	@ResponseBody // json 사용하기
 	@RequestMapping("/requestCancelTicket")
-	public String requestCancelTicket(Model model,@RequestParam(value="selseatNo") int selseatNo) {
+	public String requestCancelTicket(Model model,@RequestParam(value="selseatNo") int selseatNo, @RequestParam(value="rezNo") int rezNo) {
 		System.out.println("MypageController reserveSeatCancel 예매 좌석 삭제 실행");
 		
 		reservationService.deleteReserveSeat(selseatNo);

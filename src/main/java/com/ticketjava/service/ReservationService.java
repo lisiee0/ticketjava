@@ -137,7 +137,7 @@ public class ReservationService {
 		return rMap;
 	}
 	
-	
+//	예매 좌석 부분 취소 기능
 	public void deleteReserveSeat (int selseatNo) {
 		System.out.println("ReservationService deleteReserveSeat 실행");
 		reservationDao.deleteReserveSeat(selseatNo);
