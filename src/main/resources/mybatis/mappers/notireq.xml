@@ -72,6 +72,18 @@
 		</update>
 		
 		
+		<select id="selectTargetUser" parameterType="NotireqVo" resultType="int">
+			<![CDATA[
+				select user_no userNo
+				from notireq
+				where prod_no = #{prodNo} and
+					  viewDate = #{viewDate} and
+					  selSection = #{selSection} and
+					  status = 1
+			]]>
+		</select>
+		
+		
 </mapper>
 
 

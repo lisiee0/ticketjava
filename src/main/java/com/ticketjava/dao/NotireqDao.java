@@ -34,4 +34,8 @@ public class NotireqDao {
 	public int updateStatus(NotireqVo notireqVo) {
 		return sqlSession.update("notireq.updateStatus", notireqVo);
 	}
+
+	public List<Integer> selectTargetUser(NotireqVo notireqVo) {
+		return sqlSession.selectList("notireq.selectTargetUser", notireqVo);
+	}
 }
