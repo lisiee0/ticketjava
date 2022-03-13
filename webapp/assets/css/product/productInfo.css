@@ -45,6 +45,7 @@
 
 
 #priceTable tr>td {
+	text-transform: uppercase;
 	height: 35px;
 	width: 80px;
 }

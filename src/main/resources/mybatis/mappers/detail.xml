@@ -11,5 +11,16 @@
 	</insert>
 
 
+	<select id="getDetail" parameterType="DetailVo" resultType="DetailVo">
+		<![CDATA[
+			select			detail_no detailNo, 
+							prod_no prodNo, 
+							prodpath, 
+							castingpath, 
+							addedpath
+			from 			detail
+			where 			prod_no= #{prodNo}
+		]]>
+	</select>
 
 </mapper>

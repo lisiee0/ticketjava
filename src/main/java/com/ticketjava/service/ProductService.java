@@ -6,10 +6,11 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.ticketjava.dao.DetailDao;
 import com.ticketjava.dao.NoticeDao;
 import com.ticketjava.dao.ProductDao;
+import com.ticketjava.dao.SeatpriceDao;
 import com.ticketjava.dao.TheaterDao;
-import com.ticketjava.vo.ProductVo;
 
 @Service
 public class ProductService {
@@ -20,6 +21,10 @@ public class ProductService {
 	private NoticeDao nd;
 	@Autowired
 	private ProductDao pd;
+	@Autowired
+	private SeatpriceDao sd;
+	@Autowired
+	private DetailDao dd;
 	
 	
 	// prodType별 TOP4 리스트 & 모든상품 리스트
@@ -45,8 +50,14 @@ public class ProductService {
 	
 	
 	// 특정 상품 상세정보 불러오기
-	public ProductVo getProduct(int prodNo) {
-		return pd.getProduct(prodNo);
+	public Map<String, Object> getProduct(int prodNo) {
+		
+		Map<String, Object> pMap= new HashMap<String, Object>();
+		pMap.put("vo", pd.getProduct(prodNo));
+		pMap.put("seatPrice", sd.selectList(prodNo));
+		pMap.put("detail", dd.getDetail(prodNo));
+		
+		return pMap;
 	}
 
 }

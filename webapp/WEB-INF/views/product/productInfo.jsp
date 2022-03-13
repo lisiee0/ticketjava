@@ -30,28 +30,28 @@
 		<div class="container-fluid zp">
 			<div class="container">
 				<div class="row">
-					<h2 class="pageMenu section">${product.prodName}</h2>
+					<h2 class="pageMenu section">${product.vo.prodName}</h2>
 				
 					<div class="container bgc">
 						<div class="row">
 							<!-- 포스터 위치 -->
 							<div class="col-xs-3 np">
-								<img id="mainPoster" src="${pageContext.request.contextPath}/upload/${product.posterPath}">
+								<img id="mainPoster" src="${pageContext.request.contextPath}/upload/${product.vo.posterPath}">
 							</div>
 							
 							<div class="col-xs-6 np" id="mainInfo">
 								<table id="infoTable">
 									<tr>
 										<th>장소</th>
-										<td>${product.theaterName} ${product.hallName}</td>
+										<td>${product.vo.theaterName} ${product.vo.hallName}</td>
 									</tr>
 									<tr>
 										<th>공연기간</th>
-										<td>${product.beginShow} ~ ${product.endShow}</td>
+										<td>${product.vo.beginShow} ~ ${product.vo.endShow}</td>
 									</tr>
 									<tr>
 										<th>관람시간</th>
-										<td>${product.viewTime}분</td>
+										<td>${product.vo.viewTime}분</td>
 									</tr>
 									<tr>
 										<th>관람연령</th>
@@ -80,22 +80,12 @@
 										<th>가격</th>
 										<td>
 											<table id="priceTable">
-												<tr>
-													<td>VIP석</td>
-													<td>150,000원</td>
-												</tr>
-												<tr>
-													<td>R석</td>
-													<td>130,000원</td>
-												</tr>
-												<tr>
-													<td>S석</td>
-													<td>100,000원</td>
-												</tr>
-												<tr>
-													<td>A석</td>
-													<td>70,000원</td>
-												</tr>	
+												<c:forEach items="${product.seatPrice}" var="vo">
+													<tr>
+														<td>${vo.grade}석</td>
+														<td>${vo.price}</td>
+													</tr>
+												</c:forEach>
 											</table>
 										</td>
 									</tr>
@@ -138,15 +128,15 @@
 						<div class="row">
 							<div class="col-xs-9 np" id="infoDetail">
 								<p class="tag">[공지사항]</p><br>
-								<div id="notice">${product.notice}</div>
+								<div id="notice">${product.vo.notice}</div>
 								<p class="tag">[공연정보]</p>
-								<img src="${pageContext.request.contextPath}/assets/image/test/info1.png">
+								<img src="${pageContext.request.contextPath}/upload/${product.detail.prodPath}">
 								
 								<p class="tag">[캐스팅정보]</p>
-								<img src="${pageContext.request.contextPath}/assets/image/test/info2.png">
+								<img src="${pageContext.request.contextPath}/upload/${product.detail.castingPath}">
 								
 								<p class="tag">[부가정보]</p>
-								<img src="${pageContext.request.contextPath}/assets/image/test/info3.png">
+								<img src="${pageContext.request.contextPath}/upload/${product.detail.addedPath}">
 							</div>
 						</div>
 					</div>

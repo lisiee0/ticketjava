@@ -19,5 +19,10 @@ public class DetailDao {
 		
 		sqlsession.insert("detail.detailUpload", dvo);
 	}
+	
+	
+	public DetailVo getDetail(int prodNo) {
+		return sqlsession.selectOne("detail.getDetail", prodNo);
+	}
 
 }
