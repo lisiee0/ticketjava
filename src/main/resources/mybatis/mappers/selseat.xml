@@ -46,7 +46,8 @@
 			from selseat s, reserve r
 			where s.rez_no = r.rez_no and
 			      prod_no = #{prodNo} and
-			      viewDate = #{viewDate}
+			      viewDate = #{viewDate} and
+			      s.status = 1
 		]]>
 		
 	</select>

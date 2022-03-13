@@ -61,27 +61,36 @@
 							<div class="ticketingDetail">
 								<div class="rezInvoice">
 									<h4>normaluser1님의 예매정보</h4>
-									<h5>티켓명 : 뮤지컬 라이온 킹 인터내셔널 투어 － 서울（Musical The Lion King）</h5>
+									<h5>티켓명 : ${rMap.reserveDetail.prodname} </h5>
 
 									<table>
 										<tbody>
 											<tr>
 												<th>관람일시</th>
-												<td>2022.03.17(목) 13:30</td>
+												<td>${rMap.reserveDetail.viewdate} ${rMap.reserveDetail.showTime}</td>
 												<th>장소</th>
-												<td>예술의전당 오페라극장(theatername hallname)</td>
+												<td>${rMap.reserveDetail.theatername} ${rMap.reserveDetail.hallname}</td>
 											</tr>
 											<tr>
 												<th>예매상태</th>
-												<td>예매완료</td>
+												<td>
+													<c:choose>
+														<c:when test="${rMap.reserveDetail.status==1}">
+															예매
+														</c:when>
+														<c:otherwise>
+															취소
+														</c:otherwise>
+													</c:choose>
+												</td>
 												<th>예매일</th>
-												<td>2022.03.02</td>
+												<td>${rMap.reserveDetail.rezdate}</td>
 											</tr>
 											<tr>
 												<th>예매번호</th>
-												<td>t20220312</td>
+												<td>${rMap.reserveDetail.rezNo}</td>
 												<th>예매자</th>
-												<td>홍길동</td>
+												<td>${rMap.reserveDetail.name}</td>
 											</tr>
 										</tbody>
 									</table>
@@ -104,7 +113,7 @@
 													<th scope="col">예매상태</th>
 												</tr>
 
-												<tr>
+												<!-- <tr>
 													<td><input type="checkbox" />
 													<td class="nav-item">S석</td>
 													<td class="nav-item">재관람할인</td>
@@ -112,19 +121,28 @@
 													<td class="nav-item">1층A블럭 12열5번</td>
 													<td class="nav-item">175,000원</td>
 													<td class="nav-item">취소됨</td>
-												</tr>
+												</tr> -->
 
-												<%-- <c:forEach items="${requestScope.rMap.reserveSeatList}" var="reserveSeatList">
+												<c:forEach items="${requestScope.rMap.reserveSeatList}" var="vo">
 													<tr>
 														<td><input type="checkbox" />
-														<td class="nav-item">S석</td>
-														<td class="nav-item">재관람할인</td>
-														<td class="nav-item">B섹션</td>
-														<td class="nav-item">1층A블럭 12열5번</td>
-														<td class="nav-item">175,000원</td>
-														<td class="nav-item">취소됨</td>
+														<td class="nav-item">${vo.grade}석</td>
+														<td class="nav-item">${vo.dcName}</td>
+														<td class="nav-item">${vo.section}구역</td>
+														<td class="nav-item">${vo.col}열 ${vo.num}번</td>
+														<td class="nav-item">${vo.payment}원</td>
+														<td class="nav-item">
+															<c:choose>
+																<c:when test="${vo.status==1}">
+																	예매
+																</c:when>
+																<c:otherwise>
+																	취소
+																</c:otherwise>
+															</c:choose>
+														</td>
 													</tr>
-												</c:forEach> --%>
+												</c:forEach>
 												
 											</tbody>
 

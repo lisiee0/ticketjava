@@ -109,12 +109,13 @@ select
         u.user_no userNo,
         p.prod_no prodNo,
         u.name name,
-        p.prodname prodname, 
+        p.prodname prodname,
+        to_char(showTime, 'hh24:mi') showTime,
         t.theatername theatername,
         h.hallname hallname,
-        to_char(r.viewdate, 'yy-mm-dd hh24:mi') viewdate,
+        to_char(r.viewdate, 'yy.mm.dd') viewdate,
         r.rez_no rezNo,
-        to_char(r.rezdate, 'yy-mm-dd hh24:mi') rezdate
+        to_char(r.rezdate, 'yy.mm.dd') rezdate
         
 from	reserve r, users u, product p, theater t, hall h
 where	r.user_no= u.user_no
