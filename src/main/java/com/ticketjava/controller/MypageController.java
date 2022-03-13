@@ -48,12 +48,12 @@ public class MypageController {
 	
 	
 //	예매 좌석 부분 취소
-	@RequestMapping("/reserveSeatCancel")
-	public String reserveSeatCancel(Model model,@RequestParam(value="selseatNo") int selseatNo) {
+	@RequestMapping("/requestCancelTicket")
+	public String requestCancelTicket(Model model,@RequestParam(value="selseatNo") int selseatNo) {
 		System.out.println("MypageController reserveSeatCancel 예매 좌석 삭제 실행");
 		
 		reservationService.deleteReserveSeat(selseatNo);
-		
+		System.out.println("컨트롤러 selseatNo "+selseatNo);
 		return "mypage/reserveDetail";
 	}
 	

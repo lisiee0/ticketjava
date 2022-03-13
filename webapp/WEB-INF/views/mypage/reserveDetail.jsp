@@ -125,7 +125,7 @@
 
 												<c:forEach items="${requestScope.rMap.reserveSeatList}" var="vo">
 													<tr>
-														<td><input type="checkbox" />
+														<td><input type="checkbox" name="" value="${vo.selseatNo}" />
 														<td class="nav-item">${vo.grade}석</td>
 														<td class="nav-item">${vo.dcName}</td>
 														<td class="nav-item">${vo.section}구역</td>
