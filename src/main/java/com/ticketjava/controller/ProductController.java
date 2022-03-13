@@ -18,7 +18,6 @@ public class ProductController {
 	// '상품'페이지 리스트불러오기
 	@RequestMapping("/type")
 	public String musical(@RequestParam("prodType") int prodType, Model model) {
-		System.out.println("type");
 		
 		model.addAttribute("type", productService.typeList(prodType));
 		return "product/pList";
