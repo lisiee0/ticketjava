@@ -125,7 +125,7 @@
 
 												<c:forEach items="${requestScope.rMap.reserveSeatList}" var="vo">
 													<tr>
-														<td><input type="checkbox" name="" value="${vo.selseatNo}" />
+														<td><input type="checkbox" name="selseatNo" value="${vo.selseatNo}" />
 														<td class="nav-item">${vo.grade}석</td>
 														<td class="nav-item">${vo.dcName}</td>
 														<td class="nav-item">${vo.section}구역</td>
@@ -148,7 +148,7 @@
 
 										</table>
 										<div class="btncancel">
-											<button class="btn btn-primary" type="submit" value="" onclick="cancelCheck()">취소하기</button>
+											<button class="btn btn-primary" type="submit" value="submit" onclick="cancelCheck()">취소하기</button>
 										</div>
 									</form>
 								</div>

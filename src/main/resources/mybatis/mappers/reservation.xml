@@ -145,8 +145,7 @@ where	s.dc_no = d.dc_no and
 <![CDATA[
 
 DELETE FROM	selseat
-where	rez_no = #{rezNo}
-and		selseat_no = #{selseatNo}
+where	selseat_no = #{selseatNo}
 
 ]]>
 	</select>
