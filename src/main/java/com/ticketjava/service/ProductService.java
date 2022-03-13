@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.ticketjava.dao.NoticeDao;
+import com.ticketjava.dao.ProductDao;
 import com.ticketjava.dao.TheaterDao;
 
 @Service
@@ -16,6 +17,20 @@ public class ProductService {
 	private TheaterDao td;
 	@Autowired
 	private NoticeDao nd;
+	@Autowired
+	private ProductDao pd;
+	
+	
+	// prodType별 TOP4 리스트 & 모든상품 리스트
+	public Map<String, Object> typeList(int prodType) {
+		
+		Map<String, Object> typeList= new HashMap<String, Object>();
+		typeList.put("topList", pd.topList(prodType));
+		typeList.put("allList", pd.allList(prodType));
+
+		return typeList;
+	}
+	
 	
 	
 	

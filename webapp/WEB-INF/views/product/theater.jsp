@@ -44,21 +44,21 @@
 							<ul class="nav navbar-nav pd">
 							
 								<c:forEach items="${listMap.tList}" var="vo" varStatus="status">
-								<c:choose>
-									<c:when test="${status.count%5 eq 0}">
-										<li class="logoaArea">
-											<div>
-												<a href="${vo.homePage}"><img class="theater-logo img-thumbnail img-rounded last-logo" data-no="${vo.theaterNo}" src="${pageContext.request.contextPath}/upload/${vo.logoPath}"></a>
-											</div>
-										</li>
-									</c:when>
-									<c:otherwise>
-										<li class="logoaArea">
-											<div>
-												<a href="${vo.homePage}"><img class="theater-logo img-thumbnail img-rounded" data-no="${vo.theaterNo}" src="${pageContext.request.contextPath}/upload/${vo.logoPath}"></a>
-											</div>
-										</li>
-									</c:otherwise>
+									<c:choose>
+										<c:when test="${status.count%5 eq 0}">
+											<li class="logoaArea">
+												<div>
+													<a href="${vo.homePage}"><img class="theater-logo img-thumbnail img-rounded last-logo" data-no="${vo.theaterNo}" src="${pageContext.request.contextPath}/upload/${vo.logoPath}"></a>
+												</div>
+											</li>
+										</c:when>
+										<c:otherwise>
+											<li class="logoaArea">
+												<div>
+													<a href="${vo.homePage}"><img class="theater-logo img-thumbnail img-rounded" data-no="${vo.theaterNo}" src="${pageContext.request.contextPath}/upload/${vo.logoPath}"></a>
+												</div>
+											</li>
+										</c:otherwise>
 									</c:choose>
 								</c:forEach>
 								

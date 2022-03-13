@@ -28,5 +28,21 @@ public class ProductDao {
 
 		sqlsession.insert("product.productUpload", pvo);
 	}
+	
+	
+	
+	//////////////////////////////////////////////////////
+	//////////////////////////////////////////////////////
+	
+	// 평점 top4 불러오기
+	public List<ProductVo> topList(int prodType) {
+		return sqlsession.selectList("product.topList", prodType);
+	}
+	
+	
+	public List<ProductVo> allList(int prodType) {
+		return sqlsession.selectList("product.allList", prodType);
+	}
+
 
 }

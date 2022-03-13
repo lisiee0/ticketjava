@@ -92,11 +92,11 @@
 				<div id="navnav" class="navbar navbar-expand-lg navbar-dark bg-primary btn-primary no-drag">
 					<div id="navbar" class="" role="navigation">
 						<ul class="clearfix">
-							<li class="nav-item"><a href="${pageContext.request.contextPath}/product/musical">뮤지컬</a></li>
-							<li class="nav-item"><a href="${pageContext.request.contextPath}/product/play">연극</a></li>
-							<li class="nav-item"><a href="${pageContext.request.contextPath}/product/concert">콘서트</a></li>
-							<li class="nav-item"><a href="${pageContext.request.contextPath}/product/sports">스포츠</a></li>
-							<li class="nav-item"><a href="${pageContext.request.contextPath}/product/exhibition">전시</a></li>
+							<li class="nav-item"><a href="${pageContext.request.contextPath}/product/type?prodType=1">뮤지컬</a></li>
+							<li class="nav-item"><a href="${pageContext.request.contextPath}/product/type?prodType=2">연극</a></li>
+							<li class="nav-item"><a href="${pageContext.request.contextPath}/product/type?prodType=3">콘서트</a></li>
+							<li class="nav-item"><a href="${pageContext.request.contextPath}/product/type?prodType=4">스포츠</a></li>
+							<li class="nav-item"><a href="${pageContext.request.contextPath}/product/type?prodType=5">전시</a></li>
 							<li class="nav-item"><a href="${pageContext.request.contextPath}/product/theaterList"><span class="smallFont">공연장</span></a></li>
 							<li class="nav-item"><a href=""><span class="smallFont">지역</span></a></li>
 							<li id="last-nav-item" class="nav-item"><a href=""><span class="smallFont">랭킹</span></a></li>
