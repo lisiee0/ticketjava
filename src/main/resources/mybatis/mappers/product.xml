@@ -30,10 +30,7 @@
 		]]>
 	</insert>
 	
-	
-	<!-- 1111111 -->
-	
-	
+
 	<!-- 평점 top4 리스트 -->
 	<select id="topList" parameterType="ProductVo" resultType="ProductVo">
 		<![CDATA[
