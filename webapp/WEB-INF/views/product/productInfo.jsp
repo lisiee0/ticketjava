@@ -56,19 +56,19 @@
 									<tr>
 										<th>관람연령</th>
 										<c:choose>
-											<c:when test="${product.viewGrade eq 1}">
+											<c:when test="${product.vo.viewGrade eq 1}">
 												<td>전체 관람가능</td>
 											</c:when>
-											<c:when test="${product.viewGrade eq 2}">
+											<c:when test="${product.vo.viewGrade eq 2}">
 												<td>8세이상 관람가능</td>
 											</c:when>
-											<c:when test="${product.viewGrade eq 3}">
+											<c:when test="${product.vo.viewGrade eq 3}">
 												<td>12세이상 관람가능</td>
 											</c:when>
-											<c:when test="${product.viewGrade eq 4}">
+											<c:when test="${product.vo.viewGrade eq 4}">
 												<td>15세이상 관람가능</td>
 											</c:when>
-											<c:when test="${product.viewGrade eq 5}">
+											<c:when test="${product.vo.viewGrade eq 5}">
 												<td>18세이상 관람가능</td>
 											</c:when>
 											<c:otherwise>
@@ -97,7 +97,7 @@
 								<!-- 캘린더 api 구현 위치 -->
 								<form id="rezArea" method="post" action="">
 									<c:import url="/WEB-INF/views/include/calendar.jsp"></c:import>
-									<input id="prodNo" type="hidden" name="prodNo" value="${product.prodNo}">
+									<input id="prodNo" type="hidden" name="prodNo" value="${product.vo.prodNo}">
 									<button type="button" id="rezBtn" class="btn btn-primary btn-block">예매하기</button>
 								</form>
 							
