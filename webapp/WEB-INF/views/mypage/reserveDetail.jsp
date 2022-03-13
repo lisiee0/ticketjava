@@ -15,6 +15,14 @@
 <link href="${pageContext.request.contextPath}/assets/css/mypage/ticketjavaMypageCommon.css" rel="stylesheet" type="text/css">
 <link href="${pageContext.request.contextPath}/assets/css/mypage/mypageTicketingDetail.css" rel="stylesheet" type="text/css">
 
+
+<script type="text/javascript" src="${pageContext.request.contextPath}/assets/js/jquery-1.12.4.js">
+	
+</script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/assets/bootstrap/js/bootstrap.js">
+	
+</script>
+
 </head>
 
 
@@ -60,29 +68,27 @@
 							<!-- content body -->
 							<div class="ticketingDetail">
 								<div class="rezInvoice">
-									<h4>${rMap.reserveDetail.name}님의 예매정보</h4>
-									<h5>티켓명 : ${rMap.reserveDetail.prodname} </h5>
+									<h4>${rMap.reserveDetail.name}님의예매정보</h4>
+									<h5>티켓명 : ${rMap.reserveDetail.prodname}</h5>
 
 									<table>
 										<tbody>
 											<tr>
 												<th>관람일시</th>
-												<td>${rMap.reserveDetail.viewdate} ${rMap.reserveDetail.showTime}</td>
+												<td>${rMap.reserveDetail.viewdate}${rMap.reserveDetail.showTime}</td>
 												<th>장소</th>
-												<td>${rMap.reserveDetail.theatername} ${rMap.reserveDetail.hallname}</td>
+												<td>${rMap.reserveDetail.theatername}${rMap.reserveDetail.hallname}</td>
 											</tr>
 											<tr>
 												<th>예매상태</th>
-												<td>
-													<c:choose>
+												<td><c:choose>
 														<c:when test="${rMap.reserveDetail.status==1}">
 															예매
 														</c:when>
 														<c:otherwise>
 															취소
 														</c:otherwise>
-													</c:choose>
-												</td>
+													</c:choose></td>
 												<th>예매일</th>
 												<td>${rMap.reserveDetail.rezdate}</td>
 											</tr>
@@ -94,6 +100,9 @@
 											</tr>
 										</tbody>
 									</table>
+
+
+
 								</div>
 								<!-- //rezInvoice -->
 
@@ -129,21 +138,19 @@
 														<td class="nav-item">${vo.grade}석</td>
 														<td class="nav-item">${vo.dcName}</td>
 														<td class="nav-item">${vo.section}구역</td>
-														<td class="nav-item">${vo.col}열 ${vo.num}번</td>
+														<td class="nav-item">${vo.col}열${vo.num}번</td>
 														<td class="nav-item">${vo.payment}원</td>
-														<td class="nav-item">
-															<c:choose>
+														<td class="nav-item"><c:choose>
 																<c:when test="${vo.status==1}">
 																	예매
 																</c:when>
 																<c:otherwise>
 																	취소
 																</c:otherwise>
-															</c:choose>
-														</td>
+															</c:choose></td>
 													</tr>
 												</c:forEach>
-												
+
 											</tbody>
 
 										</table>
