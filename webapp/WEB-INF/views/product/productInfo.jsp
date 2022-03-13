@@ -30,32 +30,51 @@
 		<div class="container-fluid zp">
 			<div class="container">
 				<div class="row">
-					<h2 class="pageMenu section">뮤지컬 <아이다> 인터네셔널 투어 </h2>
+					<h2 class="pageMenu section">${product.prodName}</h2>
 				
 					<div class="container bgc">
 						<div class="row">
 							<!-- 포스터 위치 -->
 							<div class="col-xs-3 np">
-								<img id="mainPoster" src="${pageContext.request.contextPath}/assets/image/test/aida.jpg">
+								<img id="mainPoster" src="${pageContext.request.contextPath}/upload/${product.posterPath}">
 							</div>
 							
 							<div class="col-xs-6 np" id="mainInfo">
 								<table id="infoTable">
 									<tr>
 										<th>장소</th>
-										<td>블루스퀘어 신한카드홀</td>
+										<td>${product.theaterName} ${product.hallName}</td>
 									</tr>
 									<tr>
 										<th>공연기간</th>
-										<td>2022.05.10 ~ 2022.08.07</td>
+										<td>${product.beginShow} ~ ${product.endShow}</td>
 									</tr>
 									<tr>
 										<th>관람시간</th>
-										<td>160분</td>
+										<td>${product.viewTime}분</td>
 									</tr>
 									<tr>
 										<th>관람연령</th>
-										<td>8세이상 관람가능</td>
+										<c:choose>
+											<c:when test="${product.viewGrade eq 1}">
+												<td>전체 관람가능</td>
+											</c:when>
+											<c:when test="${product.viewGrade eq 2}">
+												<td>8세이상 관람가능</td>
+											</c:when>
+											<c:when test="${product.viewGrade eq 3}">
+												<td>12세이상 관람가능</td>
+											</c:when>
+											<c:when test="${product.viewGrade eq 4}">
+												<td>15세이상 관람가능</td>
+											</c:when>
+											<c:when test="${product.viewGrade eq 5}">
+												<td>18세이상 관람가능</td>
+											</c:when>
+											<c:otherwise>
+												<td>미취학아동 관람불가</td>
+											</c:otherwise>
+										</c:choose>
 									</tr>
 									<tr>
 										<th>가격</th>
@@ -88,7 +107,7 @@
 								<!-- 캘린더 api 구현 위치 -->
 								<form id="rezArea" method="post" action="">
 									<c:import url="/WEB-INF/views/include/calendar.jsp"></c:import>
-									<input id="prodNo" type="hidden" name="prodNo" value="7">
+									<input id="prodNo" type="hidden" name="prodNo" value="${product.prodNo}">
 									<button type="button" id="rezBtn" class="btn btn-primary btn-block">예매하기</button>
 								</form>
 							
@@ -118,14 +137,15 @@
 					<div class="container section">
 						<div class="row">
 							<div class="col-xs-9 np" id="infoDetail">
-								<p>[공지사항]</p>
-								<p>[공연정보]</p>
+								<p class="tag">[공지사항]</p><br>
+								<div id="notice">${product.notice}</div>
+								<p class="tag">[공연정보]</p>
 								<img src="${pageContext.request.contextPath}/assets/image/test/info1.png">
 								
-								<p>[캐스팅정보]</p>
+								<p class="tag">[캐스팅정보]</p>
 								<img src="${pageContext.request.contextPath}/assets/image/test/info2.png">
 								
-								<p>[부가정보]</p>
+								<p class="tag">[부가정보]</p>
 								<img src="${pageContext.request.contextPath}/assets/image/test/info3.png">
 							</div>
 						</div>

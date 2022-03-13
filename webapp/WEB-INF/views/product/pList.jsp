@@ -40,7 +40,7 @@
 										<c:when test="${status.count%4 eq 0}">
 											<li class="list-width last">
 												<div class="imgArea">
-													<img class="poster" src="${pageContext.request.contextPath}/upload/${tvo.posterPath}">
+													<a href="${pageContext.request.contextPath}/product/info?prodNo=${tvo.prodNo}"><img class="poster" src="${pageContext.request.contextPath}/upload/${tvo.posterPath}"></a>
 												</div>
 												<div class="productInfo">
 													<p class="text-left title"><strong>${tvo.prodName}</strong></p>
@@ -52,7 +52,7 @@
 										<c:otherwise>
 											<li class="list-width">
 												<div class="imgArea">
-													<img class="poster" src="${pageContext.request.contextPath}/upload/${tvo.posterPath}">
+													<a href="${pageContext.request.contextPath}/product/info?prodNo=${tvo.prodNo}"><img class="poster" src="${pageContext.request.contextPath}/upload/${tvo.posterPath}"></a>
 												</div>
 												<div class="productInfo">
 													<p class="text-left title"><strong>${tvo.prodName}</strong></p>
@@ -80,7 +80,7 @@
 										<c:when test="${status.count%4 eq 0}">
 											<li class="list-width last">
 												<div class="imgArea">
-													<img class="poster" src="${pageContext.request.contextPath}/upload/${avo.posterPath}">
+													<a href="${pageContext.request.contextPath}/product/info?prodNo=${avo.prodNo}"><img class="poster" src="${pageContext.request.contextPath}/upload/${avo.posterPath}"></a>
 												</div>
 												<div class="productInfo">
 													<p class="text-left title"><strong>${avo.prodName}</strong></p>
@@ -92,7 +92,7 @@
 										<c:otherwise>
 											<li class="list-width">
 												<div class="imgArea">
-													<img class="poster" src="${pageContext.request.contextPath}/upload/${avo.posterPath}">
+													<a href="${pageContext.request.contextPath}/product/info?prodNo=${avo.prodNo}"><img class="poster" src="${pageContext.request.contextPath}/upload/${avo.posterPath}"></a>
 												</div>
 												<div class="productInfo">
 													<p class="text-left title"><strong>${avo.prodName}</strong></p>

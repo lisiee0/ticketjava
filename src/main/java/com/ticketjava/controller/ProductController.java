@@ -15,7 +15,7 @@ public class ProductController {
 	@Autowired
 	private ProductService productService;
 	
-	// '상품'페이지 리스트불러오기
+	// prodType별 상품 리스트 불러오기
 	@RequestMapping("/type")
 	public String musical(@RequestParam("prodType") int prodType, Model model) {
 		
@@ -35,8 +35,9 @@ public class ProductController {
 	
 	// 상품 상세보기
 	@RequestMapping("/info")
-	public String productInfo() {
+	public String productInfo(@RequestParam("prodNo") int prodNo, Model model) {
 		
+		model.addAttribute("product", productService.getProduct(prodNo));
 		return "product/productInfo";
 	}
 

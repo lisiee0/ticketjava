@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import com.ticketjava.dao.NoticeDao;
 import com.ticketjava.dao.ProductDao;
 import com.ticketjava.dao.TheaterDao;
+import com.ticketjava.vo.ProductVo;
 
 @Service
 public class ProductService {
@@ -40,6 +41,12 @@ public class ProductService {
 		listMap.put("nList", nd.getNoticeList());
 		
 		return listMap;
+	}
+	
+	
+	// 특정 상품 상세정보 불러오기
+	public ProductVo getProduct(int prodNo) {
+		return pd.getProduct(prodNo);
 	}
 
 }

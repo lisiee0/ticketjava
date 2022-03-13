@@ -282,4 +282,17 @@
  	overflow: hidden;
   	pointer-events: none;
 }
+
+.tag {
+	font-size:17px;
+	font-weight: bolder;
+	margin-bottom: 5px;	
+}
+
+#notice {
+	font-size: 16px;
+	color: red;
+	font-weight: bold;
+	margin-bottom: 20px;
+}
 		
