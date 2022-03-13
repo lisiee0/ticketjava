@@ -32,6 +32,7 @@ public class DiscountDao {
 		System.out.println("DiscountDao/addAlwaysDis");
 
 		sqlSession.insert("discount.addAlwaysDis", discountVo);
+		
 	}
 
 	// 이벤트 할인창에서 가져오는 이벤트할인 리스트 (상시할인 제외)
@@ -53,7 +54,7 @@ public class DiscountDao {
 		return vo.getDcNo();
 	}
 
-	// product 창에서 업로드 하는 상시 할인
+	// product 창에서 업로드 하는 상시 할인 추가
 	public void discountUpload(DiscountVo disVo) {
 		System.out.println("DiscountDao/discountUpload");
 

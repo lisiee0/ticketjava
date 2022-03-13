@@ -14,18 +14,18 @@ public class ProductDao {
 	@Autowired
 	private SqlSession sqlsession;
 
-	// 공연 리스트 
-	public List<ProductVo> getProductList() {
+	// 공연 리스트
+	public List<ProductVo> getProductList(int prodNo) {
 		System.out.println("ProductDao/getProductList");
 
-		return sqlsession.selectList("product.getProductList");
+		return sqlsession.selectList("product.getProductList", prodNo);
 	}
 
 	// 공연 추가
 	public void productUpload(ProductVo pvo) {
-		System.out.println("ProductDao/productUpload");	
+		System.out.println("ProductDao/productUpload");
 		System.out.println(pvo);
-		
+
 		sqlsession.insert("product.productUpload", pvo);
 	}
 

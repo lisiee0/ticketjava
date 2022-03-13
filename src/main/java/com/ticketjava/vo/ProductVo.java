@@ -1,5 +1,7 @@
 package com.ticketjava.vo;
 
+import java.util.List;
+
 public class ProductVo {
 
 	// 필드
@@ -24,19 +26,16 @@ public class ProductVo {
 	private String theaterName; // 공연장명
 	private String hallName;
 
+	private List<SeatpriceVo> seatpriceList;
+
 	// 생성자
 	public ProductVo() {
 	}
 
-	public ProductVo(String posterPath) {
-		this.posterPath = posterPath;
-	}
-
-	
-
 	public ProductVo(int prodNo, int userNo, int hallNo, String prodName, int prodType, String beginShow,
 			String endShow, String beginRez, String endRez, String showTime, int viewTime, int viewGrade, String notice,
-			String cancelInfo, int status, String posterPath, String theaterName, String hallName) {
+			String cancelInfo, int status, String posterPath, String theaterName, String hallName,
+			List<SeatpriceVo> seatpriceList) {
 		this.prodNo = prodNo;
 		this.userNo = userNo;
 		this.hallNo = hallNo;
@@ -55,9 +54,10 @@ public class ProductVo {
 		this.posterPath = posterPath;
 		this.theaterName = theaterName;
 		this.hallName = hallName;
+		this.seatpriceList = seatpriceList;
 	}
+	// 메소드
 
-	
 	public int getProdNo() {
 		return prodNo;
 	}
@@ -202,13 +202,23 @@ public class ProductVo {
 		this.hallName = hallName;
 	}
 
-	
+	public List<SeatpriceVo> getSeatpriceList() {
+		return seatpriceList;
+	}
+
+	public void setSeatpriceList(List<SeatpriceVo> seatpriceList) {
+		this.seatpriceList = seatpriceList;
+	}
+	// 메소드 일반
+
 	@Override
 	public String toString() {
 		return "ProductVo [prodNo=" + prodNo + ", userNo=" + userNo + ", hallNo=" + hallNo + ", prodName=" + prodName
 				+ ", prodType=" + prodType + ", beginShow=" + beginShow + ", endShow=" + endShow + ", beginRez="
 				+ beginRez + ", endRez=" + endRez + ", showTime=" + showTime + ", viewTime=" + viewTime + ", viewGrade="
 				+ viewGrade + ", notice=" + notice + ", cancelInfo=" + cancelInfo + ", status=" + status
-				+ ", posterPath=" + posterPath + ", theaterName=" + theaterName + ", hallName=" + hallName + "]";
+				+ ", posterPath=" + posterPath + ", theaterName=" + theaterName + ", hallName=" + hallName
+				+ ", seatpriceList=" + seatpriceList + "]";
 	}
+
 }

@@ -78,7 +78,7 @@
 
 					<div id="board">
 
-						<form action="${pageContext.request.contextPath}/bm/bmUpload" method="post" class="form-horizontal" enctype="multipart/form-data">
+						<div class="form-horizontal" >
 							<!-- 공연 제목 -->
 
 							<div class="form-group">
@@ -169,52 +169,52 @@
 
 							<!-- 등급별 가격 자리 -->
 							<!--좌석등급별 가격-->
-							
-<!-- 							<div class="form-group"> -->
-<!-- 								<label class="form-text col-md-2 form-id" for="">등급별 가격</label> -->
-<!-- 								가격 -->
-<!-- 								<div class="col-md-8"> -->
-<!-- 									좌석 선택 -->
-<!-- 									<div class="form-group"> -->
-<!-- 										<div class="col-md-4"> -->
-<!-- 											<select class="form-control" id="selGrade"> -->
-<!-- 												<option name="grade" value="VIP">VIP석</option> -->
-<!-- 												<option name="grade" value="R">R석</option> -->
-<!-- 												<option name="grade" value="S">S석</option> -->
-<!-- 												<option name="grade" value="A">A석</option> -->
-<!-- 												<option name="grade" value="B">B석</option> -->
-<!-- 												<option value="" selected="selected">좌석</option> -->
-<!-- 											</select> -->
-<!-- 										</div> -->
-<!-- 										<div class="col-md-4"> -->
-<!-- 											<input type="text" class="form-control" name="price" value=""> -->
-<!-- 										</div> -->
-<!-- 										&nbsp; -->
-<!-- 										등급별 가격 추가 -->
-<!-- 										<button type="button" id="addGrade" class="btn">+</button> -->
-<!-- 										<br> -->
 
-<!-- 									</div> -->
+							<div class="form-group">
+								<label class="form-text col-md-2 form-id" for="">등급별 가격</label>
+								<!--가격 -->
+								<div class="col-md-8">
+									<!--좌석 선택 -->
+									<div class="form-group">
+										<div class="col-md-4">
+											<select class="form-control" id="selGrade">
+												<option name="grade" value="VIP">VIP석</option>
+												<option name="grade" value="R">R석</option>
+												<option name="grade" value="S">S석</option>
+												<option name="grade" value="A">A석</option>
+												<option name="grade" value="B">B석</option>
+												<option value="" selected="selected">좌석</option>
+											</select>
+										</div>
+										<div class="col-md-4">
+											<input type="text" class="form-control" id="price" name="price">
+										</div>
+										&nbsp;
+										<!--등급별 가격 추가 -->
+										<button type="button" id="addGrade" class="btn">+</button>
+										<br>
 
-<!-- 									선택된 좌석 -->
-<!-- 									<div class="form-group"> -->
-<!-- 										<div class="col-md-4"> -->
-<!-- 											<input type="text" class="form-control" placeholder="VIP석" readonly> -->
-<!-- 										</div> -->
-<!-- 										<div class="col-md-4"> -->
-<!-- 											<input type="text" class="form-control" placeholder="가격을 입력해주세요"> -->
-<!-- 										</div> -->
-<!-- 										<div class="col-md-1"> -->
-<!-- 											<button type="button" class="btn" id="delGrade">-</button> -->
-<!-- 										</div> -->
-<!-- 									</div> -->
-<!-- 									좌석추가 jquery -->
-<!-- 									<div id="bmNameArea"></div> -->
+									</div>
 
-<!-- 									좌석끝 -->
+									<!--선택된 좌석 -->
+									<div class="form-group">
+										<div class="col-md-4">
+											<input type="text" class="form-control" placeholder="VIP석" readonly>
+										</div>
+										<div class="col-md-4">
+											<input type="text" class="form-control" placeholder="가격을 입력해주세요">
+										</div>
+										<div class="col-md-1">
+											<button type="button" class="btn" id="delGrade">-</button>
+										</div>
+									</div>
+									<!--좌석추가 Script -->
+									<div id="bmNameArea"></div>
 
-<!-- 								</div> -->
-<!-- 							</div> -->
+									<!--좌석끝 -->
+
+								</div>
+							</div>
 
 
 							<!-- 등급별 가격 자리 -->
@@ -262,7 +262,7 @@
 							<div class="form-group">
 								<label class="form-text col-md-2 form-id" for="">공연 포스터</label>
 								<div class="col-md-8">
-									<input type="file" id="" name="file" value="">
+									<input type="file" id="file0" name="file0" value="">
 								</div>
 							</div>
 
@@ -270,7 +270,7 @@
 							<div class="form-group">
 								<label class="form-text col-md-2 form-id" for="">공연 정보</label>
 								<div class="col-md-8">
-									<input type="file" id="" name="file" value="">
+									<input type="file" id="file1" name="file1" value="">
 								</div>
 							</div>
 
@@ -278,7 +278,7 @@
 							<div class="form-group">
 								<label class="form-text col-md-2 form-id" for="">캐스팅 정보</label>
 								<div class="col-md-8">
-									<input type="file" id="" name="file" value="">
+									<input type="file" id="file2" name="file2" value="">
 								</div>
 							</div>
 
@@ -286,7 +286,7 @@
 							<div class="form-group">
 								<label class="form-text col-md-2 form-id" for="">부가 정보</label>
 								<div class="col-md-8">
-									<input type="file" id="" name="file" value="">
+									<input type="file" id="file3" name="file3" value="">
 								</div>
 							</div>
 
@@ -300,10 +300,11 @@
 
 							<!-- 공연 등록! -->
 							<div id="btnLocation">
-								<button type="submit" class="btn btn-primary" id="addbtn">공연 등록</button>
+								<button type="button" class="btn btn-primary" id="addbtn">공연 등록</button>
 							</div>
 
-						</form>
+						</div>
+						
 					</div>
 
 				</div>
@@ -329,84 +330,153 @@
 
 <script type="text/javascript">
 	//등급추가 버튼
-	$("#addGrade").on("click", function() {
-		var gra = $("#selGrade").val();
-		$("#bmNameArea")
-				.append(
-						'<div class="form-group">'
-								+ '<div class="col-md-4">'
-								+ '<input type="text" class="form-control" id="" name="grade" value="'+gra+'" placeholder="" readonly>'
-								+ '</div>'
-								+ '<div class="col-md-4">'
-								+ '<input type="text" class="form-control" id="" name="price" placeholder="가격을 입력해주세요">'
-								+ '</div>'
-								+ '&nbsp;'
-								+ '<button type="button" id="delGrade" class="btn">-</button>'
-								+ '</div>');
-	});
+	$("#addGrade")
+			.on(
+					"click",
+					function() {
+						var gra = $("#selGrade").val();
+						var selp = $("#price").val();
+						$("#bmNameArea")
+								.append(
+										'<div class="form-group">'
+												+ '<div class="col-md-4">'
+												+ '<input type="text" class="form-control" id="" name="grade" value="'+gra+'" readonly>'
+												+ '</div>'
+												+ '<div class="col-md-4">'
+												+ '<input type="text" class="form-control" id="" name="price" value="'+selp+'" readonly>'
+												+ '</div>'
+												+ '&nbsp;'
+												+ '<button type="button" id="delGrade" class="btn">-</button>'
+												+ '</div>');
+					});
 
-	//삭제 버튼
+	//등급삭제 버튼
 	$("#delGrade").on("click", function() {
 		$("#bmNameArea").empty();
 	});
 
 	//할인정보 '+' 버튼 클릭될 떄
-	$("#addDis").on("click", function() {
+	$("#addDis").on(
+			"click",
+			function() {
 
-		//데이터 수집
-		var disN = $("#dcName").val();
-		var disR = $("#dcRate").val();
-		var disD = $("#dcType").val();
-		var prodNo = '<c:out value="${param.prodNo}"/>';
+				//데이터 수집
+				var disN = $("#dcName").val();
+				var disR = $("#dcRate").val();
+				var disD = $("#dcType").val();
+// 				var prodNo = ${param.prodNo};
+
+				//데이터 찍어보기
+				console.log(disN);
+				console.log(disR);
+				console.log(disD);
+// 				console.log(prodNo);
+
+				if (disD == 0) {
+					$("#bmDisArea").append(
+							'<div class="form-group form-data">' + disN + ' ('
+									+ disR + '% 할인됨)' + '</div>');
+				} else {
+					$("#bmDisArea").append(
+							'<div class="form-group form-data">' + disN + ' ('
+									+ disR + '원 할인됨)' + '</div>');
+				}
+
+				//객체 만들기
+				var ProductVo = {
+					dcName : disN,
+					dcRate : disR,
+					dctype : disD,
+				};
+
+				console.log(ProductVo);
+
+			});
+	
+	
+	//공연정보 클릭할때
+	$("#addbtn").on("click", function() {
+		console.log("공연저장");
 		
-        //데이터 찍어보기
-        console.log(disN);
-        console.log(disR);
-        console.log(disD);
-        console.log(prodNo);
-        
+		var formData = new FormData();
+		
+		//전체
+		/* var productVo = {}; */
+		
+		//공연명
+		var prodName = $("[name='prodName']").val();
+		/* productVo.prodName = prodName; */
+		
+		
+		
+		//공연 구분
+		
+		
+		//공연 기간
+		
+		
+		//등급별 가격
+		var seatpriceList = []
+		
+		$("#bmNameArea .form-group").each(function(index, item){
 
-        //객체 만들기
-        var ProductVo ={
-                dcName : dcName,
-                dcRate : dcRate,
-                dctype : dcType,
-                prodNo : prodNo
-        };
+			var $this = $(this);
+			var grade = $this.find("[name='grade']").val();
+			var price = $this.find("[name='price']").val();
 
-        //ajax
-        $.ajax({
-            url : "${pageContext.request.contextPath}/bm/bmForm",
-            type : "post",
-            contentType : "application/json",
-            data : ProductVo,
-            dataType : "json",
-            success : function(ProductVo) {
-                /성공시 처리해야될 코드 작성/
-                render(ProductVo, "up");
-                 // 입력 데이터 초기화
-                $("#dcName").val("");
-                $("#dcRate").val("");
-                $("#dctype").val("");
-            },
-            error : function(XHR, status, error) {
-                console.error(status + " : " + error);
-            }
-        });
+			var seatpriceVo = {};
+			seatpriceVo.grade = grade;
+			seatpriceVo.price = price;
 			
-
+			seatpriceList.push(seatpriceVo);
+			
+		})
+		/* productVo.seatpriceList = seatpriceList; */
+		
+		
+		//console.log(productVo);
+		
+		
+		//공연 포스터 첨부파일(file0)
+		/* var file0 = $("#file0")[0].files[0]
+		var file1 = $("#file1")[0].files[0]
+		var file2 = $("#file2")[0].files[0]
+		var file3 = $("#file3")[0].files[0]
+ */
+		/* console.log(productVo);		 */
+		formData.append("prodName", prodName);
+		formData.append("seatpriceList", seatpriceList);
+		/* 
+		formData.append('file0', file0);
+		formData.append('file1', file1);
+		formData.append('file2', file2);
+		formData.append('file3', file3);
+		 */
+		/* console.log(formData.productVo);		 */
+		//서버에 전송
+        	//ajax
+		$.ajax({
+		    	url : "${pageContext.request.contextPath}/bm/bmUpload",
+		    	type : "post",
+		    	/* contentType : "application/json", */
+		    	data : formData,
+		    	contentType: false,
+		     processData: false,
+		    
+			/* dataType : "json", */
+			success : function(result) {
+			    
+			},
+			error : function(XHR, status, error) {
+			    console.error(status + " : " + error);
+			}
+		});
+		
+		
+	});	
 	
-		if (disD == 0) {
-			$("#bmDisArea").append(
-				'<div class="form-group form-data">' + disN + ' ('
-							+ disR + '% 할인됨)' + '</div>');
-		} else {
-			$("#bmDisArea").append(
-				'<div class="form-group form-data">' + disN + ' ('
-							+ disR + '원 할인됨)' + '</div>');
-		}
 	
-	});
+	
 </script>
 
 

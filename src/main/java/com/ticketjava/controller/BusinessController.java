@@ -1,7 +1,5 @@
 package com.ticketjava.controller;
 
-import javax.servlet.http.HttpServletRequest;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -9,11 +7,8 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.multipart.MultipartFile;
 
 import com.ticketjava.service.BusinessService;
-import com.ticketjava.vo.DetailVo;
-import com.ticketjava.vo.DiscountVo;
 import com.ticketjava.vo.ProductVo;
 
 @Controller
@@ -23,7 +18,7 @@ public class BusinessController {
 	@Autowired
 	BusinessService businessService;
 
-	// 공연 목록
+	// 공연 목록 불러오기
 	@RequestMapping(value = "/", method = { RequestMethod.GET, RequestMethod.POST })
 	public String bmInquiry(Model model) {
 		System.out.println("BusinessController/bmInquiry");
@@ -40,20 +35,36 @@ public class BusinessController {
 		return "business/bmForm";
 	}
 
+	
+	
 	// 공연 업로드
 	@RequestMapping(value = "bmUpload", method = { RequestMethod.GET, RequestMethod.POST })
-	public String bmUpload(@RequestParam("file") MultipartFile[] file,
-						@ModelAttribute ProductVo productVo,
-						@ModelAttribute DetailVo detailVo,
-						@ModelAttribute DiscountVo discountVo,
-						HttpServletRequest request, Model model) {
+	public String bmUpload( @ModelAttribute ProductVo productVo
+						  ) {
 		System.out.println("BusinessController/bmUpload");
-		System.out.println(productVo.getShowTime());
-		System.out.println(detailVo);
+		System.out.println(productVo);
+	
 
-		businessService.productUpload(file, productVo, detailVo, discountVo);
-		return "business/bmInquiry";
+		//businessService.productUpload(file, productVo, detailVo, discountVo);
+		return "";
 	}
+	
+
+	// 공연 업로드
+//	*
+//	@RequestMapping(value = "bmUpload", method = { RequestMethod.GET, RequestMethod.POST })
+//	public String bmUpload(@RequestParam("file") MultipartFile[] file,
+//						@ModelAttribute ProductVo productVo,
+//						@ModelAttribute DetailVo detailVo,
+//						@ModelAttribute DiscountVo discountVo,
+//						HttpServletRequest request, Model model) {
+//		System.out.println("BusinessController/bmUpload");
+//		System.out.println(productVo.getShowTime());
+//		System.out.println(detailVo);
+//
+//		businessService.productUpload(file, productVo, detailVo, discountVo);
+//		return "business/bmInquiry";
+//	}
 
 	// 공연 수정
 	@RequestMapping(value = "bmModify", method = { RequestMethod.GET, RequestMethod.POST })

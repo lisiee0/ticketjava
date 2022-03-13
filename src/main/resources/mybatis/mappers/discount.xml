@@ -65,8 +65,8 @@
 
 	<!-- 상시할인 추가 -->
 	<insert id="addAlwaysDis" parameterType="DiscountVo">
-		<selectKey keyProperty="dcNo, prodNo" resultType="int" order="BEFORE">
-			select seq_prod_no.nextval from dual
+		<selectKey keyProperty="prodNo" resultType="int" order="BEFORE">
+			select seq_prod_no.nextval  from product
 		</selectKey>
 		<![CDATA[
 			insert into discount	(dc_no, prod_no, dcname, dcrate, dctype) 

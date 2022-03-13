@@ -90,9 +90,9 @@ public class BusinessService {
 			System.out.println("파일 이름: " + file[i].getOriginalFilename());
 			
 			// db 저장
-//			pd.productUpload(productVo);
-//			td.detailUpload(detailVo);
-//			dd.addAlwaysDis(discountVo);
+			pd.productUpload(productVo);
+			td.detailUpload(detailVo);
+			dd.addAlwaysDis(discountVo);
 		}
 		
 	}
