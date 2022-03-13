@@ -31,15 +31,13 @@ public class ProductDao {
 	
 	
 	
-	//////////////////////////////////////////////////////
-	//////////////////////////////////////////////////////
-	
+
 	// 평점 top4 불러오기
 	public List<ProductVo> topList(int prodType) {
 		return sqlsession.selectList("product.topList", prodType);
 	}
 	
-	
+	// prodType별 모든 상품 리스트
 	public List<ProductVo> allList(int prodType) {
 		return sqlsession.selectList("product.allList", prodType);
 	}

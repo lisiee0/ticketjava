@@ -30,10 +30,7 @@
 		]]>
 	</insert>
 	
-	
-	<!-- 1111111 -->
-	
-	
+
 	<!-- 평점 top4 리스트 -->
 	<select id="topList" parameterType="ProductVo" resultType="ProductVo">
 		<![CDATA[
@@ -57,12 +54,12 @@
                                      				order by 	rating desc) o
                  			 where  	p.prod_no= o.prod_no
                  			 and    	rownum between 1 and 4
-                 			 and   		prodtype= ${prodType}) r               
+                 			 and   		prodtype= #{prodType}) r               
 			where 			p.prod_no= r.prod_no
 			and 			p.hall_no= h.hall_no
 			and 			h.theater_no= t.theater_no
 			and 			status= 1
-			and 			p.prodtype= ${prodType}
+			and 			p.prodtype= #{prodType}
 		]]>
 	</select>
 	
