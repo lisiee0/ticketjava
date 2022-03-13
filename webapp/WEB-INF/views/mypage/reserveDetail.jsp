@@ -114,7 +114,7 @@
 													<td class="nav-item">취소됨</td>
 												</tr>
 
-												<c:forEach items="${requestScope.rMap.reserveSeatList}" var="reserveSeatList">
+												<%-- <c:forEach items="${requestScope.rMap.reserveSeatList}" var="reserveSeatList">
 													<tr>
 														<td><input type="checkbox" />
 														<td class="nav-item">S석</td>
@@ -124,7 +124,7 @@
 														<td class="nav-item">175,000원</td>
 														<td class="nav-item">취소됨</td>
 													</tr>
-												</c:forEach>
+												</c:forEach> --%>
 												
 											</tbody>
 

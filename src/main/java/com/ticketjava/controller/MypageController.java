@@ -35,10 +35,10 @@ public class MypageController {
 	
 //	예매 상세페이지
 	@RequestMapping("/reserveDetail")
-	public String reserveDetail(Model model,@RequestParam(value="rezNo") int rezNo, @RequestParam(value="userNo") int userNo) {
+	public String reserveDetail(Model model,@RequestParam(value="rezNo") int rezNo) {
 		System.out.println("MypageController reserveDetail 예매 상세페이지");
 		
-		Map<String, Object> rMap = reservationService.getReserveDetail(rezNo, userNo);
+		Map<String, Object> rMap = reservationService.getReserveDetail(rezNo);
 		
 		model.addAttribute("rMap", rMap);
 		

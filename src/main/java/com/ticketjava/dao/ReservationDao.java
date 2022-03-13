@@ -53,10 +53,10 @@ public class ReservationDao {
 
 	
 //	마이페이지 예매내역 상세보기 
-	public ReserveDetailVo getReserveDetail(int userNo, int rezNo) {
+	public ReserveDetailVo getReserveDetail(int rezNo) {
 		System.out.println("ReservationDao getReserveDetail 예매 상세내역보기");
 		
-		return sqlSession.selectOne("reservation.reserveDetail");
+		return sqlSession.selectOne("reservation.reserveDetail", rezNo);
 	}
 
 	
@@ -64,9 +64,8 @@ public class ReservationDao {
 	public List<ReserveDetailVo> getReserveSeatList(int rezNo) {
 		System.out.println("ReservationDao getReserveSeat 예매 상세내역보기");
 		
-		List<ReserveDetailVo> reserveSeatList = sqlSession.selectList("reservation.reserveSeatList");
+		List<ReserveDetailVo> reserveSeatList = sqlSession.selectList("reservation.reserveSeatList", rezNo);
 		
-		System.out.println("ReservationDao getReserveDetail "+reserveSeatList);
 		return reserveSeatList;
 	}
 	

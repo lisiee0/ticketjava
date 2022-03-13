@@ -124,10 +124,10 @@ public class ReservationService {
 	
 	
 //	마이페이지 예매 상세
-	public Map<String, Object> getReserveDetail (int rezNo, int userNo) {
+	public Map<String, Object> getReserveDetail (int rezNo) {
 		System.out.println("ReservationService getReserveDetail");
 		
-		ReserveDetailVo reserveDetail = reservationDao.getReserveDetail(rezNo, userNo);
+		ReserveDetailVo reserveDetail = reservationDao.getReserveDetail(rezNo);
 		List<ReserveDetailVo> reserveSeatList = reservationDao.getReserveSeatList(rezNo);
 		
 		Map<String, Object> rMap = new HashMap<String, Object>();

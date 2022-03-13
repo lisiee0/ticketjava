@@ -81,7 +81,7 @@
 												<th>상품명</th>
 												<th>구역</th>
 												<th>간격/횟수</th>
-												<th>알림수정</th>
+												<th>설정</th>
 												<th>알림상태</th>
 											</tr>
 										</thead>
@@ -113,7 +113,7 @@
 														</c:choose>
 													</td>
 													<td>
-														<button type="button" id="chgSetBtn" class="btn btn-primary" data-prodno="${vo.prodNo}" data-viewdate="${vo.viewDate}">설정 변경</button>
+														<button type="button" id="chgSetBtn" class="btn btn-primary" data-prodno="${vo.prodNo}" data-viewdate="${vo.viewDate}">변경</button>
 													</td>
 													<td>
 														<c:choose>

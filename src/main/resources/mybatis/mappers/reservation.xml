@@ -103,7 +103,7 @@ where u.user_no= 1
 	
 	
 	<!-- 예매정보 상세 -->
-	<select id="reserveDetail" resultType="ReserveDetailVo" parameterType="ReserveDetailVo">
+	<select id="reserveDetail" resultType="ReserveDetailVo" parameterType="int">
 <![CDATA[
 select 
         u.user_no userNo,
@@ -122,7 +122,6 @@ and     p.prod_no= r.prod_no
 and     p.hall_no= h.hall_no
 and     t.theater_no= h.theater_no
 and     r.rez_no= #{rezNo}
-and     u.user_no= #{userNo}
 ]]>
 	</select>
 	
@@ -136,22 +135,20 @@ and     u.user_no= 1
 
 
 	<!-- 예매 정보 상세 좌석 -->
-	<select id="reserveSeatList" resultType="ReserveDetailVo" parameterType="ReserveDetailVo">
+	<select id="reserveSeatList" resultType="ReserveDetailVo" parameterType="int">
 <![CDATA[
 select
-        selseat_no,
-        rez_no,
-        dc_no,
+        selseat_no selseatNo,
+        dcName,
         grade,
         section,
         col,
         num,
         payment,
-        status,
-        to_char(pretime, 'yy-mm-dd hh24:mi') pretime
-
-from	selseat 
-where	rez_no = #{rezNo}
+        status
+from	selseat s, discount d
+where	s.dc_no = d.dc_no and
+ 		rez_no = #{rezNo}
 ]]>
 	</select>
 	
