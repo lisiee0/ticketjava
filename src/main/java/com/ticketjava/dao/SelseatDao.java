@@ -7,6 +7,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import com.ticketjava.vo.NotiDataVo;
 import com.ticketjava.vo.ReservationVo;
 import com.ticketjava.vo.SelseatVo;
 
@@ -47,4 +48,8 @@ public class SelseatDao {
 	}
 	
 	
+	
+	public NotiDataVo selectByNo(int selseatNo) {
+		return sqlSession.selectOne("selseat.selectByNo", selseatNo);
+	}
 }

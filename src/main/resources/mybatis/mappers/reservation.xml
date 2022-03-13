@@ -151,5 +151,4 @@ where	selseat_no = #{selseatNo}
 	</select>
 
 
-
 </mapper>

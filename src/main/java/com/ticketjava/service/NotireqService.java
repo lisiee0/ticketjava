@@ -8,6 +8,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.ticketjava.dao.NotireqDao;
+import com.ticketjava.dao.ReservationDao;
+import com.ticketjava.dao.SelseatDao;
+import com.ticketjava.vo.NotiDataVo;
 import com.ticketjava.vo.NotireqVo;
 import com.ticketjava.vo.UserVo;
 
@@ -17,6 +20,12 @@ public class NotireqService {
 	@Autowired
 	private NotireqDao notireqDao;
 
+	@Autowired
+	private SelseatDao selseatDao;
+	
+	@Autowired
+	private ReservationDao reservationDao;
+	
 	public String addNotireq(NotireqVo notireqVo, HttpSession session) {
 		
 		UserVo authUser = (UserVo)session.getAttribute("authUser");
@@ -85,24 +94,28 @@ public class NotireqService {
 	
 	
 	public void notiSend() {
-		/* 
-		 1. selseat 예매취소(selseatNo) -->  rezNo, grade, section, col, num
-		 ( selseat status = 0 )
+		 
+		// 1. selseat 예매취소(selseatNo) -->  rezNo, grade, section, col, num
+		// ( selseat status = 0 )
 		
-		 2. reserve(rezNo) >  prodNo, userNo, viewDate
-		 ( rezNo 같은 selseat status가 모두 0이면 --> reserve status = 0 )
+		 //2. reserve(rezNo) >  prodNo, viewDate
+		 //( rezNo 같은 selseat status가 모두 0이면 --> reserve status = 0 )
 		 
-		 3. product(prodNo) >  prodName, showTime
+		 //3. product(prodNo) >  prodName, showTime
 		 
-		 4. notireq(prodNo, viewDate, section, status==1?)  >  결과 userNo 리스트   
+		int selseatNo = 521;   // 193, vip, e, 1, 7
+		NotiDataVo notiDataVo = selseatDao.selectByNo(selseatNo);
+		System.out.println(notiDataVo);
+		
+		 //4. notireq(prodNo, viewDate, section, status==1?)  >  결과 userNo 리스트   
 		 
-		 5. noti (결과 userNo 리스트 ) > 알림 번호(시퀀스), 내용 ( viewDate+showTime , prodName, section ) , 알림 시간 (sysdate)   
+		 //5. noti (결과 userNo 리스트 ) > 알림 번호(시퀀스), 내용 ( viewDate+showTime , prodName, section ) , 알림 시간 (sysdate)   
 		 								  
-		 								    └ 링크(예매페이지 --> 취소 좌석 선택 (prodNo, viewDate, grade, section, col, num 으로 기본 선택) )
+		 //								    └ 링크(예매페이지 --> 취소 좌석 선택 (prodNo, viewDate, grade, section, col, num 으로 기본 선택) )
 		 								    
-		 6. Users (결과 userNo 리스트) > email로 내용 전송								    
+		 // 6. Users (결과 userNo 리스트) > email로 내용 전송								    
 		 
-		 */
+		 
 		
 		
 		

@@ -88,5 +88,11 @@ public class NotireqController {
 		
 	}
 	
+	@RequestMapping("/test")
+	public String test() {
+		notireqService.notiSend();
+		return "";
+	}
+	
 	
 }

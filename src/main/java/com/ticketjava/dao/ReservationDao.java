@@ -74,7 +74,7 @@ public class ReservationDao {
 	public void deleteReserveSeat (int selseatNo) {
 		System.out.println("ReservationDao deleteReserveSeat 실행");
 		sqlSession.delete("reservation.reserveSeatCancel", selseatNo);
-	} 
-	
+	}
+
 	
 } // The end of ReservationDao

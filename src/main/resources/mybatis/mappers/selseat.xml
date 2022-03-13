@@ -74,4 +74,22 @@
 		]]>
 	</update>
 	
+	
+	<select id="selectByNo" parameterType="int" resultType="NotiDataVo">
+		<![CDATA[
+			select s.rez_no rezNo,
+			       grade,
+			       section,
+			       col,
+			       num,
+			       r.prod_no prodNo,
+			       viewDate,
+			       prodName,
+			       showTime
+			from selseat s, reserve r, product p
+			where s.rez_no = r.rez_no and
+			      r.prod_no = p.prod_no and
+			      selseat_no = #{selseatNo}
+		]]>
+	</select>
 </mapper>
