@@ -127,8 +127,9 @@ public class NotireqService {
 		 								    
 		 // 6. Users (결과 userNo 리스트) > email로 내용 전송								    
 		 
-		 List<String> emailList = userDao.
-		
+			/*
+			 * List<String> emailList = userDao.
+			 */
 		
 		
 	}

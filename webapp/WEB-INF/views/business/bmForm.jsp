@@ -444,8 +444,8 @@
 		var file3 = $("#file3")[0].files[0]
  */
 		/* console.log(productVo);		 */
-		formData.append("prodName", prodName);
-		formData.append("seatpriceList", seatpriceList);
+		/* formData.append("prodName", prodName); */
+		/* formData.append("seatpriceList", seatpriceList); */
 		/* 
 		formData.append('file0', file0);
 		formData.append('file1', file1);
@@ -455,13 +455,24 @@
 		/* console.log(formData.productVo);		 */
 		//서버에 전송
         	//ajax
+        	
+        	formData.append("prodName", "aaaaaaa");
+        	formData.append("seatpriceList", seatpriceList);
+        
+        	console.log(formData.get("prodName"));
+        	console.log(formData.get("seatpriceList"));
+        	
+        	var data = JSON.stringify(formData);
+        	console.log(data);
+        	
+        	
 		$.ajax({
 		    	url : "${pageContext.request.contextPath}/bm/bmUpload",
 		    	type : "post",
-		    	/* contentType : "application/json", */
+		    /*  contentType : "application/json",  */
 		    	data : formData,
-		    	contentType: false,
-		     processData: false,
+		    /* 	contentType: false,
+		     processData: false, */
 		    
 			/* dataType : "json", */
 			success : function(result) {

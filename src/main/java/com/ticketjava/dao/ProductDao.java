@@ -15,10 +15,10 @@ public class ProductDao {
 	private SqlSession sqlsession;
 
 	// 공연 리스트
-	public List<ProductVo> getProductList(int prodNo) {
+	public List<ProductVo> getProductList() {
 		System.out.println("ProductDao/getProductList");
 
-		return sqlsession.selectList("product.getProductList", prodNo);
+		return sqlsession.selectList("product.getProductList");
 	}
 
 	// 공연 추가
