@@ -1,5 +1,7 @@
 package com.ticketjava.dao;
 
+import java.util.List;
+
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -23,5 +25,9 @@ public class NotireqDao {
 
 	public int deleteReq(NotireqVo notireqVo) {
 		return sqlSession.delete("notireq.deleteReq", notireqVo);
+	}
+
+	public List<NotireqVo> selectReqList(int userNo) {
+		return sqlSession.selectList("notireq.selectReqList", userNo);
 	}
 }

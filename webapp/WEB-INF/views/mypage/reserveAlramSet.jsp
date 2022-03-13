@@ -6,6 +6,8 @@
 <meta charset="UTF-8">
 <title>TicketJava 마이페이지 취소알림</title>
 
+<script src="${pageContext.request.contextPath}/assets/jquery/jquery-1.12.4.js"></script>
+
 <!-- 부트스트랩 Bootstrap core CSS -->
 <link href="${pageContext.request.contextPath}/assets/bootstrap/css/bootstrap.css" rel="stylesheet">
 
@@ -77,53 +79,42 @@
 												<!-- 취소알림 신청번호 -->
 												<th>알림신청일</th>
 												<th>상품명</th>
-												<th>좌석/구역</th>
-												<th>알림간격</th>
+												<th>구역</th>
+												<th>간격/횟수</th>
+												<th>알림수정</th>
 												<th>알림상태</th>
 											</tr>
 										</thead>
 										<tbody>
-											<form action="" name="" method="get">
+												
+											<c:forEach items="${reqList}" var="vo"> 
 												<tr>
-
-													<td>123</td>
-													<td>2020-12-15</td>
-													<td class="text-left"><a href="#">뮤지컬 라이온킹 오리지널 내한..</a></td>
-													<td>A</td>
-													<td><select name="alertDuration">
-															<option name="10min" value="10min">10분</option>
-															<option name="1hour" value="60min">1시간</option>
-															<option name="2hour" value="120min">2시간</option>
-															<option name="6hour" value="360min">6시간</option>
-															<option name="12hour" value="720min">12시간</option>
-													</select>
-
-														<button type="button" class="btn btn-primary">변경</button></td>
-													<td><img src="${pageContext.request.contextPath}/assets/image/index/bell-off.png">
-														<button type="button" class="btn btn-primary">설정변경</button></td>
-
+													<td>${vo.reqNo}</td>
+													<td>${vo.reqDate}</td>
+													<td><a href="#">${vo.prodName}</a></td>
+													<td>${vo.selSection}</td>
+													<td>
+														${vo.interval} / ${vo.notiTimes}
+													</td>
+													<td>
+														<button type="button" id="chgSetBtn" class="btn btn-primary" data-prodno="${vo.prodNo}" data-viewdate="${vo.viewDate}">설정 변경</button>
+													</td>
+													<td>
+														<c:choose>
+															<c:when test="${vo.status == 1}">
+																<img id="activeBtn" src="${pageContext.request.contextPath}/assets/image/index/bell-normal.png" data-status="${vo.status}">
+															</c:when>
+															<c:otherwise> <!-- status == 0  -->
+																<img id="activeBtn" src="${pageContext.request.contextPath}/assets/image/index/bell-off.png" data-status="${vo.status}">
+															</c:otherwise>
+														</c:choose>
+													</td>
 												</tr>
-											</form>
-											<tr>
-
-												<td>123</td>
-												<td>2020-12-15</td>
-												<td class="text-left"><a href="#">뮤지컬 라이온킹 오리지널 내한..</a></td>
-												<td>B, C</td>
-												<td><select name="alertDuration">
-														<option name="10min" value="10min">10분</option>
-														<option name="1hour" value="60min">1시간</option>
-														<option name="2hour" value="120min">2시간</option>
-														<option name="6hour" value="360min">6시간</option>
-														<option name="12hour" value="720min">12시간</option>
-												</select>
-
-													<button type="button" class="btn btn-primary">변경</button></td>
-												<td><img src="${pageContext.request.contextPath}/assets/image/index/bell-normal.png">
-													<button type="button" class="btn btn-primary">설정변경</button></td>
-												</form>
-											</tr>
-
+											</c:forEach>
+												
+												
+											
+											
 										</tbody>
 									</table>
 								</div>
@@ -153,4 +144,43 @@
 	<!-- wrap 종료 -->
 
 </body>
+
+<script>
+	$('#chgSetBtn').on('click',function(){
+		var viewDate = $(this).data('viewdate');
+		var prodNo= $(this).data('prodno');
+		window.open('${pageContext.request.contextPath}/notification/notireqForm?prodNo='+prodNo+'&viewDate='+viewDate,'notireqForm', 'width=970, height=800, left=300, top=100');
+	});
+	
+/* 	$('activeBtn').on('click',function(){
+	
+		$.ajax({
+			url: "${pageContext.request.contextPath}/notification/notiToggle",
+			type : "post",
+			data : {status:status},
+			async : false,
+			dataType: "json",
+			success : function(selseatList){
+
+				for(var selseat of selseatList){
+					var grade = selseat.grade;
+					if(grade == 'vip')
+						grade = 'v';
+					var section = selseat.section;
+					var col = selseat.col;
+					var num = selseat.num;
+					
+					$('[class='+grade+'][data-section='+section+'][data-col='+col+'][data-num='+num+']').attr("disabled",true);
+				}
+				
+			},
+			error : function(XHR, status, error) {
+				console.error(status + " : " + error);
+			}
+		});
+		
+	}) */
+	
+</script>
+
 </html>

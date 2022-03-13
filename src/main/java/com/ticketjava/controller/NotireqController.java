@@ -1,5 +1,7 @@
 package com.ticketjava.controller;
 
+import java.util.List;
+
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -56,14 +58,29 @@ public class NotireqController {
 	
 	
 	
-	@RequestMapping("/myReq")
+	/*@RequestMapping("/myReq")
 	public String myReq(@RequestParam("prodNo") int prodNo,
 			   			 Model model) {
 		RezProdInfoVo rezProdInfo = reservationService.rezProdInfo(prodNo);
 		model.addAttribute("rezProdInfo", rezProdInfo);
 		return "reservation/myReq";
-	}
+	}*/
 	
+	
+	/* 마이페이지 알림 */
+	
+	@RequestMapping("/myReqList")
+	public String myReqList(HttpSession session,
+							Model model) {
+		List<NotireqVo> reqList = notireqService.myReqList(session);
+		
+		System.out.println("myReqList");
+		System.out.println(reqList);
+		model.addAttribute("reqList", reqList);
+		
+		return "mypage/reserveAlramSet";
+		
+	}
 	
 	
 }

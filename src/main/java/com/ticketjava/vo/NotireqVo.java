@@ -13,13 +13,13 @@ public class NotireqVo {
 	private String reqDate;
 	private int status;
 
+	private String prodName;
+
 	public NotireqVo() {
-		super();
 	}
 
 	public NotireqVo(int reqNo, int userNo, int prodNo, String viewDate, String selSection, int interval, int notiTimes,
-			String reqDate, int status) {
-		super();
+			String reqDate, int status, String prodName) {
 		this.reqNo = reqNo;
 		this.userNo = userNo;
 		this.prodNo = prodNo;
@@ -29,6 +29,15 @@ public class NotireqVo {
 		this.notiTimes = notiTimes;
 		this.reqDate = reqDate;
 		this.status = status;
+		this.prodName = prodName;
+	}
+
+	public String getProdName() {
+		return prodName;
+	}
+
+	public void setProdName(String prodName) {
+		this.prodName = prodName;
 	}
 
 	public int getReqNo() {
@@ -107,7 +116,7 @@ public class NotireqVo {
 	public String toString() {
 		return "NotireqVo [reqNo=" + reqNo + ", userNo=" + userNo + ", prodNo=" + prodNo + ", viewDate=" + viewDate
 				+ ", selSection=" + selSection + ", interval=" + interval + ", notiTimes=" + notiTimes + ", reqDate="
-				+ reqDate + ", status=" + status + "]";
+				+ reqDate + ", status=" + status + ", prodName=" + prodName + "]";
 	}
 
 }

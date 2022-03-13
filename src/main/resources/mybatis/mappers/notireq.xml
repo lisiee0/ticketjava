@@ -13,6 +13,23 @@
 			]]>		
 		</select>
 		
+		<select id="selectReqList" parameterType="int" resultType="NotireqVo">
+			<![CDATA[
+				select req_no reqNo,
+					   to_char(reqDate,'yyyy-mm-dd') reqDate,
+					   prodName,
+					   selSection,
+					   n.status,
+					   n.prod_no prodNo,
+					   to_char(viewDate,'yyyy-mm-dd') viewDate,
+					   interval,
+					   notiTimes
+				from notireq n, product p
+				where n.prod_no = p.prod_no and 
+					  n.user_no = #{userNo}
+			]]>		
+		</select>
+		
 		<insert id="insertNotireq" parameterType="NotireqVo">
 			<![CDATA[
 				insert into notireq

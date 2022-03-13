@@ -1,5 +1,7 @@
 package com.ticketjava.service;
 
+import java.util.List;
+
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -102,6 +104,22 @@ public class NotireqService {
 		 
 		 */
 		
+		
+		
+	}
+
+	public List<NotireqVo> myReqList(HttpSession session) {
+		UserVo authUser = (UserVo)session.getAttribute("authUser");
+		int userNo;
+		
+		if(authUser != null) {
+			userNo = authUser.getUserNo();
+		}
+		else {
+			userNo = 1;
+		}
+		
+		return notireqDao.selectReqList(userNo);
 		
 		
 	}
