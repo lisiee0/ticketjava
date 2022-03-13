@@ -41,8 +41,19 @@ public class MypageController {
 		Map<String, Object> rMap = reservationService.getReserveDetail(rezNo);
 		
 		model.addAttribute("rMap", rMap);
+		System.out.println("rMap 컨트롤러"+rMap);
 		
-//		System.out.println("컨트롤러 reserveDetail "+reserveDetail);
+		return "mypage/reserveDetail";
+	}
+	
+	
+//	예매 좌석 부분 취소
+	@RequestMapping("/reserveSeatCancel")
+	public String reserveSeatCancel(Model model,@RequestParam(value="selseatNo") int selseatNo) {
+		System.out.println("MypageController reserveSeatCancel 예매 좌석 삭제 실행");
+		
+		reservationService.deleteReserveSeat(selseatNo);
+		
 		return "mypage/reserveDetail";
 	}
 	

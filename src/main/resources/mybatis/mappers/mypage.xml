@@ -31,14 +31,8 @@ from (select
       where		r.rez_no = s.rez_no
       group by	r.rez_no, r.rezdate, r.viewdate, r.status, r.prod_no) r, product p, users u
 where u.user_no= #{userNo}
-]]>       
+]]>
 	</select>
-
-<!-- 
-개발용
-where u.user_no= #{userNo}
-where u.user_no= 1
- -->
 
 	<!-- 예매정보 상세 -->
 	<select id="reserveDetail" resultType="ReserveDetailVo" parameterType="ReserveDetailVo">
@@ -63,40 +57,26 @@ and     r.rez_no= #{rezNo}
 and     u.user_no= #{userNo}
 ]]>
 	</select>
-	
-<!-- 
-개발용
-and     r.rez_no= #{rezNo}
-and     u.user_no= #{userNo}
-and     r.rez_no= 56
-and     u.user_no= 1
- -->
-
 
 	<!-- 예매 정보 상세 좌석 -->
 	<select id="reserveSeatList" resultType="ReserveDetailVo" parameterType="ReserveDetailVo">
 <![CDATA[
-select
-        selseat_no,
-        rez_no,
-        dc_no,
-        grade,
-        section,
-        col,
-        num,
-        payment,
-        status,
-        to_char(pretime, 'yy-mm-dd hh24:mi') pretime
-
-from	selseat 
+DELETE FROM	selseat
 where	rez_no = #{rezNo}
+and		selseat_no = #{selseatNo}
 ]]>
 	</select>
-	
-<!-- 
-개발용
-where	rez_no = #{rezNo}
-where	rez_no = 1
- -->
+
+
 
 </mapper>
+
+
+<!-- 
+예매상세 만들때 미흡사항 
+1.	쿼리에 쓸모없는 userNo가 들어있었음 
+2.	마이바티스 파라미터 타입 리저브디테일vo 
+3.	sqlSession에 인자가 빠져있고 2개 이상의 매개 변수는 vo 나 map으로 처리해야하는데 처리 안되어있었음 
+4.	리저브 디테일vo에 dcNo가 없지만, 선택좌석 가져올때 dcNo가 있는데 게터가 없어서 오류있었음. 
+
+-->

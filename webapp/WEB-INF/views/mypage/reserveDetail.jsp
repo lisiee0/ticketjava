@@ -60,7 +60,7 @@
 							<!-- content body -->
 							<div class="ticketingDetail">
 								<div class="rezInvoice">
-									<h4>normaluser1님의 예매정보</h4>
+									<h4>${rMap.reserveDetail.name}님의 예매정보</h4>
 									<h5>티켓명 : ${rMap.reserveDetail.prodname} </h5>
 
 									<table>

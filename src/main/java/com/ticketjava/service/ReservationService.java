@@ -138,5 +138,12 @@ public class ReservationService {
 	}
 	
 	
+	public void deleteReserveSeat (int selseatNo) {
+		System.out.println("ReservationService deleteReserveSeat 실행");
+		reservationDao.deleteReserveSeat(selseatNo);
+	} 
+	
+	
+	
 	
 } // The end of ReservationService
