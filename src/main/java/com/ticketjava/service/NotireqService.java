@@ -8,11 +8,13 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.ticketjava.dao.NotificationDao;
 import com.ticketjava.dao.NotireqDao;
 import com.ticketjava.dao.SelseatDao;
 import com.ticketjava.dao.UserDao;
 import com.ticketjava.util.JavaMail;
 import com.ticketjava.vo.NotiDataVo;
+import com.ticketjava.vo.NotificationVo;
 import com.ticketjava.vo.NotireqVo;
 import com.ticketjava.vo.UserVo;
 
@@ -27,6 +29,9 @@ public class NotireqService {
 	
 	@Autowired
 	private UserDao userDao;
+	
+	@Autowired
+	private NotificationDao notificationDao;
 	
 	public String addNotireq(NotireqVo notireqVo, HttpSession session) {
 		
@@ -123,27 +128,33 @@ public class NotireqService {
 		 								  
 		 //								    └ 링크(예매페이지 --> 취소 좌석 선택 (prodNo, viewDate, grade, section, col, num 으로 기본 선택) )
 		 						
+		List <NotificationVo> notificationList = new ArrayList<>();
+		
+		String content = ""
+				+ "<a href='http://localhost:8088/ticketjava/reservation/selectSeat?prodNo="+notiDataVo.getProdNo()+"&viewDate="+notiDataVo.getViewDate()+"'>"
+				+ notiDataVo.getViewDate()+" "+notiDataVo.getShowTime()+" "+notiDataVo.getProdName()+" "+notiDataVo.getGrade().toUpperCase()+"석 "
+				+ notiDataVo.getSection()+"구역 "+notiDataVo.getCol()+"열 "+notiDataVo.getNum()+"번 좌석 취소 안내"
+				+ "</a>";
+		
+		for(int userNo : targetUserNo) {
+			NotificationVo n = new NotificationVo();
+			n.setUserNo(userNo);
+			n.setContent(content);
+			
+			notificationList.add(n);
+		}
+		notificationDao.insertList(notificationList);
 		
 		
 		
 		 // 6. Users (결과 userNo 리스트) > email로 내용 전송								    
 
-		
-
-		 
-			/*
-			 * List<String> emailList = userDao.
-			 */
-
-		
 		List<String> emailList = userDao.selectEmail(targetUserNo);
 		System.out.println(emailList);
 		
-		String[] mList = {"dldnjswns134@naver.com"};
-		List<String>mllist = new ArrayList<>();
-		
-		mllist.add(mList[0]);
-		JavaMail.sendMail(mllist, notiDataVo);
+		List<String>test = new ArrayList<>();
+		test.add("dldnjswns134@naver.com");
+		JavaMail.sendMail(test, notiDataVo);
 		
 	}
 
