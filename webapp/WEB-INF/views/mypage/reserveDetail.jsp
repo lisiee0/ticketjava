@@ -15,16 +15,13 @@
 <link href="${pageContext.request.contextPath}/assets/css/mypage/ticketjavaMypageCommon.css" rel="stylesheet" type="text/css">
 <link href="${pageContext.request.contextPath}/assets/css/mypage/mypageTicketingDetail.css" rel="stylesheet" type="text/css">
 
-
 <script type="text/javascript" src="${pageContext.request.contextPath}/assets/js/jquery-1.12.4.js">
-	
 </script>
+
 <script type="text/javascript" src="${pageContext.request.contextPath}/assets/bootstrap/js/bootstrap.js">
-	
 </script>
 
 </head>
-
 
 <body>
 	<div id="wrap">
@@ -122,16 +119,6 @@
 													<th scope="col">예매상태</th>
 												</tr>
 
-												<!-- <tr>
-													<td><input type="checkbox" />
-													<td class="nav-item">S석</td>
-													<td class="nav-item">재관람할인</td>
-													<td class="nav-item">B섹션</td>
-													<td class="nav-item">1층A블럭 12열5번</td>
-													<td class="nav-item">175,000원</td>
-													<td class="nav-item">취소됨</td>
-												</tr> -->
-
 												<c:forEach items="${requestScope.rMap.reserveSeatList}" var="vo">
 													<tr>
 														<td><input type="checkbox" name="selseatNo" value="${vo.selseatNo}" />
@@ -155,7 +142,7 @@
 
 										</table>
 										<div class="btncancel">
-											<button class="btn btn-primary" type="submit" value="submit" onclick="cancelCheck()">취소하기</button>
+											<button id="btnCancel" class="btn btn-primary" type="submit" value="submit" onclick="cancelCheck()">취소하기</button>
 										</div>
 									</form>
 								</div>
@@ -210,4 +197,120 @@
 	</div>
 	<!-- wrap 종료 -->
 </body>
+
+<script type="text/javascript">
+//로딩 전에 요청하기
+$(document).ready(function() {
+	console.log("리스트 요청");
+	fetchList();
+
+}); // document . ready
+
+//취소하기 전에 물어보기 얼럿 alert
+function cancelCheck() {
+
+	 if (confirm("정말 취소하시겠습니까??") == true){    //확인
+
+	     document.cancelticket.submit();
+
+	 }else{   //취소
+
+	     return false;
+
+	 }
+};
+
+// 취소버튼을 클릭했을때 
+$("#btnCancel").on("click", function() {
+	console.log("취소 버튼 클릭");
+
+	// 데이터 수집
+	var selseatNo = $("#selseatNo").val();
+
+	var cancelSeatVo = {
+		selseatNo : selseatNo
+	}
+
+	console.log("cancelSeatVo 출력 " + cancelSeatVo);
+
+	//ajax 요청 no password
+	$.ajax({
+		url : "${pageContext.request.contextPath}/mypage/requestCancelTicket",
+		type : "post",
+		// contentType : "application/json",
+		data : cancelSeatVo,
+
+		dataType : "json",
+		success : function(state) {
+			console.log("state 출력 " + state);
+			
+			 if (confirm("정말 취소하시겠습니까??") == true){
+			     document.cancelticket.submit();
+			 }else{
+			     return false;
+			 }
+				
+		},
+		error : function(XHR, status, error) {
+			console.error(status + " : " + error);
+		}
+	}); // ajax
+
+}); // btnCancel click function
+
+
+
+function fetchList() { // 리스트 가져오기 (그리기를 시키는 기능)
+
+$.ajax({
+	//요청항목 보낼떄
+	url : "${pageContext.request.contextPath}/mypage/reserveDetail",
+	type : "post", 
+
+	//응답항목 받을때
+	dataType : "json",
+	success : function(rMap.reserveSeatList) { // json -> js 로 변환
+		/*성공시 처리해야될 코드 작성*/
+		console.log(seatList);
+		// console.log(guestbookList[0].name); // 데이터 잘 오는지 확인
+
+		for (var i = 0; i < rMap.reserveSeatList.length; i++) {
+			render(rMap.reserveSeatList[i], "down"); // 방명록 리스트 출력
+		}
+	},
+	error : function(XHR, status, error) {
+		console.error(status + " : " + error);
+	}
+}); // ajax
+
+}; // function fetchList
+
+str += ' 		<td>좌석등급: ' + ${vo.grade} + '</td> ';
+
+
+function render(cancelSeatVo, updown) { // 1명씩 정보를 받아 처리 button의 data-no 소문자만 인식 대문자넣으면 에러 
+	console.log("테이블 출력");
+	var str = '';
+	str += ' <table id="t'+rMap.reserveSeatList.no+'" class="guestRead"> ';
+	str += ' 	<colgroup> ';
+	str += ' 		<col style="width: 10%;"> ';
+	str += ' 		<col style="width: 40%;"> ';
+	str += ' 		<col style="width: 40%;"> ';
+	str += ' 		<col style="width: 10%;"> ';
+	str += ' 	</colgroup> ';
+	str += ' </table> ';
+	str += ' ';
+
+	if (updown == 'down') {
+		$("#listArea").append(str); // .html 을 쓰면 바꿔치는 기능때문에 마지막글 만 출력 
+	} else if (updown == 'up') {
+		$("#listArea").prepend(str);
+	} else {
+		console.log("방향오류");
+	};
+
+}; // function render
+
+</script>
+
 </html>
