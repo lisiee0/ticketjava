@@ -95,7 +95,7 @@
 							<li class="nav-item"><a href="${pageContext.request.contextPath}/product/type?prodType=1">뮤지컬</a></li>
 							<li class="nav-item"><a href="${pageContext.request.contextPath}/product/type?prodType=2">연극</a></li>
 							<li class="nav-item"><a href="${pageContext.request.contextPath}/product/type?prodType=3">콘서트</a></li>
-							<li class="nav-item"><a href="${pageContext.request.contextPath}/product/type?prodType=4">스포츠</a></li>
+							<li class="nav-item"><a href="${pageContext.request.contextPath}/product/sports?prodType=4">스포츠</a></li>
 							<li class="nav-item"><a href="${pageContext.request.contextPath}/product/type?prodType=5">전시</a></li>
 							<li class="nav-item"><a href="${pageContext.request.contextPath}/product/theaterList"><span class="smallFont">공연장</span></a></li>
 							<li class="nav-item"><a href=""><span class="smallFont">지역</span></a></li>
