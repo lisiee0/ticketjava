@@ -11,15 +11,15 @@ CREATE TABLE users (
 	id VARCHAR2(40), /* 아이디 */
 	password VARCHAR2(40), /* 비밀번호 */
 	name VARCHAR2(20), /* 이름 */
-	phone VARCHAR2(30), /* 전화번호 */
-	postcode VARCHAR2(20), /* 우편번호 */
-	address VARCHAR2(100), /* 주소 */
-	address2 VARCHAR2(50), /* 상세주소 */
-	email VARCHAR2(50), /* 이메일 */
+	phone VARCHAR2(50), /* 전화번호 */
+	postcode VARCHAR2(30), /* 우편번호 */
+	address VARCHAR2(200), /* 주소 */
+	address2 VARCHAR2(100), /* 상세주소 */
+	email VARCHAR2(100), /* 이메일 */
 	usertype NUMBER, /* 회원구분 */
 	joindate DATE, /* 가입일 */
-	bizno VARCHAR2(40), /* 사업자등록번호 */
-	salt VARCHAR2(40) /* salt */
+	bizno VARCHAR2(50), /* 사업자등록번호 */
+	salt VARCHAR2(50) /* salt */
 );
 
 COMMENT ON TABLE users IS '회원';
@@ -73,12 +73,12 @@ CREATE TABLE theater (
 	theater_no NUMBER NOT NULL, /* 공연장번호 */
 	theatername VARCHAR2(50), /* 공연장명 */
 	postcode VARCHAR2(20), /* 우편번호 */
-	address VARCHAR2(100), /* 주소 */
-	address2 VARCHAR2(50), /* 상세주소 */
+	address VARCHAR2(200), /* 주소 */
+	address2 VARCHAR2(100), /* 상세주소 */
 	latitude VARCHAR2(50), /* 위도 */
 	longitude VARCHAR2(50), /* 경도 */
 	phone VARCHAR2(40), /* 대표번호 */
-	homepage VARCHAR2(100), /* 홈페이지주소 */
+	homepage VARCHAR2(200), /* 홈페이지주소 */
 	logopath VARCHAR2(100) /* 공연장사진(이미지) */
 );
 
@@ -168,7 +168,7 @@ CREATE TABLE seat (
 	section VARCHAR2(10), /* 구역 */
 	col NUMBER, /* 열 */
 	num NUMBER, /* 번호 */
-	status NUMBER /* 상태(사용중) */
+	status NUMBER /* 상태 */
 );
 
 COMMENT ON TABLE seat IS '좌석';
@@ -218,7 +218,7 @@ CREATE TABLE product (
 	prod_no NUMBER NOT NULL, /* 공연번호 */
 	user_no NUMBER, /* 회원번호(사업자) */
 	hall_no NUMBER, /* 시설번호 */
-	prodname VARCHAR2(50), /* 공연명 */
+	prodname VARCHAR2(200), /* 공연명 */
 	prodtype NUMBER, /* 공연구분 */
 	beginshow DATE, /* 공연기간(시작) */
 	endshow DATE, /* 공연기간(종료) */
@@ -227,8 +227,8 @@ CREATE TABLE product (
 	showtime DATE, /* 공연 시작시간 */
 	viewtime NUMBER, /* 관람 시간 */
 	viewgrade NUMBER, /* 관람 등급 */
-	notice VARCHAR2(500), /* 공지사항 */
-	cancelinfo VARCHAR2(500), /* 예매/취소 안내 */
+	notice VARCHAR2(2000), /* 공지사항 */
+	cancelinfo VARCHAR2(2000), /* 예매/취소 안내 */
 	status NUMBER, /* 노출 여부 */
 	posterpath VARCHAR2(100) /* 포스터이미지경로 */
 );
@@ -309,8 +309,8 @@ CREATE TABLE reserve (
 	user_no NUMBER, /* 회원번호 */
 	rezdate DATE, /* 예매일 */
 	viewdate DATE, /* 관람일 */
-	phone VARCHAR2(40), /* 휴대폰번호 */
-	email VARCHAR2(100), /* 이메일 */
+	phone VARCHAR2(50), /* 휴대폰번호 */
+	email VARCHAR2(200), /* 이메일 */
 	totalPayment NUMBER,
 	status NUMBER /* 상태 (예매 or 취소) */
 );
@@ -373,7 +373,7 @@ DROP TABLE discount
 CREATE TABLE discount (
 	dc_no NUMBER NOT NULL, /* 할인 번호 */
 	prod_no NUMBER NOT NULL, /* 공연번호 */
-	dcname VARCHAR(30), /* 할인설명 */
+	dcname VARCHAR(50), /* 할인설명 */
 	begindc DATE, /* 할인시작일 */
 	enddc DATE, /* 할인종료일 */
 	dcrate NUMBER, /* 할인율 */
@@ -427,7 +427,7 @@ CREATE TABLE review (
 	review_no NUMBER NOT NULL, /* 후기번호 */
 	prod_no NUMBER, /* 공연번호 */
 	user_no NUMBER, /* 회원번호 */
-	content VARCHAR2(300), /* 내용 */
+	content VARCHAR2(500), /* 내용 */
 	rating NUMBER, /* 평점 */
 	regdate DATE /* 작성일 */
 );
@@ -486,7 +486,7 @@ DROP TABLE authmail
 CREATE TABLE authmail (
 	auth_no NUMBER NOT NULL, /* auth_no */
 	user_no NUMBER, /* 회원번호 */
-	authkey VARCHAR2(10), /* 인증번호 */
+	authkey VARCHAR2(20), /* 인증번호 */
 	authtype NUMBER /* 인증종류 */
 );
 
@@ -531,7 +531,7 @@ DROP TABLE noti
 CREATE TABLE noti (
 	noti_no NUMBER NOT NULL, /* 알림 번호 */
 	user_no NUMBER, /* 회원번호 */
-	content VARCHAR2(100), /* 알림 내용 */
+	content VARCHAR2(500), /* 알림 내용 */
 	notitime DATE /* 알림 시간 */
 );
 
@@ -578,7 +578,7 @@ CREATE TABLE qna (
 	prod_no NUMBER, /* 공연번호 */
 	user_no NUMBER, /* 회원번호 */
 	qna_gno NUMBER, /* 문의 그룹번호 */
-	content VARCHAR2(300), /* 내용 */
+	content VARCHAR2(500), /* 내용 */
 	regdate DATE /* 작성일 */
 );
 
@@ -641,7 +641,7 @@ DROP TABLE notice
 CREATE TABLE notice (
 	notice_no NUMBER NOT NULL, /* 공지사항번호 */
 	theater_no NUMBER, /* 공연장번호 */
-	content VARCHAR2(100), /* 내용 */
+	content VARCHAR2(400), /* 내용 */
 	regdate DATE /* 작성일 */
 );
 
@@ -827,9 +827,9 @@ DROP TABLE detail
 CREATE TABLE detail (
 	detail_no NUMBER NOT NULL, /* 상세정보 번호 */
 	prod_no NUMBER, /* 공연번호 */
-	prodpath VARCHAR2(100), /* 공연정보 */
-	castingpath VARCHAR2(100), /* 캐스팅정보 */
-	addedpath VARCHAR2(100) /* 부가정보 */
+	prodpath VARCHAR2(200), /* 공연정보 */
+	castingpath VARCHAR2(200), /* 캐스팅정보 */
+	addedpath VARCHAR2(200) /* 부가정보 */
 );
 
 COMMENT ON TABLE detail IS '공연 상세정보(이미지)';
