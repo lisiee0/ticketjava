@@ -107,9 +107,9 @@
 										<c:forEach items="${bmList}" var="vo">
 											<tr>
 												<td>${vo.prodNo}</td>
-												<td class=""><a href="${pageContext.request.contextPath}/product/info?prodNo=7" name="prodName">${vo.prodName}</a></td>
+												<td class=""><a href="${pageContext.request.contextPath}/product/info?prodNo=${vo.prodNo}" name="prodName">${vo.prodName}</a></td>
 												<td><a href="#" name="theaterName">${vo.theaterName}</a></td>
-												<td>${vo.beginShow} ~ ${vo.endShow}</td>
+												<td>${vo.beginShow}~ ${vo.endShow}</td>
 												<td><input type="checkbox"> <a href="#">확인</a></td>
 												<td><a href="${pageContext.request.contextPath}/bm/discount?prodNo=1">이벤트 할인 추가</a></td>
 												<td><a href="#">수정</a></td>
@@ -124,10 +124,7 @@
 								</table>
 
 								<div id="row" class="searchBox">
-									<div class="col-xs-8"></div>
-									<div class="col-xs-2">
-										<input type="text" class="form-control formSearchBoard" placeholder="공연 검색창" value="">
-									</div>
+									<div class="col-xs-10"></div>
 									<div class="col-xs-2">
 										<a href="${pageContext.request.contextPath}/bm/bmForm" class="btn btn-primary position">공연 등록</a>
 									</div>

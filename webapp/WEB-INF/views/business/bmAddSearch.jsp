@@ -22,7 +22,17 @@
 		<!-- 창 -->
 		<div id="result">
 			<div id="searchBox">
-				<input class="form-control" type="text" value="세종문화회관">
+				<table>
+					<colgroup>
+						<col style="width: 85%">
+						<col style="width: 15%">
+					</colgroup>
+					<tr>
+						<th><input class="form-control" id="searchArea" type="text" value="세종문화회관"></th>
+						<td><button type="button" id="searchBtn">검색버튼</button>
+</td>
+					</tr>
+				</table>
 			</div>
 
 			<div id="searchText">
@@ -32,6 +42,10 @@
 			</div>
 
 			<div id="searchResult">
+				<c:forEach>
+				
+				
+				</c:forEach>
 
 				<table>
 					<colgroup>
@@ -61,8 +75,6 @@
 					</tr>
 
 				</table>
-
-				
 				<table>
 					<colgroup>
 						<col style="width: 83%">
@@ -88,3 +100,9 @@
 </body>
 
 </html>
+
+<script>
+	
+
+
+</script>
