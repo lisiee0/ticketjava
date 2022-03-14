@@ -38,14 +38,10 @@ public class BusinessService {
 	}
 
 	// 공연 추가
-	public void productUpload(MultipartFile[] file, 
-							ProductVo productVo,
-							DetailVo detailVo,
-							DiscountVo discountVo) {
+	public void productUpload(MultipartFile[] file, ProductVo productVo, DetailVo detailVo, DiscountVo discountVo) {
 		System.out.println("BusinessServiece/productUpload()");
 
-		
-		//파일업로드
+		// 파일업로드
 		String saveDir = "C:\\javaStudy\\upload";
 
 		// MultipartFile[] file
@@ -88,17 +84,21 @@ public class BusinessService {
 			}
 
 			System.out.println("파일 이름: " + file[i].getOriginalFilename());
-			
+
 			// db 저장
 			pd.productUpload(productVo);
 			td.detailUpload(detailVo);
 			dd.addAlwaysDis(discountVo);
 		}
-		
-	}
-	// 공연 목록 수정 public void bmModify(ProductVo vo) { pd.bmModify(vo); }
 
-	// 공연 목록 삭제 public void bmDelete (ProductVo vo) { pd.bmDelete(vo); }
+	}
+
+	// 공연 목록 삭제
+	public void productDelete(ProductVo productVo) {
+		System.out.println("BusinessService/productDelete");
+
+		pd.productDelete(productVo);
+	}
 
 	public Map<String, Object> selectProdDiscount(int prodNo) {
 

@@ -29,6 +29,13 @@ public class ProductDao {
 		sqlsession.insert("product.productUpload", pvo);
 	}
 	
+	//공연 삭제
+	public int productDelete(ProductVo productVo) {
+		System.out.println("ProductDao/productDelete");
+		
+		return sqlsession.delete("product.productDelete", productVo);
+	}
+	
 	
 	
 

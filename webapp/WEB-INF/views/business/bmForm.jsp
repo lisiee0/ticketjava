@@ -78,7 +78,7 @@
 
 					<div id="board">
 
-						<div class="form-horizontal" >
+						<div class="form-horizontal">
 							<!-- 공연 제목 -->
 
 							<div class="form-group">
@@ -94,7 +94,7 @@
 
 								<div class="col-md-3">
 									<select class="form-control" name="prodType">
-										<option value="1" selected="selected">연극</option>
+										<option value="1">연극</option>
 										<option value="2">뮤지컬</option>
 										<option value="3">콘서트</option>
 										<option value="4">스포츠</option>
@@ -177,13 +177,12 @@
 									<!--좌석 선택 -->
 									<div class="form-group">
 										<div class="col-md-4">
-											<select class="form-control" id="selGrade">
-												<option name="grade" value="VIP">VIP석</option>
-												<option name="grade" value="R">R석</option>
-												<option name="grade" value="S">S석</option>
-												<option name="grade" value="A">A석</option>
-												<option name="grade" value="B">B석</option>
-												<option value="" selected="selected">좌석</option>
+											<select class="form-control" id="selGrade" name="grade">
+												<option value="VIP">VIP석</option>
+												<option value="R">R석</option>
+												<option value="S">S석</option>
+												<option value="A">A석</option>
+												<option value="B">B석</option>
 											</select>
 										</div>
 										<div class="col-md-4">
@@ -193,20 +192,6 @@
 										<!--등급별 가격 추가 -->
 										<button type="button" id="addGrade" class="btn">+</button>
 										<br>
-
-									</div>
-
-									<!--선택된 좌석 -->
-									<div class="form-group">
-										<div class="col-md-4">
-											<input type="text" class="form-control" placeholder="VIP석" readonly>
-										</div>
-										<div class="col-md-4">
-											<input type="text" class="form-control" placeholder="가격을 입력해주세요">
-										</div>
-										<div class="col-md-1">
-											<button type="button" class="btn" id="delGrade">-</button>
-										</div>
 									</div>
 									<!--좌석추가 Script -->
 									<div id="bmNameArea"></div>
@@ -304,7 +289,7 @@
 							</div>
 
 						</div>
-						
+
 					</div>
 
 				</div>
@@ -336,6 +321,9 @@
 					function() {
 						var gra = $("#selGrade").val();
 						var selp = $("#price").val();
+						console.log(gra);
+						console.log(selp);
+						
 						$("#bmNameArea")
 								.append(
 										'<div class="form-group">'
@@ -364,13 +352,13 @@
 				var disN = $("#dcName").val();
 				var disR = $("#dcRate").val();
 				var disD = $("#dcType").val();
-// 				var prodNo = ${param.prodNo};
+				// 				var prodNo = ${param.prodNo};
 
 				//데이터 찍어보기
 				console.log(disN);
 				console.log(disR);
 				console.log(disD);
-// 				console.log(prodNo);
+				// 				console.log(prodNo);
 
 				if (disD == 0) {
 					$("#bmDisArea").append(
@@ -390,104 +378,78 @@
 				};
 
 				console.log(ProductVo);
-
 			});
-	
-	
+
 	//공연정보 클릭할때
 	$("#addbtn").on("click", function() {
 		console.log("공연저장");
-		
-		var formData = new FormData();
-		
-		//전체
-		/* var productVo = {}; */
-		
-		//공연명
-		var prodName = $("[name='prodName']").val();
-		/* productVo.prodName = prodName; */
-		
-		
-		
-		//공연 구분
-		
-		
-		//공연 기간
-		
-		
-		//등급별 가격
-		var seatpriceList = []
-		
-		$("#bmNameArea .form-group").each(function(index, item){
 
-			var $this = $(this);
-			var grade = $this.find("[name='grade']").val();
-			var price = $this.find("[name='price']").val();
-
-			var seatpriceVo = {};
-			seatpriceVo.grade = grade;
-			seatpriceVo.price = price;
-			
-			seatpriceList.push(seatpriceVo);
-			
-		})
-		/* productVo.seatpriceList = seatpriceList; */
+		var ProductVo = {
+			prodName: "aaaaaa",
+			seatpriceList: [{grade:"A", price: "20000"}, {grade:"S", price: "30000"}]
+		}
 		
+		console.log(JSON.stringify(ProductVo));
 		
-		//console.log(productVo);
-		
-		
-		//공연 포스터 첨부파일(file0)
-		/* var file0 = $("#file0")[0].files[0]
-		var file1 = $("#file1")[0].files[0]
-		var file2 = $("#file2")[0].files[0]
-		var file3 = $("#file3")[0].files[0]
- */
-		/* console.log(productVo);		 */
-		/* formData.append("prodName", prodName); */
-		/* formData.append("seatpriceList", seatpriceList); */
-		/* 
-		formData.append('file0', file0);
-		formData.append('file1', file1);
-		formData.append('file2', file2);
-		formData.append('file3', file3);
-		 */
-		/* console.log(formData.productVo);		 */
-		//서버에 전송
-        	//ajax
-        	
-        	formData.append("prodName", "aaaaaaa");
-        	formData.append("seatpriceList", seatpriceList);
-        
-        	console.log(formData.get("prodName"));
-        	console.log(formData.get("seatpriceList"));
-        	
-        	var data = JSON.stringify(formData);
-        	console.log(data);
-        	
-        	
 		$.ajax({
-		    	url : "${pageContext.request.contextPath}/bm/bmUpload",
-		    	type : "post",
-		    /*  contentType : "application/json",  */
-		    	data : formData,
-		    /* 	contentType: false,
-		     processData: false, */
-		    
+			url : "${pageContext.request.contextPath}/bm/bmUpload",
+			type : "post",
+			contentType : "application/json",
+			data : JSON.stringify(ProductVo),
+			/* 	contentType: false,
+			 processData: false, */
+
 			/* dataType : "json", */
-			success : function(result) {
-			    
+			success : function(prodNo) {
+				console.log(prodNo)
+				
+				//첨부파일
+				var file0 = $("#file0")[0].files[0]
+				var file1 = $("#file1")[0].files[0]
+				var file2 = $("#file2")[0].files[0]
+				var file3 = $("#file3")[0].files[0]
+				
+				fileupload(prodNo, file0);
+				fileupload(prodNo, file1);
+				fileupload(prodNo, file2);
+				fileupload(prodNo, file3);
 			},
 			error : function(XHR, status, error) {
-			    console.error(status + " : " + error);
+				console.error(status + " : " + error);
 			}
 		});
 		
+
+	});
+	
+	
+	
+	function fileupload(prodNo, file){
+		var formData = new FormData();
 		
-	});	
-	
-	
-	
+		formData.append('prodNo', prodNo);
+		formData.append('file', file);
+		
+		$.ajax({
+			url : "${pageContext.request.contextPath}/bm/bmfileUplad",
+			type : "post",
+			/* contentType : "application/json",*/
+			contentType: false,
+			processData: false,
+			data : formData, 
+
+			/* dataType : "json", */
+			success : function(result) {
+				console.log(result)
+				
+				//첨부파일
+			},
+			error : function(XHR, status, error) {
+				console.error(status + " : " + error);
+			}
+		});
+		
+	}
 </script>
 
 

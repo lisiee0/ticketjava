@@ -6,21 +6,21 @@
 	<select id="getProductList" resultType="productVo">
 		<![CDATA[
 			select  	prod_no prodNo,
-			        	t.theatername theaterName,
-			        	prodname prodName,
-	                    to_char(beginshow, 'YYYY-MM-DD') beginShow,
-	                    to_char(endshow, 'YYYY-MM-DD') endShow,
-			        	status status
+			        		t.theatername theaterName,
+			        		prodname prodName,
+	                    	to_char(beginshow, 'YYYY-MM-DD') beginShow,
+	                    	to_char(endshow, 'YYYY-MM-DD') endShow,
+			        		status status
 			        
 			from    	product p,
-			        	theater t,
-			        	hall h
+			        		theater t,
+			        		hall h
 			where   	p.hall_no = h.hall_no
-			       	and h.theater_no = t.theater_no
+			       		and h.theater_no = t.theater_no
 		
 		]]>
 	</select>
-	
+
 	<!-- product 테이블 파일 추가 -->
 	<insert id="productUpload" parameterType="productVo">
 		<![CDATA[
@@ -29,21 +29,29 @@
 			
 		]]>
 	</insert>
-	
+
+	<!-- 공연 삭제 -->
+	<delete id="productDelete" parameterType="ProductVo">
+		<![CDATA[
+				delete from 	product
+				where 			prod_no = #{prodNo}
+		]]>
+	</delete>
+
 
 	<!-- 평점 top4 리스트 -->
 	<select id="topList" parameterType="ProductVo" resultType="ProductVo">
 		<![CDATA[
 			select			p.prod_no prodNo, 
-        					prodname,
-        					p.prodtype prodType,
-        					r.rn rn,
-        					to_char(beginshow, 'YYYY-MM-DD') beginshow, 
-        					to_char(endshow, 'YYYY-MM-DD') endshow, 
-        					hallname,
-        					posterpath,
-        					theatername
-			from 			product p, hall h, theater t, 
+	        						prodname,
+	        						p.prodtype prodType,
+	        						r.rn rn,
+	        						to_char(beginshow, 'YYYY-MM-DD') beginshow, 
+	        						to_char(endshow, 'YYYY-MM-DD') endshow, 
+	        						hallname,
+	        						posterpath,
+	        						theatername
+			from 				product p, hall h, theater t, 
                 			(select  	rownum rn,
                          				p.prod_no,
                          				prodtype,
@@ -62,8 +70,8 @@
 			and 			p.prodtype= #{prodType}
 		]]>
 	</select>
-	
-	
+
+
 	<!-- 상품 리스트 -->
 	<select id="allList" parameterType="ProductVo" resultType="ProductVo">
 		<![CDATA[
@@ -81,8 +89,8 @@
 			and 			prodtype= #{prodType}
 		]]>
 	</select>
-	
-	
+
+
 	<!-- 상품 상세정보 -->
 	<select id="getProduct" parameterType="ProductVo" resultType="ProductVo">
 		<![CDATA[

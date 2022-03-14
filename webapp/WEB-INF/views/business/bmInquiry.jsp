@@ -18,6 +18,8 @@
 <!-- 개인 css (폴더로 관리 권장 ex assets/css/mypage/ticketing.css) -->
 <link href="${pageContext.request.contextPath}/assets/css/bm/bmInquiry.css" rel="stylesheet" type="text/css">
 
+<script type="text/javascript" src="${pageContext.request.contextPath}/assets/jquery/jquery-1.12.4.js"></script>
+
 
 </head>
 
@@ -82,18 +84,18 @@
 							<div id="list">
 								<table>
 									<colgroup>
-										<col style="width: 8%;">
+										<col style="width: 7%;">
+										<col style="">
+										<col style="">
 										<col style="width: 23%;">
 										<col style="">
-										<col style="">
-										<col style="">
 										<col style="width: 15%">
-										<col style="width: 7%;">
-										<col style="width: 7%;">
+										<col style="width: 6%;">
+										<col style="width: 6%;">
 									</colgroup>
 									<thead>
 										<tr>
-											<th>공연 번호</th>
+											<th>공연번호</th>
 											<th>공연명</th>
 											<th>공연장</th>
 											<th>공연 기간</th>
@@ -104,20 +106,23 @@
 										</tr>
 									</thead>
 									<tbody>
-										<c:forEach items="${bmList}" var="vo">
+										<c:forEach items="${productList}" var="vo">
 											<tr>
 												<td>${vo.prodNo}</td>
 												<td class=""><a href="${pageContext.request.contextPath}/product/info?prodNo=${vo.prodNo}" name="prodName">${vo.prodName}</a></td>
 												<td><a href="#" name="theaterName">${vo.theaterName}</a></td>
-												<td>${vo.beginShow}~ ${vo.endShow}</td>
-												<td><input type="checkbox"> <a href="#">확인</a></td>
-												<td><a href="${pageContext.request.contextPath}/bm/discount?prodNo=1">이벤트 할인 추가</a></td>
+												<td>${vo.beginShow}~${vo.endShow}</td>
+												<td><select name="status" id="status">
+														<option value="0">노출 off</option>
+														<option value="1">노출 on</option>
+												</select>
+												<button type="button" id="showbTn">확인</button></td>
+												<td><a href="${pageContext.request.contextPath}/bm/discount?prodNo=${vo.prodNo}">이벤트 할인 추가</a></td>
 												<td><a href="#">수정</a></td>
-												<td><a href="#">삭제</a></td>
+												<td><a href="${pageContext.request.contextPath}/bm/bmDelete?prodNo=${vo.prodNo}">삭제</a></td>
 											</tr>
 
 										</c:forEach>
-
 									</tbody>
 
 
@@ -154,4 +159,19 @@
 	<!-- wrap 종료 -->
 
 </body>
+
+<script type="text/javascript">
+	//노출 버튼
+	${"#showbTn"}.on("click", function() {
+			
+		var status = $("#status").val();
+		
+		
+	})
+			
+
+
+
+</script>
+
 </html>

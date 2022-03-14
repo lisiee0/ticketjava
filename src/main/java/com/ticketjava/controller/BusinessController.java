@@ -1,5 +1,7 @@
 package com.ticketjava.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -8,6 +10,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.ticketjava.service.BusinessService;
 import com.ticketjava.vo.ProductVo;
@@ -24,9 +28,11 @@ public class BusinessController {
 	public String bmInquiry(Model model) {
 		System.out.println("BusinessController/bmInquiry");
 
-		model.addAttribute("bmList", businessService.getProductList());
+		List<ProductVo> productList = businessService.getProductList();
+		model.addAttribute("productList", productList);
 		return "business/bmInquiry";
 	}
+	
 
 	// 공연 등록 폼
 	@RequestMapping(value = "bmForm")
@@ -36,18 +42,26 @@ public class BusinessController {
 		return "business/bmForm";
 	}
 
-	
-	
 	// 공연 업로드
+	@ResponseBody
 	@RequestMapping(value = "bmUpload", method = { RequestMethod.GET, RequestMethod.POST })
-	public String bmUpload( @ModelAttribute ProductVo productVo
-						  ) {
+	public int bmUpload(@RequestBody ProductVo productVo) {
 		System.out.println("BusinessController/bmUpload");
 		System.out.println(productVo);
-	
 
-		//businessService.productUpload(file, productVo, detailVo, discountVo);
-		return "";
+		// businessService.productUpload(file, productVo, detailVo, discountVo);
+		return 21;
+	}
+	
+	
+	// 공연 파일업로드
+	@RequestMapping(value = "bmfileUplad", method = { RequestMethod.GET, RequestMethod.POST })
+	public String bmfileUplad(@RequestParam("prodNo") int prodNo,   MultipartFile file) {
+		System.out.println("BusinessController/bmfileUpladbmfileUplad");
+		System.out.println(prodNo);
+		System.out.println(file.getOriginalFilename());
+		
+		return "business/bmInquiry";
 	}
 	
 
@@ -73,6 +87,15 @@ public class BusinessController {
 		System.out.println("BusinessController/bmAdd");
 
 		return "business/bmModify";
+	}
+
+	// 공연 삭제
+	@RequestMapping(value = "bmDelete", method = { RequestMethod.GET, RequestMethod.POST })
+	public String bmDelete(@ModelAttribute ProductVo productVo) {
+		System.out.println("BusinessController/bmDelete");
+		
+		businessService.productDelete(productVo);
+		return "redirect:/bm/";
 	}
 
 	// 공연 검색 페이징
