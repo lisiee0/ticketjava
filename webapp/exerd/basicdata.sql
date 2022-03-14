@@ -109,11 +109,11 @@ insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.n
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 1, 0, 50, '타임 세일', '22/03/07','22/03/20');
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 1, 0, 60, '문화의날', '22/03/10','22/03/20');
 
-insert into review values (SEQ_REVIEW_NO.nextval, 1, 3, '재미있게 잘봤습니다. 다음에 재관람 할인으로 또 보러 갈게요', 10, sysdate);
+insert into review values (SEQ_REVIEW_NO.nextval, 1, 3, '재미있게 잘봤습니다. 다음에 재관람 할인으로 또 보러 갈게요', 8, sysdate);
 insert into review values (SEQ_REVIEW_NO.nextval, 1, 4, '재미있게 잘봤습니다. 강추합니다.', 10, sysdate);
 insert into review values (SEQ_REVIEW_NO.nextval, 1, 5, '주차공간이 협소해서 주차하는데만 2시간 걸렸어요. 9점 드립니다.', 9, sysdate);
 insert into review values (SEQ_REVIEW_NO.nextval, 1, 6, '연출이 상당히 인상깊었습니다.', 10, sysdate);
-insert into review values (SEQ_REVIEW_NO.nextval, 1, 7, '오랜만에 가족들과 본 공연인데 다들 만족했습니다. 감사합니다', 10, sysdate);
+insert into review values (SEQ_REVIEW_NO.nextval, 1, 7, '오랜만에 가족들과 본 공연인데 다들 만족했습니다. 감사합니다', 8, sysdate);
 ---------------------------------------------------------------
 
 -----2아이다----------------------------------------
@@ -187,11 +187,11 @@ insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.n
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 4, 0, 50, '타임 세일', '22/03/07','22/03/20');
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 4, 0, 60, '문화의날', '22/03/10','22/03/20');
 
-insert into review values (SEQ_REVIEW_NO.nextval, 4, 3, '재미있게 잘봤습니다. 다음에 재관람 할인으로 또 보러 갈게요', 1, sysdate);
-insert into review values (SEQ_REVIEW_NO.nextval, 4, 4, '재미있게 잘봤습니다. 강추합니다.', 1, sysdate);
-insert into review values (SEQ_REVIEW_NO.nextval, 4, 5, '주차공간이 협소해서 주차하는데만 2시간 걸렸어요. 9점 드립니다.', 9, sysdate);
-insert into review values (SEQ_REVIEW_NO.nextval, 4, 6, '연출이 상당히 인상깊었습니다.', 2, sysdate);
-insert into review values (SEQ_REVIEW_NO.nextval, 4, 7, '오랜만에 가족들과 본 공연인데 다들 만족했습니다. 감사합니다', 2, sysdate);
+insert into review values (SEQ_REVIEW_NO.nextval, 4, 3, '재미있게 잘봤습니다. 다음에 재관람 할인으로 또 보러 갈게요', 10, sysdate);
+insert into review values (SEQ_REVIEW_NO.nextval, 4, 4, '재미있게 잘봤습니다. 강추합니다.', 10, sysdate);
+insert into review values (SEQ_REVIEW_NO.nextval, 4, 5, '주차공간이 협소해서 주차하는데만 2시간 걸렸어요. 9점 드립니다.', 10, sysdate);
+insert into review values (SEQ_REVIEW_NO.nextval, 4, 6, '연출이 상당히 인상깊었습니다.', 8, sysdate);
+insert into review values (SEQ_REVIEW_NO.nextval, 4, 7, '오랜만에 가족들과 본 공연인데 다들 만족했습니다. 감사합니다', 7, sysdate);
 ---------------------------------------------------------------
 
 -----5킹아더----------------------------------------
@@ -912,7 +912,7 @@ insert into review values (SEQ_REVIEW_NO.nextval, 30, 7, '오랫동안 기억에
 insert into product
 values (seq_prod_no.nextval, 2, 21, '스포츠 <서울이랜드 FC>', 4, '2022-04-04', '2022-04-04', '2022-03-15', '2022-04-04', TO_DATE('2022-04-04 20:00', 'YYYY-MM-DD HH24:MI'), 105, 1, '※ 티켓자바 오픈 시스템 작업을 위해 매월 10일 오전 10시 ~ 오전 10시 59분까지 티켓자바 예매페이지의 모든 예매가 일시 마감됩니다.', '취소일자에 따라서 취소수수료가 부과됩니다.예매 일 기준보다 관람일 기준이 우선 적용됩니다. 단, 예매 당일 밤 12시 이전 취소 시에는 취소수수료가 없으며, 예매 수수료도 환불됩니다.(취소기한 내에 한함)', 1, 'eland.png');
 
-insert into detail values (seq_detail_no.nextval, 30, 'prodpath.jpg', 'castpath.jpg', 'addpath.jpg');
+insert into detail values (seq_detail_no.nextval, 31, 'prodpath.jpg', 'castpath.jpg', 'addpath.jpg');
 
 insert into seatprice values (seq_seatprice_no.nextval, 31, 'vip', 140000);
 insert into seatprice values (seq_seatprice_no.nextval, 31, 'r', 120000);
