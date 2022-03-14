@@ -3,10 +3,12 @@ package com.ticketjava.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.ticketjava.service.ProductService;
+import com.ticketjava.vo.TheaterVo;
 
 @Controller
 @RequestMapping("/product")
@@ -39,6 +41,15 @@ public class ProductController {
 		
 		model.addAttribute("product", productService.getProduct(prodNo));
 		return "product/productInfo";
+	}
+	
+	
+	// 공연장별 리스트
+	@RequestMapping("/listbyTheater")
+	public String listbyTheater(@ModelAttribute TheaterVo vo, Model model) {
+		
+		model.addAttribute("map", productService.getTheater(vo));
+		return "product/pListbyTheater";
 	}
 
 	

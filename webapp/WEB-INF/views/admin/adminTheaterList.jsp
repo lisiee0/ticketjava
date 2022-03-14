@@ -79,7 +79,14 @@
 									<c:forEach items="${hallList}" var="vo">
 										<tr>
 											<td>${vo.theaterName}</td>
-											<td>${vo.hallName}</td>
+											<c:choose>
+												<c:when test="${vo.hallName eq null}">
+													<td>-</td>
+												</c:when>
+												<c:otherwise>
+													<td>${vo.hallName}</td>
+												</c:otherwise>
+											</c:choose>
 											<td class="text-center">${vo.address}<br>${vo.address2}</td>
 											<td>${vo.phone}</td>
 											<td id="space">${vo.homePage}</td>

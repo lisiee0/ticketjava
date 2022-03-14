@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.ticketjava.vo.ProductVo;
+import com.ticketjava.vo.TheaterVo;
 
 @Repository
 public class ProductDao {
@@ -46,6 +47,15 @@ public class ProductDao {
 	public ProductVo getProduct(int prodNo) {
 		return sqlsession.selectOne("product.getProduct", prodNo);
 	}
-
+	
+	// 공연장별 예매가능한 상품 리스트 불러오기
+	public List<ProductVo> availListbyTheater(TheaterVo vo) {
+		return sqlsession.selectList("product.availListbyTheater", vo);
+	}
+	
+	// 공연장별 top5 상품 불러오기
+	public List<ProductVo> topListbyTheater(TheaterVo vo) {
+		return sqlsession.selectList("product.topListbyTheater", vo);
+	}
 
 }

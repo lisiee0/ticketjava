@@ -40,13 +40,13 @@
 							<div class="col-xs-6 div-border">
 								<!-- 공연장 로고 -->
 								<div class="col-xs-4 np">
-									<img id="logo" src="assets/image/theater-logo.png">
+									<img id="logo" src="${pageContext.request.contextPath}/upload/${map.vo.logoPath}">
 								</div>
 								<div class="col-xs-8 theater-info">
-									<p class="title">예술의전당</p><br>
-									<p>주소 : 서울특별시 서초구 서초동 700번지</p>
-									<p>대표전화 : 02-1234-5678</p>
-									<p>홈페이지 : www.artcenter.co.kr</p>
+									<p class="title">${map.vo.theaterName}</p><br>
+									<p>주소 : ${map.vo.address} ${map.vo.address2}</p>
+									<p>대표전화 : ${map.vo.phone}</p>
+									<p>홈페이지 : <a href="${map.vo.homePage}">${map.vo.homePage}</a></p>
 								</div>
 							</div>
 							
@@ -59,60 +59,38 @@
 						<div class="row">
 						<h4 class="cateMenu">추천공연</h4>
 							<ul class="nav navbar-nav">
-								<li class="avail-product">
-									<div class="avail-posterArea">
-										<img class="avail-poster" src="assets/image/aida.jpg">
-									</div>
-									<div class="productInfo avp">
-										<p class="text-left title"><strong>아이다</strong></p>
-										<p class="text-left">2021.12.31 ~ 2022.03.01</p>
-										<p class="text-left">세종문화회관 대극장</p>
-									</div>
-								</li>
+							<c:forEach items="${map.top}" var="vo" varStatus="status">
+								<c:choose>
+									<c:when test="${status.count%5 eq 0}">
+										<li class="avail-product last">
+											<div class="avail-posterArea">
+												<a href="${pageContext.request.contextPath}/product/info?prodNo=${vo.prodNo}"><img class="avail-poster" src="${pageContext.request.contextPath}/upload/${vo.posterPath}"></a>
+											</div>
+											<div class="productInfo avp">
+												<p class="text-left title"><strong>${vo.prodName}</strong></p>
+												<p class="text-left">${vo.beginShow} ~ ${vo.endShow}</p>
+												<p class="text-left">${vo.theaterName} ${vo.hallName}</p>
+											</div>
+										</li>
+									</c:when>
+									<c:otherwise>
+										<li class="avail-product">
+											<div class="avail-posterArea">
+												<a href="${pageContext.request.contextPath}/product/info?prodNo=${vo.prodNo}"><img class="avail-poster" src="${pageContext.request.contextPath}/upload/${vo.posterPath}"></a>
+											</div>
+											<div class="productInfo avp">
+												<p class="text-left title"><strong>${vo.prodName}</strong></p>
+												<p class="text-left">${vo.beginShow} ~ ${vo.endShow}</p>
+												<p class="text-left">${vo.theaterName} ${vo.hallName}</p>
+											</div>
+										</li>
+									</c:otherwise>
+								</c:choose>
+							</c:forEach>
+
 								
-								<li class="avail-product">
-									<div class="avail-posterArea">
-										<img class="avail-poster" src="assets/image/aida.jpg">
-									</div>
-									<div class="productInfo avp">
-										<p class="text-left title"><strong>아이다</strong></p>
-										<p class="text-left">2021.12.31 ~ 2022.03.01</p>
-										<p class="text-left">세종문화회관 대극장</p>
-									</div>
-								</li>
 								
-								<li class="avail-product">
-									<div class="avail-posterArea">
-										<img class="avail-poster" src="assets/image/aida.jpg">
-									</div>
-									<div class="productInfo avp">
-										<p class="text-left title"><strong>아이다</strong></p>
-										<p class="text-left">2021.12.31 ~ 2022.03.01</p>
-										<p class="text-left">세종문화회관 대극장</p>
-									</div>
-								</li>
-								
-								<li class="avail-product">
-									<div class="avail-posterArea">
-										<img class="avail-poster" src="assets/image/aida.jpg">
-									</div>
-									<div class="productInfo avp">
-										<p class="text-left title"><strong>아이다</strong></p>
-										<p class="text-left">2021.12.31 ~ 2022.03.01</p>
-										<p class="text-left">세종문화회관 대극장</p>
-									</div>
-								</li>
-								
-								<li class="avail-product last">
-									<div class="avail-posterArea">
-										<img class="avail-poster" src="assets/image/aida.jpg">
-									</div>
-									<div class="productInfo avp">
-										<p class="text-left title"><strong>아이다</strong></p>
-										<p class="text-left">2021.12.31 ~ 2022.03.01</p>
-										<p class="text-left">세종문화회관 대극장</p>
-									</div>
-								</li>
+
 							</ul>
 						</div>
 					</div>
@@ -121,38 +99,23 @@
 					<div class="container">
 						<div class="row">
 						<h4 class="cateMenu">예매가능한공연</h4>
-						
-							<div class="container bgc">
-								<div class="col-xs-3 poster-small-area np">
-									<img class="poster-small" src="assets/image/aida.jpg">
+							<c:forEach items="${map.avail}" var="vo">
+								<div class="container bgc">
+									<div class="col-xs-3 poster-small-area np">
+										<a href="${pageContext.request.contextPath}/product/info?prodNo=${vo.prodNo}"><img class="poster-small" src="${pageContext.request.contextPath}/upload/${vo.posterPath}"></a>
+									</div>
+									
+									<div class="col-xs-7 information">
+										<p class="title">${vo.prodName}</p>
+										<p>${vo.beginShow} ~ ${vo.endShow}</p>
+										<p>${vo.theaterName} ${vo.hallName}</p>
+									</div>
+									
+									<div class="col-xs-2 btn-area">
+										<a href="${pageContext.request.contextPath}/product/info?prodNo=${vo.prodNo}" class="btn btn-primary btn-position">예매하기</a>
+									</div>
 								</div>
-								
-								<div class="col-xs-7 information">
-									<p class="title">뮤지컬 <아이다> 인터네셔널 투어 (Musical (Aida) International Tour)</p>
-									<p>2022.02.02 ~ 2022.05.05</p>
-									<p>예술의전당</p>
-								</div>
-								
-								<div class="col-xs-2 btn-area">
-									<button type="button" class="btn btn-primary btn-position">예매하기</button>
-								</div>
-							</div>
-							
-							<div class="container bgc">
-								<div class="col-xs-3 poster-small-area np">
-									<img class="poster-small" src="assets/image/aida.jpg">
-								</div>
-								
-								<div class="col-xs-7 information">
-									<p class="title">뮤지컬 <아이다> 인터네셔널 투어 (Musical (Aida) International Tour)</p>
-									<p>2022.02.02 ~ 2022.05.05</p>
-									<p>예술의전당</p>
-								</div>
-								
-								<div class="col-xs-2 btn-area">
-									<button type="button" class="btn btn-primary btn-position">예매하기</button>
-								</div>
-							</div>
+							</c:forEach>
 						</div>
 					</div>
 					
@@ -164,9 +127,9 @@
 							</div>
 							<div class="col-xs-8">
 								<p><strong>[공연장 정보]</strong></p><br>
-								<p>장소: 홍익대 대학로 아트센터 대극장</p>
-								<p>주소: 서울특별시 종로구 연건동 128-8 홍익대 대학로 아트센터</p>
-								<p>대표번호: 02-1234-1234</p>
+								<p>장소: ${map.vo.theaterName}</p>
+								<p>주소: ${map.vo.address} ${map.vo.address2}</p>
+								<p>대표번호: ${map.vo.phone}</p>
 							</div>
 						</div>
 					</div>
