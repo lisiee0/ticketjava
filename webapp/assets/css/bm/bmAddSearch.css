@@ -2,9 +2,14 @@
 
 /* 검색박스 */
 #wrapMain #searchBox {
-
     margin: 35px 10px 0px 10px;
-    border: 1px solid;
+}
+#wrapMain #searchBox #searchArea{
+
+}
+#wrapMain #searchBox #searchBtn{
+
+
 }
 
 /* 결과창 */

@@ -182,7 +182,7 @@
 		};
 		
 		$.ajax({
-			url: "${pageContext.request.contextPath}/notification/myNotireq",
+			url: "${pageContext.request.contextPath}/notireq/myNotireq",
 			type : "post",
 			data : notireqVo,
 			dataType: "json",
@@ -236,7 +236,7 @@
 		
 		console.log(notireqVo);
 		$.ajax({
-			url: "${pageContext.request.contextPath}/notification/addNotireq",
+			url: "${pageContext.request.contextPath}/notireq/addNotireq",
 			type : "post",
 			data : notireqVo,
 			dataType: "json",
@@ -270,7 +270,7 @@
 		}
 		
 		$.ajax({
-			url: "${pageContext.request.contextPath}/notification/reqDel",
+			url: "${pageContext.request.contextPath}/notireq/reqDel",
 			type : "post",
 			data : notireqVo,
 			dataType: "json",

@@ -75,7 +75,7 @@ public class BusinessController {
 		return "business/bmModify";
 	}
 
-	// 공연 검색
+	// 공연 검색 페이징
 	@RequestMapping(value = "bmAddSearch", method = { RequestMethod.GET, RequestMethod.POST })
 	public String bmAddSearch() {
 		System.out.println("BusinessController/bmAddSearch");

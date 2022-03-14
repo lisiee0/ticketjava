@@ -314,7 +314,7 @@ $('#nextBtn').on('click', function(){
 });
 
 $('#cancelNotiBtn').on('click',function(){
-	location.href = '${pageContext.request.contextPath}/notification/notireqForm?prodNo='+prodNo+'&viewDate='+viewDate;
+	location.href = '${pageContext.request.contextPath}/notireq/notireq?prodNo='+prodNo+'&viewDate='+viewDate;
 });
 
 

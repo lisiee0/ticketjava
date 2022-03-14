@@ -83,8 +83,14 @@ div.nav{
 	padding-top:12px;
 }
 
-#navbar  ul>li {  justify-content:flex; align-items:center; 
-				padding: 0px 0px 0px 0px; margin: 10px 93px 0px 0px; font-size: 19px; font-weight: bold;	display:inline;}
+#navbar  ul>li {justify-content:flex; 
+				align-items:center; 
+				padding: 0px 0px 0px 0px; 
+				margin: 10px 92px 0px 0px; 
+				font-size: 19px; 
+				font-weight: bold;	
+				display:inline;}
+				
 #navbar  ul>li .smallFont{
 	font-size:15px;
 }

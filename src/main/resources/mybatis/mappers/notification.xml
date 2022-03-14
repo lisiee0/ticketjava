@@ -2,4 +2,18 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="notification">
 	
+	
+	<insert id="insertList" parameterType="map">
+		<foreach collection="list" item="item">
+			insert into noti
+			( noti_no, user_no, content, notiTime )
+			values( seq_noti_no.nextval,
+				   #{item.userNo},
+				   #{item.content},
+				   sysdate
+			)
+		</foreach>
+	</insert>
+	
+	
 </mapper>

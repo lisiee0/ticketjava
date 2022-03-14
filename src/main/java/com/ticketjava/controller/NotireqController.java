@@ -18,7 +18,7 @@ import com.ticketjava.vo.NotireqVo;
 import com.ticketjava.vo.RezProdInfoVo;
 
 @Controller
-@RequestMapping("/notification")
+@RequestMapping("/notireq")
 public class NotireqController {
 	
 	@Autowired
@@ -27,7 +27,7 @@ public class NotireqController {
 	@Autowired
 	private NotireqService notireqService;
 	
-	@RequestMapping("/notireqForm")
+	@RequestMapping("/notireq")
 	public String notireqForm(@RequestParam("prodNo") int prodNo,
 							   Model model) {
 		RezProdInfoVo rezProdInfo = reservationService.rezProdInfo(prodNo);
