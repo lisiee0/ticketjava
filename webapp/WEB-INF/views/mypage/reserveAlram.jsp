@@ -72,31 +72,17 @@
 									<table>
 										<thead>
 											<tr>
-												<th>번호</th>
-												<!-- 예매취소 알림번호 -->
-												<th>상품명</th>
-												<th>좌석구분</th>
-												<th>예매일</th>
-												<th>관람일/매수</th>
+												<th>내용</th>
+												<th>시간</th>
+												<th>삭제</th>
 											</tr>
 										</thead>
 										<tbody>
 											<tr>
 												<td>123</td>
-												<td class="text-left"><a href="#">뮤지컬 라이온킹 오리지널 내한..</a></td>
-												<td>B구역</td>
-												<td>2020-12-10</td>
-												<td>2020-12-23/2매</td>
+												<td></td>
+												<td><button type="button">삭제</button></td>
 											</tr>
-
-											<tr>
-												<td>123</td>
-												<td class="text-left"><a href="#">뮤지컬 라이온킹 오리지널 내한..</a></td>
-												<td>A구역</td>
-												<td>2020-12-11</td>
-												<td>2020-12-25/2매</td>
-											</tr>
-
 										</tbody>
 									</table>
 									
@@ -118,19 +104,7 @@
 
 									<div class="clear"></div>
 								</div>
-								<div id="row" class="searchBox">
-									<div class="col-xs-8"></div>
-									<div class="col-xs-2">
-										<input type="text" class="form-control formSearchBoard" placeholder="문의내역 검색" value="">
-									</div>
-									<div class="col-xs-2">
-										<form class="">
-											<button type="submit" class="btn-primary formSearchBoardButton">검색</button>
-										</form>
-									</div>
-									
-								</div>
-								<!-- //searchBox -->
+								
 							</div>
 							<!-- //list -->
 

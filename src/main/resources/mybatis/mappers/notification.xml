@@ -6,11 +6,14 @@
 	<insert id="insertList" parameterType="map">
 		<foreach collection="list" item="item">
 			insert into noti
-			value( seq_noti_no.nextval,
-				   #{userNo},
-				   #{content},
+			( noti_no, user_no, content, notiTime )
+			values( seq_noti_no.nextval,
+				   #{item.userNo},
+				   #{item.content},
 				   sysdate
 			)
 		</foreach>
 	</insert>
+	
+	
 </mapper>
