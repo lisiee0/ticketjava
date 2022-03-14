@@ -49,16 +49,18 @@ public class MypageController {
 	
 	
 //	예매 좌석 부분 취소
-	@ResponseBody // json 사용하기
+//	@ResponseBody json 사용하기
 	@RequestMapping("/requestCancelTicket")
 	public String requestCancelTicket(Model model,@RequestParam(value="selseatNo") int selseatNo, @RequestParam(value="rezNo") int rezNo) {
 		System.out.println("MypageController reserveSeatCancel 예매 좌석 삭제 실행");
 		
 		reservationService.deleteReserveSeat(selseatNo);
 		System.out.println("컨트롤러 selseatNo "+selseatNo);
-		return "mypage/reserveDetail";
+		return "redirect:/mypage/reserveList";
 	}
 	
+	
+
 	
 //	마이페이지 문의내역
 	@RequestMapping("/reserveAsking")

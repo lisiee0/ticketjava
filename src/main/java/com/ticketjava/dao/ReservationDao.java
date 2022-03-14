@@ -73,7 +73,7 @@ public class ReservationDao {
 //	예매 좌석 부분 취소
 	public void deleteReserveSeat (int selseatNo) {
 		System.out.println("ReservationDao deleteReserveSeat 실행");
-		sqlSession.delete("reservation.reserveSeatCancel", selseatNo);
+		sqlSession.update("reservation.reserveSeatCancel", selseatNo);
 	}
 
 	

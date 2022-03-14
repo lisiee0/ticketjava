@@ -30,7 +30,7 @@
 				<li><a href="${pageContext.request.contextPath}/mypage/reserveList">예매내역/취소</a></li>
 				<li><a href="${pageContext.request.contextPath}/mypage/reserveAlram">취소알림 내역</a></li>
 				<li><a href="${pageContext.request.contextPath}/mypage/reserveAlramSet">취소알림 설정</a></li>
-				<li><a href="${pageContext.request.contextPath}/mypage/reserveDetail?rezNo=56">디테일(개발용)</a></li>
+				<li><a href="${pageContext.request.contextPath}/mypage/reserveDetail?rezNo=1">디테일(개발용)</a></li>
 				<!-- <li><a href="${pageContext.request.contextPath}/mypage/reserveDetail?rezNo=${rezNo}&userNo=${userNo}">디테일(개발용)</a></li> -->
 			</ul>
 			<ul>

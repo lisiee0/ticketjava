@@ -140,7 +140,7 @@
 															</c:otherwise>
 														</c:choose>
 
-														<td><button type="submit" class="btn btn-primary" onclick="location.href='reserveDetail?prodNo=${reserveList.rezNo}'">자세히</button></td>
+														<td><button type="submit" class="btn btn-primary" onclick="location.href='reserveDetail?rezNo=${reserveList.rezNo}'">자세히</button></td>
 													</tr>
 
 												</tbody>
