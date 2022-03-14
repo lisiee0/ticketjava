@@ -56,6 +56,7 @@ public class ProductVo {
 		this.hallName = hallName;
 		this.seatpriceList = seatpriceList;
 	}
+	
 	// 메소드
 
 	public int getProdNo() {

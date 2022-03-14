@@ -386,6 +386,13 @@
 
 		var ProductVo = {
 			prodName: "aaaaaa",
+			prodType : "4",
+			beginShow : "2022-03-14",
+			endShow : "2022-04-14",
+			beginRez : "2022-04-14",
+			endRez : "2022-04-14",
+			showTime : "17:00",
+			viewTime : "45",
 			seatpriceList: [{grade:"A", price: "20000"}, {grade:"S", price: "30000"}]
 		}
 		

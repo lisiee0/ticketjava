@@ -84,14 +84,14 @@
 							<div id="list">
 								<table>
 									<colgroup>
-										<col style="width: 7%;">
+										<col style="width: 7%">
 										<col style="">
 										<col style="">
-										<col style="width: 23%;">
 										<col style="">
-										<col style="width: 15%">
-										<col style="width: 6%;">
-										<col style="width: 6%;">
+										<col style="width: 16%">
+										<col style="width: 12%">
+										<col style="width: 6%">
+										<%--<col style="width: 6%;"> --%>
 									</colgroup>
 									<thead>
 										<tr>
@@ -102,11 +102,11 @@
 											<th>공연 노출</th>
 											<th>할인 정보</th>
 											<th>수정</th>
-											<th>삭제</th>
+											<!-- <th>삭제</th> -->
 										</tr>
 									</thead>
 									<tbody>
-										<c:forEach items="${productList}" var="vo">
+										<c:forEach items="${productList}" var="vo" varStatus="vS">
 											<tr>
 												<td>${vo.prodNo}</td>
 												<td class=""><a href="${pageContext.request.contextPath}/product/info?prodNo=${vo.prodNo}" name="prodName">${vo.prodName}</a></td>
@@ -116,10 +116,10 @@
 														<option value="0">노출 off</option>
 														<option value="1">노출 on</option>
 												</select>
-												<button type="button" id="showbTn">확인</button></td>
+													<button type="button"  class="btn btn-outline-primary" id="showbTn">확인</button></td>
 												<td><a href="${pageContext.request.contextPath}/bm/discount?prodNo=${vo.prodNo}">이벤트 할인 추가</a></td>
 												<td><a href="#">수정</a></td>
-												<td><a href="${pageContext.request.contextPath}/bm/bmDelete?prodNo=${vo.prodNo}">삭제</a></td>
+												<%--<td><a href="${pageContext.request.contextPath}/bm/bmDelete?prodNo=${vo.prodNo}">삭제</a></td> --%>
 											</tr>
 
 										</c:forEach>
@@ -159,19 +159,12 @@
 	<!-- wrap 종료 -->
 
 </body>
+<script>
 
-<script type="text/javascript">
-	//노출 버튼
-	${"#showbTn"}.on("click", function() {
-			
-		var status = $("#status").val();
-		
-		
-	})
-			
+var No = ${'#status'}.val
+
+console.log(No);
 
 
-
-</script>
 
 </html>

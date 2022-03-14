@@ -26,6 +26,7 @@ public class DiscountService {
 	
 	// 이벤트 할인 추가
 	public DiscountVo addDis(DiscountVo vo) {
+		
 		discountDao.addDis(vo);
 		return  discountDao.getDis(vo.getDcNo());
 	}
