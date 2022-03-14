@@ -31,10 +31,10 @@
 			<div class="container">
 				<div class="row">
 					
-					<div class="container">
-						<div class="row">
+					<div class="container np">
+						<div class="row section">
 							<div class="floatLeft">
-								<h2 class="pageMenu section">지역<small>전체</small></h2>
+								<h2 class="pageMenu nm margintop">지역<small>전체</small></h2>
 							</div>
 							
 							<div class="floatRight">
@@ -54,93 +54,36 @@
 					<div class="container">
 						<div class="row">
 							<ul class="nav navbar-nav">
-								<li class="list-width">
-									<div class="imgArea">
-										<img class="poster" src="assets/image/aida.jpg">
-									</div>
-									<div class="productInfo">
-										<p class="text-left title"><strong>아이다</strong></p>
-										<p class="text-left">2021.12.31 ~ 2022.03.01</p>
-										<p class="text-left">세종문화회관 대극장</p>
-									</div>
-								</li>
-								
-								<li class="list-width">
-									<div class="imgArea">
-										<img class="poster" src="assets/image/aida.jpg">
-									</div>
-									<div class="productInfo">
-										<p class="text-left title"><strong>아이다</strong></p>
-										<p class="text-left">2021.12.31 ~ 2022.03.01</p>
-										<p class="text-left">세종문화회관 대극장</p>
-									</div>
-								</li>
-								
-								<li class="list-width">
-									<div class="imgArea">
-										<img class="poster" src="assets/image/aida.jpg">
-									</div>
-									<div class="productInfo">
-										<p class="text-left title"><strong>아이다</strong></p>
-										<p class="text-left">2021.12.31 ~ 2022.03.01</p>
-										<p class="text-left">세종문화회관 대극장</p>
-									</div>
-								</li>
-								
-								<li class="list-width last">
-									<div class="imgArea">
-										<img class="poster" src="assets/image/aida.jpg">
-									</div>
-									<div class="productInfo">
-										<p class="text-left title"><strong>아이다</strong></p>
-										<p class="text-left">2021.12.31 ~ 2022.03.01</p>
-										<p class="text-left">세종문화회관 대극장</p>
-									</div>
-								</li>
-								
-								<li class="list-width">
-									<div class="imgArea">
-										<img class="poster" src="assets/image/aida.jpg">
-									</div>
-									<div class="productInfo">
-										<p class="text-left title"><strong>아이다</strong></p>
-										<p class="text-left">2021.12.31 ~ 2022.03.01</p>
-										<p class="text-left">세종문화회관 대극장</p>
-									</div>
-								</li>
-								
-								<li class="list-width">
-									<div class="imgArea">
-										<img class="poster" src="assets/image/aida.jpg">
-									</div>
-									<div class="productInfo">
-										<p class="text-left title"><strong>아이다</strong></p>
-										<p class="text-left">2021.12.31 ~ 2022.03.01</p>
-										<p class="text-left">세종문화회관 대극장</p>
-									</div>
-								</li>
-								
-								<li class="list-width">
-									<div class="imgArea">
-										<img class="poster" src="assets/image/aida.jpg">
-									</div>
-									<div class="productInfo">
-										<p class="text-left title"><strong>아이다</strong></p>
-										<p class="text-left">2021.12.31 ~ 2022.03.01</p>
-										<p class="text-left">세종문화회관 대극장</p>
-									</div>
-								</li>
-								
-								<li class="list-width last">
-									<div class="imgArea">
-										<img class="poster" src="assets/image/aida.jpg">
-									</div>
-									<div class="productInfo">
-										<p class="text-left title"><strong>아이다</strong></p>
-										<p class="text-left">2021.12.31 ~ 2022.03.01</p>
-										<p class="text-left">세종문화회관 대극장</p>
-									</div>
-								</li>
+							
+								<c:forEach items="${allprod}" var="vo" varStatus="status">
+									<c:choose>
+										<c:when test="${status.count%4 eq 0}">
+											<li class="list-width last">
+												<div class="imgArea">
+													<img class="poster" src="${pageContext.request.contextPath}/upload/${vo.posterPath}">
+												</div>
+												<div class="productInfo">
+													<p class="text-left title"><strong>${vo.prodName}</strong></p>
+													<p class="text-left">${vo.beginShow} ~ ${vo.endShow}</p>
+													<p class="text-left">${vo.theaterName} ${vo.hallName}</p>
+												</div>
+											</li>
+										</c:when>
+										<c:otherwise>
+											<li class="list-width">
+												<div class="imgArea">
+													<img class="poster" src="${pageContext.request.contextPath}/upload/${vo.posterPath}">
+												</div>
+												<div class="productInfo">
+													<p class="text-left title"><strong>${vo.prodName}</strong></p>
+													<p class="text-left">${vo.beginShow} ~ ${vo.endShow}</p>
+													<p class="text-left">${vo.theaterName} ${vo.hallName}</p>
+												</div>
+											</li>
+										</c:otherwise>
+									</c:choose>
+								</c:forEach>
+	
 							</ul>
 						</div>
 					</div>

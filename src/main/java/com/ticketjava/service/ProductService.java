@@ -93,5 +93,10 @@ public class ProductService {
 
 		return rMap;
 	}
+	
+	// 모든상품 리스트 (지역페이지)
+	public List<ProductVo> allprod() {
+		return pd.allprod();
+	}
 
 }

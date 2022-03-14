@@ -74,4 +74,9 @@ public class ProductDao {
 	public int countResult(String key) {
 		return sqlsession.selectOne("product.countResult", key);
 	}
+	
+	// 모든상품 (지역페이지)
+	public List<ProductVo> allprod() {
+		return sqlsession.selectList("product.allprod");
+	}
 }

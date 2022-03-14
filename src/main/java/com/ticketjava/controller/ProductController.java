@@ -69,6 +69,20 @@ public class ProductController {
 		return "product/productSearch";
 	}
 	
+	// '지역' 페이지 
+	@RequestMapping("/region")
+	public String region(Model model) {
+		
+		model.addAttribute("allprod", productService.allprod());
+		return "product/pListbyRegion";
+	}
+	
+	// '랭킹' 페이지
+	@RequestMapping("/ranking")
+	public String ranking() {
+		
+		return "product/pListbyRanking";
+	}
 	
 	
 
