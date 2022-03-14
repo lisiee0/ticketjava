@@ -218,11 +218,8 @@ CREATE TABLE product (
 	prod_no NUMBER NOT NULL, /* 공연번호 */
 	user_no NUMBER, /* 회원번호(사업자) */
 	hall_no NUMBER, /* 시설번호 */
-<<<<<<< HEAD
 	prodname VARCHAR2(100), /* 공연명 */
-=======
 	prodname VARCHAR2(200), /* 공연명 */
->>>>>>> branch 'master' of https://github.com/lisiee0/ticketjava.git
 	prodtype NUMBER, /* 공연구분 */
 	beginshow DATE, /* 공연기간(시작) */
 	endshow DATE, /* 공연기간(종료) */
