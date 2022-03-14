@@ -83,6 +83,7 @@
 			       col,
 			       num,
 			       r.prod_no prodNo,
+			       p.hall_no hallNo,
 			       to_char(viewDate, 'yyyy-mm-dd') viewDate,
 			       prodName,
 			       to_char(showTime, 'hh24:mi') showTime
@@ -90,6 +91,16 @@
 			where s.rez_no = r.rez_no and
 			      r.prod_no = p.prod_no and
 			      selseat_no = #{selseatNo}
+		]]>
+	</select>
+	
+	<select id="selectSelseatCount" parameterType="hashmap" resultType="int">
+		<![CDATA[
+			select count(*)
+			from reserve r, selseat s
+			where r.rez_no = s.rez_no and
+			      r.prod_no = #{prodNo} and
+			      r.viewDate = #{viewDate}
 		]]>
 	</select>
 </mapper>

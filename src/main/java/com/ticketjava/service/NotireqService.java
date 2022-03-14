@@ -1,7 +1,9 @@
 package com.ticketjava.service;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.HttpSession;
 
@@ -10,6 +12,7 @@ import org.springframework.stereotype.Service;
 
 import com.ticketjava.dao.NotificationDao;
 import com.ticketjava.dao.NotireqDao;
+import com.ticketjava.dao.SeatDao;
 import com.ticketjava.dao.SelseatDao;
 import com.ticketjava.dao.UserDao;
 import com.ticketjava.util.JavaMail;
@@ -32,6 +35,9 @@ public class NotireqService {
 	
 	@Autowired
 	private NotificationDao notificationDao;
+	
+	@Autowired
+	private SeatDao seatDao;
 	
 	public String addNotireq(NotireqVo notireqVo, HttpSession session) {
 		
@@ -100,7 +106,7 @@ public class NotireqService {
 	}
 	
 	
-	public void notiSend() {
+	public void notiSend(int selseatNo) {
 		 
 		// 1. selseat 예매취소(selseatNo) -->  rezNo, grade, section, col, num
 		// ( selseat status = 0 )
@@ -110,9 +116,24 @@ public class NotireqService {
 		 
 		 //3. product(prodNo) >  prodName, showTime
 		 
-		int selseatNo = 520;   // 192, s, C, 6, 2
+		// selseatNo == 520; >> 192, s, C, 6, 2
 		NotiDataVo notiDataVo = selseatDao.selectByNo(selseatNo);
 		System.out.println(notiDataVo);
+		
+		int hallNo = notiDataVo.getHallNo();
+		String section = notiDataVo.getGrade();
+		Map<String, Object> hallNoSection = new HashMap<>();
+		hallNoSection.put("hallNo", hallNo);
+		hallNoSection.put("section", section);
+		int seatCount = seatDao.selectSeatCount(hallNoSection);
+		
+		Map<String, Object> prodNoViewDate = new HashMap<>();
+		prodNoViewDate.put("prodNo", notiDataVo.getProdNo());
+		prodNoViewDate.put("viewDate", notiDataVo.getViewDate());
+		
+		int selseatCount = selseatDao.selectSelseatCount(prodNoViewDate);
+		
+		System.out.println(seatCount+" "+selseatCount);
 		
 		 //4. notireq(prodNo, viewDate, section, status==1?)  >  결과 userNo 리스트   
 		 
@@ -129,7 +150,6 @@ public class NotireqService {
 		 //								    └ 링크(예매페이지 --> 취소 좌석 선택 (prodNo, viewDate, grade, section, col, num 으로 기본 선택) )
 		 						
 		List <NotificationVo> notificationList = new ArrayList<>();
-		
 		String content = ""
 				+ "<a target='_blank' href='http://localhost:8088/ticketjava/reservation/selectSeat?prodNo="+notiDataVo.getProdNo()+"&viewDate="+notiDataVo.getViewDate()+"'>"
 				+ notiDataVo.getViewDate()+" "+notiDataVo.getShowTime()+" "+notiDataVo.getProdName()+" "+notiDataVo.getGrade().toUpperCase()+"석 "
