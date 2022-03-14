@@ -78,11 +78,14 @@
 											</tr>
 										</thead>
 										<tbody>
-											<tr>
-												<td>123</td>
-												<td></td>
-												<td><button type="button">삭제</button></td>
-											</tr>
+											<c:forEach items="${notiList}" var="vo">
+												<tr id="tr"${vo.notiNo}>
+													<td>${vo.content}</td>
+													<td>${vo.notiTime}</td>
+													<td><button type="button">삭제</button></td>
+												</tr>
+											</c:forEach>
+											
 										</tbody>
 									</table>
 									

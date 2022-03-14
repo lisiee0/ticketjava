@@ -33,7 +33,7 @@ public class NotireqController {
 		RezProdInfoVo rezProdInfo = reservationService.rezProdInfo(prodNo);
 		model.addAttribute("rezProdInfo", rezProdInfo);
 		
-		return "reservation/notireqForm";
+		return "reservation/notireq";
 	}
 	
 	@ResponseBody
