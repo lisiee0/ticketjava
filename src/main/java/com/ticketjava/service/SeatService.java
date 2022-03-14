@@ -3,8 +3,10 @@ package com.ticketjava.service;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.ticketjava.dao.SeatDao;
 import com.ticketjava.vo.SeatVo;
 
 import net.sf.json.JSONArray;
@@ -13,6 +15,10 @@ import net.sf.json.JSONObject;
 @Service
 public class SeatService {
 
+	
+	@Autowired
+	private SeatDao seatDao;
+	
 	public void initSeat(String data) {
 		// TODO Auto-generated method stub
 		
@@ -33,6 +39,10 @@ public class SeatService {
 		}
 		
 		System.out.println(seatList);
+		
+		seatDao.insertInit(seatList);
+		
+		
 	}
 
 	
