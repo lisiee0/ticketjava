@@ -14,6 +14,7 @@ public class NotiDataVo {
 
 	// product
 	private int prodNo;
+	private int hallNo;
 	private String viewDate;
 	private String prodName;
 
@@ -22,7 +23,7 @@ public class NotiDataVo {
 	public NotiDataVo() {
 	}
 
-	public NotiDataVo(int selseatNo, int rezNo, String grade, String section, int col, int num, int prodNo,
+	public NotiDataVo(int selseatNo, int rezNo, String grade, String section, int col, int num, int prodNo, int hallNo,
 			String viewDate, String prodName, String showTime) {
 		this.selseatNo = selseatNo;
 		this.rezNo = rezNo;
@@ -31,11 +32,11 @@ public class NotiDataVo {
 		this.col = col;
 		this.num = num;
 		this.prodNo = prodNo;
+		this.hallNo = hallNo;
 		this.viewDate = viewDate;
 		this.prodName = prodName;
 		this.showTime = showTime;
 	}
-
 
 	public int getSelseatNo() {
 		return selseatNo;
@@ -93,12 +94,28 @@ public class NotiDataVo {
 		this.prodNo = prodNo;
 	}
 
+	public int getHallNo() {
+		return hallNo;
+	}
+
+	public void setHallNo(int hallNo) {
+		this.hallNo = hallNo;
+	}
+
 	public String getViewDate() {
 		return viewDate;
 	}
 
 	public void setViewDate(String viewDate) {
 		this.viewDate = viewDate;
+	}
+
+	public String getProdName() {
+		return prodName;
+	}
+
+	public void setProdName(String prodName) {
+		this.prodName = prodName;
 	}
 
 	public String getShowTime() {
@@ -109,22 +126,11 @@ public class NotiDataVo {
 		this.showTime = showTime;
 	}
 
-	
-	public String getProdName() {
-		return prodName;
-	}
-
-	public void setProdName(String prodName) {
-		this.prodName = prodName;
-	}
-
 	@Override
 	public String toString() {
 		return "NotiDataVo [selseatNo=" + selseatNo + ", rezNo=" + rezNo + ", grade=" + grade + ", section=" + section
-				+ ", col=" + col + ", num=" + num + ", prodNo=" + prodNo + ", viewDate=" + viewDate + ", prodName="
-				+ prodName + ", showTime=" + showTime + "]";
+				+ ", col=" + col + ", num=" + num + ", prodNo=" + prodNo + ", hallNo=" + hallNo + ", viewDate="
+				+ viewDate + ", prodName=" + prodName + ", showTime=" + showTime + "]";
 	}
-
-	
 
 }

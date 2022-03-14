@@ -52,4 +52,8 @@ public class SelseatDao {
 	public NotiDataVo selectByNo(int selseatNo) {
 		return sqlSession.selectOne("selseat.selectByNo", selseatNo);
 	}
+
+	public int selectSelseatCount(Map<String, Object> prodNoViewDate) {
+		return sqlSession.selectOne("selseat.selectSelseatCount", prodNoViewDate);
+	}
 }

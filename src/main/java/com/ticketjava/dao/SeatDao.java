@@ -1,5 +1,7 @@
 package com.ticketjava.dao;
 
+import java.util.Map;
+
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -14,6 +16,10 @@ public class SeatDao {
 
 	public void insertInit(SeatVo seatVo) {
 		sqlSession.insert("seat.insertInit", seatVo);
+	}
+
+	public int selectSeatCount(Map<String, Object> hallNoSection) {
+		return sqlSession.selectOne("seat.selectSeatCount", hallNoSection);
 	}
 	
 	

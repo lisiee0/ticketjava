@@ -14,9 +14,15 @@
 				   #{num},
 				   1)
 		]]>
-		
 	</insert>
 	
-	
+	<select id="selectSeatCount" parameterType="hashmap" resultType="int">
+		<![CDATA[
+			select count(*)
+			from seat
+			where hall_no = #{hallNo} and
+				  section = #{section}
+		]]>
+	</select>
 	
 </mapper>
