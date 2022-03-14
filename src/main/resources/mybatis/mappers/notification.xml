@@ -15,5 +15,14 @@
 		</foreach>
 	</insert>
 	
+	<select id="selectByUser" parameterType="int" resultType="NotificationVo">
+		<![CDATA[
+			select noti_no notiNo,
+				   content,
+				   to_char(notiTime, 'yy-mm-dd hh24:mi') notiTime
+			from noti
+			where user_no = #{userNo}
+		]]>	
+	</select>
 	
 </mapper>

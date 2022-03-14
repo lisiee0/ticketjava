@@ -18,6 +18,10 @@ public class NotificationDao {
 		sqlSession.insert("notification.insertList", notificationList);
 		
 	}
+
+	public List<NotificationVo> selectByUser(int userNo) {
+		return sqlSession.selectList("notification.selectByUser", userNo);
+	}
 	
 	
 	
