@@ -70,8 +70,8 @@
 						<a href="http://localhost:8088/ticketjava/"><img src="${pageContext.request.contextPath}/assets/image/index/ticketjava_main_logo.png"></a>
 					</div>
 					<div class="col-xs-9" id="serachBar">
-						<form class="form-horizontal">
-							<input type="text" class="form-control dis vm" placeholder="내가 찾는 티켓은.." value="">
+						<form action="${pageContext.request.contextPath}/product/search" method="post"  class="form-horizontal">
+							<input type="text" class="form-control dis vm" placeholder="내가 찾는 티켓은.." name="keyword" value="">
 							<button type="submit" class="btn btn-primary index-search">티켓잡으러검색</button>
 						</form>
 					</div>

@@ -43,6 +43,15 @@ public class ProductController {
 	}
 	
 	
+	// 공연장별 리스트
+	@RequestMapping("/listbyTheater")
+	public String listbyTheater(@ModelAttribute TheaterVo vo, Model model) {
+		
+		model.addAttribute("map", productService.getTheater(vo));
+		return "product/pListbyTheater";
+	}
+	
+	
 	// 상품 상세보기
 	@RequestMapping("/info")
 	public String productInfo(@RequestParam("prodNo") int prodNo, Model model) {
@@ -52,13 +61,16 @@ public class ProductController {
 	}
 	
 	
-	// 공연장별 리스트
-	@RequestMapping("/listbyTheater")
-	public String listbyTheater(@ModelAttribute TheaterVo vo, Model model) {
-		
-		model.addAttribute("map", productService.getTheater(vo));
-		return "product/pListbyTheater";
+	// 상품 검색하기
+	@RequestMapping("/search")
+	public String search(@RequestParam("keyword") String key, Model model) {
+
+		model.addAttribute("result", productService.searchResult(key));
+		return "product/productSearch";
 	}
+	
+	
+	
 
 	
 }

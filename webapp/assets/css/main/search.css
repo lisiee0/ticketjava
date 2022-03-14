@@ -38,6 +38,7 @@ li, fieldset, form, label, legend, table, tbody, tfoot, thead, tr, th, td{
 }
  
 #containerMain #searchText span {
+	font-size: 22px;
 	font-weight:900;
 	color:#6697f2;
 }

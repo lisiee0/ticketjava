@@ -1,6 +1,7 @@
 package com.ticketjava.service;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +12,7 @@ import com.ticketjava.dao.NoticeDao;
 import com.ticketjava.dao.ProductDao;
 import com.ticketjava.dao.SeatpriceDao;
 import com.ticketjava.dao.TheaterDao;
+import com.ticketjava.vo.ProductVo;
 import com.ticketjava.vo.TheaterVo;
 
 @Service
@@ -79,6 +81,17 @@ public class ProductService {
 		tMap.put("avail", pd.availListbyTheater(vo));
 		
 		return tMap;
+	}
+	
+	// 검색결과
+	public Map<String, Object> searchResult(String key) {
+		
+		Map<String, Object> rMap=new HashMap<String, Object>();
+		rMap.put("vo", pd.searchResult(key));
+		rMap.put("count", pd.countResult(key));
+		rMap.put("key", key);
+
+		return rMap;
 	}
 
 }

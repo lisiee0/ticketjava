@@ -64,5 +64,14 @@ public class ProductDao {
 	public List<ProductVo> topListbyTheater(TheaterVo vo) {
 		return sqlsession.selectList("product.topListbyTheater", vo);
 	}
-
+	
+	// 검색결과
+	public List<ProductVo> searchResult(String key) {
+		return sqlsession.selectList("product.searchResult", key);
+	}
+	
+	// 검색결과 카운트
+	public int countResult(String key) {
+		return sqlsession.selectOne("product.countResult", key);
+	}
 }
