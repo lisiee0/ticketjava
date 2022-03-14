@@ -80,7 +80,7 @@
 										<tbody>
 											<c:forEach items="${notiList}" var="vo">
 												<tr id="tr"${vo.notiNo}>
-													<td>${vo.content}</td>
+													<td class="text-left">${vo.content}</td>
 													<td>${vo.notiTime}</td>
 													<td><button type="button">삭제</button></td>
 												</tr>

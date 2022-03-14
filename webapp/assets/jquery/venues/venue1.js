@@ -14,9 +14,9 @@ $(document).ready(function(){
 	var seatMap = [];
 	
 	var sectionA = [
-		'vvvv',
-		'vvvv',
-		'rrrr',
+		'nvvv',
+		'nvvv',
+		'nrrr',
 		'rrrr',
 		'ssss',
 		'ssss',
@@ -37,9 +37,9 @@ $(document).ready(function(){
 	seatMap.push(sectionB);
 	
 	var sectionC = [
-		'vvvv',
-		'vvvv',
-		'rrrr',
+		'vvvn',
+		'vvvn',
+		'rrrn',
 		'rrrr',
 		'ssss',
 		'ssss'
@@ -125,7 +125,7 @@ $(document).ready(function(){
 			);
 		}
 		
-		if(seat != "num"){
+		if(seat != "n"){
 			num++;
 		}
 		
