@@ -35,7 +35,7 @@
 			<section class="productVideo">
 				<div class="mainVideo">
 					<!-- 영상재생이 안될때 대신 보여주는 이미지 -->
-					<img src="assets/image/index/thumbnail_ticketjava_desktop.png">
+					<img src="${pageContext.request.contextPath}/assets/image/index/thumbnail_ticketjava_desktop.png">
 					<video loop="" muted="" autoplay="" playsinline="" webkit-playsinline="true">
 						<source type="video/mp4" src="assets/video/video_index.mp4">
 					</video>
@@ -56,6 +56,50 @@
 				</div>
 			</section>
 			<!-- 영상 재생 구역 종료 -->
+
+
+			<!-- 파란배경 구역 시작 -->
+			<section class="container-fluid zp ticketIntroducebox">
+
+				<div class="blueGradationAreaTop zp"
+					style="background-image: URL(${pageContext.request.contextPath}/assets/image/index/blueColorBackground-up.png); background-repeat: repeat-x; height: 100px; width: 100%;"></div>
+
+				<div class="blueGradationAreaMid">
+
+					<!-- 티켓자바 서비스 소개 노트북 디자인 -->
+					<div class="ticketIntroducebox">
+
+						<div class="container">
+							<div class="row">
+
+								<div class="col-md-5">
+									<div class="whisperText">
+										<h2>안녕하세요 티켓자바 입니다!</h2>
+										
+										<h3>혹시... 원하는 작품을 예매하는데 매진을 경험해보신 적이 있나요?</h3>
+										<p>원하는 작품을 예매해도 원하는 좌석이 아니라서 실망했던 적은 없나요?</p>
+										<p>그래서 내가 원하는 조건에 맞는 취소표를 기다린적은요?</p>
+									</div>
+								</div>
+
+								<div class="col-md-1"></div>
+
+								<div class="col-md-6">
+									<img src="${pageContext.request.contextPath}/assets/image/index/ticketing_online_notebook.png">
+								</div>
+
+							</div>
+						</div>
+
+					</div>
+					<!-- //티켓자바 서비스 소개 노트북 디자인 -->
+
+				</div>
+
+				<div class="blueGradationAreaBottom zp"
+					style="background-image: URL(${pageContext.request.contextPath}/assets/image/index/blueColorBackground-down.png); background-repeat: repeat-x; height: 110px; width: 100%;"></div>
+			</section>
+			<!-- //파란배경 구역 종료 -->
 
 
 
@@ -96,7 +140,6 @@
 
 					<div class="ticketbox">
 
-
 						<!-- 카운터 numbering 구역 시작 -->
 						<section class="numbering text-center">
 							<div class="container">
@@ -106,7 +149,7 @@
 									</div>
 									<div class="col-sm-3 col-xs-6 text-center counter-item">
 										<h3>지금까지</h3>
-										<p class="counter" data-to="377" data-speed="2000">0</p>
+										<p class="counter" data-to="13378" data-speed="1000">0</p>
 										<h3>
 											분이 <br>티켓자바를 통해 <br>원하는 작품을 만나셨습니다!
 										</h3>
@@ -116,7 +159,7 @@
 										<h4>티켓자바로 본 누적 작품 시간</h4>
 										<br>
 										<h2>
-											<p class="counter" data-to="1525204" data-speed="2000">0</p>
+											<p class="counter" data-to="1525204" data-speed="1000">0</p>
 											분
 										</h2>
 									</div>

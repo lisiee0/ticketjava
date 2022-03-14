@@ -3,7 +3,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:400,700,800&display=swap');
 
-
 .zp {
 	padding: 0px !important;
 }
@@ -14,6 +13,10 @@
 
 
 /* 메인 비디오 제어 */
+.productVideo {
+	margin: 0px 0px 100px 0px;
+}
+
 .mainVideo {
 	display: flex; justify-content: center; align-items: center; width: 100%; height: 770px; background: #F7F8FA; position: relative;
 }
@@ -445,7 +448,14 @@
 
 /* 티켓자바 귓속말 서비스 소개 */
 .ticketjavaWhisper {
-	margin: 80px 0px 150px 0px;
+	margin: 80px 0px 200px 0px;
+}
+
+.whisperText h2 {
+	margin:70px 0px 5px 0px;
+	padding:10px 0px 0px 0px;
+	font-size:45px;
+	font-family: 'Nanum Pen Script', sans-serif;
 }
 
 .whisperText h3 {
@@ -461,6 +471,19 @@
 	font-family: 'Nanum Gothic', sans-serif;
 }
 
+
+
+/* 파란배경 그라데이션 구역 노트북 디자인 */
+.ticketIntroducebox {
+	margin:0px 0px 0px 0px;
+}
+
+/* 파란 배경 컨텐츠 배경 제어 */
+.blueGradationAreaMid {
+	background-color:#b2c7d9;
+	height: 500px;
+	width: 100%;
+}
 
 
 
