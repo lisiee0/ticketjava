@@ -56,6 +56,7 @@
 							homepage
 			from 			theater t, hall h
 			where 			t.theater_no= h.theater_no
+			and             logopath is not null
 		]]>
 	</select>
 	
