@@ -59,38 +59,34 @@
 						<div class="row">
 						<h4 class="cateMenu">추천공연</h4>
 							<ul class="nav navbar-nav">
-							<c:forEach items="${map.top}" var="vo" varStatus="status">
-								<c:choose>
-									<c:when test="${status.count%5 eq 0}">
-										<li class="avail-product last">
-											<div class="avail-posterArea">
-												<a href="${pageContext.request.contextPath}/product/info?prodNo=${vo.prodNo}"><img class="avail-poster" src="${pageContext.request.contextPath}/upload/${vo.posterPath}"></a>
-											</div>
-											<div class="productInfo avp">
-												<p class="text-left title"><strong>${vo.prodName}</strong></p>
-												<p class="text-left">${vo.beginShow} ~ ${vo.endShow}</p>
-												<p class="text-left">${vo.theaterName} ${vo.hallName}</p>
-											</div>
-										</li>
-									</c:when>
-									<c:otherwise>
-										<li class="avail-product">
-											<div class="avail-posterArea">
-												<a href="${pageContext.request.contextPath}/product/info?prodNo=${vo.prodNo}"><img class="avail-poster" src="${pageContext.request.contextPath}/upload/${vo.posterPath}"></a>
-											</div>
-											<div class="productInfo avp">
-												<p class="text-left title"><strong>${vo.prodName}</strong></p>
-												<p class="text-left">${vo.beginShow} ~ ${vo.endShow}</p>
-												<p class="text-left">${vo.theaterName} ${vo.hallName}</p>
-											</div>
-										</li>
-									</c:otherwise>
-								</c:choose>
-							</c:forEach>
-
-								
-								
-
+								<c:forEach items="${map.top}" var="vo" varStatus="status">
+									<c:choose>
+										<c:when test="${status.count%5 eq 0}">
+											<li class="avail-product last">
+												<div class="avail-posterArea">
+													<a href="${pageContext.request.contextPath}/product/info?prodNo=${vo.prodNo}"><img class="avail-poster" src="${pageContext.request.contextPath}/upload/${vo.posterPath}"></a>
+												</div>
+												<div class="productInfo avp">
+													<p class="text-left title"><strong>${vo.prodName}</strong></p>
+													<p class="text-left">${vo.beginShow} ~ ${vo.endShow}</p>
+													<p class="text-left">${vo.theaterName} ${vo.hallName}</p>
+												</div>
+											</li>
+										</c:when>
+										<c:otherwise>
+											<li class="avail-product">
+												<div class="avail-posterArea">
+													<a href="${pageContext.request.contextPath}/product/info?prodNo=${vo.prodNo}"><img class="avail-poster" src="${pageContext.request.contextPath}/upload/${vo.posterPath}"></a>
+												</div>
+												<div class="productInfo avp">
+													<p class="text-left title"><strong>${vo.prodName}</strong></p>
+													<p class="text-left">${vo.beginShow} ~ ${vo.endShow}</p>
+													<p class="text-left">${vo.theaterName} ${vo.hallName}</p>
+												</div>
+											</li>
+										</c:otherwise>
+									</c:choose>
+								</c:forEach>
 							</ul>
 						</div>
 					</div>
