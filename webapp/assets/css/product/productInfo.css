@@ -76,16 +76,11 @@
 }
 
 
-.spo{
+.imgArea .poster {
 	width: 237px;
-	height: 260px;
-	margin-bottom: 8px;	
+	height: 318px;
 }
 
-.imgArea .poster .sports {
-	width: 237px;
-	height: 260px;
-}
 
 .rank-list .rank-poster {
 	width: 140px;
@@ -153,7 +148,7 @@
 }
 
 .list-width .sports {
-	height: 260px;
+	height: 270px;
 }
 
 .scroll {
@@ -162,6 +157,11 @@
 	padding: 0px 20px 0px 0px;
 }
 
+.spo{
+	width: 237px;
+	height: 260px;
+	margin-bottom: 5px;	
+}
 .nav>li>a {
   	position: relative;
   	display: block;
@@ -239,6 +239,12 @@
 	height: 250px;
 }
 
+.spo-width {
+	width: 237px;
+	height: 370.5px;
+	margin: 0px 17px 17px 0px;
+}
+
 .avp {
 	width: 186px;
 	height: 100px;
@@ -274,6 +280,12 @@
 	font-weight: bolder;
 	margin: 0px 0px 50px 0px;
 }
+
+.sportsposter {
+	width: 237px;
+	height: 260px;
+}
+
 
 .btn-area {
 	width: 200px;
