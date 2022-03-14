@@ -248,8 +248,8 @@
 .avp {
 	width: 186px;
 	height: 100px;
-    white-space: nowarp; /* 줄바꿈 막음*/
-    text-overflow: ellipsis; /* ... 로 보이게 */
+    white-space: nowarp; 
+    text-overflow: ellipsis; 
     overflow: hidden;
 }
 
