@@ -140,12 +140,13 @@ where	s.dc_no = d.dc_no and
 
 
 
-	<!-- 예매 좌석 취소 -->
+	<!-- 예매 좌석 취소 status 1->0 변경 -->
 	<select id="reserveSeatCancel" resultType="ReserveDetailVo" parameterType="ReserveDetailVo">
 <![CDATA[
 
-DELETE FROM	selseat
-where	selseat_no = #{selseatNo}
+UPDATE selseat
+SET status = 0
+WHERE selseat_no = #{selseatNo}
 
 ]]>
 	</select>
