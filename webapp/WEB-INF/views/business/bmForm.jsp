@@ -84,7 +84,7 @@
 							<div class="form-group">
 								<label class="form-text col-md-2 form-id" for="">공연명</label>
 								<div class="col-md-6">
-									<input type="text" class="form-control" id="" name="prodName" placeholder="공연 제목을 입력해주세요">
+									<input type="text" class="form-control" id="prodName" name="prodName" placeholder="공연 제목을 입력해주세요">
 								</div>
 							</div>
 
@@ -93,7 +93,7 @@
 								<label class="form-text col-md-2 form-id" for="">공연 구분</label>
 
 								<div class="col-md-3">
-									<select class="form-control" name="prodType">
+									<select class="form-control" id="prodType" name="prodType">
 										<option value="1">연극</option>
 										<option value="2">뮤지컬</option>
 										<option value="3">콘서트</option>
@@ -108,10 +108,10 @@
 							<div class="form-group">
 								<label class="form-text col-md-2 form-id" for="">공연 기간</label>
 								<div class="col-md-4">
-									<input type="date" class="form-control" name="beginShow">
+									<input type="date" class="form-control" id="beginShow" name="beginShow">
 								</div>
 								<div class="col-md-4">
-									<input type="date" class="form-control" name="endShow">
+									<input type="date" class="form-control" id="endShow" name="endShow">
 								</div>
 							</div>
 
@@ -120,10 +120,10 @@
 							<div class="form-group">
 								<label class="form-text col-md-2 form-id" for="">예매 기간</label>
 								<div class="col-md-4">
-									<input type="date" class="form-control" name="beginRez">
+									<input type="date" class="form-control" id="beginRez" name="beginRez">
 								</div>
 								<div class="col-md-4">
-									<input type="date" class="form-control" name="endRez">
+									<input type="date" class="form-control" id="endRez" name="endRez">
 								</div>
 							</div>
 
@@ -132,7 +132,7 @@
 							<div class="form-group">
 								<label class="form-text col-md-2 form-id" for="">공연 시작시간</label>
 								<div class="col-md-4">
-									<input type="time" class="form-control" name="showTime">
+									<input type="time" class="form-control" id="showTime" name="showTime">
 								</div>
 							</div>
 
@@ -141,7 +141,7 @@
 							<div class="form-group">
 								<label class="form-text col-md-2 form-id" for="">관람 시간</label>
 								<div class="col-md-4">
-									<input type="text" class="form-control" id="" name="viewTime">
+									<input type="text" class="form-control" id="viewTime" name="viewTime">
 								</div>
 							</div>
 
@@ -376,24 +376,30 @@
 					dcRate : disR,
 					dctype : disD,
 				};
-
 				console.log(ProductVo);
 			});
 
 	//공연정보 클릭할때
 	$("#addbtn").on("click", function() {
 		console.log("공연저장");
-
+		
 		var ProductVo = {
-			prodName: "aaaaaa",
-			prodType : "4",
-			beginShow : "2022-03-14",
-			endShow : "2022-04-14",
-			beginRez : "2022-04-14",
-			endRez : "2022-04-14",
-			showTime : "17:00",
-			viewTime : "45",
+			prodName: $("#prodName").val(),
+			prodType: $("#prodType").val(),
+			beginShow: $("#beginShow").val(),
+			endShow: $("#endShow").val(),
+			beginRez: $("#beginRez").val(),
+			endRez: $("#endRez").val(),
+			showTime: $("#showTime").val(),
+			viewTime: $("#viewTime").val(),
+			viewGrade: $("#viewGrade").val(),
+			viewGrade: $("#viewGrade").val(),
+			viewGrade: $("#viewGrade").val(),
+			viewGrade: $("#viewGrade").val(),
 			seatpriceList: [{grade:"A", price: "20000"}, {grade:"S", price: "30000"}]
+			notice: $("#notice").val(),
+			discountList: [{dcName:"A", dcRate: "20000", dcType: "0"}, {grade:"S", price: "30000"}]
+			
 		}
 		
 		console.log(JSON.stringify(ProductVo));
@@ -407,6 +413,7 @@
 			 processData: false, */
 
 			/* dataType : "json", */
+			/* 성공 시 처리해야 될 코드 작성 */
 			success : function(prodNo) {
 				console.log(prodNo)
 				
@@ -416,10 +423,10 @@
 				var file2 = $("#file2")[0].files[0]
 				var file3 = $("#file3")[0].files[0]
 				
-				fileupload(prodNo, file0);
-				fileupload(prodNo, file1);
-				fileupload(prodNo, file2);
-				fileupload(prodNo, file3);
+				fileupload(prodNo, file0, 1);
+				fileupload(prodNo, file1, 2);
+				fileupload(prodNo, file2, 3);
+				fileupload(prodNo, file3, 4);
 			},
 			error : function(XHR, status, error) {
 				console.error(status + " : " + error);
@@ -431,11 +438,12 @@
 	
 	
 	
-	function fileupload(prodNo, file){
+	function fileupload(prodNo, file, order){
 		var formData = new FormData();
 		
 		formData.append('prodNo', prodNo);
 		formData.append('file', file);
+		formData.append('order', order);
 		
 		$.ajax({
 			url : "${pageContext.request.contextPath}/bm/bmfileUplad",

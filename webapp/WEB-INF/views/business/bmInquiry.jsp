@@ -116,7 +116,7 @@
 														<option value="0">노출 off</option>
 														<option value="1">노출 on</option>
 												</select>
-													<button type="button"  class="btn btn-outline-primary" id="showbTn">확인</button></td>
+													<button type="button" class="btn btn-outline-primary" id="showbTn">확인</button></td>
 												<td><a href="${pageContext.request.contextPath}/bm/discount?prodNo=${vo.prodNo}">이벤트 할인 추가</a></td>
 												<td><a href="#">수정</a></td>
 												<%--<td><a href="${pageContext.request.contextPath}/bm/bmDelete?prodNo=${vo.prodNo}">삭제</a></td> --%>

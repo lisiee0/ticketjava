@@ -32,7 +32,6 @@ public class BusinessController {
 		model.addAttribute("productList", productList);
 		return "business/bmInquiry";
 	}
-	
 
 	// 공연 등록 폼
 	@RequestMapping(value = "bmForm")
@@ -52,18 +51,16 @@ public class BusinessController {
 		// businessService.productUpload(file, productVo, detailVo, discountVo);
 		return 21;
 	}
-	
-	
+
 	// 공연 파일업로드
 	@RequestMapping(value = "bmfileUplad", method = { RequestMethod.GET, RequestMethod.POST })
-	public String bmfileUplad(@RequestParam("prodNo") int prodNo,   MultipartFile file) {
+	public String bmfileUplad(@RequestParam("prodNo") int prodNo, MultipartFile file) {
 		System.out.println("BusinessController/bmfileUpladbmfileUplad");
 		System.out.println(prodNo);
 		System.out.println(file.getOriginalFilename());
-		
+
 		return "business/bmInquiry";
 	}
-	
 
 	// 공연 업로드
 //	*
@@ -81,6 +78,14 @@ public class BusinessController {
 //		return "business/bmInquiry";
 //	}
 
+	// 공연 노출
+	@RequestMapping(value="bmStatus",  method = { RequestMethod.GET, RequestMethod.POST })
+	public String bmStatus() {
+		System.out.println("BusinessController/bmStatus");
+		
+		return "";
+	}
+
 	// 공연 수정
 	@RequestMapping(value = "bmModify", method = { RequestMethod.GET, RequestMethod.POST })
 	public String bmModify(@ModelAttribute ProductVo productVo) {
@@ -90,13 +95,13 @@ public class BusinessController {
 	}
 
 	// 공연 삭제
-	@RequestMapping(value = "bmDelete", method = { RequestMethod.GET, RequestMethod.POST })
-	public String bmDelete(@ModelAttribute ProductVo productVo) {
-		System.out.println("BusinessController/bmDelete");
-		
-		businessService.productDelete(productVo);
-		return "redirect:/bm/";
-	}
+//	@RequestMapping(value = "bmDelete", method = { RequestMethod.GET, RequestMethod.POST })
+//	public String bmDelete(@ModelAttribute ProductVo productVo) {
+//		System.out.println("BusinessController/bmDelete");
+//		
+//		businessService.productDelete(productVo);
+//		return "redirect:/bm/";
+//	}
 
 	// 공연 검색 페이징
 	@RequestMapping(value = "bmAddSearch", method = { RequestMethod.GET, RequestMethod.POST })

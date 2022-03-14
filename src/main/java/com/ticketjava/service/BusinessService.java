@@ -92,7 +92,15 @@ public class BusinessService {
 		}
 
 	}
-
+	
+	//공연 노출 여부
+	public void bmStatus( ProductVo productVo) {
+		System.out.println("BusinessService/bmStatus");
+		
+		
+	}
+	
+	
 	// 공연 목록 삭제
 	public void productDelete(ProductVo productVo) {
 		System.out.println("BusinessService/productDelete");
