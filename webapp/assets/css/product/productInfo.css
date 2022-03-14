@@ -133,6 +133,10 @@
 .productInfo .title, .theater-info .title {
 	font-size: 15px;
 	font-weight: bolder;
+	
+	overflow:hidden;
+	white-space : nowrap;
+	text-overflow: ellipsis;	
 }
 
 .list-width {
@@ -215,11 +219,21 @@
 
 .avail-product {
 	width: 186px;
+	height: 352px;
 	margin: 0px 17px 15px 0px;
 }
 
-.avail-poster, .avail-posterArea, .avp {
+.avail-poster, .avail-posterArea {
 	width: 186px;
+	height: 250px;
+}
+
+.avp {
+	width: 186px;
+	height: 100px;
+    white-space: nowarp; /* 줄바꿈 막음*/
+    text-overflow: ellipsis; /* ... 로 보이게 */
+    overflow: hidden;
 }
 
 .last {
@@ -298,4 +312,4 @@
 	font-weight: bold;
 	margin-bottom: 20px;
 }
-		
+

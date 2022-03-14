@@ -11,6 +11,7 @@ import com.ticketjava.dao.NoticeDao;
 import com.ticketjava.dao.ProductDao;
 import com.ticketjava.dao.SeatpriceDao;
 import com.ticketjava.dao.TheaterDao;
+import com.ticketjava.vo.TheaterVo;
 
 @Service
 public class ProductService {
@@ -58,6 +59,17 @@ public class ProductService {
 		pMap.put("detail", dd.getDetail(prodNo));
 		
 		return pMap;
+	}
+	
+	// 공연장 정보 불러오기
+	public Map<String, Object> getTheater(TheaterVo vo) {
+		
+		Map<String, Object> tMap= new HashMap<String, Object>();
+		tMap.put("vo", td.selectTheater(vo));
+		tMap.put("top", pd.topListbyTheater(vo));
+		tMap.put("avail", pd.availListbyTheater(vo));
+		
+		return tMap;
 	}
 
 }

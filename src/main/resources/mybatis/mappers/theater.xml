@@ -17,7 +17,7 @@
 	
 	<select id="selectTheater" parameterType="TheaterVo" resultType="TheaterVo">
 		<![CDATA[
-			select			theater_no,
+			select			theater_no theaterNo,
 							theatername, 
 							postcode, 
 							address, 

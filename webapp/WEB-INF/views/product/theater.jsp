@@ -55,7 +55,7 @@
 										<c:otherwise>
 											<li class="logoaArea">
 												<div>
-													<a href="${vo.homePage}"><img class="theater-logo img-thumbnail img-rounded" data-no="${vo.theaterNo}" src="${pageContext.request.contextPath}/upload/${vo.logoPath}"></a>
+													<a href="${pageContext.request.contextPath}/product/listbyTheater?theaterNo=${vo.theaterNo}"><img class="theater-logo img-thumbnail img-rounded" src="${pageContext.request.contextPath}/upload/${vo.logoPath}"></a>
 												</div>
 											</li>
 										</c:otherwise>
