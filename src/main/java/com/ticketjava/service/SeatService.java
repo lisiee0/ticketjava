@@ -1,8 +1,5 @@
 package com.ticketjava.service;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -20,10 +17,6 @@ public class SeatService {
 	private SeatDao seatDao;
 	
 	public void initSeat(String data) {
-		// TODO Auto-generated method stub
-		
-		List<SeatVo> seatList = new ArrayList<>();
-		
 		JSONArray array = JSONArray.fromObject(data);
 		for(int i=0; i<array.size(); i++) {
 			JSONObject obj = (JSONObject)array.get(i);
@@ -34,15 +27,15 @@ public class SeatService {
 			int col = Integer.parseInt(String.valueOf(obj.get("col")));
 			int num = Integer.parseInt(String.valueOf(obj.get("num")));
 					
-			SeatVo seatVo = new SeatVo(0, hallNo, grade, section, col, num, 1);
-			seatList.add(seatVo);
+			SeatVo seatVo = new SeatVo();
+			seatVo.setHallNo(hallNo);
+			seatVo.setGrade(grade);
+			seatVo.setSection(section);
+			seatVo.setCol(col);
+			seatVo.setNum(num);
+			
+			seatDao.insertInit(seatVo);
 		}
-		
-		System.out.println(seatList);
-		
-		seatDao.insertInit(seatList);
-		
-		
 	}
 
 	

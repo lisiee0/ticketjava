@@ -9,19 +9,19 @@ public class SeatVo {
 	private String section;
 	private int col;
 	private int num;
-	private int stauts;
+	private int status;
 
 	public SeatVo() {
 	}
 
-	public SeatVo(int seatNo, int hallNo, String grade, String section, int col, int num, int stauts) {
+	public SeatVo(int seatNo, int hallNo, String grade, String section, int col, int num, int status) {
 		this.seatNo = seatNo;
 		this.hallNo = hallNo;
 		this.grade = grade;
 		this.section = section;
 		this.col = col;
 		this.num = num;
-		this.stauts = stauts;
+		this.status = status;
 	}
 
 	public int getSeatNo() {
@@ -72,18 +72,18 @@ public class SeatVo {
 		this.num = num;
 	}
 
-	public int getStauts() {
-		return stauts;
+	public int getstatus() {
+		return status;
 	}
 
-	public void setStauts(int stauts) {
-		this.stauts = stauts;
+	public void setstatus(int status) {
+		this.status = status;
 	}
 
 	@Override
 	public String toString() {
 		return "SeatVo [seatNo=" + seatNo + ", hallNo=" + hallNo + ", grade=" + grade + ", section=" + section
-				+ ", col=" + col + ", num=" + num + ", stauts=" + stauts + "]";
+				+ ", col=" + col + ", num=" + num + ", status=" + status + "]";
 	}
 
 }
