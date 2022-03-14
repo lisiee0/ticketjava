@@ -37,6 +37,15 @@ public class ProductService {
 
 		return typeList;
 	}
+	
+	public Map<String, Object> sportsList(int prodType) {
+		
+		Map<String, Object> sportsList= new HashMap<String, Object>();
+		sportsList.put("topList", pd.topList(prodType));
+		sportsList.put("allList", pd.allList(prodType));
+		
+		return sportsList;
+	}
 
 	
 	// '공연장'페이지 공연장리스트 & 공지사항리스트

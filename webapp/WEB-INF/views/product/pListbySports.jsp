@@ -38,9 +38,9 @@
 								<c:forEach items="${type.topList}" var="tvo" varStatus="status">
 									<c:choose>
 										<c:when test="${status.count%4 eq 0}">
-											<li class="list-width last">
-												<div class="imgArea">
-													<a href="${pageContext.request.contextPath}/product/info?prodNo=${tvo.prodNo}"><img class="poster" src="${pageContext.request.contextPath}/upload/${tvo.posterPath}"></a>
+											<li class="list-width sports last">
+												<div class="spo">
+													<a href="${pageContext.request.contextPath}/product/info?prodNo=${tvo.prodNo}"><img class="poster sports" src="${pageContext.request.contextPath}/upload/${tvo.posterPath}"></a>
 												</div>
 												<div class="productInfo">
 													<p class="text-left title"><strong>${tvo.prodName}</strong></p>
@@ -50,9 +50,9 @@
 											</li>
 										</c:when>
 										<c:otherwise>
-											<li class="list-width">
-												<div class="imgArea">
-													<a href="${pageContext.request.contextPath}/product/info?prodNo=${tvo.prodNo}"><img class="poster" src="${pageContext.request.contextPath}/upload/${tvo.posterPath}"></a>
+											<li class="list-width sports">
+												<div class="spo">
+													<a href="${pageContext.request.contextPath}/product/info?prodNo=${tvo.prodNo}"><img class="poster sports" src="${pageContext.request.contextPath}/upload/${tvo.posterPath}"></a>
 												</div>
 												<div class="productInfo">
 													<p class="text-left title"><strong>${tvo.prodName}</strong></p>
@@ -78,9 +78,9 @@
 								<c:forEach items="${type.allList}" var="avo" varStatus="status">
 									<c:choose>
 										<c:when test="${status.count%4 eq 0}">
-											<li class="list-width last">
-												<div class="imgArea">
-													<a href="${pageContext.request.contextPath}/product/info?prodNo=${avo.prodNo}"><img class="poster" src="${pageContext.request.contextPath}/upload/${avo.posterPath}"></a>
+											<li class="list-width sports last">
+												<div class="spo">
+													<a href="${pageContext.request.contextPath}/product/info?prodNo=${avo.prodNo}"><img class="poster sports" src="${pageContext.request.contextPath}/upload/${avo.posterPath}"></a>
 												</div>
 												<div class="productInfo">
 													<p class="text-left title"><strong>${avo.prodName}</strong></p>
@@ -90,9 +90,9 @@
 											</li>
 										</c:when>
 										<c:otherwise>
-											<li class="list-width">
-												<div class="imgArea">
-													<a href="${pageContext.request.contextPath}/product/info?prodNo=${avo.prodNo}"><img class="poster" src="${pageContext.request.contextPath}/upload/${avo.posterPath}"></a>
+											<li class="list-width sports">
+												<div class="spo">
+													<a href="${pageContext.request.contextPath}/product/info?prodNo=${avo.prodNo}"><img class="poster sports" src="${pageContext.request.contextPath}/upload/${avo.posterPath}"></a>
 												</div>
 												<div class="productInfo">
 													<p class="text-left title"><strong>${avo.prodName}</strong></p>

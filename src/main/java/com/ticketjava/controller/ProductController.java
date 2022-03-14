@@ -25,6 +25,14 @@ public class ProductController {
 		return "product/pList";
 	}
 	
+	// sports 상품 리스트
+	@RequestMapping("/sports")
+	public String sports(@RequestParam("prodType") int prodType, Model model) {
+		
+		model.addAttribute("type", productService.sportsList(prodType));
+		return "product/pListbySports";
+	}
+	
 	
 	// '공연장'페이지  (공연장 & 공지사항 리스트)
 	@RequestMapping("/theaterList")

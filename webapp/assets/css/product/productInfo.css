@@ -75,9 +75,16 @@
 	height: 318px;
 }
 
-.imgArea .poster {
+
+.spo{
 	width: 237px;
-	height: 318px;
+	height: 260px;
+	margin-bottom: 8px;	
+}
+
+.imgArea .poster .sports {
+	width: 237px;
+	height: 260px;
 }
 
 .rank-list .rank-poster {
@@ -143,6 +150,10 @@
 	width: 237px;
 	height: 419.5px;
 	margin: 0px 17px 17px 0px;
+}
+
+.list-width .sports {
+	height: 260px;
 }
 
 .scroll {
