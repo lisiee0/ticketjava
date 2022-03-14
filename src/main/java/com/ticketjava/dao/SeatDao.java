@@ -18,8 +18,8 @@ public class SeatDao {
 		sqlSession.insert("seat.insertInit", seatVo);
 	}
 
-	public int selectSeatCount(Map<String, Object> hallNoSection) {
-		return sqlSession.selectOne("seat.selectSeatCount", hallNoSection);
+	public int selectSeatCount(Map<String, Object> seatCountData) {
+		return sqlSession.selectOne("seat.selectSeatCount", seatCountData);
 	}
 	
 	
