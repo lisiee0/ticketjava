@@ -120,18 +120,17 @@ public class NotireqService {
 		NotiDataVo notiDataVo = selseatDao.selectByNo(selseatNo);
 		System.out.println(notiDataVo);
 		
-		int hallNo = notiDataVo.getHallNo();
-		String section = notiDataVo.getGrade();
-		Map<String, Object> hallNoSection = new HashMap<>();
-		hallNoSection.put("hallNo", hallNo);
-		hallNoSection.put("section", section);
-		int seatCount = seatDao.selectSeatCount(hallNoSection);
 		
-		Map<String, Object> prodNoViewDate = new HashMap<>();
-		prodNoViewDate.put("prodNo", notiDataVo.getProdNo());
-		prodNoViewDate.put("viewDate", notiDataVo.getViewDate());
+		Map<String, Object> seatCountData = new HashMap<>();
+		seatCountData.put("hallNo", notiDataVo.getHallNo());
+		seatCountData.put("section", notiDataVo.getSection());
+		int seatCount = seatDao.selectSeatCount(seatCountData);
 		
-		int selseatCount = selseatDao.selectSelseatCount(prodNoViewDate);
+		Map<String, Object> selseatCountData = new HashMap<>();
+		selseatCountData.put("prodNo", notiDataVo.getProdNo());
+		selseatCountData.put("viewDate", notiDataVo.getViewDate());
+		selseatCountData.put("section", notiDataVo.getSection());
+		int selseatCount = selseatDao.selectSelseatCount(selseatCountData);
 		
 		System.out.println(seatCount+" "+selseatCount);
 		

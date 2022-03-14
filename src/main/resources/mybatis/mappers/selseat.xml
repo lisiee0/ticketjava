@@ -100,7 +100,9 @@
 			from reserve r, selseat s
 			where r.rez_no = s.rez_no and
 			      r.prod_no = #{prodNo} and
-			      r.viewDate = #{viewDate}
+			      r.viewDate = #{viewDate} and
+			      s.section = #{section} and
+			      s.status = 1
 		]]>
 	</select>
 </mapper>
