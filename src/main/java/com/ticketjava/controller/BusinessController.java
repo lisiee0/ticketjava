@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.ticketjava.service.BusinessService;
-import com.ticketjava.vo.DiscountVo;
 import com.ticketjava.vo.ProductVo;
 
 @Controller
@@ -43,18 +42,19 @@ public class BusinessController {
 	}
 
 	// 공연 업로드
+	//int로 두는 이유 >> db로 보낼 때 성공/실패 여부
 	@ResponseBody
 	@RequestMapping(value = "bmUpload", method = { RequestMethod.GET, RequestMethod.POST })
-	public int productUpload(@RequestBody ProductVo productVo, DiscountVo discountVo) {
-		System.out.println("BusinessController/bmUpload");
+	public String productUpload(@RequestBody ProductVo productVo) {
+		System.out.println("BusinessController/productUpload");
 		System.out.println(productVo);
-		System.out.println(discountVo);
 
-		return 21;
+//		businessService.productUpload();
+		return "redirect:bm/";
 	}
 
 	// 공연 파일업로드
-	@RequestMapping(value = "bmfileUplad", method = { RequestMethod.GET, RequestMethod.POST })
+	@RequestMapping(value = "bmfileUpload", method = { RequestMethod.GET, RequestMethod.POST })
 	public String productFileUpload(@RequestParam("prodNo") int prodNo, MultipartFile file, int order) {
 		System.out.println("BusinessController/bmfileUplad");
 		System.out.println(prodNo);
@@ -62,24 +62,10 @@ public class BusinessController {
 		System.out.println(file.getOriginalFilename());
 		
 
-		return "business/bmInquiry";
+		
+		return "";
 	}
 
-	// 공연 업로드
-//	*
-//	@RequestMapping(value = "bmUpload", method = { RequestMethod.GET, RequestMethod.POST })
-//	public String bmUpload(@RequestParam("file") MultipartFile[] file,
-//						@ModelAttribute ProductVo productVo,
-//						@ModelAttribute DetailVo detailVo,
-//						@ModelAttribute DiscountVo discountVo,
-//						HttpServletRequest request, Model model) {
-//		System.out.println("BusinessController/bmUpload");
-//		System.out.println(productVo.getShowTime());
-//		System.out.println(detailVo);
-//
-//		businessService.productUpload(file, productVo, detailVo, discountVo);
-//		return "business/bmInquiry";
-//	}
 
 	// 공연 노출
 	@RequestMapping(value = "bmStatus", method = { RequestMethod.GET, RequestMethod.POST })

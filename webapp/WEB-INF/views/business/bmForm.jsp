@@ -440,7 +440,7 @@
 		formData.append('order', order);
 
 		$.ajax({
-			url : "${pageContext.request.contextPath}/bm/bmfileUplad",
+			url : "${pageContext.request.contextPath}/bm/bmfileUpload",
 			type : "post",
 			/* contentType : "application/json",*/
 			contentType : false,
@@ -456,6 +456,7 @@
 			}
 		});
 	}
+
 </script>
 </html>
 
