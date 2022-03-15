@@ -133,8 +133,8 @@ select
         payment,
         status
 from	selseat s, discount d
-where	s.dc_no = d.dc_no and
- 		rez_no = #{rezNo}
+where	s.dc_no = d.dc_no(+) 
+and		rez_no = #{rezNo}
 ]]>
 	</select>
 
