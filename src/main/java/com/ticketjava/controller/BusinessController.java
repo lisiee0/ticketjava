@@ -105,9 +105,9 @@ public class BusinessController {
 	@RequestMapping("/discount")
 	public String bmDisAdd(@RequestParam("prodNo") int prodNo, Model model) {
 		System.out.println("BusinessController/bmDisAdd");
-
+		System.out.println(prodNo);
 		model.addAttribute("prodDis", businessService.selectProdDiscount(prodNo));
-		return "business/bmDisAdd";
+		return "business/bmDisAdd";	
 	}
 
 	// 문의내역 관리

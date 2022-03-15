@@ -48,7 +48,7 @@
 	</select>
 
 	<!-- 이벤트할인 리스트 불러오기 (상시할인 제외) -->
-	<select id="getList" resultType="DiscountVo">
+	<select id="getList" parameterType="int" resultType="DiscountVo">
 		<![CDATA[
 			select			dc_no dcNo,
         					prod_no prodNo,
@@ -57,9 +57,10 @@
         					to_char(enddc, 'YYYY"년"MM"월"DD"일"') endDc,
         					dcrate,
         					dctype
-			from discount
-			where begindc is not null
-			and enddc is not null
+			from 			discount
+			where 			begindc is not null
+			and 			enddc is not null
+			and				prod_no= #{prodNo}
 		]]>
 	</select>
 

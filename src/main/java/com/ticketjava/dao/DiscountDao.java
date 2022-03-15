@@ -36,8 +36,8 @@ public class DiscountDao {
 	}
 
 	// 이벤트 할인창에서 가져오는 이벤트할인 리스트 (상시할인 제외)
-	public List<DiscountVo> getList() {
-		return sqlSession.selectList("discount.getList");
+	public List<DiscountVo> getList(int prodNo) {
+		return sqlSession.selectList("discount.getList", prodNo);
 	}
 
 	// 이벤트 할인 추가
