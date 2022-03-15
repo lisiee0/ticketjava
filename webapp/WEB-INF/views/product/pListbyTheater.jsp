@@ -119,7 +119,7 @@
 						<div id="mapInfo" class="row">
 							<h4 class="cateMenu section">공연장 정보</h4>
 							<div id="mapArea" class="col-xs-4">
-								<img id="map" src="/project/assets/image/map.png">
+								<img id="map" src="${pageContext.request.contextPath}/assets/image/test/map.png">
 							</div>
 							<div class="col-xs-8">
 								<p><strong>[공연장 정보]</strong></p><br>
