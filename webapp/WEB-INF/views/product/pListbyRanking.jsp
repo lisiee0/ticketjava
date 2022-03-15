@@ -40,55 +40,17 @@
 									<td class="btnArea"><span class="glyphicon glyphicon-chevron-left btnSize"></span><td>
 									<td class="list-bgc">
 										<ul class="nav navbar-nav">
-											<li class="rank-list">
-												<div>
-													<img class="rank-poster" src="${pageContext.request.contextPath}/assets/image/test/aida.jpg">
-												</div>
-												<div>
-													<p class="text-center"><strong>아이다</strong></p>
-													<p class="text-center">세종문화회관 대극장</p>
-												</div>
-											</li>
-											
-											<li class="rank-list">
-												<div>
-													<img class="rank-poster" src="${pageContext.request.contextPath}/assets/image/test/aida.jpg">
-												</div>
-												<div>
-													<p class="text-center"><strong>아이다</strong></p>
-													<p class="text-center">세종문화회관 대극장</p>
-												</div>
-											</li>
-											
-											<li class="rank-list">
-												<div>
-													<img class="rank-poster" src="${pageContext.request.contextPath}/assets/image/test/aida.jpg">
-												</div>
-												<div>
-													<p class="text-center"><strong>아이다</strong></p>
-													<p class="text-center">세종문화회관 대극장</p>
-												</div>
-											</li>
-											
-											<li class="rank-list">
-												<div>
-													<img class="rank-poster" src="${pageContext.request.contextPath}/assets/image/test/aida.jpg">
-												</div>
-												<div>
-													<p class="text-center"><strong>아이다</strong></p>
-													<p class="text-center">세종문화회관 대극장</p>
-												</div>
-											</li>
-											
-											<li class="rank-list">
-												<div>
-													<img class="rank-poster" src="${pageContext.request.contextPath}/assets/image/test/aida.jpg">
-												</div>
-												<div>
-													<p class="text-center"><strong>아이다</strong></p>
-													<p class="text-center">세종문화회관 대극장</p>
-												</div>
-											</li>
+											<c:forEach items="${rank.musical}" var="vo">
+												<li class="rank-list">
+													<div>
+														<a href="${pageContext.request.contextPath}/product/info?prodNo=${vo.prodNo}"><img class="rank-poster" src="${pageContext.request.contextPath}/upload/${vo.posterPath}"></a>
+													</div>
+													<div>
+														<p class="text-center title"><strong>${vo.prodName}</strong></p>
+														<p class="text-center">${vo.theaterName} ${vo.hallName}</p>
+													</div>
+												</li>
+											</c:forEach>
 										</ul>
 									</td>
 									<td><span class="glyphicon glyphicon-chevron-right btnSize lastbtn"></span></td>
@@ -103,55 +65,17 @@
 									<td class="btnArea"><span class="glyphicon glyphicon-chevron-left btnSize"></span><td>
 									<td class="list-bgc">
 										<ul class="nav navbar-nav">
-											<li class="rank-list">
-												<div>
-													<img class="rank-poster" src="${pageContext.request.contextPath}/assets/image/test/aida.jpg">
-												</div>
-												<div>
-													<p class="text-center"><strong>아이다</strong></p>
-													<p class="text-center">세종문화회관 대극장</p>
-												</div>
-											</li>
-											
-											<li class="rank-list">
-												<div>
-													<img class="rank-poster" src="${pageContext.request.contextPath}/assets/image/test/aida.jpg">
-												</div>
-												<div>
-													<p class="text-center"><strong>아이다</strong></p>
-													<p class="text-center">세종문화회관 대극장</p>
-												</div>
-											</li>
-											
-											<li class="rank-list">
-												<div>
-													<img class="rank-poster" src="${pageContext.request.contextPath}/assets/image/test/aida.jpg">
-												</div>
-												<div>
-													<p class="text-center"><strong>아이다</strong></p>
-													<p class="text-center">세종문화회관 대극장</p>
-												</div>
-											</li>
-											
-											<li class="rank-list">
-												<div>
-													<img class="rank-poster" src="${pageContext.request.contextPath}/assets/image/test/aida.jpg">
-												</div>
-												<div>
-													<p class="text-center"><strong>아이다</strong></p>
-													<p class="text-center">세종문화회관 대극장</p>
-												</div>
-											</li>
-											
-											<li class="rank-list">
-												<div>
-													<img class="rank-poster" src="${pageContext.request.contextPath}/assets/image/test/aida.jpg">
-												</div>
-												<div>
-													<p class="text-center"><strong>아이다</strong></p>
-													<p class="text-center">세종문화회관 대극장</p>
-												</div>
-											</li>
+											<c:forEach items="${rank.play}" var="vo">
+												<li class="rank-list">
+													<div>
+														<a href="${pageContext.request.contextPath}/product/info?prodNo=${vo.prodNo}"><img class="rank-poster" src="${pageContext.request.contextPath}/upload/${vo.posterPath}"></a>
+													</div>
+													<div>
+														<p class="text-center title"><strong>${vo.prodName}</strong></p>
+														<p class="text-center">${vo.theaterName} ${vo.hallName}</p>
+													</div>
+												</li>
+											</c:forEach>
 										</ul>
 									</td>
 									<td><span class="glyphicon glyphicon-chevron-right btnSize lastbtn"></span></td>
@@ -166,55 +90,17 @@
 									<td class="btnArea"><span class="glyphicon glyphicon-chevron-left btnSize"></span><td>
 									<td class="list-bgc">
 										<ul class="nav navbar-nav">
-											<li class="rank-list">
-												<div>
-													<img class="rank-poster" src="${pageContext.request.contextPath}/assets/image/test/aida.jpg">
-												</div>
-												<div>
-													<p class="text-center"><strong>아이다</strong></p>
-													<p class="text-center">세종문화회관 대극장</p>
-												</div>
-											</li>
-											
-											<li class="rank-list">
-												<div>
-													<img class="rank-poster" src="${pageContext.request.contextPath}/assets/image/test/aida.jpg">
-												</div>
-												<div>
-													<p class="text-center"><strong>아이다</strong></p>
-													<p class="text-center">세종문화회관 대극장</p>
-												</div>
-											</li>
-											
-											<li class="rank-list">
-												<div>
-													<img class="rank-poster" src="${pageContext.request.contextPath}/assets/image/test/aida.jpg">
-												</div>
-												<div>
-													<p class="text-center"><strong>아이다</strong></p>
-													<p class="text-center">세종문화회관 대극장</p>
-												</div>
-											</li>
-											
-											<li class="rank-list">
-												<div>
-													<img class="rank-poster" src="${pageContext.request.contextPath}/assets/image/test/aida.jpg">
-												</div>
-												<div>
-													<p class="text-center"><strong>아이다</strong></p>
-													<p class="text-center">세종문화회관 대극장</p>
-												</div>
-											</li>
-											
-											<li class="rank-list">
-												<div>
-													<img class="rank-poster" src="${pageContext.request.contextPath}/assets/image/test/aida.jpg">
-												</div>
-												<div>
-													<p class="text-center"><strong>아이다</strong></p>
-													<p class="text-center">세종문화회관 대극장</p>
-												</div>
-											</li>
+											<c:forEach items="${rank.concert}" var="vo">
+												<li class="rank-list">
+													<div>
+														<a href="${pageContext.request.contextPath}/product/info?prodNo=${vo.prodNo}"><img class="rank-poster" src="${pageContext.request.contextPath}/upload/${vo.posterPath}"></a>
+													</div>
+													<div>
+														<p class="text-center title"><strong>${vo.prodName}</strong></p>
+														<p class="text-center">${vo.theaterName} ${vo.hallName}</p>
+													</div>
+												</li>
+											</c:forEach>
 										</ul>
 									</td>
 									<td><span class="glyphicon glyphicon-chevron-right btnSize lastbtn"></span></td>
@@ -229,55 +115,17 @@
 									<td class="btnArea"><span class="glyphicon glyphicon-chevron-left btnSize"></span><td>
 									<td class="list-bgc">
 										<ul class="nav navbar-nav">
-											<li class="rank-list">
-												<div>
-													<img class="rank-poster" src="${pageContext.request.contextPath}/assets/image/test/aida.jpg">
-												</div>
-												<div>
-													<p class="text-center"><strong>아이다</strong></p>
-													<p class="text-center">세종문화회관 대극장</p>
-												</div>
-											</li>
-											
-											<li class="rank-list">
-												<div>
-													<img class="rank-poster" src="${pageContext.request.contextPath}/assets/image/test/aida.jpg">
-												</div>
-												<div>
-													<p class="text-center"><strong>아이다</strong></p>
-													<p class="text-center">세종문화회관 대극장</p>
-												</div>
-											</li>
-											
-											<li class="rank-list">
-												<div>
-													<img class="rank-poster" src="${pageContext.request.contextPath}/assets/image/test/aida.jpg">
-												</div>
-												<div>
-													<p class="text-center"><strong>아이다</strong></p>
-													<p class="text-center">세종문화회관 대극장</p>
-												</div>
-											</li>
-											
-											<li class="rank-list">
-												<div>
-													<img class="rank-poster" src="${pageContext.request.contextPath}/assets/image/test/aida.jpg">
-												</div>
-												<div>
-													<p class="text-center"><strong>아이다</strong></p>
-													<p class="text-center">세종문화회관 대극장</p>
-												</div>
-											</li>
-											
-											<li class="rank-list">
-												<div>
-													<img class="rank-poster" src="${pageContext.request.contextPath}/assets/image/test/aida.jpg">
-												</div>
-												<div>
-													<p class="text-center"><strong>아이다</strong></p>
-													<p class="text-center">세종문화회관 대극장</p>
-												</div>
-											</li>
+											<c:forEach items="${rank.sports}" var="vo">
+												<li class="rank-list">
+													<div>
+														<a href="${pageContext.request.contextPath}/product/info?prodNo=${vo.prodNo}"><img class="rank-poster" src="${pageContext.request.contextPath}/upload/${vo.posterPath}"></a>
+													</div>
+													<div>
+														<p class="text-center title"><strong>${vo.prodName}</strong></p>
+														<p class="text-center">${vo.theaterName} ${vo.hallName}</p>
+													</div>
+												</li>
+											</c:forEach>
 										</ul>
 									</td>
 									<td><span class="glyphicon glyphicon-chevron-right btnSize lastbtn"></span></td>
@@ -292,55 +140,17 @@
 									<td class="btnArea"><span class="glyphicon glyphicon-chevron-left btnSize"></span><td>
 									<td class="list-bgc">
 										<ul class="nav navbar-nav">
-											<li class="rank-list">
-												<div>
-													<img class="rank-poster" src="${pageContext.request.contextPath}/assets/image/test/aida.jpg">
-												</div>
-												<div>
-													<p class="text-center"><strong>아이다</strong></p>
-													<p class="text-center">세종문화회관 대극장</p>
-												</div>
-											</li>
-											
-											<li class="rank-list">
-												<div>
-													<img class="rank-poster" src="${pageContext.request.contextPath}/assets/image/test/aida.jpg">
-												</div>
-												<div>
-													<p class="text-center"><strong>아이다</strong></p>
-													<p class="text-center">세종문화회관 대극장</p>
-												</div>
-											</li>
-											
-											<li class="rank-list">
-												<div>
-													<img class="rank-poster" src="${pageContext.request.contextPath}/assets/image/test/aida.jpg">
-												</div>
-												<div>
-													<p class="text-center"><strong>아이다</strong></p>
-													<p class="text-center">세종문화회관 대극장</p>
-												</div>
-											</li>
-											
-											<li class="rank-list">
-												<div>
-													<img class="rank-poster" src="${pageContext.request.contextPath}/assets/image/test/aida.jpg">
-												</div>
-												<div>
-													<p class="text-center"><strong>아이다</strong></p>
-													<p class="text-center">세종문화회관 대극장</p>
-												</div>
-											</li>
-											
-											<li class="rank-list">
-												<div>
-													<img class="rank-poster" src="${pageContext.request.contextPath}/assets/image/test/aida.jpg">
-												</div>
-												<div>
-													<p class="text-center"><strong>아이다</strong></p>
-													<p class="text-center">세종문화회관 대극장</p>
-												</div>
-											</li>
+											<c:forEach items="${rank.exhibition}" var="vo">
+												<li class="rank-list">
+													<div>
+														<a href="${pageContext.request.contextPath}/product/info?prodNo=${vo.prodNo}"><img class="rank-poster" src="${pageContext.request.contextPath}/upload/${vo.posterPath}"></a>
+													</div>
+													<div>
+														<p class="text-center title"><strong>${vo.prodName}</strong></p>
+														<p class="text-center">${vo.theaterName} ${vo.hallName}</p>
+													</div>
+												</li>
+											</c:forEach>
 										</ul>
 									</td>
 									<td><span class="glyphicon glyphicon-chevron-right btnSize lastbtn"></span></td>

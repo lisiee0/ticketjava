@@ -98,5 +98,18 @@ public class ProductService {
 	public List<ProductVo> allprod(int no) {
 		return pd.allprod(no);
 	}
+	
+	// prodType별 TOP5 (랭킹페이지)
+	public Map<String, Object> ranking() {
+		
+		Map<String, Object> rankMap= new HashMap<String, Object>();
+		rankMap.put("musical", pd.rank(1));
+		rankMap.put("play", pd.rank(2));
+		rankMap.put("concert", pd.rank(3));
+		rankMap.put("sports", pd.rank(4));
+		rankMap.put("exhibition", pd.rank(5));
+		
+		return rankMap;
+	}
 
 }
