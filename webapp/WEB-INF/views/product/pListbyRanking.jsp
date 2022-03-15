@@ -42,7 +42,7 @@
 										<ul class="nav navbar-nav">
 											<li class="rank-list">
 												<div>
-													<img class="rank-poster" src="assets/image/aida.jpg">
+													<img class="rank-poster" src="${pageContext.request.contextPath}/assets/image/test/aida.jpg">
 												</div>
 												<div>
 													<p class="text-center"><strong>아이다</strong></p>
@@ -52,7 +52,7 @@
 											
 											<li class="rank-list">
 												<div>
-													<img class="rank-poster" src="assets/image/aida.jpg">
+													<img class="rank-poster" src="${pageContext.request.contextPath}/assets/image/test/aida.jpg">
 												</div>
 												<div>
 													<p class="text-center"><strong>아이다</strong></p>
@@ -62,7 +62,7 @@
 											
 											<li class="rank-list">
 												<div>
-													<img class="rank-poster" src="assets/image/aida.jpg">
+													<img class="rank-poster" src="${pageContext.request.contextPath}/assets/image/test/aida.jpg">
 												</div>
 												<div>
 													<p class="text-center"><strong>아이다</strong></p>
@@ -72,7 +72,7 @@
 											
 											<li class="rank-list">
 												<div>
-													<img class="rank-poster" src="assets/image/aida.jpg">
+													<img class="rank-poster" src="${pageContext.request.contextPath}/assets/image/test/aida.jpg">
 												</div>
 												<div>
 													<p class="text-center"><strong>아이다</strong></p>
@@ -82,7 +82,7 @@
 											
 											<li class="rank-list">
 												<div>
-													<img class="rank-poster" src="assets/image/aida.jpg">
+													<img class="rank-poster" src="${pageContext.request.contextPath}/assets/image/test/aida.jpg">
 												</div>
 												<div>
 													<p class="text-center"><strong>아이다</strong></p>
@@ -105,7 +105,7 @@
 										<ul class="nav navbar-nav">
 											<li class="rank-list">
 												<div>
-													<img class="rank-poster" src="assets/image/aida.jpg">
+													<img class="rank-poster" src="${pageContext.request.contextPath}/assets/image/test/aida.jpg">
 												</div>
 												<div>
 													<p class="text-center"><strong>아이다</strong></p>
@@ -115,7 +115,7 @@
 											
 											<li class="rank-list">
 												<div>
-													<img class="rank-poster" src="assets/image/aida.jpg">
+													<img class="rank-poster" src="${pageContext.request.contextPath}/assets/image/test/aida.jpg">
 												</div>
 												<div>
 													<p class="text-center"><strong>아이다</strong></p>
@@ -125,7 +125,7 @@
 											
 											<li class="rank-list">
 												<div>
-													<img class="rank-poster" src="assets/image/aida.jpg">
+													<img class="rank-poster" src="${pageContext.request.contextPath}/assets/image/test/aida.jpg">
 												</div>
 												<div>
 													<p class="text-center"><strong>아이다</strong></p>
@@ -135,7 +135,7 @@
 											
 											<li class="rank-list">
 												<div>
-													<img class="rank-poster" src="assets/image/aida.jpg">
+													<img class="rank-poster" src="${pageContext.request.contextPath}/assets/image/test/aida.jpg">
 												</div>
 												<div>
 													<p class="text-center"><strong>아이다</strong></p>
@@ -145,7 +145,7 @@
 											
 											<li class="rank-list">
 												<div>
-													<img class="rank-poster" src="assets/image/aida.jpg">
+													<img class="rank-poster" src="${pageContext.request.contextPath}/assets/image/test/aida.jpg">
 												</div>
 												<div>
 													<p class="text-center"><strong>아이다</strong></p>
@@ -168,7 +168,7 @@
 										<ul class="nav navbar-nav">
 											<li class="rank-list">
 												<div>
-													<img class="rank-poster" src="assets/image/aida.jpg">
+													<img class="rank-poster" src="${pageContext.request.contextPath}/assets/image/test/aida.jpg">
 												</div>
 												<div>
 													<p class="text-center"><strong>아이다</strong></p>
@@ -178,7 +178,7 @@
 											
 											<li class="rank-list">
 												<div>
-													<img class="rank-poster" src="assets/image/aida.jpg">
+													<img class="rank-poster" src="${pageContext.request.contextPath}/assets/image/test/aida.jpg">
 												</div>
 												<div>
 													<p class="text-center"><strong>아이다</strong></p>
@@ -188,7 +188,7 @@
 											
 											<li class="rank-list">
 												<div>
-													<img class="rank-poster" src="assets/image/aida.jpg">
+													<img class="rank-poster" src="${pageContext.request.contextPath}/assets/image/test/aida.jpg">
 												</div>
 												<div>
 													<p class="text-center"><strong>아이다</strong></p>
@@ -198,7 +198,7 @@
 											
 											<li class="rank-list">
 												<div>
-													<img class="rank-poster" src="assets/image/aida.jpg">
+													<img class="rank-poster" src="${pageContext.request.contextPath}/assets/image/test/aida.jpg">
 												</div>
 												<div>
 													<p class="text-center"><strong>아이다</strong></p>
@@ -208,7 +208,7 @@
 											
 											<li class="rank-list">
 												<div>
-													<img class="rank-poster" src="assets/image/aida.jpg">
+													<img class="rank-poster" src="${pageContext.request.contextPath}/assets/image/test/aida.jpg">
 												</div>
 												<div>
 													<p class="text-center"><strong>아이다</strong></p>
@@ -231,7 +231,7 @@
 										<ul class="nav navbar-nav">
 											<li class="rank-list">
 												<div>
-													<img class="rank-poster" src="assets/image/aida.jpg">
+													<img class="rank-poster" src="${pageContext.request.contextPath}/assets/image/test/aida.jpg">
 												</div>
 												<div>
 													<p class="text-center"><strong>아이다</strong></p>
@@ -241,7 +241,7 @@
 											
 											<li class="rank-list">
 												<div>
-													<img class="rank-poster" src="assets/image/aida.jpg">
+													<img class="rank-poster" src="${pageContext.request.contextPath}/assets/image/test/aida.jpg">
 												</div>
 												<div>
 													<p class="text-center"><strong>아이다</strong></p>
@@ -251,7 +251,7 @@
 											
 											<li class="rank-list">
 												<div>
-													<img class="rank-poster" src="assets/image/aida.jpg">
+													<img class="rank-poster" src="${pageContext.request.contextPath}/assets/image/test/aida.jpg">
 												</div>
 												<div>
 													<p class="text-center"><strong>아이다</strong></p>
@@ -261,7 +261,7 @@
 											
 											<li class="rank-list">
 												<div>
-													<img class="rank-poster" src="assets/image/aida.jpg">
+													<img class="rank-poster" src="${pageContext.request.contextPath}/assets/image/test/aida.jpg">
 												</div>
 												<div>
 													<p class="text-center"><strong>아이다</strong></p>
@@ -271,7 +271,7 @@
 											
 											<li class="rank-list">
 												<div>
-													<img class="rank-poster" src="assets/image/aida.jpg">
+													<img class="rank-poster" src="${pageContext.request.contextPath}/assets/image/test/aida.jpg">
 												</div>
 												<div>
 													<p class="text-center"><strong>아이다</strong></p>
@@ -294,7 +294,7 @@
 										<ul class="nav navbar-nav">
 											<li class="rank-list">
 												<div>
-													<img class="rank-poster" src="assets/image/aida.jpg">
+													<img class="rank-poster" src="${pageContext.request.contextPath}/assets/image/test/aida.jpg">
 												</div>
 												<div>
 													<p class="text-center"><strong>아이다</strong></p>
@@ -304,7 +304,7 @@
 											
 											<li class="rank-list">
 												<div>
-													<img class="rank-poster" src="assets/image/aida.jpg">
+													<img class="rank-poster" src="${pageContext.request.contextPath}/assets/image/test/aida.jpg">
 												</div>
 												<div>
 													<p class="text-center"><strong>아이다</strong></p>
@@ -314,7 +314,7 @@
 											
 											<li class="rank-list">
 												<div>
-													<img class="rank-poster" src="assets/image/aida.jpg">
+													<img class="rank-poster" src="${pageContext.request.contextPath}/assets/image/test/aida.jpg">
 												</div>
 												<div>
 													<p class="text-center"><strong>아이다</strong></p>
@@ -324,7 +324,7 @@
 											
 											<li class="rank-list">
 												<div>
-													<img class="rank-poster" src="assets/image/aida.jpg">
+													<img class="rank-poster" src="${pageContext.request.contextPath}/assets/image/test/aida.jpg">
 												</div>
 												<div>
 													<p class="text-center"><strong>아이다</strong></p>
@@ -334,7 +334,7 @@
 											
 											<li class="rank-list">
 												<div>
-													<img class="rank-poster" src="assets/image/aida.jpg">
+													<img class="rank-poster" src="${pageContext.request.contextPath}/assets/image/test/aida.jpg">
 												</div>
 												<div>
 													<p class="text-center"><strong>아이다</strong></p>

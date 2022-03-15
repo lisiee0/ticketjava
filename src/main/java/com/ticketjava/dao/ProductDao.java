@@ -76,7 +76,21 @@ public class ProductDao {
 	}
 	
 	// 모든상품 (지역페이지)
-	public List<ProductVo> allprod() {
-		return sqlsession.selectList("product.allprod");
+	public List<ProductVo> allprod(int cateNo) {
+		
+		switch(cateNo) {
+			case 0: // 전체
+					return sqlsession.selectList("product.allprod");
+			case 1: // 서울&경기
+					return sqlsession.selectList("product.skprod");
+			case 2: // 강원&충청
+					return sqlsession.selectList("product.gcprod");
+			case 3: // 전라
+					return sqlsession.selectList("product.jprod");
+			case 4: // 경상&제주
+					return sqlsession.selectList("product.kjprod");
+			default : //디폴트 (전체)
+					return sqlsession.selectList("product.allprod");		
+		}
 	}
 }

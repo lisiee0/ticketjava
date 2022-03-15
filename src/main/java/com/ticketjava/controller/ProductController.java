@@ -71,11 +71,15 @@ public class ProductController {
 	
 	// '지역' 페이지 
 	@RequestMapping("/region")
-	public String region(Model model) {
-		
-		model.addAttribute("allprod", productService.allprod());
+	public String region(@RequestParam("cateNo") int no, Model model) {
+
+		model.addAttribute("allprod", productService.allprod(no));
 		return "product/pListbyRegion";
 	}
+	
+	
+	
+	
 	
 	// '랭킹' 페이지
 	@RequestMapping("/ranking")

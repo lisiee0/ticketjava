@@ -90,7 +90,7 @@ public class NotireqController {
 	
 	@RequestMapping("/test")
 	public String test() {
-		notireqService.notiSend(520);
+		notireqService.notiSend(4);
 		return "";
 	}
 	

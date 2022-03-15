@@ -34,16 +34,22 @@
 					<div class="container np">
 						<div class="row section">
 							<div class="floatLeft">
-								<h2 class="pageMenu nm margintop">지역<small>전체</small></h2>
+								<c:choose>
+									<c:when test="${param.cateNo eq 1}"><h2 class="pageMenu nm margintop">지역<small>서울/경기</small></h2></c:when>
+									<c:when test="${param.cateNo eq 2}"><h2 class="pageMenu nm margintop">지역<small>강원/충청</small></h2></c:when>
+									<c:when test="${param.cateNo eq 3}"><h2 class="pageMenu nm margintop">지역<small>전라</small></h2></c:when>
+									<c:when test="${param.cateNo eq 4}"><h2 class="pageMenu nm margintop">지역<small>경상/제주</small></h2></c:when>
+									<c:otherwise><h2 class="pageMenu nm margintop">지역<small>전체</small></h2></c:otherwise>
+								</c:choose>
 							</div>
 							
 							<div class="floatRight">
 								<ul class="floatRight">
-									<li class="regionList">전체</li>
-									<li class="regionList">서울/경기</li>
-									<li class="regionList">강원/충청</li>
-									<li class="regionList">전라</li>
-									<li class="regionList">경상/제주</li>
+									<li class="regionList"><a href="${pageContext.request.contextPath}/product/region?cateNo=0">전체</a></li>
+									<li class="regionList"><a href="${pageContext.request.contextPath}/product/region?cateNo=1">서울/경기</a></li>
+									<li class="regionList"><a href="${pageContext.request.contextPath}/product/region?cateNo=2">강원/충청</a></li>
+									<li class="regionList"><a href="${pageContext.request.contextPath}/product/region?cateNo=3">전라</a></li>
+									<li class="regionList"><a href="${pageContext.request.contextPath}/product/region?cateNo=4">경상/제주</a></li>
 								</ul>
 							</div>
 						</div>

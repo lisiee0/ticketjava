@@ -235,7 +235,8 @@
 		]]>
 	</select>
 	
-	<!-- 모든상품 리스트 (지역페이지) -->
+	
+	<!-- 모든상품 리스트 (지역페이지) cateNo=0 --> 
 	<select id="allprod" resultType="ProductVo">
 		<![CDATA[
 			select			p.prod_no prodNo, 
@@ -251,4 +252,87 @@
 			and 			status= 1
 		]]>
 	</select>
+	
+	<!-- 서울/경기 cateNo=1 -->
+	<select id="skprod" resultType="ProductVo">
+		<![CDATA[
+			select			p.prod_no prodNo, 
+                			prodname, 
+			                to_char(beginshow, 'YYYY-MM-DD') beginshow, 
+			                to_char(endshow, 'YYYY-MM-DD') endshow, 
+			                hallname,
+			                posterpath,
+			                address,
+			                theatername
+			from 			product p, hall h, theater t
+			where 			p.hall_no= h.hall_no
+			and 			h.theater_no= t.theater_no
+			and 			status= 1
+			and             (address like '서울'||'%' or address like '경기'||'%' 
+							 or address like '인천'||'%')
+		]]>
+	</select>
+	
+	<!-- 강원/충청 cateNo=2 -->
+	<select id="gcprod" resultType="ProductVo">
+		<![CDATA[
+			select			p.prod_no prodNo, 
+                			prodname, 
+			                to_char(beginshow, 'YYYY-MM-DD') beginshow, 
+			                to_char(endshow, 'YYYY-MM-DD') endshow, 
+			                hallname,
+			                posterpath,
+			                address,
+			                theatername
+			from 			product p, hall h, theater t
+			where 			p.hall_no= h.hall_no
+			and 			h.theater_no= t.theater_no
+			and 			status= 1
+			and             (address like '강원'||'%' or address like '충북'||'%' 
+							 or address like '충남'||'%' or address like '대전'||'%')
+		]]>
+	</select>
+	
+	
+	<!-- 전라 cateNo=3 -->
+	<select id="jprod" resultType="ProductVo">
+		<![CDATA[
+			select			p.prod_no prodNo, 
+                			prodname, 
+			                to_char(beginshow, 'YYYY-MM-DD') beginshow, 
+			                to_char(endshow, 'YYYY-MM-DD') endshow, 
+			                hallname,
+			                posterpath,
+			                address,
+			                theatername
+			from 			product p, hall h, theater t
+			where 			p.hall_no= h.hall_no
+			and 			h.theater_no= t.theater_no
+			and 			status= 1
+			and             (address like '전남'||'%' or address like '전북'||'%' 
+							 or address like '광주'||'%')
+		]]>
+	</select>
+	
+	<!-- 경상/제주 cateNo=4 -->
+	<select id="kjprod" resultType="ProductVo">
+		<![CDATA[
+			select			p.prod_no prodNo, 
+                			prodname, 
+			                to_char(beginshow, 'YYYY-MM-DD') beginshow, 
+			                to_char(endshow, 'YYYY-MM-DD') endshow, 
+			                hallname,
+			                posterpath,
+			                address,
+			                theatername
+			from 			product p, hall h, theater t
+			where 			p.hall_no= h.hall_no
+			and 			h.theater_no= t.theater_no
+			and 			status= 1
+			and             (address like '경남'||'%' or address like '경북'||'%' 
+							 or address like '대구'||'%' or address like '부산'||'%' 
+							 or address like '울산'||'%' or address like '제주'||'%')
+		]]>
+	</select>
+	
 </mapper>
