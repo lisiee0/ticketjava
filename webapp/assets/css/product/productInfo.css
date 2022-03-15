@@ -84,6 +84,7 @@
 
 .rank-list .rank-poster {
 	width: 140px;
+	height: 180px;
 }
 
 .imgArea .region-poster {
@@ -336,3 +337,8 @@
 	margin-bottom: 20px;
 }
 
+.title {
+	overflow:hidden;
+	white-space : nowrap;
+	text-overflow: ellipsis;
+}

@@ -32,7 +32,7 @@
 									<c:when test="${authUser.usertype == 1}"> <!-- 개인 -->
 										<li><a href="${pageContext.request.contextPath}/mypage/reserveAlram"><img src="${pageContext.request.contextPath}/assets/image/index/bell-normal.png"></a></li>
 										<li><a href="${pageContext.request.contextPath}/mypage/reserveAlram"><img src="${pageContext.request.contextPath}/assets/image/index/bell-new.png"></a></li>
-										<li><a href="${pageContext.request.contextPath}/mypage/reserveList?userNo=${authUser.userNo}">${authUser.name}님</a></li>
+										<li><a href="${pageContext.request.contextPath}/mypage/reserveList">${authUser.name}님</a></li>
 										<li><a href="${pageContext.request.contextPath}/user/logout">로그아웃</a></li>
 									</c:when>
 									

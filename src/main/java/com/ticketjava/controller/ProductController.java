@@ -77,14 +77,11 @@ public class ProductController {
 		return "product/pListbyRegion";
 	}
 	
-	
-	
-	
-	
 	// '랭킹' 페이지
 	@RequestMapping("/ranking")
-	public String ranking() {
-		
+	public String ranking(Model model) {
+
+		model.addAttribute("rank", productService.ranking());
 		return "product/pListbyRanking";
 	}
 	

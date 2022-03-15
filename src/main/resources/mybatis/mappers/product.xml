@@ -349,4 +349,39 @@
 		]]>
 	</select>
 
+	
+	
+	<!-- prodType별 TOP5 -->
+	<select id="topListbyType" parameterType="int" resultType="ProductVo">
+		<![CDATA[
+			select			p.prod_no prodNo, 
+					        prodname,
+					        p.prodtype prodType,
+					        r.rn,
+					        to_char(beginshow, 'YYYY-MM-DD') beginshow, 
+					        to_char(endshow, 'YYYY-MM-DD') endshow, 
+					        hallname,
+					        posterpath,
+					        theatername
+			from 			product p, hall h, theater t, 
+                			(select  	rownum rn,
+                         				p.prod_no,
+                         				prodtype,
+                         				rating
+                 			 from    	product p, (select r.prod_no, avg(rating) rating
+                                     				from review r
+                                     				group by prod_no
+                                     				order by rating desc) o
+                 			 where  p.prod_no= o.prod_no
+			                 and    rownum between 1 and 5
+			                 and   prodtype= #{prodType}) r               
+			where 			p.prod_no= r.prod_no
+			and 			p.hall_no= h.hall_no
+			and 			h.theater_no= t.theater_no
+			and 			status= 1
+			and 			p.prodtype= #{prodType}
+		]]>
+	</select>
+	
+>>>>>>> branch 'master' of https://github.com/lisiee0/ticketjava.git
 </mapper>

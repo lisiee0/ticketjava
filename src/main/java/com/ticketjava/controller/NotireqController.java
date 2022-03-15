@@ -75,18 +75,17 @@ public class NotireqController {
 	
 	/* 마이페이지 알림 */
 	
-	@RequestMapping("/myReqList")
-	public String myReqList(HttpSession session,
-							Model model) {
-		List<NotireqVo> reqList = notireqService.myReqList(session);
-		
-		System.out.println("myReqList");
-		System.out.println(reqList);
-		model.addAttribute("reqList", reqList);
-		
-		return "mypage/reserveAlramSet";
-		
-	}
+	/*
+	 * @RequestMapping("/myReqList") public String myReqList(HttpSession session,
+	 * Model model) { List<NotireqVo> reqList = notireqService.myReqList(session);
+	 * 
+	 * System.out.println("myReqList"); System.out.println(reqList);
+	 * model.addAttribute("reqList", reqList);
+	 * 
+	 * return "mypage/reserveAlramSet";
+	 * 
+	 * }
+	 */
 	
 	@RequestMapping("/test")
 	public String test() {

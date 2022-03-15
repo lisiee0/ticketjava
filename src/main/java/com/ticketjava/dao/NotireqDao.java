@@ -6,6 +6,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import com.ticketjava.vo.NotiDataVo;
 import com.ticketjava.vo.NotireqVo;
 
 @Repository
@@ -35,7 +36,7 @@ public class NotireqDao {
 		return sqlSession.update("notireq.updateStatus", notireqVo);
 	}
 
-	public List<Integer> selectTargetUser(NotireqVo notireqVo) {
-		return sqlSession.selectList("notireq.selectTargetUser", notireqVo);
+	public List<Integer> selectTargetUser(NotiDataVo notiDataVo) {
+		return sqlSession.selectList("notireq.selectTargetUser", notiDataVo);
 	}
 }

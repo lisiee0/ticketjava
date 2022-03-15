@@ -50,7 +50,7 @@
 					</div>
 					<div class="mainVideoButton">
 						<p>
-							<a href="#">예매하러가기</a>
+							<a href="${pageContext.request.contextPath}/product/ranking">예매하러가기</a>
 						</p>
 					</div>
 				</div>

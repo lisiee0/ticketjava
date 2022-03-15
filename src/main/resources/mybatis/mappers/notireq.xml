@@ -6,7 +6,7 @@
 			<![CDATA[
 				select req_no reqNo,
 					   selSection,
-					   interval,
+					   
 					   notiTimes
 				from notireq
 				where prod_no = #{prodNo} and user_no = #{userNo} and viewDate = #{viewDate}
@@ -22,7 +22,7 @@
 					   n.status,
 					   n.prod_no prodNo,
 					   to_char(viewDate,'yyyy-mm-dd') viewDate,
-					   interval,
+					  
 					   notiTimes
 				from notireq n, product p
 				where n.prod_no = p.prod_no and 
@@ -32,13 +32,13 @@
 		
 		<insert id="insertNotireq" parameterType="NotireqVo">
 			<![CDATA[
-				insert into notireq
+				insert into notireq ( req_no, user_no, prod_no, viewDate, selsection, notiTimes, reqDate, status)
 				values( seq_req_no.nextval,
 						#{userNo},
 						#{prodNo},
 						#{viewDate},
 						#{selSection},
-						#{interval},
+						
 						#{notiTimes},
 						sysdate,
 						1
@@ -72,7 +72,7 @@
 		</update>
 		
 		
-		<select id="selectTargetUser" parameterType="NotireqVo" resultType="int">
+		<select id="selectTargetUser" parameterType="NotiDataVo" resultType="int">
 			<![CDATA[
 				select user_no userNo
 				from notireq

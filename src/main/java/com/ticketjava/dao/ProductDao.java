@@ -96,4 +96,9 @@ public class ProductDao {
 					return sqlsession.selectList("product.allprod");		
 		}
 	}
+	
+	// prodType별 top5 (랭킹페이지)
+	public List<ProductVo> rank(int prodType) {
+		return sqlsession.selectList("product.topListbyType", prodType);
+	}
 }

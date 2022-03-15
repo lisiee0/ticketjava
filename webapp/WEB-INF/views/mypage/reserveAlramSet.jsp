@@ -80,7 +80,7 @@
 												<th>알림신청일</th>
 												<th>상품명</th>
 												<th>구역</th>
-												<th>간격/횟수</th>
+												<th>횟수</th>
 												<th>설정</th>
 												<th>알림상태</th>
 											</tr>
@@ -94,15 +94,6 @@
 													<td><a href="#">${vo.prodName}</a></td>
 													<td>${vo.selSection}</td>
 													<td>
-														<c:choose>
-															<c:when test="${vo.interval == 0}">
-																간격 없음
-															</c:when>
-															<c:otherwise> 
-																${vo.interval}초
-															</c:otherwise>
-														</c:choose>
-														/
 														<c:choose>
 															<c:when test="${vo.notiTimes == 1000000}">
 																계속
@@ -163,7 +154,7 @@
 	$('#chgSetBtn').on('click',function(){
 		var viewDate = $(this).data('viewdate');
 		var prodNo= $(this).data('prodno');
-		window.open('${pageContext.request.contextPath}/notireq/notireqForm?prodNo='+prodNo+'&viewDate='+viewDate,'notireqForm', 'width=970, height=800, left=300, top=100');
+		window.open('${pageContext.request.contextPath}/notireq/notireq?prodNo='+prodNo+'&viewDate='+viewDate,'notireqForm', 'width=970, height=800, left=300, top=100');
 	});
 	
  	$('#activeBtn').on('click',function(){

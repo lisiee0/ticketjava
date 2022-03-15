@@ -124,12 +124,12 @@
 												<c:forEach items="${requestScope.rMap.reserveSeatList}" var="vo">
 													<tr>
 														<td><input type="checkbox" name="selseatNo" value="${vo.selseatNo}" />
-														<td class="nav-item">${vo.grade}석</td>
-														<td class="nav-item">${vo.dcName}</td>
-														<td class="nav-item">${vo.section}구역</td>
-														<td class="nav-item">${vo.col}열${vo.num}번</td>
-														<td class="nav-item">${vo.payment}원</td>
-														<td class="nav-item"><c:choose>
+														<td>${vo.grade}석</td>
+														<td>${vo.dcName} <c:if test="${empty vo.dcName}">일반</c:if> </td>
+														<td>${vo.section}구역</td>
+														<td>${vo.col}열${vo.num}번</td>
+														<td>${vo.payment}원</td>
+														<td><c:choose>
 																<c:when test="${vo.status==1}">
 																	<a href="${pageContext.request.contextPath}/mypage/requestCancelTicket?selseatNo=${vo.selseatNo}&rezNo=${vo.rezNo}">[예매]</a>
 																</c:when>

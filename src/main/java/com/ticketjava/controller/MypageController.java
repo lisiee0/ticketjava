@@ -3,15 +3,21 @@ package com.ticketjava.controller;
 import java.util.List;
 import java.util.Map;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.ticketjava.service.NotificationService;
+import com.ticketjava.service.NotireqService;
 import com.ticketjava.service.ReservationService;
+import com.ticketjava.vo.NotificationVo;
+import com.ticketjava.vo.NotireqVo;
 import com.ticketjava.vo.ReserveDetailVo;
+import com.ticketjava.vo.UserVo;
 
 @Controller
 @RequestMapping("/mypage")
@@ -20,12 +26,19 @@ public class MypageController {
 	@Autowired
 	private ReservationService reservationService;
 	
+	@Autowired
+	private NotireqService notireqService;
+	
+	@Autowired
+	private NotificationService notificationService;
 	
 //	마이페이지 예매내역
 	@RequestMapping("/reserveList")
-	public String reserveList(Model model, @RequestParam(value="userNo") int userNo) {
+	public String reserveList(Model model, HttpSession session) {
 		System.out.println("MypageController reserveList 예매내역");
 		
+		UserVo authUser = (UserVo)session.getAttribute("authUser");
+		int userNo = authUser.getUserNo();
 		List<ReserveDetailVo> reserveList = reservationService.getReserveList(userNo);
 		
 		model.addAttribute("reserveList",reserveList);
@@ -72,15 +85,23 @@ public class MypageController {
 	
 //	마이페이지 취소 티켓알람 내역
 	@RequestMapping("/reserveAlram")
-	public String ticketAlram() {
-		System.out.println("MypageController reserveAlram 취소 티켓알람 내역");
+	public String ticketAlram(HttpSession session,
+							  Model model) {
+		List<NotificationVo> notiList = notificationService.myNoti(session);
+		System.out.println(notiList);
+		model.addAttribute("notiList",notiList);
 		return "mypage/reserveAlram";
 	}
 	
 //	마이페이지 취소 티켓알람 설정
 	@RequestMapping("/reserveAlramSet")
-	public String reserveAlramSet() {
-		System.out.println("MypageController reserveAlramSet 취소 티켓알람 설정");
+	public String reserveAlramSet(HttpSession session,
+			Model model) {
+	List<NotireqVo> reqList = notireqService.myReqList(session);
+	 
+	System.out.println("myReqList");
+	System.out.println(reqList);
+	model.addAttribute("reqList", reqList);
 		return "mypage/reserveAlramSet";
 	}	
 	

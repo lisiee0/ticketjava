@@ -19,6 +19,7 @@ public class NotificationController {
 	@Autowired
 	private NotificationService notificationService;
 	
+	/*
 	@RequestMapping("myNoti")
 	public String myNoti(HttpSession session,
 						Model model) {
@@ -27,5 +28,5 @@ public class NotificationController {
 		model.addAttribute("notiList",notiList);
 		return "mypage/reserveAlram";
 	}
-	
+	*/
 }

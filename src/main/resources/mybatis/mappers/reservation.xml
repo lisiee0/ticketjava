@@ -90,6 +90,7 @@ from (select
 				
       from		reserve r, selseat s
       where		r.rez_no = s.rez_no
+      			and s.status = 1
       group by	r.rez_no, r.user_no, r.rezdate, r.viewdate, r.status, r.prod_no) r, product p
 where r.user_no = #{userNo} and
 	  r.prod_no = p.prod_no
