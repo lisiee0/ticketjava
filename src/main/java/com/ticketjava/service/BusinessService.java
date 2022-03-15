@@ -36,71 +36,66 @@ public class BusinessService {
 
 		return pd.getProductList();
 	}
+	
+	//공연 업로드
+	public void productUpload() {
+		
+	}
 
-	// 공연 추가
-	public void productUpload(MultipartFile[] file, ProductVo productVo, DetailVo detailVo, DiscountVo discountVo) {
+	// 공연 파일 업로드
+	public void productFileUpload(MultipartFile file, ProductVo productVo, DetailVo detailVo, DiscountVo discountVo) {
 		System.out.println("BusinessServiece/productUpload()");
 
 		// 파일업로드
 		String saveDir = "C:\\javaStudy\\upload";
 
 		// MultipartFile[] file
-		for (int i = 0; i < file.length; i++) {
-			System.out.println(i + "번째 파일");
 
-			// 파일관련 정보 추출
+		// 파일관련 정보 추출
 
-			// 원본파일이름
-			String orgName = file[i].getOriginalFilename();
+		// 원본파일이름
+		String orgName = file.getOriginalFilename();
 
-			// 확장자
-			String exName = orgName.substring(orgName.lastIndexOf("."));
+		// 확장자
+		String exName = orgName.substring(orgName.lastIndexOf("."));
 
-			// 저장파일이름
-			String saveName = System.currentTimeMillis() + UUID.randomUUID().toString() + exName;
+		// 저장파일이름
+		String saveName = System.currentTimeMillis() + UUID.randomUUID().toString() + exName;
 
-			// 파일패스 생성
-			String filePath = saveDir + "\\" + saveName;
+		// 파일패스 생성
+		String filePath = saveDir + "\\" + saveName;
 
-			// 파일 변수 가져오기
-			// ProductVo
-			productVo.setPosterPath(filePath);
+		// 파일 변수 가져오기
+		// ProductVo
+		productVo.setPosterPath(filePath);
 
-			// DetailVo
-			detailVo.setAddedPath(filePath);
-			detailVo.setCastingPath(filePath);
-			detailVo.setProdPath(filePath);
 
-			// 파일 저장
-			try {
-				byte[] fileData = file[i].getBytes();
-				OutputStream out = new FileOutputStream(filePath);
-				BufferedOutputStream bout = new BufferedOutputStream(out);
+		// 파일 저장
+		try {
+			byte[] fileData = file.getBytes();
+			OutputStream out = new FileOutputStream(filePath);
+			BufferedOutputStream bout = new BufferedOutputStream(out);
 
-				bout.write(fileData);
-				bout.close();
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
-
-			System.out.println("파일 이름: " + file[i].getOriginalFilename());
-
-			// db 저장
-			pd.productUpload(productVo);
-			td.detailUpload(detailVo);
-			dd.addAlwaysDis(discountVo);
+			bout.write(fileData);
+			bout.close();
+		} catch (IOException e) {
+			e.printStackTrace();
 		}
 
+		System.out.println("파일 이름: " + file.getOriginalFilename());
+
+		// db 저장
+		pd.productUpload(productVo);
+		td.detailUpload(detailVo);
+		dd.addAlwaysDis(discountVo);
 	}
-	
-	//공연 노출 여부
-	public void bmStatus( ProductVo productVo) {
+
+	// 공연 노출 여부
+	public void bmStatus(ProductVo productVo) {
 		System.out.println("BusinessService/bmStatus");
-		
-		
+
 	}
-	
-	
+
 	// 공연 목록 삭제
 	public void productDelete(ProductVo productVo) {
 		System.out.println("BusinessService/productDelete");
@@ -116,5 +111,6 @@ public class BusinessService {
 
 		return prodDis;
 	}
+
 
 }

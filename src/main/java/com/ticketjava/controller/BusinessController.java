@@ -34,7 +34,7 @@ public class BusinessController {
 	}
 
 	// 공연 등록 폼
-	@RequestMapping(value = "bmForm")
+	@RequestMapping(value = "bmForm", method = { RequestMethod.GET, RequestMethod.POST })
 	public String bmForm() {
 		System.out.println("BusinessController/form()");
 
@@ -44,20 +44,21 @@ public class BusinessController {
 	// 공연 업로드
 	@ResponseBody
 	@RequestMapping(value = "bmUpload", method = { RequestMethod.GET, RequestMethod.POST })
-	public int bmUpload(@RequestBody ProductVo productVo) {
+	public int productUpload(@RequestBody ProductVo productVo) {
 		System.out.println("BusinessController/bmUpload");
 		System.out.println(productVo);
 
-		// businessService.productUpload(file, productVo, detailVo, discountVo);
 		return 21;
 	}
 
 	// 공연 파일업로드
 	@RequestMapping(value = "bmfileUplad", method = { RequestMethod.GET, RequestMethod.POST })
-	public String bmfileUplad(@RequestParam("prodNo") int prodNo, MultipartFile file) {
-		System.out.println("BusinessController/bmfileUpladbmfileUplad");
+	public String productFileUpload(@RequestParam("prodNo") int prodNo, MultipartFile file, int order) {
+		System.out.println("BusinessController/bmfileUplad");
 		System.out.println(prodNo);
+		System.out.println(order);
 		System.out.println(file.getOriginalFilename());
+		
 
 		return "business/bmInquiry";
 	}
@@ -79,10 +80,10 @@ public class BusinessController {
 //	}
 
 	// 공연 노출
-	@RequestMapping(value="bmStatus",  method = { RequestMethod.GET, RequestMethod.POST })
+	@RequestMapping(value = "bmStatus", method = { RequestMethod.GET, RequestMethod.POST })
 	public String bmStatus() {
 		System.out.println("BusinessController/bmStatus");
-		
+
 		return "";
 	}
 

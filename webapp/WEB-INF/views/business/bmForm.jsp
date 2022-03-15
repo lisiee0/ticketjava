@@ -177,7 +177,7 @@
 									<!--좌석 선택 -->
 									<div class="form-group">
 										<div class="col-md-4">
-											<select class="form-control" id="selGrade" name="grade">
+											<select class="form-control" id="grade" name="grade">
 												<option value="VIP">VIP석</option>
 												<option value="R">R석</option>
 												<option value="S">S석</option>
@@ -208,7 +208,7 @@
 							<div class="form-group">
 								<label class="form-text col-md-2 form-id" for="">공지사항</label>
 								<div class="col-md-8">
-									<textarea class="form-control textWay" name="notice" placeholder="내용을 입력해주세요"></textarea>
+									<textarea class="form-control textWay" id="notice" name="notice" placeholder="내용을 입력해주세요"></textarea>
 								</div>
 							</div>
 
@@ -279,7 +279,7 @@
 							<div class="form-group">
 								<label class="form-text col-md-2 form-id" for="">예매/취소 안내</label>
 								<div class="col-md-8">
-									<textarea id="" class="form-control textWay" name="cancelInfo" placeholder="내용을 입력해주세요"></textarea>
+									<textarea class="form-control textWay" id="cancelInfo" name="cancelInfo" placeholder="내용을 입력해주세요"></textarea>
 								</div>
 							</div>
 
@@ -308,30 +308,32 @@
 	<!-- wrap 종료 -->
 
 </body>
-
+<!-- productDisList: [{dcName:"A", dcRate: "20000", dcType: "0"}, {dcName:"S", dcRate: "20000", dcType: "1"}] -->
 
 
 
 
 <script type="text/javascript">
+	
+
 	//등급추가 버튼
 	$("#addGrade")
 			.on(
 					"click",
 					function() {
-						var gra = $("#selGrade").val();
+						var gra = $("#grade").val();
 						var selp = $("#price").val();
 						console.log(gra);
 						console.log(selp);
-						
+
 						$("#bmNameArea")
 								.append(
 										'<div class="form-group">'
 												+ '<div class="col-md-4">'
-												+ '<input type="text" class="form-control" id="" name="grade" value="'+gra+'" readonly>'
+												+ '<input type="text" class="form-control selGrade" name="grade" value="'+gra+'" readonly>'
 												+ '</div>'
 												+ '<div class="col-md-4">'
-												+ '<input type="text" class="form-control" id="" name="price" value="'+selp+'" readonly>'
+												+ '<input type="text" class="form-control selPrice" name="price" value="'+selp+'" readonly>'
 												+ '</div>'
 												+ '&nbsp;'
 												+ '<button type="button" id="delGrade" class="btn">-</button>'
@@ -343,67 +345,79 @@
 		$("#bmNameArea").empty();
 	});
 
+	var productDisList = []
+	
 	//할인정보 '+' 버튼 클릭될 떄
 	$("#addDis").on(
 			"click",
 			function() {
-
 				//데이터 수집
 				var disN = $("#dcName").val();
 				var disR = $("#dcRate").val();
 				var disD = $("#dcType").val();
-				// 				var prodNo = ${param.prodNo};
 
 				//데이터 찍어보기
 				console.log(disN);
 				console.log(disR);
 				console.log(disD);
-				// 				console.log(prodNo);
 
 				if (disD == 0) {
 					$("#bmDisArea").append(
-							'<div class="form-group form-data">' + disN + ' ('
-									+ disR + '% 할인됨)' + '</div>');
+							'<div class="form-group form-data disRate">' + disN
+									+ ' (' + disR + '% 할인됨)' + '</div>');
 				} else {
 					$("#bmDisArea").append(
-							'<div class="form-group form-data">' + disN + ' ('
-									+ disR + '원 할인됨)' + '</div>');
+							'<div class="form-group form-data disRate">' + disN
+									+ ' (' + disR + '원 할인됨)' + '</div>');
 				}
 
-				//객체 만들기
-				var ProductVo = {
-					dcName : disN,
-					dcRate : disR,
-					dctype : disD,
+				var productDis = {
+					disN : disN,
+					disR : disR,
+					disD : disD
 				};
-				console.log(ProductVo);
+				productDisList.push(productDis);
+				
 			});
 
 	//공연정보 클릭할때
 	$("#addbtn").on("click", function() {
 		console.log("공연저장");
-		
-		var ProductVo = {
-			prodName: $("#prodName").val(),
-			prodType: $("#prodType").val(),
-			beginShow: $("#beginShow").val(),
-			endShow: $("#endShow").val(),
-			beginRez: $("#beginRez").val(),
-			endRez: $("#endRez").val(),
-			showTime: $("#showTime").val(),
-			viewTime: $("#viewTime").val(),
-			viewGrade: $("#viewGrade").val(),
-			viewGrade: $("#viewGrade").val(),
-			viewGrade: $("#viewGrade").val(),
-			viewGrade: $("#viewGrade").val(),
-			seatpriceList: [{grade:"A", price: "20000"}, {grade:"S", price: "30000"}]
-			notice: $("#notice").val(),
-			discountList: [{dcName:"A", dcRate: "20000", dcType: "0"}, {grade:"S", price: "30000"}]
-			
+
+		//좌석 등급별 가격 배열
+		var seatpriceList = [];
+		var selGradeList = $(".selGrade");
+		var selPriceList = $(".selPrice");
+
+		for (var i = 0; i < selGradeList.length; i++) {
+			var seatprice = {
+				grade : selGradeList.eq(i).val(),
+				price : selPriceList.eq(i).val()
+			};
+			seatpriceList.push(seatprice);
 		}
 		
+		// 상시 할인 
+
+		var ProductVo = {
+			prodName : $("#prodName").val(),
+			prodType : $("#prodType").val(),
+			beginShow : $("#beginShow").val(),
+			endShow : $("#endShow").val(),
+			beginRez : $("#beginRez").val(),
+			endRez : $("#endRez").val(),
+			showTime : $("#showTime").val(),
+			viewTime : $("#viewTime").val(),
+			viewGrade : $("input[name=viewGrade]").eq(0).val(),
+			cancelInfo : $("#cancelInfo").val(),
+			notice : $("#notice").val(),
+			seatpriceList : seatpriceList,
+			productDisList : productDisList
+
+		}
+
 		console.log(JSON.stringify(ProductVo));
-		
+
 		$.ajax({
 			url : "${pageContext.request.contextPath}/bm/bmUpload",
 			type : "post",
@@ -416,13 +430,13 @@
 			/* 성공 시 처리해야 될 코드 작성 */
 			success : function(prodNo) {
 				console.log(prodNo)
-				
+
 				//첨부파일
 				var file0 = $("#file0")[0].files[0]
 				var file1 = $("#file1")[0].files[0]
 				var file2 = $("#file2")[0].files[0]
 				var file3 = $("#file3")[0].files[0]
-				
+
 				fileupload(prodNo, file0, 1);
 				fileupload(prodNo, file1, 2);
 				fileupload(prodNo, file2, 3);
@@ -432,38 +446,34 @@
 				console.error(status + " : " + error);
 			}
 		});
-		
 
 	});
-	
-	
-	
-	function fileupload(prodNo, file, order){
+
+	function fileupload(prodNo, file, order) {
 		var formData = new FormData();
-		
+
 		formData.append('prodNo', prodNo);
 		formData.append('file', file);
 		formData.append('order', order);
-		
+
 		$.ajax({
 			url : "${pageContext.request.contextPath}/bm/bmfileUplad",
 			type : "post",
 			/* contentType : "application/json",*/
-			contentType: false,
-			processData: false,
-			data : formData, 
+			contentType : false,
+			processData : false,
+			data : formData,
 
 			/* dataType : "json", */
 			success : function(result) {
 				console.log(result)
-				
+
 				//첨부파일
 			},
 			error : function(XHR, status, error) {
 				console.error(status + " : " + error);
 			}
 		});
-		
 	}
 </script>
 
