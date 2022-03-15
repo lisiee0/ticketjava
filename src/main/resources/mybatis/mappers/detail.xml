@@ -22,8 +22,32 @@
 			where 			prod_no= #{prodNo}
 		]]>
 	</select>
-	
-	<!-- 공연 이미지파일 추가 <<<<< 포스터 정보 -->
-	
+
+	<!-- 공연 이미지파일 추가 <<<<< 공연 정보 -->
+	<insert id="prodAdd" parameterType="DetailVo">
+		<![CDATA[
+			insert into detail 	(detail_no, prod_no, prodpath) 
+							values 	(seq_detail_no.nextval, #{prodNo}, #{prodpath});
+		]]>
+	</insert>
+
+	<!-- 공연 이미지파일 추가 <<<<< 캐스팅 정보 -->
+	<insert id="castingAdd" parameterType="ProductVo">
+		<![CDATA[
+			insert into detail 	(detail_no, prod_no, castingPath) 
+							values 	(seq_detail_no.nextval, #{prodNo}, #{castingPath});
+		]]>
+	</insert>
+
+	<!-- 공연 이미지파일 추가 <<<<< 부가 정보 -->
+	<insert id="addedAdd" parameterType="ProductVo">
+		<![CDATA[
+			insert into detail 	(detail_no, prod_no, addedPath) 
+							values 	(seq_detail_no.nextval, #{prodNo}, #{addedPath});
+		]]>
+	</insert>
+
+
+
 
 </mapper>

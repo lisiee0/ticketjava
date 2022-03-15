@@ -24,6 +24,7 @@ public class DetailDao {
 	public void prodAdd(DetailVo detailVo) {
 		System.out.println("DetailDao/prodAdd");
 		
+		sqlsession.insert("detail.prodAdd", detailVo);
 	}
 	
 	
@@ -31,12 +32,14 @@ public class DetailDao {
 	public void castingAdd(DetailVo detailVo) {
 		System.out.println("DetailDao/castingAdd");
 		
+		sqlsession.insert("detail.castingAdd", detailVo);
 	}
 	
 	//공연 상세정보 이미지 <<<<< 부가 정보
 	public void addedAdd(DetailVo detailVo) {
 		System.out.println("DetailDao/addedAdd");
 		
+		sqlsession.insert("detail.addedAdd", detailVo);
 	}
 	
 	//호준이형님이 작업하신거

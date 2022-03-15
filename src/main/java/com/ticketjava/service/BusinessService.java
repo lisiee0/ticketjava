@@ -17,7 +17,6 @@ import com.ticketjava.dao.DetailDao;
 import com.ticketjava.dao.DiscountDao;
 import com.ticketjava.dao.ProductDao;
 import com.ticketjava.vo.DetailVo;
-import com.ticketjava.vo.DiscountVo;
 import com.ticketjava.vo.ProductVo;
 
 @Service
@@ -36,21 +35,22 @@ public class BusinessService {
 
 		return pd.getProductList();
 	}
-	
-	//공연 업로드
-//	public int productUpload(ProductVo productVo) {
-//		System.out.println("BusinessServiece/productUpload");
-//		
-//		return  pd.productUpload(productVo);
-//	}
-	
+
+	// 공연 업로드 (파일 제외)
+	public int productUpload(ProductVo productVo) {
+		System.out.println("BusinessServiece/productUpload");
+		
+		
+		return pd.productUpload(productVo);
+	}
+
 	// 공연 파일 업로드
-	public void productFileUpload(MultipartFile file, ProductVo productVo, int order) {
+	public void productFileUpload(MultipartFile file, ProductVo productVo, DetailVo detailVo, int order) {
 		System.out.println("BusinessServiece/productUpload()");
 
 		// 파일업로드
 		String saveDir = "C:\\javaStudy\\upload";
-		
+
 		// 원본파일이름
 		String orgName = file.getOriginalFilename();
 
@@ -63,7 +63,7 @@ public class BusinessService {
 		// 파일패스 생성
 		String filePath = saveDir + "\\" + saveName;
 
-		//포스터 이미지 설정
+		// 포스터 이미지 설정
 		productVo.setPosterPath(filePath);
 
 		// 파일 저장
@@ -81,17 +81,21 @@ public class BusinessService {
 		System.out.println("파일 이름: " + file.getOriginalFilename());
 
 //		// db 저장
-//		if (order == 1) {		//order : 1 
-		pd.posterAdd(productVo);
-//		}else {
-//			System.out.println("null");
-//		}
-		
-			System.out.println("파일을 저장했습니다.");
-		
-//		pd.productUpload(productVo);
-//		td.detailUpload(detailVo);
-//		dd.addAlwaysDis(discountVo);
+		if (order == 1) { // order : 1
+			pd.posterAdd(productVo);
+			System.out.println(order + "번 파일을 저장했습니다.");
+		} else if (order == 2) {
+			td.prodAdd(detailVo);
+			System.out.println(order + "번 파일을 저장했습니다.");
+		} else if (order == 3) {
+			td.castingAdd(detailVo);
+			System.out.println(order + "번 파일을 저장했습니다.");
+		} else if (order == 4) {
+			td.addedAdd(detailVo);
+			System.out.println(order + "번 파일을 저장했습니다.");
+		} else {
+			System.out.println("오류 발생");
+		}
 	}
 
 	// 공연 노출 여부
@@ -115,6 +119,5 @@ public class BusinessService {
 
 		return prodDis;
 	}
-
 
 }

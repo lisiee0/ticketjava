@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.ticketjava.service.BusinessService;
+import com.ticketjava.vo.DetailVo;
 import com.ticketjava.vo.ProductVo;
 
 @Controller
@@ -48,19 +49,19 @@ public class BusinessController {
 	public int productUpload(@RequestBody ProductVo productVo) {
 		System.out.println("BusinessController/productUpload");
 
-//		businessService.productUpload(productVo);
-		return 10000;
+		businessService.productUpload(productVo);
+		return productVo.getProdNo();
 	}
 
 	// 공연 파일업로드
 	@RequestMapping(value = "bmfileUpload", method = { RequestMethod.GET, RequestMethod.POST })
-	public String bmfileUpload(@RequestParam("prodNo") int prodNo,ProductVo productVo, MultipartFile file, int order) {
+	public String bmfileUpload(@RequestParam("prodNo") int prodNo,ProductVo productVo, DetailVo detailVo, MultipartFile file, int order) {
 		System.out.println("BusinessController/bmfileUplad");
 		System.out.println(prodNo);
 		System.out.println("int order : "+order);
 		System.out.println(file.getOriginalFilename());
 		
-		businessService.productFileUpload(file, productVo, order);
+//		businessService.productFileUpload(file, productVo, detailVo, order);
 		return "redirect:/bm/";
 	}
 
