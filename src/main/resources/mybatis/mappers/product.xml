@@ -24,7 +24,7 @@
 	<!-- product 테이블 공연 업로드(파일 제외) -->
 	<insert id="productUpload" parameterType="productVo">
 		<selectKey keyProperty="prodNo" resultType="int" order="BEFORE">
-			seq_prod_no.nextval from dual
+			select seq_prod_no.nextval from dual
 		</selectKey>
 		<![CDATA[
 			insert into 	product	(prod_no, prodname, prodtype,
