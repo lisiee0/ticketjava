@@ -192,16 +192,13 @@
 										<button type="button" id="addGrade" class="btn">+</button>
 										<br>
 									</div>
+									
 									<!--좌석추가 Script -->
 									<div id="bmNameArea"></div>
 
 									<!--좌석끝 -->
-
 								</div>
 							</div>
-
-
-							<!-- 등급별 가격 자리 -->
 
 							<!--공지사항-->
 							<div class="form-group">
@@ -238,9 +235,6 @@
 									<div id="bmDisArea"></div>
 								</div>
 							</div>
-
-							<!-- 할인 정보 자리 -->
-
 
 							<!-- 공연 포스터 -->
 							<div class="form-group">
@@ -314,68 +308,62 @@
 
 <script type="text/javascript">
 	//등급추가 버튼
-	$("#addGrade")
-			.on(
-					"click",
-					function() {
-						var gra = $("#grade").val();
-						var selp = $("#price").val();
-						console.log(gra);
-						console.log(selp);
+	$("#addGrade")	.on("click", function() {
+			var gra = $("#grade").val();
+			var selp = $("#price").val();
+			console.log(gra);
+			console.log(selp);
 
-						$("#bmNameArea")
-								.append(
-										'<div class="form-group">'
-												+ '<div class="col-md-4">'
-												+ '<input type="text" class="form-control selGrade" name="grade" value="'+gra+'" readonly>'
-												+ '</div>'
-												+ '<div class="col-md-4">'
-												+ '<input type="text" class="form-control selPrice" name="price" value="'+selp+'" readonly>'
-												+ '</div>'
-												+ '&nbsp;'
-												+ '<button type="button" id="delGrade" class="btn">-</button>'
-										+ '</div>');
-					});
+			$("#bmNameArea").append(
+				'<div class="form-group">'
+						+ '<div class="col-md-4">'
+						+ '<input type="text" class="form-control selGrade" name="grade" value="'+gra+'" readonly>'
+						+ '</div>'
+						+ '<div class="col-md-4">'
+						+ '<input type="text" class="form-control selPrice" name="price" value="'+selp+'" readonly>'
+						+ '</div>'
+						+ '&nbsp;'
+						+ '<button type="button" id="delGrade" class="btn">-</button>'
+				+ '</div>');
+		});
 
 	//등급삭제 버튼
 	$("#delGrade").on("click", function() {
-		$("#bmNameArea").empty();
+		$(".selGrade").remove();
 	});
 
 	var productDisList = []
 
 	//할인정보 '+' 버튼 클릭될 떄
-	$("#addDis").on(
-			"click",
-			function() {
-				//데이터 수집
-				var dcName = $("#dcName").val();
-				var dcRate = $("#dcRate").val();
-				var dcType = $("#dcType").val();
+	$("#addDis").on("click", function() {
+			//데이터 수집
+			var dcName = $("#dcName").val();
+			var dcRate = $("#dcRate").val();
+			var dcType = $("#dcType").val();
 
-				//데이터 찍어보기
-				console.log(dcName);
-				console.log(dcRate);
-				console.log(dcType);
+			//데이터 찍어보기
+			console.log(dcName);
+			console.log(dcRate);
+			console.log(dcType);
 
-				if (dcType == 0) {
-					$("#bmDisArea").append(
-							'<div class="form-group form-data disRate">' + dcName
-									+ ' (' + dcRate + '% 할인됨)' + '</div>');
-				} else {
-					$("#bmDisArea").append(
-							'<div class="form-group form-data disRate">' + dcName
-									+ ' (' + dcRate + '원 할인됨)' + '</div>');
-				}
+			if (dcType == 0) {
+				$("#bmDisArea").append(
+						'<div class="form-group form-data disRate">' + dcName
+								+ ' (' + dcRate + '% 할인됨)' + '</div>');
+			} else {
+				$("#bmDisArea").append(
+						'<div class="form-group form-data disRate">' + dcName
+								+ ' (' + dcRate + '원 할인됨)' + '</div>');
+			}
 
-				var productDis = {
-					dcName : dcName,
-					dcRate : dcRate,
-					dcType : dcType
-				};
-				productDisList.push(productDis);
+			var productDis = {
+				dcName : dcName,
+				dcRate : dcRate,
+				dcType : dcType
+			};
+			productDisList.push(productDis);
 
-			});
+		});
 
 	//공연정보 클릭할때
 	$("#addbtn").on("click", function() {
@@ -421,7 +409,6 @@
 			contentType : "application/json",
 			data : JSON.stringify(ProductVo), 	
 
-			/* dataType : "json", */
 			/* 성공 시 처리해야 될 코드 작성 */
 			success : function(prodNo) {
 				console.log(prodNo)
@@ -463,8 +450,6 @@
 			/* dataType : "json", */
 			success : function(result) {
 				console.log(result)
-
-				//첨부파일
 			},
 			error : function(XHR, status, error) {
 				console.error(status + " : " + error);
@@ -472,10 +457,5 @@
 		});
 	}
 </script>
-
-
-
-
-
 </html>
 
