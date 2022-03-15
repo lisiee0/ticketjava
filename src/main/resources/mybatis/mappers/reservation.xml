@@ -71,7 +71,6 @@
 	<select id="reserveList" resultType="ReservationVo" parameterType="ReservationVo">
 	<![CDATA[
 select
-        u.user_no userNo,
         r.rez_no rezNo, 
         to_char(r.rezdate, 'yy-mm-dd hh24:mi') rezDate,
         r.prod_no prodNo,
@@ -82,6 +81,7 @@ select
         
 from (select 
 				r.rez_no,
+				r.user_no,
 				r.rezdate,
 				r.viewdate,
 				r.status,
@@ -90,8 +90,10 @@ from (select
 				
       from		reserve r, selseat s
       where		r.rez_no = s.rez_no
-      group by	r.rez_no, r.rezdate, r.viewdate, r.status, r.prod_no) r, product p, users u
-where u.user_no= #{userNo}
+      group by	r.rez_no, r.user_no, r.rezdate, r.viewdate, r.status, r.prod_no) r, product p
+where r.user_no = #{userNo} and
+	  r.prod_no = p.prod_no
+	  
 ]]>
 	</select>
 

@@ -1,7 +1,6 @@
 package com.ticketjava.dao;
 
 import java.util.List;
-import java.util.Map;
 
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -53,7 +52,7 @@ public class SelseatDao {
 		return sqlSession.selectOne("selseat.selectByNo", selseatNo);
 	}
 
-	public int selectSelseatCount(Map<String, Object> selseatCountData) {
-		return sqlSession.selectOne("selseat.selectSelseatCount", selseatCountData);
+	public int selectSelseatCount(NotiDataVo notiDataVo) {
+		return sqlSession.selectOne("selseat.selectSelseatCount", notiDataVo);
 	}
 }

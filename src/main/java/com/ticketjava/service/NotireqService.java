@@ -120,61 +120,49 @@ public class NotireqService {
 		NotiDataVo notiDataVo = selseatDao.selectByNo(selseatNo);
 		System.out.println(notiDataVo);
 		
-		
-		Map<String, Object> seatCountData = new HashMap<>();
-		seatCountData.put("hallNo", notiDataVo.getHallNo());
-		seatCountData.put("section", notiDataVo.getSection());
-		int seatCount = seatDao.selectSeatCount(seatCountData);
-		
-		Map<String, Object> selseatCountData = new HashMap<>();
-		selseatCountData.put("prodNo", notiDataVo.getProdNo());
-		selseatCountData.put("viewDate", notiDataVo.getViewDate());
-		selseatCountData.put("section", notiDataVo.getSection());
-		int selseatCount = selseatDao.selectSelseatCount(selseatCountData);
+		int seatCount = seatDao.selectSeatCount(notiDataVo);
+		int selseatCount = selseatDao.selectSelseatCount(notiDataVo);
 		
 		System.out.println(seatCount+" "+selseatCount);
 		
-		 //4. notireq(prodNo, viewDate, section, status==1?)  >  결과 userNo 리스트   
-		 
-		NotireqVo notireqVo = new NotireqVo();
-		notireqVo.setProdNo( notiDataVo.getProdNo() );
-		notireqVo.setViewDate(  notiDataVo.getViewDate() );
-		notireqVo.setSelSection( notiDataVo.getSection() );
-		
-		List<Integer> targetUserNo = notireqDao.selectTargetUser(notireqVo);
-		System.out.println(targetUserNo);
-		
-		 //5. noti (결과 userNo 리스트 ) > 알림 번호(시퀀스), 내용 ( viewDate+showTime , prodName, section ) , 알림 시간 (sysdate)   
-		 								  
-		 //								    └ 링크(예매페이지 --> 취소 좌석 선택 (prodNo, viewDate, grade, section, col, num 으로 기본 선택) )
-		 						
-		List <NotificationVo> notificationList = new ArrayList<>();
-		String content = ""
-				+ "<a target='_blank' href='http://localhost:8088/ticketjava/reservation/selectSeat?prodNo="+notiDataVo.getProdNo()+"&viewDate="+notiDataVo.getViewDate()+"'>"
-				+ notiDataVo.getViewDate()+" "+notiDataVo.getShowTime()+" "+notiDataVo.getProdName()+" "+notiDataVo.getGrade().toUpperCase()+"석 "
-				+ notiDataVo.getSection()+"구역 "+notiDataVo.getCol()+"열 "+notiDataVo.getNum()+"번 좌석 취소 안내"
-				+ "</a>";
-		
-		for(int userNo : targetUserNo) {
-			NotificationVo n = new NotificationVo();
-			n.setUserNo(userNo);
-			n.setContent(content);
+		if(seatCount - selseatCount == 1) {
 			
-			notificationList.add(n);
-		}
-		notificationDao.insertList(notificationList);
-		
-		
-		
-		 // 6. Users (결과 userNo 리스트) > email로 내용 전송								    
+			 //4. notireq(prodNo, viewDate, section, status==1?)  >  결과 userNo 리스트   
+			NotireqVo notireqVo = new NotireqVo();
+			notireqVo.setProdNo( notiDataVo.getProdNo() );
+			notireqVo.setViewDate(  notiDataVo.getViewDate() );
+			notireqVo.setSelSection( notiDataVo.getSection() );
+			
+			List<Integer> targetUserNo = notireqDao.selectTargetUser(notireqVo);
+			System.out.println(targetUserNo);
+			
+			 //5. noti (결과 userNo 리스트 ) > 알림 번호(시퀀스), 내용 ( viewDate+showTime , prodName, section ) , 알림 시간 (sysdate)   
+			 //								    └ 링크(예매페이지 --> 취소 좌석 선택 (prodNo, viewDate, grade, section, col, num 으로 기본 선택) )
+			List <NotificationVo> notificationList = new ArrayList<>();
+			String content = ""
+					+ "<a target='_blank' href='http://localhost:8088/ticketjava/reservation/selectSeat?prodNo="+notiDataVo.getProdNo()+"&viewDate="+notiDataVo.getViewDate()+"'>"
+					+ notiDataVo.getViewDate()+" "+notiDataVo.getShowTime()+" "+notiDataVo.getProdName()+" "+notiDataVo.getGrade().toUpperCase()+"석 "
+					+ notiDataVo.getSection()+"구역 "+notiDataVo.getCol()+"열 "+notiDataVo.getNum()+"번 좌석 취소 안내"
+					+ "</a>";
+			
+			for(int userNo : targetUserNo) {
+				NotificationVo n = new NotificationVo();
+				n.setUserNo(userNo);
+				n.setContent(content);
+				
+				notificationList.add(n);
+			}
+			notificationDao.insertList(notificationList);
 
-		List<String> emailList = userDao.selectEmail(targetUserNo);
-		System.out.println(emailList);
-		
-		List<String>test = new ArrayList<>();
-		test.add("dldnjswns134@naver.com");
-		JavaMail.sendMail(test, notiDataVo);
-		
+			// 6. Users (결과 userNo 리스트) > email로 내용 전송								    
+			List<String> emailList = userDao.selectEmail(targetUserNo);
+			System.out.println(emailList);
+			
+			List<String>test = new ArrayList<>();
+			test.add("dldnjswns134@naver.com");
+			JavaMail.sendMail(test, notiDataVo);
+			
+		}
 	}
 
 

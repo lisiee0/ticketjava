@@ -94,7 +94,7 @@
 		]]>
 	</select>
 	
-	<select id="selectSelseatCount" parameterType="hashmap" resultType="int">
+	<select id="selectSelseatCount" parameterType="NotiDataVo" resultType="int">
 		<![CDATA[
 			select count(*)
 			from reserve r, selseat s

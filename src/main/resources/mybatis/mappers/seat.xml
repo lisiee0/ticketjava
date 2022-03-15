@@ -16,7 +16,7 @@
 		]]>
 	</insert>
 	
-	<select id="selectSeatCount" parameterType="hashmap" resultType="int">
+	<select id="selectSeatCount" parameterType="NotiDataVo" resultType="int">
 		<![CDATA[
 			select count(*)
 			from seat
