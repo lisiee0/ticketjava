@@ -27,7 +27,6 @@
 <body>
 
 	<div id="containerBody">
-		${rezProdInfo.hallNo}
 		<div id="header">
 			<h1>티켓자바 예매</h1>
 		</div>

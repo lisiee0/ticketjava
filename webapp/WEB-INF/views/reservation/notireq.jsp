@@ -76,7 +76,7 @@
 					
 				</div>
 			</div>
-			
+			<!-- 
 			<div id="interval">
 				<h2>알림 간격</h2>
 				<select class="form-control">
@@ -88,10 +88,10 @@
 					<option value="3600">60분</option>
 				</select>
 			</div>
-			
+			 -->
 			<div id="count">
 				<h2>알림 횟수</h2>
-				<select class="form-control">
+				<select class="form-control">	
 					
 				</select>
 			</div>
@@ -194,11 +194,12 @@
 					return false;
 				}
 				
-				var interval = notireqVo.interval;
+				/* var interval = notireqVo.interval;
 				if(interval == 0)
 					interval = '간격 없음';
 				else
 					interval += '초';
+				*/
 				var notiTimes = notireqVo.notiTimes;
 				if(notiTimes == 1000000)
 					notiTimes = '계속';
@@ -206,7 +207,7 @@
 					notiTimes += '회';
 				
 				
-				$('#myReqText').html(selSection+'구역 / '+interval+ ' / '+notiTimes+ '<span id="reqDel" class="glyphicon glyphicon-remove" aria-hidden="true" data-reqno="'+notireqVo.reqNo+'"></span>'  );
+				$('#myReqText').html(selSection+'구역 / '+notiTimes+ '<span id="reqDel" class="glyphicon glyphicon-remove" aria-hidden="true" data-reqno="'+notireqVo.reqNo+'"></span>'  );
 			},
 			error : function(XHR, status, error) {
 				console.error(status + " : " + error);
@@ -223,14 +224,14 @@
 			return false;
 		}
 		
-		var interval = $('#interval select').val();
+		/* var interval = $('#interval select').val(); */
 		var notiTimes = $('#count select').val();
 		
 		var notireqVo = {
 				prodNo:prodNo,
 				viewDate:viewDate,
 				selSection:selSection,
-				interval:interval,
+				/* interval:interval, */
 				notiTimes:notiTimes
 		}
 		
@@ -244,16 +245,16 @@
 				if(result == 'fail')
 					alert('신청이 존재합니다');
 				else{
-					if(interval == 0)
+					/* if(interval == 0)
 						interval = '간격 없음';
 					else
-						interval += '초';
+						interval += '초'; */
 					if(notiTimes == 1000000)
 						notiTimes = '계속';
 					else
 						notiTimes += '회';
 					alert('신청됐습니다');
-					$('#myReqText').html(selSection+'구역 / '+interval+ ' / '+notiTimes+ '<span id="reqDel" class="glyphicon glyphicon-remove" aria-hidden="true"></span>'  );
+					$('#myReqText').html(selSection+'구역 / '+notiTimes+ '<span id="reqDel" class="glyphicon glyphicon-remove" aria-hidden="true"></span>'  );
 				}
 			},
 			error : function(XHR, status, error) {
