@@ -167,9 +167,8 @@
 								</div>
 							</div>
 
-							<!-- 등급별 가격 자리 -->
-							<!--좌석등급별 가격-->
 
+							<!--좌석등급별 가격-->
 							<div class="form-group">
 								<label class="form-text col-md-2 form-id" for="">등급별 가격</label>
 								<!--가격 -->
@@ -314,8 +313,6 @@
 
 
 <script type="text/javascript">
-	
-
 	//등급추가 버튼
 	$("#addGrade")
 			.on(
@@ -337,7 +334,7 @@
 												+ '</div>'
 												+ '&nbsp;'
 												+ '<button type="button" id="delGrade" class="btn">-</button>'
-												+ '</div>');
+										+ '</div>');
 					});
 
 	//등급삭제 버튼
@@ -346,38 +343,38 @@
 	});
 
 	var productDisList = []
-	
+
 	//할인정보 '+' 버튼 클릭될 떄
 	$("#addDis").on(
 			"click",
 			function() {
 				//데이터 수집
-				var disN = $("#dcName").val();
-				var disR = $("#dcRate").val();
-				var disD = $("#dcType").val();
+				var dcName = $("#dcName").val();
+				var dcRate = $("#dcRate").val();
+				var dcType = $("#dcType").val();
 
 				//데이터 찍어보기
-				console.log(disN);
-				console.log(disR);
-				console.log(disD);
+				console.log(dcName);
+				console.log(dcRate);
+				console.log(dcType);
 
-				if (disD == 0) {
+				if (dcType == 0) {
 					$("#bmDisArea").append(
-							'<div class="form-group form-data disRate">' + disN
-									+ ' (' + disR + '% 할인됨)' + '</div>');
+							'<div class="form-group form-data disRate">' + dcName
+									+ ' (' + dcRate + '% 할인됨)' + '</div>');
 				} else {
 					$("#bmDisArea").append(
-							'<div class="form-group form-data disRate">' + disN
-									+ ' (' + disR + '원 할인됨)' + '</div>');
+							'<div class="form-group form-data disRate">' + dcName
+									+ ' (' + dcRate + '원 할인됨)' + '</div>');
 				}
 
 				var productDis = {
-					disN : disN,
-					disR : disR,
-					disD : disD
+					dcName : dcName,
+					dcRate : dcRate,
+					dcType : dcType
 				};
 				productDisList.push(productDis);
-				
+
 			});
 
 	//공연정보 클릭할때
@@ -396,7 +393,7 @@
 			};
 			seatpriceList.push(seatprice);
 		}
-		
+
 		// 상시 할인 
 
 		var ProductVo = {
@@ -422,9 +419,7 @@
 			url : "${pageContext.request.contextPath}/bm/bmUpload",
 			type : "post",
 			contentType : "application/json",
-			data : JSON.stringify(ProductVo),
-			/* 	contentType: false,
-			 processData: false, */
+			data : JSON.stringify(ProductVo), 	
 
 			/* dataType : "json", */
 			/* 성공 시 처리해야 될 코드 작성 */
@@ -433,6 +428,7 @@
 
 				//첨부파일
 				var file0 = $("#file0")[0].files[0]
+
 				var file1 = $("#file1")[0].files[0]
 				var file2 = $("#file2")[0].files[0]
 				var file3 = $("#file3")[0].files[0]

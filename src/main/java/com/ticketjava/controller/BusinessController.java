@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.ticketjava.service.BusinessService;
+import com.ticketjava.vo.DiscountVo;
 import com.ticketjava.vo.ProductVo;
 
 @Controller
@@ -44,9 +45,10 @@ public class BusinessController {
 	// 공연 업로드
 	@ResponseBody
 	@RequestMapping(value = "bmUpload", method = { RequestMethod.GET, RequestMethod.POST })
-	public int productUpload(@RequestBody ProductVo productVo) {
+	public int productUpload(@RequestBody ProductVo productVo, DiscountVo discountVo) {
 		System.out.println("BusinessController/bmUpload");
 		System.out.println(productVo);
+		System.out.println(discountVo);
 
 		return 21;
 	}
