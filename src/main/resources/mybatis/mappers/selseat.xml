@@ -47,7 +47,7 @@
 			where s.rez_no = r.rez_no and
 			      prod_no = #{prodNo} and
 			      viewDate = #{viewDate} and
-			      s.status = 1
+			      s.status != 0
 		]]>
 		
 	</select>
