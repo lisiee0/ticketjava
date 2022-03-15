@@ -37,7 +37,6 @@ public class ProductVo {
 			String endShow, String beginRez, String endRez, String showTime, int viewTime, int viewGrade, String notice,
 			String cancelInfo, int status, String posterPath, String theaterName, String hallName,
 			List<SeatpriceVo> seatpriceList, List<DiscountVo> productDisList) {
-		super();
 		this.prodNo = prodNo;
 		this.userNo = userNo;
 		this.hallNo = hallNo;
@@ -59,7 +58,6 @@ public class ProductVo {
 		this.seatpriceList = seatpriceList;
 		this.productDisList = productDisList;
 	}
-	
 	// 메소드
 	public int getProdNo() {
 		return prodNo;

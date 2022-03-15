@@ -406,6 +406,7 @@
 		$.ajax({
 			url : "${pageContext.request.contextPath}/bm/bmUpload",
 			type : "post",
+			traditional : true,
 			contentType : "application/json",
 			data : JSON.stringify(ProductVo), 	
 
@@ -442,6 +443,7 @@
 		$.ajax({
 			url : "${pageContext.request.contextPath}/bm/bmfileUpload",
 			type : "post",
+			traditional : true,
 			/* contentType : "application/json",*/
 			contentType : false,
 			processData : false,

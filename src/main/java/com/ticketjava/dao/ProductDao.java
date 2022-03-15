@@ -23,12 +23,15 @@ public class ProductDao {
 	}
 
 	// 공연 추가
-	public void productUpload(ProductVo pvo) {
+	public int productUpload(ProductVo productVo) {
 		System.out.println("ProductDao/productUpload");
-		System.out.println(pvo);
+		System.out.println(productVo);
 
-		sqlsession.insert("product.productUpload", pvo);
+		return sqlsession.insert("product.productUpload", productVo);
 	}
+	
+	//공연 파일 추가
+	
 	
 	//공연 삭제
 	public int productDelete(ProductVo productVo) {

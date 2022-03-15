@@ -38,13 +38,14 @@ public class BusinessService {
 	}
 	
 	//공연 업로드
-	public void productUpload() {
+	public int productUpload(ProductVo productVo) {
+		System.out.println("BusinessServiece/productUpload");
 		
-
+		return  pd.productUpload(productVo);
 	}
-
+	
 	// 공연 파일 업로드
-	public void productFileUpload(MultipartFile file, ProductVo productVo, DetailVo detailVo, DiscountVo discountVo) {
+	public void productFileUpload2(MultipartFile file, ProductVo productVo, DetailVo detailVo, DiscountVo discountVo) {
 		System.out.println("BusinessServiece/productUpload()");
 
 		// 파일업로드

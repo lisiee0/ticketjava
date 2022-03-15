@@ -45,12 +45,13 @@ public class BusinessController {
 	//int로 두는 이유 >> db로 보낼 때 성공/실패 여부
 	@ResponseBody
 	@RequestMapping(value = "bmUpload", method = { RequestMethod.GET, RequestMethod.POST })
-	public String productUpload(@RequestBody ProductVo productVo) {
+	public int productUpload(@RequestBody ProductVo productVo) {
 		System.out.println("BusinessController/productUpload");
-		System.out.println(productVo);
+		System.out.println(productVo.getProdNo());
 
-//		businessService.productUpload();
-		return "redirect:bm/";
+
+		businessService.productUpload(productVo);
+		return 44;
 	}
 
 	// 공연 파일업로드
