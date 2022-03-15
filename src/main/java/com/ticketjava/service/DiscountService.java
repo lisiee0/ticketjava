@@ -20,8 +20,8 @@ public class DiscountService {
 	
 	
 	// 이벤트 할인 리스트 불러오기 (상시할인 제외)
-	public List<DiscountVo> getList() {
-		return discountDao.getList();
+	public List<DiscountVo> getList(int prodNo) {
+		return discountDao.getList(prodNo);
 	}
 	
 	// 이벤트 할인 추가

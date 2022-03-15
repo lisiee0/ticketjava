@@ -28,9 +28,9 @@ public class DiscountController {
 	
 	@ResponseBody
 	@RequestMapping("/getList")
-	public List<DiscountVo> getList() {
-		
-		return discountService.getList();
+	public List<DiscountVo> getList(@RequestParam("prodNo") int prodNo) {
+		System.out.println(prodNo);
+		return discountService.getList(prodNo);
 	}
 	
 	

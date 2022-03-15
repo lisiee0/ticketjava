@@ -89,7 +89,7 @@
 
 			<!-- 적용버튼 -->
 			<div id="submitBtn">
-				<button id="submitBtn2" class="btn btn-default" type="button">적용</button>
+				<button id="submitBtn2" class="btn btn-default" type="button">닫기</button>
 			</div>
 
 		</div>
@@ -103,7 +103,11 @@
 </body>
 
 <script>
-
+	
+	$("#submitBtn2").on("click", function() {
+		close();
+	});
+	
 	$(document).ready(function() {
 		// 이벤트 할인리스트 출력
 		fetchList();
@@ -185,7 +189,7 @@
 			url : "${pageContext.request.contextPath}/discount/getList",
 			type : "post",
 			// contentType : "application/json",
-			// data : {name: "홍길동"},
+			data : { prodNo : ${param.prodNo} },
 
 			dataType : "json",
 			success : function(dList) {

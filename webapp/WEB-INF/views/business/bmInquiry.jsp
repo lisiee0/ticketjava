@@ -117,7 +117,7 @@
 														<option value="1">노출 on</option>
 												</select>
 													<button type="button" class="btn btn-outline-primary" id="showbTn">확인</button></td>
-												<td><a href="${pageContext.request.contextPath}/bm/discount?prodNo=${vo.prodNo}">이벤트 할인 추가</a></td>
+												<td><a class="eventdis" data-no="${vo.prodNo}" href="${pageContext.request.contextPath}/bm/discount?prodNo=${vo.prodNo}">이벤트 할인 추가</a></td>
 												<td><a href="#">수정</a></td>
 												<%--<td><a href="${pageContext.request.contextPath}/bm/bmDelete?prodNo=${vo.prodNo}">삭제</a></td> --%>
 											</tr>
@@ -161,10 +161,17 @@
 </body>
 <script>
 
-var No = ${'#status'}.val
+
+$(".eventdis").on("click", function() {
+	var no = $(this).data("no");
+	open('${pageContext.request.contextPath}/bm/discount?prodNo='+no, 'bmDisAdd', 'width=550, height=600, top=300, left=500');
+	return false;
+});
+
+var No = $('#status').val
 
 console.log(No);
 
-
+</script>
 
 </html>

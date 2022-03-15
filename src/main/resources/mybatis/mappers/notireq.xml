@@ -78,7 +78,7 @@
 				from notireq
 				where prod_no = #{prodNo} and
 					  viewDate = #{viewDate} and
-					  selSection = #{selSection} and
+					  selSection = #{section} and
 					  status = 1
 			]]>
 		</select>
