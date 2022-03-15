@@ -31,7 +31,6 @@ public class ReservationService {
 	private NotireqService notireqService;
 	
 	public int preoccupy(ReservationVo reservationVo, HttpSession session) {
-		Map<String, Object> map= new HashMap<>(); 
 		UserVo authUser = (UserVo)session.getAttribute("AuthUser");
 		
 		int userNo;
@@ -43,6 +42,7 @@ public class ReservationService {
 		reservationVo.setUserNo(userNo);
 		reservationDao.insertPre(reservationVo);
 		int rezNo = reservationVo.getRezNo();
+		System.out.println(rezNo);
 		
 		List<SelseatVo> selseatList = reservationVo.getSelseatList();
 		for(SelseatVo selseatVo : selseatList) {
@@ -67,11 +67,11 @@ public class ReservationService {
 		reservationDao.updatePayment(reservationVo);
 	}
 
-	public Map<String, Object> confirmReservation(int rezNo, int[] selseatNo) {
+	public Map<String, Object> confirmReservation(int rezNo) {
 		Map<String, Object> map = new HashMap<>();
 		ReservationVo reservationVo = reservationDao.selectByRezNo(rezNo);
 		map.put("rezVo", reservationVo);
-		List<SelseatVo> selList = selseatDao.selectSelList(selseatNo);
+		List<SelseatVo> selList = selseatDao.selectSelList(rezNo);
 		map.put("selList", selList);
 		return map;
 	}

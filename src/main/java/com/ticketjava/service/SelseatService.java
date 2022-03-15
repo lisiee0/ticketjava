@@ -19,8 +19,8 @@ public class SelseatService {
 		return selseatDao.selectOccupy(reservationVo);
 	}
 
-	public List<SelseatVo> selList(int[] selseatNo) {
-		return selseatDao.selectSelList(selseatNo);
+	public List<SelseatVo> selList(int rezNo) {
+		return selseatDao.selectSelList(rezNo);
 	}
 
 	

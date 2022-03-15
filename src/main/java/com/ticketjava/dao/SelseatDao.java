@@ -21,8 +21,8 @@ public class SelseatDao {
 		
 	}
 
-	public List<SelseatVo> selectSelList(int[] selseatNo) {
-		return sqlSession.selectList("selseat.selectSelList", selseatNo);
+	public List<SelseatVo> selectSelList(int rezNo) {
+		return sqlSession.selectList("selseat.selectSelList", rezNo);
 	}
 	
 	

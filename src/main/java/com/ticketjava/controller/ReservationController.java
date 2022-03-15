@@ -63,12 +63,12 @@ public class ReservationController {
 	
 	@RequestMapping("/selectQuantity")
 	public String selectQuantity(@RequestParam("prodNo") int prodNo,
-								 @RequestParam("selseatNo") int [] selseatNo,
+								 @RequestParam("rezNo") int rezNo,
 								 Model model) {
 		RezProdInfoVo rezProdInfo = reservationService.rezProdInfo(prodNo);
 		model.addAttribute("rezProdInfo", rezProdInfo);
 		
-		List<SelseatVo> selList = selseatService.selList(selseatNo);
+		List<SelseatVo> selList = selseatService.selList(rezNo);
 		model.addAttribute("selList", selList);
 		
 		return "reservation/selectQuantity";
@@ -84,12 +84,11 @@ public class ReservationController {
 	@RequestMapping("/confirmReservation")
 	public String confirmReservation(@RequestParam("prodNo") int prodNo,
 									 @RequestParam("rezNo") int rezNo,
-									 @RequestParam("selseatNo") int [] selseatNo,
 									 Model model) {
 		RezProdInfoVo rezProdInfo = reservationService.rezProdInfo(prodNo);
 		model.addAttribute("rezProdInfo", rezProdInfo);
 		
-		Map<String, Object> map = reservationService.confirmReservation(rezNo, selseatNo);
+		Map<String, Object> map = reservationService.confirmReservation(rezNo);
 		model.addAttribute("map", map);
 		return "reservation/confirmReservation";
 	}

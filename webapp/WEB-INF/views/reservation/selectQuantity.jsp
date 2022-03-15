@@ -127,9 +127,6 @@
 						<input type="hidden" name="prodNo" value="${param.prodNo}">
 						<input type="hidden" name="viewDate" value="${param.viewDate}">
 						<input type="hidden" name="rezNo" value="${param.rezNo}">
-						<c:forEach items="${selList}" var="vo">
-							<input type="hidden" name="selseatNo" value="${vo.selseatNo}">
-						</c:forEach>
 						<button class="btn-outline-primary" type="button" id="prevBtn">이전단계 </button>
 						<button class="btn-primary" type="button" id="nextBtn">다음단계 </button> 
 					</form>

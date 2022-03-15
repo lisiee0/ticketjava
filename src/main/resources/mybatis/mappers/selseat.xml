@@ -3,29 +3,23 @@
 <mapper namespace="selseat">
 	
 	<insert id="insertPre" parameterType="SelseatVo">
-	    <selectKey resultType="int" keyProperty="selseatNo" order="BEFORE">
-	        SELECT seq_selseat_no.nextval FROM dual     
-	    </selectKey>    
 	    <![CDATA[
 		    INSERT INTO selseat( selseat_no , rez_no, grade, section, col, num, status, pretime )
-		    			VALUES(#{selseatNo}, #{rezNo}, #{grade},#{section} , #{col}, #{num}, 2, sysdate )
+		    			VALUES(seq_selseat_no.nextval, #{rezNo}, #{grade},#{section} , #{col}, #{num}, 2, sysdate )
 		]]>
 	</insert>  
 	
-	<select id="selectSelList" parameterType="map" resultType="SelseatVo">
+	<select id="selectSelList" parameterType="int" resultType="SelseatVo">
 		<![CDATA[
 			select selseat_no selseatNo,
 				   grade,
 				   section,
 				   col,
 				   num
-			from selseat
-			where selseat_no in
+			from selseat s, reserve r
+			where r.rez_no = #{rezNo} and
+				  r.rez_no = s.rez_no
 		]]>
-		<foreach collection="array" item="item" index="index" open="(" close=")" separator=",">
-			#{item}
-		</foreach>
-		
 	</select>
 	
 	<select id="selectTimeOver" resultType="int">
