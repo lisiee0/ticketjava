@@ -280,6 +280,10 @@
 							<div id="btnLocation">
 								<button type="button" class="btn btn-primary" id="addbtn">공연 등록</button>
 							</div>
+							<!-- hidden -->
+							<div>
+							<input type="hidden" id="status" name="status" value="1">
+							</div>
 
 						</div>
 
@@ -396,6 +400,7 @@
 			viewGrade : $("input[name=viewGrade]").eq(0).val(),
 			cancelInfo : $("#cancelInfo").val(),
 			notice : $("#notice").val(),
+			status : $("#status").val(),
 			seatpriceList : seatpriceList,
 			productDisList : productDisList
 

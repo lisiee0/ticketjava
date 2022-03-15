@@ -30,12 +30,14 @@
 			insert into 	product	(prod_no, prodname, prodtype,
 								beginshow, endshow, beginrez,
 								endrez, showtime, viewtime, 
-								viewgrade, cancelinfo, notice
+								viewgrade, cancelinfo, notice,
+								status
 								) 
 	            			values 	(#{prodNo}, #{prodName}, #{prodType},
 	            					#{beginShow}, #{endShow}, #{beginRez},
 	            					#{endRez}, to_date(#{showTime},'HH24:MI'), #{viewTime},
-	            					#{viewGrade}, #{cancelInfo}, #{notice}
+	            					#{viewGrade}, #{cancelInfo}, #{notice},
+	            					#{status}
 	            					)
 	     ]]>
 
