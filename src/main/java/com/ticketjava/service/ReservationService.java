@@ -30,6 +30,9 @@ public class ReservationService {
 	@Autowired
 	private SelseatDao selseatDao;
 
+	@Autowired
+	private NotireqService notireqService;
+	
 	public Map<String, Object> preoccupy(String data, HttpSession session) {
 		Map<String, Object> map= new HashMap<>(); 
 		UserVo authUser = (UserVo)session.getAttribute("AuthUser");
@@ -141,6 +144,8 @@ public class ReservationService {
 	public void deleteReserveSeat (int selseatNo) {
 		System.out.println("ReservationService deleteReserveSeat 실행");
 		reservationDao.deleteReserveSeat(selseatNo);
+		notireqService.notiSend(selseatNo);
+		
 		System.out.println("리저브 서비스 selseatNo "+selseatNo);
 	} 
 	

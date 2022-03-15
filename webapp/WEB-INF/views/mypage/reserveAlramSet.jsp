@@ -163,7 +163,7 @@
 	$('#chgSetBtn').on('click',function(){
 		var viewDate = $(this).data('viewdate');
 		var prodNo= $(this).data('prodno');
-		window.open('${pageContext.request.contextPath}/notireq/notireqForm?prodNo='+prodNo+'&viewDate='+viewDate,'notireqForm', 'width=970, height=800, left=300, top=100');
+		window.open('${pageContext.request.contextPath}/notireq/notireq?prodNo='+prodNo+'&viewDate='+viewDate,'notireqForm', 'width=970, height=800, left=300, top=100');
 	});
 	
  	$('#activeBtn').on('click',function(){
