@@ -23,12 +23,22 @@ public class ProductDao {
 	}
 
 	// 공연 추가
-	public int productUpload(ProductVo productVo) {
-		System.out.println("ProductDao/productUpload");
-		System.out.println(productVo);
-
-		return sqlsession.insert("product.productUpload", productVo);
+//	public int productUpload(ProductVo productVo) {
+//		System.out.println("ProductDao/productUpload");
+//		System.out.println(productVo);
+//
+//		return sqlsession.insert("product.productUpload", productVo);
+//	}
+	
+	//공연 이미지파일 추가 <<<<< 포스터 정보
+	public void posterAdd(ProductVo productVo) {
+		System.out.println("ProductDao/posterAdd");
+		
+		sqlsession.insert("product.posterAdd", productVo);
 	}
+	
+	
+	
 	
 	//공연 파일 추가
 	

@@ -47,24 +47,21 @@ public class BusinessController {
 	@RequestMapping(value = "bmUpload", method = { RequestMethod.GET, RequestMethod.POST })
 	public int productUpload(@RequestBody ProductVo productVo) {
 		System.out.println("BusinessController/productUpload");
-		System.out.println(productVo.getProdNo());
 
-
-		businessService.productUpload(productVo);
-		return 44;
+//		businessService.productUpload(productVo);
+		return 10000;
 	}
 
 	// 공연 파일업로드
 	@RequestMapping(value = "bmfileUpload", method = { RequestMethod.GET, RequestMethod.POST })
-	public String productFileUpload(@RequestParam("prodNo") int prodNo, MultipartFile file, int order) {
+	public String bmfileUpload(@RequestParam("prodNo") int prodNo,ProductVo productVo, MultipartFile file, int order) {
 		System.out.println("BusinessController/bmfileUplad");
 		System.out.println(prodNo);
-		System.out.println(order);
+		System.out.println("int order : "+order);
 		System.out.println(file.getOriginalFilename());
 		
-
-		
-		return "";
+		businessService.productFileUpload(file, productVo, order);
+		return "redirect:/bm/";
 	}
 
 

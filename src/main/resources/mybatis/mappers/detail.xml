@@ -22,5 +22,7 @@
 			where 			prod_no= #{prodNo}
 		]]>
 	</select>
+	
+	<!-- 공연 이미지파일 추가 <<<<< 포스터 정보 -->
 
 </mapper>

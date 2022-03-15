@@ -44,6 +44,14 @@
 	<!-- ]]> -->
 	<!-- </insert> -->
 
+	<!-- 공연 이미지파일 추가 <<<<< 포스터 정보 -->
+	<insert id="posterAdd" parameterType="ProductVo">
+		<![CDATA[
+			insert into product	(prod_no, posterPath) 
+							VALUES	(seq_prod_no.nextval, #{posterPath})
+		]]>
+	</insert>
+
 	<!-- 공연 삭제 -->
 	<delete id="productDelete" parameterType="ProductVo">
 		<![CDATA[

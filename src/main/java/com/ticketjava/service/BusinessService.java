@@ -38,14 +38,14 @@ public class BusinessService {
 	}
 	
 	//공연 업로드
-	public int productUpload(ProductVo productVo) {
-		System.out.println("BusinessServiece/productUpload");
-		
-		return  pd.productUpload(productVo);
-	}
+//	public int productUpload(ProductVo productVo) {
+//		System.out.println("BusinessServiece/productUpload");
+//		
+//		return  pd.productUpload(productVo);
+//	}
 	
 	// 공연 파일 업로드
-	public void productFileUpload2(MultipartFile file, ProductVo productVo, DetailVo detailVo, DiscountVo discountVo) {
+	public void productFileUpload(MultipartFile file, ProductVo productVo, int order) {
 		System.out.println("BusinessServiece/productUpload()");
 
 		// 파일업로드
@@ -63,7 +63,7 @@ public class BusinessService {
 		// 파일패스 생성
 		String filePath = saveDir + "\\" + saveName;
 
-		// ProductVo
+		//포스터 이미지 설정
 		productVo.setPosterPath(filePath);
 
 		// 파일 저장
@@ -80,10 +80,18 @@ public class BusinessService {
 
 		System.out.println("파일 이름: " + file.getOriginalFilename());
 
-		// db 저장
-		pd.productUpload(productVo);
-		td.detailUpload(detailVo);
-		dd.addAlwaysDis(discountVo);
+//		// db 저장
+//		if (order == 1) {		//order : 1 
+		pd.posterAdd(productVo);
+//		}else {
+//			System.out.println("null");
+//		}
+		
+			System.out.println("파일을 저장했습니다.");
+		
+//		pd.productUpload(productVo);
+//		td.detailUpload(detailVo);
+//		dd.addAlwaysDis(discountVo);
 	}
 
 	// 공연 노출 여부
