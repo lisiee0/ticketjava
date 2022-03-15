@@ -71,83 +71,13 @@
 		</div>
 			
 		<div id="side">
-			<div id="price">
-				<%-- <h2>등급 가격표</h2>
-				<div id="priceTable">
-					<table>
-						<colgroup>
-							<col style="width:10%">
-							<col style="width:25%">
-							<col style="width:40%">
-							<col style="width:25%">
-						</colgroup>
-						
-						<c:forEach items="${seatpriceList}" var="vo">
-							<tr data-grade="${vo.grade}">
-								<td><div class="seatColor ${vo.grade}Seat"></div></td>
-								<td>${fn:toUpperCase(vo.grade)}석</td>
-								<td>${vo.price}원</td>
-								<td class="remaining">석</td>
-							</tr>
-						</c:forEach>
-						<!-- <tr>
-							<td><div class="seatColor vipSeat"></div></td>
-							<td>VIP석</td>
-							<td>140,000원</td>
-							<td class="remaining">143석</td>
-						</tr>
-						<tr>
-							<td><div class="seatColor rSeat"></div></td>
-							<td>R석</td>
-							<td>120,000원</td>
-							<td class="remaining">15석</td>
-						</tr>
-						<tr>
-							<td><div class="seatColor sSeat"></div></td>
-							<td>S석</td>
-							<td>100,000원</td>
-							<td class="remaining">43석</td>
-						</tr>
-						<tr>
-							<td><div class="seatColor aSeat"></div></td>
-							<td>A석</td>
-							<td>80,000원</td>
-							<td class="remaining">30석</td>
-						</tr>
-						<tr>
-							<td><div class="seatColor bSeat"></div></td>
-							<td>B석</td>
-							<td>60,000원</td>
-							<td class="remaining">30석</td>
-						</tr> -->
-						
-					</table>
-				</div>
-			</div>
-			
-			<div id="choice">
-				<h2>선택 좌석 </h2>
-				<div id="choiceTable">
-					<table>
-						<colgroup>
-							<col style="width:28%">
-							<col style="">
-						</colgroup>
-						<!-- <tr>
-							<td>VIP석</td>
-							<td id="right">A구역 1열 4번</td>
-						</tr> -->
-						
-					</table>
-					
-				</div>
-			</div> --%>
-			
 			<div id="button">
 				
 				<button class="btn-primary" type="button" id="nextBtn" class="btn"> SEAT 테이블 초기화 </button>
 			</div>
 		</div>
+		
+		
 	</div>
 </body>
 
@@ -185,23 +115,20 @@ $('#nextBtn').on('click', function(){
 		seatList.push(initVo);
 	}
 	
-	console.log(seatList);
-	
 	$.ajax({
 		url: "${pageContext.request.contextPath}/seat/initSeat",
 		type : "post",
-		traditional: true,
-		data: {data: JSON.stringify(seatList) },
-		dataType: "json",
+		traditional : true,
+		contentType : "application/json",
+		data: JSON.stringify(seatList),
 		success : function(){
-			
+			alert('초기화 완료');
 		},
 		error : function(XHR, status, error) {
 			console.error(status + " : " + error);
 		}
 	});
 	 
-	
 });
 
 

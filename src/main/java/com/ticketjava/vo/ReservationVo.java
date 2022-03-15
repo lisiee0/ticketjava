@@ -1,5 +1,7 @@
 package com.ticketjava.vo;
 
+import java.util.List;
+
 public class ReservationVo {
 
 	private int rezNo;
@@ -11,15 +13,16 @@ public class ReservationVo {
 	private String phone;
 	private String email;
 	private String status;
-	private int ticketCount; // 예매 매수
 	private String prodName;
 	private int totalPayment;
+	
+	private List<SelseatVo> selseatList;
 
 	public ReservationVo() {
 	}
 
 	public ReservationVo(int rezNo, int prodNo, int userNo, String rezDate, String viewDate, String phone, String email,
-			String status, int ticketCount, String prodName, int totalPayment) {
+			String status, String prodName, int totalPayment, List<SelseatVo> selseatList) {
 		this.rezNo = rezNo;
 		this.prodNo = prodNo;
 		this.userNo = userNo;
@@ -28,9 +31,9 @@ public class ReservationVo {
 		this.phone = phone;
 		this.email = email;
 		this.status = status;
-		this.ticketCount = ticketCount;
 		this.prodName = prodName;
 		this.totalPayment = totalPayment;
+		this.selseatList = selseatList;
 	}
 
 	public int getRezNo() {
@@ -97,14 +100,6 @@ public class ReservationVo {
 		this.status = status;
 	}
 
-	public int getTicketCount() {
-		return ticketCount;
-	}
-
-	public void setTicketCount(int ticketCount) {
-		this.ticketCount = ticketCount;
-	}
-
 	public String getProdName() {
 		return prodName;
 	}
@@ -121,11 +116,20 @@ public class ReservationVo {
 		this.totalPayment = totalPayment;
 	}
 
+	public List<SelseatVo> getSelseatList() {
+		return selseatList;
+	}
+
+	public void setSelseatList(List<SelseatVo> selseatList) {
+		this.selseatList = selseatList;
+	}
+
 	@Override
 	public String toString() {
 		return "ReservationVo [rezNo=" + rezNo + ", prodNo=" + prodNo + ", userNo=" + userNo + ", rezDate=" + rezDate
 				+ ", viewDate=" + viewDate + ", phone=" + phone + ", email=" + email + ", status=" + status
-				+ ", ticketCount=" + ticketCount + ", prodName=" + prodName + ", totalPayment=" + totalPayment + "]";
+				+ ", prodName=" + prodName + ", totalPayment=" + totalPayment + ", selseatList=" + selseatList + "]";
 	}
 
+	
 } // The end of ReservationVo

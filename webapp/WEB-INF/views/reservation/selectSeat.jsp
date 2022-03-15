@@ -259,15 +259,12 @@ $('#nextBtn').on('click', function(){
 		return false;
 	}
 	
-	var selectList = [];
 	
-	var rezVo = {
-			viewDate: viewDate ,
-			prodNo: prodNo
-	};
-	selectList.push(rezVo);
-	console.log(rezVo);
+	
+	
+	
 
+	var selseatList = [];
 	for(var i=0; i< chkbox.length; i++) {
 		var e = $('[type=checkbox]:checked').eq(i);
 		
@@ -284,24 +281,27 @@ $('#nextBtn').on('click', function(){
 			col:col,
 			num:num				
 		};
-		selectList.push(preoccupyVo);
+		selseatList.push(preoccupyVo);
 	}
+	
+	var rezVo = {
+			viewDate: viewDate,
+			prodNo: prodNo,
+			selseatList:selseatList
+	};
+	
 	
 	$.ajax({
 		url: "${pageContext.request.contextPath}/reservation/preoccupy",
 		type : "post",
 		traditional: true,
-		data: {data: JSON.stringify(selectList) },
+		contentType : "application/json",
+		data: JSON.stringify(rezVo),
 		dataType: "json",
-		success : function(sel){
-			console.log(sel.rezNo);
-			console.log(sel.selseatNoList);
+		success : function(rezNo){
+			console.log(rezNo);
 			
-			$('#seatForm').append('<input type="hidden" name="rezNo" value="'+sel.rezNo+'">');
-			for(var selseatNo of sel.selseatNoList){
-				$('#seatForm').append('<input type="hidden" name="selseatNo" value="'+selseatNo+'">');
-			}
-			
+			$('#seatForm').append('<input type="hidden" name="rezNo" value="'+rezNo+'">');
 			$('#seatForm').submit();
 		},
 		error : function(XHR, status, error) {

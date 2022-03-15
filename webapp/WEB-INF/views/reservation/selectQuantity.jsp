@@ -239,7 +239,7 @@
 			return false;
 		}
 		
-		var jsonData = [];
+		var selseatList = [];
 		var rezNo = <c:out value="${param.rezNo}" />;
 		var totalPayment = Number($('#payment').text());
 		
@@ -268,14 +268,12 @@
 								dcNo : dcNo,
 								payment : payment
 						};
-						jsonData.push(selseat);
+						selseatList.push(selseat);
 						break;
 					}
 				}
 			}
 		</c:forEach>
-		
-		console.log(jsonData);
 		
 		/* 예매번호로 최종결제금액 저장 */
 		$.ajax({
@@ -296,7 +294,8 @@
 			url: "${pageContext.request.contextPath}/selseat/modifyDcPay",
 			type : "post",
 			traditional: true,
-			data: {data: JSON.stringify(jsonData) },
+			contentType : "application/json",
+			data: JSON.stringify(selseatList),
 			dataType: "json",
 			success : function(result){
 				$('#dcForm').submit();

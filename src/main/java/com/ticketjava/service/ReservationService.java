@@ -18,9 +18,6 @@ import com.ticketjava.vo.RezProdInfoVo;
 import com.ticketjava.vo.SelseatVo;
 import com.ticketjava.vo.UserVo;
 
-import net.sf.json.JSONArray;
-import net.sf.json.JSONObject;
-
 @Service
 public class ReservationService {
 
@@ -33,14 +30,9 @@ public class ReservationService {
 	@Autowired
 	private NotireqService notireqService;
 	
-	public Map<String, Object> preoccupy(String data, HttpSession session) {
+	public int preoccupy(ReservationVo reservationVo, HttpSession session) {
 		Map<String, Object> map= new HashMap<>(); 
 		UserVo authUser = (UserVo)session.getAttribute("AuthUser");
-		JSONArray array = JSONArray.fromObject(data);
-		JSONObject rezObj = (JSONObject)array.get(0);
-		
-		int prodNo = Integer.parseInt(String.valueOf(rezObj.get("prodNo")));
-		String viewDate = (String)rezObj.get("viewDate");
 		
 		int userNo;
 		if(authUser == null)
@@ -48,41 +40,17 @@ public class ReservationService {
 		else 
 			userNo = authUser.getUserNo();
 		
-		ReservationVo reservationVo = new ReservationVo();
 		reservationVo.setUserNo(userNo);
-		reservationVo.setProdNo(prodNo);
-		reservationVo.setViewDate(viewDate);
-		
 		reservationDao.insertPre(reservationVo);
-		map.put("rezNo", reservationVo.getRezNo());
+		int rezNo = reservationVo.getRezNo();
 		
-		List<Integer> selseatNoList = new ArrayList<>();
-		
-		
-		
-		
-		
-		for(int i=1; i<array.size(); i++) {
-			JSONObject selObj = (JSONObject)array.get(i);
-			
-			String grade = (String) selObj.get("grade");
-			String section = (String) selObj.get("section");
-			int col = Integer.parseInt(String.valueOf(selObj.get("col")));
-			int num = Integer.parseInt(String.valueOf(selObj.get("num")));
-			
-			SelseatVo selseatVo = new SelseatVo();
-			selseatVo.setRezNo(reservationVo.getRezNo());
-			selseatVo.setGrade(grade);
-			selseatVo.setSection(section);
-			selseatVo.setCol(col);
-			selseatVo.setNum(num);
-			
+		List<SelseatVo> selseatList = reservationVo.getSelseatList();
+		for(SelseatVo selseatVo : selseatList) {
+			selseatVo.setRezNo(rezNo);
 			selseatDao.insertPre(selseatVo);
-			selseatNoList.add(selseatVo.getSelseatNo());
 		}
-		map.put("selseatNoList", selseatNoList);
 		
-		return map;
+		return rezNo;
 		
 	}
 

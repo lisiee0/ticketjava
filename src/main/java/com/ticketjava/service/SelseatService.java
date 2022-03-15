@@ -9,9 +9,6 @@ import com.ticketjava.dao.SelseatDao;
 import com.ticketjava.vo.ReservationVo;
 import com.ticketjava.vo.SelseatVo;
 
-import net.sf.json.JSONArray;
-import net.sf.json.JSONObject;
-
 @Service
 public class SelseatService {
 
@@ -27,21 +24,8 @@ public class SelseatService {
 	}
 
 	
-	public void modifyDcPay(String data) {
-		
-		JSONArray array = JSONArray.fromObject(data);
-		for(int i=0; i<array.size(); i++) {
-			JSONObject obj = (JSONObject)array.get(i);
-			
-			SelseatVo selseatVo = new SelseatVo();
-			int selseatNo = Integer.parseInt(String.valueOf(obj.get("selseatNo")));
-			int dcNo = Integer.parseInt(String.valueOf(obj.get("dcNo")));
-			int payment = Integer.parseInt(String.valueOf(obj.get("payment")));
-			
-			selseatVo.setSelseatNo(selseatNo);
-			selseatVo.setDcNo(dcNo);
-			selseatVo.setPayment(payment);
-			
+	public void modifyDcPay(List<SelseatVo> selseatList) {
+		for(SelseatVo selseatVo : selseatList) {
 			selseatDao.updateDcPay(selseatVo);
 		}
 		
