@@ -23,19 +23,18 @@
 
 	<!-- product 테이블 공연 업로드(파일 제외) -->
 	<insert id="productUpload" parameterType="productVo">
+		<selectKey keyProperty="prodNo" resultType="int" order="BEFORE">
+			seq_prod_no.nextval from dual
+		</selectKey>
 		<![CDATA[
-			<selectKey keyProperty="prodNo" resultType=“int" order="BEFORE">
-				seq_prod_no.nextval from dual
-			</selectKey>
-		
-			insert into 	product	(prod_no, prodName, prodType,
-								beginShow, endShow, beginRez,
-								endRez, showTime,  viewTime, 
-								viewGrade, cancelInfo, notice
+			insert into 	product	(prod_no, prodname, prodtype,
+								beginshow, endshow, beginrez,
+								endrez, showtime, viewtime, 
+								viewgrade, cancelinfo, notice
 								) 
 	            			values 	(#{prodNo}, #{prodName}, #{prodType},
 	            					#{beginShow}, #{endShow}, #{beginRez},
-	            					#{endRez},to_date(#{showTime},'HH24:MI'),  #{viewTime},
+	            					#{endRez}, to_date(#{showTime},'HH24:MI'), #{viewTime},
 	            					#{viewGrade}, #{cancelInfo}, #{notice}
 	            					)
 	     ]]>
@@ -44,16 +43,16 @@
 
 
 	<!-- product 테이블 파일 추가 -->
-<!-- 	<insert id="productUpload2" parameterType="productVo"> -->
-<!-- 		<![CDATA[ -->
-<!-- 			<selectKey keyProperty="prodNo" resultType=“int" order="BEFORE"> -->
-<!-- 				seq_prod_no.nextval from dual -->
-<!-- 			</selectKey> -->
-<!-- 			insert into product		 (prod_no, prodName, prodType, beginShow, endShow, beginRez, endRez, viewTime, viewGrade, notice, posterpath, cancelInfo, showTime, status) -->
-<!-- 								values 	#{prodNo}, #{prodName}, #{prodType}, #{beginShow}, #{endShow}, #{beginRez}, #{endRez}, #{viewTime}, #{viewGrade}, #{notice}, #{posterPath}, #{cancelInfo}, to_date(#{showTime},'HH24:MI'), 1) -->
+	<!-- <insert id="productUpload2" parameterType="productVo"> -->
+	<!-- <![CDATA[ -->
+	<!-- <selectKey keyProperty="prodNo" resultType=“int" order="BEFORE"> -->
+	<!-- seq_prod_no.nextval from dual -->
+	<!-- </selectKey> -->
+	<!-- insert into product (prod_no, prodName, prodType, beginShow, endShow, beginRez, endRez, viewTime, viewGrade, notice, posterpath, cancelInfo, showTime, status) -->
+	<!-- values #{prodNo}, #{prodName}, #{prodType}, #{beginShow}, #{endShow}, #{beginRez}, #{endRez}, #{viewTime}, #{viewGrade}, #{notice}, #{posterPath}, #{cancelInfo}, to_date(#{showTime},'HH24:MI'), 1) -->
 
-<!-- 		]]> -->
-<!-- 	</insert> -->
+	<!-- ]]> -->
+	<!-- </insert> -->
 
 
 	<!-- 공연 이미지파일 추가 <<<<< 포스터 정보 -->

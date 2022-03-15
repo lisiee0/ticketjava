@@ -64,17 +64,6 @@
 		]]>
 	</select>
 
-	<!-- 상시할인 추가 -->
-	<insert id="addAlwaysDis" parameterType="DiscountVo">
-		<selectKey keyProperty="prodNo" resultType="int" order="BEFORE">
-			select seq_prod_no.nextval  from product
-		</selectKey>
-		<![CDATA[
-			insert into discount	(dc_no, prod_no, dcname, dcrate, dctype) 
-			values				(#{dcNo}, #{prodNo}, #{dcName}, #{dcRate}, #{dcType})
-		]]>
-	</insert>
-
 
 	<!-- 이벤트할인 추가 -->
 	<insert id="addDis" parameterType="DiscountVo">
