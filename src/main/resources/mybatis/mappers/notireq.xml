@@ -72,7 +72,7 @@
 		</update>
 		
 		
-		<select id="selectTargetUser" parameterType="NotireqVo" resultType="int">
+		<select id="selectTargetUser" parameterType="NotiDataVo" resultType="int">
 			<![CDATA[
 				select user_no userNo
 				from notireq

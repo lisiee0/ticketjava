@@ -128,12 +128,7 @@ public class NotireqService {
 		if(seatCount - selseatCount == 1) {
 			
 			 //4. notireq(prodNo, viewDate, section, status==1?)  >  결과 userNo 리스트   
-			NotireqVo notireqVo = new NotireqVo();
-			notireqVo.setProdNo( notiDataVo.getProdNo() );
-			notireqVo.setViewDate(  notiDataVo.getViewDate() );
-			notireqVo.setSelSection( notiDataVo.getSection() );
-			
-			List<Integer> targetUserNo = notireqDao.selectTargetUser(notireqVo);
+			List<Integer> targetUserNo = notireqDao.selectTargetUser(notiDataVo);
 			System.out.println(targetUserNo);
 			
 			 //5. noti (결과 userNo 리스트 ) > 알림 번호(시퀀스), 내용 ( viewDate+showTime , prodName, section ) , 알림 시간 (sysdate)   
