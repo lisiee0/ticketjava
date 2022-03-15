@@ -23,7 +23,7 @@
 
 	<!-- product 테이블 공연 불러오기 -->
 	<insert id="productUpload" parameterType="productVo">
-	
+
 		<selectKey keyProperty="productNo" resultType="int" order="BEFORE">
 			select seq_product_no.nextval from dual
 		</selectKey>
@@ -31,7 +31,7 @@
 		insert into 	product		(prod_no, prodName, prodType, beginShow, endShow, beginRez, endRez,  viewTime, viewGrade, notice, posterpath, cancelInfo, showTime, status) 
             				values 		(seq_prod_no.nextval, #{prodName}, #{prodType}, #{beginShow}, #{endShow}, #{beginRez}, #{endRez}, #{viewTime}, #{viewGrade}, #{notice}, #{posterPath}, #{cancelInfo}, to_date(#{showTime},'HH24:MI'), 1)
         ]]>
-        
+
 	</insert>
 
 
@@ -349,8 +349,7 @@
 		]]>
 	</select>
 
-	
-	
+
 	<!-- prodType별 TOP5 -->
 	<select id="topListbyType" parameterType="int" resultType="ProductVo">
 		<![CDATA[
@@ -382,6 +381,4 @@
 			and 			p.prodtype= #{prodType}
 		]]>
 	</select>
-	
->>>>>>> branch 'master' of https://github.com/lisiee0/ticketjava.git
 </mapper>
