@@ -40,6 +40,7 @@ public class BusinessService {
 	//공연 업로드
 	public void productUpload() {
 		
+
 	}
 
 	// 공연 파일 업로드
@@ -48,11 +49,7 @@ public class BusinessService {
 
 		// 파일업로드
 		String saveDir = "C:\\javaStudy\\upload";
-
-		// MultipartFile[] file
-
-		// 파일관련 정보 추출
-
+		
 		// 원본파일이름
 		String orgName = file.getOriginalFilename();
 
@@ -65,10 +62,8 @@ public class BusinessService {
 		// 파일패스 생성
 		String filePath = saveDir + "\\" + saveName;
 
-		// 파일 변수 가져오기
 		// ProductVo
 		productVo.setPosterPath(filePath);
-
 
 		// 파일 저장
 		try {
