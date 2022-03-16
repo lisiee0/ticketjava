@@ -40,28 +40,14 @@
 	            					#{status}
 	            					)
 	     ]]>
-
 	</insert>
-
-
-	<!-- product 테이블 파일 추가 -->
-	<!-- <insert id="productUpload2" parameterType="productVo"> -->
-	<!-- <![CDATA[ -->
-	<!-- <selectKey keyProperty="prodNo" resultType=“int" order="BEFORE"> -->
-	<!-- seq_prod_no.nextval from dual -->
-	<!-- </selectKey> -->
-	<!-- insert into product (prod_no, prodName, prodType, beginShow, endShow, beginRez, endRez, viewTime, viewGrade, notice, posterpath, cancelInfo, showTime, status) -->
-	<!-- values #{prodNo}, #{prodName}, #{prodType}, #{beginShow}, #{endShow}, #{beginRez}, #{endRez}, #{viewTime}, #{viewGrade}, #{notice}, #{posterPath}, #{cancelInfo}, to_date(#{showTime},'HH24:MI'), 1) -->
-
-	<!-- ]]> -->
-	<!-- </insert> -->
 
 
 	<!-- 공연 이미지파일 추가 <<<<< 포스터 정보 -->
 	<insert id="posterAdd" parameterType="ProductVo">
 		<![CDATA[
 			insert into product	(prod_no, posterPath) 
-							VALUES	(seq_prod_no.nextval, #{posterPath})
+							VALUES	(#{prodNo}, #{posterPath})
 		]]>
 	</insert>
 
@@ -69,7 +55,7 @@
 	<delete id="productDelete" parameterType="ProductVo">
 		<![CDATA[
 				delete from 	product
-				where 			prod_no = #{prodNo}
+				where 		prod_no = #{prodNo}
 		]]>
 	</delete>
 
