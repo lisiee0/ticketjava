@@ -14,9 +14,11 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.ticketjava.service.NotificationService;
 import com.ticketjava.service.NotireqService;
 import com.ticketjava.service.ReservationService;
+import com.ticketjava.service.ReviewService;
 import com.ticketjava.vo.NotificationVo;
 import com.ticketjava.vo.NotireqVo;
 import com.ticketjava.vo.ReserveDetailVo;
+import com.ticketjava.vo.ReviewVo;
 import com.ticketjava.vo.UserVo;
 
 @Controller
@@ -31,6 +33,9 @@ public class MypageController {
 	
 	@Autowired
 	private NotificationService notificationService;
+	
+	@Autowired
+	private ReviewService reviewService;
 	
 //	마이페이지 예매내역
 	@RequestMapping("/reserveList")
@@ -116,8 +121,15 @@ public class MypageController {
 	
 //	후기 리뷰 관리
 	@RequestMapping("/userReview")
-	public String userReview() {
+	public String getReviewListMypage(Model model, HttpSession session) {
 		System.out.println("MypageController userReview");
+		
+		UserVo authUser = (UserVo)session.getAttribute("authUser");
+		int userNo = authUser.getUserNo();
+		List<ReviewVo> reviewList = reviewService.getReviewListMypage(userNo);
+		
+		model.addAttribute("reviewList",reviewList);
+		
 		return "mypage/userReview";
 	}
 	

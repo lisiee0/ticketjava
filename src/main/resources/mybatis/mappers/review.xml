@@ -4,7 +4,7 @@
 
 	<select id="reviewMypageList" parameterType="ReviewVo" resultType="ReviewVo">
 		<![CDATA[
-select
+select	
         p.prodname prodName,
         r.review_no reviewNo,
         r.prod_no prodNo,
