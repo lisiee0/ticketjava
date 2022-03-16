@@ -86,7 +86,7 @@
 							<col style="width:28%">
 							<col style="">
 						</colgroup>
-						<c:forEach items="${selList}" var="vo">
+						<c:forEach items="${map.selList}" var="vo">
 							<tr>
 								<td>${fn:toUpperCase(vo.grade)}석</td>
 								<td class="right">${vo.section}구역 ${vo.col}열 ${vo.num}번</td>
@@ -103,7 +103,7 @@
 						</colgroup>
 						<tr>
 							<td>일시</td>
-							<td class="right">${param.viewDate} ${rezProdInfo.showTime}</td>
+							<td class="right">${map.rezVo.viewDate} ${rezProdInfo.showTime}</td>
 						</tr>
 						<tr>
 							<td>티켓금액</td>
@@ -148,7 +148,7 @@
 				b:0
 		};
 		
-		<c:forEach items="${selList}" var="vo">
+		<c:forEach items="${map.selList}" var="vo">
 			gradeCount.${vo.grade} = gradeCount.${vo.grade}+1;
 		</c:forEach>
 		
@@ -246,7 +246,7 @@
 		};
 		
 		/* 선택 좌석마다 할인옵션 부여 */
-		<c:forEach items="${selList}" var="vo">
+		<c:forEach items="${map.selList}" var="vo">
 			var grade = '${vo.grade}';
 			var disOptSelect = $('#disOpt'+grade+' select');
 			

@@ -32,9 +32,18 @@
 		]]>
 	</update>
 
+	<select id="selectByRezNo2" parameterType="int" resultType="ReservationVo">
+		<![CDATA[
+			select to_char(viewDate, 'yyyy-mm-dd (dy)') viewDate
+			from reserve
+			where rez_no = #{rezNo}
+		]]>
+	</select>
+
 	<select id="selectByRezNo" parameterType="int" resultType="ReservationVo">
 		<![CDATA[
-			select totalPayment
+			select totalPayment,
+				   to_char(viewDate, 'yyyy-mm-dd (dy)') viewDate
 			from reserve
 			where rez_no = #{rezNo}
 		]]>

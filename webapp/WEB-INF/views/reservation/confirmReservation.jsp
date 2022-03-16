@@ -123,7 +123,7 @@
 						</colgroup>
 						<tr>
 							<td>일시</td>
-							<td class="right">${param.viewDate} ${rezProdInfo.showTime}</td>
+							<td class="right">${map.rezVo.viewDate} ${rezProdInfo.showTime}</td>
 						</tr>
 						<tr>
 							<td>티켓금액</td>

@@ -42,7 +42,6 @@ public class ReservationService {
 		reservationVo.setUserNo(userNo);
 		reservationDao.insertPre(reservationVo);
 		int rezNo = reservationVo.getRezNo();
-		System.out.println(rezNo);
 		
 		List<SelseatVo> selseatList = reservationVo.getSelseatList();
 		for(SelseatVo selseatVo : selseatList) {
@@ -62,6 +61,15 @@ public class ReservationService {
 		}
 	}
 
+	public Map<String, Object> selectQuantity(int rezNo) {
+		Map<String, Object> map = new HashMap<>();
+		ReservationVo reservationVo = reservationDao.selectByRezNo2(rezNo);
+		map.put("rezVo", reservationVo);
+		List<SelseatVo> selList = selseatDao.selectSelList(rezNo);
+		map.put("selList", selList);
+		return map;
+	} 
+	
 
 	public void modifyPayment(ReservationVo reservationVo) {
 		reservationDao.updatePayment(reservationVo);
@@ -115,7 +123,8 @@ public class ReservationService {
 		notireqService.notiSend(selseatNo);
 		
 		System.out.println("리저브 서비스 selseatNo "+selseatNo);
-	} 
+	}
+
 	
 	
 	

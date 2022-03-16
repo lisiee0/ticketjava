@@ -28,6 +28,10 @@ public class ReservationDao {
 		sqlSession.update("reservation.updatePayment",reservationVo);	
 	}
 
+	public ReservationVo selectByRezNo2(int rezNo) {
+		return sqlSession.selectOne("reservation.selectByRezNo2", rezNo);
+	}
+	
 	public ReservationVo selectByRezNo(int rezNo) {
 		return sqlSession.selectOne("reservation.selectByRezNo", rezNo);
 	}
@@ -75,6 +79,8 @@ public class ReservationDao {
 		System.out.println("ReservationDao deleteReserveSeat 실행");
 		sqlSession.update("reservation.reserveSeatCancel", selseatNo);
 	}
+
+	
 
 	
 } // The end of ReservationDao

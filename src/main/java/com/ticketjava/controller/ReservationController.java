@@ -68,8 +68,8 @@ public class ReservationController {
 		RezProdInfoVo rezProdInfo = reservationService.rezProdInfo(prodNo);
 		model.addAttribute("rezProdInfo", rezProdInfo);
 		
-		List<SelseatVo> selList = selseatService.selList(rezNo);
-		model.addAttribute("selList", selList);
+		Map<String, Object> map = reservationService.selectQuantity(rezNo);
+		model.addAttribute("map", map);
 		
 		return "reservation/selectQuantity";
 	}
