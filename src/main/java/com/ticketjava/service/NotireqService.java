@@ -128,21 +128,21 @@ public class NotireqService {
 		if(seatCount - selseatCount == 1) {
 			
 			 //4. notireq(prodNo, viewDate, section, status==1?)  >  결과 userNo 리스트   
-			List<Integer> targetUserNo = notireqDao.selectTargetUser(notiDataVo);
-			System.out.println(targetUserNo);
+			List<NotireqVo> notireqList = notireqDao.selectTargetUser(notiDataVo);
+			
 			
 			 //5. noti (결과 userNo 리스트 ) > 알림 번호(시퀀스), 내용 ( viewDate+showTime , prodName, section ) , 알림 시간 (sysdate)   
 			 //								    └ 링크(예매페이지 --> 취소 좌석 선택 (prodNo, viewDate, grade, section, col, num 으로 기본 선택) )
-			List <NotificationVo> notificationList = new ArrayList<>();
 			String content = ""
 					+ "<a target='_blank' href='http://localhost:8088/ticketjava/reservation/selectSeat?prodNo="+notiDataVo.getProdNo()+"&viewDate="+notiDataVo.getViewDate()+"'>"
 					+ notiDataVo.getViewDate()+" "+notiDataVo.getShowTime()+" "+notiDataVo.getProdName()+" "+notiDataVo.getGrade().toUpperCase()+"석 "
 					+ notiDataVo.getSection()+"구역 "+notiDataVo.getCol()+"열 "+notiDataVo.getNum()+"번 좌석 취소 안내"
 					+ "</a>";
 			
-			for(int userNo : targetUserNo) {
+			List <NotificationVo> notificationList = new ArrayList<>();
+			for(NotireqVo notireqVo : notireqList) {
 				NotificationVo n = new NotificationVo();
-				n.setUserNo(userNo);
+				n.setUserNo(notireqVo.getUserNo());
 				n.setContent(content);
 				
 				notificationList.add(n);
@@ -150,13 +150,15 @@ public class NotireqService {
 			notificationDao.insertList(notificationList);
 
 			// 6. Users (결과 userNo 리스트) > email로 내용 전송								    
-			List<String> emailList = userDao.selectEmail(targetUserNo);
+			List<String> emailList = userDao.selectEmail(notireqList);
 			System.out.println(emailList);
 			
 			List<String>test = new ArrayList<>();
 			test.add("dldnjswns134@naver.com");
 			JavaMail.sendMail(test, notiDataVo);
 			
+			notireqDao.updateNotiTimes(notireqList);
+			notireqDao.deleteDoneReq(notireqList);
 		}
 	}
 

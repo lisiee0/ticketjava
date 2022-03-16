@@ -36,7 +36,16 @@ public class NotireqDao {
 		return sqlSession.update("notireq.updateStatus", notireqVo);
 	}
 
-	public List<Integer> selectTargetUser(NotiDataVo notiDataVo) {
+	public List<NotireqVo> selectTargetUser(NotiDataVo notiDataVo) {
 		return sqlSession.selectList("notireq.selectTargetUser", notiDataVo);
+	}
+
+	public void updateNotiTimes(List<NotireqVo> notireqList) {
+		sqlSession.update("notireq.updateNotiTimes", notireqList);
+		
+	}
+
+	public void deleteDoneReq(List<NotireqVo> notireqList) {
+		sqlSession.delete("notireq.deleteDoneReq", notireqList);
 	}
 }

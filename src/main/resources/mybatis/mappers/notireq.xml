@@ -72,17 +72,41 @@
 		</update>
 		
 		
-		<select id="selectTargetUser" parameterType="NotiDataVo" resultType="int">
+		<select id="selectTargetUser" parameterType="NotiDataVo" resultType="NotireqVo">
 			<![CDATA[
-				select user_no userNo
+				select 	req_no reqNo,
+						user_no userNo
 				from notireq
 				where prod_no = #{prodNo} and
 					  viewDate = #{viewDate} and
 					  selSection = #{section} and
-					  status = 1
+					  status = 1 and
+					  notiTimes >= 1
 			]]>
 		</select>
 		
+		<update id="updateNotiTimes" parameterType="map">
+			<![CDATA[
+				update notireq
+				set notiTimes = notiTimes - 1
+				where req_no in
+			]]>
+				<foreach collection="list" item="item" open="(" close=")" separator=",">
+					#{item.reqNo}
+				</foreach>
+			
+		</update> 
+		
+		<delete id="deleteDoneReq" parameterType="map">
+			<![CDATA[
+				delete from notireq
+				where notiTimes < 1 and
+					  req_no in
+			]]>
+				<foreach collection="list" item="item" open="(" close=")" separator=",">
+					#{item.reqNo}
+				</foreach>
+		</delete>
 		
 </mapper>
 

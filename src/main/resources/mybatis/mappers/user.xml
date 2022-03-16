@@ -58,7 +58,7 @@
 			where user_no in
 		]]>
 				<foreach collection="list" item="item" open="(" close=")" separator=",">
-					#{item}
+					#{item.userNo}
 				</foreach>
 	</select>
 	

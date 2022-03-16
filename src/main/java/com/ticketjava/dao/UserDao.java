@@ -6,6 +6,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import com.ticketjava.vo.NotireqVo;
 import com.ticketjava.vo.UserVo;
 
 @Repository
@@ -27,8 +28,8 @@ public class UserDao {
 		return sqlSession.selectOne("user.selectAuthUser", userVo);
 	}
 
-	public List<String> selectEmail(List<Integer> targetUserNo) {
-		return sqlSession.selectList("user.selectEmail", targetUserNo);
+	public List<String> selectEmail(List<NotireqVo> notireqList) {
+		return sqlSession.selectList("user.selectEmail", notireqList);
 	}
 	
 }
