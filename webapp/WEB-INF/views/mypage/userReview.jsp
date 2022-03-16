@@ -73,6 +73,7 @@
 							<div id="board">
 								<div id="list">
 									<table>
+
 										<thead>
 											<tr>
 												<th>번호</th>
@@ -88,9 +89,11 @@
 											<tbody>
 												<tr>
 													<td>${reviewList.reviewNo}</td>
-													<td class="text-left"><a href="product/info?prodNo=${reviewList.prodNo}">${reviewList.prodName}</a></td>
-													<td>${reviewList.content}</td>
-													<td>${reviewList.rating}</td>
+													<td id="space" class="text-left"><a href="product/info?prodNo=${reviewList.prodNo}">${reviewList.prodName}</a></td>
+													<td id="space">${reviewList.content}</td>
+													<td>
+													
+													${reviewList.rating}</td>
 													<td>${reviewList.regDate}</td>
 													<td><button class="btn btn-primary btnM" type="submit" id="btn-submit">수정</button>
 														<button class="btn btn-primary" type="submit" id="btn-submit">삭제</button></td>
@@ -131,6 +134,7 @@
 
 										<div class="clear"></div>
 									</div>
+									<!-- //paging -->
 									<div id="row" class="searchBox">
 										<div class="col-xs-8"></div>
 										<div class="col-xs-2">
@@ -141,30 +145,30 @@
 												<button type="submit" class="btn-primary formSearchBoardButton">검색</button>
 											</form>
 										</div>
-
-
 									</div>
 								</div>
-								<!-- //content body -->
-
+								<!-- //list -->
 							</div>
-							<!-- //content -->
-
+							<!-- //content body -->
 
 						</div>
-						<!-- .col-xs-10 컨텐츠 종료 -->
+						<!-- //content -->
+
+
 					</div>
-					<!-- 어사이드 컨텐츠 그리드 종료 -->
+					<!-- .col-xs-10 컨텐츠 종료 -->
 				</div>
-				<!-- container 종료 -->
+				<!-- 어사이드 컨텐츠 그리드 종료 -->
 			</div>
-			<!-- 컨텐츠 구역 종료 -->
-
-			<!-- 푸터 구역 시작 -->
-			<c:import url="/WEB-INF/views/include/footer.jsp"></c:import>
-			<!-- 푸터 구역 종료 -->
-
+			<!-- container 종료 -->
 		</div>
-		<!-- wrap 종료 -->
+		<!-- 컨텐츠 구역 종료 -->
+
+		<!-- 푸터 구역 시작 -->
+		<c:import url="/WEB-INF/views/include/footer.jsp"></c:import>
+		<!-- 푸터 구역 종료 -->
+
+	</div>
+	<!-- wrap 종료 -->
 </body>
 </html>

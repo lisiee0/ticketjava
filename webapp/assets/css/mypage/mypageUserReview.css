@@ -4,3 +4,17 @@
 .btnM {
 	margin: 0px 5px 0px 0px;
 }
+
+/* 글 간격 자동조절 */
+.list table>tbody>tr>td {
+	overflow:hidden;
+	white-space : nowrap;
+	text-overflow: ellipsis;
+}
+
+/* 테이블 틀 고정에 출력 텍스트 맞춤 */
+table {
+	table-layout:fixed;
+	word-break:break-all;
+}
+
