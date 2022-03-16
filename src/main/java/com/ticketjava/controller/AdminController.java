@@ -22,9 +22,10 @@ public class AdminController {
 	
 	// 관리자 페이지 main - 등록된 공연장 리스트 불러오기
 	@RequestMapping("/")
-	public String admin(Model model) {
+	public String admin(@RequestParam(value="crtPage", required= false, defaultValue= "1") int crtPage,
+						Model model) {
 
-		model.addAttribute("hallList", adminService.getList());
+		model.addAttribute("hallList", adminService.getList(crtPage));
 		return "admin/adminTheaterList";
 	}
 	

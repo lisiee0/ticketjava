@@ -4,7 +4,9 @@ import java.io.BufferedOutputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,6 +18,7 @@ import com.ticketjava.dao.NoticeDao;
 import com.ticketjava.dao.TheaterDao;
 import com.ticketjava.vo.HallVo;
 import com.ticketjava.vo.NoticeVo;
+import com.ticketjava.vo.Paging;
 import com.ticketjava.vo.TheaterVo;
 
 @Service
@@ -74,8 +77,23 @@ public class AdminService {
 	}
 	
 	
-	public List<HallVo> getList() {
-		return hd.getHallList();
+	public Map<String, Object> getList(int crtPage) {
+		
+		int listCnt= 9; // 한 페이지당 글 개수
+		int startRnum= (crtPage-1)*listCnt +1; // 시작글 번호
+		int endRnum= (startRnum+listCnt) -1; // 마지막글 번호
+		
+		Paging paging= new Paging();
+		paging.setPageNo(crtPage);
+		paging.setTotalCount(hd.totalCnt());
+		
+		Map<String, Object> hMap= new HashMap<String, Object>();
+		hMap.put("hList", hd.paginList(startRnum, endRnum));
+		hMap.put("paging", paging);
+		hMap.put("prev", paging);
+		hMap.put("next", paging);
+
+		return hMap;
 	}
 	
 	
