@@ -348,22 +348,11 @@
 		
 		
 		/*  rowspan */
-		var className='commonDc'+grade;
-		$("." + className).each(function() {
-	        var rows = $("." + className + ":contains('" + $(this).text() + "')");
-	        if (rows.length > 1) {
-	            rows.eq(0).attr("rowspan", rows.length);
-	            rows.not(":eq(0)").remove();
-	        }
-	    });
-		var className='eventDc'+grade;
-		$("." + className).each(function() {
-	        var rows = $("." + className + ":contains('" + $(this).text() + "')");
-	        if (rows.length > 1) {
-	            rows.eq(0).attr("rowspan", rows.length);
-	            rows.not(":eq(0)").remove();
-	        }
-	    });
+		var commonDc='commonDc'+grade;
+		rowspanByClass(commonDc);
+		
+		var eventDc='eventDc'+grade;
+		rowspanByClass(eventDc);
 		
 
 	};
@@ -380,6 +369,16 @@
 			}
 		}
 	};
+	
+	function rowspanByClass(className) {
+		$("." + className).each(function() {
+	        var rows = $("." + className + ":contains('" + $(this).text() + "')");
+	        if (rows.length > 1) {
+	            rows.eq(0).attr("rowspan", rows.length);
+	            rows.not(":eq(0)").remove();
+	        }
+	    });
+	}
 	
 </script>
 
