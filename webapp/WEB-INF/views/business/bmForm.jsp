@@ -240,7 +240,7 @@
 							<div class="form-group">
 								<label class="form-text col-md-2 form-id" for="">공연 포스터</label>
 								<div class="col-md-8">
-									<input type="file" id="file0" name="file0" value="">
+									<input type="file" id="posterPath" name="posterPath" value="">
 								</div>
 							</div>
 
@@ -248,7 +248,7 @@
 							<div class="form-group">
 								<label class="form-text col-md-2 form-id" for="">공연 정보</label>
 								<div class="col-md-8">
-									<input type="file" id="file1" name="file1" value="">
+									<input type="file" id="prodPath" name="prodPath" value="">
 								</div>
 							</div>
 
@@ -256,7 +256,7 @@
 							<div class="form-group">
 								<label class="form-text col-md-2 form-id" for="">캐스팅 정보</label>
 								<div class="col-md-8">
-									<input type="file" id="file2" name="file2" value="">
+									<input type="file" id="castingPath" name="castingPath" value="">
 								</div>
 							</div>
 
@@ -264,7 +264,7 @@
 							<div class="form-group">
 								<label class="form-text col-md-2 form-id" for="">부가 정보</label>
 								<div class="col-md-8">
-									<input type="file" id="file3" name="file3" value="">
+									<input type="file" id="addedPath" name="addedPath" value="">
 								</div>
 							</div>
 
@@ -283,6 +283,7 @@
 							<!-- hidden -->
 							<div>
 							<input type="hidden" id="status" name="status" value="1">
+							<input type="hidden" id="userNo" name="userNo" value="2">
 							</div>
 
 						</div>
@@ -390,6 +391,8 @@
 
 		var ProductVo = {
 			prodName : $("#prodName").val(),
+			userNo : $("#userNo").val(),
+			
 			prodType : $("#prodType").val(),
 			beginShow : $("#beginShow").val(),
 			endShow : $("#endShow").val(),
@@ -420,16 +423,17 @@
 				console.log(prodNo)
 
 				//첨부파일
-				var file0 = $("#file0")[0].files[0]
+				var posterPath = $("#posterPath")[0].files[0]
 
-				var file1 = $("#file1")[0].files[0]
-				var file2 = $("#file2")[0].files[0]
-				var file3 = $("#file3")[0].files[0]
+				var prodPath = $("#prodPath")[0].files[0]
+				var castingPath = $("#castingPath")[0].files[0]
+				var addedPath = $("#addedPath")[0].files[0]
 
-				fileupload(prodNo, file0, 1);
-				fileupload(prodNo, file1, 2);
-				fileupload(prodNo, file2, 3);
-				fileupload(prodNo, file3, 4);
+				fileupload(prodNo, posterPath, 1);
+				
+				fileupload(prodNo, prodPath, 2);
+				fileupload(prodNo, castingPath, 3);
+				fileupload(prodNo, addedPath, 4);
 			},
 			error : function(XHR, status, error) {
 				console.error(status + " : " + error);

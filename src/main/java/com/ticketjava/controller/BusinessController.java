@@ -43,7 +43,6 @@ public class BusinessController {
 	}
 
 	// 공연 업로드
-	//int로 두는 이유 >> db로 보낼 때 성공/실패 여부
 	@ResponseBody
 	@RequestMapping(value = "bmUpload", method = { RequestMethod.GET, RequestMethod.POST })
 	public int productUpload(@RequestBody ProductVo productVo) {
@@ -55,16 +54,15 @@ public class BusinessController {
 
 	// 공연 파일업로드
 	@RequestMapping(value = "bmfileUpload", method = { RequestMethod.GET, RequestMethod.POST })
-	public String bmfileUpload(@RequestParam("prodNo") int prodNo,ProductVo productVo, DetailVo detailVo, MultipartFile file, int order) {
+	public String bmfileUpload(@RequestParam("prodNo") int prodNo, ProductVo productVo, DetailVo detailVo,
+			MultipartFile file, int order) {
 		System.out.println("BusinessController/bmfileUplad");
-		System.out.println(prodNo);
-		System.out.println("int order : "+order);
+		System.out.println("공연 번호: " + prodNo + "," + order +"번 째 파일");
 		System.out.println(file.getOriginalFilename());
-		
-//		businessService.productFileUpload(file, productVo, detailVo, order);
+
+		businessService.productFileUpload(file, productVo, detailVo, order);
 		return "redirect:/bm/";
 	}
-
 
 	// 공연 노출
 	@RequestMapping(value = "bmStatus", method = { RequestMethod.GET, RequestMethod.POST })
@@ -105,7 +103,7 @@ public class BusinessController {
 		System.out.println("BusinessController/bmDisAdd");
 		System.out.println(prodNo);
 		model.addAttribute("prodDis", businessService.selectProdDiscount(prodNo));
-		return "business/bmDisAdd";	
+		return "business/bmDisAdd";
 	}
 
 	// 문의내역 관리

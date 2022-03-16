@@ -37,12 +37,6 @@ public class ProductDao {
 		sqlsession.insert("product.posterAdd", productVo);
 	}
 	
-	
-	
-	
-	//공연 파일 추가
-	
-	
 	//공연 삭제
 	public int productDelete(ProductVo productVo) {
 		System.out.println("ProductDao/productDelete");

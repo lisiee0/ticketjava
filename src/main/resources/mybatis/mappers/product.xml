@@ -27,13 +27,13 @@
 			select seq_prod_no.nextval from dual
 		</selectKey>
 		<![CDATA[
-			insert into 	product	(prod_no, prodname, prodtype,
+			insert into 	product	(prod_no, user_no, prodname, prodtype,
 								beginshow, endshow, beginrez,
 								endrez, showtime, viewtime, 
 								viewgrade, cancelinfo, notice,
 								status
 								) 
-	            			values 	(#{prodNo}, #{prodName}, #{prodType},
+	            			values 	(#{prodNo}, 2, #{prodName}, #{prodType},
 	            					#{beginShow}, #{endShow}, #{beginRez},
 	            					#{endRez}, to_date(#{showTime},'HH24:MI'), #{viewTime},
 	            					#{viewGrade}, #{cancelInfo}, #{notice},

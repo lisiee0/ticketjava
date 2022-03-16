@@ -3,12 +3,12 @@
 <mapper namespace="detail">
 
 	<!-- detail테이블 파일 추가 -->
-	<insert id="detailUpload" parameterType="DetailVo">
-		<![CDATA[
-			insert into detail	(DETAIL_NO, prodpath, castingpath, addedpath) 
-			values			(seq_detail_no.nextval, #{prodPath}, #{castingPath}, #{addedPath})
-		]]>
-	</insert>
+	<!-- <insert id="detailUpload" parameterType="DetailVo"> -->
+	<!-- <![CDATA[ -->
+	<!-- insert into detail (DETAIL_NO, prodpath, castingpath, addedpath) -->
+	<!-- values (seq_detail_no.nextval, #{prodPath}, #{castingPath}, #{addedPath}) -->
+	<!-- ]]> -->
+	<!-- </insert> -->
 
 
 	<select id="getDetail" parameterType="DetailVo" resultType="DetailVo">
@@ -26,26 +26,33 @@
 	<!-- 공연 이미지파일 추가 <<<<< 공연 정보 -->
 	<insert id="prodAdd" parameterType="DetailVo">
 		<![CDATA[
-			insert into detail 	(detail_no, prod_no, prodpath) 
-							values 	(seq_detail_no.nextval, #{prodNo}, #{prodpath});
+			insert into 	detail 	(detail_no,
+								prod_no,
+								prodpath)
+								
+						values 	(seq_detail_no.nextval,
+								#{prodNo},
+								#{prodPath})
 		]]>
 	</insert>
 
-	<!-- 공연 이미지파일 추가 <<<<< 캐스팅 정보 -->
-	<insert id="castingAdd" parameterType="ProductVo">
+	<!-- 공연 이미지파일 업데이트 <<<<< 캐스팅 정보 -->
+	<update id="castingAdd" parameterType="ProductVo">
 		<![CDATA[
-			insert into detail 	(detail_no, prod_no, castingPath) 
-							values 	(seq_detail_no.nextval, #{prodNo}, #{castingPath});
+		update 	detail
+		set 		castingpath = #{castingPath}
+		where 	detail_no = #{detailNo}
 		]]>
-	</insert>
+	</update>
 
 	<!-- 공연 이미지파일 추가 <<<<< 부가 정보 -->
-	<insert id="addedAdd" parameterType="ProductVo">
+	<update id="addedAdd" parameterType="ProductVo">
 		<![CDATA[
-			insert into detail 	(detail_no, prod_no, addedPath) 
-							values 	(seq_detail_no.nextval, #{prodNo}, #{addedPath});
+		update 	detail
+		set 		addedpath = #{addedPath}
+		where 	detail_no = #{detailNo}
 		]]>
-	</insert>
+	</update>
 
 
 
