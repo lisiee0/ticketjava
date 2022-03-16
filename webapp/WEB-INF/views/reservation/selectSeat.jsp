@@ -194,9 +194,6 @@ $(document).ready(function(){
 		gradetr.find('.remaining').text(remaining+'석');
 	}
 	
-	var disabledList = $('input[type="checkbox"]').prop('disabled');
-	console.log(disabledList);
-	
 });
 
 
@@ -236,11 +233,6 @@ $('#nextBtn').on('click', function(){
 		return false;
 	}
 	
-	
-	
-	
-	
-
 	var selseatList = [];
 	for(var i=0; i< chkbox.length; i++) {
 		var e = $('[type=checkbox]:checked').eq(i);
