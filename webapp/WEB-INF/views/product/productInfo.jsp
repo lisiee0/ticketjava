@@ -296,6 +296,11 @@
 		month = month + 1;
 		var date= $('.-selected-').data('date');
 		
+		if(year==null) {
+			alert('희망 관람일을 선택하세요');
+			return false;
+		}
+		
 		if(month<10) {
 			month= "0"+month;
 		}
