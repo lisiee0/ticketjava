@@ -24,6 +24,10 @@ public class ReservationDao {
 		sqlSession.delete("reservation.deletePre", rezNoList);
 	}
 
+	public void deletePreByNo(int rezNo) {
+		sqlSession.delete("reservation.deletePreByNo", rezNo);
+	}
+	
 	public void updatePayment(ReservationVo reservationVo) {
 		sqlSession.update("reservation.updatePayment",reservationVo);	
 	}
@@ -79,6 +83,8 @@ public class ReservationDao {
 		System.out.println("ReservationDao deleteReserveSeat 실행");
 		sqlSession.update("reservation.reserveSeatCancel", selseatNo);
 	}
+
+	
 
 	
 

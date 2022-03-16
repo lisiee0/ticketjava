@@ -24,6 +24,14 @@
 		</foreach>
 	</delete>
 
+	<delete id="deletePreByNo" parameterType="int">
+		<![CDATA[
+			delete
+			from reserve
+			where rez_no = #{rezNo}
+		]]>
+	</delete>
+	
 	<update id="updatePayment" parameterType="ReservationVo">
 		<![CDATA[
 			update reserve

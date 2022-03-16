@@ -60,6 +60,11 @@ public class ReservationService {
 			reservationDao.deletePre(rezNoList);
 		}
 	}
+	
+	public void preDelNow(int rezNo) {
+		reservationDao.deletePreByNo(rezNo);
+		
+	}
 
 	public Map<String, Object> selectQuantity(int rezNo) {
 		Map<String, Object> map = new HashMap<>();
@@ -124,6 +129,8 @@ public class ReservationService {
 		
 		System.out.println("리저브 서비스 selseatNo "+selseatNo);
 	}
+
+	
 
 	
 	

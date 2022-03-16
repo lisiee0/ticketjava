@@ -89,30 +89,7 @@
 								<td class="remaining">석</td>
 							</tr>
 						</c:forEach>
-						<!-- <tr>
-							<td><div class="seatColor vipSeat"></div></td>
-							<td>VIP석</td>
-							<td>140,000원</td>
-							<td class="remaining">143석</td>
-						</tr>
-						<tr>
-							<td><div class="seatColor rSeat"></div></td>
-							<td>R석</td>
-							<td>120,000원</td>
-							<td class="remaining">15석</td>
-						</tr>
-						<tr>
-							<td><div class="seatColor sSeat"></div></td>
-							<td>S석</td>
-							<td>100,000원</td>
-							<td class="remaining">43석</td>
-						</tr>
-						<tr>
-							<td><div class="seatColor aSeat"></div></td>
-							<td>A석</td>
-							<td>80,000원</td>
-							<td class="remaining">30석</td>
-						</tr>
+						<!--
 						<tr>
 							<td><div class="seatColor bSeat"></div></td>
 							<td>B석</td>
