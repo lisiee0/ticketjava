@@ -343,6 +343,19 @@
 		str +='	</tr>'
 		
 		for(var i=0; i< discountList.length; i++) {
+			var today = new Date();
+			var beginDc = new Date( new Date(discountList[i].beginDc).getTime() - 540*60*1000 );
+			var endDc = new Date( new Date(discountList[i].endDc).getTime() - 540*60*1000);
+			
+			console.log('-------------------');
+			console.log(discountList[i].dcName)
+			console.log('today: '+ today);
+			console.log('begin: '+beginDc);
+			console.log('end: ' +endDc);
+			console.log('-------------------');
+			
+			if(discountList[i].beginDc != null && ( today < beginDc || today > endDc )) 
+				continue;
 			
 			str +='	<tr>'
 			if(discountList[i].beginDc == null) {

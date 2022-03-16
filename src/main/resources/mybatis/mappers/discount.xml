@@ -6,8 +6,8 @@
 		<![CDATA[
 			select dc_no dcNo,
 				   dcname dcName,
-				   begindc beginDc,
-				   enddc endDc,
+				   to_char(begindc, 'yyyy-mm-dd') beginDc,
+				   to_char(enddc, 'yyyy-mm-dd') endDc,
 				   dcrate dcRate,
 				   dctype dcType
 			from discount
