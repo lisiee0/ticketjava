@@ -16,7 +16,7 @@ select
 from	review r, product p
 where	r.prod_no = p.prod_no
 and		r.user_no= #{userNo}
-order	by regdate desc		
+order	by reviewNo desc		
 ]]>
 	</select>
 

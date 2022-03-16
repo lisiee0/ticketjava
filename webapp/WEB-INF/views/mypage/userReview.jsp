@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -87,7 +88,7 @@
 											<tbody>
 												<tr>
 													<td>${reviewList.reviewNo}</td>
-													<td class="text-left"><a href="#">${reviewList.prodName}</a></td>
+													<td class="text-left"><a href="product/info?prodNo=${reviewList.prodNo}">${reviewList.prodName}</a></td>
 													<td>${reviewList.content}</td>
 													<td>${reviewList.rating}</td>
 													<td>${reviewList.regDate}</td>
