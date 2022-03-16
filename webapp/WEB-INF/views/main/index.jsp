@@ -37,7 +37,7 @@
 					<!-- 영상재생이 안될때 대신 보여주는 이미지 -->
 					<img src="${pageContext.request.contextPath}/assets/image/index/thumbnail_ticketjava_desktop.png">
 					<video loop="" muted="" autoplay="" playsinline="" webkit-playsinline="true">
-						<source type="video/mp4" src="assets/video/video_sports.mp4">
+						<source type="video/mp4" src="assets/video/video_index.mp4">
 					</video>
 				</div>
 
