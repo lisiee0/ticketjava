@@ -19,6 +19,7 @@
 		<typeAlias alias="NotiDataVo" type="com.ticketjava.vo.NotiDataVo" />
 		<typeAlias alias="NotificationVo" type="com.ticketjava.vo.NotificationVo" />
 		<typeAlias alias="SeatVo" type="com.ticketjava.vo.SeatVo" />
+		<typeAlias alias="ReviewVo" type="com.ticketjava.vo.ReviewVo" />
 	</typeAliases>
 	<mappers>
 		<mapper resource="mybatis/mappers/reservation.xml" />
@@ -35,5 +36,6 @@
 		<mapper resource="mybatis/mappers/detail.xml" />
 		<mapper resource="mybatis/mappers/notification.xml" />
 		<mapper resource="mybatis/mappers/seat.xml" />
+		<mapper resource="mybatis/mappers/review.xml" />
 	</mappers>
 </configuration>
