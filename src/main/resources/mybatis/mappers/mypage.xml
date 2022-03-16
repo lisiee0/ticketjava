@@ -1,38 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<!-- 삭제없이 바꾸려면 alter table selseat drop CONSTRAINT FK_reserve_TO_selseat; alter table selseat add CONSTRAINT FK_reserve_TO_selseat foreign key (rez_no) REFERENCES reserve (rez_no) on 
-	delete cascade; -->
-
 <mapper namespace="mypage">
 
-	<!-- 예매내역 리스트 -->
-	<select id="reserveList" resultType="ReservationVo" parameterType="ReservationVo">
-	<![CDATA[
-select
-        u.user_no userNo,
-        r.rez_no rezNo, 
-        to_char(r.rezdate, 'yy-mm-dd hh24:mi') rezDate,
-        r.prod_no prodNo,
-        p.prodname prodName,
-        to_char(r.viewdate, 'yy-mm-dd hh24:mi') viewDate,
-        r.ticketCount ticketCount,
-        r.status status
-        
-from (select 
-				r.rez_no,
-				r.rezdate,
-				r.viewdate,
-				r.status,
-				r.prod_no,
-				count(s.selseat_no) ticketCount
-				
-      from		reserve r, selseat s
-      where		r.rez_no = s.rez_no
-      group by	r.rez_no, r.rezdate, r.viewdate, r.status, r.prod_no) r, product p, users u
-where u.user_no= #{userNo}
-]]>
-	</select>
 
 	<!-- 예매정보 상세 -->
 	<select id="reserveDetail" resultType="ReserveDetailVo" parameterType="ReserveDetailVo">
@@ -80,3 +50,8 @@ and		selseat_no = #{selseatNo}
 4.	리저브 디테일vo에 dcNo가 없지만, 선택좌석 가져올때 dcNo가 있는데 게터가 없어서 오류있었음. 
 
 -->
+
+
+<!-- 삭제없이 바꾸려면 alter table selseat drop CONSTRAINT FK_reserve_TO_selseat; alter table selseat add CONSTRAINT FK_reserve_TO_selseat foreign key (rez_no) REFERENCES reserve (rez_no) on 
+	delete cascade; -->
+	

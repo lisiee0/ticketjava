@@ -87,7 +87,7 @@
 						<col style="width:18%">
 						<col style="">
 						<tr>
-							<td id="poster"><img src="${pageContext.request.contextPath}/assets/image/seatType/${rezProdInfo.posterPath}"></td>
+							<td id="poster"><img src="${pageContext.request.contextPath}/upload/${rezProdInfo.posterPath}"></td>
 							<td id="prodName"> ${rezProdInfo.prodName} </td>
 						</tr>
 					</table>

@@ -76,7 +76,7 @@
 									</tr>
 								</thead>
 								<tbody id="tList">
-									<c:forEach items="${hallList}" var="vo">
+									<c:forEach items="${hallList.hList}" var="vo">
 										<tr>
 											<td>${vo.theaterName}</td>
 											<c:choose>
@@ -98,6 +98,30 @@
 									</c:forEach>
 								</tbody>					
 							</table>
+							
+							<!-- 페이징 -->
+							<div class="row paging">				
+								<nav>
+								  <ul class="pagination">
+								  	<li><a href="javascript:PageMove(${hallList.paging.firstPageNo})"><span class="glyphicon glyphicon-triangle-left"></span></a></li>
+									<li class= ${hallList.paging.pageNo eq hallList.paging.startPageNo ? "disabled" : ""}><a href="javascript:PageMove(${hallList.paging.prevPageNo})"><span class="glyphicon glyphicon-menu-left"></span></a></li>
+						
+									<c:forEach var="i" begin="${hallList.paging.startPageNo}" end="${hallList.paging.endPageNo}" step="1">
+										<c:choose>
+											<c:when test="${i eq hallList.paging.pageNo}">
+												<li class= ${hallList.paging.pageNo eq i ? "active" : ""}><a href="javascript:PageMove(${i})">${i}</a></li>
+											</c:when>
+											<c:otherwise>
+												<li class= ${hallList.paging.pageNo eq i ? "active" : ""}><a href="javascript:PageMove(${i})">${i}</a></li>
+											</c:otherwise>
+										</c:choose>
+									</c:forEach>
+									
+								    <li class= ${hallList.paging.pageNo eq hallList.paging.endPageNo ? "disabled" : ""}><a href="javascript:PageMove(${hallList.paging.nextPageNo})"><span class="glyphicon glyphicon-menu-right"></span></a></li>
+								    <li><a href="javascript:PageMove(${hallList.paging.finalPageNo})"><span class="glyphicon glyphicon-triangle-right"></span></a></li>
+								  </ul>
+								</nav>
+							</div>
 						</div>
 						<!-- // content body -->
 						
@@ -115,5 +139,15 @@
 
 
 </body>
+
+
+<script>
+
+	function PageMove(page) {
+		location.href = "${pageContext.request.contextPath}/admin/?crtPage=" + page;
+	}
+
+</script>
+
 
 </html>

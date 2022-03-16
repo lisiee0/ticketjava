@@ -98,16 +98,13 @@
 			
 			<div id="myReq">
 				<h2>나의 신청</h2>
-				<p id="myReqText"></p> 
+				<div id="myReqDetail"></div> 
 			</div>
 			
 			<div id="button">
-				<form id="notiReqForm" action="${pageContext.request.contextPath}/notification/addNotireq" method="post">
-					<button id="notiReqBtn" type="button" class="btn-primary">알림 신청</button>
-					<input type="hidden" name="prodNo" value="${param.prodNo}">
-					<input type="hidden" name="viewDate" value="${param.viewDate}">
-					
-				</form>
+				<input type="hidden" name="prodNo" value="${param.prodNo}">
+				<input type="hidden" name="viewDate" value="${param.viewDate}">
+				<div id="dynamicBtn"></div>
 			</div>
 		</div>
 		
@@ -120,17 +117,14 @@
 	var viewDate = '${param.viewDate}';
 	var prodNo = '${param.prodNo}';
 	$(document).ready(function(){
-		$("#side #count select").append('<option value="1000000">계속</option>');
-		for(var i=1; i<=10 ; i++){
-			$("#side #count select").append('<option value="'+i+'">'+i+'</option>');
-		}
-		
-		
 		$('input[type=checkbox]').on('click',function(){
 			return false;
 		});
 		
-		
+		$("#side #count select").append('<option value="1000000">계속</option>');
+		for(var i=1; i<=10 ; i++){
+			$("#side #count select").append('<option value="'+i+'">'+i+'</option>');
+		}
 		
 		var rezVo = {
 				viewDate: viewDate ,
@@ -185,6 +179,7 @@
 			url: "${pageContext.request.contextPath}/notireq/myNotireq",
 			type : "post",
 			data : notireqVo,
+			async : false,
 			dataType: "json",
 			success : function(notireqVo){
 				console.log(notireqVo);
@@ -194,29 +189,32 @@
 					return false;
 				}
 				
-				/* var interval = notireqVo.interval;
-				if(interval == 0)
-					interval = '간격 없음';
-				else
-					interval += '초';
-				*/
 				var notiTimes = notireqVo.notiTimes;
 				if(notiTimes > 100)
 					notiTimes = '계속';
 				else
 					notiTimes += '회';
 				
-				
-				$('#myReqText').html(selSection+'구역 / '+notiTimes+ '<span id="reqDel" class="glyphicon glyphicon-remove" aria-hidden="true" data-reqno="'+notireqVo.reqNo+'"></span>'  );
+				$('#myReqDetail').html('<p>선택 구역 : '+selSection + '</p><p>남은 횟수 : '+notiTimes+'</p>');
 			},
 			error : function(XHR, status, error) {
 				console.error(status + " : " + error);
 			}
 		});
+		console.log($('#myReqDetail').text());
+		if($('#myReqDetail').text() != '') {
+			$('#dynamicBtn').html('<button id="reqDel" type="button" class="btn-default">알림 취소</button>');
+		}
+		else{
+			$('#dynamicBtn').html('<button id="notiReqBtn" type="button" class="btn-primary">알림 신청</button>');
+		}
+		
 		
 	});
 	
-	$('#notiReqBtn').on('click',function(){
+	
+	
+	$('#button').on('click','#notiReqBtn',function(){
 		var selSection = $('label.active').text();
 		
 		if(selSection == ''){
@@ -224,14 +222,11 @@
 			return false;
 		}
 		
-		/* var interval = $('#interval select').val(); */
 		var notiTimes = $('#count select').val();
-		
 		var notireqVo = {
 				prodNo:prodNo,
 				viewDate:viewDate,
 				selSection:selSection,
-				/* interval:interval, */
 				notiTimes:notiTimes
 		}
 		
@@ -245,16 +240,13 @@
 				if(result == 'fail')
 					alert('신청이 존재합니다');
 				else{
-					/* if(interval == 0)
-						interval = '간격 없음';
-					else
-						interval += '초'; */
 					if(notiTimes > 100)
 						notiTimes = '계속';
 					else
 						notiTimes += '회';
 					alert('신청됐습니다');
-					$('#myReqText').html(selSection+'구역 / '+notiTimes+ '<span id="reqDel" class="glyphicon glyphicon-remove" aria-hidden="true"></span>'  );
+					$('#myReqDetail').html('<p>선택 구역 : '+selSection + '</p><p>남은 횟수 : '+notiTimes+'</p>');
+					$('#dynamicBtn').html('<button id="reqDel" type="button" class="btn-default">알림 취소</button>');
 				}
 			},
 			error : function(XHR, status, error) {
@@ -264,7 +256,7 @@
 		
 	});
 
-	$('#myReq').on('click','#reqDel',function(){
+	$('#button').on('click','#reqDel',function(){
 		var notireqVo = {
 				prodNo:prodNo,
 				viewDate:viewDate
@@ -278,7 +270,8 @@
 			success : function(result){
 				if(result == "success"){
 					alert('취소됐습니다');
-					$('#myReqText').html('');
+					$('#myReqDetail').html('');
+					$('#dynamicBtn').html('<button id="notiReqBtn" type="button" class="btn-primary">알림 신청</button>');
 				}
 			},
 			error : function(XHR, status, error) {

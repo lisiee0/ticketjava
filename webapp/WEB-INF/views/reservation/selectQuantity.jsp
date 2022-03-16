@@ -75,7 +75,7 @@
 						<col style="width:18%">
 						<col style="">
 						<tr> 
-							<td id="poster"><img src="${pageContext.request.contextPath}/assets/image/seatType/${rezProdInfo.posterPath}"></td>
+							<td id="poster"><img src="${pageContext.request.contextPath}/upload/${rezProdInfo.posterPath}"></td>
 							<td id="prodName"> ${rezProdInfo.prodName} </td>
 						</tr>
 					</table>
@@ -207,7 +207,7 @@
 		
 		if(selCount > gradeCount){
 			$(this).val('0');
-			alert('매수의 합이 '+gradeCount+'이(가) 되도록 다시 선택해주세요.');
+			alert('좌석 매수를 초과하여 권종을 선택할 수 없습니다.');
 		}
 		
 		var ticketPrice=0;
@@ -223,6 +223,23 @@
 		
 	});
 	
+	$('#prevBtn').on('click', function(){
+		
+		var rezNo = ${param.rezNo};
+		$.ajax({
+			url: "${pageContext.request.contextPath}/reservation/preDelNow",
+			type : "post",
+			data: {rezNo:rezNo},
+			success : function(){
+				location.href = '${pageContext.request.contextPath}/reservation/selectSeat?prodNo=${param.prodNo}&viewDate=${param.viewDate}';
+			},
+			error : function(XHR, status, error) {
+				console.error(status + " : " + error);
+			}
+		});
+		
+	});
+	
 	$('#nextBtn').on("click", function(){
 		
 		var allSelect = $('select');
@@ -232,7 +249,7 @@
 		}
 		// 총 티켓수만큼 선택했는지 확인
 		if(totalTicket != ticketCount){
-			alert('매수를 모두 선택해주세요');
+			alert('선택하신 좌석수와 예매하실 티켓매수가 일치하지 않습니다.');
 			return false;
 		}
 		

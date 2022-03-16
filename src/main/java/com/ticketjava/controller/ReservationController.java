@@ -16,11 +16,9 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.ticketjava.service.ReservationService;
 import com.ticketjava.service.SeatpriceService;
-import com.ticketjava.service.SelseatService;
 import com.ticketjava.vo.ReservationVo;
 import com.ticketjava.vo.RezProdInfoVo;
 import com.ticketjava.vo.SeatpriceVo;
-import com.ticketjava.vo.SelseatVo;
 
 
 @Controller
@@ -31,14 +29,16 @@ public class ReservationController {
 	private ReservationService reservationService;
 	
 	@Autowired
-	private SelseatService selseatService;
-	
-	@Autowired
 	private SeatpriceService seatpriceService;
 	
 	@RequestMapping("/selectSeat")
-	public String selectSeat(@RequestParam("prodNo") int prodNo,
+	public String selectSeat(@RequestParam(value = "rezNo", required=false, defaultValue="0") int rezNo,
+							 @RequestParam("prodNo") int prodNo,
 							 Model model) {
+		if(rezNo != 0) {
+			System.out.println("선점 삭제");
+		}
+		
 		List<SeatpriceVo> seatpriceList = seatpriceService.seatpriceList(prodNo);
 		model.addAttribute("seatpriceList", seatpriceList);
 		
@@ -54,6 +54,14 @@ public class ReservationController {
 		reservationService.preDel();
 		return "성공";
 	}
+	
+	@ResponseBody
+	@RequestMapping("/preDelNow")
+	public String preDelNow(@RequestParam("rezNo") int rezNo) {
+		reservationService.preDelNow(rezNo);
+		return "";
+	}
+	
 	
 	@ResponseBody
 	@RequestMapping("/preoccupy")

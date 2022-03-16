@@ -24,6 +24,14 @@
 		</foreach>
 	</delete>
 
+	<delete id="deletePreByNo" parameterType="int">
+		<![CDATA[
+			delete
+			from reserve
+			where rez_no = #{rezNo}
+		]]>
+	</delete>
+	
 	<update id="updatePayment" parameterType="ReservationVo">
 		<![CDATA[
 			update reserve
@@ -77,14 +85,14 @@
 
 
 	<!-- 마이페이지 예매내역 리스트 -->
-	<select id="reserveList" resultType="ReservationVo" parameterType="ReservationVo">
+	<select id="reserveList" resultType="ReserveDetailVo" parameterType="ReserveDetailVo">
 	<![CDATA[
 select
         r.rez_no rezNo, 
-        to_char(r.rezdate, 'yy-mm-dd hh24:mi') rezDate,
+        to_char(r.rezdate, 'yy-mm-dd hh24:mi') rezdate,
         r.prod_no prodNo,
-        p.prodname prodName,
-        to_char(r.viewdate, 'yy-mm-dd hh24:mi') viewDate,
+        p.prodname prodname,
+        to_char(r.viewdate, 'yy-mm-dd hh24:mi') viewdate,
         r.ticketCount ticketCount,
         r.status status
         

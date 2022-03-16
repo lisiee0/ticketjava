@@ -127,9 +127,9 @@
 												<tbody>
 													<tr>
 														<td>${reserveList.rezNo}</td>
-														<td>${reserveList.rezDate}</td>
-														<td class="text-left"><a href="#">${reserveList.prodName}</a></td>
-														<td>${reserveList.viewDate}/${reserveList.ticketCount}매</td>
+														<td>${reserveList.rezdate}</td>
+														<td class="text-left"><a href="#">${reserveList.prodname}</a></td>
+														<td>${reserveList.viewdate}/${reserveList.ticketCount}매</td>
 
 														<c:choose>
 															<c:when test="${reserveList.status eq 1}">
