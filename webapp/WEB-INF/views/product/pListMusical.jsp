@@ -7,6 +7,11 @@
 <meta charset="UTF-8">
 <title>TicketJava include</title>
 
+
+
+<!-- 메인페이지 디자인 css  -->
+<link href="${pageContext.request.contextPath}/assets/css/ticketjavaIndexDesign.css" rel="stylesheet" type="text/css">
+
 <!-- 부트스트랩 Bootstrap core CSS -->
 <link href="${pageContext.request.contextPath}/assets/bootstrap/css/bootstrap.css" rel="stylesheet">
 
@@ -38,7 +43,7 @@
 						<!-- 영상재생이 안될때 대신 보여주는 이미지 -->
 						<img src="${pageContext.request.contextPath}/assets/image/index/thumbnail_ticketjava_desktop.png">
 						<video loop="" muted="" autoplay="" playsinline="" webkit-playsinline="true">
-							<source type="video/mp4" src="assets/video/video_musical.mp4">
+						<source type="video/mp4" src="assets/video/video_index.mp4">
 						</video>
 					</div>
 
