@@ -19,15 +19,16 @@
 
 <body>
 
-	<div class="datepicker-here" data-language='ko'></div>
+	<div id="rezCal" class="datepicker-here" data-language='ko'></div>
 
 </body>
 
 
 <script>
 
+
 	//한개만 단순하게 만들때
-	$("#datepicker").datepicker({
+	$("#rezCal").datepicker({
 		language : 'ko'
 	});
 
@@ -49,8 +50,8 @@
 		//시작 ~ 종료 2개 짜리 달력 datepicker	
 		if (!isValidStr(sDate) && !isValidStr(eDate) && sDate.length > 0
 				&& eDate.length > 0) {
-			var sDay = sDate.val();
-			var eDay = eDate.val();
+			var sDay = $("#beginShow").val();
+			var eDay = $("#endShow").val();
 
 			if (flag && !isValidStr(sDay) && !isValidStr(eDay)) { //처음 입력 날짜 설정, update...			
 				var sdp = sDate.datepicker().data("datepicker");
@@ -110,8 +111,6 @@
 				return false;
 		}
 	}
-	 
-	 
 </script>
 
 </html>

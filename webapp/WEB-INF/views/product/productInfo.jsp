@@ -98,6 +98,8 @@
 								<form id="rezArea" method="post" action="">
 									<c:import url="/WEB-INF/views/include/calendar.jsp"></c:import>
 									<input id="prodNo" type="hidden" name="prodNo" value="${product.vo.prodNo}">
+									<input id="beginshow" type="hidden" value="${product.vo.beginShow}">
+									<input id="endshow" type="hidden" value="${product.vo.endShow}">
 									<button type="button" id="rezBtn" class="btn btn-primary btn-block">예매하기</button>
 								</form>
 							
@@ -289,6 +291,25 @@
 
 <script>
 
+	var today = new Date();
+	var beginshow = new Date($('#beginshow').val());
+	var md = new Date();
+
+	if(today>beginshow) {
+		md= today;
+		console.log(md);
+	}
+	else {
+		md= beginshow;
+		console.log(md);
+	}
+	
+	$("#rezCal").datepicker({
+
+		minDate : new Date(md),
+	  	maxDate : new Date($('#endshow').val())
+	});
+	
 	$("#rezBtn").on("click", function() {
 		
 		var year= $('.-selected-').data('year');
