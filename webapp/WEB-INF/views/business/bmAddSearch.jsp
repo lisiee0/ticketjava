@@ -1,4 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
 <!doctype html>
 <html>
 
@@ -14,6 +16,9 @@
 <link href="${pageContext.request.contextPath}/assets/css/bm/bmNewTab.css" rel="stylesheet">
 <link href="${pageContext.request.contextPath}/assets/css/bm/bmAddSearch.css" rel="stylesheet">
 
+<script type="text/javascript" src="${pageContext.request.contextPath}/assets/jquery/jquery-1.12.4.js"></script>
+
+
 </head>
 
 <body>
@@ -28,53 +33,38 @@
 						<col style="width: 15%">
 					</colgroup>
 					<tr>
-						<th><input class="form-control" id="searchArea" type="text" value="세종문화회관"></th>
-						<td><button type="button" id="searchBtn">검색버튼</button>
-</td>
+						<th><input class="form-control" id="searchArea" type="text" name="keyword"></th>
+						<td><button type="button" id="searchBtn">검색버튼</button></td>
 					</tr>
 				</table>
 			</div>
 
 			<div id="searchText">
 				<p>
-					<span>'세종문화회관'</span> 에 대한 검색 결과입니다.
+					<span>"${result.hkey}"</span> 에 대한 검색 결과입니다.
 				<p>
 			</div>
 
 			<div id="searchResult">
-				<c:forEach>
-				
-				
+				<c:forEach items="${bmAddSearch}" var="vo" varStatus="vS">
+					<table>
+						<colgroup>
+							<col style="width: 23%">
+							<col style="">
+							<col style="">
+							<col style="width: 10%">
+						</colgroup>
+							<tr>
+								<th class="theaterN" name="theaterNanme">${vo.theaterName}</th>
+								<td class="theaterH" name="hallName">${vo.hallName}</td>
+								<td id="theaterA" name="address">${vo.address}</td>
+								<td>
+									<button type="submit" class="btn-primary">선택</button>
+								</td>
+							</tr>
+					</table>
 				</c:forEach>
 
-				<table>
-					<colgroup>
-						<col style="width: 83%">
-						<col style="width: 17%">
-					</colgroup>
-
-					<tr>
-						<th id="tdwhere" name="theaterName">세종문화회관 1관</th>
-						<td>
-							<button class="btn-primary">선택</button>
-						</td>
-					</tr>
-
-				</table>
-				<table>
-					<colgroup>
-						<col style="width: 83%">
-						<col style="width: 17%">
-					</colgroup>
-
-					<tr>
-						<th id="tdwhere" name="theaterName">세종문화회관 2관</th>
-						<td>
-							<button class="btn-primary">선택</button>
-						</td>
-					</tr>
-
-				</table>
 				<table>
 					<colgroup>
 						<col style="width: 83%">
@@ -100,9 +90,3 @@
 </body>
 
 </html>
-
-<script>
-	
-
-
-</script>

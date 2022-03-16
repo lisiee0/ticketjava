@@ -40,7 +40,7 @@
 
 }
 
-#wrapMain #searchResult th#tdwhere{
+#wrapMain #searchResult th.tdwhere{
 	padding: 0px 0px px 10px;
 	vertical-align:middle;
 }

@@ -12,14 +12,6 @@ public class DetailDao {
 	@Autowired
 	private SqlSession sqlsession;
 	
-	//공연 상세정보 추가
-//	public void detailUpload(DetailVo dvo) {
-//		System.out.println("DetailDao/detailUpload");	
-//		System.out.println(dvo);
-//		
-//		sqlsession.insert("detail.detailUpload", dvo);
-//	}
-	
 	//공연 이미지파일 추가 <<<<< 공연 정보
 	public void prodAdd(DetailVo detailVo) {
 		System.out.println("DetailDao/prodAdd");
@@ -33,6 +25,7 @@ public class DetailDao {
 		System.out.println("DetailDao/castingAdd");
 		
 		sqlsession.update("detail.castingAdd", detailVo);
+		System.out.println("castingAdd 업로드 성공");
 	}
 	
 	//공연 이미지파일 업데이트 <<<<< 부가 정보
@@ -40,6 +33,7 @@ public class DetailDao {
 		System.out.println("DetailDao/addedAdd");
 		
 		sqlsession.update("detail.addedAdd", detailVo);
+		System.out.println("addedAdd 업로드 성공");
 	}
 	
 	//호준이형님이 작업하신거

@@ -88,6 +88,24 @@
 								</div>
 							</div>
 
+							<!-- 공연장명 -->
+							<div class="form-group">
+								<label class="form-text col-md-2 form-id" for="">공연장명</label>
+								<!-- 공연장명-->
+								<div class="col-md-8">
+									<div class="form-group">
+										<div class="col-md-4">
+											<input type="text" class="form-control" id="addWhere" placeholder="세종문화회관 1관" readonly>
+										</div>
+										<div class="col-md-3">
+											<a href="#">
+												<button type="button" onclick="location.href = '${pageContext.request.contextPath}/bm/bmAddSearch' " class="btn btn-primary">검색</button>
+											</a>
+										</div>
+									</div>
+								</div>
+							</div>
+
 							<!-- 공연 구분 -->
 							<div class="form-group">
 								<label class="form-text col-md-2 form-id" for="">공연 구분</label>
@@ -192,7 +210,7 @@
 										<button type="button" id="addGrade" class="btn">+</button>
 										<br>
 									</div>
-									
+
 									<!--좌석추가 Script -->
 									<div id="bmNameArea"></div>
 
@@ -282,8 +300,7 @@
 							</div>
 							<!-- hidden -->
 							<div>
-							<input type="hidden" id="status" name="status" value="1">
-							<input type="hidden" id="userNo" name="userNo" value="2">
+								<input type="hidden" id="status" name="status" value="1"> <input type="hidden" id="userNo" name="userNo" value="2">
 							</div>
 
 						</div>
@@ -306,31 +323,33 @@
 	<!-- wrap 종료 -->
 
 </body>
-<!-- productDisList: [{dcName:"A", dcRate: "20000", dcType: "0"}, {dcName:"S", dcRate: "20000", dcType: "1"}] -->
-
 
 
 
 <script type="text/javascript">
 	//등급추가 버튼
-	$("#addGrade")	.on("click", function() {
-			var gra = $("#grade").val();
-			var selp = $("#price").val();
-			console.log(gra);
-			console.log(selp);
+	$("#addGrade")
+			.on(
+					"click",
+					function() {
+						var gra = $("#grade").val();
+						var selp = $("#price").val();
+						console.log(gra);
+						console.log(selp);
 
-			$("#bmNameArea").append(
-				'<div class="form-group">'
-						+ '<div class="col-md-4">'
-						+ '<input type="text" class="form-control selGrade" name="grade" value="'+gra+'" readonly>'
-						+ '</div>'
-						+ '<div class="col-md-4">'
-						+ '<input type="text" class="form-control selPrice" name="price" value="'+selp+'" readonly>'
-						+ '</div>'
-						+ '&nbsp;'
-						+ '<button type="button" id="delGrade" class="btn">-</button>'
-				+ '</div>');
-		});
+						$("#bmNameArea")
+								.append(
+										'<div class="form-group">'
+												+ '<div class="col-md-4">'
+												+ '<input type="text" class="form-control selGrade" name="grade" value="'+gra+'" readonly>'
+												+ '</div>'
+												+ '<div class="col-md-4">'
+												+ '<input type="text" class="form-control selPrice" name="price" value="'+selp+'" readonly>'
+												+ '</div>'
+												+ '&nbsp;'
+												+ '<button type="button" id="delGrade" class="btn">-</button>'
+												+ '</div>');
+					});
 
 	//등급삭제 버튼
 	$("#delGrade").on("click", function() {
@@ -340,35 +359,39 @@
 	var productDisList = []
 
 	//할인정보 '+' 버튼 클릭될 떄
-	$("#addDis").on("click", function() {
-			//데이터 수집
-			var dcName = $("#dcName").val();
-			var dcRate = $("#dcRate").val();
-			var dcType = $("#dcType").val();
+	$("#addDis").on(
+			"click",
+			function() {
+				//데이터 수집
+				var dcName = $("#dcName").val();
+				var dcRate = $("#dcRate").val();
+				var dcType = $("#dcType").val();
 
-			//데이터 찍어보기
-			console.log(dcName);
-			console.log(dcRate);
-			console.log(dcType);
+				//데이터 찍어보기
+				console.log(dcName);
+				console.log(dcRate);
+				console.log(dcType);
 
-			if (dcType == 0) {
-				$("#bmDisArea").append(
-						'<div class="form-group form-data disRate">' + dcName
-								+ ' (' + dcRate + '% 할인됨)' + '</div>');
-			} else {
-				$("#bmDisArea").append(
-						'<div class="form-group form-data disRate">' + dcName
-								+ ' (' + dcRate + '원 할인됨)' + '</div>');
-			}
+				if (dcType == 0) {
+					$("#bmDisArea").append(
+							'<div class="form-group form-data disRate">'
+									+ dcName + ' (' + dcRate + '% 할인됨)'
+									+ '</div>');
+				} else {
+					$("#bmDisArea").append(
+							'<div class="form-group form-data disRate">'
+									+ dcName + ' (' + dcRate + '원 할인됨)'
+									+ '</div>');
+				}
 
-			var productDis = {
-				dcName : dcName,
-				dcRate : dcRate,
-				dcType : dcType
-			};
-			productDisList.push(productDis);
+				var productDis = {
+					dcName : dcName,
+					dcRate : dcRate,
+					dcType : dcType
+				};
+				productDisList.push(productDis);
 
-		});
+			});
 
 	//공연정보 클릭할때
 	$("#addbtn").on("click", function() {
@@ -392,7 +415,7 @@
 		var ProductVo = {
 			prodName : $("#prodName").val(),
 			userNo : $("#userNo").val(),
-			
+
 			prodType : $("#prodType").val(),
 			beginShow : $("#beginShow").val(),
 			endShow : $("#endShow").val(),
@@ -416,7 +439,7 @@
 			type : "post",
 			traditional : true,
 			contentType : "application/json",
-			data : JSON.stringify(ProductVo), 	
+			data : JSON.stringify(ProductVo),
 
 			/* 성공 시 처리해야 될 코드 작성 */
 			success : function(prodNo) {
@@ -430,7 +453,7 @@
 				var addedPath = $("#addedPath")[0].files[0]
 
 				fileupload(prodNo, posterPath, 1);
-				
+
 				fileupload(prodNo, prodPath, 2);
 				fileupload(prodNo, castingPath, 3);
 				fileupload(prodNo, addedPath, 4);
@@ -467,7 +490,6 @@
 			}
 		});
 	}
-
 </script>
 </html>
 

@@ -44,12 +44,13 @@
 
 
 	<!-- 공연 이미지파일 추가 <<<<< 포스터 정보 -->
-	<insert id="posterAdd" parameterType="ProductVo">
+	<update id="posterAdd" parameterType="ProductVo">
 		<![CDATA[
-			insert into product	(prod_no, posterPath) 
-							VALUES	(#{prodNo}, #{posterPath})
+			update 	product
+			set 		posterPath = #{posterPath}
+			where 	prod_no = #{prodNo}
 		]]>
-	</insert>
+	</update>
 
 	<!-- 공연 삭제 -->
 	<delete id="productDelete" parameterType="ProductVo">

@@ -2,15 +2,6 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="detail">
 
-	<!-- detail테이블 파일 추가 -->
-	<!-- <insert id="detailUpload" parameterType="DetailVo"> -->
-	<!-- <![CDATA[ -->
-	<!-- insert into detail (DETAIL_NO, prodpath, castingpath, addedpath) -->
-	<!-- values (seq_detail_no.nextval, #{prodPath}, #{castingPath}, #{addedPath}) -->
-	<!-- ]]> -->
-	<!-- </insert> -->
-
-
 	<select id="getDetail" parameterType="DetailVo" resultType="DetailVo">
 		<![CDATA[
 			select			detail_no detailNo, 

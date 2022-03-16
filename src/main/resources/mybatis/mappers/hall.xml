@@ -9,7 +9,35 @@
 		]]>
 	</insert>
 	
+		<!-- 공연장 리스트-->
+	<select id="bmhallList" parameterType="HallVo" resultType="HallVo">
+		<![CDATA[
+			select  t.theatername   		theaterName,
+				        h.hallname      	hallName,
+				        t.address       	address
+        
+			from 	theater t, hall h
+			where 	t.theater_no = h.theater_no
+			
+		
+		]]>
+	</select>
 	
+	<!-- 공연장 리스트 검색-->
+	<select id="bmHallSearchList" parameterType="String" resultType="HallVo">
+		<![CDATA[
+			select  t.theatername   		theaterName,
+				        h.hallname      	hallName,
+				        t.address       	address
+        
+			from 	theater t, hall h
+			where 	t.theater_no = h.theater_no
+					and t.theatername like '%'#{hKey}'%'
+		
+		]]>
+	</select>
+
+
 	<select id="getHallList" resultType="HallVo">
 		<![CDATA[
 			select			t.theater_no theaterNo, 
@@ -27,8 +55,8 @@
 			order by 		theaterNo desc, hall_no desc
 		]]>
 	</select>
-	
-	
+
+
 	<select id="getHall" parameterType="HallVo" resultType="HallVo">
 		<![CDATA[
 			select			t.theater_no theaterNo, 
@@ -46,7 +74,7 @@
 			and 			hall_no= #{hallNo}	
 		]]>
 	</select>
-	
+
 	<update id="update" parameterType="HallVo">
 		<![CDATA[
 			update			hall
@@ -54,13 +82,13 @@
 			where 			hall_no= #{hallNo}
 		]]>
 	</update>
-	
-	
+
+
 	<delete id="delete" parameterType="HallVo">
 		<![CDATA[
 			delete from hall
 			where 		hall_no= #{hallNo}
 		]]>
 	</delete>
-	
+
 </mapper>

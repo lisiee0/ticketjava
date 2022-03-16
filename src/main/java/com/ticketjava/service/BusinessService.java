@@ -15,8 +15,10 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.ticketjava.dao.DetailDao;
 import com.ticketjava.dao.DiscountDao;
+import com.ticketjava.dao.HallDao;
 import com.ticketjava.dao.ProductDao;
 import com.ticketjava.vo.DetailVo;
+import com.ticketjava.vo.HallVo;
 import com.ticketjava.vo.ProductVo;
 
 @Service
@@ -28,6 +30,8 @@ public class BusinessService {
 	private DetailDao td;
 	@Autowired
 	private DiscountDao dd;
+	@Autowired
+	private HallDao hd;
 
 	// 공연 목록 불러오기
 	public List<ProductVo> getProductList() {
@@ -36,11 +40,18 @@ public class BusinessService {
 		return pd.getProductList();
 	}
 
+	// 공연 목록 불러오기
+	public List<HallVo> bmAddSearch() {
+		System.out.println("BusinessServiece > bmAddSearch");
+
+		
+		return hd.bmAddSearch();
+	}
+
 	// 공연 업로드 (파일 제외)
 	public int productUpload(ProductVo productVo) {
 		System.out.println("BusinessServiece/productUpload");
-		
-		
+
 		return pd.productUpload(productVo);
 	}
 
@@ -78,7 +89,7 @@ public class BusinessService {
 			e.printStackTrace();
 		}
 
-		System.out.println("파일 이름: " + file.getOriginalFilename());
+		System.out.println("order name : " + order + ", 파일 이름: " + file.getOriginalFilename());
 
 //		// db 저장
 		if (order == 1) { // order : 1
