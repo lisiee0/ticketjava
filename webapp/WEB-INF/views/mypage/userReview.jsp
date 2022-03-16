@@ -92,11 +92,11 @@
 													<td id="space" class="text-left"><a href="product/info?prodNo=${reviewList.prodNo}">${reviewList.prodName}</a></td>
 													<td id="space">${reviewList.content}</td>
 													<td><c:choose>
+															<c:when test="${reviewList.rating >= 10}"> ★★★★★ </c:when>
 															<c:when test="${reviewList.rating >= 8}"> ★★★★ </c:when>
 															<c:when test="${reviewList.rating >= 6}"> ★★★ </c:when>
 															<c:when test="${reviewList.rating >= 4}"> ★★ </c:when>
-															<c:when test="${reviewList.rating >= 2}"> ★ </c:when>
-															<c:otherwise> ★★★★★ </c:otherwise>
+															<c:otherwise> ★ </c:otherwise>
 														</c:choose> ${reviewList.rating}</td>
 													<td>${reviewList.regDate}</td>
 													<td><button class="btn btn-primary btnM" type="submit" id="btn-submit">수정</button>
