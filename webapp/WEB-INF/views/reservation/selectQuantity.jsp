@@ -231,7 +231,7 @@
 			type : "post",
 			data: {rezNo:rezNo},
 			success : function(){
-				location.href = '${pageContext.request.contextPath}/reservation/selectSeat?prodNo=${param.prodNo}&viewDate=${param.viewDate}';
+				location.replace('${pageContext.request.contextPath}/reservation/selectSeat?prodNo=${param.prodNo}&viewDate=${param.viewDate}');
 			},
 			error : function(XHR, status, error) {
 				console.error(status + " : " + error);
@@ -296,7 +296,11 @@
 			data : rezVo,
 			dataType: "json",
 			success : function(result){
-				
+				console.log(result);
+				if(result == 'fail'){
+					alert('선점이 만료됐습니다. 처음부터 진행해주세요');
+					location.replace('${pageContext.request.contextPath}/reservation/selectSeat?prodNo=${param.prodNo}&viewDate=${param.viewDate}');
+				}
 			},
 			error : function(XHR, status, error) {
 				console.error(status + " : " + error);
@@ -347,12 +351,12 @@
 			var beginDc = new Date( new Date(discountList[i].beginDc).getTime() - 540*60*1000 );
 			var endDc = new Date( new Date(discountList[i].endDc).getTime() - 540*60*1000);
 			
-			console.log('-------------------');
+			/* console.log('-------------------');
 			console.log(discountList[i].dcName)
 			console.log('today: '+ today);
 			console.log('begin: '+beginDc);
 			console.log('end: ' +endDc);
-			console.log('-------------------');
+			console.log('-------------------'); */
 			
 			if(discountList[i].beginDc != null && ( today < beginDc || today > endDc )) 
 				continue;

@@ -76,8 +76,15 @@ public class ReservationService {
 	} 
 	
 
-	public void modifyPayment(ReservationVo reservationVo) {
+	public String modifyPayment(ReservationVo reservationVo) {
+		
+		int count = reservationDao.selectPre(reservationVo.getRezNo());
+		if(count <= 0) {
+			return "fail";
+		}
+		
 		reservationDao.updatePayment(reservationVo);
+		return "success";
 	}
 
 	public Map<String, Object> confirmReservation(int rezNo) {
@@ -88,6 +95,8 @@ public class ReservationService {
 		map.put("selList", selList);
 		return map;
 	}
+	
+	
 
 	public void finalPayment(ReservationVo reservationVo) {
 		reservationDao.updateInfo(reservationVo);

@@ -84,6 +84,10 @@ public class ReservationDao {
 		sqlSession.update("reservation.reserveSeatCancel", selseatNo);
 	}
 
+	public int selectPre(int rezNo) {
+		return sqlSession.selectOne("reservation.selectPre", rezNo);
+	}
+
 	
 
 	

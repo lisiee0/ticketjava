@@ -85,8 +85,7 @@ public class ReservationController {
 	@ResponseBody
 	@RequestMapping("/modifyPayment")
 	public String modifyPayment(@ModelAttribute ReservationVo reservationVo) {
-		reservationService.modifyPayment(reservationVo);
-		return "성공";
+		return reservationService.modifyPayment(reservationVo);
 	}
 	
 	@RequestMapping("/confirmReservation")
