@@ -201,7 +201,7 @@
 					interval += '초';
 				*/
 				var notiTimes = notireqVo.notiTimes;
-				if(notiTimes == 1000000)
+				if(notiTimes > 100)
 					notiTimes = '계속';
 				else
 					notiTimes += '회';
@@ -249,7 +249,7 @@
 						interval = '간격 없음';
 					else
 						interval += '초'; */
-					if(notiTimes == 1000000)
+					if(notiTimes > 100)
 						notiTimes = '계속';
 					else
 						notiTimes += '회';

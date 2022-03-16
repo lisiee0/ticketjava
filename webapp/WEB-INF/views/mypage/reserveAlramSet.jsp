@@ -80,7 +80,7 @@
 												<th>알림신청일</th>
 												<th>상품명</th>
 												<th>구역</th>
-												<th>횟수</th>
+												<th>남은 횟수</th>
 												<th>설정</th>
 												<th>알림상태</th>
 											</tr>
@@ -95,7 +95,7 @@
 													<td>${vo.selSection}</td>
 													<td>
 														<c:choose>
-															<c:when test="${vo.notiTimes == 1000000}">
+															<c:when test="${vo.notiTimes > 100}">
 																계속
 															</c:when>
 															<c:otherwise> 
