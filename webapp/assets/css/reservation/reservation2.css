@@ -2,7 +2,7 @@
 
 #side {  display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 1.2fr 0.4fr 0.4fr  0.3fr;
+  grid-template-rows: 1.3fr 0.4fr 0.5fr  0.3fr;
   gap: 0px 0px;
   grid-auto-flow: row;
   grid-template-areas:
@@ -47,7 +47,7 @@
 	
 }
 #containerBody #section #sectionBtn{
-	height:250px;
+	height:275px;
 	overflow:auto;
 	text-align:center;
 }
@@ -80,7 +80,7 @@
 
 #containerBody #side #myReq{
 	border-top:1px solid #ccc;
-	padding-top:12px;
+	padding-top:20px;
 }
 
 
