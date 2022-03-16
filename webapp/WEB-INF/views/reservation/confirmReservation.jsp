@@ -143,8 +143,13 @@
 			</div>
 			<div id="button">
 				<div class="clearfix" id="prevNext">
-					<button class="btn-outline-primary" type="button" id="prevBtn">이전단계</button>
-					<button class="btn-primary" type="button" id="paymentBtn">결제하기 </button> 
+					<form action="${pageContext.request.contextPath}/reservation/selectQuantity">
+						<button class="btn-outline-primary" type="submit" id="prevBtn">이전단계</button>
+						<input type="hidden" name="prodNo" value="${param.prodNo}">
+						<input type="hidden" name="viewDate" value="${param.viewDate}">
+						<input type="hidden" name="rezNo" value="${param.rezNo}">
+					</form>
+					<button class="btn-primary" type="button" id="nextBtn">결제하기 </button> 
 				</div>
 			</div>
 		</div>
@@ -152,11 +157,11 @@
 </body>
 
 <script type="text/javascript">
-	$('#paymentBtn').on('click', function(){
+
+	$('#nextBtn').on('click', function(){
 		var rezNo = <c:out value="${param.rezNo}" />;
 		var phone = $('#phone').val();
 		var email = $('#email').val();
-		
 		
 		var rezVo = {
 			rezNo:rezNo,
