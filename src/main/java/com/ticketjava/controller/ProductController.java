@@ -86,6 +86,13 @@ public class ProductController {
 	}
 	
 	
-
+	// 뮤지컬 불러오기
+	@RequestMapping("/pListMusical")
+	public String pListMusical(Model model) {
+		
+		model.addAttribute("type", productService.typeList(1));
+		return "product/pListMusical";
+	}
+	
 	
 }
