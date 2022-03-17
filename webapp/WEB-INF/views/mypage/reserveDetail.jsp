@@ -119,22 +119,32 @@
 													<th scope="col">좌석번호(col/num)</th>
 													<th scope="col">가격</th>
 													<th scope="col">예매상태</th>
+													<th scope="col">관리</th>
 												</tr>
 
 												<c:forEach items="${requestScope.rMap.reserveSeatList}" var="vo">
 													<tr>
 														<td><input type="checkbox" name="selseatNo" value="${vo.selseatNo}" />
 														<td>${vo.grade}석</td>
-														<td>${vo.dcName} <c:if test="${empty vo.dcName}">일반</c:if> </td>
+														<td>${vo.dcName}<c:if test="${empty vo.dcName}">일반</c:if>
+														</td>
 														<td>${vo.section}구역</td>
 														<td>${vo.col}열${vo.num}번</td>
 														<td>${vo.payment}원</td>
 														<td><c:choose>
 																<c:when test="${vo.status==1}">
-																	<a href="${pageContext.request.contextPath}/mypage/requestCancelTicket?selseatNo=${vo.selseatNo}&rezNo=${vo.rezNo}">[예매]</a>
+																	정상 예매중
 																</c:when>
 																<c:otherwise>
-																	[취소]
+																	취소됨
+																</c:otherwise>
+															</c:choose></td>
+														<td><c:choose>
+																<c:when test="${vo.status==1}">
+																	<a href="${pageContext.request.contextPath}/mypage/requestCancelTicket?selseatNo=${vo.selseatNo}&rezNo=${vo.rezNo}">[예매취소]</a>
+																</c:when>
+																<c:otherwise>
+																	-
 																</c:otherwise>
 															</c:choose></td>
 													</tr>
