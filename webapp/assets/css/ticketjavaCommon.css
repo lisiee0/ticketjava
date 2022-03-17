@@ -106,10 +106,10 @@ div.nav{
 	padding-right:0px;
 }
 
-/* 네비바가 있는 곳에 브라우저 전체 파란줄 이었던것 */
+/* 네비바가 있는 곳 브라우저 전체 영역 제어 */
 .navbox {
 	background-color : white; 
-	border-top : 1px solid #f0f0f0;
+	border-top : 1px solid #dedede;
 	border-bottom : 5px solid #6697f2;
 } 
 
