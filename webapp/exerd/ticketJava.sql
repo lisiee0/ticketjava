@@ -9,7 +9,7 @@ DROP TABLE users
 CREATE TABLE users (
 	user_no NUMBER NOT NULL, /* 회원번호 */
 	id VARCHAR2(40), /* 아이디 */
-	password VARCHAR2(40), /* 비밀번호 */
+	password VARCHAR2(200), /* 비밀번호 */
 	name VARCHAR2(20), /* 이름 */
 	phone VARCHAR2(50), /* 전화번호 */
 	postcode VARCHAR2(30), /* 우편번호 */
