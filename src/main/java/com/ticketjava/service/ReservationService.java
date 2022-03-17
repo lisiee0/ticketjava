@@ -94,10 +94,15 @@ public class ReservationService {
 	
 	
 
-	public void finalPayment(ReservationVo reservationVo) {
-		reservationDao.updateInfo(reservationVo);
-		selseatDao.updateStatus(reservationVo.getRezNo());	
+	public String finalPayment(ReservationVo reservationVo) {
+		int count = reservationDao.selectPre(reservationVo.getRezNo());
+		if(count <= 0) {
+			return "fail";
+		}
 		
+		reservationDao.updateInfo(reservationVo);
+		selseatDao.updateStatus(reservationVo.getRezNo());
+		return "success";
 	}
 
 	public RezProdInfoVo rezProdInfo(int prodNo) {

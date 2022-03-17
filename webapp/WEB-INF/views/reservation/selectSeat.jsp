@@ -137,7 +137,7 @@ var viewDate = '${param.viewDate}';
 var prodNo = '${param.prodNo}';
 
 $(document).ready(function(){
-	$.ajax({
+	/* $.ajax({
 		url: "${pageContext.request.contextPath}/reservation/preDel",
 		type : "post",
 		dataType: "json",
@@ -147,7 +147,7 @@ $(document).ready(function(){
 		error : function(XHR, status, error) {
 			console.error(status + " : " + error);
 		}
-	});
+	}); */
 	
 	var rezVo = {
 			viewDate: viewDate ,

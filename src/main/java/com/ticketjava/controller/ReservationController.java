@@ -103,8 +103,7 @@ public class ReservationController {
 	@ResponseBody
 	@RequestMapping("/finalPayment")
 	public String modifyInfo(@ModelAttribute ReservationVo reservationVo) {
-		reservationService.finalPayment(reservationVo);
-		return "";
+		return reservationService.finalPayment(reservationVo); 
 	}
 	
 	
