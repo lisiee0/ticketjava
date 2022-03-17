@@ -11,6 +11,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
@@ -32,10 +33,9 @@ public class ReservationController {
 	@Autowired
 	private SeatpriceService seatpriceService;
 	
-	@RequestMapping("/selectSeat")
+	@RequestMapping(value="/selectSeat", method=RequestMethod.POST)
 	public String selectSeat(@ModelAttribute ReservationVo reservationVo,
-							 Model model,
-							 HttpSession session,
+							 Model model, HttpSession session,
 							 RedirectAttributes redirectAttributes) {
 		
 		ReservationVo rezVo = reservationService.checkRezHistory(reservationVo, session);
@@ -72,7 +72,7 @@ public class ReservationController {
 		return reservationService.preoccupy(reservationVo, session);
 	}
 	
-	@RequestMapping("/selectQuantity")
+	@RequestMapping(value="/selectQuantity", method=RequestMethod.POST)
 	public String selectQuantity(@RequestParam("prodNo") int prodNo,
 								 @RequestParam("rezNo") int rezNo,
 								 Model model) {
@@ -91,7 +91,7 @@ public class ReservationController {
 		return reservationService.modifyPayment(reservationVo);
 	}
 	
-	@RequestMapping("/confirmReservation")
+	@RequestMapping(value="/confirmReservation", method=RequestMethod.POST)
 	public String confirmReservation(@RequestParam("prodNo") int prodNo,
 									 @RequestParam("rezNo") int rezNo,
 									 Model model) {

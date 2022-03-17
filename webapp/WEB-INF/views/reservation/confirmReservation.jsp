@@ -143,13 +143,13 @@
 			</div>
 			<div id="button">
 				<div class="clearfix" id="prevNext">
-					<form action="${pageContext.request.contextPath}/reservation/selectQuantity">
+					<form id="confirmForm" action="${pageContext.request.contextPath}/reservation/selectQuantity" method="post">
 						<button class="btn-outline-primary" type="submit" id="prevBtn">이전단계</button>
 						<input type="hidden" name="prodNo" value="${param.prodNo}">
 						<input type="hidden" name="viewDate" value="${param.viewDate}">
-						<input type="hidden" name="rezNo" value="${param.rezNo}">
-					</form>
-					<button class="btn-primary" type="button" id="nextBtn">결제하기 </button> 
+						<input id="rezNo" type="hidden" name="rezNo" value="${param.rezNo}">
+					</form> 
+					<button class="btn-primary" type="submit" id="nextBtn">결제하기 </button>
 				</div>
 			</div>
 		</div>
@@ -178,7 +178,9 @@
 			success : function(result){
 				if(result == 'fail'){
 					alert('선점이 만료됐습니다. 처음부터 진행해주세요');
-					location.replace('${pageContext.request.contextPath}/reservation/selectSeat?prodNo=${param.prodNo}&viewDate=${param.viewDate}');
+					$('#rezNo').remove();
+					$('#confirmForm').attr('action', '${pageContext.request.contextPath}/reservation/selectSeat');
+					$('#confirmForm').submit();
 				}
 				else{
 					alert('예매 완료');

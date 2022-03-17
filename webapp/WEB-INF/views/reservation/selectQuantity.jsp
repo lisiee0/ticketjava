@@ -124,7 +124,7 @@
 					<form id="dcForm" action="${pageContext.request.contextPath}/reservation/confirmReservation" method="post">
 						<input type="hidden" name="prodNo" value="${param.prodNo}">
 						<input type="hidden" name="viewDate" value="${param.viewDate}">
-						<input type="hidden" name="rezNo" value="${param.rezNo}">
+						<input id="rezNo" type="hidden" name="rezNo" value="${param.rezNo}">
 						<button class="btn-outline-primary" type="button" id="prevBtn">이전단계 </button>
 						<button class="btn-primary" type="button" id="nextBtn">다음단계 </button> 
 					</form>
@@ -229,7 +229,9 @@
 			type : "post",
 			data: {rezNo:rezNo},
 			success : function(){
-				location.replace('${pageContext.request.contextPath}/reservation/selectSeat?prodNo=${param.prodNo}&viewDate=${param.viewDate}');
+				$('#rezNo').remove();
+				$('#dcForm').attr('action', '${pageContext.request.contextPath}/reservation/selectSeat');
+				$('#dcForm').submit();
 			},
 			error : function(XHR, status, error) {
 				console.error(status + " : " + error);
@@ -297,7 +299,9 @@
 				console.log(result);
 				if(result == 'fail'){
 					alert('선점이 만료됐습니다. 처음부터 진행해주세요');
-					location.replace('${pageContext.request.contextPath}/reservation/selectSeat?prodNo=${param.prodNo}&viewDate=${param.viewDate}');
+					$('#rezNo').remove();
+					$('#dcForm').attr('action', '${pageContext.request.contextPath}/reservation/selectSeat');
+					$('#dcForm').submit();
 				}
 			},
 			error : function(XHR, status, error) {

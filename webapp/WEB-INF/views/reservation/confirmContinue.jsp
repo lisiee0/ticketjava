@@ -10,7 +10,7 @@
 <body>
 
 	<form id="historyForm" action="" method="post">
-		<input type="hidden" name="rezNo" value="${param.rezNo}">
+		<input id="rezNo" type="hidden" name="rezNo" value="${param.rezNo}">
 		<input type="hidden" name="prodNo" value="${param.prodNo}">
 		<input type="hidden" name="viewDate" value="${param.viewDate}">
 	</form>
@@ -36,7 +36,9 @@
 			type : "post",
 			data: {rezNo:rezNo},
 			success : function(){
-				location.replace('${pageContext.request.contextPath}/reservation/selectSeat?prodNo=${param.prodNo}&viewDate=${param.viewDate}');
+				$('#rezNo').remove();
+				$('#historyForm').attr('action', '${pageContext.request.contextPath}/reservation/selectSeat');
+				$('#historyForm').submit();
 			},
 			error : function(XHR, status, error) {
 				console.error(status + " : " + error);
