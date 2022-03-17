@@ -45,16 +45,16 @@
 								<c:forEach items="${listMap.tList}" var="vo" varStatus="status">
 									<c:choose>
 										<c:when test="${status.count%5 eq 0}">
-											<li class="logoArea">
+											<li class="last-logo">
 												<div>
-													<a href="${pageContext.request.contextPath}/product/listbyTheater?theaterNo=${vo.theaterNo}"><img class="theater-logo img-thumbnail img-rounded last-logo" data-no="${vo.theaterNo}" src="${pageContext.request.contextPath}/upload/${vo.logoPath}"></a>
+													<a href="${pageContext.request.contextPath}/product/listbyTheater?theaterNo=${vo.theaterNo}"><img class="theater-logo img-thumbnail img-rounded last-logo np" data-no="${vo.theaterNo}" src="${pageContext.request.contextPath}/upload/${vo.logoPath}"></a>
 												</div>
 											</li>
 										</c:when>
 										<c:otherwise>
 											<li class="logoArea">
 												<div>
-													<a href="${pageContext.request.contextPath}/product/listbyTheater?theaterNo=${vo.theaterNo}"><img class="theater-logo img-thumbnail img-rounded" src="${pageContext.request.contextPath}/upload/${vo.logoPath}"></a>
+													<a href="${pageContext.request.contextPath}/product/listbyTheater?theaterNo=${vo.theaterNo}"><img class="theater-logo img-thumbnail img-rounded np" src="${pageContext.request.contextPath}/upload/${vo.logoPath}"></a>
 												</div>
 											</li>
 										</c:otherwise>

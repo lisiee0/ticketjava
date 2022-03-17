@@ -186,6 +186,10 @@ body {
 	padding-left: 10px;
 }
 
+.pd {
+	padding: 17px 17px 0px 25px;
+}
+
 .list-bgc {
 	box-shadow: 0px 2px rgba(0, 0, 0, 0.1);
 	background-color: #f6f6f6;
@@ -194,22 +198,26 @@ body {
 }
 
 .logoArea div {
-	width: 177px;
+	width: 176px;
 	height: 70px;
 }
 
-.logoArea, .theater-logo {
-	width: 177px;
+.logoArea {
+	width: 176px;
 	height: 70px;
 	margin: 0px 17px 17px 0px;
 }
 
-.pd {
-	padding: 17px 17px 0px 21px;
+.theater-logo {
+	width: 176px;
+	height: 70px;
+	margin: 0px 17px 17px 0px;
 }
 
 .last-logo {
-	margin: 0px 0px 17px 1px;
+	width: 176px;
+	height: 70px;
+	margin: 0px 0px 17px 0px;
 }
 
 #theater-map {
@@ -377,6 +385,6 @@ body {
 	background-position: 0 0;
 }
 
-#prodPath, #castingPath, #addedPath, #review, #theater, #cancel, #qnalist {
-	position: relative;
+.img-thumbnail {
+	border: 2px solid #ddd;
 }

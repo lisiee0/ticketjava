@@ -112,7 +112,7 @@
 					<div class="container section">
 						<div class="row navbar-example">
 
-						<ul class="nav navbar-nav nav-tabs" role="tablist">
+						<ul class="nav navbar-nav" role="tablist">
 							<li class="scroll"><a href="#prodPath">공연정보</a></li>
 							<li class="scroll"><a href="#castingPath">캐스팅정보</a></li>
 							<li class="scroll"><a href="#addedPath">부가정보</a></li>
