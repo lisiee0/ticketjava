@@ -4,7 +4,7 @@
 	
 	<insert id="insertPersonal" parameterType="UserVo" >
 		<![CDATA[
-			insert into users (user_no, id, password, name, phone, postcode, address, address2, email, usertype, joindate)
+			insert into users (user_no, id, password, name, phone, postcode, address, address2, email, usertype, joindate, salt)
 			values(seq_user_no.nextval,
 				   #{id},
 				   #{password},
@@ -15,7 +15,8 @@
 				   #{address2},
 				   #{email},
 				   #{usertype},
-				   sysdate
+				   sysdate,
+				   #{salt}
 			)
 		]]>
 	</insert>
