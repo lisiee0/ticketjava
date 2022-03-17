@@ -16,7 +16,7 @@ commit;
 ********************************************************************************/
 
 /*          공연장           */
-insert into theater values (0, '-', '-', '-', '-', '0', '0', '-', '-', null);
+insert into theater values (0, '-', null, null, null, '0', '0', '-', '-', null);
 insert into theater values (seq_theater_no.nextval, '예술의전당', '06757', '서울 서초구 남부순환로 2406', '예술의전당', '0', '0', '02-580-1300', 'http://www.sac.or.kr', 'sac.png');
 insert into theater values (seq_theater_no.nextval, '블루스퀘어', '04399', '서울 용산구 이태원로 294', '블루스퀘어', '0', '0', '1544-1591', 'http://www.bluesquare.kr/index.asp', 'blue.png');
 insert into theater values (seq_theater_no.nextval, '디큐브아트센터', '08209', '서울 구로구 경인로 662', '7층 디큐브아트센터', '0', '0', '02-2211-3000', 'http://www.d3art.co.kr', 'dcube.png');
