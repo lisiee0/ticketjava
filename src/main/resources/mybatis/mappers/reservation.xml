@@ -80,6 +80,18 @@
 	</select>
 
 
+	<select id="selectHistory" parameterType="ReservationVo" resultType="ReservationVo">
+		<![CDATA[  
+			select rez_no rezNo,
+				   totalPayment
+			from reserve
+			where user_no = #{userNo} and
+				  prod_no = #{prodNo} and
+				  viewDate = #{viewDate} and
+				  status = 2
+		]]>
+	</select>
+
 	<!-- 마이페이지 예매내역 리스트 -->
 	<select id="reserveList" resultType="ReserveDetailVo" parameterType="ReserveDetailVo">
 	<![CDATA[

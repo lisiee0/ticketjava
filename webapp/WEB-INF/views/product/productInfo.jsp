@@ -334,6 +334,26 @@
 		var prodNo = $('#prodNo').val();
 
 		console.log(viewDate+' '+prodNo);
+		/* var rezVo = {
+			prodNo:prodNo,
+			viewDate:viewDate
+		};
+		
+		$.ajax({
+			url: "${pageContext.request.contextPath}/reservation/checkRezHistory",
+			type : "post",
+			data : rezVo,
+			dataType: "json",
+			success : function(rezVo){
+				console.log(rezVo);
+				if(rezVo.rezNo != 0) {
+					window.open('${pageContext.request.contextPath}/reservation/confirmContinue?prodNo='+prodNo+'&viewDate='+viewDate+'&rezNo='+rezVo.rezNo, 'reserve', 'width=960, height=800, left=300, top=100');
+				}
+			},
+			error : function(XHR, status, error) {
+				console.error(status + " : " + error);
+			}
+		}); */
 		
 		window.open('${pageContext.request.contextPath}/reservation/selectSeat?prodNo='+prodNo+'&viewDate='+viewDate, 'reserve', 'width=960, height=800, left=300, top=100');
 	});

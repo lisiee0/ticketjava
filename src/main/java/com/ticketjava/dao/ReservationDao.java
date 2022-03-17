@@ -84,6 +84,15 @@ public class ReservationDao {
 		return sqlSession.selectOne("reservation.selectPre", rezNo);
 	}
 
+	public ReservationVo selectHistory(ReservationVo reservationVo) {
+		ReservationVo rezVo = sqlSession.selectOne("reservation.selectHistory", reservationVo);
+		if(rezVo == null)
+			return new ReservationVo();
+		else
+			return rezVo;
+			
+	}
+
 	
 
 	

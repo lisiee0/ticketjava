@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.ticketjava.service.ReservationService;
 import com.ticketjava.service.SeatpriceService;
@@ -32,20 +33,29 @@ public class ReservationController {
 	private SeatpriceService seatpriceService;
 	
 	@RequestMapping("/selectSeat")
-	public String selectSeat(@RequestParam(value = "rezNo", required=false, defaultValue="0") int rezNo,
-							 @RequestParam("prodNo") int prodNo,
-							 Model model) {
-		if(rezNo != 0) {
-			System.out.println("선점 삭제");
+	public String selectSeat(@ModelAttribute ReservationVo reservationVo,
+							 Model model,
+							 HttpSession session,
+							 RedirectAttributes redirectAttributes) {
+		
+		ReservationVo rezVo = reservationService.checkRezHistory(reservationVo, session);
+		if(rezVo.getRezNo() != 0) {
+			redirectAttributes.addAttribute("rezNo", rezVo.getRezNo());
+			redirectAttributes.addAttribute("viewDate", reservationVo.getViewDate());
+			redirectAttributes.addAttribute("prodNo", reservationVo.getProdNo());
+			redirectAttributes.addAttribute("totalPayment", rezVo.getTotalPayment());
+			return "redirect:confirmContinue";
 		}
 		
-		List<SeatpriceVo> seatpriceList = seatpriceService.seatpriceList(prodNo);
-		model.addAttribute("seatpriceList", seatpriceList);
-		
-		RezProdInfoVo rezProdInfo = reservationService.rezProdInfo(prodNo);
-		model.addAttribute("rezProdInfo", rezProdInfo);
-		
-		return "reservation/selectSeat";
+		else {
+			List<SeatpriceVo> seatpriceList = seatpriceService.seatpriceList(reservationVo.getProdNo());
+			model.addAttribute("seatpriceList", seatpriceList);
+			
+			RezProdInfoVo rezProdInfo = reservationService.rezProdInfo(reservationVo.getProdNo());
+			model.addAttribute("rezProdInfo", rezProdInfo);
+			
+			return "reservation/selectSeat";
+		}
 	}
 	
 	@ResponseBody
@@ -98,6 +108,7 @@ public class ReservationController {
 	public String modifyInfo(@ModelAttribute ReservationVo reservationVo) {
 		return reservationService.finalPayment(reservationVo); 
 	}
+	
 	
 	@RequestMapping("/confirmContinue")
 	public String confirmContinue() {

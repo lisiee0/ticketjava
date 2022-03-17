@@ -1,6 +1,5 @@
 package com.ticketjava.service;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -134,6 +133,16 @@ public class ReservationService {
 		notireqService.notiSend(selseatNo);
 		
 		System.out.println("리저브 서비스 selseatNo "+selseatNo);
+	}
+
+	public ReservationVo checkRezHistory(ReservationVo reservationVo, HttpSession session) {
+		UserVo authUser= (UserVo)session.getAttribute("authUser");
+		int userNo = 1;
+		if(authUser != null)
+			userNo = authUser.getUserNo();
+		reservationVo.setUserNo(userNo);
+		
+		return reservationDao.selectHistory(reservationVo);
 	}
 
 	
