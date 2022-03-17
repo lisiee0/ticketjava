@@ -22,7 +22,7 @@
 	<div id="containerBody">
 		
 		<div id="header">
-			<h1><a href="${pageContext.request.contextPath}/reservation/selectSeat?prodNo=${param.prodNo}&viewDate=${param.viewDate}">예매페이지로 이동</a></h1>
+			<h1><a id="reserveGo" href="">예매페이지로 이동</a></h1>
 		</div>
 		
 		<div id="menubar">
@@ -102,9 +102,11 @@
 			</div>
 			
 			<div id="button">
-				<input type="hidden" name="prodNo" value="${param.prodNo}">
-				<input type="hidden" name="viewDate" value="${param.viewDate}">
-				<div id="btnArea"></div>
+				<form id="reqForm" method="post">
+					<input type="hidden" name="prodNo" value="${param.prodNo}">
+					<input type="hidden" name="viewDate" value="${param.viewDate}">
+					<div id="btnArea"></div>
+				</form>
 			</div>
 		</div>
 		
@@ -281,6 +283,11 @@
 		
 	});
 	
+	$('#reserveGo').on('click', function(){
+		$('#reqForm').attr('action','${pageContext.request.contextPath}/reservation/selectSeat');
+		$('#reqForm').submit();
+		return false;
+	});
 	
 </script>
 

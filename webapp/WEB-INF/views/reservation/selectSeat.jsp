@@ -282,7 +282,8 @@ $('#nextBtn').on('click', function(){
 });
 
 $('#cancelNotiBtn').on('click',function(){
-	location.href = '${pageContext.request.contextPath}/notireq/notireq?prodNo='+prodNo+'&viewDate='+viewDate;
+	$('#seatForm').attr('action', '${pageContext.request.contextPath}/notireq/notireq');
+	$('#seatForm').submit();
 });
 
 
