@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>티켓자바 헤더</title>
-
+<link href="${pageContext.request.contextPath}/assets/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
 <link href="${pageContext.request.contextPath}/assets/css/ticketjavaCommon.css" rel="stylesheet" type="text/css">
 </head>
 
@@ -69,10 +69,10 @@
 					<div class="col-xs-3 no-drag no-ghost" id="ticketJavaLogo">
 						<a href="http://localhost:8088/ticketjava/"><img src="${pageContext.request.contextPath}/assets/image/index/ticketjava_main_logo.png"></a>
 					</div>
-					<div class="col-xs-9" id="serachBar">
+					<div class="col-xs-9 searchBar">
 						<form action="${pageContext.request.contextPath}/product/search" method="post"  class="form-horizontal">
 							<input type="text" class="form-control dis vm" placeholder="내가 찾는 티켓은.." name="keyword" value="">
-							<button type="submit" class="btn btn-primary index-search">티켓잡으러검색</button>
+							<button type="submit" class="btn btn-primary index-search"><span class="glyphicon glyphicon-search"></span>티켓잡으러검색</button>
 						</form>
 					</div>
 
@@ -89,7 +89,7 @@
 			<div class="container nav">
 			
 				<!-- 네비바 자리 그리드없음 중앙 정렬 1000px 파란색 줄 -->
-				<div id="navnav" class="navbar navbar-expand-lg navbar-dark bg-primary btn-primary no-drag">
+				<div id="navnav" class="navbar no-drag">
 					<div id="navbar" class="" role="navigation">
 						<ul class="clearfix">
 							<li class="nav-item"><a href="${pageContext.request.contextPath}/product/type?prodType=1">뮤지컬</a></li>

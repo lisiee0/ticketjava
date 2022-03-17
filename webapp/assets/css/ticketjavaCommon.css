@@ -71,24 +71,32 @@ body {
 }
 
 /* 검색창 (로고 옆 네비바 위) */
-#serachBar{
+.searchBar{
 	padding-left:45px;
 	padding-top:10px;
 }
 
-#serachBar input{
+.searchBar input{
 	width:300px;
 	height:40px;
 }
 
-#serachBar button{
+.searchBar button{
 	height:40px;
 	padding:0px 10px;
 	color:white;
+
 }
 
-#serachBar button:hover{
-	color:#C8FFFF;
+/* 검색하기 버튼 평소 색상 (티잡블루) */
+.index-search {
+	background-color : #6697f2;	
+}
+
+/* 검색하기 버튼에 마우스 올렸을때 글씨 배경 색 변화 */
+.searchBar button:hover{
+	color: #e5e5e5;
+	background-color : #5189f1;	
 }
 
 
