@@ -48,15 +48,33 @@
 	
 	
 	<!-- theater.jsp에서 가져오는 theaterList -->
+	<!-- 등록된 공연이 많은 공연장 TOP15 -->
 	<select id="getList" resultType="TheaterVo">
 		<![CDATA[
-			select distinct t.theater_no theaterNo, 
-							theatername, 
-							logopath,
-							homepage
-			from 			theater t, hall h
-			where 			t.theater_no= h.theater_no
-			and             logopath is not null
+			select			rn,
+					        theaterNo, 
+							t.theatername theaterName, 
+							t.logopath logoPath,
+							homepage,
+					        prodCnt,
+					        latitude,
+        					longitude
+			from    		theater t, (select   	 rownum rn,
+						                             theatername, 
+						                             theaterNo, 
+						                             prodCnt,
+						                             logopath
+					                    from    	 theater t, (select     t.theater_no theaterNo, 
+									                                        count(p.prod_no) prodCnt
+									                            from 		theater t, hall h, product p
+									                            where 		t.theater_no=h.theater_no
+									                            and  		h.hall_no= p.hall_no
+								                            	group by 	t.theater_no
+									                            order by 	prodCnt desc) o
+					                    where 		t.theater_no= o.theaterno
+					                    and 		logopath is not null) r
+			where r.theaterNo= t.theater_no
+			and  rn between 1 and 15
 		]]>
 	</select>
 	
