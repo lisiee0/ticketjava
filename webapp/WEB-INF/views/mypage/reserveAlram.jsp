@@ -6,6 +6,8 @@
 <meta charset="UTF-8">
 <title>TicketJava 마이페이지 취소알림</title>
 
+<script src="${pageContext.request.contextPath}/assets/jquery/jquery-1.12.4.js"></script>
+
 <!-- 부트스트랩 Bootstrap core CSS -->
 <link href="${pageContext.request.contextPath}/assets/bootstrap/css/bootstrap.css" rel="stylesheet">
 
@@ -79,10 +81,10 @@
 										</thead>
 										<tbody>
 											<c:forEach items="${notiList}" var="vo">
-												<tr id="tr"${vo.notiNo}>
+												<tr id="tr${vo.notiNo}">
 													<td class="text-left">${vo.content}</td>
 													<td>${vo.notiTime}</td>
-													<td><button type="button">삭제</button></td>
+													<td><button type="button" class="delBtn btn btn-outline-primary" data-notino="${vo.notiNo}">삭제</button></td>
 												</tr>
 											</c:forEach>
 											
@@ -138,4 +140,30 @@
 	<!-- wrap 종료 -->
 
 </body>
+
+<script type="text/javascript">
+	$('.delBtn').on('click', function(){
+		var notiNo = $(this).data('notino');
+		console.log(notiNo);
+		
+		$.ajax({
+			url: "${pageContext.request.contextPath}/notification/deleteNoti",
+			type : "post",
+			data : {notiNo:notiNo},
+			dataType: "json",
+			success : function(result){
+				if(result == 'success'){
+					console.log(result);
+					$('#tr'+notiNo).remove();
+				}
+			},
+			error : function(XHR, status, error) {
+				console.error(status + " : " + error);
+			}
+		});
+		
+	});
+</script>
+
+
 </html>

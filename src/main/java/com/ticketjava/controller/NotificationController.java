@@ -1,16 +1,12 @@
 package com.ticketjava.controller;
 
-import java.util.List;
-
-import javax.servlet.http.HttpSession;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.ticketjava.service.NotificationService;
-import com.ticketjava.vo.NotificationVo;
 
 @Controller
 @RequestMapping("/notification")
@@ -29,4 +25,11 @@ public class NotificationController {
 		return "mypage/reserveAlram";
 	}
 	*/
+	
+	@ResponseBody
+	@RequestMapping("/deleteNoti")
+	public String deleteNoti(@RequestParam("notiNo") int notiNo) {
+		
+		return notificationService.deleteNoti(notiNo);
+	}
 }

@@ -22,7 +22,15 @@
 				   to_char(notiTime, 'yy-mm-dd hh24:mi') notiTime
 			from noti
 			where user_no = #{userNo}
+			order by notiTime desc
 		]]>	
 	</select>
+	
+	<delete id="deleteNoti" parameterType="int">
+		<![CDATA[ 
+			delete from noti
+			where noti_no = #{notiNo}
+		]]>
+	</delete>
 	
 </mapper>

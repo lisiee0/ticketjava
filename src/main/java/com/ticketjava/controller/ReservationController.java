@@ -49,13 +49,6 @@ public class ReservationController {
 	}
 	
 	@ResponseBody
-	@RequestMapping("/preDel")
-	public String preDel() {
-		reservationService.preDel();
-		return "성공";
-	}
-	
-	@ResponseBody
 	@RequestMapping("/preDelNow")
 	public String preDelNow(@RequestParam("rezNo") int rezNo) {
 		reservationService.preDelNow(rezNo);

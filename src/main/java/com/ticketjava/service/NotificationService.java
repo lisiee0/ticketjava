@@ -31,5 +31,14 @@ public class NotificationService {
 		return notificationDao.selectByUser(userNo);
 		
 	}
+
+	public String deleteNoti(int notiNo) {
+		int count = notificationDao.deleteNoti(notiNo);
+		
+		if(count>0)
+			return "success";
+		else
+			return "fail";
+	}
 	
 }
