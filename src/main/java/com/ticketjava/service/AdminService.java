@@ -88,10 +88,8 @@ public class AdminService {
 		paging.setTotalCount(hd.totalCnt());
 		
 		Map<String, Object> hMap= new HashMap<String, Object>();
-		hMap.put("hList", hd.paginList(startRnum, endRnum));
+		hMap.put("hList", hd.pagingList(startRnum, endRnum));
 		hMap.put("paging", paging);
-		hMap.put("prev", paging);
-		hMap.put("next", paging);
 
 		return hMap;
 	}
