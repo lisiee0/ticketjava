@@ -13,7 +13,15 @@ body {
 	background-color: #fff;
 }
 
-/* 레이아웃 */
+/* 티잡 로고 제어 */
+#ticketJavaLogo {
+	margin-bottom: 0px;
+	padding-bottom: 30px;
+	padding-left: 0px;
+}
+
+
+/* 헤더 레이아웃 제어 */
 #header {
 	padding: 0px 0px 0px 0px; 
 	background-color: #FFFFFF;
@@ -64,49 +72,44 @@ body {
 	width :1000px;
 }
 
-/* 검색창 (로고 옆 네비바 위) */
+
+
+/* 검색창제어 (로고 옆 네비바 위) */
 .searchBar{
 	padding-left:45px;
 	padding-top:10px;
+	margin: 0px 0px 0px 0px;
 }
 
 .searchBar input{
 	width:300px;
 	height:40px;
+	margin: 0px 0px 0px 0px;
+	text-align:center;
 }
 
 .searchBar button{
+	width:50px;
 	height:40px;
-	padding:0px 10px;
+	padding:0px 0px 0px 0px;
+	margin: 0px 0px 0px 0px;
 	color:white;
-
 }
 
 /* 검색하기 버튼 평소 색상 (티잡블루) */
 .index-search {
+	margin: 0px 0px 0px 0px;
+	padding: 0px 0px 0px 0px;
 	background-color : #6697f2;	
 }
 
 /* 검색하기 버튼에 마우스 올렸을때 글씨 배경 색 변화 */
 .searchBar button:hover{
 	color: #e5e5e5;
-	background-color : #5189f1;	
+	background-color: #5189f1;	
 }
 
 
-#ticketJavaLogo {
-	margin-bottom:0px;
-	padding-bottom:30px;
-	padding-left:0px;
-}
-
-div.navbox{
-	padding:0px;
-}
-
-div.nav{
-	padding-right:0px;
-}
 
 /* 네비바가 있는 곳 브라우저 전체 영역 제어 */
 .navbox {
@@ -115,6 +118,13 @@ div.nav{
 	border-bottom : 5px solid #6697f2;
 } 
 
+div.navbox{
+	padding:0px;
+}
+
+div.nav{
+	padding-right:0px;
+}
 
 #navnav{
 	background-color: white; 
@@ -127,13 +137,15 @@ div.nav{
 	padding-top:12px;
 }
 
-#navbar  ul>li {justify-content:flex; 
-				align-items:center; 
-				padding: 0px 0px 0px 0px; 
-				margin: 10px 92px 0px 0px; 
-				font-size: 19px; 
-				font-weight: bold;	
-				display:inline;}
+#navbar  ul>li {
+	justify-content:flex; 
+	align-items:center; 
+	padding: 0px 0px 0px 0px; 
+	margin: 10px 92px 0px 0px; 
+	font-size: 19px; 
+	font-weight: bold;	
+	display:inline;
+}
 				
 #navbar  ul>li .smallFont{
 	font-size:15px;

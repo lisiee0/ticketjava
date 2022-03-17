@@ -69,9 +69,10 @@
 					<div class="col-xs-3 no-drag no-ghost" id="ticketJavaLogo">
 						<a href="http://localhost:8088/ticketjava/"><img src="${pageContext.request.contextPath}/assets/image/index/ticketjava_main_logo.png"></a>
 					</div>
+					
 					<div class="col-xs-9 searchBar">
-						<form action="${pageContext.request.contextPath}/product/search" method="post"  class="form-horizontal">
-							<input type="text" class="form-control dis vm" placeholder="내가 찾는 티켓은.." name="keyword" value="">
+						<form action="${pageContext.request.contextPath}/product/search" method="post">
+							<input type="text" class="form-control dis vm zp" placeholder="내가 찾는 티켓은.." name="keyword" value="">
 							<button type="submit" class="btn btn-primary index-search"><span class="glyphicon glyphicon-search"></span></button>
 						</form>
 					</div>
