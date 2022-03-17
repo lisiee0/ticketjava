@@ -2,9 +2,24 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="user">
 	
-	<insert id="insertPersonal" parameterType="UserVo" >
-		<![CDATA[
-			insert into users (user_no, id, password, name, phone, postcode, address, address2, email, usertype, joindate, salt)
+	<insert id="insertUser" parameterType="UserVo" >
+			insert into users (
+								user_no, 
+								id, 
+								password, 
+								name, 
+								phone, 
+								postcode, 
+								address, 
+								address2, 
+								email, 
+								usertype,
+								<if test="usertype == 2">
+									bizno,
+								</if>
+								joindate, 
+								salt
+			)
 			values(seq_user_no.nextval,
 				   #{id},
 				   #{password},
@@ -15,13 +30,15 @@
 				   #{address2},
 				   #{email},
 				   #{usertype},
+				   <if test="usertype == 2">
+				   		#{bizno},
+				   </if>
 				   sysdate,
 				   #{salt}
 			)
-		]]>
 	</insert>
 	
-	<insert id="insertBizman" parameterType="UserVo" >
+	<!-- <insert id="insertBizman" parameterType="UserVo" >
 		<![CDATA[
 			insert into users (user_no, id, password, name, phone, postcode, address, address2, email, usertype, joindate, bizno)
 			values(seq_user_no.nextval,
@@ -38,7 +55,14 @@
 				   #{bizno}
 			)
 		]]>
-	</insert>
+	</insert> -->
+	<select id="selectSalt" parameterType="String" resultType="String">
+		<![CDATA[
+			select salt
+			from users
+			where id = #{id}	
+		]]>
+	</select>
 	
 	<select id="selectAuthUser" parameterType="UserVo" resultType="UserVo">
 		<![CDATA[

@@ -1,14 +1,14 @@
 /*******************************************************************************
     회원(users) 등록
 ********************************************************************************/
-insert into users values (SEQ_USER_NO.nextval, 'test', 'test', '테스터', '010-9999-9999', '99999', '서울 강서구 우현로 99', '공원', 'test@naver.com', 1, sysdate, null, null);
-insert into users values (SEQ_USER_NO.nextval, 'biz', 'biz', '사업자', '010-1234-5678', '01234', '서울 강서구 우현로 12', 'EMK뮤지컬컴퍼니', 'emk@musical.com', 2, sysdate, 'a1b2c3d4', null);
-insert into users values (SEQ_USER_NO.nextval, 'aaa', 'aaa', '유재석', '010-1111-1111', '02234', '서울 강서구 우현로 13', '오두막집', 'yoo@naver.com', 1, sysdate, null, null);
-insert into users values (SEQ_USER_NO.nextval, 'bbb', 'bbb', '정우성', '010-2222-2222', '03234', '서울 강서구 우현로 14', '기와집', 'jung@naver.com', 1, sysdate, null, null);
-insert into users values (SEQ_USER_NO.nextval, 'ccc', 'ccc', '이효리', '010-3333-3333', '04234', '서울 강서구 우현로 15', '초가집', 'lee@naver.com', 1, sysdate, null, null);
-insert into users values (SEQ_USER_NO.nextval, 'ddd', 'ddd', '강호동', '010-4444-4444', '05234', '서울 강서구 우현로 16', '힐스테이트', 'kang@naver.com', 1, sysdate, null, null);
-insert into users values (SEQ_USER_NO.nextval, 'eee', 'eee', '이정재', '010-5555-5555', '06234', '서울 강서구 우현로 17', '아이파크', 'ljj@naver.com', 1, sysdate, null, null);
-insert into users values (SEQ_USER_NO.nextval, 'admin', 'admin', '관리자', null, null, null, null, null, 0, sysdate, null, null);
+insert into users values (SEQ_USER_NO.nextval, 'test', '082c37fc044a2a40e6e191788e7d0a5b09db37a5135f75d8e02b1d3100fd5ef6', '테스터', '010-9999-9999', '99999', '서울 강서구 우현로 99', '공원', 'test@naver.com', 1, sysdate, null, 'TZ7ycgRKAEjh0OQZ');
+insert into users values (SEQ_USER_NO.nextval, 'biz', 'c34e61af45341f2634151409e3e031fe6161b758d00c0bdb271d4b9c9b2a1a43', '사업자', '010-1234-5678', '01234', '서울 강서구 우현로 12', 'EMK뮤지컬컴퍼니', 'emk@musical.com', 2, sysdate, 'a1b2c3d4', 'WOwFkL1cxb4zW6UV');
+insert into users values (SEQ_USER_NO.nextval, 'aaa', '12454a5a10f26cb4a25741bf99cd2f1c91e5bcbd383c58cab449cccdcaaca1bc', '유재석', '010-1111-1111', '02234', '서울 강서구 우현로 13', '오두막집', 'yoo@naver.com', 1, sysdate, null, '40ukNcey4D3Dkz1V');
+insert into users values (SEQ_USER_NO.nextval, 'bbb', '09026347f0a9d14da85fd6472ae8c248672b561f537b32a1f90ecc19d9cb7a15', '정우성', '010-2222-2222', '03234', '서울 강서구 우현로 14', '기와집', 'jung@naver.com', 1, sysdate, null, '8GAniBWf5R1PiZmH');
+insert into users values (SEQ_USER_NO.nextval, 'ccc', '67b02c7418e5e82528fcfbc8338d6a1f0712b5367741450d81ee344d62074a3b', '이효리', '010-3333-3333', '04234', '서울 강서구 우현로 15', '초가집', 'lee@naver.com', 1, sysdate, null, 'G8KOpNVwVdxIatHb');
+insert into users values (SEQ_USER_NO.nextval, 'ddd', '9724be48956cbdd6b152c1fb2898f8674eb43cc982c1b583f95e0acd571cfb70', '강호동', '010-4444-4444', '05234', '서울 강서구 우현로 16', '힐스테이트', 'kang@naver.com', 1, sysdate, null, 'd4ovosyZgdN3qln5');
+insert into users values (SEQ_USER_NO.nextval, 'eee', '026dbcecdc6347c3f55aa2539548a3f2046533e28d860174090b3404a866c20d', '이정재', '010-5555-5555', '06234', '서울 강서구 우현로 17', '아이파크', 'ljj@naver.com', 1, sysdate, null, 'r67aTGZLqWMze0sg');
+insert into users values (SEQ_USER_NO.nextval, 'admin', 'b1be4dd8015e8d2402f3d002549970eb740d1d03432870cd8bde4e73c7eb51a6', '관리자', null, null, null, null, null, 0, sysdate, null, 'eyCIr8myhI93Z96i');
 commit;
 
 /*******************************************************************************

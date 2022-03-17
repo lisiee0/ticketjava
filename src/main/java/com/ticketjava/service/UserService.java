@@ -20,15 +20,15 @@ public class UserService {
 		userVo.setPassword( PasswordHash.getSHA256(password+salt));
 		userVo.setSalt(salt);
 		
-		if (userVo.getUsertype() == 1)
-			userDao.insertPersonal(userVo);
-		else { // == 2
-			userDao.insertBizman(userVo);
-		}
+		userDao.insertUser(userVo);
 		
 	}
 
 	public UserVo getAuthUser(UserVo userVo) {
+		String salt = userDao.selectSalt(userVo.getId());
+		String inputPw = userVo.getPassword();
+		userVo.setPassword(PasswordHash.getSHA256(inputPw+salt));
+		
 		return userDao.selectAuthUser(userVo);
 	}
 

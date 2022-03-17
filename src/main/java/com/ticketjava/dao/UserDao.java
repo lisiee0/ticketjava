@@ -15,13 +15,19 @@ public class UserDao {
 	@Autowired
 	private SqlSession sqlSession;
 	
-	public void insertPersonal(UserVo userVo) {
-		sqlSession.insert("user.insertPersonal", userVo);
+	public void insertUser(UserVo userVo) {
+		sqlSession.insert("user.insertUse", userVo);
 	}
 
-	public void insertBizman(UserVo userVo) {
-		sqlSession.insert("user.insertBizman", userVo);
-		
+	/*
+	 * public void insertBizman(UserVo userVo) {
+	 * sqlSession.insert("user.insertBizman", userVo);
+	 * 
+	 * }
+	 */
+	
+	public String selectSalt(String id) {
+		return sqlSession.selectOne("user.selectSalt", id);
 	}
 
 	public UserVo selectAuthUser(UserVo userVo) {
