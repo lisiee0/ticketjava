@@ -20,7 +20,7 @@
 <script src="${pageContext.request.contextPath}/assets/js/scroll.js"></script>
 </head>
 
-<body>
+<body data-spy="scroll" data-target=".navbar-example">
 	<div id="wrap">
 		<!-- header & nav -->
 		<c:import url="/WEB-INF/views/include/header.jsp"></c:import>
@@ -110,16 +110,16 @@
 					
 					<!-- 공연상세 페이지 네비 -->
 					<div class="container section">
-						<div class="row">
+						<div class="row navbar-example">
 
-						<ul class="nav navbar-nav">
-							<li class="scroll"><a href="">공연정보</a></li>
-							<li class="scroll"><a href="">캐스팅정보</a></li>
-							<li class="scroll"><a href="">부가정보</a></li>
-							<li class="scroll"><a href="">관람후기</a></li>
-							<li class="scroll"><a href="">Q&A</a></li>
-							<li class="scroll"><a href="">공연장정보</a></li>
-							<li class="scroll"><a href="">예매/취소안내</a></li>
+						<ul class="nav navbar-nav nav-tabs" role="tablist">
+							<li class="scroll"><a href="#prodPath">공연정보</a></li>
+							<li class="scroll"><a href="#castingPath">캐스팅정보</a></li>
+							<li class="scroll"><a href="#addedPath">부가정보</a></li>
+							<li class="scroll"><a href="#review">관람후기</a></li>
+							<li class="scroll"><a href="#theater">공연장정보</a></li>
+							<li class="scroll"><a href="#cancel">예매/취소안내</a></li>
+							<li class="scroll"><a href="#qnalist">Q&A</a></li>
 						</ul>
 	
 						</div>
@@ -132,13 +132,13 @@
 							<div class="col-xs-9 np" id="infoDetail">
 								<p class="tag">[공지사항]</p><br>
 								<div id="notice">${product.vo.notice}</div>
-								<p class="tag">[공연정보]</p>
+								<p id="prodPath" class="tag">[공연정보]</p>
 								<img src="${pageContext.request.contextPath}/upload/${product.detail.prodPath}">
 								
-								<p class="tag">[캐스팅정보]</p>
+								<p id="castingPath" class="tag">[캐스팅정보]</p>
 								<img src="${pageContext.request.contextPath}/upload/${product.detail.castingPath}">
 								
-								<p class="tag">[부가정보]</p>
+								<p id="addedPath" class="tag">[부가정보]</p>
 								<img src="${pageContext.request.contextPath}/upload/${product.detail.addedPath}">
 							</div>
 						</div>
@@ -148,7 +148,7 @@
 					<!-- 관람후기 -->
 					<div class="container">
 						<div class="row">
-							<h4 class="cateMenu">관람후기</h4>
+							<h4 id="review" class="cateMenu">관람후기</h4>
 							<table class="table review-qna">
 								<colgroup>
 									<col width="55%">
@@ -208,7 +208,7 @@
 					<!-- 공연장 정보 -->
 					<div class="container section">
 						<div class="row">
-							<h4 class="cateMenu">공연장 정보</h4>
+							<h4 id="theater" class="cateMenu">공연장 정보</h4>
 							<div id="mapArea" class="col-xs-4">
 								<img id="map" src="${pageContext.request.contextPath}/assets/image/test/map.png">
 							</div>
@@ -225,7 +225,7 @@
 					<!-- 예매/취소 안내 -->
 					<div class="container section">
 						<div class="row">
-							<h4 class="cateMenu">예매/취소 안내</h4>
+							<h4 id="cancel" class="cateMenu">예매/취소 안내</h4>
 							<p>예매 취소 시 주의사항<p>
 							<p>티켓 예매 후 7일 이내에 취소 시, 취소수수료가 없습니다.</p>
 							<p>단, 예매 후 7일 이내라도 취소 시점이 공연일로부터 10일 이내라면 그에 해당하는 취소수수료가 부과됩니다.</p>
@@ -238,7 +238,7 @@
 					<!-- QnA -->
 					<div class="container section">
 						<div class="row">
-							<h4 class="cateMenu">Q&A</h4>
+							<h4 id="qnalist" class="cateMenu">Q&A</h4>
 							<table class="table review-qna">
 								<colgroup>
 									<col width="60%">
@@ -345,5 +345,11 @@
 		    document.querySelector('.star span').style.width = '${value * 10}%'; /*value 수정*/
 	  }
 	
+	 $('body').scrollspy({ target: '.navbar-example' })
+	 
+	 $('[data-spy="scroll"]').each(function () {
+		  var $spy = $(this).scrollspy('refresh')
+		})
+	 
 </script>
 </html>

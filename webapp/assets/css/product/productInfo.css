@@ -4,6 +4,10 @@
 /* info */
 /**********************************************/
 
+body {
+	position: relative;
+}
+
 .fixwidth {
 	width: 1000px;
 	padding: 0px;
@@ -371,4 +375,8 @@
     color: #fff;
     text-align: center;
 	background-position: 0 0;
+}
+
+#prodPath, #castingPath, #addedPath, #review, #theater, #cancel, #qnalist {
+	position: relative;
 }
