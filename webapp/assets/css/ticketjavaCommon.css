@@ -1,14 +1,6 @@
 @charset "UTF-8";
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
 
-/* 기존 공통 css 에서 변경점
-
-검색버튼 마우스 오버 검정색 -> 옅은 하늘색으로 변경
-공통css에서 푸터에 관련한 내용 제거-> 별도 푸터 파일 생성
-마우스 드래그 액션 관련 내용 추가 -> 글 최하단에 위치
-헤더 로그인 회원가입 링크 마우스 오버 밑줄 제거 
-*/
-
 /* 여백 초기화 */
 body, div, ul, li, dl, dt, ol, h1, h2, h3, h4, h5, h6, 
 input, fieldset, legend, p, select, table, th, td, tr,
@@ -63,6 +55,8 @@ body {
 /* 헤더 로그인 회원가입 링크 밑줄 제거 */
 #header ul>li>a {
 	text-decoration-line : none;
+	font-size : 13px;
+	font-family: 'Noto Sans KR', sans-serif;
 }
 
 /* 헤더 네비바의 규격 */
@@ -124,7 +118,6 @@ div.nav{
 
 #navnav{
 	background-color: white; 
-
 	margin-bottom:0px;
 }
 
@@ -152,11 +145,13 @@ div.nav{
 }
 
 
-.nav-item a { /*nav-item 클래스 아래의 a 요소를 선택함*/
-    color: black;
+/* 네비바 버튼 nav-item 클래스 아래의 a 요소를 선택함*/
+.nav-item a { 
+    color: #3c3c3c ;
 }
 
 .nav-item a:hover{
+	color: #6697f2 ;
 	text-decoration : #6697f2;
 }
 

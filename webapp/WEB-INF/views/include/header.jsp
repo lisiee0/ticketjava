@@ -72,7 +72,7 @@
 					<div class="col-xs-9 searchBar">
 						<form action="${pageContext.request.contextPath}/product/search" method="post"  class="form-horizontal">
 							<input type="text" class="form-control dis vm" placeholder="내가 찾는 티켓은.." name="keyword" value="">
-							<button type="submit" class="btn btn-primary index-search"><span class="glyphicon glyphicon-search"></span>티켓잡으러검색</button>
+							<button type="submit" class="btn btn-primary index-search"><span class="glyphicon glyphicon-search"></span></button>
 						</form>
 					</div>
 
