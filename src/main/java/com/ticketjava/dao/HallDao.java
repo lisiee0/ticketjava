@@ -56,7 +56,7 @@ public class HallDao {
 	
 	
 	// 페이징 리스트
-	public List<HallVo> paginList(int startRnum, int endRnum) {
+	public List<HallVo> pagingList(int startRnum, int endRnum) {
 		
 		Map<String, Integer> map= new HashMap<String, Integer>();
 		map.put("startRnum", startRnum);

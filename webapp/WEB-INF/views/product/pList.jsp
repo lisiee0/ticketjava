@@ -106,6 +106,30 @@
 							</ul>
 						</div>
 						
+						<!-- 페이징 -->
+						<div class="row paging">				
+							<nav>
+							  <ul class="pagination">
+							  	<li><a href="javascript:PageMove(${type.paging.firstPageNo})"><span class="glyphicon glyphicon-triangle-left"></span></a></li>
+								<li class= ${type.paging.pageNo eq type.paging.startPageNo ? "disabled" : ""}><a href="javascript:PageMove(${type.paging.prevPageNo})"><span class="glyphicon glyphicon-menu-left"></span></a></li>
+					
+								<c:forEach var="i" begin="${type.paging.startPageNo}" end="${type.paging.endPageNo}" step="1">
+									<c:choose>
+										<c:when test="${i eq type.paging.pageNo}">
+											<li class= ${type.paging.pageNo eq i ? "active" : ""}><a href="javascript:PageMove(${i})">${i}</a></li>
+										</c:when>
+										<c:otherwise>
+											<li class= ${type.paging.pageNo eq i ? "active" : ""}><a href="javascript:PageMove(${i})">${i}</a></li>
+										</c:otherwise>
+									</c:choose>
+								</c:forEach>
+								
+							    <li class= ${type.paging.pageNo eq type.paging.endPageNo ? "disabled" : ""}><a href="javascript:PageMove(${type.paging.nextPageNo})"><span class="glyphicon glyphicon-menu-right"></span></a></li>
+							    <li><a href="javascript:PageMove(${type.paging.finalPageNo})"><span class="glyphicon glyphicon-triangle-right"></span></a></li>
+							  </ul>
+							</nav>
+						</div>
+						
 					</div>
 				</div>
 	
@@ -117,7 +141,18 @@
 		<c:import url="/WEB-INF/views/include/footer.jsp"></c:import>	
 		
 	</div> <!-- wrap 종료 -->
-	
+
 </body>
+
+<script>
+
+	function PageMove(page) {
+
+		location.href = "${pageContext.request.contextPath}/product/type?prodType=${param.prodType}&crtPage=" + page;	
+	}
+
+</script>
+
+
 
 </html>

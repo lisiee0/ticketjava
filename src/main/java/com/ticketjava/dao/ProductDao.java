@@ -1,6 +1,8 @@
 package com.ticketjava.dao;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -59,6 +61,17 @@ public class ProductDao {
 	// prodType별 상품 카운트
 	public int prodTypeCnt(int prodType) {
 		return sqlsession.selectOne("product.prodTypeCnt", prodType);
+	}
+	
+	// prodType별 상품 리스트 (페이징)
+	public List<ProductVo> pagingList(int prodType, int startRnum, int endRnum) {
+		
+		Map<String, Integer> map= new HashMap<String, Integer>();
+		map.put("prodType", prodType);
+		map.put("startRnum", startRnum);
+		map.put("endRnum", endRnum);
+		
+		return sqlsession.selectList("product.pagingList", map);
 	}
 	
 	// 특정 상품 상세정보 불러오기

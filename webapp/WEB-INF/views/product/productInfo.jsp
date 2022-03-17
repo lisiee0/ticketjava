@@ -17,6 +17,7 @@
 <link href="${pageContext.request.contextPath}/assets/css/indcom.css" rel="stylesheet">
 <link href="${pageContext.request.contextPath}/assets/css/product/productInfo.css" rel="stylesheet">
 
+<script src="${pageContext.request.contextPath}/assets/js/scroll.js"></script>
 </head>
 
 <body>

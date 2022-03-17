@@ -29,7 +29,7 @@ public class DiscountController {
 	@ResponseBody
 	@RequestMapping("/getList")
 	public List<DiscountVo> getList(@RequestParam("prodNo") int prodNo) {
-		System.out.println(prodNo);
+
 		return discountService.getList(prodNo);
 	}
 	
@@ -37,7 +37,7 @@ public class DiscountController {
 	@ResponseBody
 	@RequestMapping("/addDis")
 	public DiscountVo addDis(@ModelAttribute DiscountVo vo) {
-				
+
 		return discountService.addDis(vo);
 	}
 	

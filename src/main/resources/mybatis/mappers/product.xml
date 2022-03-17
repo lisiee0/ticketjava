@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="product">
-
+	
+	<!-- 사업자 페이지 (민석) -->
 	<!-- 공연 리스트 불러오기 -->
 	<select id="getProductList" resultType="productVo">
 		<![CDATA[
@@ -61,6 +62,13 @@
 	</delete>
 
 
+
+
+
+
+
+	<!-- 상품 출력페이지 (호준) -->
+
 	<!-- 평점 top4 리스트 -->
 	<select id="topList" parameterType="ProductVo" resultType="ProductVo">
 		<![CDATA[
@@ -92,9 +100,57 @@
 			and 			p.prodtype= #{prodType}
 		]]>
 	</select>
+	
+	<!-- prodType별 상품 개수 -->
+	<select id="prodTypeCnt" parameterType="int" resultType="int">
+		<![CDATA[
+			select  count(*)
+			from    product
+			where   prodtype= #{prodType}
+		]]>
+	</select>
+	
+	
+	<!-- prodType별 상품 리스트 (페이징) -->
+	<select id="pagingList" parameterType="map" resultType="ProductVo">
+		<![CDATA[
+						
+			select			rn,
+					        prodNo,
+					        prodname, 
+					        beginshow, 
+					        endshow, 
+					        hallname,
+					        posterpath, 
+					        theatername
+			        
+			from    		(select		rownum rn,
+						                prodNo, 
+						                prodname, 
+						                beginshow, 
+						                endshow, 
+						                hallname,
+						                posterpath, 
+						                theatername
+			            	 from		(select			p.prod_no prodNo, 
+			                                            prodname, 
+			                                            to_char(beginshow, 'YYYY-MM-DD') beginshow, 
+			                                            to_char(endshow, 'YYYY-MM-DD') endshow, 
+			                                            hallname,
+			                                            posterpath, 
+			                                            theatername
+			                            from 			product p, hall h, theater t
+			                            where 			p.hall_no= h.hall_no
+			                            and 			h.theater_no= t.theater_no
+			                            and 			status= 1
+			                            and 			prodtype= #{prodType}
+			                            order by        p.prod_no desc) o) r
+			where rn between #{startRnum} and #{endRnum}                           		
+		]]>
+	</select>
+	
 
-
-	<!-- 상품 리스트 -->
+	<!-- prodType별 상품 리스트 -->
 	<select id="allList" parameterType="ProductVo" resultType="ProductVo">
 		<![CDATA[
 			select			p.prod_no prodNo, 

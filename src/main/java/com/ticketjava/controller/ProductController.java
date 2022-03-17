@@ -19,17 +19,19 @@ public class ProductController {
 	
 	// prodType별 상품 리스트 불러오기
 	@RequestMapping("/type")
-	public String musical(@RequestParam("prodType") int prodType, Model model) {
+	public String musical(@RequestParam(value="crtPage", required= false, defaultValue= "1") int crtPage,
+						  @RequestParam("prodType") int prodType, Model model) {
 		
-		model.addAttribute("type", productService.typeList(prodType));
+		model.addAttribute("type", productService.typeList(prodType, crtPage));
 		return "product/pList";
 	}
 	
 	// sports 상품 리스트
 	@RequestMapping("/sports")
-	public String sports(@RequestParam("prodType") int prodType, Model model) {
+	public String sports(@RequestParam(value="crtPage", required= false, defaultValue= "1") int crtPage,
+						 @RequestParam("prodType") int prodType, Model model) {
 		
-		model.addAttribute("type", productService.sportsList(prodType));
+		model.addAttribute("type", productService.typeList(prodType, crtPage));
 		return "product/pListbySports";
 	}
 	
@@ -84,15 +86,5 @@ public class ProductController {
 		model.addAttribute("rank", productService.ranking());
 		return "product/pListbyRanking";
 	}
-	
-	
-	// 뮤지컬 불러오기
-	@RequestMapping("/pListMusical")
-	public String pListMusical(Model model) {
-		
-		model.addAttribute("type", productService.typeList(1));
-		return "product/pListMusical";
-	}
-	
 	
 }

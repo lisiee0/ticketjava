@@ -12,6 +12,7 @@ import com.ticketjava.dao.NoticeDao;
 import com.ticketjava.dao.ProductDao;
 import com.ticketjava.dao.SeatpriceDao;
 import com.ticketjava.dao.TheaterDao;
+import com.ticketjava.vo.Paging;
 import com.ticketjava.vo.ProductVo;
 import com.ticketjava.vo.TheaterVo;
 
@@ -31,22 +32,23 @@ public class ProductService {
 	
 	
 	// prodType별 TOP4 리스트 & 모든상품 리스트
-	public Map<String, Object> typeList(int prodType) {
+	public Map<String, Object> typeList(int prodType, int crtPage) {
+		
+		int listCnt= 8; // 한 페이지당 글 개수
+		int startRnum= (crtPage-1)*listCnt +1; // 시작글 번호
+		int endRnum= (startRnum+listCnt) -1; // 마지막글 번호
+		
+		Paging paging= new Paging();
+		paging.setPageNo(crtPage);
+		paging.setPageSize(listCnt);
+		paging.setTotalCount(pd.prodTypeCnt(prodType));
 		
 		Map<String, Object> typeList= new HashMap<String, Object>();
 		typeList.put("topList", pd.topList(prodType));
-		typeList.put("allList", pd.allList(prodType));
+		typeList.put("allList", pd.pagingList(prodType, startRnum, endRnum));
+		typeList.put("paging", paging);
 
 		return typeList;
-	}
-	
-	public Map<String, Object> sportsList(int prodType) {
-		
-		Map<String, Object> sportsList= new HashMap<String, Object>();
-		sportsList.put("topList", pd.topList(prodType));
-		sportsList.put("allList", pd.allList(prodType));
-		
-		return sportsList;
 	}
 
 	
