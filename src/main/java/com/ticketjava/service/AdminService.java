@@ -85,6 +85,7 @@ public class AdminService {
 		
 		Paging paging= new Paging();
 		paging.setPageNo(crtPage);
+		paging.setPageSize(listCnt);
 		paging.setTotalCount(hd.totalCnt());
 		
 		Map<String, Object> hMap= new HashMap<String, Object>();
