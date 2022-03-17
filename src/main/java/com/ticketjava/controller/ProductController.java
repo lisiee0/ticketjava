@@ -74,9 +74,10 @@ public class ProductController {
 	
 	// '지역' 페이지 
 	@RequestMapping("/region")
-	public String region(@RequestParam("cateNo") int no, Model model) {
+	public String region(@RequestParam(value="crtPage", required= false, defaultValue= "1") int crtPage,
+						 @RequestParam("cateNo") int no, Model model) {
 
-		model.addAttribute("allprod", productService.allprod(no));
+		model.addAttribute("allprod", productService.allprod(no, crtPage));
 		return "product/pListbyRegion";
 	}
 	

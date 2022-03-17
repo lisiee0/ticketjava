@@ -110,22 +110,46 @@ public class ProductDao {
 		return sqlsession.selectList("product.pagingResult", map);
 	}
 	
-	// 모든상품 (지역페이지)
-	public List<ProductVo> allprod(int cateNo) {
+	// 모든상품 카운트 (지역페이지)
+	public int allprodCnt(int cateNo) {
+		
+		switch(cateNo) {
+		case 0: // 전체
+				return sqlsession.selectOne("product.allprodCnt");
+		case 1: // 서울&경기
+				return sqlsession.selectOne("product.skprodCnt");
+		case 2: // 강원&충청
+				return sqlsession.selectOne("product.gcprodCnt");
+		case 3: // 전라
+				return sqlsession.selectOne("product.jprodCnt");
+		case 4: // 경상&제주
+				return sqlsession.selectOne("product.kjprodCnt");
+		default : //디폴트 (전체)
+				return sqlsession.selectOne("product.allprodCnt");		
+		}
+	}
+	
+	
+	// 모든상품 리스트 (지역페이지)
+	public List<ProductVo> allprod(int cateNo, int startRnum, int endRnum) {
+		
+		Map<String, Integer> map= new HashMap<String, Integer>();
+		map.put("startRnum", startRnum);
+		map.put("endRnum", endRnum);
 		
 		switch(cateNo) {
 			case 0: // 전체
-					return sqlsession.selectList("product.allprod");
+					return sqlsession.selectList("product.allprod", map);
 			case 1: // 서울&경기
-					return sqlsession.selectList("product.skprod");
+					return sqlsession.selectList("product.skprod", map);
 			case 2: // 강원&충청
-					return sqlsession.selectList("product.gcprod");
+					return sqlsession.selectList("product.gcprod", map);
 			case 3: // 전라
-					return sqlsession.selectList("product.jprod");
+					return sqlsession.selectList("product.jprod", map);
 			case 4: // 경상&제주
-					return sqlsession.selectList("product.kjprod");
+					return sqlsession.selectList("product.kjprod", map);
 			default : //디폴트 (전체)
-					return sqlsession.selectList("product.allprod");		
+					return sqlsession.selectList("product.allprod", map);		
 		}
 	}
 	

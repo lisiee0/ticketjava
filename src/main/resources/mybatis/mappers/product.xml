@@ -368,102 +368,307 @@
 	</select>
 	
 	
-	<!-- 모든상품 리스트 (지역페이지) cateNo=0 -->
-	<select id="allprod" resultType="ProductVo">
+	<!-- 전체 (지역페이지) cateNo=0 상품 총개수 -->
+	<select id="allprodCnt" resultType="int">
 		<![CDATA[
-			select			p.prod_no prodNo, 
-							prodname, 
-							to_char(beginshow, 'YYYY-MM-DD') beginshow, 
-							to_char(endshow, 'YYYY-MM-DD') endshow, 
-							hallname,
-							posterpath, 
-							theatername
-			from 			product p, hall h, theater t
-			where 			p.hall_no= h.hall_no
-			and 			h.theater_no= t.theater_no
-			and 			status= 1
+			select 			count(*)
+          	from  			(select			p.prod_no prodNo, 
+				                			prodname, 
+							                to_char(beginshow, 'YYYY-MM-DD') beginshow, 
+							                to_char(endshow, 'YYYY-MM-DD') endshow, 
+							                hallname,
+							                posterpath,
+							                address,
+							                theatername
+							from 			product p, hall h, theater t
+							where 			p.hall_no= h.hall_no
+							and 			h.theater_no= t.theater_no
+							and 			status= 1)
 		]]>
 	</select>
-
-	<!-- 서울/경기 cateNo=1 -->
-	<select id="skprod" resultType="ProductVo">
+	
+	
+	<!-- 모든상품 리스트 (지역페이지) cateNo=0 (페이징)-->
+	<select id="allprod" parameterType="map" resultType="ProductVo">
 		<![CDATA[
-			select			p.prod_no prodNo, 
-                			prodname, 
-			                to_char(beginshow, 'YYYY-MM-DD') beginshow, 
-			                to_char(endshow, 'YYYY-MM-DD') endshow, 
-			                hallname,
-			                posterpath,
-			                address,
-			                theatername
-			from 			product p, hall h, theater t
-			where 			p.hall_no= h.hall_no
-			and 			h.theater_no= t.theater_no
-			and 			status= 1
-			and             (address like '서울'||'%' or address like '경기'||'%' 
-							 or address like '인천'||'%')
+			select			rn,
+					        prodNo,
+					        prodname,
+					        beginshow,
+					        endshow,
+					        hallname,
+					        posterpath,
+					        address,
+					        theatername
+			from 			(select      	rownum rn,
+					                        prodNo,
+					                        prodname,
+					                        beginshow,
+					                        endshow,
+					                        hallname,
+					                        posterpath,
+					                        address,
+					                        theatername
+            				from       		(select			p.prod_no prodNo, 
+					                                        prodname, 
+					                                        to_char(beginshow, 'YYYY-MM-DD') beginshow, 
+					                                        to_char(endshow, 'YYYY-MM-DD') endshow, 
+					                                        hallname,
+					                                        posterpath,
+					                                        address,
+					                                        theatername
+					                        from 			product p, hall h, theater t
+					                        where 			p.hall_no= h.hall_no
+					                        and 			h.theater_no= t.theater_no
+					                        and 			status= 1))
+			where 				rn between #{startRnum} and #{endRnum} 
 		]]>
 	</select>
-
-	<!-- 강원/충청 cateNo=2 -->
-	<select id="gcprod" resultType="ProductVo">
+	
+	<!-- 서울/경기 cateNo=1 상품 총개수 -->
+	<select id="skprodCnt" resultType="int">
 		<![CDATA[
-			select			p.prod_no prodNo, 
-                			prodname, 
-			                to_char(beginshow, 'YYYY-MM-DD') beginshow, 
-			                to_char(endshow, 'YYYY-MM-DD') endshow, 
-			                hallname,
-			                posterpath,
-			                address,
-			                theatername
-			from 			product p, hall h, theater t
-			where 			p.hall_no= h.hall_no
-			and 			h.theater_no= t.theater_no
-			and 			status= 1
-			and             (address like '강원'||'%' or address like '충북'||'%' 
-							 or address like '충남'||'%' or address like '대전'||'%')
+			select 			count(*)
+          	from  			(select			p.prod_no prodNo, 
+				                			prodname, 
+							                to_char(beginshow, 'YYYY-MM-DD') beginshow, 
+							                to_char(endshow, 'YYYY-MM-DD') endshow, 
+							                hallname,
+							                posterpath,
+							                address,
+							                theatername
+							from 			product p, hall h, theater t
+							where 			p.hall_no= h.hall_no
+							and 			h.theater_no= t.theater_no
+							and 			status= 1
+							and             (address like '서울'||'%' or address like '경기'||'%' 
+							 				 or address like '인천'||'%'))
 		]]>
 	</select>
-
-
-	<!-- 전라 cateNo=3 -->
-	<select id="jprod" resultType="ProductVo">
+	
+	
+	<!-- 서울/경기 cateNo=1 (페이징) -->
+	<select id="skprod" parameterType="map" resultType="ProductVo">
 		<![CDATA[
-			select			p.prod_no prodNo, 
-                			prodname, 
-			                to_char(beginshow, 'YYYY-MM-DD') beginshow, 
-			                to_char(endshow, 'YYYY-MM-DD') endshow, 
-			                hallname,
-			                posterpath,
-			                address,
-			                theatername
-			from 			product p, hall h, theater t
-			where 			p.hall_no= h.hall_no
-			and 			h.theater_no= t.theater_no
-			and 			status= 1
-			and             (address like '전남'||'%' or address like '전북'||'%' 
-							 or address like '광주'||'%')
+			select			rn,
+					        prodNo,
+					        prodname,
+					        beginshow,
+					        endshow,
+					        hallname,
+					        posterpath,
+					        address,
+					        theatername
+			from 			(select      	rownum rn,
+					                        prodNo,
+					                        prodname,
+					                        beginshow,
+					                        endshow,
+					                        hallname,
+					                        posterpath,
+					                        address,
+					                        theatername
+            				from       		(select			p.prod_no prodNo, 
+					                                        prodname, 
+					                                        to_char(beginshow, 'YYYY-MM-DD') beginshow, 
+					                                        to_char(endshow, 'YYYY-MM-DD') endshow, 
+					                                        hallname,
+					                                        posterpath,
+					                                        address,
+					                                        theatername
+					                        from 			product p, hall h, theater t
+					                        where 			p.hall_no= h.hall_no
+					                        and 			h.theater_no= t.theater_no
+					                        and 			status= 1
+					                        and             (address like '서울'||'%' or address like '경기'||'%' 
+							 						 		 or address like '인천'||'%')))
+			where 				rn between #{startRnum} and #{endRnum}  
 		]]>
 	</select>
-
-	<!-- 경상/제주 cateNo=4 -->
-	<select id="kjprod" resultType="ProductVo">
+	
+	<!-- 강원/충청 cateNo=2 상품 총개수 -->
+	<select id="gcprodCnt" resultType="int">
 		<![CDATA[
-			select			p.prod_no prodNo, 
-                			prodname, 
-			                to_char(beginshow, 'YYYY-MM-DD') beginshow, 
-			                to_char(endshow, 'YYYY-MM-DD') endshow, 
-			                hallname,
-			                posterpath,
-			                address,
-			                theatername
-			from 			product p, hall h, theater t
-			where 			p.hall_no= h.hall_no
-			and 			h.theater_no= t.theater_no
-			and 			status= 1
-			and             (address like '경남'||'%' or address like '경북'||'%' 
-							 or address like '대구'||'%' or address like '부산'||'%' 
-							 or address like '울산'||'%' or address like '제주'||'%')
+			select 			count(*)
+          	from  			(select			p.prod_no prodNo, 
+				                			prodname, 
+							                to_char(beginshow, 'YYYY-MM-DD') beginshow, 
+							                to_char(endshow, 'YYYY-MM-DD') endshow, 
+							                hallname,
+							                posterpath,
+							                address,
+							                theatername
+							from 			product p, hall h, theater t
+							where 			p.hall_no= h.hall_no
+							and 			h.theater_no= t.theater_no
+							and 			status= 1
+							and             (address like '강원'||'%' or address like '충북'||'%' 
+							 				 or address like '충남'||'%' or address like '대전'||'%'))
+		]]>
+	</select>
+	
+	
+	<!-- 강원/충청 cateNo=2 (페이징)-->
+	<select id="gcprod" parameterType="map" resultType="ProductVo">
+		<![CDATA[
+			select			rn,
+					        prodNo,
+					        prodname,
+					        beginshow,
+					        endshow,
+					        hallname,
+					        posterpath,
+					        address,
+					        theatername
+			from 			(select      	rownum rn,
+					                        prodNo,
+					                        prodname,
+					                        beginshow,
+					                        endshow,
+					                        hallname,
+					                        posterpath,
+					                        address,
+					                        theatername
+            				from       		(select			p.prod_no prodNo, 
+					                                        prodname, 
+					                                        to_char(beginshow, 'YYYY-MM-DD') beginshow, 
+					                                        to_char(endshow, 'YYYY-MM-DD') endshow, 
+					                                        hallname,
+					                                        posterpath,
+					                                        address,
+					                                        theatername
+					                        from 			product p, hall h, theater t
+					                        where 			p.hall_no= h.hall_no
+					                        and 			h.theater_no= t.theater_no
+					                        and 			status= 1
+					                        and             (address like '강원'||'%' or address like '충북'||'%' 
+							 				 				 or address like '충남'||'%' or address like '대전'||'%')))
+			where 			rn between #{startRnum} and #{endRnum} 
+		]]>
+	</select>
+	
+	<!-- 전라 cateNo=3 상품 총개수 -->
+	<select id="jprodCnt" resultType="int">
+		<![CDATA[
+			select 			count(*)
+          	from  			(select			p.prod_no prodNo, 
+				                			prodname, 
+							                to_char(beginshow, 'YYYY-MM-DD') beginshow, 
+							                to_char(endshow, 'YYYY-MM-DD') endshow, 
+							                hallname,
+							                posterpath,
+							                address,
+							                theatername
+							from 			product p, hall h, theater t
+							where 			p.hall_no= h.hall_no
+							and 			h.theater_no= t.theater_no
+							and 			status= 1
+							and             (address like '전남'||'%' or address like '전북'||'%' 
+							 				 or address like '광주'||'%'))
+		]]>
+	</select>
+	
+
+	<!-- 전라 cateNo=3 (페이징)-->
+	<select id="jprod" parameterType="map" resultType="ProductVo">
+		<![CDATA[
+			select			rn,
+					        prodNo,
+					        prodname,
+					        beginshow,
+					        endshow,
+					        hallname,
+					        posterpath,
+					        address,
+					        theatername
+			from 			(select      	rownum rn,
+					                        prodNo,
+					                        prodname,
+					                        beginshow,
+					                        endshow,
+					                        hallname,
+					                        posterpath,
+					                        address,
+					                        theatername
+            				from       		(select			p.prod_no prodNo, 
+					                                        prodname, 
+					                                        to_char(beginshow, 'YYYY-MM-DD') beginshow, 
+					                                        to_char(endshow, 'YYYY-MM-DD') endshow, 
+					                                        hallname,
+					                                        posterpath,
+					                                        address,
+					                                        theatername
+					                        from 			product p, hall h, theater t
+					                        where 			p.hall_no= h.hall_no
+					                        and 			h.theater_no= t.theater_no
+					                        and 			status= 1
+					                        and             (address like '전남'||'%' or address like '전북'||'%' 
+							 				 				 or address like '광주'||'%')))
+			where 			rn between #{startRnum} and #{endRnum} 
+		]]>
+	</select>
+	
+	
+	<!-- 경상/제주 cateNo=4 상품 총개수 -->
+	<select id="kjprodCnt" resultType="int">
+		<![CDATA[
+			select 			count(*)
+          	from  			(select			p.prod_no prodNo, 
+				                			prodname, 
+							                to_char(beginshow, 'YYYY-MM-DD') beginshow, 
+							                to_char(endshow, 'YYYY-MM-DD') endshow, 
+							                hallname,
+							                posterpath,
+							                address,
+							                theatername
+							from 			product p, hall h, theater t
+							where 			p.hall_no= h.hall_no
+							and 			h.theater_no= t.theater_no
+							and 			status= 1
+							and             (address like '경남'||'%' or address like '경북'||'%' 
+											 or address like '대구'||'%' or address like '부산'||'%' 
+											 or address like '울산'||'%' or address like '제주'||'%'))
+		]]>
+	</select>
+	
+	
+	<!-- 경상/제주 cateNo=4 (페이징)-->
+	<select id="kjprod" parameterType="map" resultType="ProductVo">
+		<![CDATA[
+			select			rn,
+					        prodNo,
+					        prodname,
+					        beginshow,
+					        endshow,
+					        hallname,
+					        posterpath,
+					        address,
+					        theatername
+			from 			(select      	rownum rn,
+					                        prodNo,
+					                        prodname,
+					                        beginshow,
+					                        endshow,
+					                        hallname,
+					                        posterpath,
+					                        address,
+					                        theatername
+            				from       		(select			p.prod_no prodNo, 
+					                                        prodname, 
+					                                        to_char(beginshow, 'YYYY-MM-DD') beginshow, 
+					                                        to_char(endshow, 'YYYY-MM-DD') endshow, 
+					                                        hallname,
+					                                        posterpath,
+					                                        address,
+					                                        theatername
+					                        from 			product p, hall h, theater t
+					                        where 			p.hall_no= h.hall_no
+					                        and 			h.theater_no= t.theater_no
+					                        and 			status= 1
+					                        and             (address like '경남'||'%' or address like '경북'||'%' 
+					                                         or address like '대구'||'%' or address like '부산'||'%' 
+					                                         or address like '울산'||'%' or address like '제주'||'%')))
+			where 				rn between #{startRnum} and #{endRnum}     
 		]]>
 	</select>
 

@@ -61,7 +61,7 @@
 						<div class="row">
 							<ul class="nav navbar-nav">
 							
-								<c:forEach items="${allprod}" var="vo" varStatus="status">
+								<c:forEach items="${allprod.vo}" var="vo" varStatus="status">
 									<c:choose>
 										<c:when test="${status.count%4 eq 0}">
 											<li class="list-width last">
@@ -89,8 +89,31 @@
 										</c:otherwise>
 									</c:choose>
 								</c:forEach>
-	
 							</ul>
+						</div>
+						
+						<!-- 페이징 -->
+						<div class="row paging">				
+							<nav>
+							  <ul class="pagination">
+							  	<li><a href="javascript:PageMove(${allprod.paging.firstPageNo})"><span class="glyphicon glyphicon-triangle-left"></span></a></li>
+								<li class= ${allprod.paging.pageNo eq allprod.paging.firstPageNo ? "disabled" : ""}><a href="javascript:PageMove(${allprod.paging.prevPageNo})"><span class="glyphicon glyphicon-menu-left"></span></a></li>
+					
+								<c:forEach var="i" begin="${allprod.paging.startPageNo}" end="${allprod.paging.endPageNo}" step="1">
+									<c:choose>
+										<c:when test="${i eq allprod.paging.pageNo}">
+											<li class= ${allprod.paging.pageNo eq i ? "active" : ""}><a href="javascript:PageMove(${i})">${i}</a></li>
+										</c:when>
+										<c:otherwise>
+											<li class= ${allprod.paging.pageNo eq i ? "active" : ""}><a href="javascript:PageMove(${i})">${i}</a></li>
+										</c:otherwise>
+									</c:choose>
+								</c:forEach>
+								
+							    <li class= ${allprod.paging.pageNo eq allprod.paging.finalPageNo ? "disabled" : ""}><a href="javascript:PageMove(${allprod.paging.nextPageNo})"><span class="glyphicon glyphicon-menu-right"></span></a></li>
+							    <li><a href="javascript:PageMove(${allprod.paging.finalPageNo})"><span class="glyphicon glyphicon-triangle-right"></span></a></li>
+							  </ul>
+							</nav>
 						</div>
 					</div>
 				</div>
@@ -106,5 +129,13 @@
 	<!-- //wrap -->
 
 </body>
+
+<script>
+
+	function PageMove(page) {
+		location.href = "${pageContext.request.contextPath}/product/region?cateNo=${param.cateNo}&crtPage=" + page;	
+	}
+
+</script>
 
 </html>

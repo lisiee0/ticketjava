@@ -85,7 +85,7 @@ public class ProductService {
 		return tMap;
 	}
 	
-	// 검색결과
+	// 검색결과 페이지
 	public Map<String, Object> searchResult(String key, int crtPage) {
 		
 		int listCnt= 8; // 한 페이지당 글 개수
@@ -107,8 +107,22 @@ public class ProductService {
 	}
 	
 	// 모든상품 리스트 (지역페이지)
-	public List<ProductVo> allprod(int no) {
-		return pd.allprod(no);
+	public Map<String, Object> allprod(int no, int crtPage) {
+		
+		int listCnt= 12; // 한 페이지당 글 개수
+		int startRnum= (crtPage-1)*listCnt +1; // 시작글 번호
+		int endRnum= (startRnum+listCnt) -1; // 마지막글 번호
+		
+		Paging paging= new Paging();
+		paging.setPageNo(crtPage);
+		paging.setPageSize(listCnt);
+		paging.setTotalCount(pd.allprodCnt(no));
+		
+		Map<String, Object> aMap= new HashMap<String, Object>();
+		aMap.put("vo", pd.allprod(no, startRnum, endRnum));
+		aMap.put("paging", paging);
+
+		return aMap;
 	}
 	
 	// prodType별 TOP5 (랭킹페이지)
