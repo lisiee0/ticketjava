@@ -86,12 +86,22 @@ public class ProductService {
 	}
 	
 	// 검색결과
-	public Map<String, Object> searchResult(String key) {
+	public Map<String, Object> searchResult(String key, int crtPage) {
+		
+		int listCnt= 8; // 한 페이지당 글 개수
+		int startRnum= (crtPage-1)*listCnt +1; // 시작글 번호
+		int endRnum= (startRnum+listCnt) -1; // 마지막글 번호
+		
+		Paging paging= new Paging();
+		paging.setPageNo(crtPage);
+		paging.setPageSize(listCnt);
+		paging.setTotalCount(pd.countResult(key));
 		
 		Map<String, Object> rMap=new HashMap<String, Object>();
-		rMap.put("vo", pd.searchResult(key));
+		rMap.put("vo", pd.pagingResult(key, startRnum, endRnum));
 		rMap.put("count", pd.countResult(key));
 		rMap.put("key", key);
+		rMap.put("paging", paging);
 
 		return rMap;
 	}

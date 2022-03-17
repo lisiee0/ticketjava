@@ -11,6 +11,8 @@
 <link href="${pageContext.request.contextPath}/assets/bootstrap/css/bootstrap.css" rel="stylesheet">
 <link href="${pageContext.request.contextPath}/assets/css/main/search.css" rel="stylesheet">
 
+<link href="${pageContext.request.contextPath}/assets/css/indcom.css" rel="stylesheet">
+
 </head>
 
 
@@ -71,6 +73,30 @@
 					<div></div>
 				</div>
 				
+				<!-- 페이징 -->
+				<div class="row paging">				
+					<nav>
+					  <ul class="pagination">
+					  	<li><a href="javascript:PageMove(${result.paging.firstPageNo})"><span class="glyphicon glyphicon-triangle-left"></span></a></li>
+						<li class= ${result.paging.pageNo eq result.paging.firstPageNo ? "disabled" : ""}><a href="javascript:PageMove(${result.paging.prevPageNo})"><span class="glyphicon glyphicon-menu-left"></span></a></li>
+			
+						<c:forEach var="i" begin="${result.paging.startPageNo}" end="${result.paging.endPageNo}" step="1">
+							<c:choose>
+								<c:when test="${i eq result.paging.pageNo}">
+									<li class= ${result.paging.pageNo eq i ? "active" : ""}><a href="javascript:PageMove(${i})">${i}</a></li>
+								</c:when>
+								<c:otherwise>
+									<li class= ${result.paging.pageNo eq i ? "active" : ""}><a href="javascript:PageMove(${i})">${i}</a></li>
+								</c:otherwise>
+							</c:choose>
+						</c:forEach>
+						
+					    <li class= ${result.paging.pageNo eq result.paging.finalPageNo ? "disabled" : ""}><a href="javascript:PageMove(${result.paging.nextPageNo})"><span class="glyphicon glyphicon-menu-right"></span></a></li>
+					    <li><a href="javascript:PageMove(${result.paging.finalPageNo})"><span class="glyphicon glyphicon-triangle-right"></span></a></li>
+					  </ul>
+					</nav>
+				</div>
+				
 				
 			</div>
 			<!-- container 종료 -->
@@ -85,4 +111,15 @@
 	<!-- wrap 종료 -->
 
 </body>
+
+
+<script>
+
+	function PageMove(page) {
+
+		location.href = "${pageContext.request.contextPath}/product/search?keyword=${result.key}&crtPage=" + page;	
+	}
+
+</script>
+
 </html>

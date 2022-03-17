@@ -104,7 +104,7 @@
 								<nav>
 								  <ul class="pagination">
 								  	<li><a href="javascript:PageMove(${hallList.paging.firstPageNo})"><span class="glyphicon glyphicon-triangle-left"></span></a></li>
-									<li class= ${hallList.paging.pageNo eq hallList.paging.startPageNo ? "disabled" : ""}><a href="javascript:PageMove(${hallList.paging.prevPageNo})"><span class="glyphicon glyphicon-menu-left"></span></a></li>
+									<li class= ${hallList.paging.pageNo eq hallList.paging.firstPageNo ? "disabled" : ""}><a href="javascript:PageMove(${hallList.paging.prevPageNo})"><span class="glyphicon glyphicon-menu-left"></span></a></li>
 						
 									<c:forEach var="i" begin="${hallList.paging.startPageNo}" end="${hallList.paging.endPageNo}" step="1">
 										<c:choose>
@@ -117,7 +117,7 @@
 										</c:choose>
 									</c:forEach>
 									
-								    <li class= ${hallList.paging.pageNo eq hallList.paging.endPageNo ? "disabled" : ""}><a href="javascript:PageMove(${hallList.paging.nextPageNo})"><span class="glyphicon glyphicon-menu-right"></span></a></li>
+								    <li class= ${hallList.paging.pageNo eq hallList.paging.finalPageNo ? "disabled" : ""}><a href="javascript:PageMove(${hallList.paging.nextPageNo})"><span class="glyphicon glyphicon-menu-right"></span></a></li>
 								    <li><a href="javascript:PageMove(${hallList.paging.finalPageNo})"><span class="glyphicon glyphicon-triangle-right"></span></a></li>
 								  </ul>
 								</nav>

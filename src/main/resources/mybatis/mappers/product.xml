@@ -312,8 +312,62 @@
             and         	prodname like '%'||#{key}||'%')
 		]]>
 	</select>
-
-
+	
+	
+	<!-- 검색결과 (페이징) -->
+	<select id="pagingResult" parameterType="map" resultType="ProductVo">
+		<![CDATA[
+			select			rn,
+	                        prodNo,
+	                        prodname,
+	                        hallNo,
+	                        hallName,
+	                        prodtype,
+	                        beginshow,
+	                        endshow,
+	                        viewtime,
+	                        viewgrade,
+	                        posterpath,
+	                        status,
+	                        theaterNo,
+	                        theatername
+			from			(select  	rownum rn,
+					                    prodNo,
+					                    prodname,
+					                    hallNo,
+					                    hallName,
+					                    prodtype,
+					                    beginshow,
+					                    endshow,
+					                    viewtime,
+					                    viewgrade,
+					                    posterpath,
+					                    status,
+					                    theaterNo,
+					                    theatername
+							from 		(select			prod_no prodNo,
+							            				prodname,
+							            				h.hall_no hallNo,
+							            				h.hallname hallName,
+							            				prodtype,
+							            				to_char(beginshow, 'YYYY-MM-DD') beginshow, 
+											            to_char(endshow, 'YYYY-MM-DD') endshow,
+											            viewtime,
+											            viewgrade,
+											            posterpath,
+											            status,
+											            t.theater_no theaterNo,
+											            theatername
+										from        	product p, hall h, theater t
+										where       	p.hall_no= h.hall_no
+										and         	h.theater_no= t.theater_no
+										and         	status= 1
+										and         	prodname like '%'||#{key}||'%') o) r        
+			where rn between #{startRnum} and #{endRnum} 
+		]]> 
+	</select>
+	
+	
 	<!-- 모든상품 리스트 (지역페이지) cateNo=0 -->
 	<select id="allprod" resultType="ProductVo">
 		<![CDATA[

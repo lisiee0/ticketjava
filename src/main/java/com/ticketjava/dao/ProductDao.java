@@ -99,6 +99,17 @@ public class ProductDao {
 		return sqlsession.selectOne("product.countResult", key);
 	}
 	
+	// 검색결과 리스트 페이징
+	public List<ProductVo> pagingResult(String key, int startRnum, int endRnum) {
+		
+		Map<String, Object> map= new HashMap<String, Object>();
+		map.put("key", key);
+		map.put("startRnum", startRnum);
+		map.put("endRnum", endRnum);
+		
+		return sqlsession.selectList("product.pagingResult", map);
+	}
+	
 	// 모든상품 (지역페이지)
 	public List<ProductVo> allprod(int cateNo) {
 		

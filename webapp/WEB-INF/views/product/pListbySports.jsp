@@ -112,7 +112,7 @@
 							<nav>
 							  <ul class="pagination">
 							  	<li><a href="javascript:PageMove(${type.paging.firstPageNo})"><span class="glyphicon glyphicon-triangle-left"></span></a></li>
-								<li class= ${type.paging.pageNo eq type.paging.startPageNo ? "disabled" : ""}><a href="javascript:PageMove(${type.paging.prevPageNo})"><span class="glyphicon glyphicon-menu-left"></span></a></li>
+								<li class= ${type.paging.pageNo eq type.paging.firstPageNo ? "disabled" : ""}><a href="javascript:PageMove(${type.paging.prevPageNo})"><span class="glyphicon glyphicon-menu-left"></span></a></li>
 					
 								<c:forEach var="i" begin="${type.paging.startPageNo}" end="${type.paging.endPageNo}" step="1">
 									<c:choose>
@@ -125,7 +125,7 @@
 									</c:choose>
 								</c:forEach>
 								
-							    <li class= ${type.paging.pageNo eq type.paging.endPageNo ? "disabled" : ""}><a href="javascript:PageMove(${type.paging.nextPageNo})"><span class="glyphicon glyphicon-menu-right"></span></a></li>
+							    <li class= ${type.paging.pageNo eq type.paging.finalPageNo ? "disabled" : ""}><a href="javascript:PageMove(${type.paging.nextPageNo})"><span class="glyphicon glyphicon-menu-right"></span></a></li>
 							    <li><a href="javascript:PageMove(${type.paging.finalPageNo})"><span class="glyphicon glyphicon-triangle-right"></span></a></li>
 							  </ul>
 							</nav>

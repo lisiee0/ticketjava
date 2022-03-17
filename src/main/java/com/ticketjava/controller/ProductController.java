@@ -65,9 +65,10 @@ public class ProductController {
 	
 	// 상품 검색하기
 	@RequestMapping("/search")
-	public String search(@RequestParam("keyword") String key, Model model) {
+	public String search(@RequestParam(value="crtPage", required= false, defaultValue= "1") int crtPage,
+						 @RequestParam("keyword") String key, Model model) {
 
-		model.addAttribute("result", productService.searchResult(key));
+		model.addAttribute("result", productService.searchResult(key, crtPage));
 		return "product/productSearch";
 	}
 	
