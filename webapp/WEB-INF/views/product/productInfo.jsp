@@ -96,14 +96,14 @@
 						
 							<div class="col-xs-3 np" id="calArea">
 								<!-- 캘린더 api 구현 위치 -->
-								<form id="rezArea" method="post" action="">
+								<form id="rezArea" method="post" target="reserve" action="${pageContext.request.contextPath}/reservation/selectSeat">
 									<c:import url="/WEB-INF/views/include/calendar.jsp"></c:import>
 									<input id="prodNo" type="hidden" name="prodNo" value="${product.vo.prodNo}">
-									<input id="beginshow" type="hidden" value="${product.vo.beginShow}">
-									<input id="endshow" type="hidden" value="${product.vo.endShow}">
-									<button type="button" id="rezBtn" class="btn btn-primary btn-block">예매하기</button>
+									<input id="viewDate" type="hidden" name="viewDate" value="">
+									<button type="submit" id="rezBtn" class="btn btn-primary btn-block">예매하기</button>
 								</form>
-							
+								<input id="beginshow" type="hidden" value="${product.vo.beginShow}">
+								<input id="endshow" type="hidden" value="${product.vo.endShow}">
 							</div>		
 						</div>
 					</div>
@@ -334,28 +334,10 @@
 		var prodNo = $('#prodNo').val();
 
 		console.log(viewDate+' '+prodNo);
-		/* var rezVo = {
-			prodNo:prodNo,
-			viewDate:viewDate
-		};
+		$('#viewDate').val(viewDate);
 		
-		$.ajax({
-			url: "${pageContext.request.contextPath}/reservation/checkRezHistory",
-			type : "post",
-			data : rezVo,
-			dataType: "json",
-			success : function(rezVo){
-				console.log(rezVo);
-				if(rezVo.rezNo != 0) {
-					window.open('${pageContext.request.contextPath}/reservation/confirmContinue?prodNo='+prodNo+'&viewDate='+viewDate+'&rezNo='+rezVo.rezNo, 'reserve', 'width=960, height=800, left=300, top=100');
-				}
-			},
-			error : function(XHR, status, error) {
-				console.error(status + " : " + error);
-			}
-		}); */
-		
-		window.open('${pageContext.request.contextPath}/reservation/selectSeat?prodNo='+prodNo+'&viewDate='+viewDate, 'reserve', 'width=960, height=800, left=300, top=100');
+		/* window.open('${pageContext.request.contextPath}/reservation/selectSeat?prodNo='+prodNo+'&viewDate='+viewDate, 'reserve', 'width=960, height=800, left=300, top=100'); */
+	 	window.open('', 'reserve', 'width=960, height=800, left=300, top=100');
 	});
 	
 	
