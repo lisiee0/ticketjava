@@ -14,24 +14,61 @@ body, div, ul, li, dl, dt, ol, h1, h2, h3, h4, h5, h6,
 input, fieldset, legend, p, select, table, th, td, tr,
 textarea, button, form {margin: 0; padding: 0;}
 
-body	{font-family: 'Noto Sans KR', sans-serif; font-size:12px; color: #333; background-color: #fff;}
+body {
+	font-family: 'Noto Sans KR', sans-serif; 
+	font-size:12px; 
+	color: #333; 
+	background-color: #fff;
+}
 
 /* 레이아웃 */
-#header {padding: 0px 0px 0px 0px; background-color: #FFFFFF;}
+#header {
+	padding: 0px 0px 0px 0px; 
+	background-color: #FFFFFF;
+}
 
 /* 해더(header: 로고, 로그인관련 버튼) */
-#header	h1 {font-size: 36px; font-weight: bold; line-height: 1.1;}
-#header	h1>a {float: right; margin: 10px 0px 0px 0px; font-size: 35px; color:#79B30B; }
-#header ul {float: right;  }
-#header ul>li {list-style:none; padding-left:0px; /* 로그인 리스트 블릿마크 제거 */
-				float: left; margin: 25px 0px 0px 10px;}
-#header ul>li .btn_s {padding: 4px 6px 4px 6px; border: 1px solid #bfbfbf; border-radius: 2px; font-size: 10px; }
+#header	h1 {
+	font-size: 36px; 
+	font-weight: bold; 
+	line-height: 1.1;
+}
+
+#header	h1>a {
+	float: right; 
+	margin: 10px 0px 0px 0px; 
+	font-size: 35px; 
+	color:#79B30B; 
+}
+
+#header ul {
+	float: right;  
+}
+
+/* 로그인 리스트 블릿마크 제거 */
+#header ul>li {
+	list-style:none; 
+	padding-left:0px; 
+	float: left; 
+	margin: 25px 0px 0px 10px;
+}
+
+#header ul>li .btn_s {
+	padding: 4px 6px 4px 6px; 
+	border: 1px solid #bfbfbf; 
+	border-radius: 2px; 
+	font-size: 10px; 
+}
 
 /* 헤더 로그인 회원가입 링크 밑줄 제거 */
-#header ul>li>a {text-decoration-line : none;}
+#header ul>li>a {
+	text-decoration-line : none;
+}
 
 /* 헤더 네비바의 규격 */
-.container {width:1000px}
+.container {
+	width :1000px;
+}
 
 /* 검색창 (로고 옆 네비바 위) */
 #serachBar{
@@ -69,10 +106,14 @@ div.nav{
 	padding-right:0px;
 }
 
-/* 네비바가 있는 곳에 브라우저 전체 파란줄 */
-.navbox {background-color:#6697f2; }
+/* 네비바가 있는 곳에 브라우저 전체 파란줄 이었던것 
+.navbox {
+	background-color:#6697f2; 
+} */
+
 
 #navnav{
+	background-color: white; 
 	border-radius:0px;
 	margin-bottom:0px;
 }
@@ -102,10 +143,11 @@ div.nav{
 
 
 .nav-item a { /*nav-item 클래스 아래의 a 요소를 선택함*/
-    color: white;
+    color: black;
 }
+
 .nav-item a:hover{
-	text-decoration:none;
+	text-decoration : #6697f2;
 }
 
 
