@@ -1,0 +1,189 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
+
+/* 여백 초기화 */
+body, div, ul, li, dl, dt, ol, h1, h2, h3, h4, h5, h6, 
+input, fieldset, legend, p, select, table, th, td, tr,
+textarea, button, form {margin: 0; padding: 0;}
+
+body {
+	font-family: 'Noto Sans KR', sans-serif; 
+	font-size:12px; 
+	color: #333; 
+	background-color: #fff;
+}
+
+/* 티잡 로고 제어 */
+#ticketJavaLogo {
+	margin-bottom: 0px;
+	padding-bottom: 30px;
+	padding-left: 0px;
+}
+
+
+/* 헤더 레이아웃 제어 */
+#header {
+	padding: 0px 0px 0px 0px; 
+	background-color: #FFFFFF;
+}
+
+/* 해더(header: 로고, 로그인관련 버튼) */
+#header	h1 {
+	font-size: 36px; 
+	font-weight: bold; 
+	line-height: 1.1;
+}
+
+#header	h1>a {
+	float: right; 
+	margin: 10px 0px 0px 0px; 
+	font-size: 35px; 
+	color:#79B30B; 
+}
+
+#header ul {
+	float: right;  
+}
+
+/* 로그인 리스트 블릿마크 제거 */
+#header ul>li {
+	list-style:none; 
+	padding-left:0px; 
+	float: left; 
+	margin: 25px 0px 0px 10px;
+}
+
+#header ul>li .btn_s {
+	padding: 4px 6px 4px 6px; 
+	border: 1px solid #bfbfbf; 
+	border-radius: 2px; 
+	font-size: 10px; 
+}
+
+/* 헤더 로그인 회원가입 링크 밑줄 제거 */
+#header ul>li>a {
+	text-decoration-line : none;
+	font-size : 13px;
+	font-family: 'Noto Sans KR', sans-serif;
+}
+
+/* 헤더 네비바의 규격 */
+.container {
+	width :1000px;
+}
+
+
+
+/* 검색창제어 (로고 옆 네비바 위) */
+.searchBar{
+	padding-left:45px;
+	padding-top:10px;
+	margin: 0px 0px 0px 0px;
+}
+
+.searchBar input{
+	width:300px;
+	height:40px;
+	margin: 0px 0px 0px 0px;
+	text-align:center;
+	display:inline-block;
+	
+}
+
+.searchBar button{
+	width:50px;
+	height:40px;
+	padding:0px 0px 0px 0px;
+	margin: 0px 0px 0px 0px;
+	color:white;
+	display:inline-block;
+}
+
+/* 검색하기 버튼 평소 색상 (티잡블루) */
+.index-search {
+	margin: 0px 0px 0px 0px;
+	padding: 0px 0px 0px 0px;
+	background-color : #6697f2;	
+}
+
+/* 검색하기 버튼에 마우스 올렸을때 글씨 배경 색 변화 */
+.searchBar button:hover{
+	color: #e5e5e5;
+	background-color: #5189f1;	
+}
+
+
+
+/* 네비바가 있는 곳 브라우저 전체 영역 제어 */
+.navbox {
+	background-color : white; 
+	border-top : 1px solid #dedede;
+	border-bottom : 5px solid #6697f2;
+} 
+
+div.navbox{
+	padding:0px;
+}
+
+div.nav{
+	padding-right:0px;
+}
+
+#navnav{
+	background-color: white; 
+	margin-bottom:0px;
+}
+
+/* 네비(nav: 메인메뉴) */
+#navbar  ul{
+	height:55px;
+	padding-top:12px;
+}
+
+#navbar  ul>li {
+	justify-content:flex; 
+	align-items:center; 
+	padding: 0px 0px 0px 0px; 
+	margin: 10px 92px 0px 0px; 
+	font-size: 19px; 
+	font-weight: bold;	
+	display:inline;
+}
+				
+#navbar  ul>li .smallFont{
+	font-size:15px;
+}
+
+#navbar ul>li#last-nav-item{
+	margin-left: 3px;
+	margin-right: 0px;
+}
+
+
+/* 네비바 버튼 nav-item 클래스 아래의 a 요소를 선택함*/
+.nav-item a { 
+    color: #3c3c3c ;
+}
+
+.nav-item a:hover{
+	color: #6697f2 ;
+	text-decoration : #6697f2;
+}
+
+
+/****************** 공통 ************************/
+/* clearfix */
+.clearfix{*zoom:1;}
+.clearfix:before, .clearfix:after {display: block; content: ""; line-height: 0;}
+.clearfix:after {clear: both;}
+
+.dis {display: inline-block;}
+.zp {padding: 0px;}
+.vm {vertical-align: middle;}
+
+
+/* 마우스 클릭 엔 드래그 방지 */
+.no-drag {-ms-user-select: none; -moz-user-select: -moz-none; -webkit-user-select: none; -khtml-user-select: none; user-select:none;} 
+
+/* 고스트방지 (마우스 클릭 홀드 드래그 할때 커서에 내용 이동) */
+.no-ghost {-webkit-user-drag: none; }
