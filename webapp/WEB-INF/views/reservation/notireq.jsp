@@ -104,7 +104,7 @@
 			<div id="button">
 				<input type="hidden" name="prodNo" value="${param.prodNo}">
 				<input type="hidden" name="viewDate" value="${param.viewDate}">
-				<div id="dynamicBtn"></div>
+				<div id="btnArea"></div>
 			</div>
 		</div>
 		
@@ -203,10 +203,10 @@
 		});
 		console.log($('#myReqDetail').text());
 		if($('#myReqDetail').text() != '') {
-			$('#dynamicBtn').html('<button id="reqDel" type="button" class="btn-default">알림 취소</button>');
+			$('#btnArea').html('<button id="reqDel" type="button" class="btn-default">알림 취소</button>');
 		}
 		else{
-			$('#dynamicBtn').html('<button id="notiReqBtn" type="button" class="btn-primary">알림 신청</button>');
+			$('#btnArea').html('<button id="notiReqBtn" type="button" class="btn-primary">알림 신청</button>');
 		}
 		
 		
@@ -246,7 +246,7 @@
 						notiTimes += '회';
 					alert('신청됐습니다');
 					$('#myReqDetail').html('<p>선택 구역 : '+selSection + '</p><p>남은 횟수 : '+notiTimes+'</p>');
-					$('#dynamicBtn').html('<button id="reqDel" type="button" class="btn-default">알림 취소</button>');
+					$('#btnArea').html('<button id="reqDel" type="button" class="btn-default">알림 취소</button>');
 				}
 			},
 			error : function(XHR, status, error) {
@@ -271,7 +271,7 @@
 				if(result == "success"){
 					alert('취소됐습니다');
 					$('#myReqDetail').html('');
-					$('#dynamicBtn').html('<button id="notiReqBtn" type="button" class="btn-primary">알림 신청</button>');
+					$('#btnArea').html('<button id="notiReqBtn" type="button" class="btn-primary">알림 신청</button>');
 				}
 			},
 			error : function(XHR, status, error) {

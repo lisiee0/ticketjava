@@ -53,10 +53,6 @@ public class ReservationService {
 		
 	}
 
-	public void preDel() {
-		// 오라클 잡 스케줄러로 대체
-	}
-	
 	public void preDelNow(int rezNo) {
 		reservationDao.deletePreByNo(rezNo);
 		
