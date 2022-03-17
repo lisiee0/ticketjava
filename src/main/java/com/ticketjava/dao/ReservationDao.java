@@ -20,10 +20,6 @@ public class ReservationDao {
 		sqlSession.insert("reservation.insertPre", reservationVo);
 	}
 
-	public void deletePre(List<Integer> rezNoList) {
-		sqlSession.delete("reservation.deletePre", rezNoList);
-	}
-
 	public void deletePreByNo(int rezNo) {
 		sqlSession.delete("reservation.deletePreByNo", rezNo);
 	}

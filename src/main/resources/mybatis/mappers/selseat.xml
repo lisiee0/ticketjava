@@ -22,15 +22,6 @@
 		]]>
 	</select>
 	
-	<select id="selectTimeOver" resultType="int">
-		<![CDATA[
-			select  distinct rez_no
-			from selseat
-			where (sysdate-pretime)*24*60*60 > 600 and status = 2
-		]]>
-		
-	</select>
-	
 	<select id="selectOccupy" resultType="SelseatVo" parameterType="ReservationVo">
 		<![CDATA[
 			select grade,

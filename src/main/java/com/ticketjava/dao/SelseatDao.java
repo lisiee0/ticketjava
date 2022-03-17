@@ -25,13 +25,6 @@ public class SelseatDao {
 		return sqlSession.selectList("selseat.selectSelList", rezNo);
 	}
 	
-	
-
-	
-	
-	public List<Integer> selectTimeOver() {
-		return sqlSession.selectList("selseat.selectTimeOver");
-	}
 
 	public List<SelseatVo> selectOccupy(ReservationVo reservationVo) {
 		return sqlSession.selectList("selseat.selectOccupy", reservationVo);

@@ -12,18 +12,6 @@
 	    ]]>
 	</insert>
 
-	<delete id="deletePre" parameterType="map">
-		
-		<![CDATA[
-			delete
-			from reserve
-			where rez_no in
-		]]>
-		<foreach collection="list" item="item" index="index" open="(" close=")" separator=",">
-			#{item}
-		</foreach>
-	</delete>
-
 	<select id="selectPre" parameterType="int" resultType="int">
 		<![CDATA[
 			select count(*)

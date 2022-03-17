@@ -54,11 +54,7 @@ public class ReservationService {
 	}
 
 	public void preDel() {
-		List<Integer> rezNoList = selseatDao.selectTimeOver();
-		
-		if(rezNoList.size() >0) {
-			reservationDao.deletePre(rezNoList);
-		}
+		// 오라클 잡 스케줄러로 대체
 	}
 	
 	public void preDelNow(int rezNo) {
