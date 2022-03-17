@@ -99,7 +99,10 @@ public class ReservationController {
 		return reservationService.finalPayment(reservationVo); 
 	}
 	
-	
+	@RequestMapping("/confirmContinue")
+	public String confirmContinue() {
+		return "reservation/confirmContinue";
+	}
 	
 	
 	
