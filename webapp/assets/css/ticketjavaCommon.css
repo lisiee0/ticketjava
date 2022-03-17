@@ -35,8 +35,8 @@ body	{font-family: 'Noto Sans KR', sans-serif; font-size:12px; color: #333; back
 
 /* 검색창 (로고 옆 네비바 위) */
 #serachBar{
-	margin-bottom:30px;
 	padding-left:45px;
+	padding-top:10px;
 }
 
 #serachBar input{
@@ -57,7 +57,7 @@ body	{font-family: 'Noto Sans KR', sans-serif; font-size:12px; color: #333; back
 
 #ticketJavaLogo {
 	margin-bottom:0px;
-	padding-top:5px;
+	padding-bottom:30px;
 	padding-left:0px;
 }
 
