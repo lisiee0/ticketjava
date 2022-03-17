@@ -56,6 +56,11 @@ public class ProductDao {
 		return sqlsession.selectList("product.allList", prodType);
 	}
 	
+	// prodType별 상품 카운트
+	public int prodTypeCnt(int prodType) {
+		return sqlsession.selectOne("product.prodTypeCnt", prodType);
+	}
+	
 	// 특정 상품 상세정보 불러오기
 	public ProductVo getProduct(int prodNo) {
 		return sqlsession.selectOne("product.getProduct", prodNo);
