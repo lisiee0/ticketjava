@@ -176,9 +176,15 @@
 			data : rezVo,
 			dataType: "json",
 			success : function(result){
-				alert('예매 완료');
-				opener.location.href = "${pageContext.request.contextPath}/mypage/reserveDetail?rezNo="+rezNo;
-				window.close();				
+				if(result == 'fail'){
+					alert('선점이 만료됐습니다. 처음부터 진행해주세요');
+					location.replace('${pageContext.request.contextPath}/reservation/selectSeat?prodNo=${param.prodNo}&viewDate=${param.viewDate}');
+				}
+				else{
+					alert('예매 완료');
+					opener.location.href = "${pageContext.request.contextPath}/mypage/reserveDetail?rezNo="+rezNo;
+					window.close();
+				}
 			},
 			error : function(XHR, status, error) {
 				console.error(status + " : " + error);
