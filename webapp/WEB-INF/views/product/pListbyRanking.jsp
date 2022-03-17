@@ -19,6 +19,40 @@
 <link href="${pageContext.request.contextPath}/assets/css/product/productInfo.css" rel="stylesheet">
 </head>
 
+<style>
+
+.flag {
+
+	width: 29px;
+    height: 33px;
+    background: url(//ticketimage.interpark.com/TicketImage/2016/20160308_ranking/main/img/flag.png) 0 -33px no-repeat;
+    position: absolute;
+    top: 0;
+    left: 14.5;
+    line-height: 25px;
+    font-size: 13px;
+    color: #fff;
+    text-align: center;
+
+}
+
+.flagtop {
+
+	width: 29px;
+    height: 33px;
+    background: url(//ticketimage.interpark.com/TicketImage/2016/20160308_ranking/main/img/flag.png) 0 -33px no-repeat;
+    position: absolute;
+    top: 0;
+    left: 14.5;
+    line-height: 25px;
+    font-size: 13px;
+    color: #fff;
+    text-align: center;
+	background-position: 0 0;
+}
+
+</style>
+
 <body>
 	<div id="wrap">
 		<!-- header & nav -->
@@ -37,12 +71,13 @@
 							<table class="rankingTable">
 								<tr>
 									<th>뮤지컬</th>
-									<td class="btnArea"><span class="glyphicon glyphicon-chevron-left btnSize"></span><td>
+									<td class="btnArea"><td>
 									<td class="list-bgc">
 										<ul class="nav navbar-nav">
-											<c:forEach items="${rank.musical}" var="vo">
+											<c:forEach items="${rank.musical}" var="vo" varStatus="status">
 												<li class="rank-list">
 													<div>
+														<span class= ${status.count le 3 ? "flagtop" : "flag"}>${status.count}</span>
 														<a href="${pageContext.request.contextPath}/product/info?prodNo=${vo.prodNo}"><img class="rank-poster" src="${pageContext.request.contextPath}/upload/${vo.posterPath}"></a>
 													</div>
 													<div>
@@ -53,7 +88,7 @@
 											</c:forEach>
 										</ul>
 									</td>
-									<td><span class="glyphicon glyphicon-chevron-right btnSize lastbtn"></span></td>
+									<td></td>
 								</tr>
 							</table>
 						</div>
@@ -62,12 +97,13 @@
 							<table class="rankingTable">
 								<tr>
 									<th>연극</th>
-									<td class="btnArea"><span class="glyphicon glyphicon-chevron-left btnSize"></span><td>
+									<td class="btnArea"><td>
 									<td class="list-bgc">
 										<ul class="nav navbar-nav">
-											<c:forEach items="${rank.play}" var="vo">
+											<c:forEach items="${rank.play}" var="vo" varStatus="status">
 												<li class="rank-list">
 													<div>
+														<span class= ${status.count le 3 ? "flagtop" : "flag"}>${status.count}</span>
 														<a href="${pageContext.request.contextPath}/product/info?prodNo=${vo.prodNo}"><img class="rank-poster" src="${pageContext.request.contextPath}/upload/${vo.posterPath}"></a>
 													</div>
 													<div>
@@ -78,7 +114,7 @@
 											</c:forEach>
 										</ul>
 									</td>
-									<td><span class="glyphicon glyphicon-chevron-right btnSize lastbtn"></span></td>
+									<td></td>
 								</tr>
 							</table>
 						</div>
@@ -87,12 +123,13 @@
 							<table class="rankingTable">
 								<tr>
 									<th>콘서트</th>
-									<td class="btnArea"><span class="glyphicon glyphicon-chevron-left btnSize"></span><td>
+									<td class="btnArea"><td>
 									<td class="list-bgc">
 										<ul class="nav navbar-nav">
-											<c:forEach items="${rank.concert}" var="vo">
+											<c:forEach items="${rank.concert}" var="vo" varStatus="status">
 												<li class="rank-list">
 													<div>
+														<span class= ${status.count le 3 ? "flagtop" : "flag"}>${status.count}</span>
 														<a href="${pageContext.request.contextPath}/product/info?prodNo=${vo.prodNo}"><img class="rank-poster" src="${pageContext.request.contextPath}/upload/${vo.posterPath}"></a>
 													</div>
 													<div>
@@ -103,7 +140,7 @@
 											</c:forEach>
 										</ul>
 									</td>
-									<td><span class="glyphicon glyphicon-chevron-right btnSize lastbtn"></span></td>
+									<td></td>
 								</tr>
 							</table>
 						</div>
@@ -112,12 +149,13 @@
 							<table class="rankingTable">
 								<tr>
 									<th>스포츠</th>
-									<td class="btnArea"><span class="glyphicon glyphicon-chevron-left btnSize"></span><td>
+									<td class="btnArea"><td>
 									<td class="list-bgc">
 										<ul class="nav navbar-nav">
-											<c:forEach items="${rank.sports}" var="vo">
+											<c:forEach items="${rank.sports}" var="vo" varStatus="status">
 												<li class="rank-list">
 													<div>
+														<span class= ${status.count le 3 ? "flagtop" : "flag"}>${status.count}</span>
 														<a href="${pageContext.request.contextPath}/product/info?prodNo=${vo.prodNo}"><img class="rank-poster" src="${pageContext.request.contextPath}/upload/${vo.posterPath}"></a>
 													</div>
 													<div>
@@ -128,7 +166,7 @@
 											</c:forEach>
 										</ul>
 									</td>
-									<td><span class="glyphicon glyphicon-chevron-right btnSize lastbtn"></span></td>
+									<td></td>
 								</tr>
 							</table>
 						</div>
@@ -137,12 +175,13 @@
 							<table class="rankingTable">
 								<tr>
 									<th>전시</th>
-									<td class="btnArea"><span class="glyphicon glyphicon-chevron-left btnSize"></span><td>
+									<td class="btnArea"><td>
 									<td class="list-bgc">
 										<ul class="nav navbar-nav">
-											<c:forEach items="${rank.exhibition}" var="vo">
+											<c:forEach items="${rank.exhibition}" var="vo" varStatus="status">
 												<li class="rank-list">
 													<div>
+														<span class= ${status.count le 3 ? "flagtop" : "flag"}>${status.count}</span>
 														<a href="${pageContext.request.contextPath}/product/info?prodNo=${vo.prodNo}"><img class="rank-poster" src="${pageContext.request.contextPath}/upload/${vo.posterPath}"></a>
 													</div>
 													<div>
@@ -153,7 +192,7 @@
 											</c:forEach>
 										</ul>
 									</td>
-									<td><span class="glyphicon glyphicon-chevron-right btnSize lastbtn"></span></td>
+									<td></td>
 								</tr>
 							</table>
 						</div>

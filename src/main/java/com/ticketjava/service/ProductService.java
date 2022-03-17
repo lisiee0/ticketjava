@@ -1,7 +1,6 @@
 package com.ticketjava.service;
 
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,7 +12,6 @@ import com.ticketjava.dao.ProductDao;
 import com.ticketjava.dao.SeatpriceDao;
 import com.ticketjava.dao.TheaterDao;
 import com.ticketjava.vo.Paging;
-import com.ticketjava.vo.ProductVo;
 import com.ticketjava.vo.TheaterVo;
 
 @Service

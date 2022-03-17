@@ -8,7 +8,6 @@
 <meta charset="UTF-8">
 <title>TicketJava include</title>
 
-
 <!-- 부트스트랩 Bootstrap core CSS -->
 <link href="${pageContext.request.contextPath}/assets/bootstrap/css/bootstrap.css" rel="stylesheet">
 
@@ -48,14 +47,14 @@
 										<c:when test="${status.count%5 eq 0}">
 											<li class="logoaArea">
 												<div>
-													<a href="${pageContext.request.contextPath}/product/listbyTheater?theaterNo=${vo.theaterNo}"><img class="theater-logo img-thumbnail img-rounded last-logo" data-no="${vo.theaterNo}" src="${pageContext.request.contextPath}/upload/${vo.logoPath}"></a>
+													<a href="${pageContext.request.contextPath}/product/listbyTheater?theaterNo=${vo.theaterNo}"><img class="img-thumbnail img-rounded theater-logo last-logo" data-no="${vo.theaterNo}" src="${pageContext.request.contextPath}/upload/${vo.logoPath}"></a>
 												</div>
 											</li>
 										</c:when>
 										<c:otherwise>
 											<li class="logoaArea">
 												<div>
-													<a href="${pageContext.request.contextPath}/product/listbyTheater?theaterNo=${vo.theaterNo}"><img class="theater-logo img-thumbnail img-rounded" src="${pageContext.request.contextPath}/upload/${vo.logoPath}"></a>
+													<a href="${pageContext.request.contextPath}/product/listbyTheater?theaterNo=${vo.theaterNo}"><img class="img-thumbnail img-rounded theater-logo" src="${pageContext.request.contextPath}/upload/${vo.logoPath}"></a>
 												</div>
 											</li>
 										</c:otherwise>
