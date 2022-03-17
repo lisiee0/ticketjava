@@ -24,6 +24,12 @@ public class ReviewDao {
 	}
 
 	
-
+	public void userReviewDelete(int reviewNo) {
+		sqlSession.delete("review.deleteReview", reviewNo);
+		System.out.println("리뷰 다오 reviewNo "+reviewNo);
+	}
+	
+	
+	
 	
 } // The end of ReservationDao

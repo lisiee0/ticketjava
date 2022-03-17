@@ -23,6 +23,8 @@ public class ReviewService {
 	
 	
 	
-	
+	public void userReviewDelete(int reviewNo) {
+		reviewDao.userReviewDelete(reviewNo);
+	}
 	
 } // The end of ReservationService

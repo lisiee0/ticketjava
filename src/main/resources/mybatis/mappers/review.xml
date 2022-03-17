@@ -21,5 +21,19 @@ order	by reviewNo desc
 	</select>
 
 
+	<delete id="deleteReview" parameterType="ReviewVo">
+		
+		<![CDATA[
+		
+DELETE FROM		review
+where			review_no = #{reviewNo}
+
+		]]>
+	</delete>
+
+
+
+
+
 
 </mapper>

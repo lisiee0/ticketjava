@@ -133,6 +133,14 @@ public class MypageController {
 		return "mypage/userReview";
 	}
 	
+	@RequestMapping("/userReviewDelete")
+	public String userReviewDelete(@RequestParam("reviewNo") int reviewNo) {
+		System.out.println("MypageController userReviewDelete "+reviewNo);
+		
+		reviewService.userReviewDelete(reviewNo);
+		return "redirect:/mypage/userReview";
+	}
+	
 	
 //	회원정보 수정
 	@RequestMapping("/userModify")

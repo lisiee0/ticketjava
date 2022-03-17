@@ -99,8 +99,9 @@
 															<c:otherwise> ★ </c:otherwise>
 														</c:choose> ${reviewList.rating}</td>
 													<td>${reviewList.regDate}</td>
-													<td><button class="btn btn-primary btnM" type="submit" id="btn-submit">수정</button>
-														<button class="btn btn-primary" type="submit" id="btn-submit">삭제</button></td>
+													<td>
+													<a href="#">[수정]</a>
+													<a href="${pageContext.request.contextPath}/mypage/userReviewDelete?reviewNo=${reviewList.reviewNo}">[삭제]</a>
 												</tr>
 											</tbody>
 										</c:forEach>
