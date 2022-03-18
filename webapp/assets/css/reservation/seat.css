@@ -30,50 +30,9 @@
 	min-height:450px;
 }
 
-#seatPlanDiv div#stageArea{
-	text-align:center;
-	width:40%;
-	height:30px;
-	color:white;
-	background-color:#474747;
-	border-radius:20px;
-	margin: 10px 0px 40px 170px;
-	font-size:17px;
-}
+
 #seatPlanDiv table{
 	display:inline;
-}
-
-
-#seatPlanDiv table#seatAreaA{
-	position:absolute;
-	top:300px;
-	left:150px;
-}
-
-#seatPlanDiv table#seatAreaB{
-	position:absolute;
-	top:300px;
-	left:280px;
-}
-
-
-#seatPlanDiv table#seatAreaC{
-	position:absolute;
-	top:300px;
-	left:450px;
-}
-
-#seatPlanDiv table#seatAreaD{
-	position:absolute;
-	top:480px;
-	left:150px;
-}
-
-#seatPlanDiv table#seatAreaE{
-	position:absolute;
-	top:480px;
-	left:300px;
 }
 
 #seatPlanDiv table th.center{

@@ -12,12 +12,12 @@
 <script src="${pageContext.request.contextPath}/assets/jquery/jquery-1.12.4.js"></script>
 <script src="${pageContext.request.contextPath}/assets/bootstrap/js/bootstrap.js"></script>
 
-<!-- <script src="assets/bootstrap/js/sejong1.js"></script> -->
-<script src="${pageContext.request.contextPath}/assets/jquery/venues/venue${param.hallNo}.js"></script>
+<script src="${pageContext.request.contextPath}/assets/js/venues/venue${param.hallNo}.js"></script>
 
 <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/bootstrap/css/bootstrap.css">
 <link href="${pageContext.request.contextPath}/assets/css/reservation/reservation.css" rel="stylesheet" type="text/css">
 <link href="${pageContext.request.contextPath}/assets/css/reservation/seat.css" rel="stylesheet" type="text/css">
+<link href="${pageContext.request.contextPath}/assets/css/venues/venue${rezProdInfo.hallNo}.css" rel="stylesheet" type="text/css">
 <link href="${pageContext.request.contextPath}/assets/css/reservation/reservation1.css" rel="stylesheet" type="text/css">
 
 
@@ -83,12 +83,6 @@
 
 <script type="text/javascript">
 var hallNo = '${param.hallNo}';
-
-$(document).ready(function(){
-	
-	
-});
-
 
 $('#nextBtn').on('click', function(){
 	

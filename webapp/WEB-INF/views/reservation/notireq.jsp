@@ -9,12 +9,13 @@
 
 <script src="${pageContext.request.contextPath}/assets/jquery/jquery-1.12.4.js"></script>
 <script src="${pageContext.request.contextPath}/assets/bootstrap/js/bootstrap.js"></script>
-<script src="${pageContext.request.contextPath}/assets/jquery/venues/venue1.js"></script>
+<script src="${pageContext.request.contextPath}/assets/js/venues/venue${rezProdInfo.hallNo}.js"></script>
 <c:import url="/assets/js/reservation/notireqJs.jsp"></c:import>
 
 <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/bootstrap/css/bootstrap.css">
 <link href="${pageContext.request.contextPath}/assets/css/reservation/reservation.css" rel="stylesheet" type="text/css">
 <link href="${pageContext.request.contextPath}/assets/css/reservation/seat.css" rel="stylesheet" type="text/css">
+<link href="${pageContext.request.contextPath}/assets/css/venues/venue${rezProdInfo.hallNo}.css" rel="stylesheet" type="text/css">
 <link href="${pageContext.request.contextPath}/assets/css/reservation/reservation2.css" rel="stylesheet" type="text/css">
 
 
@@ -22,7 +23,6 @@
 
 <body>
 	<div id="containerBody">
-		
 		<div id="header">
 			<h1><a id="reserveGo" href="">예매페이지로 이동</a></h1>
 		</div>
@@ -114,7 +114,6 @@
 		
 		
 	</div>
-
 </body>
 
 

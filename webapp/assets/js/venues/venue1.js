@@ -1,15 +1,4 @@
-$(document).ready(function(){
-	/*
-		v:vip
-		r:r
-		s:s
-		a:a
-		b:c
-		o:사용중(occupied)
-		_:미사용
-		c:선택된(chosen)
-		n:none
-	*/
+$(function(){
 	
 	var seatMap = [];
 	
@@ -66,20 +55,18 @@ $(document).ready(function(){
 		'ssssssssssss'
 	];
 	seatMap.push(sectionE);
-	
+
+
 	var seatno=0;
 	for(var section = 0; section < seatMap.length; section++ ){
 		
 		var sectionCh = String.fromCharCode(section+65);
 		$("#seatPlanDiv").append('<table id="seatArea'+sectionCh+'"> <tr> <th class="center" colspan="100%">'+ sectionCh +'</tr></thead> </table>');
-	
 		
 		for(var col=0; col<seatMap[section].length; col++) {
 			
 			$('#seatArea'+sectionCh).append('<tr id="col'+col+'"></tr>');
-			/*for(var seat of seatMap[section][col]){
-				render(seat, col, sectionCh);
-			} */
+
 			var num=1;
 			for(var s=0; s<=seatMap[section][col].length;s++){
 				
@@ -106,18 +93,6 @@ $(document).ready(function(){
 			$('#seatArea'+sectionCh+' #col'+col).append('<td><input type="checkbox" id="seat'+seatno+'"disabled><label for="seat'+seatno+'"></label> </td>');
 		}
 		
-		/*else if(seat =="v"){
-			$('#seatArea'+sectionCh+' #col'+col).append('<td><input class="v" type="checkbox" id="seat'+seatno+'"><label for="seat'+seatno+'"></label> </td>');
-		}
-		else if(seat =="r"){
-			$('#seatArea'+sectionCh+' #col'+col).append('<td><input class="r" type="checkbox" id="seat'+seatno+'"><label for="seat'+seatno+'"></label> </td>');
-		}
-		else if(seat =="s"){
-			$('#seatArea'+sectionCh+' #col'+col).append('<td><input class="s" type="checkbox" id="seat'+seatno+'"><label for="seat'+seatno+'"></label> </td>');
-		}
-		else if(seat =="a"){
-			$('#seatArea'+sectionCh+' #col'+col).append('<td><input class="a" type="checkbox" id="seat'+seatno+'"><label for="seat'+seatno+'"></label> </td>');
-		}*/
 		else{
 			$('#seatArea'+sectionCh+' #col'+col).append(
 				'<td><input class="'+seat+'" type="checkbox" id="seat'+seatno+
@@ -136,6 +111,5 @@ $(document).ready(function(){
 		$('#seatArea'+sectionCh+' #col'+col).append('<td class="colno">'+(col+1)+'</td>');
 		seatno++;
 	}
-	
+
 });
-	
