@@ -12,7 +12,7 @@ import javax.mail.internet.MimeMessage;
 
 import com.ticketjava.vo.NotiDataVo;
 
-public class JavaMail {
+public class NotiMail {
 
 	public static void sendMail(List<String> emailList, NotiDataVo notiDataVo) {
 

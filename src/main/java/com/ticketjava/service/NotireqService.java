@@ -15,7 +15,7 @@ import com.ticketjava.dao.NotireqDao;
 import com.ticketjava.dao.SeatDao;
 import com.ticketjava.dao.SelseatDao;
 import com.ticketjava.dao.UserDao;
-import com.ticketjava.util.JavaMail;
+import com.ticketjava.util.NotiMail;
 import com.ticketjava.vo.NotiDataVo;
 import com.ticketjava.vo.NotificationVo;
 import com.ticketjava.vo.NotireqVo;
@@ -155,7 +155,7 @@ public class NotireqService {
 			
 			List<String>test = new ArrayList<>();
 			test.add("dldnjswns134@naver.com");
-			JavaMail.sendMail(test, notiDataVo);
+			NotiMail.sendMail(test, notiDataVo);
 			
 			notireqDao.updateNotiTimes(notireqList);
 			notireqDao.deleteDoneReq(notireqList);
