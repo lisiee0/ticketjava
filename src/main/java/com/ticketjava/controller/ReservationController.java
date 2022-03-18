@@ -46,7 +46,8 @@ public class ReservationController {
 							 Model model) {
 		
 		if(!userService.loginCheck(session)) {
-			return "redirect:/";
+			model.addAttribute("prodNo", reservationVo.getProdNo());
+			return "error/requireLogin";
 		}
 		
 		else {

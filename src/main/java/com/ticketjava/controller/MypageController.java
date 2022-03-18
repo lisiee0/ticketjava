@@ -97,7 +97,7 @@ public class MypageController {
 	public String ticketAlram(HttpSession session,
 							  Model model) {
 		if(! userService.loginCheck(session)) {
-			return "redirect:/";
+			return "error/errorBack";
 		}
 		else {
 			int userNo = ((UserVo)session.getAttribute("authUser")).getUserNo();
@@ -114,7 +114,7 @@ public class MypageController {
 			Model model) {
 		
 		if(! userService.loginCheck(session)) {
-			return "redirect:/";
+			return "error/errorBack";
 		}	
 		else {
 			int userNo = ((UserVo)session.getAttribute("authUser")).getUserNo();
