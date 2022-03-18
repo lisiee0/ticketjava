@@ -33,6 +33,7 @@ public class ReviewService {
 	
 	public void writeReview(ReviewVo reviewVo) {
 		reviewDao.writeReview(reviewVo);
+		System.out.println("리뷰 서비스 reviewVo "+reviewVo);
 	}
 	
 	

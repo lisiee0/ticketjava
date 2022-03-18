@@ -2,6 +2,8 @@ package com.ticketjava.controller;
 
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -11,8 +13,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.ticketjava.service.ProductService;
 import com.ticketjava.service.ReviewService;
+import com.ticketjava.service.UserService;
 import com.ticketjava.vo.ReviewVo;
 import com.ticketjava.vo.TheaterVo;
+import com.ticketjava.vo.UserVo;
 
 @Controller
 @RequestMapping("/product")
@@ -23,6 +27,9 @@ public class ProductController {
 	
 	@Autowired
 	private ReviewService reviewService;
+	
+	@Autowired
+	private UserService userService;
 	
 	// prodType별 상품 리스트 불러오기
 	@RequestMapping("/type")
@@ -64,13 +71,14 @@ public class ProductController {
 	
 	// 상품 상세보기
 	@RequestMapping("/info")
-	public String productInfo(@RequestParam("prodNo") int prodNo, Model model) {
+	public String productInfo(@RequestParam("prodNo") int prodNo, Model model, HttpSession session, @ModelAttribute UserVo userVo) {
 		
 		model.addAttribute("product", productService.getProduct(prodNo));
 
+//		리뷰 리스트를 가져오기
 		List<ReviewVo> reviewList = reviewService.getReviewListProduct(prodNo);
 		model.addAttribute("reviewList",reviewList);
-		
+
 		return "product/productInfo";
 	}
 	

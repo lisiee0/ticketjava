@@ -16,7 +16,7 @@ public class UserDao {
 	private SqlSession sqlSession;
 	
 	public void insertUser(UserVo userVo) {
-		sqlSession.insert("user.insertUse", userVo);
+		sqlSession.insert("user.insertUser", userVo);
 	}
 
 	/*
@@ -36,6 +36,10 @@ public class UserDao {
 
 	public List<String> selectEmail(List<NotireqVo> notireqList) {
 		return sqlSession.selectList("user.selectEmail", notireqList);
+	}
+
+	public int selectDupId(String id) {
+		return sqlSession.selectOne("user.selectDupId", id);
 	}
 	
 }

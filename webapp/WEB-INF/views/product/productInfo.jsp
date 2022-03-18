@@ -210,22 +210,38 @@
 						</div>
 					</div>
 
-					<!-- 후기작성 -->
+					<!-- 후기작성 로그인해야 보임 -->
 					<div class="container bgc">
-						<div class="row">
 
-						<form action="${pageContext.request.contextPath}/product/writeReview" method="get">
-							<textarea class="form-control" id="review" name="content" placeholder="후기를 남겨주세요"></textarea>
-							<br> <span class="star"> ★★★★★ <span>★★★★★</span> <input type="range" name="rating" oninput="drawStar(this)" value="1" step="1" min="0" max="10">
-							</span>
-							
-							<input type="hidden" name="prodNo" value="${product.vo.prodNo}">
-							<input type="hidden" name="userNo" value="${product.vo.userNo}">
-							
-							<button type="submit" class="btn btn-primary position">등록</button>
-						</form>
+						<div class="row">
+							<c:choose>
+								<c:when test="${empty sessionScope.authUser}">
+									<form action="${pageContext.request.contextPath}/product/writeReview" method="get">
+										<textarea class="form-control" id="review" name="content" placeholder="후기를 남기려면 로그인 해야합니다" disabled></textarea>
+										<br> <span class="star"> ★★★★★ <span>★★★★★</span> <input type="range" name="rating" oninput="drawStar(this)" value="1" step="1" min="0" max="10">
+										</span> <input type="hidden" name="prodNo" value="${product.vo.prodNo}"> <input type="hidden" name="userNo" value="">
+
+										<button type="submit" class="btn btn-primary position" disabled>등록</button>
+									</form>
+								</c:when>
+
+								<c:otherwise>
+									<form action="${pageContext.request.contextPath}/product/writeReview" method="get">
+										<textarea class="form-control" id="review" name="content" placeholder="후기를 남겨주세요"></textarea>
+										<br> <span class="star"> ★★★★★ <span>★★★★★</span> <input type="range" name="rating" oninput="drawStar(this)" value="1" step="1" min="0" max="10">
+										</span> <input type="hidden" name="prodNo" value="${product.vo.prodNo}"> <input type="hidden" name="userNo" value="">
+
+										<button type="submit" class="btn btn-primary position">등록</button>
+									</form>
+								</c:otherwise>
+
+							</c:choose>
+
+
+
 
 						</div>
+
 					</div>
 
 

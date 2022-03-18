@@ -15,7 +15,7 @@ import com.ticketjava.dao.NotireqDao;
 import com.ticketjava.dao.SeatDao;
 import com.ticketjava.dao.SelseatDao;
 import com.ticketjava.dao.UserDao;
-import com.ticketjava.util.JavaMail;
+import com.ticketjava.util.NotiMail;
 import com.ticketjava.vo.NotiDataVo;
 import com.ticketjava.vo.NotificationVo;
 import com.ticketjava.vo.NotireqVo;
@@ -39,20 +39,8 @@ public class NotireqService {
 	@Autowired
 	private SeatDao seatDao;
 	
-	public String addNotireq(NotireqVo notireqVo, HttpSession session) {
-		
-		UserVo authUser = (UserVo)session.getAttribute("authUser");
-		int userNo;
-		
-		if(authUser != null) {
-			userNo = authUser.getUserNo();
-		}
-		else {
-			userNo = 1;
-		}
-		
+	public String addNotireq(NotireqVo notireqVo, int userNo) {
 		notireqVo.setUserNo(userNo);
-		
 		NotireqVo selectVo =  notireqDao.selectReq(notireqVo);
 		
 		if(selectVo != null) {
@@ -65,20 +53,10 @@ public class NotireqService {
 		
 	}
 
-	public NotireqVo myNotireq(NotireqVo notireqVo,HttpSession session) {
-		
-		UserVo authUser = (UserVo)session.getAttribute("authUser");
-		int userNo;
-		
-		if(authUser != null) {
-			userNo = authUser.getUserNo();
-		}
-		else {
-			userNo = 1;
-		}
+	public NotireqVo myNotireq(NotireqVo notireqVo, int userNo) {
 		notireqVo.setUserNo(userNo);
-		
 		NotireqVo selectVo = notireqDao.selectReq(notireqVo);
+		
 		if( selectVo == null) {
 			selectVo = new NotireqVo();
 		}
@@ -86,16 +64,7 @@ public class NotireqService {
 		return selectVo;
 	}
 
-	public String reqDel(NotireqVo notireqVo, HttpSession session) {
-		UserVo authUser = (UserVo)session.getAttribute("authUser");
-		int userNo;
-		
-		if(authUser != null) {
-			userNo = authUser.getUserNo();
-		}
-		else {
-			userNo = 1;
-		}
+	public String reqDel(NotireqVo notireqVo, int userNo) {
 		notireqVo.setUserNo(userNo);
 		
 		int count = notireqDao.deleteReq(notireqVo);
@@ -107,32 +76,22 @@ public class NotireqService {
 	
 	
 	public void notiSend(int selseatNo) {
-		 
 		// 1. selseat 예매취소(selseatNo) -->  rezNo, grade, section, col, num
-		// ( selseat status = 0 )
-		
-		 //2. reserve(rezNo) >  prodNo, viewDate
-		 //( rezNo 같은 selseat status가 모두 0이면 --> reserve status = 0 )
+		// 2. reserve(rezNo) >  prodNo, viewDate
+		// 3. product(prodNo) >  prodName, showTime
 		 
-		 //3. product(prodNo) >  prodName, showTime
-		 
-		// selseatNo == 520; >> 192, s, C, 6, 2
 		NotiDataVo notiDataVo = selseatDao.selectByNo(selseatNo);
-		System.out.println(notiDataVo);
 		
-		int seatCount = seatDao.selectSeatCount(notiDataVo);
-		int selseatCount = selseatDao.selectSelseatCount(notiDataVo);
+		int seatCount = seatDao.selectSeatCount(notiDataVo);			// 구역의 전체 좌석
+		int selseatCount = selseatDao.selectSelseatCount(notiDataVo);	// 구역의 예매된 좌석 
 		
-		System.out.println(seatCount+" "+selseatCount);
-		
-		if(seatCount - selseatCount == 1) {
+		if(seatCount - selseatCount == 1) { // 해당 좌석의 구역이 매진인 상태에서 취소됐을 때
 			
-			 //4. notireq(prodNo, viewDate, section, status==1?)  >  결과 userNo 리스트   
+			//4. notireq(prodNo, viewDate, section, status==1?)  >  결과 userNo 리스트   
 			List<NotireqVo> notireqList = notireqDao.selectTargetUser(notiDataVo);
 			
-			
-			 //5. noti (결과 userNo 리스트 ) > 알림 번호(시퀀스), 내용 ( viewDate+showTime , prodName, section ) , 알림 시간 (sysdate)   
-			 //								    └ 링크(예매페이지 --> 취소 좌석 선택 (prodNo, viewDate, grade, section, col, num 으로 기본 선택) )
+			//5. noti (결과 userNo 리스트 ) > 알림 번호(시퀀스), 내용 ( viewDate+showTime , prodName, section ) , 알림 시간 (sysdate)   
+			//								    └ 링크(예매페이지 --> 취소 좌석 선택 (prodNo, viewDate, grade, section, col, num 으로 기본 선택) )
 			String content = ""
 					+ "<a target='_blank' href='http://localhost:8088/ticketjava/reservation/selectSeat?prodNo="+notiDataVo.getProdNo()+"&viewDate="+notiDataVo.getViewDate()+"'>"
 					+ notiDataVo.getViewDate()+" "+notiDataVo.getShowTime()+" "+notiDataVo.getProdName()+" "+notiDataVo.getGrade().toUpperCase()+"석 "
@@ -151,11 +110,10 @@ public class NotireqService {
 
 			// 6. Users (결과 userNo 리스트) > email로 내용 전송								    
 			List<String> emailList = userDao.selectEmail(notireqList);
-			System.out.println(emailList);
-			
+
 			List<String>test = new ArrayList<>();
 			test.add("dldnjswns134@naver.com");
-			JavaMail.sendMail(test, notiDataVo);
+			NotiMail.sendMail(test, notiDataVo);
 			
 			notireqDao.updateNotiTimes(notireqList);
 			notireqDao.deleteDoneReq(notireqList);

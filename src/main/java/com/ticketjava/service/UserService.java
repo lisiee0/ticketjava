@@ -16,7 +16,6 @@ public class UserService {
 	private UserDao userDao;
 	
 	public void join(UserVo userVo) {
-		
 		String password = userVo.getPassword();
 		String salt = PasswordHash.getSalt();
 		userVo.setPassword( PasswordHash.getSHA256(password+salt));
@@ -42,6 +41,15 @@ public class UserService {
 		else
 			return true;
 				
+	}
+
+	public boolean dupCheck(String id) {
+		int count = userDao.selectDupId(id);
+		
+		if(count>0)
+			return true;
+		else
+			return false;
 	}
 
 }

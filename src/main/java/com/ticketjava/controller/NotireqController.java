@@ -15,6 +15,7 @@ import com.ticketjava.service.NotireqService;
 import com.ticketjava.service.ReservationService;
 import com.ticketjava.vo.NotireqVo;
 import com.ticketjava.vo.RezProdInfoVo;
+import com.ticketjava.vo.UserVo;
 
 @Controller
 @RequestMapping("/notireq")
@@ -28,7 +29,7 @@ public class NotireqController {
 	
 	@RequestMapping(value="/notireq", method=RequestMethod.POST)
 	public String notireq(@RequestParam("prodNo") int prodNo,
-							   Model model) {
+						  Model model) {
 		RezProdInfoVo rezProdInfo = reservationService.rezProdInfo(prodNo);
 		model.addAttribute("rezProdInfo", rezProdInfo);
 		
@@ -38,21 +39,22 @@ public class NotireqController {
 	@ResponseBody
 	@RequestMapping("/myNotireq")
 	public NotireqVo myNotireq (@ModelAttribute NotireqVo notireqVo, HttpSession session) {
-		return notireqService.myNotireq(notireqVo, session);
+		int userNo = ((UserVo)session.getAttribute("authUser")).getUserNo();
+		return notireqService.myNotireq(notireqVo, userNo);
 	}
 	
 	@ResponseBody
 	@RequestMapping("/addNotireq")
 	public String addNotireq(@ModelAttribute NotireqVo notireqVo, HttpSession session) {
-		System.out.println(notireqVo);
-		return notireqService.addNotireq(notireqVo, session);
+		int userNo = ((UserVo)session.getAttribute("authUser")).getUserNo();
+		return notireqService.addNotireq(notireqVo, userNo);
 	}
 	
 	@ResponseBody
 	@RequestMapping("/reqDel")
 	public String reqDel(@ModelAttribute NotireqVo notireqVo, HttpSession session) {
-		System.out.println(notireqVo);
-		return notireqService.reqDel(notireqVo, session);
+		int userNo = ((UserVo)session.getAttribute("authUser")).getUserNo();
+		return notireqService.reqDel(notireqVo, userNo);
 	}
 	
 	@ResponseBody
