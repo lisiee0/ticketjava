@@ -74,6 +74,16 @@ public class AdminController {
 		return "redirect:/admin/";
 	}
 	
+	// 공연장 검색
+	@RequestMapping("/theaterSearch")
+	public String theaterSearch(@RequestParam(value="crtPage", required= false, defaultValue= "1") int crtPage,
+								@RequestParam("key") String key, Model model) {
+		
+		model.addAttribute("hallList", adminService.getResultList(crtPage, key));
+		return "admin/theaterSearchResult";
+	}
+	
+	/* 공지사항 */
 	
 	// 공지사항 리스트 불러오기
 	@RequestMapping("/noticeList")

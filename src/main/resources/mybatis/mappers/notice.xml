@@ -9,6 +9,48 @@
 		]]>
 	</insert>
 	
+	
+	<select id="noticeCnt" resultType="int">
+		<![CDATA[
+			select			count(*) 
+			from 			notice
+		]]>
+	</select>
+	
+	<!-- 공지사항 (페이징) -->
+	<select id="pagingNotice" parameterType="map" resultType="NoticeVo">
+		<![CDATA[
+			select			rn,
+				            noticeNo,
+				            theaterNo,
+				            theatername,
+				            homepage,
+				            content,
+				            regDate
+			from        	(select     	rownum rn,
+					                        noticeNo,
+					                        theaterNo,
+					                        theatername,
+					                        homepage,
+					                        content,
+					                        regDate
+				            from        	(select			notice_no noticeNo, 
+					                                        n.theater_no theaterNo, 
+					                                        theatername,
+					                                        homepage,
+					                                        content, 
+					                                        to_char(regdate, 'YYYY-MM-DD HH24:MI:SS') regDate
+					                        from			notice n, theater t
+					                        where			n.theater_no= t.theater_no
+					                        order by 		theaterNo desc, regDate desc))
+			where rn between #{startRnum} and #{endRnum}       
+		]]>
+	</select>
+	
+	
+	
+	
+	
 	<select id="getNoticeList" resultType="NoticeVo">
 		<![CDATA[
 			select			notice_no noticeNo, 
