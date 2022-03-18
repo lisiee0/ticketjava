@@ -122,8 +122,8 @@
 							</div>
 							<div class="col-xs-8">
 								<p><strong>[공연장 정보]</strong></p><br>
-								<p id="theatername" data-name="${map.vo.theaterName}">장소: ${map.vo.theaterName}</p>
-								<p id="address" data-add="${map.vo.address}">주소: ${map.vo.address} ${map.vo.address2}</p>
+								<p>장소: ${map.vo.theaterName}</p>
+								<p>주소: ${map.vo.address} ${map.vo.address2}</p>
 								<p>대표번호: ${map.vo.phone}</p>
 							</div>
 						</div>
