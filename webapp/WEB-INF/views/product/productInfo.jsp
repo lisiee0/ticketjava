@@ -16,9 +16,8 @@
 <!-- 개인 css -->
 <link href="${pageContext.request.contextPath}/assets/css/indcom.css" rel="stylesheet">
 <link href="${pageContext.request.contextPath}/assets/css/product/productInfo.css" rel="stylesheet">
-
-<script src="${pageContext.request.contextPath}/assets/js/scroll.js"></script>
 </head>
+
 
 <body data-spy="scroll" data-target=".navbar-example">
 	<div id="wrap">
@@ -279,14 +278,15 @@
 					</div>
 				</div>
 			</div>
+	
+			
 		</div>
 		<!-- 컨텐츠 구역 종료 -->
-		
-		
+
 		<c:import url="/WEB-INF/views/include/footer.jsp"></c:import>
 		
 	</div> <!-- wrap 종료 -->
-	
+
 </body>
 
 
@@ -350,6 +350,8 @@
 	 $('[data-spy="scroll"]').each(function () {
 		  var $spy = $(this).scrollspy('refresh')
 		})
-	 
+
+
 </script>
+
 </html>
