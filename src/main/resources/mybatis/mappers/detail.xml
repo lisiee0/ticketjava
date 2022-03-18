@@ -18,11 +18,10 @@
 	<insert id="detailNoAdd" parameterType="DetailVo">
 		<selectKey keyProperty="detailNo" resultType="int" order="BEFORE">
 			select seq_detail_no.nextval from dual
-		</selectKey>
+		</selectKey> 
 		<![CDATA[
 			insert into detail 	(detail_no,
 							prod_no
-							
 							)	
 								
 					values 	(#{detailNo},
@@ -35,7 +34,7 @@
 	<update id="prodAdd" parameterType="DetailVo">
 		<![CDATA[
 			update 	detail
-			set 		prodPath = #{prodPath}
+			set 		prodpath = #{prodPath}
 			where 	detail_no = #{detailNo}
 		]]>
 	</update>

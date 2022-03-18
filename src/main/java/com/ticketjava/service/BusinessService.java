@@ -48,17 +48,16 @@ public class BusinessService {
 	}
 
 	// 공연 업로드 (파일 제외)
-	public int productUpload(ProductVo productVo, DetailVo detailVo) {
+	public void productUpload(ProductVo productVo, DetailVo detailVo) {
 		System.out.println("BusinessServiece > productUpload");
+		//productDao로 값을 넘김
 		pd.productUpload(productVo);
-		// 공원상세파일 저장 번호 --->공연정보, 상세정보 번호
 
+		//detailVo 테이블의 prodNo를 productVo 테이블의 prodNo로 설정.
 		detailVo.setProdNo(productVo.getProdNo());
 
+		//detailDao로 값을 넘김
 		td.detailNoAdd(detailVo);
-
-		// detail테이블 인서트
-		return pd.productUpload(productVo);
 	}
 
 	// 공연 파일 업로드
@@ -103,13 +102,16 @@ public class BusinessService {
 //		// db 저장
 		if (order == 1) { // order : 1
 			pd.posterAdd(productVo);
-			System.out.println(order + "번 파일을 저장했습니다.");
+			System.out.println(order + "번 파일을 Dao로 넘겼습니다.");
 		} else if (order == 2) {
 			td.prodAdd(detailVo);
+			System.out.println(order + "번 파일을 Dao로 넘겼습니다.");
 		} else if (order == 3) {
 			td.castingAdd(detailVo);
+			System.out.println(order + "번 파일을 Dao로 넘겼습니다.");
 		} else if (order == 4) {
 			td.addedAdd(detailVo);
+			System.out.println(order + "번 파일을 Dao로 넘겼습니다.");
 		} else {
 			System.out.println("오류 발생");
 		}

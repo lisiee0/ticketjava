@@ -442,8 +442,8 @@
 			data : JSON.stringify(ProductVo),
 
 			/* 성공 시 처리해야 될 코드 작성 */
-			success : function(prodNo) {
-				console.log(prodNo)
+			success : function(detailVo) {
+				console.log(detailVo)
 
 				//첨부파일
 				var posterPath = $("#posterPath")[0].files[0]
@@ -452,11 +452,11 @@
 				var castingPath = $("#castingPath")[0].files[0]
 				var addedPath = $("#addedPath")[0].files[0]
 
-				fileupload(prodNo, posterPath, 1);
+				fileupload(detailVo, posterPath, 1);
 
-				fileupload(prodNo, prodPath, 2);
-				fileupload(prodNo, castingPath, 3);
-				fileupload(prodNo, addedPath, 4);
+				fileupload(detailVo, prodPath, 2);
+				fileupload(detailVo, castingPath, 3);
+				fileupload(detailVo, addedPath, 4);
 			},
 			error : function(XHR, status, error) {
 				console.error(status + " : " + error);
@@ -465,10 +465,11 @@
 
 	});
 
-	function fileupload(prodNo, file, order) {
+	function fileupload(detailVo, file, order) {
 		var formData = new FormData();
 
-		formData.append('prodNo', prodNo);
+		formData.append('prodNo', detailVo.prodNo);
+		formData.append('detailNo', detailVo.detailNo);
 		formData.append('file', file);
 		formData.append('order', order);
 

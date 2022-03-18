@@ -29,7 +29,7 @@ public class ProductVo {
 	private List<SeatpriceVo> seatpriceList; // 등급별 좌석 리스트
 	private List<DiscountVo> productDisList; // 공연별 상시할인 정보
 
-	private int detailNo;
+	private int detailNo; // 상세정보 번호
 
 	// 기본 생성자
 	public ProductVo() {
@@ -61,8 +61,6 @@ public class ProductVo {
 		this.seatpriceList = seatpriceList;
 		this.productDisList = productDisList;
 	}
-	
-	
 
 	public ProductVo(int prodNo, int userNo, int hallNo, String prodName, int prodType, String beginShow,
 			String endShow, String beginRez, String endRez, String showTime, int viewTime, int viewGrade, String notice,
@@ -251,7 +249,7 @@ public class ProductVo {
 	public void setProductDisList(List<DiscountVo> productDisList) {
 		this.productDisList = productDisList;
 	}
-	
+
 	public int getDetailNo() {
 		return detailNo;
 	}

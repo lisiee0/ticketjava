@@ -59,11 +59,11 @@ public class BusinessController {
 	// 공연 업로드
 	@ResponseBody
 	@RequestMapping(value = "bmUpload", method = { RequestMethod.GET, RequestMethod.POST })
-	public int productUpload(@RequestBody ProductVo productVo, DetailVo detailVo) {
+	public DetailVo productUpload(@RequestBody ProductVo productVo, DetailVo detailVo) {
 		System.out.println("BusinessController > productUpload");
 
 		businessService.productUpload(productVo, detailVo);
-		return productVo.getProdNo();
+		return detailVo;
 	}
 
 	// 공연 파일업로드
