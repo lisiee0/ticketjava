@@ -166,6 +166,65 @@ $("#add-hallName").on("click", function() {
 	$("#hallNameArea").append('<input type="text" class="form-control formZipcode" name="hallName" placeholder="시설명"><br>');
 });
 
+
+{
+	 address: string,
+	 location: LatLng,
+	 placeId: string,
+	 bounds: LatLngBounds,
+	 componentRestrictions: GeocoderComponentRestrictions,
+	 region: string
+	}
+results[]: {
+	 types[]: string,
+	 formatted_address: string,
+	 address_components[]: {
+	   short_name: string,
+	   long_name: string,
+	   postcode_localities[]: string,
+	   types[]: string
+	 },
+	 partial_match: boolean,
+	 place_id: string,
+	 postcode_localities[]: string,
+	 geometry: {
+	   location: LatLng,
+	   location_type: GeocoderLocationType
+	   viewport: LatLngBounds,
+	   bounds: LatLngBounds
+	 }
+	}
+	
+var geocoder;
+var map;
+function initialize() {
+  geocoder = new google.maps.Geocoder();
+  var latlng = new google.maps.LatLng(-34.397, 150.644);
+  var mapOptions = {
+    zoom: 8,
+    center: latlng
+  }
+  map = new google.maps.Map(document.getElementById('map'), mapOptions);
+}
+
+function codeAddress() {
+  var address = document.getElementById('address').value;
+  geocoder.geocode( { 'address': address}, function(results, status) {
+    if (status == 'OK') {
+      map.setCenter(results[0].geometry.location);
+      var marker = new google.maps.Marker({
+          map: map,
+          position: results[0].geometry.location
+      });
+    } else {
+      alert('Geocode was not successful for the following reason: ' + status);
+    }
+  });
+}
+
+
+
+
 // 우편번호찾기
 function sample6_execDaumPostcode() {
     new daum.Postcode({
@@ -213,6 +272,9 @@ function sample6_execDaumPostcode() {
         }
     }).open();
 }
+
+
+
 
 
 </script>
