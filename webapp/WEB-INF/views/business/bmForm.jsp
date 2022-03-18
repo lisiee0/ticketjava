@@ -385,6 +385,7 @@
 				}
 
 				var productDis = {
+					seatpriceNo : seatpriceNo,
 					dcName : dcName,
 					dcRate : dcRate,
 					dcType : dcType

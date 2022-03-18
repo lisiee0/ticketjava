@@ -13,12 +13,13 @@
 	</select>
 	
 	<!-- 등급별 가격 추가 -->
-	<insert id="seatpAdd" parameterType="SeatpriceVo">
+	<insert id="seatpriceAdd" parameterType="SeatpriceVo">
 		<![CDATA[
 			insert into detail 	(seatprice_no,
 							prod_no,
 							grade,
-							price)
+							price
+							)
 								
 					values 	(seq_seatprice_no.nextval,
 							#{prodNo},

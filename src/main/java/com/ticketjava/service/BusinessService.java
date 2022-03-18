@@ -64,6 +64,8 @@ public class BusinessService {
 
 		// seatPriceDao로 값을 넘김
 		sd.seatpriceAdd(productVo);
+		
+		System.out.println("BusinessServiece : " + productVo);
 
 	}
 
