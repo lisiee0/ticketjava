@@ -75,18 +75,19 @@
 						<div class="row">
 						
 							<div class="col-xs-7 np">
-								<h3 class="b-cateMenu">기획공연</h3>
+								<h3 class="b-cateMenu">기획중인 공연</h3>
 								<div id="myCarousel" class="carousel slide" data-ride="carousel">
-									  	<!-- Indicators -->
-									  	<ol class="carousel-indicators">
-										    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-										    <li data-target="#myCarousel" data-slide-to="1"></li>
-										    <li data-target="#myCarousel" data-slide-to="2"></li>
-										    <li data-target="#myCarousel" data-slide-to="3"></li>
-									  	</ol>
+								  	<!-- Indicators -->
+								  	<ol class="carousel-indicators">
+									    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+									    <li data-target="#myCarousel" data-slide-to="1"></li>
+									    <li data-target="#myCarousel" data-slide-to="2"></li>
+									    <li data-target="#myCarousel" data-slide-to="3"></li>
+								  	</ol>
 								
-								  <!-- Wrapper for slides -->
-								  <div class="carousel-inner" role="listbox">
+									<!-- Wrapper for slides -->
+									<div class="carousel-inner" role="listbox">
+									  
 									    <div class="item active">
 									      <img src="${pageContext.request.contextPath}/assets/image/test/akxl.png" alt="">
 									    </div>
@@ -94,29 +95,26 @@
 									    <div class="item">
 									      <img src="${pageContext.request.contextPath}/assets/image/test/qnfrk.png" alt="">
 									    </div>
-
-								  
+	
 									  	<div class="item">
 									      <img src="${pageContext.request.contextPath}/assets/image/test/qkffp.png" alt="">
 									    </div>
-
-								  
+	
 										<div class="item">
 									      <img src="${pageContext.request.contextPath}/assets/image/test/tyaos.png" alt="">
 									    </div>
 	
-									
-									  <!-- Controls -->
-									  <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-									    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-									    <span class="sr-only">Previous</span>
-									  </a>
-									  <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-									    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-									    <span class="sr-only">Next</span>
-									  </a>
+									    <!-- Controls -->
+									    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+										    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+										    <span class="sr-only">Previous</span>
+									    </a>
+										<a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+											<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+											<span class="sr-only">Next</span>
+										</a>
+									</div>
 								</div>
-							 </div>
 							</div>
 	
 							<div class="col-xs-5 right-np">
@@ -128,7 +126,31 @@
 										</tr>
 									</c:forEach>
 								</table>
-
+								
+								<!-- 페이징 -->
+								<div class="row paging">				
+									<nav>
+									  <ul class="pagination pagination-sm">
+									  	<li><a href="javascript:PageMove(${listMap.paging.firstPageNo})"><span class="glyphicon glyphicon-triangle-left"></span></a></li>
+										<li class= ${listMap.paging.pageNo eq listMap.paging.firstPageNo ? "disabled" : ""}><a href="javascript:PageMove(${listMap.paging.prevPageNo})"><span class="glyphicon glyphicon-menu-left"></span></a></li>
+							
+										<c:forEach var="i" begin="${listMap.paging.startPageNo}" end="${listMap.paging.endPageNo}" step="1">
+											<c:choose>
+												<c:when test="${i eq listMap.paging.pageNo}">
+													<li class= ${listMap.paging.pageNo eq i ? "active" : ""}><a href="javascript:PageMove(${i})">${i}</a></li>
+												</c:when>
+												<c:otherwise>
+													<li class= ${listMap.paging.pageNo eq i ? "active" : ""}><a href="javascript:PageMove(${i})">${i}</a></li>
+												</c:otherwise>
+											</c:choose>
+										</c:forEach>
+										
+									    <li class= ${listMap.paging.pageNo eq listMap.paging.finalPageNo ? "disabled" : ""}><a href="javascript:PageMove(${listMap.paging.nextPageNo})"><span class="glyphicon glyphicon-menu-right"></span></a></li>
+									    <li><a href="javascript:PageMove(${listMap.paging.finalPageNo})"><span class="glyphicon glyphicon-triangle-right"></span></a></li>
+									  </ul>
+									</nav>
+								</div>
+								
 							</div>
 							
 						</div>
@@ -154,6 +176,10 @@
 		interval: 2000
 	})
 	
+	function PageMove(page) {
+
+		location.href = "${pageContext.request.contextPath}/product/theaterList?crtPage=" + page;	
+	}
 		
 
 </script>

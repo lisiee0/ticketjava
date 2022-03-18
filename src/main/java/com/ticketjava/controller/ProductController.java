@@ -45,9 +45,10 @@ public class ProductController {
 	
 	// '공연장'페이지  (공연장 & 공지사항 리스트)
 	@RequestMapping("/theaterList")
-	public String theaterList(Model model) {
+	public String theaterList(@RequestParam(value="crtPage", required= false, defaultValue= "1") int crtPage,
+							  Model model) {
 		
-		model.addAttribute("listMap", productService.getList());
+		model.addAttribute("listMap", productService.getList(crtPage));
 		return "product/theater";
 	}
 	
