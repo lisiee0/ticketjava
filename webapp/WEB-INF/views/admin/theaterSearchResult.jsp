@@ -56,7 +56,10 @@
 										<button type="submit" class="btn btn-primary index-search adBtn"><span class="glyphicon glyphicon-search"></span></button>
 									</form>
 								</div>
-								<a href="${pageContext.request.contextPath}/admin/theaterAddpage" class="btn btn-primary position">공연장 등록</a>
+								<div class="search-result">
+									<p><span>'${param.key}'</span>으로 검색 결과입니다</p>
+								</div>
+								
 							</div>
 						</div>
 						<!-- //content-head -->
@@ -151,10 +154,10 @@
 <script>
 
 	function PageMove(page) {
-		location.href = "${pageContext.request.contextPath}/admin/?crtPage=" + page;
+		location.href = "${pageContext.request.contextPath}/admin/theaterSearch?key=${param.key}&crtPage=" + page;
 	}
 
-</script>
+</script> 
 
 
 </html>

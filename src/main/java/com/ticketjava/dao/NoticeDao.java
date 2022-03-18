@@ -1,6 +1,8 @@
 package com.ticketjava.dao;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,6 +19,21 @@ public class NoticeDao {
 	
 	public void noticeAdd(NoticeVo vo) {
 		sqlSession.insert("notice.noticeAdd", vo);
+	}
+	
+	
+	public int noticeCnt() {
+		return sqlSession.selectOne("notice.noticeCnt");
+	}
+	
+	// 공지사항 (페이징)
+	public List<NoticeVo> pagingNotice(int startRnum, int endRnum) {
+		
+		Map<String, Integer> map= new HashMap<String, Integer>();
+		map.put("startRnum", startRnum);
+		map.put("endRnum", endRnum);
+		
+		return sqlSession.selectList("notice.pagingNotice", map);
 	}
 	
 	

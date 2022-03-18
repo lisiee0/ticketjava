@@ -95,6 +95,25 @@ public class AdminService {
 		return hMap;
 	}
 	
+	// 검색결과 리스트
+	public Map<String, Object> getResultList(int crtPage, String key) {
+
+		int listCnt= 9; // 한 페이지당 글 개수
+		int startRnum= (crtPage-1)*listCnt +1; // 시작글 번호
+		int endRnum= (startRnum+listCnt) -1; // 마지막글 번호
+		
+		Paging paging= new Paging();
+		paging.setPageNo(crtPage);
+		paging.setPageSize(listCnt);
+		paging.setTotalCount(hd.resultCnt(key));
+		
+		Map<String, Object> hMap= new HashMap<String, Object>();
+		hMap.put("hList", hd.pagingResultList(key, startRnum, endRnum));
+		hMap.put("paging", paging);
+		
+		return hMap;
+	}
+	
 	
 	public HallVo getHall(int hallNo) {
 		return hd.getHall(hallNo);

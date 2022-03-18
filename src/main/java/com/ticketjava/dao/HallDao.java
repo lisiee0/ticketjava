@@ -60,7 +60,13 @@ public class HallDao {
 	}
 	
 	
-	// 페이징 리스트
+	// 검색결과 카운트
+	public int resultCnt(String key) {
+		return sqlSession.selectOne("hall.resultCnt", key);
+	}
+	
+	
+	// 홀리스트 페이징
 	public List<HallVo> pagingList(int startRnum, int endRnum) {
 		
 		Map<String, Integer> map= new HashMap<String, Integer>();
@@ -69,4 +75,17 @@ public class HallDao {
 		
 		return sqlSession.selectList("hall.pagingList", map);
 	}
+	
+	// 검색결과 페이징
+	public List<HallVo> pagingResultList(String key, int startRnum, int endRnum) {
+		
+		Map<String, Object> map= new HashMap<String, Object>();
+		map.put("key", key);
+		map.put("startRnum", startRnum);
+		map.put("endRnum", endRnum);
+		
+		return sqlSession.selectList("hall.searchResult", map);
+	}
+	
+	
 }

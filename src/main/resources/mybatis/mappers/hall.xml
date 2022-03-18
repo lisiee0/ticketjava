@@ -118,7 +118,6 @@
 			where 		hall_no= #{hallNo}
 		]]>
 	</delete>
-
 	
 	
 	<select id="totalCnt" resultType="int">
@@ -129,6 +128,14 @@
 		]]>
 	</select>
 	
+	<select id="resultCnt" parameterType="String" resultType="int">
+		<![CDATA[
+			select  count(*)
+			from    hall h, theater t
+			where   t.theater_no= h.theater_no
+            and     theatername like '%'||#{key}||'%'
+		]]>
+	</select>
 	
 	
 	<!-- 페이징 -->
@@ -159,6 +166,41 @@
 														homepage
 											from    	hall h, theater t
 											where   	t.theater_no= h.theater_no
+											order by 	t.theater_no desc) o) r
+			where rn between #{startRnum} and #{endRnum}
+		]]>
+	</select>
+	
+	
+	<!-- 검색결과 페이징 -->
+	<select id="searchResult" parameterType="map" resultType="HallVo">
+		<![CDATA[
+			select			rn, 
+							theatername, 
+							hallname, 
+							postcode, 
+							address, 
+							address2, 
+							phone, 
+							homepage
+			from			(select 		rownum rn,
+									        theatername,
+									        hallname,
+									        postcode,
+									        address,
+									        address2,
+									        phone,
+									        homepage
+							from 			(select  	theatername,
+														hallname, 
+														postcode, 
+														address, 
+														address2, 
+														phone, 
+														homepage
+											from    	hall h, theater t
+											where   	t.theater_no= h.theater_no
+											and	  		theatername like '%'||#{key}||'%'
 											order by 	t.theater_no desc) o) r
 			where rn between #{startRnum} and #{endRnum}
 		]]>

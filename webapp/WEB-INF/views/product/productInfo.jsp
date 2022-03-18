@@ -144,7 +144,6 @@
 								<li class="scroll"><a href="#review">관람후기</a></li>
 								<li class="scroll"><a href="#theater">공연장정보</a></li>
 								<li class="scroll"><a href="#cancel">예매/취소안내</a></li>
-								<li class="scroll"><a href="#review">관람후기</a></li>
 								<li class="scroll"><a href="#qnalist">Q&A</a></li>
 							</ul>
 
@@ -249,14 +248,11 @@
 					<div class="container section">
 						<div class="row">
 							<h4 id="theater" class="cateMenu">공연장 정보</h4>
-							<div id="mapArea" class="col-xs-4">
+							<div id="mapArea" class="col-xs-6">
 								<div id="map"></div>
 							</div>
-							<div class="col-xs-8">
-								<p>
-									<strong>[공연장 정보]</strong>
-								</p>
-								<br>
+							<div class="col-xs-6">
+								<p><strong>[공연장 정보]</strong></p><br>
 								<p>장소: ${product.theater.theaterName} ${product.theater.hallName}</p>
 								<p>주소: ${product.theater.address} ${product.theater.address2}</p>
 								<p>대표번호: ${product.theater.phone}</p>

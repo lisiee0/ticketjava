@@ -27,6 +27,26 @@
 	margin-bottom: 10px;	
 }
 
+
+.position-left {
+	float: left;
+	height: 34px;
+}
+
+.adminform{
+	height: 34px;	
+}
+
+.searchBtn {
+	width: 200px;
+	height: 34px;
+	display: inline-block;
+}
+
+.adBtn {
+	margin-bottom: 5px;
+}
+
 .position {
 	float: right;
 	width: 120px;

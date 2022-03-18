@@ -93,3 +93,23 @@
 	white-space : nowrap;
 	text-overflow: ellipsis;
 }
+
+.search-result {
+	height: 34px;
+	float: right;
+	margin: 0px 0px 10px 0px;
+	font-size: 14px;
+	font-weight: bold;
+	text-align: right;
+}
+
+.search-result p {
+	margin-top: 12px;
+}
+
+.search-result span {
+	font-size: 18px;
+	font-weight: bolder;
+	text-align: right;
+	color: #6697f2;
+}

@@ -54,11 +54,22 @@ public class ProductService {
 
 	
 	// '공연장'페이지 공연장리스트 & 공지사항리스트
-	public Map<String, Object> getList() {
+	public Map<String, Object> getList(int crtPage) {
+		
+		int listCnt= 11; // 한 페이지당 글 개수
+		int startRnum= (crtPage-1)*listCnt +1; // 시작글 번호
+		int endRnum= (startRnum+listCnt) -1; // 마지막글 번호
+		
+		Paging paging= new Paging();
+		paging.setPageNo(crtPage);
+		paging.setPageSize(listCnt);
+		paging.setTotalCount(nd.noticeCnt());
+		
 		
 		Map<String, Object> listMap= new HashMap<String, Object>();
 		listMap.put("tList", td.getTheaterList());
-		listMap.put("nList", nd.getNoticeList());
+		listMap.put("nList", nd.pagingNotice(startRnum, endRnum));
+		listMap.put("paging", paging);
 		
 		return listMap;
 	}
