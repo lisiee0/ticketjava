@@ -66,7 +66,7 @@
 										<c:when test="${status.count%4 eq 0}">
 											<li class="list-width last">
 												<div class="imgArea">
-													<img class="poster" src="${pageContext.request.contextPath}/upload/${vo.posterPath}">
+													<a href="${pageContext.request.contextPath}/product/info?prodNo=${vo.prodNo}"><img class="poster" src="${pageContext.request.contextPath}/upload/${vo.posterPath}"></a>
 												</div>
 												<div class="productInfo">
 													<p class="text-left title"><strong>${vo.prodName}</strong></p>
@@ -78,7 +78,7 @@
 										<c:otherwise>
 											<li class="list-width">
 												<div class="imgArea">
-													<img class="poster" src="${pageContext.request.contextPath}/upload/${vo.posterPath}">
+													<a href="${pageContext.request.contextPath}/product/info?prodNo=${vo.prodNo}"><img class="poster" src="${pageContext.request.contextPath}/upload/${vo.posterPath}"></a>
 												</div>
 												<div class="productInfo">
 													<p class="text-left title"><strong>${vo.prodName}</strong></p>

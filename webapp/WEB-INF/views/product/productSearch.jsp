@@ -44,7 +44,7 @@
 									<col style="">
 								</colgroup>
 									<tr>
-										<td id="tdImg" rowspan="2"><img src="${pageContext.request.contextPath}/upload/${vo.posterPath}"></td>
+										<td id="tdImg" rowspan="2"><a href="${pageContext.request.contextPath}/product/info?prodNo=${vo.prodNo}"><img src="${pageContext.request.contextPath}/upload/${vo.posterPath}"></a></td>
 										<th colspan="2">${vo.prodName}</th>
 									</tr>
 									<tr>
