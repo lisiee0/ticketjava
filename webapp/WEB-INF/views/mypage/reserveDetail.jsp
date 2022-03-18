@@ -141,7 +141,13 @@
 															</c:choose></td>
 														<td><c:choose>
 																<c:when test="${vo.status==1}">
+
+																	<button onclick="requestCancel()">예매취소</button>
+
+																	<!--
+																	<a href="#" onClick="alert('작업중입니다')">[예매취소]</a> 
 																	<a href="${pageContext.request.contextPath}/mypage/requestCancelTicket?selseatNo=${vo.selseatNo}&rezNo=${vo.rezNo}">[예매취소]</a>
+																	 -->
 																</c:when>
 																<c:otherwise>
 																	-
@@ -153,11 +159,7 @@
 											</tbody>
 
 										</table>
-										<!--
-										<div class="btncancel">
-											<button id="btnCancel" class="btn btn-primary" type="submit" value="submit" onclick="cancelCheck()">취소하기</button>
-										</div>
-										-->
+
 									</form>
 								</div>
 								<!-- //rezSeatList -->
@@ -212,120 +214,20 @@
 	<!-- wrap 종료 -->
 </body>
 
+
 <script type="text/javascript">
-	/*
-	 //로딩 전에 요청하기
-	 $(document).ready(function() {
-	 console.log("리스트 요청");
-	 fetchList();
+function requestCancel() {
 
-	 }); // document . ready
+	if (window.confirm('예매를 취소하시겠습니까? 예매취소를 복구할 수 없습니다') == true) {
+		//window.location.href = "${pageContext.request.contextPath}/mypage/requestCancelTicket?selseatNo=${vo.selseatNo}&rezNo=${vo.rezNo}";
+		document.location.href = "${pageContext.request.contextPath}/mypage/requestCancelTicket?selseatNo=${vo.selseatNo}&rezNo=${vo.rezNo}";
+		alert("취소되었습니다");
+	} else {
+		return;
+	}
 
-	 //취소하기 전에 물어보기 얼럿 alert
-	 function cancelCheck() {
-
-	 if (confirm("정말 취소하시겠습니까??") == true){    //확인
-
-	 document.cancelticket.submit();
-
-	 }else{   //취소
-
-	 return false;
-
-	 }
-	 };
-
-	 // 취소버튼을 클릭했을때 
-	 $("#btnCancel").on("click", function() {
-	 console.log("취소 버튼 클릭");
-
-	 // 데이터 수집
-	 var selseatNo = $("#selseatNo").val();
-
-	 var cancelSeatVo = {
-	 selseatNo : selseatNo
-	 }
-
-	 console.log("cancelSeatVo 출력 " + cancelSeatVo);
-
-	 //ajax 요청 no password
-	 $.ajax({
-	 url : "${pageContext.request.contextPath}/mypage/requestCancelTicket",
-	 type : "post",
-	 // contentType : "application/json",
-	 data : cancelSeatVo,
-
-	 dataType : "json",
-	 success : function(state) {
-	 console.log("state 출력 " + state);
-	
-	 if (confirm("정말 취소하시겠습니까??") == true){
-	 document.cancelticket.submit();
-	 }else{
-	 return false;
-	 }
-	
-	 },
-	 error : function(XHR, status, error) {
-	 console.error(status + " : " + error);
-	 }
-	 }); // ajax
-
-	 }); // btnCancel click function
-
-
-
-	 function fetchList() { // 리스트 가져오기 (그리기를 시키는 기능)
-
-	 $.ajax({
-	 //요청항목 보낼떄
-	 url : "${pageContext.request.contextPath}/mypage/reserveDetail",
-	 type : "post", 
-
-	 //응답항목 받을때
-	 dataType : "json",
-	 success : function(rMap.reserveSeatList) { // json -> js 로 변환
-	 // 성공시 처리해야될 코드 작성
-	 console.log(seatList);
-	 // console.log(guestbookList[0].name); // 데이터 잘 오는지 확인
-
-	 for (var i = 0; i < rMap.reserveSeatList.length; i++) {
-	 render(rMap.reserveSeatList[i], "down"); // 방명록 리스트 출력
-	 }
-	 },
-	 error : function(XHR, status, error) {
-	 console.error(status + " : " + error);
-	 }
-	 }); // ajax
-
-	 }; // function fetchList
-
-	 str += ' 		<td>좌석등급: ' + ${vo.grade} + '</td> ';
-
-
-	 function render(cancelSeatVo, updown) { // 1명씩 정보를 받아 처리 button의 data-no 소문자만 인식 대문자넣으면 에러 
-	 console.log("테이블 출력");
-	 var str = '';
-	 str += ' <table id="t'+rMap.reserveSeatList.no+'" class="guestRead"> ';
-	 str += ' 	<colgroup> ';
-	 str += ' 		<col style="width: 10%;"> ';
-	 str += ' 		<col style="width: 40%;"> ';
-	 str += ' 		<col style="width: 40%;"> ';
-	 str += ' 		<col style="width: 10%;"> ';
-	 str += ' 	</colgroup> ';
-	 str += ' </table> ';
-	 str += ' ';
-
-	 if (updown == 'down') {
-	 $("#listArea").append(str); // .html 을 쓰면 바꿔치는 기능때문에 마지막글 만 출력 
-	 } else if (updown == 'up') {
-	 $("#listArea").prepend(str);
-	 } else {
-	 console.log("방향오류");
-	 };
-
-	 }; // function render
-	 */
+};
 </script>
+
 
 </html>
