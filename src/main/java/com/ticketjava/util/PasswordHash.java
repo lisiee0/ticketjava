@@ -34,12 +34,4 @@ public class PasswordHash {
 	    return salt;
 	}
 
-	public static void main(String arg[]) {
-		String ps = "test";
-		String salt = "TZ7ycgRKAEjh0OQZ";
-		ps+=salt;
-		System.out.println(salt);
-		System.out.println(getSHA256(ps));
-		
-	}
 }

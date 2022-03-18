@@ -17,17 +17,7 @@ public class NotificationService {
 	@Autowired
 	private NotificationDao notificationDao;
 
-	public List<NotificationVo> myNoti(HttpSession session) {
-		UserVo authUser = (UserVo)session.getAttribute("authUser");
-		int userNo;
-		
-		if(authUser != null) {
-			userNo = authUser.getUserNo();
-		}
-		else {
-			userNo = 1;
-		}
-		
+	public List<NotificationVo> myNoti(int userNo) {
 		return notificationDao.selectByUser(userNo);
 		
 	}

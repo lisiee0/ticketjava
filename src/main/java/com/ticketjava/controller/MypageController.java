@@ -15,6 +15,7 @@ import com.ticketjava.service.NotificationService;
 import com.ticketjava.service.NotireqService;
 import com.ticketjava.service.ReservationService;
 import com.ticketjava.service.ReviewService;
+import com.ticketjava.service.UserService;
 import com.ticketjava.vo.NotificationVo;
 import com.ticketjava.vo.NotireqVo;
 import com.ticketjava.vo.ReserveDetailVo;
@@ -36,6 +37,9 @@ public class MypageController {
 	
 	@Autowired
 	private ReviewService reviewService;
+	
+	@Autowired
+	private UserService userService;
 	
 //	마이페이지 예매내역
 	@RequestMapping("/reserveList")
@@ -92,22 +96,33 @@ public class MypageController {
 	@RequestMapping("/reserveAlram")
 	public String ticketAlram(HttpSession session,
 							  Model model) {
-		List<NotificationVo> notiList = notificationService.myNoti(session);
-		System.out.println(notiList);
-		model.addAttribute("notiList",notiList);
-		return "mypage/reserveAlram";
+		if(! userService.loginCheck(session)) {
+			return "redirect:/";
+		}
+		else {
+			int userNo = ((UserVo)session.getAttribute("authUser")).getUserNo();
+			List<NotificationVo> notiList = notificationService.myNoti(userNo);
+			System.out.println(notiList);
+			model.addAttribute("notiList",notiList);
+			return "mypage/reserveAlram";
+		}
 	}
 	
 //	마이페이지 취소 티켓알람 설정
 	@RequestMapping("/reserveAlramSet")
 	public String reserveAlramSet(HttpSession session,
 			Model model) {
-	List<NotireqVo> reqList = notireqService.myReqList(session);
-	 
-	System.out.println("myReqList");
-	System.out.println(reqList);
-	model.addAttribute("reqList", reqList);
-		return "mypage/reserveAlramSet";
+		
+		if(! userService.loginCheck(session)) {
+			return "redirect:/";
+		}	
+		else {
+			int userNo = ((UserVo)session.getAttribute("authUser")).getUserNo();
+			List<NotireqVo> reqList = notireqService.myReqList(userNo);
+
+			model.addAttribute("reqList", reqList);
+			return "mypage/reserveAlramSet";
+		}
 	}	
 	
 	
