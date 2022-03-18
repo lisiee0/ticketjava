@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.ticketjava.service.UserService;
@@ -42,6 +43,8 @@ public class UserController {
 		return "redirect:/";
 	}
 	
+	
+	
 	@RequestMapping("/logout")
 	public String logout(HttpSession session) {
 		session.removeAttribute("authUser");
@@ -55,10 +58,15 @@ public class UserController {
 		return "user/joinForm";
 	}
 	
+	@ResponseBody
+	@RequestMapping("/dupCheck")
+	public boolean dupCheck(@RequestParam("id") String id) {
+		
+		return userService.dupCheck(id);
+	}
+	
 	@RequestMapping("/join")
 	public String join(@ModelAttribute UserVo userVo) {
-		System.out.println("join()");
-		
 		userService.join(userVo);
 		return "redirect:/";
 	}

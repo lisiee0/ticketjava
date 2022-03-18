@@ -48,7 +48,7 @@
 								<tr>
 									<th>아이디</th>
 									<td colspan="2"><input class="form-control" name="id" type="text" placeholder="아이디"></td>
-									<td class="outlineBtn"><button class="form-control btn-outline-primary" type="button">중복체크</button></td>
+									<td class="outlineBtn"><button id="dupCheckBtn" class="form-control btn-outline-primary" type="button">중복체크</button></td>
 								</tr>
 								
 								<tr>
@@ -93,13 +93,13 @@
 								<tr>
 									<th>이메일</th>
 									<td colspan="2"><input id="email" class="form-control"  name="email" type="text" placeholder="이메일"></td>
-									<td class="outlineBtn"><button id="sendMail" class="form-control btn-outline-primary" type="button">인증번호 발송</button></td>
+									<td class="outlineBtn"><button id="sendMailBtn" class="form-control btn-outline-primary" type="button">인증번호 발송</button></td>
 								</tr>
 								
 								<tr id="keyArea">
 									<!-- <th></th>
 									<td colspan="2"><input id="authKey" class="form-control" type="text" placeholder="인증번호"></td>
-									<td class="outlineBtn"><button id="checkKey" class="form-control btn-outline-primary" type="button">확인</button></td> -->
+									<td class="outlineBtn"><button id="checkKeyBtn" class="form-control btn-outline-primary" type="button">확인</button></td> -->
 								</tr>
 								
 								<tr id="usertype">
@@ -162,9 +162,9 @@
 	$("#bizman").change(function(){
 		if(this.checked){
 			$("#usertype").after('<tr id="bizno">'+
-										 	 '<th>사업자등록번호</th>'+
-										 	 '<td colspan="3"><input class="form-control" name="bizno" type="text" placeholder="사업자등록번호"></td>'+
-										 '</tr>');
+								 	 '<th>사업자등록번호</th>'+
+								 	 '<td colspan="3"><input class="form-control" name="bizno" type="text" placeholder="사업자등록번호"></td>'+
+								 '</tr>');
 		}
 	});
 	
@@ -174,11 +174,35 @@
 		}
 	});
 	
-	$('#sendMail').on('click',function(){
+	$('#dupCheckBtn').on('click',function(){
+		var id = $('[name=id]').val();
+		
+		$.ajax({
+			url: "${pageContext.request.contextPath}/user/dupCheck",
+			type : "post",
+			data: {id:id},
+			dataType:"json",
+			success : function(isDup){
+				if(isDup == true){
+					alert('중복된 아이디입니다. 다른 아이디를 사용해주세요.');
+				}
+				else{
+					alert('사용 가능한 아이디입니다.');
+					$('[name=id]').attr('readonly',true);
+					dupCheck = true;
+				}
+			},
+			error : function(XHR, status, error) {
+				console.error(status + " : " + error);
+			}
+		});
+	});
+	
+	$('#sendMailBtn').on('click',function(){
 		$('#keyArea').show();
 		$('#keyArea').append('<th></th>'+
 							 '<td colspan="2"><input id="authKey" class="form-control" type="text" placeholder="인증번호"></td>'+
-							 '<td class="outlineBtn"><button id="checkKey" class="form-control btn-outline-primary" type="button">확인</button></td>'
+							 '<td class="outlineBtn"><button id="checkKeyBtn" class="form-control btn-outline-primary" type="button">확인</button></td>'
 							 );
 		
 		var email = $('#email').val();
@@ -195,7 +219,7 @@
 		});
 	});
 	
-	$('#keyArea').on('click','#checkKey' ,function(){
+	$('#keyArea').on('click','#checkKeyBtn' ,function(){
 		var email = $('#email').val();
 		var authKey = $('#authKey').val();
 		var authInfo = {
@@ -212,10 +236,8 @@
 			success : function(result){
 				if(result == "success"){
 					alert('인증완료');
-					$('#email').attr('disabled',true);
-					$('#sendMail').attr('disabled',true);
-					$('#checkKey').attr('disabled',true);
-					$('#authKey').attr('disabled',true);
+					$('#email').attr('readonly',true);
+					$('#authKey').attr('readonly',true);
 					emailCheck = true;
 				}
 				else{
@@ -235,8 +257,6 @@
 			alert('비밀번호를 입력해주세요');
 		else if( $('[name=passwordCheck]').val() == '')
 			alert('비밀번호 확인을 입력해주세요');
-		else if( $('[name=password]').val() != $('[name=passwordCheck]').val() )
-			alert('비밀번호가 일치하지 않습니다');
 		else if( $('[name=name]').val() == '')
 			alert('이름을 입력해주세요');
 		else if( $('[name=phone]').val() == '')
@@ -249,12 +269,14 @@
 			alert('이메일을 입력해주세요');
 		else if( $('[name=usertype]:checked').val() == 2    &&   $('[name=bizno]').val() == '' )
 			alert('사업자등록번호를 입력해주세요');
+		else if(! dupCheck )
+			alert('아이디 중복체크 해주세요');
+		else if( $('[name=password]').val() != $('[name=passwordCheck]').val() )
+			alert('비밀번호가 일치하지 않습니다');
+		else if(! emailCheck )
+			alert('메일 인증 해주세요');
 		else if(! $('#agreeCheck').is(':checked'))
 			alert('약관에 동의해주세요');
-		else if( dupChcek )
-			alert('아이디 중복체크 해주세요');
-		else if( emailCheck )
-			alert('메일 인증 해주세요');
 		else
 			$('#jform').submit();
 	});
