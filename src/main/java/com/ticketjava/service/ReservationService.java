@@ -4,8 +4,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import javax.servlet.http.HttpSession;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -15,7 +13,6 @@ import com.ticketjava.vo.ReservationVo;
 import com.ticketjava.vo.ReserveDetailVo;
 import com.ticketjava.vo.RezProdInfoVo;
 import com.ticketjava.vo.SelseatVo;
-import com.ticketjava.vo.UserVo;
 
 @Service
 public class ReservationService {
@@ -29,15 +26,7 @@ public class ReservationService {
 	@Autowired
 	private NotireqService notireqService;
 	
-	public int preoccupy(ReservationVo reservationVo, HttpSession session) {
-		UserVo authUser = (UserVo)session.getAttribute("AuthUser");
-		
-		int userNo;
-		if(authUser == null)
-			userNo = 1;
-		else 
-			userNo = authUser.getUserNo();
-		
+	public int preoccupy(ReservationVo reservationVo, int userNo) {
 		reservationVo.setUserNo(userNo);
 		reservationDao.insertPre(reservationVo);
 		int rezNo = reservationVo.getRezNo();
@@ -135,13 +124,8 @@ public class ReservationService {
 		System.out.println("리저브 서비스 selseatNo "+selseatNo);
 	}
 
-	public ReservationVo checkRezHistory(ReservationVo reservationVo, HttpSession session) {
-		UserVo authUser= (UserVo)session.getAttribute("authUser");
-		int userNo = 1;
-		if(authUser != null)
-			userNo = authUser.getUserNo();
+	public ReservationVo checkRezHistory(ReservationVo reservationVo, int userNo) {
 		reservationVo.setUserNo(userNo);
-		
 		return reservationDao.selectHistory(reservationVo);
 	}
 

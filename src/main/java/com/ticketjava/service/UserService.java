@@ -1,5 +1,7 @@
 package com.ticketjava.service;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -30,6 +32,16 @@ public class UserService {
 		userVo.setPassword(PasswordHash.getSHA256(inputPw+salt));
 		
 		return userDao.selectAuthUser(userVo);
+	}
+	
+	public boolean loginCheck(HttpSession session) {
+		UserVo authUser = (UserVo)session.getAttribute("authUser");
+		
+		if(authUser == null)
+			return false;
+		else
+			return true;
+				
 	}
 
 }

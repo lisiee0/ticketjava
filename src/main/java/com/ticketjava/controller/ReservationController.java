@@ -18,9 +18,11 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.ticketjava.service.ReservationService;
 import com.ticketjava.service.SeatpriceService;
+import com.ticketjava.service.UserService;
 import com.ticketjava.vo.ReservationVo;
 import com.ticketjava.vo.RezProdInfoVo;
 import com.ticketjava.vo.SeatpriceVo;
+import com.ticketjava.vo.UserVo;
 
 
 @Controller
@@ -32,29 +34,43 @@ public class ReservationController {
 	
 	@Autowired
 	private SeatpriceService seatpriceService;
+
+	@Autowired
+	private UserService userService;
+	
 	
 	@RequestMapping(value="/selectSeat", method=RequestMethod.POST)
 	public String selectSeat(@ModelAttribute ReservationVo reservationVo,
-							 Model model, HttpSession session,
-							 RedirectAttributes redirectAttributes) {
+							 RedirectAttributes redirectAttributes,
+							 HttpSession session,
+							 Model model) {
 		
-		ReservationVo rezVo = reservationService.checkRezHistory(reservationVo, session);
-		if(rezVo.getRezNo() != 0) {
-			redirectAttributes.addAttribute("rezNo", rezVo.getRezNo());
-			redirectAttributes.addAttribute("viewDate", reservationVo.getViewDate());
-			redirectAttributes.addAttribute("prodNo", reservationVo.getProdNo());
-			redirectAttributes.addAttribute("totalPayment", rezVo.getTotalPayment());
-			return "redirect:confirmContinue";
+		if(!userService.loginCheck(session)) {
+			model.addAttribute("prodNo", reservationVo.getProdNo());
+			return "error/requireLogin";
 		}
 		
 		else {
-			List<SeatpriceVo> seatpriceList = seatpriceService.seatpriceList(reservationVo.getProdNo());
-			model.addAttribute("seatpriceList", seatpriceList);
+			int userNo = ((UserVo)session.getAttribute("authUser")).getUserNo();
+			ReservationVo rezHistory = reservationService.checkRezHistory(reservationVo, userNo);
 			
-			RezProdInfoVo rezProdInfo = reservationService.rezProdInfo(reservationVo.getProdNo());
-			model.addAttribute("rezProdInfo", rezProdInfo);
+			if(rezHistory.getRezNo() != 0) {
+				redirectAttributes.addAttribute("rezNo", rezHistory.getRezNo());
+				redirectAttributes.addAttribute("viewDate", reservationVo.getViewDate());
+				redirectAttributes.addAttribute("prodNo", reservationVo.getProdNo());
+				redirectAttributes.addAttribute("totalPayment", rezHistory.getTotalPayment());
+				return "redirect:confirmContinue";
+			}
 			
-			return "reservation/selectSeat";
+			else {
+				List<SeatpriceVo> seatpriceList = seatpriceService.seatpriceList(reservationVo.getProdNo());
+				model.addAttribute("seatpriceList", seatpriceList);
+				
+				RezProdInfoVo rezProdInfo = reservationService.rezProdInfo(reservationVo.getProdNo());
+				model.addAttribute("rezProdInfo", rezProdInfo);
+				
+				return "reservation/selectSeat";
+			}
 		}
 	}
 	
@@ -68,8 +84,10 @@ public class ReservationController {
 	
 	@ResponseBody
 	@RequestMapping("/preoccupy")
-	public int preoccupy(@RequestBody ReservationVo reservationVo, HttpSession session){
-		return reservationService.preoccupy(reservationVo, session);
+	public int preoccupy(@RequestBody ReservationVo reservationVo,
+						 HttpSession session){
+		int userNo = ((UserVo)session.getAttribute("authUser")).getUserNo();
+		return reservationService.preoccupy(reservationVo, userNo);
 	}
 	
 	@RequestMapping(value="/selectQuantity", method=RequestMethod.POST)

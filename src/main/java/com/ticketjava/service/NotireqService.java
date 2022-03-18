@@ -163,17 +163,7 @@ public class NotireqService {
 	}
 
 
-	public List<NotireqVo> myReqList(HttpSession session) {
-		UserVo authUser = (UserVo)session.getAttribute("authUser");
-		int userNo;
-		
-		if(authUser != null) {
-			userNo = authUser.getUserNo();
-		}
-		else {
-			userNo = 1;
-		}
-		
+	public List<NotireqVo> myReqList(int userNo) {
 		return notireqDao.selectReqList(userNo);
 		
 		

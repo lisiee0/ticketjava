@@ -9,8 +9,10 @@
 
 <!-- 부트스트랩 Bootstrap core CSS -->
 <link href="${pageContext.request.contextPath}/assets/bootstrap/css/bootstrap.css" rel="stylesheet">
-<link href="${pageContext.request.contextPath}/assets/css/main/search.css" rel="stylesheet">
+<!-- 기본 css -->
+<link href="${pageContext.request.contextPath}/assets/css/ticketjavaCommon.css" rel="stylesheet" type="text/css">
 
+<link href="${pageContext.request.contextPath}/assets/css/main/search.css" rel="stylesheet">
 <link href="${pageContext.request.contextPath}/assets/css/indcom.css" rel="stylesheet">
 
 </head>

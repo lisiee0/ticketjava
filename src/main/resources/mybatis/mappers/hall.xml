@@ -16,7 +16,7 @@
 	</select>
 	
 	<!-- 공연장 리스트 검색-->
-	<select id="bmHallSearchList" parameterType="String" resultType="HallVo">
+	<select id="bmhallListResult" parameterType="String" resultType="HallVo">
 		<![CDATA[
 			select  t.theatername   		theaterName,
 				        h.hallname      	hallName,

@@ -35,6 +35,10 @@
 							<input class="form-control" name="id" type="text" placeholder="아이디">
 							<input class="form-control" name="password" type="password" placeholder="패스워드">
 							<button id="loginBtn" class="form-control btn-primary" type="submit">로그인</button>
+							<c:if test="${param.prodNo != null}">
+								<input type="hidden" name="prodNo" value="${param.prodNo}">
+							</c:if>
+							
 						</form>	
 						<div id="helperArea">
 							<button class="form-control btn-default helper" type="button">아이디 찾기</button>
