@@ -393,3 +393,7 @@ body {
 	width: 300px;
 	height: 300px;
 }
+
+.right-np {
+	padding-right: 0px;	
+}
