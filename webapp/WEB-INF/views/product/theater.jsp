@@ -43,7 +43,7 @@
 						</div>
 					</div>
 	
-					<div class="container bgc">
+					<div class="container bgc add-margin">
 						<div class="row">
 							<ul class="nav navbar-nav pd">
 							
@@ -124,7 +124,7 @@
 								<table class="table">
 									<c:forEach items="${listMap.nList}" var="vo">
 										<tr>
-											<td><span class="glyphicon glyphicon-info-sign"></span>&nbsp;&nbsp;[${vo.theaterName}]&nbsp; ${vo.content}</td>
+											<td><span class="glyphicon glyphicon-info-sign"></span>&nbsp;&nbsp;<a href="${vo.homePage}">[${vo.theaterName}]</a>&nbsp; ${vo.content}</td>
 										</tr>
 									</c:forEach>
 								</table>

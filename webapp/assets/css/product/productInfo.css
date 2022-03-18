@@ -397,3 +397,13 @@ body {
 .right-np {
 	padding-right: 0px;	
 }
+
+.add-margin {
+	margin-bottom: 25px;
+}
+
+#myCarousel, #myCarousel img {
+	width: 583.333px;
+	height: 420px;
+}
+
