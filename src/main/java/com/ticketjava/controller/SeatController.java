@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.ticketjava.service.SeatService;
 import com.ticketjava.vo.SeatVo;
@@ -22,9 +23,11 @@ public class SeatController {
 		return "reservation/seatMap";
 	}
 	
+	@ResponseBody
 	@RequestMapping("/initSeat")
-	public void initSeat(@RequestBody List<SeatVo> seatList) {
+	public String initSeat(@RequestBody List<SeatVo> seatList) {
 		seatService.initSeat(seatList);
+		return "";
 	}
 	
 }

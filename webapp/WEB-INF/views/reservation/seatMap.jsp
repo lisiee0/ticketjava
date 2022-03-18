@@ -13,11 +13,12 @@
 <script src="${pageContext.request.contextPath}/assets/bootstrap/js/bootstrap.js"></script>
 
 <script src="${pageContext.request.contextPath}/assets/js/venues/venue${param.hallNo}.js"></script>
+<c:import url="/assets/js/seat/seatMapJs.jsp"></c:import>
 
 <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/bootstrap/css/bootstrap.css">
 <link href="${pageContext.request.contextPath}/assets/css/reservation/reservation.css" rel="stylesheet" type="text/css">
 <link href="${pageContext.request.contextPath}/assets/css/reservation/seat.css" rel="stylesheet" type="text/css">
-<link href="${pageContext.request.contextPath}/assets/css/venues/venue${rezProdInfo.hallNo}.css" rel="stylesheet" type="text/css">
+<link href="${pageContext.request.contextPath}/assets/css/venues/venue${param.hallNo}.css" rel="stylesheet" type="text/css">
 <link href="${pageContext.request.contextPath}/assets/css/reservation/reservation1.css" rel="stylesheet" type="text/css">
 
 
@@ -80,52 +81,5 @@
 		
 	</div>
 </body>
-
-<script type="text/javascript">
-var hallNo = '${param.hallNo}';
-
-$('#nextBtn').on('click', function(){
-	
-	var chkbox = $('[type=checkbox]').not('[class=n]');
-	
-	var seatList = [];
-	for(var i=0; i< chkbox.length; i++) {
-		var e = chkbox.eq(i);
-		
-		var grade= e.attr("class");
-		if(grade == 'v')
-			grade = "vip";
-		var section = e.attr('data-section');
-		var col = e.attr('data-col');
-		var num = e.attr('data-num');
-		
-		var initVo = {
-			hallNo:hallNo,
-			grade:grade,
-			section:section,
-			col:col,
-			num:num				
-		};
-		seatList.push(initVo);
-	}
-	
-	$.ajax({
-		url: "${pageContext.request.contextPath}/seat/initSeat",
-		type : "post",
-		traditional : true,
-		contentType : "application/json",
-		data: JSON.stringify(seatList),
-		success : function(){
-			alert('초기화 완료');
-		},
-		error : function(XHR, status, error) {
-			console.error(status + " : " + error);
-		}
-	});
-	 
-});
-
-
-</script>
 
 </html>
