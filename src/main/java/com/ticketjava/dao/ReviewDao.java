@@ -37,7 +37,9 @@ public class ReviewDao {
 		return reviewListProduct;
 	}
 	
-	
+	public void writeReview(ReviewVo reviewVo) {
+		sqlSession.insert("review.insertReview", reviewVo);
+	}
 	
 	
 } // The end of ReservationDao

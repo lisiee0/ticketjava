@@ -213,10 +213,18 @@
 					<!-- 후기작성 -->
 					<div class="container bgc">
 						<div class="row">
-							<textarea class="form-control" id="review" placeholder="후기를 남겨주세요"></textarea>
-							<br> <span class="star"> ★★★★★ <span>★★★★★</span> <input id="" type="range" oninput="drawStar(this)" value="1" step="1" min="0" max="10">
+
+						<form action="${pageContext.request.contextPath}/product/writeReview" method="get">
+							<textarea class="form-control" id="review" name="content" placeholder="후기를 남겨주세요"></textarea>
+							<br> <span class="star"> ★★★★★ <span>★★★★★</span> <input type="range" name="rating" oninput="drawStar(this)" value="1" step="1" min="0" max="10">
 							</span>
-							<button type="button" class="btn btn-primary position">등록</button>
+							
+							<input type="hidden" name="prodNo" value="${product.vo.prodNo}">
+							<input type="hidden" name="userNo" value="${product.vo.userNo}">
+							
+							<button type="submit" class="btn btn-primary position">등록</button>
+						</form>
+
 						</div>
 					</div>
 

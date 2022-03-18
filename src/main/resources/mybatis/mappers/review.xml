@@ -55,6 +55,20 @@ order	by regdate desc
 
 	</select>
 
+<!-- 리뷰작성 product 
+리뷰no 상품no 유저no 컨텐츠 평점 등록일 -->
+<insert id="insertReview" parameterType="ReviewVo">
+	<![CDATA[
+	INSERT INTO review VALUES (
+	seq_review_no.nextval,
+	#{prodNo}, 
+	#{userNo}, 
+	#{content}, 
+	#{rating}, 
+	sysdate
+	)
+	]]>
+</insert>
 
 
 </mapper>

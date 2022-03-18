@@ -74,7 +74,17 @@ public class ProductController {
 	}
 	
 	
-	
+//	상품 상세보기 후기(리뷰) 작성
+	@RequestMapping("/writeReview")
+	public String writeReview (ReviewVo reviewVo,
+			@RequestParam(value="prodNo")int prodNo, 
+			@RequestParam(value="userNo")int userNo,
+			@RequestParam(value="rating")int rating,
+			@RequestParam(value="content")String content) {
+		System.out.println("프로덕컨트롤러 reviewVo "+reviewVo);
+		reviewService.writeReview(reviewVo);
+		return "redirect:/product/productInfo";
+	}
 	
 	
 	// 상품 검색하기

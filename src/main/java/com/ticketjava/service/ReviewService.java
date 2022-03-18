@@ -31,5 +31,9 @@ public class ReviewService {
 		return reviewDao.getReviewListProduct(prodNo);
 	}	
 	
+	public void writeReview(ReviewVo reviewVo) {
+		reviewDao.writeReview(reviewVo);
+	}
+	
 	
 } // The end of ReservationService
