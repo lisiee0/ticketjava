@@ -15,7 +15,6 @@
 
 <!-- 기본 css -->
 <link href="${pageContext.request.contextPath}/assets/css/ticketjavaCommon.css" rel="stylesheet" type="text/css">
-<link href="${pageContext.request.contextPath}/assets/css/ticketjavaCommonFooter.css" rel="stylesheet" type="text/css">
 
 <!-- 개인 css (폴더로 관리 권장 ex assets/css/mypage/ticketing.css) -->
 <link href="${pageContext.request.contextPath}/assets/css/login/member.css" rel="stylesheet">
@@ -47,8 +46,8 @@
 								</colgroup>
 								<tr>
 									<th>아이디</th>
-									<td colspan="2"><input class="form-control" name="id" type="text" placeholder="아이디"></td>
-									<td class="outlineBtn"><button id="dupCheckBtn" class="form-control btn-outline-primary" type="button">중복체크</button></td>
+									<td colspan="3"><input class="form-control" name="id" type="text" placeholder="아이디"><div id="dupText"></div></td>
+									<!-- <td class="outlineBtn"><button id="dupCheckBtn" class="form-control btn-outline-primary" type="button">중복체크</button></td> -->
 								</tr>
 								
 								<tr>
@@ -174,8 +173,10 @@
 		}
 	});
 	
-	$('#dupCheckBtn').on('click',function(){
+	$('[name=id]').on('focusout',function(){
 		var id = $('[name=id]').val();
+		if(id.length <= 0)
+			return false;
 		
 		$.ajax({
 			url: "${pageContext.request.contextPath}/user/dupCheck",
@@ -184,11 +185,10 @@
 			dataType:"json",
 			success : function(isDup){
 				if(isDup == true){
-					alert('중복된 아이디입니다. 다른 아이디를 사용해주세요.');
+					$('#dupText').html('<span id="failText">아이디 중복입니다. 다른 아이디를 사용해주세요.</span>');
 				}
 				else{
-					alert('사용 가능한 아이디입니다.');
-					$('[name=id]').attr('readonly',true);
+					$('#dupText').html('<span id="successText">사용 가능한 아이디입니다.</span>');
 					dupCheck = true;
 				}
 			},

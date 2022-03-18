@@ -26,6 +26,17 @@
 	padding: 5px 0px;
 }
 
+#containerMain #formArea table td #dupText{
+	margin-left:5px;
+}
+
+#containerMain #formArea table td #dupText #failText{
+	color:red;
+}
+#containerMain #formArea table td #dupText #successText{
+	color:#6697f2;
+}
+
 #containerMain #formArea .form-control{
 	display:inline;
 }
