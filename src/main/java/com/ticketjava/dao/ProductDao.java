@@ -19,28 +19,28 @@ public class ProductDao {
 
 	// 공연 리스트
 	public List<ProductVo> getProductList() {
-		System.out.println("ProductDao/getProductList");
+		System.out.println("ProductDao > getProductList");
 
 		return sqlsession.selectList("product.getProductList");
 	}
 
 	// 공연 추가
 	public int productUpload(ProductVo productVo) {
-		System.out.println("ProductDao/productUpload");
+		System.out.println("ProductDao > productUpload");
 
 		return sqlsession.insert("product.productUpload", productVo);
 	}
 	
 	//공연 이미지파일 추가 <<<<< 포스터 정보
 	public int posterAdd(ProductVo productVo) {
-		System.out.println("ProductDao/posterAdd");
+		System.out.println("ProductDao > posterAdd");
 		
 		return sqlsession.update("product.posterAdd", productVo);
 	}
 	
 	//공연 삭제
 	public int productDelete(ProductVo productVo) {
-		System.out.println("ProductDao/productDelete");
+		System.out.println("ProductDao > productDelete");
 		
 		return sqlsession.delete("product.productDelete", productVo);
 	}

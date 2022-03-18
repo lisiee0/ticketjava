@@ -14,18 +14,31 @@
 		]]>
 	</select>
 
-	<!-- 공연 이미지파일 추가 <<<<< 공연 정보 -->
-	<insert id="prodAdd" parameterType="DetailVo">
+	<!-- 공연 번호 추가 -->
+	<insert id="detailNoAdd" parameterType="DetailVo">
+		<selectKey keyProperty="detailNo" resultType="int" order="BEFORE">
+			select seq_detail_no.nextval from dual
+		</selectKey>
 		<![CDATA[
 			insert into detail 	(detail_no,
-							prod_no,
-							prodpath)
+							prod_no
+							
+							)	
 								
-					values 	(seq_detail_no.nextval,
-							#{prodNo},
-							#{prodPath})
+					values 	(#{detailNo},
+							#{prodNo}
+							)
 		]]>
 	</insert>
+
+	<!-- 공연 이미지파일 업데이트 <<<<< 캐스팅 정보 -->
+	<update id="prodAdd" parameterType="DetailVo">
+		<![CDATA[
+			update 	detail
+			set 		prodPath = #{prodPath}
+			where 	detail_no = #{detailNo}
+		]]>
+	</update>
 
 	<!-- 공연 이미지파일 업데이트 <<<<< 캐스팅 정보 -->
 	<update id="castingAdd" parameterType="DetailVo">

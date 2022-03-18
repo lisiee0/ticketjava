@@ -31,7 +31,7 @@ public class BusinessController {
 		System.out.println("BusinessController > bmInquiry");
 
 		List<ProductVo> productList = businessService.getProductList();
-		
+
 		model.addAttribute("productList", productList);
 		return "business/bmInquiry";
 
@@ -44,7 +44,6 @@ public class BusinessController {
 //		@RequestParam("keyword") String hKey, Model model
 		List<HallVo> hList = businessService.bmAddSearch();
 
-		
 		model.addAttribute("bmAddSearch", hList);
 		return "business/bmAddSearch";
 	}
@@ -60,10 +59,10 @@ public class BusinessController {
 	// 공연 업로드
 	@ResponseBody
 	@RequestMapping(value = "bmUpload", method = { RequestMethod.GET, RequestMethod.POST })
-	public int productUpload(@RequestBody ProductVo productVo) {
+	public int productUpload(@RequestBody ProductVo productVo, DetailVo detailVo) {
 		System.out.println("BusinessController > productUpload");
 
-		businessService.productUpload(productVo);
+		businessService.productUpload(productVo, detailVo);
 		return productVo.getProdNo();
 	}
 

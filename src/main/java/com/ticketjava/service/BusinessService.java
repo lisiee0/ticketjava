@@ -35,7 +35,7 @@ public class BusinessService {
 
 	// 공연 목록 불러오기
 	public List<ProductVo> getProductList() {
-		System.out.println("BusinessServiece/bmInquiry");
+		System.out.println("BusinessServiece > bmInquiry");
 
 		return pd.getProductList();
 	}
@@ -44,20 +44,26 @@ public class BusinessService {
 	public List<HallVo> bmAddSearch() {
 		System.out.println("BusinessServiece > bmAddSearch");
 
-		
 		return hd.bmAddSearch();
 	}
 
 	// 공연 업로드 (파일 제외)
-	public int productUpload(ProductVo productVo) {
-		System.out.println("BusinessServiece/productUpload");
+	public int productUpload(ProductVo productVo, DetailVo detailVo) {
+		System.out.println("BusinessServiece > productUpload");
+		pd.productUpload(productVo);
+		// 공원상세파일 저장 번호 --->공연정보, 상세정보 번호
 
+		detailVo.setProdNo(productVo.getProdNo());
+
+		td.detailNoAdd(detailVo);
+
+		// detail테이블 인서트
 		return pd.productUpload(productVo);
 	}
 
 	// 공연 파일 업로드
 	public void productFileUpload(MultipartFile file, ProductVo productVo, DetailVo detailVo, int order) {
-		System.out.println("BusinessServiece/productFileUpload()");
+		System.out.println("BusinessServiece > productFileUpload()");
 
 		// 파일업로드
 		String saveDir = "C:\\javaStudy\\upload";
@@ -76,6 +82,9 @@ public class BusinessService {
 
 		// 포스터 이미지 설정
 		productVo.setPosterPath(filePath);
+		detailVo.setProdPath(filePath);
+		detailVo.setCastingPath(filePath);
+		detailVo.setAddedPath(filePath);
 
 		// 파일 저장
 		try {
@@ -97,13 +106,10 @@ public class BusinessService {
 			System.out.println(order + "번 파일을 저장했습니다.");
 		} else if (order == 2) {
 			td.prodAdd(detailVo);
-			System.out.println(order + "번 파일을 저장했습니다.");
 		} else if (order == 3) {
 			td.castingAdd(detailVo);
-			System.out.println(order + "번 파일을 저장했습니다.");
 		} else if (order == 4) {
 			td.addedAdd(detailVo);
-			System.out.println(order + "번 파일을 저장했습니다.");
 		} else {
 			System.out.println("오류 발생");
 		}
@@ -111,13 +117,13 @@ public class BusinessService {
 
 	// 공연 노출 여부
 	public void bmStatus(ProductVo productVo) {
-		System.out.println("BusinessService/bmStatus");
+		System.out.println("BusinessService > bmStatus");
 
 	}
 
 	// 공연 목록 삭제
 	public void productDelete(ProductVo productVo) {
-		System.out.println("BusinessService/productDelete");
+		System.out.println("BusinessService > productDelete");
 
 		pd.productDelete(productVo);
 	}
