@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="seatprice">
-	
+
 	<select id="selectList" parameterType="int" resultType="SeatpriceVo">
 		<![CDATA[
 			select grade,
@@ -12,4 +12,21 @@
 		]]>
 	</select>
 	
+	<!-- 등급별 가격 추가 -->
+	<insert id="seatpAdd" parameterType="SeatpriceVo">
+		<![CDATA[
+			insert into detail 	(seatprice_no,
+							prod_no,
+							grade,
+							price)
+								
+					values 	(seq_seatprice_no.nextval,
+							#{prodNo},
+							#{grade},
+							#{price}
+								 )
+		]]>
+	</insert>
+
+
 </mapper>
