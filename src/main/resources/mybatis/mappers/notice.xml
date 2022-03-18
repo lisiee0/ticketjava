@@ -13,7 +13,8 @@
 		<![CDATA[
 			select			notice_no noticeNo, 
 							n.theater_no theaterNo, 
-							theatername, 
+							theatername,
+							homepage,
 							content, 
 							to_char(regdate, 'YYYY-MM-DD HH24:MI:SS') regDate
 			from			notice n, theater t
