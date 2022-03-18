@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.ticketjava.vo.DiscountVo;
+import com.ticketjava.vo.SeatpriceVo;
 
 @Repository
 public class DiscountDao {
@@ -26,13 +27,14 @@ public class DiscountDao {
 	public DiscountVo selectProdHall(int prodNo) {
 		return sqlSession.selectOne("discount.selectProdHall", prodNo);
 	}
+	
 
-	// 상시 할인추가
-	public void addAlwaysDis(DiscountVo discountVo) {
-		System.out.println("DiscountDao/addAlwaysDis");
+	// 상시 할인 추가
+	public void alwaysdisAdd(DiscountVo discountVo) {
+		System.out.println("DiscountDao > seatpriceAdd");
+		System.out.println(discountVo);
 
-		sqlSession.insert("discount.addAlwaysDis", discountVo);
-		
+		sqlSession.insert("discount.alwaysDis", discountVo);
 	}
 
 	// 이벤트 할인창에서 가져오는 이벤트할인 리스트 (상시할인 제외)

@@ -15,7 +15,7 @@
 	<!-- 등급별 가격 추가 -->
 	<insert id="seatpriceAdd" parameterType="SeatpriceVo">
 		<![CDATA[
-			insert into detail 	(seatprice_no,
+		insert into seatprice 	(seatprice_no,
 							prod_no,
 							grade,
 							price

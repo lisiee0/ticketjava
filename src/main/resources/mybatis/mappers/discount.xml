@@ -47,6 +47,26 @@
 		]]>
 	</select>
 
+	<!-- 상시할인 추가 -->
+	<insert id="seatpriceAdd" parameterType="SeatpriceVo">
+		<![CDATA[
+		insert into discount 	(dc_no,
+                                	prod_no,
+                                	dcname,
+                                	dctype,
+                                	dcrate
+							)
+								
+				values 		(seq_dc_no.nextval,
+                            		#{prodNo},
+                            		#{dcName},
+                            		#{dctype},
+                            		#{dcrate}
+							)         
+		]]>
+	</insert>
+
+
 	<!-- 이벤트할인 리스트 불러오기 (상시할인 제외) -->
 	<select id="getList" parameterType="int" resultType="DiscountVo">
 		<![CDATA[

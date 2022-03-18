@@ -328,35 +328,35 @@
 
 <script type="text/javascript">
 	//등급추가 버튼
-	$("#addGrade")
-			.on(
-					"click",
-					function() {
-						var gra = $("#grade").val();
-						var selp = $("#price").val();
-						console.log(gra);
-						console.log(selp);
+$("#addGrade")
+    .on(
+        "click",
+        function() {
+            var gra = $("#grade").val();
+            var selp = $("#price").val();
+            console.log(gra);
+            console.log(selp);
 
-						$("#bmNameArea")
-								.append(
-										'<div class="form-group">'
-												+ '<div class="col-md-4">'
-												+ '<input type="text" class="form-control selGrade" name="grade" value="'+gra+'" readonly>'
-												+ '</div>'
-												+ '<div class="col-md-4">'
-												+ '<input type="text" class="form-control selPrice" name="price" value="'+selp+'" readonly>'
-												+ '</div>'
-												+ '&nbsp;'
-												+ '<button type="button" id="delGrade" class="btn">-</button>'
-												+ '</div>');
-					});
+            $("#bmNameArea")
+                .append(
+                    '<div class="form-group">' +
+                    '<div class="col-md-4">' +
+                    '<input type="text" class="form-control selGrade" name="grade" value="' + gra + '" readonly>' +
+                    '</div>' +
+                    '<div class="col-md-4">' +
+                    '<input type="text" class="form-control selPrice" name="price" value="' + selp + '" readonly>' +
+                    '</div>' +
+                    '&nbsp;' +
+                    '<button type="button" id="delGrade" class="btn">-</button>' +
+                    '</div>');
+        });
 
 	//등급삭제 버튼
-	$("#delGrade").on("click", function() {
-		$(".selGrade").remove();
-	});
+$("#delGrade").on("click", function() {
+    $(".selGrade").remove();
+});
 
-	var productDisList = []
+var productDisList = []
 
 	//할인정보 '+' 버튼 클릭될 떄
 	$("#addDis").on(
@@ -385,7 +385,6 @@
 				}
 
 				var productDis = {
-					seatpriceNo : seatpriceNo,
 					dcName : dcName,
 					dcRate : dcRate,
 					dcType : dcType

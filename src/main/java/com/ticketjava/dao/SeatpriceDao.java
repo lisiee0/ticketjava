@@ -20,13 +20,11 @@ public class SeatpriceDao {
 	}
 	
 	//좌석 등급별 가격 업로드
-	public void seatpriceAdd(ProductVo productVo) {
+	public void seatpriceAdd(SeatpriceVo seatpriceVo) {
 		System.out.println("SeatpriceDao > seatpriceAdd");
-		System.out.println("seatpriceAdd : " + productVo);
+		System.out.println(seatpriceVo);
 
-		
-		
-		sqlSession.insert("seatprice.seatpriceAdd", productVo.getSeatpriceList());
+		sqlSession.insert("seatprice.seatpriceAdd", seatpriceVo);
 	}
 	
 	

@@ -17,7 +17,6 @@ import com.ticketjava.service.BusinessService;
 import com.ticketjava.vo.DetailVo;
 import com.ticketjava.vo.HallVo;
 import com.ticketjava.vo.ProductVo;
-import com.ticketjava.vo.SeatpriceVo;
 
 @Controller
 @RequestMapping("/bm")
@@ -62,6 +61,7 @@ public class BusinessController {
 	@RequestMapping(value = "bmUpload", method = { RequestMethod.GET, RequestMethod.POST })
 	public DetailVo productUpload(@RequestBody ProductVo productVo, DetailVo detailVo) {
 		System.out.println("BusinessController > productUpload");
+		System.out.println("productUpload : " + productVo);
 
 		businessService.productUpload(productVo, detailVo);
 		return detailVo;
@@ -93,15 +93,6 @@ public class BusinessController {
 		return "business/bmModify";
 	}
 
-	// 공연 삭제
-//	@RequestMapping(value = "bmDelete", method = { RequestMethod.GET, RequestMethod.POST })
-//	public String bmDelete(@ModelAttribute ProductVo productVo) {
-//		System.out.println("BusinessController/bmDelete");
-//		
-//		businessService.productDelete(productVo);
-//		return "redirect:/bm/";
-//	}
-
 	// 공연 할인정보 추가
 	@RequestMapping("/discount")
 	public String bmDisAdd(@RequestParam("prodNo") int prodNo, Model model) {
@@ -118,5 +109,13 @@ public class BusinessController {
 
 		return "business/bmManage";
 	}
+	// 공연 삭제
+//	@RequestMapping(value = "bmDelete", method = { RequestMethod.GET, RequestMethod.POST })
+//	public String bmDelete(@ModelAttribute ProductVo productVo) {
+//		System.out.println("BusinessController/bmDelete");
+//		
+//		businessService.productDelete(productVo);
+//		return "redirect:/bm/";
+//	}
 
 }

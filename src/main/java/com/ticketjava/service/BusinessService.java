@@ -19,8 +19,10 @@ import com.ticketjava.dao.HallDao;
 import com.ticketjava.dao.ProductDao;
 import com.ticketjava.dao.SeatpriceDao;
 import com.ticketjava.vo.DetailVo;
+import com.ticketjava.vo.DiscountVo;
 import com.ticketjava.vo.HallVo;
 import com.ticketjava.vo.ProductVo;
+import com.ticketjava.vo.SeatpriceVo;
 
 @Service
 public class BusinessService {
@@ -53,19 +55,37 @@ public class BusinessService {
 	// 공연 업로드 (파일 제외)
 	public void productUpload(ProductVo productVo, DetailVo detailVo) {
 		System.out.println("BusinessServiece > productUpload");
+		
 		// productDao로 값을 넘김
 		pd.productUpload(productVo);
+		System.out.println("BEFORE : " + productVo);
 
 		// detailVo 테이블의 prodNo를 productVo 테이블의 prodNo로 설정.
-		detailVo.setProdNo(productVo.getProdNo());
+		int prodNo = productVo.getProdNo();
+		System.out.println(prodNo);
+		detailVo.setProdNo(prodNo);
 
 		// detailDao로 값을 넘김
 		td.detailNoAdd(detailVo);
-
-		// seatPriceDao로 값을 넘김
-		sd.seatpriceAdd(productVo);
+		System.out.println("BusinessServiece : " + detailVo);
 		
-		System.out.println("BusinessServiece : " + productVo);
+		// seatPriceDao로 값을 넘김
+		List<SeatpriceVo> seatpriceList = productVo.getSeatpriceList();
+		
+		for(SeatpriceVo seatpriceVo: seatpriceList) {
+			seatpriceVo.setProdNo(prodNo);
+			sd.seatpriceAdd(seatpriceVo);
+		};
+		
+		// discountDao로 값을 넘김
+		List<DiscountVo> discountList = productVo.getProductDisList();
+		
+		for(DiscountVo discountVo: discountList) {
+			discountVo.setProdNo(prodNo);
+			dd.alwaysdisAdd(discountVo);
+		};
+		
+		
 
 	}
 
