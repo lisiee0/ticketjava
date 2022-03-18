@@ -9,24 +9,24 @@ public class ReviewVo {
     private int rating; // 평점 10점만점
     private String content; // 내용
     private String prodName; // 공연이름
+    private String userName; // 작성자이름
     private String regDate; // 작성일
-    
-    
-	public ReviewVo() {
+
+
+    public ReviewVo() {
 	}
 	
-	
-	public ReviewVo(int reviewNo, int prodNo, int userNo, int rating, String content, String prodName, String regDate) {
+    public ReviewVo(int reviewNo, int prodNo, int userNo, int rating, String content, String prodName, String userName,
+			String regDate) {
 		this.reviewNo = reviewNo;
 		this.prodNo = prodNo;
 		this.userNo = userNo;
 		this.rating = rating;
 		this.content = content;
 		this.prodName = prodName;
+		this.userName = userName;
 		this.regDate = regDate;
 	}
-	
-	
 	public int getReviewNo() {
 		return reviewNo;
 	}
@@ -63,6 +63,12 @@ public class ReviewVo {
 	public void setProdName(String prodName) {
 		this.prodName = prodName;
 	}
+	public String getUserName() {
+		return userName;
+	}
+	public void setUserName(String userName) {
+		this.userName = userName;
+	}
 	public String getRegDate() {
 		return regDate;
 	}
@@ -72,10 +78,11 @@ public class ReviewVo {
 	@Override
 	public String toString() {
 		return "ReviewVo [reviewNo=" + reviewNo + ", prodNo=" + prodNo + ", userNo=" + userNo + ", rating=" + rating
-				+ ", content=" + content + ", prodName=" + prodName + ", regDate=" + regDate + "]";
+				+ ", content=" + content + ", prodName=" + prodName + ", userName=" + userName + ", regDate=" + regDate
+				+ "]";
 	}
     
-
-	
-	
+    
+    
+    
 } // The end of ReviewVo

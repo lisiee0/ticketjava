@@ -15,16 +15,21 @@ public class ReviewService {
 	private ReviewDao reviewDao;
 
 	
-	//	마이페이지 예매 리스트
+	//	리뷰 리스트 마이페이지 
 	public List<ReviewVo> getReviewListMypage (int userNo) {
 		System.out.println("ReviewService getReviewList");
 		return reviewDao.getReviewListMypage(userNo);
 	}
 	
-	
-	
+	// 마이페이지 리뷰 삭제
 	public void userReviewDelete(int reviewNo) {
 		reviewDao.userReviewDelete(reviewNo);
 	}
+	
+	//	리뷰 리스트 product
+	public List<ReviewVo> getReviewListProduct (int prodNo) {
+		return reviewDao.getReviewListProduct(prodNo);
+	}	
+	
 	
 } // The end of ReservationService

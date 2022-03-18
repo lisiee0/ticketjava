@@ -142,11 +142,11 @@
 														<td><c:choose>
 																<c:when test="${vo.status==1}">
 
-																	<button onclick="requestCancel()">예매취소</button>
+																	<a href="${pageContext.request.contextPath}/mypage/requestCancelTicket?selseatNo=${vo.selseatNo}&rezNo=${vo.rezNo}">[예매취소]</a>
 
 																	<!--
+																	<button onclick="requestCancel()">예매취소</button>
 																	<a href="#" onClick="alert('작업중입니다')">[예매취소]</a> 
-																	<a href="${pageContext.request.contextPath}/mypage/requestCancelTicket?selseatNo=${vo.selseatNo}&rezNo=${vo.rezNo}">[예매취소]</a>
 																	 -->
 																</c:when>
 																<c:otherwise>

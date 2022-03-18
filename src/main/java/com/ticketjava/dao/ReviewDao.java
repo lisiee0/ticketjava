@@ -14,7 +14,7 @@ public class ReviewDao {
 	@Autowired
 	private SqlSession sqlSession;
 	
-	
+//	리뷰 리스트 마이페이지용
 	public List<ReviewVo> getReviewListMypage(int userNo) {
 		System.out.println("ReviewDao getReviewListMypage");
 		
@@ -24,9 +24,17 @@ public class ReviewDao {
 	}
 
 	
+//	리뷰 삭제 마이페이지
 	public void userReviewDelete(int reviewNo) {
 		sqlSession.delete("review.deleteReview", reviewNo);
-		System.out.println("리뷰 다오 reviewNo "+reviewNo);
+	}
+	
+	
+//	리뷰 리스트 product
+	public List<ReviewVo> getReviewListProduct(int prodNo) {
+		System.out.println("ReviewDao getReviewListProduct");
+		List<ReviewVo> reviewListProduct = sqlSession.selectList("review.reviewProductList", prodNo);
+		return reviewListProduct;
 	}
 	
 	

@@ -2,6 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="review">
 
+	<!-- 리뷰리스트 for 마이페이지 -->
 	<select id="reviewMypageList" parameterType="ReviewVo" resultType="ReviewVo">
 		<![CDATA[
 select	
@@ -20,6 +21,7 @@ order	by reviewNo desc
 ]]>
 	</select>
 
+	<!-- 리뷰 삭제 at 마이페이지 -->
 
 	<delete id="deleteReview" parameterType="ReviewVo">
 		
@@ -31,8 +33,27 @@ where			review_no = #{reviewNo}
 		]]>
 	</delete>
 
+	<!-- 리뷰페이지 for product -->
+	<select id="reviewProductList" parameterType="ReviewVo" resultType="ReviewVo">
+		<![CDATA[
+select
+        r.review_no reviewNo,
+        r.prod_no prodNo,
+        p.prodname prodName,
+        r.user_no userNo,
+        u.name userName,
+        r.content content,
+        r.rating rating,
+        to_char(r.regdate, 'yy-mm-dd hh24:mi') regDate
+        
+from	review r, product p, users u
+where	r.prod_no = p.prod_no
+and     u.user_no = r.user_no
+and		r.prod_no = #{prodNo}
+order	by regdate desc	
+]]>
 
-
+	</select>
 
 
 
