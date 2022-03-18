@@ -16,6 +16,34 @@
 <!-- 개인 css -->
 <link href="${pageContext.request.contextPath}/assets/css/indcom.css" rel="stylesheet">
 <link href="${pageContext.request.contextPath}/assets/css/product/productInfo.css" rel="stylesheet">
+
+<style>
+/*평점 레드스타*/
+.star {
+	position: relative;
+	font-size: 2rem;
+	color: #dedede;
+}
+
+.star input {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	left: 0;
+	opacity: 0;
+	cursor: pointer;
+}
+
+.star span {
+	width: 0;
+	position: absolute;
+	left: 0;
+	color: red;
+	overflow: hidden;
+	pointer-events: none;
+}
+</style>
+
 </head>
 
 
@@ -47,7 +75,7 @@
 									</tr>
 									<tr>
 										<th>공연기간</th>
-										<td>${product.vo.beginShow}~ ${product.vo.endShow}</td>
+										<td>${product.vo.beginShow}~${product.vo.endShow}</td>
 									</tr>
 									<tr>
 										<th>관람시간</th>
@@ -116,6 +144,7 @@
 								<li class="scroll"><a href="#review">관람후기</a></li>
 								<li class="scroll"><a href="#theater">공연장정보</a></li>
 								<li class="scroll"><a href="#cancel">예매/취소안내</a></li>
+								<li class="scroll"><a href="#review">관람후기</a></li>
 								<li class="scroll"><a href="#qnalist">Q&A</a></li>
 							</ul>
 
@@ -162,17 +191,19 @@
 								</tr>
 
 								<c:forEach items="${requestScope.reviewList}" var="reviewList">
-								<tbody>
-									<tr>
-										<td><span class="star">★★★★★ <span>★★★★★</span> <input type="range" value="7" step="1" min="0" max="10">
-										</span>${reviewList.rating}</td>
-										<td>${reviewList.content}</td>
-										<td>${reviewList.userName}</td>
-										<td>${reviewList.regDate}<input type="hidden" name="userNo" value="${reviewList.userNo}"></td>
-									</tr>
-								</tbody>
+									<tbody>
+										<tr>
+											<td><span class="star"> ★★★★★ <span style="width: ${reviewList.rating}0%;">★★★★★</span> <input type="range" oninput="drawStar(this)" value="1" step="1"
+													min="0" max="10"
+												>
+											</span>${reviewList.rating}</td>
+											<td>${reviewList.content}</td>
+											<td>${reviewList.userName}</td>
+											<td>${reviewList.regDate}<input type="hidden" name="userNo" value="${reviewList.userNo}"></td>
+										</tr>
+									</tbody>
 								</c:forEach>
-								
+
 							</table>
 							<button type="button" class="btn btn-primary position">후기작성</button>
 
@@ -335,10 +366,8 @@
 	
 	 /* 리뷰 별점 */
 	 const drawStar = (target) => {
-		    document.querySelector('.star span').style.width = '${value * 10}%'; /*value 수정*/
-	  }
-		
-	 
+    document.querySelector(`.star span`).style.width = `${target.value * 10}%`;
+  }
 		
 	/* 공연장 정보 지도 */
 	var mapContainer = document.getElementById('map'),   // 지도를 표시할 div 
@@ -372,11 +401,6 @@
 	    } 
 	});    	
 		
-		
-		
-		
-		
-
 </script>
 
 </html>
