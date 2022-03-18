@@ -41,6 +41,11 @@ public class HallDao {
 	}
 	
 	
+	// 상품번호로 공연장정보 불러오기
+	public HallVo getHallbyprodNo(int prodNo) {
+		return sqlSession.selectOne("hall.getHallbyprodNo", prodNo);
+	}
+	
 	public void modifyHall(HallVo vo) {
 		sqlSession.update("hall.update", vo);
 	}

@@ -80,6 +80,27 @@
 			and 			hall_no= #{hallNo}	
 		]]>
 	</select>
+	
+	
+	<!-- 상품번호로 공연장 정보 불러오기 -->
+	<select id="getHallbyprodNo" parameterType="int" resultType="HallVo">
+		<![CDATA[
+			select			t.theater_no theaterNo, 
+							theatername, 
+							postcode, 
+							address, 
+							address2, 
+							phone, 
+							homepage, 
+							logopath, 
+							hallname, 
+							h.hall_no hallNo
+			from			theater t, hall h, product p
+			where 			t.theater_no= h.theater_no
+			and 		    h.hall_no= p.hall_no
+            and             p.prod_no= #{prodNo}
+		]]>
+	</select>
 
 
 	<update id="update" parameterType="HallVo">

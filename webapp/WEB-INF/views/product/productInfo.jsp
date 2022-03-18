@@ -109,7 +109,7 @@
 					
 					<!-- 공연상세 페이지 네비 -->
 					<div class="container section">
-						<div class="row navbar-example">
+						<div class="row navbar-spy">
 
 						<ul class="nav navbar-nav" role="tablist">
 							<li class="scroll"><a href="#prodPath">공연정보</a></li>
@@ -209,13 +209,13 @@
 						<div class="row">
 							<h4 id="theater" class="cateMenu">공연장 정보</h4>
 							<div id="mapArea" class="col-xs-4">
-								<img id="map" src="${pageContext.request.contextPath}/assets/image/test/map.png">
+								<div id="map"></div>
 							</div>
 							<div class="col-xs-8">
 								<p><strong>[공연장 정보]</strong></p><br>
-								<p>장소: 홍익대 대학로 아트센터 대극장</p>
-								<p>주소: 서울특별시 종로구 연건동 128-8 홍익대 대학로 아트센터</p>
-								<p>대표번호: 02-1234-1234</p>
+								<p>장소: ${product.theater.theaterName} ${product.theater.hallName}</p>
+								<p>주소: ${product.theater.address} ${product.theater.address2}</p>
+								<p>대표번호: ${product.theater.phone}</p>
 							</div>
 						</div>
 					</div>
@@ -290,6 +290,10 @@
 </body>
 
 
+<!-- 지도 -->
+<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=2406d641e3fbe46cce1f4d732300cf88&libraries=services"></script>
+
+
 <script>
 
 	var today = new Date();
@@ -298,11 +302,9 @@
 
 	if(today>beginshow) {
 		md= today;
-		console.log(md);
 	}
 	else {
 		md= beginshow;
-		console.log(md);
 	}
 	
 	$("#rezCal").datepicker({
@@ -341,16 +343,49 @@
 	});
 	
 	
+	 /* 리뷰 별점 */
 	 const drawStar = (target) => {
 		    document.querySelector('.star span').style.width = '${value * 10}%'; /*value 수정*/
 	  }
-	
-	 $('body').scrollspy({ target: '.navbar-example' })
+		
 	 
-	 $('[data-spy="scroll"]').each(function () {
-		  var $spy = $(this).scrollspy('refresh')
-		})
+		
+	/* 공연장 정보 지도 */
+	var mapContainer = document.getElementById('map'),   // 지도를 표시할 div 
+	    mapOption = {
+	        center: new kakao.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
+	        level: 3 // 지도의 확대 레벨
+	    };  
+	
+	// 지도를 생성합니다    
+	var map = new kakao.maps.Map(mapContainer, mapOption); 
+	
+	// 주소-좌표 변환 객체를 생성합니다
+	var geocoder = new kakao.maps.services.Geocoder();
+	
+	// 주소로 좌표를 검색합니다
+	geocoder.addressSearch('${product.theater.address}', function(result, status) {
+	
+	    // 정상적으로 검색이 완료됐으면 
+	     if (status === kakao.maps.services.Status.OK) {
+	
+	        var coords = new kakao.maps.LatLng(result[0].y, result[0].x);
+	
+	        // 결과값으로 받은 위치를 마커로 표시합니다
+	        var marker = new kakao.maps.Marker({
+	            map: map,
+	            position: coords
+	        });
 
+	        // 지도의 중심을 결과값으로 받은 위치로 이동시킵니다
+	        map.setCenter(coords);
+	    } 
+	});    	
+		
+		
+		
+		
+		
 
 </script>
 

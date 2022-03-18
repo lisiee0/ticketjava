@@ -143,6 +143,7 @@
 
 <!-- 지도 -->
 <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=2406d641e3fbe46cce1f4d732300cf88&libraries=services"></script>
+
 <script>
 	
 	var mapContainer = document.getElementById('map'),   // 지도를 표시할 div 
