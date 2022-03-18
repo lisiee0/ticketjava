@@ -5,8 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>티켓자바 헤더</title>
-<link href="${pageContext.request.contextPath}/assets/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
-<link href="${pageContext.request.contextPath}/assets/css/ticketjavaCommon.css" rel="stylesheet" type="text/css">
+
 </head>
 
 <body>
