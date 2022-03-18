@@ -10,6 +10,7 @@
 <title>Insert title here</title>
 
 <script src="${pageContext.request.contextPath}/assets/jquery/jquery-1.12.4.js"></script>
+<c:import url="/assets/js/reservation/confirmReservationJs.jsp"></c:import>
 
 <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/bootstrap/css/bootstrap.css">
 <link href="${pageContext.request.contextPath}/assets/css/reservation/reservation.css" rel="stylesheet" type="text/css">
@@ -156,58 +157,5 @@
 	</div>
 </body>
 
-<script type="text/javascript">
-
-	$('#nextBtn').on('click', function(){
-		var rezNo = <c:out value="${param.rezNo}" />;
-		var phone = $('#phone').val();
-		var email = $('#email').val();
-		
-		var rezVo = {
-			rezNo:rezNo,
-			phone:phone,
-			email:email
-		};
-		
-		console.log(rezVo);
-		$.ajax({
-			url: "${pageContext.request.contextPath}/reservation/finalPayment",
-			type : "post",
-			data : rezVo,
-			dataType: "json",
-			success : function(result){
-				if(result == 'fail'){
-					alert('선점이 만료됐습니다. 처음부터 진행해주세요');
-					$('#rezNo').remove();
-					$('#confirmForm').attr('action', '${pageContext.request.contextPath}/reservation/selectSeat');
-					$('#confirmForm').submit();
-				}
-				else{
-					alert('예매 완료');
-					opener.location.href = "${pageContext.request.contextPath}/mypage/reserveDetail?rezNo="+rezNo;
-					window.close();
-				}
-			},
-			error : function(XHR, status, error) {
-				console.error(status + " : " + error);
-			}
-		});
-		
-		
-		/* 
-		$.ajax({
-			url: "${pageContext.request.contextPath}/reservation/modifyStatus",
-			type : "post",
-			data : {rezNo: rezNo},
-			dataType: "json",
-			success : function(result){
-			},
-			error : function(XHR, status, error) {
-				console.error(status + " : " + error);
-			}
-		}); */
-		
-	});
-</script>
 	
 </html>
