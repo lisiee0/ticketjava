@@ -7,6 +7,8 @@
 <title>티켓자바 회원가입</title>
 
 <script src="${pageContext.request.contextPath}/assets/jquery/jquery-1.12.4.js"></script>
+<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+<script src="${pageContext.request.contextPath}/assets/js/postcode/daumPostcode.js"></script>
 
 <!-- 부트스트랩 Bootstrap core CSS -->
 <link href="${pageContext.request.contextPath}/assets/bootstrap/css/bootstrap.css" rel="stylesheet">
@@ -16,7 +18,6 @@
 <link href="${pageContext.request.contextPath}/assets/css/ticketjavaCommonFooter.css" rel="stylesheet" type="text/css">
 
 <!-- 개인 css (폴더로 관리 권장 ex assets/css/mypage/ticketing.css) -->
-
 <link href="${pageContext.request.contextPath}/assets/css/login/member.css" rel="stylesheet">
 <link href="${pageContext.request.contextPath}/assets/css/login/joinForm.css" rel="stylesheet">
 
@@ -36,7 +37,7 @@
 				<div id="containerMain">
 					<div></div>
 					<div id="formArea">
-						<form action="${pageContext.request.contextPath}/user/join" method="post">
+						<form id="jform" action="${pageContext.request.contextPath}/user/join" method="post">
 							<table>
 								<colgroup>
 									<col style="width:25%">
@@ -57,7 +58,7 @@
 							
 								<tr>
 									<th>비밀번호 확인</th>
-									<td colspan="3"><input class="form-control" name="passwordConfirm" type="password" placeholder="비밀번호 확인"></td>
+									<td colspan="3"><input class="form-control" name="passwordCheck" type="password" placeholder="비밀번호 확인"></td>
 								</tr>
 								
 								<tr>
@@ -91,14 +92,14 @@
 								
 								<tr>
 									<th>이메일</th>
-									<td colspan="2"><input class="form-control" name="email" type="text" placeholder="이메일"></td>
-									<td class="outlineBtn"><button class="form-control btn-outline-primary" type="button">인증번호 발송</button></td>
+									<td colspan="2"><input id="email" class="form-control"  name="email" type="text" placeholder="이메일"></td>
+									<td class="outlineBtn"><button id="sendMail" class="form-control btn-outline-primary" type="button">인증번호 발송</button></td>
 								</tr>
 								
-								<tr>
-									<th></th>
-									<td colspan="2"><input class="form-control" type="text" placeholder="인증번호"></td>
-									<td class="outlineBtn"><button class="form-control btn-outline-primary" type="button">확인</button></td>
+								<tr id="keyArea">
+									<!-- <th></th>
+									<td colspan="2"><input id="authKey" class="form-control" type="text" placeholder="인증번호"></td>
+									<td class="outlineBtn"><button id="checkKey" class="form-control btn-outline-primary" type="button">확인</button></td> -->
 								</tr>
 								
 								<tr id="usertype">
@@ -122,12 +123,12 @@
 								<tr>
 									<td colspan="4">
 										<label class="checkbox-inline">
-										  <input type="checkbox" value="option1"> 약관 동의
+										  <input type="checkbox" id="agreeCheck"> 약관 동의
 										</label>
 									</td>
 								</tr>
 								<tr>
-									<td colspan="4"><button id="joinBtn" class="form-control btn-primary" type="submit">회원가입</button></td>
+									<td colspan="4"><button id="joinBtn" class="form-control btn-primary" type="button">회원가입</button></td>
 								</tr>
 							</table>
 						
@@ -155,6 +156,9 @@
 </body>
 
 <script type="text/javascript">
+	var dupCheck = false;
+	var emailCheck = false;
+
 	$("#bizman").change(function(){
 		if(this.checked){
 			$("#usertype").after('<tr id="bizno">'+
@@ -170,60 +174,91 @@
 		}
 	});
 	
+	$('#sendMail').on('click',function(){
+		$('#keyArea').show();
+		$('#keyArea').append('<th></th>'+
+							 '<td colspan="2"><input id="authKey" class="form-control" type="text" placeholder="인증번호"></td>'+
+							 '<td class="outlineBtn"><button id="checkKey" class="form-control btn-outline-primary" type="button">확인</button></td>'
+							 );
+		
+		var email = $('#email').val();
+		$.ajax({
+			url: "${pageContext.request.contextPath}/mail/sendMailAuth",
+			type : "post",
+			data: {email:email},
+			success : function(){
+				
+			},
+			error : function(XHR, status, error) {
+				console.error(status + " : " + error);
+			}
+		});
+	});
 	
+	$('#keyArea').on('click','#checkKey' ,function(){
+		var email = $('#email').val();
+		var authKey = $('#authKey').val();
+		var authInfo = {
+			email:email,
+			authKey:authKey
+		};
+		
+		$.ajax({
+			url: "${pageContext.request.contextPath}/mail/checkMailAuth",
+			type : "post",
+			data: JSON.stringify(authInfo),
+			contentType:'application/json',
+			dataType:"json",
+			success : function(result){
+				if(result == "success"){
+					alert('인증완료');
+					$('#email').attr('disabled',true);
+					$('#sendMail').attr('disabled',true);
+					$('#checkKey').attr('disabled',true);
+					$('#authKey').attr('disabled',true);
+					emailCheck = true;
+				}
+				else{
+					alert('인증번호가 일치하지 않습니다.');
+				}
+			},
+			error : function(XHR, status, error) {
+				console.error(status + " : " + error);
+			}
+		});
+	});
 	
+	$('#joinBtn').on('click',function(){
+		if( $('[name=id]').val() == '')
+			alert('아이디를 입력해주세요');
+		else if( $('[name=password]').val() == '')
+			alert('비밀번호를 입력해주세요');
+		else if( $('[name=passwordCheck]').val() == '')
+			alert('비밀번호 확인을 입력해주세요');
+		else if( $('[name=password]').val() != $('[name=passwordCheck]').val() )
+			alert('비밀번호가 일치하지 않습니다');
+		else if( $('[name=name]').val() == '')
+			alert('이름을 입력해주세요');
+		else if( $('[name=phone]').val() == '')
+			alert('전화번호를 입력해주세요');
+		else if( $('[name=postcode]').val() == '')
+			alert('우편번호와 주소를 입력해주세요');
+		else if( $('[name=address2]').val() == '')
+			alert('상세주소를 입력해주세요');
+		else if( $('[name=email]').val() == '')
+			alert('이메일을 입력해주세요');
+		else if( $('[name=usertype]:checked').val() == 2    &&   $('[name=bizno]').val() == '' )
+			alert('사업자등록번호를 입력해주세요');
+		else if(! $('#agreeCheck').is(':checked'))
+			alert('약관에 동의해주세요');
+		else if( dupChcek )
+			alert('아이디 중복체크 해주세요');
+		else if( emailCheck )
+			alert('메일 인증 해주세요');
+		else
+			$('#jform').submit();
+	});
 	
 </script>
-
-<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
-<script>
-    function sample6_execDaumPostcode() {
-        new daum.Postcode({
-            oncomplete: function(data) {
-                // 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분.
-
-                // 각 주소의 노출 규칙에 따라 주소를 조합한다.
-                // 내려오는 변수가 값이 없는 경우엔 공백('')값을 가지므로, 이를 참고하여 분기 한다.
-                var addr = ''; // 주소 변수
-                var extraAddr = ''; // 참고항목 변수
-
-                //사용자가 선택한 주소 타입에 따라 해당 주소 값을 가져온다.
-                if (data.userSelectedType === 'R') { // 사용자가 도로명 주소를 선택했을 경우
-                    addr = data.roadAddress;
-                } else { // 사용자가 지번 주소를 선택했을 경우(J)
-                    addr = data.jibunAddress;
-                }
-
-                // 사용자가 선택한 주소가 도로명 타입일때 참고항목을 조합한다.
-                if(data.userSelectedType === 'R'){
-                    // 법정동명이 있을 경우 추가한다. (법정리는 제외)
-                    // 법정동의 경우 마지막 문자가 "동/로/가"로 끝난다.
-                    if(data.bname !== '' && /[동|로|가]$/g.test(data.bname)){
-                        extraAddr += data.bname;
-                    }
-                    // 건물명이 있고, 공동주택일 경우 추가한다.
-                    if(data.buildingName !== '' && data.apartment === 'Y'){
-                        extraAddr += (extraAddr !== '' ? ', ' + data.buildingName : data.buildingName);
-                    }
-                    // 표시할 참고항목이 있을 경우, 괄호까지 추가한 최종 문자열을 만든다.
-                    if(extraAddr !== ''){
-                        extraAddr = ' (' + extraAddr + ')';
-                    }
-                    // 조합된 참고항목을 해당 필드에 넣는다.
-                
-                } else {
-                    document.getElementById("sample6_extraAddress").value = '';
-                }
-
-                // 우편번호와 주소 정보를 해당 필드에 넣는다.
-                document.getElementById('sample6_postcode').value = data.zonecode;
-                document.getElementById("sample6_address").value = addr;
-                // 커서를 상세주소 필드로 이동한다.
-                document.getElementById("sample6_detailAddress").focus();
-            }
-        }).open();
-    }
-</script>
-
 
 </html>
