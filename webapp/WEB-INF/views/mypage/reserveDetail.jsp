@@ -75,18 +75,18 @@
 										<tbody>
 											<tr>
 												<th>관람일시</th>
-												<td>${rMap.reserveDetail.viewdate}${rMap.reserveDetail.showTime}</td>
+												<td>${rMap.reserveDetail.viewdate} ${rMap.reserveDetail.showTime}</td>
 												<th>장소</th>
-												<td>${rMap.reserveDetail.theatername}${rMap.reserveDetail.hallname}</td>
+												<td>${rMap.reserveDetail.theatername} ${rMap.reserveDetail.hallname}</td>
 											</tr>
 											<tr>
 												<th>예매상태</th>
 												<td><c:choose>
-														<c:when test="${rMap.reserveDetail.status eq 1}">
-															예매
+														<c:when test="${rMap.reserveDetail.status eq 0}">
+															비활성
 														</c:when>
 														<c:otherwise>
-															취소
+															활성
 														</c:otherwise>
 													</c:choose></td>
 												<th>예매일</th>

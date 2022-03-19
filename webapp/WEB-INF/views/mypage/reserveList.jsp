@@ -128,7 +128,7 @@
 													<tr>
 														<td>${reserveList.rezNo}</td>
 														<td>${reserveList.rezdate}</td>
-														<td class="text-left"><a href="#">${reserveList.prodname}</a></td>
+														<td class="text-left"><a href="${pageContext.request.contextPath}/product/info?prodNo=${reserveList.prodNo}">${reserveList.prodname}</a></td>
 														<td>${reserveList.viewdate}/${reserveList.ticketCount}매</td>
 
 														<c:choose>
