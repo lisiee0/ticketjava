@@ -95,12 +95,10 @@
 								<div class="col-md-8">
 									<div class="form-group">
 										<div class="col-md-4">
-											<input type="text" class="form-control" id="addWhere" placeholder="세종문화회관 1관" readonly>
+											<input type="text" class="form-control" id="pInput theaterName" name="theaterName"  readonly>
 										</div>
 										<div class="col-md-3">
-											<a href="#">
-												<button type="button" onclick="location.href = '${pageContext.request.contextPath}/bm/bmAddSearch' " class="btn btn-primary">검색</button>
-											</a>
+											<button onclick="openPOP()" type="button" class="btn btn-primary">검색</button>
 										</div>
 									</div>
 								</div>
@@ -327,36 +325,43 @@
 
 
 <script type="text/javascript">
-	//등급추가 버튼
-$("#addGrade")
-    .on(
-        "click",
-        function() {
-            var gra = $("#grade").val();
-            var selp = $("#price").val();
-            console.log(gra);
-            console.log(selp);
+	//공연 선택창 팝업
+	function openPOP() {
+		var popup = window.open(
+				'${pageContext.request.contextPath}/bm/bmAddSearch', '_blank',
+				'width=700px,height=800px,scrollbars=yes');
+	}
 
-            $("#bmNameArea")
-                .append(
-                    '<div class="form-group">' +
-                    '<div class="col-md-4">' +
-                    '<input type="text" class="form-control selGrade" name="grade" value="' + gra + '" readonly>' +
-                    '</div>' +
-                    '<div class="col-md-4">' +
-                    '<input type="text" class="form-control selPrice" name="price" value="' + selp + '" readonly>' +
-                    '</div>' +
-                    '&nbsp;' +
-                    '<button type="button" id="delGrade" class="btn">-</button>' +
-                    '</div>');
-        });
+	//등급추가 버튼
+	$("#addGrade")
+			.on(
+					"click",
+					function() {
+						var gra = $("#grade").val();
+						var selp = $("#price").val();
+						console.log(gra);
+						console.log(selp);
+
+						$("#bmNameArea")
+								.append(
+										'<div class="form-group">'
+												+ '<div class="col-md-4">'
+												+ '<input type="text" class="form-control selGrade" name="grade" value="' + gra + '" readonly>'
+												+ '</div>'
+												+ '<div class="col-md-4">'
+												+ '<input type="text" class="form-control selPrice" name="price" value="' + selp + '" readonly>'
+												+ '</div>'
+												+ '&nbsp;'
+												+ '<button type="button" id="delGrade" class="btn">-</button>'
+												+ '</div>');
+					});
 
 	//등급삭제 버튼
-$("#delGrade").on("click", function() {
-    $(".selGrade").remove();
-});
+	$("#delGrade").on("click", function() {
+		$(".selGrade").remove();
+	});
 
-var productDisList = []
+	var productDisList = []
 
 	//할인정보 '+' 버튼 클릭될 떄
 	$("#addDis").on(

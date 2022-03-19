@@ -54,14 +54,14 @@
 							<col style="">
 							<col style="width: 10%">
 						</colgroup>
-							<tr>
-								<th class="theaterN" name="theaterNanme">${vo.theaterName}</th>
-								<td class="theaterH" name="hallName">${vo.hallName}</td>
-								<td id="theaterA" name="address">${vo.address}</td>
-								<td>
-									<button type="submit" class="btn-primary">선택</button>
-								</td>
-							</tr>
+						<tr>
+							<th class="theaterN" id="cInput">${vo.theaterName}</th>
+							<td class="theaterH">${vo.hallName}</td>
+							<td id="theaterA">${vo.address}</td>
+							<td>
+								<button type="submit" class="btn-primary" onclick="setParentText();  window.close();">선택</button>
+							</td>
+						</tr>
 					</table>
 				</c:forEach>
 
@@ -88,5 +88,13 @@
 	<!-- wrap 끝 -->
 
 </body>
+<script type="text/javascript">
+	//부모창에서 id가 pInput인 태그의 val()
+	//자식창에서 id가 cInput인 val에 id를 넣기
+/* 	var id = opener.$("#pInput").val();
+	$("#cInput").val(id);
+ */
+	$("#pInput", opener.document).val($("#cInput").val());
+</script>
 
 </html>
