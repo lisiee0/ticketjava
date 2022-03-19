@@ -117,10 +117,10 @@
 					<div class="container">
 						<div id="mapInfo" class="row">
 							<h4 class="cateMenu section">공연장 정보</h4>
-							<div id="mapArea" class="col-xs-4">
+							<div id="mapArea" class="col-xs-6">
 								<div id="map"></div>
 							</div>
-							<div class="col-xs-8">
+							<div class="col-xs-6">
 								<p><strong>[공연장 정보]</strong></p><br>
 								<p>장소: ${map.vo.theaterName}</p>
 								<p>주소: ${map.vo.address} ${map.vo.address2}</p>
