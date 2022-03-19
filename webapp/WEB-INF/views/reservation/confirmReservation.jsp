@@ -49,13 +49,13 @@
 					</colgroup>
 					<tr>
 						<th>이름</th>
-						<td>황일영</td>
+						<td>${authUser.name}</td>
 						<th>휴대폰 번호</th>
-						<td><input id="phone" class="form-control" type="text" value="01012345678"></td>
+						<td><input id="phone" class="form-control" type="text" placeholder="01012345678"></td>
 					</tr>
 					<tr>
 						<th>이메일</th>
-						<td colspan="3"><input id="email" class="form-control" type="text" value="asd@naver.com" size="80"></td>
+						<td colspan="3"><input id="email" class="form-control" type="text" placeholder="asd@naver.com" size="80"></td>
 					</tr>
 				</table>				
 			</div>
@@ -64,13 +64,13 @@
 			<div id="agreeChk">
 				<table>
 					<tr>
-						<td><input type="checkbox"></td>
+						<td><input id="agreeCheck1" type="checkbox"></td>
 						<td>
 							주문자 확인 및 예매처리를 위해 휴대폰번호, 이메일, (배송수령 시)주소, (입력필요 시)생년월일을 수집하며,이용목적 달성 이후 파기합니다.
 						</td>
 					</tr>
 					<tr>
-						<td><input type="checkbox"></td>
+						<td><input id="agreeCheck2" type="checkbox"></td>
 						<td>
 							개인정보 제 3자 제공에 동의합니다. (고객응대 및 관람정보안내 등을 위함)
 						</td>

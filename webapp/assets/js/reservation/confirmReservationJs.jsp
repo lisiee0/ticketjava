@@ -3,17 +3,30 @@
 <script type="text/javascript">
 $(function(){
 	$('#nextBtn').on('click', function(){
-		var rezNo = ${param.rezNo};
 		var phone = $('#phone').val();
 		var email = $('#email').val();
 		
-		var rezVo = {
-			rezNo:rezNo,
-			phone:phone,
-			email:email
-		};
-		
-		console.log(rezVo);
+		if(phone == '')
+			alert('휴대폰 번호를 입력해주세요');
+		else if(email == '')
+			alert('이메일을 입력해주세요');
+		else if(! ( $('#agreeCheck1').is(':checked') && $('#agreeCheck2').is(':checked') ) )
+			alert('약관에 모두 동의해주세요');
+		else{
+			var rezNo = ${param.rezNo};
+			var phone = $('#phone').val();
+			var email = $('#email').val();
+			
+			var rezVo = {
+				rezNo:rezNo,
+				phone:phone,
+				email:email
+			};
+			finalPayment(rezVo);
+		}
+	});
+	
+	function finalPayment(rezVo) {
 		$.ajax({
 			url: "${pageContext.request.contextPath}/reservation/finalPayment",
 			type : "post",
@@ -28,7 +41,7 @@ $(function(){
 				}
 				else{
 					alert('예매 완료');
-					opener.location.href = "${pageContext.request.contextPath}/mypage/reserveDetail?rezNo="+rezNo;
+					opener.location.href = "${pageContext.request.contextPath}/mypage/reserveDetail?rezNo="+rezVo.rezNo;
 					window.close();
 				}
 			},
@@ -36,8 +49,7 @@ $(function(){
 				console.error(status + " : " + error);
 			}
 		});
-		
-	});
+	}
 	
-})
+});
 </script>
