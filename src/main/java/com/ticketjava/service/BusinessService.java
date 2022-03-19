@@ -18,6 +18,7 @@ import com.ticketjava.dao.DiscountDao;
 import com.ticketjava.dao.HallDao;
 import com.ticketjava.dao.ProductDao;
 import com.ticketjava.dao.SeatpriceDao;
+import com.ticketjava.dao.TheaterDao;
 import com.ticketjava.vo.DetailVo;
 import com.ticketjava.vo.DiscountVo;
 import com.ticketjava.vo.HallVo;
@@ -37,7 +38,9 @@ public class BusinessService {
 	private HallDao hd;
 	@Autowired
 	private SeatpriceDao sd;
-
+	@Autowired
+	private TheaterDao thd;
+	
 	// 공연 목록 불러오기
 	public List<ProductVo> getProductList() {
 		System.out.println("BusinessServiece > bmInquiry");
@@ -69,6 +72,9 @@ public class BusinessService {
 		td.detailNoAdd(detailVo);
 		System.out.println("BusinessServiece : " + detailVo);
 		
+		//theaterDao로 값을 넘김
+		
+		
 		// seatPriceDao로 값을 넘김
 		List<SeatpriceVo> seatpriceList = productVo.getSeatpriceList();
 		
@@ -84,9 +90,6 @@ public class BusinessService {
 			discountVo.setProdNo(prodNo);
 			dd.alwaysdisAdd(discountVo);
 		};
-		
-		
-
 	}
 
 	// 공연 파일 업로드

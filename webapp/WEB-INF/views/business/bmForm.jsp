@@ -47,10 +47,10 @@
 							<li><a href="${pageContext.request.contextPath}/bm/">공연 목록</a></li>
 							<li><a href="#">공연 수정</a></li>
 						</ul>
-						<ul>
+<!-- 						<ul>
 							<li><h3>문의 관리</h3></li>
 							<li><a href="#">문의 관리</a></li>
-						</ul>
+						</ul> -->
 					</div>
 				</div>
 				<!-- //aside -->
@@ -326,6 +326,7 @@
 
 <script type="text/javascript">
 	//공연 선택창 팝업
+	
 	function openPOP() {
 		var popup = window.open(
 				'${pageContext.request.contextPath}/bm/bmAddSearch', '_blank',

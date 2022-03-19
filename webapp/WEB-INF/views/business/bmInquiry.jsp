@@ -82,6 +82,13 @@
 						<!-- content body -->
 						<div id="board">
 							<div id="list">
+								<div id="row" class="searchBox">
+									<div class="col-xs-10"></div>
+									<div class="col-xs-2">
+										<a href="${pageContext.request.contextPath}/bm/bmForm" class="btn btn-primary position">공연 등록</a>
+									</div>
+
+								</div>
 								<table>
 									<colgroup>
 										<col style="width: 7%">
@@ -128,13 +135,7 @@
 
 								</table>
 
-								<div id="row" class="searchBox">
-									<div class="col-xs-10"></div>
-									<div class="col-xs-2">
-										<a href="${pageContext.request.contextPath}/bm/bmForm" class="btn btn-primary position">공연 등록</a>
-									</div>
 
-								</div>
 							</div>
 						</div>
 						<!-- //content body -->
@@ -160,18 +161,19 @@
 
 </body>
 <script>
+	$(".eventdis").on(
+			"click",
+			function() {
+				var no = $(this).data("no");
+				open('${pageContext.request.contextPath}/bm/discount?prodNo='
+						+ no, 'bmDisAdd',
+						'width=550, height=600, top=300, left=500');
+				return false;
+			});
 
+	var No = $('#status').val
 
-$(".eventdis").on("click", function() {
-	var no = $(this).data("no");
-	open('${pageContext.request.contextPath}/bm/discount?prodNo='+no, 'bmDisAdd', 'width=550, height=600, top=300, left=500');
-	return false;
-});
-
-var No = $('#status').val
-
-console.log(No);
-
+	console.log(No);
 </script>
 
 </html>
