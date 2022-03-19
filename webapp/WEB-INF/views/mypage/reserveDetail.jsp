@@ -68,6 +68,7 @@
 							<div class="ticketingDetail">
 								<div class="rezInvoice">
 									<h4>${rMap.reserveDetail.name}님의예매정보</h4>
+
 									<h5>티켓명 : ${rMap.reserveDetail.prodname}</h5>
 
 									<table>
@@ -81,7 +82,7 @@
 											<tr>
 												<th>예매상태</th>
 												<td><c:choose>
-														<c:when test="${rMap.reserveDetail.status==1}">
+														<c:when test="${rMap.reserveDetail.status eq 1}">
 															예매
 														</c:when>
 														<c:otherwise>
@@ -112,7 +113,7 @@
 											<tbody>
 
 												<tr>
-													<th scope="col"><input type="checkbox" disabled></th>
+													<!-- 일괄취소기능 <th scope="col"><input type="checkbox" disabled></th> -->
 													<th scope="col">좌석등급</th>
 													<th scope="col">권종</th>
 													<th scope="col">좌석섹션</th>
@@ -124,7 +125,7 @@
 
 												<c:forEach items="${requestScope.rMap.reserveSeatList}" var="vo">
 													<tr>
-														<td><input type="checkbox" name="selseatNo" value="${vo.selseatNo}" />
+														<!-- <td><input type="checkbox" name="selseatNo" value="${vo.selseatNo}" /> -->
 														<td>${vo.grade}석</td>
 														<td>${vo.dcName}<c:if test="${empty vo.dcName}">일반</c:if>
 														</td>
@@ -142,9 +143,13 @@
 														<td><c:choose>
 																<c:when test="${vo.status==1}">
 
-																	<a href="${pageContext.request.contextPath}/mypage/requestCancelTicket?selseatNo=${vo.selseatNo}&rezNo=${vo.rezNo}">[예매취소]</a>
+																	<form action="${pageContext.request.contextPath}/mypage/requestCancelTicket" method="get">
+																		<input type="hidden" name="selseatNo" value="${vo.selseatNo}"> <input type="hidden" name="rezNo" value="${vo.rezNo}">
+																		<button type="submit" class="btn btn-primary">예매취소</button>
+																	</form>
 
 																	<!--
+																	<a href="${pageContext.request.contextPath}/mypage/requestCancelTicket?selseatNo=${vo.selseatNo}&rezNo=${vo.rezNo}">[예매취소]</a>
 																	<button onclick="requestCancel()">예매취소</button>
 																	<a href="#" onClick="alert('작업중입니다')">[예매취소]</a> 
 																	 -->
@@ -216,17 +221,17 @@
 
 
 <script type="text/javascript">
-function requestCancel() {
+	function requestCancel() {
 
-	if (window.confirm('예매를 취소하시겠습니까? 예매취소를 복구할 수 없습니다') == true) {
-		//window.location.href = "${pageContext.request.contextPath}/mypage/requestCancelTicket?selseatNo=${vo.selseatNo}&rezNo=${vo.rezNo}";
-		document.location.href = "${pageContext.request.contextPath}/mypage/requestCancelTicket?selseatNo=${vo.selseatNo}&rezNo=${vo.rezNo}";
-		alert("취소되었습니다");
-	} else {
-		return;
-	}
+		if (window.confirm('예매를 취소하시겠습니까? 예매취소를 복구할 수 없습니다') == true) {
+			//window.location.href = "${pageContext.request.contextPath}/mypage/requestCancelTicket?selseatNo=${vo.selseatNo}&rezNo=${vo.rezNo}";
+			document.location.href = "${pageContext.request.contextPath}/mypage/requestCancelTicket?selseatNo=${vo.selseatNo}&rezNo=${vo.rezNo}";
+			alert("취소되었습니다");
+		} else {
+			return;
+		}
 
-};
+	};
 </script>
 
 
