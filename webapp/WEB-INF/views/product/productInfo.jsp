@@ -125,7 +125,15 @@
 								<!-- 캘린더 api 구현 위치 -->
 								<form id="rezArea" method="post" target="reserve" action="${pageContext.request.contextPath}/reservation/selectSeat">
 									<c:import url="/WEB-INF/views/include/calendar.jsp"></c:import>
-									<input id="prodNo" type="hidden" name="prodNo" value="${product.vo.prodNo}"> <input id="viewDate" type="hidden" name="viewDate" value="">
+									<input id="prodNo" type="hidden" name="prodNo" value="${product.vo.prodNo}"> 
+									<c:choose>
+			                             <c:when test="${!empty param.viewDate}">
+			                                <input id="viewDate" type="hidden" name="viewDate" value="${param.viewDate}">
+			                             </c:when>
+			                             <c:otherwise>
+			                                <input id="viewDate" type="hidden" name="viewDate" value="">
+			                             </c:otherwise>
+			                        </c:choose>
 									<button type="submit" id="rezBtn" class="btn btn-primary btn-block">예매하기</button>
 								</form>
 								<input id="beginshow" type="hidden" value="${product.vo.beginShow}"> <input id="endshow" type="hidden" value="${product.vo.endShow}">
@@ -342,6 +350,13 @@
 
 
 <script>
+	$(function(){
+		var viewDate = $('#viewDate').val();
+		if ( viewDate != ''){
+			window.open('', 'reserve', 'width=960, height=800, left=300, top=100');
+			$('#rezArea').submit();
+		}
+	});
 
 	var today = new Date();
 	var beginshow = new Date($('#beginshow').val());
