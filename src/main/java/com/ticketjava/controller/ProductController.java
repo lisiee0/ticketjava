@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.ticketjava.service.ProductService;
 import com.ticketjava.service.ReviewService;
-import com.ticketjava.service.UserService;
 import com.ticketjava.vo.ReviewVo;
 import com.ticketjava.vo.TheaterVo;
 import com.ticketjava.vo.UserVo;
@@ -75,7 +74,12 @@ public class ProductController {
 //		리뷰 리스트를 가져오기
 		List<ReviewVo> reviewList = reviewService.getReviewListProduct(prodNo);
 		model.addAttribute("reviewList",reviewList);
-
+		
+		
+//		리뷰 작성용 userNo를 가져오기 
+		int userNo = ((UserVo)session.getAttribute("authUser")).getUserNo();
+		System.out.println("userNo 확인 "+userNo);
+		
 		return "product/productInfo";
 	}
 	

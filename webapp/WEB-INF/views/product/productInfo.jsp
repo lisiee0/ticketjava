@@ -18,6 +18,41 @@
 <link href="${pageContext.request.contextPath}/assets/css/product/productInfo.css" rel="stylesheet">
 
 <style>
+
+/* 평점 골드스타 */
+.star-rating {
+  display: flex;
+  flex-direction: row-reverse;
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+  justify-content: space-around;
+  padding: 0 0.2em;
+  text-align: center;
+  width: 5em;
+}
+ 
+.star-rating input {
+  display: none;
+}
+ 
+.star-rating label {
+  -webkit-text-fill-color: transparent; /* Will override color (regardless of order) */
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: #2b2a29;
+  cursor: pointer;
+}
+ 
+.star-rating :checked ~ label {
+  -webkit-text-fill-color: gold;
+}
+ 
+.star-rating label:hover,
+.star-rating label:hover ~ label {
+  -webkit-text-fill-color: #fff58c;
+}
+
+
+
 /*평점 레드스타 나중에 css 분리 작업 */
 .star {
 	position: relative;
@@ -125,15 +160,15 @@
 								<!-- 캘린더 api 구현 위치 -->
 								<form id="rezArea" method="post" target="reserve" action="${pageContext.request.contextPath}/reservation/selectSeat">
 									<c:import url="/WEB-INF/views/include/calendar.jsp"></c:import>
-									<input id="prodNo" type="hidden" name="prodNo" value="${product.vo.prodNo}"> 
+									<input id="prodNo" type="hidden" name="prodNo" value="${product.vo.prodNo}">
 									<c:choose>
-			                             <c:when test="${!empty param.viewDate}">
-			                                <input id="viewDate" type="hidden" name="viewDate" value="${param.viewDate}">
-			                             </c:when>
-			                             <c:otherwise>
-			                                <input id="viewDate" type="hidden" name="viewDate" value="">
-			                             </c:otherwise>
-			                        </c:choose>
+										<c:when test="${!empty param.viewDate}">
+											<input id="viewDate" type="hidden" name="viewDate" value="${param.viewDate}">
+										</c:when>
+										<c:otherwise>
+											<input id="viewDate" type="hidden" name="viewDate" value="">
+										</c:otherwise>
+									</c:choose>
 									<button type="submit" id="rezBtn" class="btn btn-primary btn-block">예매하기</button>
 								</form>
 								<input id="beginshow" type="hidden" value="${product.vo.beginShow}"> <input id="endshow" type="hidden" value="${product.vo.endShow}">
@@ -152,7 +187,7 @@
 								<li class="scroll"><a href="#review">관람후기</a></li>
 								<li class="scroll"><a href="#theater">공연장정보</a></li>
 								<li class="scroll"><a href="#cancel">예매/취소안내</a></li>
-								<li class="scroll"><a href="#qnalist">Q&A</a></li>
+								<!-- <li class="scroll"><a href="#qnalist">Q&A</a></li> -->
 							</ul>
 
 						</div>
@@ -205,7 +240,7 @@
 											<td><span class="star"> ★★★★★ <span style="width: ${reviewList.rating}0%;">★★★★★</span> <input type="range" oninput="drawStar(this)" value="1" step="1"
 													min="0" max="10"
 												>
-											</span>${reviewList.rating}</td>
+											</span> ${reviewList.rating}</td>
 											<td>${reviewList.content}</td>
 											<td>${reviewList.userName}</td>
 											<td>${reviewList.regDate}<input type="hidden" name="userNo" value="${reviewList.userNo}"></td>
@@ -214,7 +249,7 @@
 								</c:forEach>
 
 							</table>
-							<button type="button" class="btn btn-primary position">후기작성</button>
+							<button type="button" class="btn btn-primary position">후기등록</button>
 
 						</div>
 					</div>
@@ -223,12 +258,13 @@
 					<div class="container bgc">
 
 						<div class="row">
+
 							<c:choose>
 								<c:when test="${empty sessionScope.authUser}">
 									<form action="${pageContext.request.contextPath}/product/writeReview" method="get">
 										<textarea class="form-control" id="review" name="content" placeholder="후기를 남기려면 로그인 해야합니다" disabled></textarea>
-										<br> 	<span class="star"> ★★★★★ <span>★★★★★</span> <input type="range" oninput="drawStar(this)" value="1" step="1" min="0" max="10">
-										</span>  <input type="hidden" name="prodNo" value="${product.vo.prodNo}"> <input type="hidden" name="userNo" value="">
+										<br> <span class="star"> ★★★★★ <span>★★★★★</span> <input type="range" oninput="drawStar(this)" value="1" step="1" min="0" max="10">
+										</span> <input type="hidden" name="prodNo" value="${product.vo.prodNo}"> <input type="hidden" name="userNo" value="">
 
 										<button type="submit" class="btn btn-primary position" disabled>등록</button>
 									</form>
@@ -239,12 +275,25 @@
 										<textarea class="form-control" id="review" name="content" placeholder="후기를 남겨주세요"></textarea>
 										<br>
 										<div>
-											<span class="star"> ★★★★★ <span>★★★★★</span> <input type="range" name="rating" oninput="drawStar(this)" value="1" step="1" min="0" max="10">
+											<span class="star"> ★★★★★ <span>★★★★★</span> <input type="range" name="rating2" oninput="drawStar(this)" value="1" step="1" min="0" max="10">
 											</span>
 										</div>
-										<input type="hidden" name="prodNo" value="${product.vo.prodNo}"> <input type="hidden" name="userNo" value="">
 
-										<button type="submit" class="btn btn-primary position">등록</button>
+										<div>
+											<!--골드스타 5점 만점 -->
+												<div class="star-rating space-x-4 mx-auto">
+													<input type="radio" id="5-stars" name="rating" value="5" v-model="ratings" /> <label for="5-stars" class="star pr-4">★</label> <input type="radio" id="4-stars"
+														name="rating" value="4" v-model="ratings"
+													/> <label for="4-stars" class="star">★</label> <input type="radio" id="3-stars" name="rating" value="3" v-model="ratings" /> <label for="3-stars" class="star">★</label>
+													<input type="radio" id="2-stars" name="rating" value="2" v-model="ratings" /> <label for="2-stars" class="star">★</label> <input type="radio" id="1-star" name="rating"
+														value="1" v-model="ratings"
+													/> <label for="1-star" class="star">★</label>
+												</div>
+										</div>
+
+										<input type="hidden" name="prodNo" value="${product.vo.prodNo}"> <input type="hidden" name="userNo" value="${authUser.userNo}">
+
+										<button type="submit" class="btn btn-primary position">후기 등록</button>
 									</form>
 								</c:otherwise>
 
@@ -289,7 +338,7 @@
 					</div>
 
 
-					<!-- QnA -->
+					<!-- QnA 
 					<div class="container section">
 						<div class="row">
 							<h4 id="qnalist" class="cateMenu">Q&A</h4>
@@ -319,7 +368,7 @@
 							</table>
 							<button type="button" class="btn btn-primary position">문의하기</button>
 						</div>
-					</div>
+					</div> -->
 
 
 					<!-- 문의작성 -->
@@ -330,6 +379,9 @@
 							<button type="button" class="btn btn-primary position">등록</button>
 						</div>
 					</div>
+
+
+
 				</div>
 			</div>
 
