@@ -186,6 +186,7 @@
 			success : function(isDup){
 				if(isDup == true){
 					$('#dupText').html('<span id="failText">아이디 중복입니다. 다른 아이디를 사용해주세요.</span>');
+					dupCheck = false;
 				}
 				else{
 					$('#dupText').html('<span id="successText">사용 가능한 아이디입니다.</span>');
