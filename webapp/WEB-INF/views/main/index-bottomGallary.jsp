@@ -192,6 +192,143 @@
 
 
 
+			<!-- 작품 리스트 Gallery 구역 시작 -->
+			<section class="productGallery">
+				<div class="product section-padding" data-scroll-index='3'>
+
+					<!-- container-fluid row 시작 -->
+					<div class="container-fluid">
+						<div class="row">
+							<div class="col-lg-12 section-title text-center">
+								<h3>우리의 공연을 놓치지 마세요 !</h3>
+								<p>관람 이후 좋은 평가를 받고 있는 작품</p>
+								<span class="section-title-line"></span>
+							</div>
+
+							<!-- gallery zp col-lg-12 col-sm-12 시작 -->
+							<div class="gallery zp col-lg-12 col-sm-12">
+
+								<!-- product item 시작 -->
+								<div class="col-lg-4 col-sm-6 zp">
+									<div class="item-img">
+										<a class="single-image" href="http://naver.com"></a>
+										<div class="part-img">
+											<img src="assets/image/indexgall/gall1.jpg" alt="image">
+											<div class="overlay-img">
+												<h4>2022-02-18 ~ 2022-03-25</h4>
+												<h6>뮤지컬 아이다</h6>
+											</div>
+										</div>
+									</div>
+								</div>
+								<!-- product item 종료 -->
+
+								<div class="col-lg-4 col-sm-6 zp">
+									<div class="item-img">
+										<a class="single-image" href="assets/image/indexgall/gall2.jpg"></a>
+										<div class="part-img">
+											<img src="assets/image/indexgall/gall2.jpg" alt="image">
+											<div class="overlay-img">
+												<h4>2022-02-18 ~ 2022-03-25</h4>
+												<h6>잭 더 리퍼</h6>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-4 col-sm-6 zp">
+									<div class="item-img">
+										<a class="single-image" href="assets/image/indexgall/gall3.jpg"></a>
+										<div class="part-img">
+											<img src="assets/image/indexgall/gall3.jpg" alt="image">
+											<div class="overlay-img">
+												<h4>2022-02-18 ~ 2022-03-25</h4>
+												<h6>온에어</h6>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-4 col-sm-6 zp">
+									<div class="item-img">
+										<a class="single-image" href="assets/image/indexgall/gall4.jpg"></a>
+										<div class="part-img">
+											<img src="assets/image/indexgall/gall4.jpg" alt="image">
+											<div class="overlay-img">
+												<h4>2022-02-18 ~ 2022-03-25</h4>
+												<h6>라이온킹</h6>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-4 col-sm-6 zp">
+									<div class="item-img">
+										<a class="single-image" href="assets/image/indexgall/gall5.jpg"></a>
+										<div class="part-img">
+											<img src="assets/image/indexgall/gall5.jpg" alt="image">
+											<div class="overlay-img">
+												<h4>2022-02-18 ~ 2022-03-25</h4>
+												<h6>블러디</h6>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-4 col-sm-6 zp">
+									<div class="item-img">
+										<a class="single-image" href="assets/image/indexgall/gall6.jpg"></a>
+										<div class="part-img">
+											<img src="assets/image/indexgall/gall6.jpg" alt="image">
+											<div class="overlay-img">
+												<h4>2022-02-18 ~ 2022-03-25</h4>
+												<h6>미오 프라텔로</h6>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-4 col-sm-6 zp">
+									<div class="item-img">
+										<a class="single-image" href="assets/image/indexgall/gall7.jpg"></a>
+										<div class="part-img">
+											<img src="assets/image/indexgall/gall7.jpg" alt="image">
+											<div class="overlay-img">
+												<h4>2022-02-18 ~ 2022-03-25</h4>
+												<h6>킹 아더</h6>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-4 col-sm-6 zp">
+									<div class="item-img">
+										<a class="single-image" href="assets/image/indexgall/gall8.jpg"></a>
+										<div class="part-img">
+											<img src="assets/image/indexgall/gall8.jpg" alt="image">
+											<div class="overlay-img">
+												<h4>2022-02-18 ~ 2022-03-25</h4>
+												<h6>더 데빌</h6>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-4 col-sm-6 zp">
+									<div class="item-img">
+										<a class="single-image" href="assets/image/indexgall/gall9.jpg"></a>
+										<div class="part-img">
+											<img src="assets/image/indexgall/gall9.jpg" alt="image">
+											<div class="overlay-img">
+												<h4>2022-02-18 ~ 2022-03-25</h4>
+												<h6>썸싱로튼</h6>
+											</div>
+										</div>
+									</div>
+								</div>
+
+
+							</div>
+							<!-- gallery zp col-lg-12 col-sm-12 종료 -->
+						</div>
+					</div>
+					<!-- container-fluid row 종료 -->
+				</div>
+			</section>
+			<!-- 작품 리스트 Gallery 구역 종료 -->
 
 		</article>
 		<!-- 컨텐츠 구역 종료 -->
@@ -208,6 +345,7 @@
 
 <!-- 갤러리 기능을 위한 js -->
 <script src="${pageContext.request.contextPath}/assets/js/ajax1.12.4jquery.min.js"></script>
+<script src="${pageContext.request.contextPath}/assets/js/indexProductGallery.js"></script>
 
 <!-- 카운터 기능을 위한 js -->
 <script src="${pageContext.request.contextPath}/assets/js/jquery.countTo.min.js"></script>
