@@ -3,89 +3,49 @@ $(function(){
 	var seatMap = [];
 	
 	var sectionA = [
-		'nnnvvv',
-		'nnnvvv',
-		'nnvvvv',
-		'nnvvvv',
-		'nvvvvv',
-		'nrrrrr',
-		'rrrrrr',
-		'rrrrrr',
-		'ssssss',
-		'ssssss'
+		'vvvvvvvvvvvvvvvvv',
+		'vvvvvvvvvvvvvvvvv',
+		'vvvvvvvvvvvvvvvvv',
+		'rrrrrrrrrrrrrrrrr',
+		'rrrrrrrrrrrrrrrrr',
+		'rrrrrrrrrrrrrrrrr'
 	];
 	seatMap.push(sectionA);
 	
 	var sectionB = [
-		'vvvvvv',
-		'vvvvvv',
-		'vvvvvv',
-		'vvvvvv',
-		'vvvvvv',
-		'rrrrrr',
-		'rrrrrr',
-		'rrrrrr',
-		'ssssss',
-		'ssssss'
+		'vvvvvvvvvvvvvvvvv',
+		'vvvvvvvvvvvvvvvvv',
+		'vvvvvvvvvvvvvvvvv',
+		'rrrrrrrrrrrrrrrrr',
+		'rrrrrrrrrrrrrrrrr',
+		'rrrrrrrrrrrrrrrrr'
 	];
 	seatMap.push(sectionB);
 	
 	var sectionC = [
-		'vvvnnn',
-		'vvvnnn',
-		'vvvvnn',
-		'vvvvnn',
-		'vvvvvn',
-		'rrrrrn',
-		'rrrrrr',
-		'rrrrrr',
-		'ssssss',
-		'ssssss'
+		'sssssssssssssssss',
+		'sssssssssssssssss',
+		'sssssssssssssssss',
+		'aaaaaaaaaaaaaaaaa',
+		'aaaaaaaaaaaaaaaaa',
+		'aaaaaaaaaaaaaaaaa'
 	];
 	seatMap.push(sectionC);
 	
-	
 	var sectionD = [
-		'aaaaaa',
-		'aaaaaa',
-		'aaaaaa',
-		'aaaaaa',
-		'aaaaaa',
-		'bbbbbb',
-		'bbbbbb',
-		'bbbbbb',
-		'bbbbbb',
-		'bbbbbb'
+		'sssssssssssssssss',
+		'sssssssssssssssss',
+		'sssssssssssssssss',
+		'aaaaaaaaaaaaaaaaa',
+		'aaaaaaaaaaaaaaaaa',
+		'aaaaaaaaaaaaaaaaa'
 	];
 	seatMap.push(sectionD);
 	
-	var sectionE = [
-		'aaaaaa',
-		'aaaaaa',
-		'aaaaaa',
-		'aaaaaa',
-		'aaaaaa',
-		'bbbbbb',
-		'bbbbbb',
-		'bbbbbb',
-		'bbbbbb',
-		'bbbbbb'
-	];
-	seatMap.push(sectionE);
 	
-	var sectionF = [
-		'aaaaaa',
-		'aaaaaa',
-		'aaaaaa',
-		'aaaaaa',
-		'aaaaaa',
-		'bbbbbb',
-		'bbbbbb',
-		'bbbbbb',
-		'bbbbbb',
-		'bbbbbb'
-	];
-	seatMap.push(sectionF);
+	
+	
+	
 
 
 	var seatno=0;

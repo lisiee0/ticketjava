@@ -14,35 +14,25 @@
 #seatPlanDiv table#seatAreaA{
 	position:absolute;
 	top:120px;
-	left:160px;
+	left:170px;
 }
 
 #seatPlanDiv table#seatAreaB{
 	position:absolute;
 	top:120px;
-	left:270px;
+	left:340px;
 }
+
 
 #seatPlanDiv table#seatAreaC{
 	position:absolute;
-	top:120px;
-	left:380px;
+	top:280px;
+	left:170px;
 }
 
 #seatPlanDiv table#seatAreaD{
 	position:absolute;
-	top:300px;
-	left:160px;
+	top:280px;
+	left:340px;
 }
 
-#seatPlanDiv table#seatAreaE{
-	position:absolute;
-	top:300px;
-	left:270px;
-}
-
-#seatPlanDiv table#seatAreaF{
-	position:absolute;
-	top:300px;
-	left:380px;
-}
