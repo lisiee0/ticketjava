@@ -28,9 +28,6 @@ public class ProductController {
 	@Autowired
 	private ReviewService reviewService;
 	
-	@Autowired
-	private UserService userService;
-	
 	// prodType별 상품 리스트 불러오기
 	@RequestMapping("/type")
 	public String musical(@RequestParam(value="crtPage", required= false, defaultValue= "1") int crtPage,
