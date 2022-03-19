@@ -411,3 +411,8 @@ body {
 	margin-bottom: 2.1px;
 }
 
+.cateMenu {
+	font-size: 35px;
+	padding: 5px 0px 5px 0px;
+	font-family: 'Noto Sans KR', sans-serif;
+}

@@ -18,7 +18,7 @@
 <link href="${pageContext.request.contextPath}/assets/css/product/productInfo.css" rel="stylesheet">
 
 <style>
-/*평점 레드스타*/
+/*평점 레드스타 나중에 css 분리 작업 */
 .star {
 	position: relative;
 	font-size: 2rem;
@@ -177,8 +177,8 @@
 							<h4 id="review" class="cateMenu">관람후기</h4>
 							<table class="table review-qna">
 								<colgroup>
-									<col width="55%">
 									<col width="15%">
+									<col width="55%">
 									<col width="15%">
 									<col width="15%">
 								</colgroup>
@@ -188,6 +188,8 @@
 									<th>작성자</th>
 									<th>작성일</th>
 								</tr>
+
+
 
 								<c:forEach items="${requestScope.reviewList}" var="reviewList">
 									<tbody>
@@ -217,8 +219,8 @@
 								<c:when test="${empty sessionScope.authUser}">
 									<form action="${pageContext.request.contextPath}/product/writeReview" method="get">
 										<textarea class="form-control" id="review" name="content" placeholder="후기를 남기려면 로그인 해야합니다" disabled></textarea>
-										<br> <span class="star"> ★★★★★ <span>★★★★★</span> <input type="range" name="rating" oninput="drawStar(this)" value="1" step="1" min="0" max="10">
-										</span> <input type="hidden" name="prodNo" value="${product.vo.prodNo}"> <input type="hidden" name="userNo" value="">
+										<br> 	<span class="star"> ★★★★★ <span>★★★★★</span> <input type="range" oninput="drawStar(this)" value="1" step="1" min="0" max="10">
+										</span>  <input type="hidden" name="prodNo" value="${product.vo.prodNo}"> <input type="hidden" name="userNo" value="">
 
 										<button type="submit" class="btn btn-primary position" disabled>등록</button>
 									</form>
@@ -227,17 +229,18 @@
 								<c:otherwise>
 									<form action="${pageContext.request.contextPath}/product/writeReview" method="get">
 										<textarea class="form-control" id="review" name="content" placeholder="후기를 남겨주세요"></textarea>
-										<br> <span class="star"> ★★★★★ <span>★★★★★</span> <input type="range" name="rating" oninput="drawStar(this)" value="1" step="1" min="0" max="10">
-										</span> <input type="hidden" name="prodNo" value="${product.vo.prodNo}"> <input type="hidden" name="userNo" value="">
+										<br>
+										<div>
+											<span class="star"> ★★★★★ <span>★★★★★</span> <input type="range" name="rating" oninput="drawStar(this)" value="1" step="1" min="0" max="10">
+											</span>
+										</div>
+										<input type="hidden" name="prodNo" value="${product.vo.prodNo}"> <input type="hidden" name="userNo" value="">
 
 										<button type="submit" class="btn btn-primary position">등록</button>
 									</form>
 								</c:otherwise>
 
 							</c:choose>
-
-
-
 
 						</div>
 
@@ -252,7 +255,10 @@
 								<div id="map"></div>
 							</div>
 							<div class="col-xs-6">
-								<p><strong>[공연장 정보]</strong></p><br>
+								<p>
+									<strong>[공연장 정보]</strong>
+								</p>
+								<br>
 								<p>장소: ${product.theater.theaterName} ${product.theater.hallName}</p>
 								<p>주소: ${product.theater.address} ${product.theater.address2}</p>
 								<p>대표번호: ${product.theater.phone}</p>
@@ -385,9 +391,9 @@
 	
 	
 	 /* 리뷰 별점 */
-	 const drawStar = (target) => {
+	const drawStar = (target) => {
     document.querySelector(`.star span`).style.width = `${target.value * 10}%`;
-  }
+  };
 		
 	/* 공연장 정보 지도 */
 	var mapContainer = document.getElementById('map'),   // 지도를 표시할 div 
@@ -421,6 +427,10 @@
 	    } 
 	});    	
 		
+	
+	
+
+	
 </script>
 
 </html>
