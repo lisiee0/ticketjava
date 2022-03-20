@@ -175,8 +175,10 @@
 	
 	$('[name=id]').on('focusout',function(){
 		var id = $('[name=id]').val();
-		if(id.length <= 0)
+		if(id.length <= 0){
+			dupCheck = false;
 			return false;
+		}
 		
 		$.ajax({
 			url: "${pageContext.request.contextPath}/user/dupCheck",
