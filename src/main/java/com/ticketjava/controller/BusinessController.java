@@ -50,13 +50,14 @@ public class BusinessController {
 
 	// 공연 등록 폼
 	@RequestMapping(value = "bmForm", method = { RequestMethod.GET, RequestMethod.POST })
-	public String bmForm() {
+	public String bmForm(Model model) {
 		System.out.println("BusinessController > form()");
 
+		model.addAttribute("selectList", businessService.bmAddSearch());
 		return "business/bmForm";
 	}
 
-	// 공연 업로드
+	// 공연 업로드 폼
 	@ResponseBody
 	@RequestMapping(value = "bmUpload", method = { RequestMethod.GET, RequestMethod.POST })
 	public DetailVo productUpload(@RequestBody ProductVo productVo, DetailVo detailVo) {
@@ -109,6 +110,7 @@ public class BusinessController {
 
 		return "business/bmManage";
 	}
+
 	// 공연 삭제
 //	@RequestMapping(value = "bmDelete", method = { RequestMethod.GET, RequestMethod.POST })
 //	public String bmDelete(@ModelAttribute ProductVo productVo) {

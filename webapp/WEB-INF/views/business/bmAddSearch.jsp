@@ -59,7 +59,7 @@
 							<td class="theaterH">${vo.hallName}</td>
 							<td id="theaterA">${vo.address}</td>
 							<td>
-								<button type="submit" class="btn-primary" onclick="setParentText();  window.close();">선택</button>
+								<button type="submit" class="btn-primary" onclick="window.close()">선택</button>
 							</td>
 						</tr>
 					</table>
@@ -82,7 +82,7 @@
 		</div>
 		<!-- 창 끝 -->
 		<div></div>
-
+ㅌ`
 		<!-- Footer X -->
 	</div>
 	<!-- wrap 끝 -->
@@ -94,7 +94,8 @@
 /* 	var id = opener.$("#pInput").val();
 	$("#cInput").val(id);
  */
-	$("#pInput", opener.document).val($("#cInput").val());
+	var inputLog =  $("#pInput", opener.document).val($("#cInput").val());
+ 	console.log(inputLog)
 </script>
 
 </html>

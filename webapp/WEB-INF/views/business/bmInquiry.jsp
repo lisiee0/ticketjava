@@ -92,7 +92,7 @@
 								<table>
 									<colgroup>
 										<col style="width: 7%">
-										<col style="">
+				w						<col style="">
 										<col style="">
 										<col style="">
 										<col style="width: 16%">

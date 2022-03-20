@@ -7,8 +7,8 @@ public class ProductVo {
 	// 필드
 	private int prodNo; // 공연번호
 
-	private int userNo;
-	private int hallNo;
+	private int userNo;	// 회원번호
+	private int hallNo;	//시설 번호
 
 	private String prodName; // 공연명
 	private int prodType; // 공연구분

@@ -24,6 +24,7 @@ import com.ticketjava.vo.DiscountVo;
 import com.ticketjava.vo.HallVo;
 import com.ticketjava.vo.ProductVo;
 import com.ticketjava.vo.SeatpriceVo;
+import com.ticketjava.vo.TheaterVo;
 
 @Service
 public class BusinessService {
@@ -52,7 +53,7 @@ public class BusinessService {
 	public List<HallVo> bmAddSearch() {
 		System.out.println("BusinessServiece > bmAddSearch");
 
-		return hd.bmAddSearch();
+		return hd.bmHallList();
 	}
 
 	// 공연 업로드 (파일 제외)
@@ -70,9 +71,11 @@ public class BusinessService {
 
 		// detailDao로 값을 넘김
 		td.detailNoAdd(detailVo);
-		System.out.println("BusinessServiece : " + detailVo);
+		System.out.println("AFTER : " + productVo);
 		
 		//theaterDao로 값을 넘김
+		thd.theaterAdd(null);
+		
 		
 		
 		// seatPriceDao로 값을 넘김
@@ -161,6 +164,7 @@ public class BusinessService {
 
 		pd.productDelete(productVo);
 	}
+
 
 	public Map<String, Object> selectProdDiscount(int prodNo) {
 

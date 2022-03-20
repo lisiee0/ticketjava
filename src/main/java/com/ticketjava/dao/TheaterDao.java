@@ -31,6 +31,7 @@ public class TheaterDao {
 		
 	}
 	
+	//공연장 불러오기
 	public List<TheaterVo> selectList() {
 		return sqlsession.selectList("theater.selectList");
 	}

@@ -29,8 +29,8 @@ public class HallDao {
 	}
 	
 	//공연장 리스트
-	public List<HallVo> bmAddSearch() {
-		System.out.println("HallDao > bmAddSearch");
+	public List<HallVo> bmHallList() {
+		System.out.println("HallDao > bmHallList");
 		
 		return sqlSession.selectList("hall.bmhallList");
 	}

@@ -47,7 +47,7 @@
 							<li><a href="${pageContext.request.contextPath}/bm/">공연 목록</a></li>
 							<li><a href="#">공연 수정</a></li>
 						</ul>
-<!-- 						<ul>
+						<!-- 						<ul>
 							<li><h3>문의 관리</h3></li>
 							<li><a href="#">문의 관리</a></li>
 						</ul> -->
@@ -93,12 +93,15 @@
 								<label class="form-text col-md-2 form-id" for="">공연장명</label>
 								<!-- 공연장명-->
 								<div class="col-md-8">
+
 									<div class="form-group">
-										<div class="col-md-4">
-											<input type="text" class="form-control" id="pInput theaterName" name="theaterName"  readonly>
-										</div>
-										<div class="col-md-3">
-											<button onclick="openPOP()" type="button" class="btn btn-primary">검색</button>
+										<div class="col-md-6">
+											<select class="form-control" name="theaterNo">
+												<option selected>공연장을 선택해주세요.</option>
+												<c:forEach items="${selectList}"  var="vo">
+													<option id="hallNo" name="hallNo" value="${vo.hallNo}">${vo.theaterName}, ${vo.hallName}, ${vo.hallNo}</option>
+												</c:forEach>
+											</select>
 										</div>
 									</div>
 								</div>
@@ -326,12 +329,13 @@
 
 <script type="text/javascript">
 	//공연 선택창 팝업
-	
+
 	function openPOP() {
 		var popup = window.open(
 				'${pageContext.request.contextPath}/bm/bmAddSearch', '_blank',
 				'width=700px,height=800px,scrollbars=yes');
 	}
+	console.log()
 
 	//등급추가 버튼
 	$("#addGrade")
@@ -421,7 +425,7 @@
 		var ProductVo = {
 			prodName : $("#prodName").val(),
 			userNo : $("#userNo").val(),
-
+			hallNo : $("#hallNo").val(),
 			prodType : $("#prodType").val(),
 			beginShow : $("#beginShow").val(),
 			endShow : $("#endShow").val(),
