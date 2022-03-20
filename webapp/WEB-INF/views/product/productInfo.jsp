@@ -271,14 +271,9 @@
 								</c:when>
 
 								<c:otherwise>
-									<form action="${pageContext.request.contextPath}/product/writeReview" method="get">
+									<form action="${pageContext.request.contextPath}/review/writeReview" method="get">
 										<textarea class="form-control" id="review" name="content" placeholder="후기를 남겨주세요"></textarea>
-										<br>
-										<div>
-											<span class="star"> ★★★★★ <span>★★★★★</span> <input type="range" name="rating2" oninput="drawStar(this)" value="1" step="1" min="0" max="10">
-											</span>
-										</div>
-
+										
 										<div>
 											<!--골드스타 5점 만점 -->
 												<div class="star-rating space-x-4 mx-auto">
