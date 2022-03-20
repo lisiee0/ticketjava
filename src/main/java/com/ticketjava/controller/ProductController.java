@@ -61,7 +61,7 @@ public class ProductController {
 	
 	// 상품 상세보기
 	@RequestMapping("/info")
-	public String productInfo(@RequestParam("prodNo") int prodNo, Model model, HttpSession session, @ModelAttribute UserVo userVo) {
+	public String productInfo(@RequestParam("prodNo") int prodNo, Model model) {
 		
 		model.addAttribute("product", productService.getProduct(prodNo));
 		return "product/productInfo";
