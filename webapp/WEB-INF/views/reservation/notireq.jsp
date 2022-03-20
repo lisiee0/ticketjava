@@ -13,7 +13,7 @@
 <script src="${pageContext.request.contextPath}/assets/js/seat/seatPlanDraggable.js"></script>
 
 <script src="${pageContext.request.contextPath}/assets/js/venues/venue${rezProdInfo.hallNo}.js"></script>
-<c:import url="/assets/js/reservation/notireqJs.jsp"></c:import>
+<script src="${pageContext.request.contextPath}/assets/js/reservation/notireq.js"></script>
 
 <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/bootstrap/css/bootstrap.css">
 <link href="${pageContext.request.contextPath}/assets/css/reservation/reservation.css" rel="stylesheet" type="text/css">
@@ -97,6 +97,8 @@
 		
 		
 	</div>
+	
+	<input id="pageContext" type="hidden" value="${pageContext.request.contextPath}">
 </body>
 
 

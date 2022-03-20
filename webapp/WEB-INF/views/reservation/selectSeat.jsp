@@ -15,7 +15,7 @@
 
 <script src="${pageContext.request.contextPath}/assets/bootstrap/js/bootstrap.js"></script>
 <script src="${pageContext.request.contextPath}/assets/js/venues/venue${rezProdInfo.hallNo}.js"></script>
-<c:import url="/assets/js/reservation/selectSeatJs.jsp"></c:import>
+<script src="${pageContext.request.contextPath}/assets/js/reservation/selectSeat.js"></script>
 
 <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/bootstrap/css/bootstrap.css">
 <link href="${pageContext.request.contextPath}/assets/css/reservation/reservation.css" rel="stylesheet" type="text/css">
@@ -134,6 +134,8 @@
 		</div>
 	</div>
 	
+	
+	<input id="pageContext" type="hidden" value="${pageContext.request.contextPath}">
 </body>
 
 </html>

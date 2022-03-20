@@ -1,10 +1,6 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<script type="text/javascript">
-
 $(function(){ 
-	
-	var hallNo = '${param.hallNo}';
+	var pageContext = $('#pageContext').val();
+	var hallNo = $('#hallNo').val();
 	
 	$('#nextBtn').on('click', function(){
 		
@@ -32,7 +28,7 @@ $(function(){
 		}
 		
 		$.ajax({
-			url: "${pageContext.request.contextPath}/seat/initSeat",
+			url: pageContext+"/seat/initSeat",
 			type : "post",
 			traditional : true,
 			contentType : "application/json",
@@ -49,5 +45,3 @@ $(function(){
 	});
 
 });
-
-</script>
