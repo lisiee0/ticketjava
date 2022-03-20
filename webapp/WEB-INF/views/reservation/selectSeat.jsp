@@ -11,6 +11,7 @@
 
 <script src="${pageContext.request.contextPath}/assets/js/jquery-1.12.4.js"></script>
 <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
+<script src="${pageContext.request.contextPath}/assets/js/seat/seatPlanDraggable.js"></script>
 
 <script src="${pageContext.request.contextPath}/assets/bootstrap/js/bootstrap.js"></script>
 <script src="${pageContext.request.contextPath}/assets/js/venues/venue${rezProdInfo.hallNo}.js"></script>
@@ -134,12 +135,5 @@
 	</div>
 	
 </body>
-
-<script>
-  $( function() {
-    $( "#draggable" ).draggable();
-    
-  } );
- </script>
 
 </html>

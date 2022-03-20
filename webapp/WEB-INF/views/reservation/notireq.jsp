@@ -9,6 +9,9 @@
 
 <script src="${pageContext.request.contextPath}/assets/js/jquery-1.12.4.js"></script>
 <script src="${pageContext.request.contextPath}/assets/bootstrap/js/bootstrap.js"></script>
+<script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
+<script src="${pageContext.request.contextPath}/assets/js/seat/seatPlanDraggable.js"></script>
+
 <script src="${pageContext.request.contextPath}/assets/js/venues/venue${rezProdInfo.hallNo}.js"></script>
 <c:import url="/assets/js/reservation/notireqJs.jsp"></c:import>
 
@@ -49,28 +52,21 @@
 				</table>
 			</div>
 			
-			<div id="seatPlan">
-				<!-- <img src="C:\JavaStudy\upload\seat.jpg" alt="이미지 없음">  --> <!-- html 코드 -->
-				
-				<div id="seatPlanDiv">
-					<div id="stageArea">stage</div>
-					<table>
-						<tbody id="seatArea">
+			<div id="seatPlanBox">
+				<div id="draggable">						
+					<div id="seatPlan">
+						
+						<div id="seatPlanDiv">
+							<div id="stageArea">stage</div>
 							
-						</tbody>
-					</table>
+						</div>
+						
+					</div>
 				</div>
 			</div>
 		</div>
 		
 		<div id="side">
-			<!-- <div id="tabOption">
-				<ul class="nav nav-tabs">
-					<li class="nav item"><button class="btn-primary">알림 신청</button></li>
-					<li class="nav item"><button class="btn-outline-primary">나의 신청</button></li>
-				</ul>
-			</div> -->
-				
 			<div id="section"> 
 				
 				<h2>구역 선택</h2>
@@ -78,19 +74,6 @@
 					
 				</div>
 			</div>
-			<!-- 
-			<div id="interval">
-				<h2>알림 간격</h2>
-				<select class="form-control">
-					<option value="0">간격 없음</option>
-					<option value="10">10초</option>
-					<option value="60">1분</option>
-					<option value="300">5분</option>
-					<option value="600">10분</option>
-					<option value="3600">60분</option>
-				</select>
-			</div>
-			 -->
 			<div id="count">
 				<h2>알림 횟수</h2>
 				<select class="form-control">	

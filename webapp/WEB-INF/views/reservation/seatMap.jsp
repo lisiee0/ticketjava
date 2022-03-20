@@ -10,6 +10,8 @@
 <title>Insert title here</title>
 
 <script src="${pageContext.request.contextPath}/assets/js/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
+<script src="${pageContext.request.contextPath}/assets/js/seat/seatPlanDraggable.js"></script>
 <script src="${pageContext.request.contextPath}/assets/bootstrap/js/bootstrap.js"></script>
 
 <script src="${pageContext.request.contextPath}/assets/js/venues/venue${param.hallNo}.js"></script>
@@ -60,14 +62,17 @@
 			</div>
 			
 							
-			<div id="seatPlan">
-				<!-- <img src="C:\JavaStudy\upload\seat.jpg" alt="이미지 없음">  --> <!-- html 코드 -->
-				
-				<div id="seatPlanDiv">
-					<div id="stageArea">stage</div>
-					
+			<div id="seatPlanBox">
+				<div id="draggable">						
+					<div id="seatPlan">
+						
+						<div id="seatPlanDiv">
+							<div id="stageArea">stage</div>
+							
+						</div>
+						
+					</div>
 				</div>
-				
 			</div>
 		</div>
 			
