@@ -34,7 +34,7 @@
 			<ul>
 				<li><h3>나의활동</h3></li>
 				<li><a href="${pageContext.request.contextPath}/mypage/userReview">후기관리</a></li>
-				<li><a href="${pageContext.request.contextPath}/mypage/reserveAsking">문의내역</a></li>
+				<%-- <li><a href="${pageContext.request.contextPath}/mypage/reserveAsking">문의내역</a></li> --%>
 			</ul>
 			<ul>
 				<li><h3>회원정보</h3></li>

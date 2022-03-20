@@ -8,6 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.ticketjava.service.ReviewService;
 import com.ticketjava.vo.ReviewVo;
@@ -20,6 +21,7 @@ public class ReviewController {
 	@Autowired
 	private ReviewService reviewService;
 	
+	@ResponseBody
 	@RequestMapping("/listofReview")
 	public String writeReview(@RequestParam("prodNo") int prodNo, Model model, HttpSession session, @ModelAttribute UserVo userVo) {
 
@@ -37,6 +39,7 @@ public class ReviewController {
 	
 	
 //	상품 상세보기 후기(리뷰) 작성
+	@ResponseBody
 	@RequestMapping("/writeReview")
 	public String writeReview (ReviewVo reviewVo,
 			@RequestParam(value="prodNo")int prodNo, 

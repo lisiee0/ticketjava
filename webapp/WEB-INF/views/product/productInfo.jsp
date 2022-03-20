@@ -21,37 +21,34 @@
 
 /* 평점 골드스타 */
 .star-rating {
-  display: flex;
-  flex-direction: row-reverse;
-  font-size: 2.25rem;
-  line-height: 2.5rem;
-  justify-content: space-around;
-  padding: 0 0.2em;
-  text-align: center;
-  width: 5em;
+	display: flex;
+	flex-direction: row-reverse;
+	font-size: 2.25rem;
+	line-height: 2.5rem;
+	justify-content: space-around;
+	padding: 0 0.2em;
+	text-align: center;
+	width: 5em;
 }
- 
+
 .star-rating input {
-  display: none;
+	display: none;
 }
- 
+
 .star-rating label {
-  -webkit-text-fill-color: transparent; /* Will override color (regardless of order) */
-  -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: #2b2a29;
-  cursor: pointer;
+	-webkit-text-fill-color: transparent; /* Will override color (regardless of order) */
+	-webkit-text-stroke-width: 1px;
+	-webkit-text-stroke-color: #2b2a29;
+	cursor: pointer;
 }
- 
+
 .star-rating :checked ~ label {
-  -webkit-text-fill-color: gold;
-}
- 
-.star-rating label:hover,
-.star-rating label:hover ~ label {
-  -webkit-text-fill-color: #fff58c;
+	-webkit-text-fill-color: gold;
 }
 
-
+.star-rating label:hover, .star-rating label:hover ~ label {
+	-webkit-text-fill-color: #fff58c;
+}
 
 /*평점 레드스타 나중에 css 분리 작업 */
 .star {
@@ -232,15 +229,12 @@
 									<th>작성일</th>
 								</tr>
 
-
-
 								<c:forEach items="${product.review}" var="vo">
 									<tbody>
 										<tr>
-											<td><span class="star"> ★★★★★ <span style="width: ${vo.rating}0%;">★★★★★</span> <input type="range" oninput="drawStar(this)" value="1" step="1"
-													min="0" max="10"
-												>
-											</span> ${vo.rating}</td>
+											<td><span class="star"> ★★★★★ <span style="width: ${vo.rating}0%;">★★★★★</span> 
+											<input type="range" oninput="drawStar(this)" value="1" step="1" min="0"
+													max="10"></span> ${vo.rating}</td>
 											<td>${vo.content}</td>
 											<td>${vo.userName}</td>
 											<td>${vo.regDate}<input type="hidden" name="userNo" value="${vo.userNo}"></td>
@@ -249,7 +243,12 @@
 								</c:forEach>
 
 							</table>
-							<button type="button" class="btn btn-primary position">후기등록</button>
+							
+							<div id="listArea">
+							<!-- 리스트 출력할 곳 -->
+							</div>
+					
+							<button type="button" class="btn btn-primary position btnReviewSubmit">후기등록</button>
 
 						</div>
 					</div>
@@ -273,20 +272,20 @@
 								<c:otherwise>
 									<form action="${pageContext.request.contextPath}/review/writeReview" method="get">
 										<textarea class="form-control" id="review" name="content" placeholder="후기를 남겨주세요"></textarea>
-										
-										<div>
+
+										<div class="ratingStarBox">
 											<!--골드스타 5점 만점 -->
-												<div class="star-rating space-x-4 mx-auto">
-													<input type="radio" id="5-stars" name="rating" value="5" v-model="ratings" /> <label for="5-stars" class="star pr-4">★</label> <input type="radio" id="4-stars"
-														name="rating" value="4" v-model="ratings"
-													/> <label for="4-stars" class="star">★</label> <input type="radio" id="3-stars" name="rating" value="3" v-model="ratings" /> <label for="3-stars" class="star">★</label>
-													<input type="radio" id="2-stars" name="rating" value="2" v-model="ratings" /> <label for="2-stars" class="star">★</label> <input type="radio" id="1-star" name="rating"
-														value="1" v-model="ratings"
-													/> <label for="1-star" class="star">★</label>
-												</div>
+											<div class="star-rating space-x-4 mx-auto">
+												<input type="radio" id="5-stars" name="rating" value="5" v-model="ratings" /> <label for="5-stars" class="star pr-4">★</label> <input type="radio" id="4-stars"
+													name="rating" value="4" v-model="ratings"
+												/> <label for="4-stars" class="star">★</label> <input type="radio" id="3-stars" name="rating" value="3" v-model="ratings" /> <label for="3-stars" class="star">★</label>
+												<input type="radio" id="2-stars" name="rating" value="2" v-model="ratings" /> <label for="2-stars" class="star">★</label> <input type="radio" id="1-star" name="rating"
+													value="1" v-model="ratings"
+												/> <label for="1-star" class="star">★</label>
+											</div>
 										</div>
 
-										<input type="hidden" name="prodNo" value="${product.vo.prodNo}"> <input type="hidden" name="userNo" value="${authUser.userNo}">
+										<input type="hidden" id="prodNo" name="prodNo" value="${product.vo.prodNo}"> <input type="hidden" id="userNo" name="userNo" value="${authUser.userNo}">
 
 										<button type="submit" class="btn btn-primary position">후기 등록</button>
 									</form>
@@ -366,14 +365,14 @@
 					</div> -->
 
 
-					<!-- 문의작성 -->
+					<!-- 문의작성 
 					<div class="container bgc">
 						<div class="row">
 							<textarea class="form-control" id="qna" placeholder="문의를 남겨주세요"></textarea>
 							<br>
 							<button type="button" class="btn btn-primary position">등록</button>
 						</div>
-					</div>
+					</div> -->
 
 
 
@@ -490,8 +489,116 @@
 	});    	
 		
 	
-	
+	//에이작스 후기 (리뷰) 
+$(document).ready(function() {
+	console.log("리스트 요청");
+	fetchList();
 
+}); // document . ready
+
+//저장버튼 클릭할때 - 파라미터 방식
+$("#btnReviewSubmit").on("click", function() {	
+
+	console.log("저장버튼 클릭 액션(파라미터 방식)");
+
+	//폼에 데이터를 모은다
+	var review = $("#review").val(); // 리뷰내용
+	var rating = $("#rating").val(); // 점수
+	var prodNo = $("#prodNo").val(); // 작품번호
+	var userNo = $("#userNo").val(); // 유저번호
+
+	//위에서 모은 데이터를 객체로 만들기
+	var reviewVo = {
+			review : review,
+			rating : rating,
+			prodNo : prodNo,
+			userNo : userNo
+		
+	}; // var guestbookVo
+
+	console.log(reviewVo); //콘솔에 입력한 정보 제대로 뜨는지 확인
+
+	$(document).ready(function() { // 리스트 요청하기
+		console.log("리스트 요청");
+
+		$.ajax({
+
+			url : "${pageContext.request.contextPath}/product/writeReview",
+			type : "post",
+			//contentType : "application/json",
+			data : reviewVo, // 위에서 만든 객체를 그대로 이어 쓴다
+			
+			
+			success : function(result) {
+				/*성공시 처리해야될 코드 작성*/
+				console.log("reviewVo 출력확인 " + reviewVo);
+				render(result, "up"); 
+
+				//입력버튼 초기화 
+				$("#review").val("");
+				$("#rating").val("");
+				$("#prodNo").val("");
+				$("#userNo").val("");
+
+			},
+			error : function(XHR, status, error) {
+				console.error(status + " : " + error);
+			}
+		}); // ajax
+
+	}); // document . ready
+
+}); // #btnSubmit function
+
+			
+
+function fetchList() { // 리스트 가져오기 (그리기를 시키는 기능)
+
+$.ajax({
+	url : "${pageContext.request.contextPath}/product/info",
+	type : "post", 
+	
+	//응답항목 받을때
+	dataType : "json",
+	success : function(reviewList) { // json -> js 로 변환
+		/*성공시 처리해야될 코드 작성*/
+		console.log(reviewList);
+
+		for (var i = 0; i < reviewList.length; i++) {
+			render(reviewList[i], "down"); // 방명록 리스트 출력
+		}
+	},
+	error : function(XHR, status, error) {
+		console.error(status + " : " + error);
+	}
+}); // ajax
+
+}; // function fetchList
+
+
+function render(reviewVo, updown) { // 1명씩 정보를 받아 처리 button의 data-no 소문자만 인식 대문자넣으면 에러 
+	console.log("테이블 출력");
+	var str = '';
+	str += ' <tbody> ';
+	str += ' 	<tr> ';
+	str += ' 		<td><span class="star"> ★★★★★ <span style="width: ' + vo.rating + '0%;">★★★★★</span> ';
+	str += ' 		<input type="range" oninput="drawStar(this)" value="1" step="1" min="0" max="10"></span> ' + vo.rating + '</td> ';
+	str += ' 		<td> ' + vo.content + '</td> ';
+	str += ' 		<td> ' + vo.userName + '</td> ';
+	str += ' 		<td> ' + vo.regDate + '<input type="hidden" name="userNo" value=" ' + vo.userNo + ' "></td> ';
+	str += ' 	</tr> ';
+	str += ' </tbody> ';
+	str += ' ';
+
+	if (updown == 'down') {
+		$("#listArea").append(str); // .html 을 쓰면 바꿔치는 기능때문에 마지막글 만 출력 
+	} else if (updown == 'up') {
+		$("#listArea").prepend(str);
+	} else {
+		console.log("방향오류");
+	};
+
+};			
 	
 </script>
 
