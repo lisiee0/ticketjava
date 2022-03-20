@@ -33,33 +33,37 @@ public class AdminService {
 	
 	
 	public void theaterAdd(TheaterVo vo, MultipartFile file) {
-		// 임시데이터 넣기
-		vo.setLatitude("0");
-		vo.setLongitude("0");
-		
-		// 공연장 로고 저장
-		String saveDir= "C:\\javaStudy\\upload";
-		String orgName= file.getOriginalFilename(); // 원본파일명
-		String exName= orgName.substring(orgName.lastIndexOf(".")); // 확장자
-		String saveName= System.currentTimeMillis()+UUID.randomUUID().toString()+exName; // 저장파일명
-		String filePath= saveDir+"\\"+saveName;
-		
-		// 업로드
-		try {
-			byte[] fileData= file.getBytes();
-			OutputStream out= new FileOutputStream(filePath);
-			BufferedOutputStream bout= new BufferedOutputStream(out);
+
+		if(file.isEmpty() != true) { // 로고파일 등록할때
+
+			// 공연장 로고 저장
+			String saveDir= "C:\\javaStudy\\upload";
+			String orgName= file.getOriginalFilename(); // 원본파일명
+			String exName= orgName.substring(orgName.lastIndexOf(".")); // 확장자
+			String saveName= System.currentTimeMillis()+UUID.randomUUID().toString()+exName; // 저장파일명
+			String filePath= saveDir+"\\"+saveName;
 			
-			bout.write(fileData);
-			bout.close();
+			// 업로드
+			try {
+				byte[] fileData= file.getBytes();
+				OutputStream out= new FileOutputStream(filePath);
+				BufferedOutputStream bout= new BufferedOutputStream(out);
+				
+				bout.write(fileData);
+				bout.close();
+			}
+			catch (IOException e) {
+				e.printStackTrace();
+			}
+			
+			// 공연장로고 설정
+			vo.setLogoPath(saveName);
+
 		}
-		catch (IOException e) {
-			e.printStackTrace();
+		else {
+			vo.setLogoPath("logo");
 		}
-		
-		// 공연장로고 설정
-		vo.setLogoPath(saveName);
-		
+
 		td.theaterAdd(vo);
 		td.selectTheater(vo); // 추가한 theater.no 가져오기
 

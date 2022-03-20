@@ -42,7 +42,7 @@ public class AdminController {
 	@RequestMapping("/theaterAdd")
 	public String theaterAdd(@ModelAttribute TheaterVo vo,
 							 @RequestParam("file") MultipartFile file) {
-		
+
 		adminService.theaterAdd(vo, file);
 		return "redirect:/admin/";
 	}

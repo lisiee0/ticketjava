@@ -9,8 +9,8 @@
 		</selectKey>
 		
 		<![CDATA[
-			insert into theater
-			values (#{theaterNo}, #{theaterName}, #{postCode}, #{address}, #{address2}, #{latitude}, #{longitude}, #{phone}, #{homePage}, #{logoPath})	
+			insert into theater (theater_no, theatername, postcode, address, address2, phone, homepage, logopath)
+			values (#{theaterNo}, #{theaterName}, #{postCode}, #{address}, #{address2}, #{phone}, #{homePage}, #{logoPath})	
 		]]>
 	</insert>
 	
