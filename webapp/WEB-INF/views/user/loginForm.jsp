@@ -13,8 +13,8 @@
 <link href="${pageContext.request.contextPath}/assets/css/ticketjavaCommon.css" rel="stylesheet" type="text/css">
 <link href="${pageContext.request.contextPath}/assets/css/ticketjavaCommonFooter.css" rel="stylesheet" type="text/css">
 
-<link href="${pageContext.request.contextPath}/assets/css/login/member.css" rel="stylesheet">
-<link href="${pageContext.request.contextPath}/assets/css/login/loginForm.css" rel="stylesheet">
+<link href="${pageContext.request.contextPath}/assets/css/user/member.css" rel="stylesheet">
+<link href="${pageContext.request.contextPath}/assets/css/user/loginForm.css" rel="stylesheet">
 
 </head>
 

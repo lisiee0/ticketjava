@@ -17,8 +17,8 @@
 <link href="${pageContext.request.contextPath}/assets/css/ticketjavaCommon.css" rel="stylesheet" type="text/css">
 
 <!-- 개인 css (폴더로 관리 권장 ex assets/css/mypage/ticketing.css) -->
-<link href="${pageContext.request.contextPath}/assets/css/login/member.css" rel="stylesheet">
-<link href="${pageContext.request.contextPath}/assets/css/login/joinForm.css" rel="stylesheet">
+<link href="${pageContext.request.contextPath}/assets/css/user/member.css" rel="stylesheet">
+<link href="${pageContext.request.contextPath}/assets/css/user/joinForm.css" rel="stylesheet">
 
 </head>
 
