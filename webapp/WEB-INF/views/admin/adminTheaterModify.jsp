@@ -122,13 +122,13 @@
 										<div class="col-xs-2"></div>
 									    <label class="form-text col-xs-2" for="">공연장로고</label>
 									    <div class="col-xs-6">
-									    	<input type="file" name="file">
+									    	<input id="file" type="file" name="file">
 									    	<input type="hidden" name="logoPath" value="${hallVo.logoPath}">
 									    </div>
 									    <div class="col-xs-2"></div>
 									</div>
-									
-									
+									<br>
+									<br>
 									<div id="btnLocation">
 	                          			<button type="submit" class="btn btn-primary" id="modbtn">공연장 수정</button>
 	                          		</div>

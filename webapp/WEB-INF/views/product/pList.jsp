@@ -27,7 +27,7 @@
 		
 		
 		<!-- 컨텐츠 구역 시작 -->
-		<div class="container-fluid zp">
+		<div id="testcolor" class="container-fluid zp">
 			<div class="container">
 				<div class="row">
 					<h2 class="pageMenu section">추천상품</h2>

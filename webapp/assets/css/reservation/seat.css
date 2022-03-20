@@ -1,6 +1,13 @@
 @charset "UTF-8";
 
 /* 좌석배치도 */
+
+#seatPlanBox{
+	background-color:gray;
+	overflow-x:hidden;
+	overflow-y:hidden;
+}
+
 #seatPlan{
 	width:100%;
 	height:560px;
@@ -36,21 +43,25 @@
 }
 
 #seatPlanDiv table th.center{
-	font-size:12px;
+	font-size:10px;
 	text-align:center;
 }
 
+#seatPlanDiv table tr {
+	height:13px;
+}
+
 #seatPlanDiv table td{
-	padding:2px;
+	padding:0px 2px;
 }
 
 #seatPlanDiv table td.colno{
-	font-size:10px;
+	font-size:5px;
 }
 
 #seatPlanDiv label{
-	width:15px;
-	height:15px;
+	width:10px;
+	height:10px;
 }
 
 input[type="checkbox"] {
@@ -60,8 +71,6 @@ input[type="checkbox"] {
 
 input[type="checkbox"]+label {
 	display: block;
-    width: 15px;
-    height: 15px;
 }
 
 
