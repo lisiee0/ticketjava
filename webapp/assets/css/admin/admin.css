@@ -68,6 +68,7 @@
 
 #board {
 	background-color: #f6f6f6;
+	height: 541px;
 	padding: 20px 20px;
 }
 
@@ -112,4 +113,8 @@
 	font-weight: bolder;
 	text-align: right;
 	color: #6697f2;
+}
+
+#file {
+	margin-top: 8px;
 }

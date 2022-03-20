@@ -67,9 +67,9 @@
 							<colgroup>
 								<col width="13%">
 								<col width="13%">
-								<col width="33%">
+								<col width="30%">
 								<col width="13%">
-								<col width="13%">
+								<col width="16%">
 								<col width="15%">
 							</colgroup>
 								<thead>
