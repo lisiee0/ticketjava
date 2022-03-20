@@ -7,7 +7,7 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <script src="${pageContext.request.contextPath}/assets/js/jquery-1.12.4.js"></script>
-<c:import url="/assets/js/reservation/confirmContinueJs.jsp"></c:import>
+<script src="${pageContext.request.contextPath}/assets/js/reservation/confirmContinue.js"></script>
 </head>
 <body>
 
@@ -17,7 +17,8 @@
 		<input type="hidden" name="viewDate" value="${param.viewDate}">
 	</form>
 
-
+	<input id="pageContext" type="hidden" value="${pageContext.request.contextPath}">
+	<input id="totalPayment" type="hidden" value="${param.totalPayment}">
 </body>
 </html>
 

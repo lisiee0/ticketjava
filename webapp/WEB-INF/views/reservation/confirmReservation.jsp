@@ -10,7 +10,7 @@
 <title>Insert title here</title>
 
 <script src="${pageContext.request.contextPath}/assets/js/jquery-1.12.4.js"></script>
-<c:import url="/assets/js/reservation/confirmReservationJs.jsp"></c:import>
+<script src="${pageContext.request.contextPath}/assets/js/reservation/confirmReservation.js"></script>
 
 <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/bootstrap/css/bootstrap.css">
 <link href="${pageContext.request.contextPath}/assets/css/reservation/reservation.css" rel="stylesheet" type="text/css">
@@ -155,6 +155,8 @@
 			</div>
 		</div>
 	</div>
+	
+	<input id="pageContext" type="hidden" value="${pageContext.request.contextPath}">
 </body>
 
 	
