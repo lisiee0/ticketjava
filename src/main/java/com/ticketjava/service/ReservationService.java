@@ -24,7 +24,7 @@ public class ReservationService {
 	private SelseatDao selseatDao;
 
 	@Autowired
-	private NotireqService notireqService;
+	private NotificationService notificationService;
 	
 	public int preoccupy(ReservationVo reservationVo, int userNo) {
 		reservationVo.setUserNo(userNo);
@@ -119,7 +119,7 @@ public class ReservationService {
 	public void deleteReserveSeat (int selseatNo) {
 		System.out.println("ReservationService deleteReserveSeat 실행");
 		reservationDao.deleteReserveSeat(selseatNo);
-		notireqService.notiSend(selseatNo);
+		notificationService.notiSend(selseatNo);
 		
 		System.out.println("리저브 서비스 selseatNo "+selseatNo);
 	}
