@@ -9,7 +9,7 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 
-<script src="${pageContext.request.contextPath}/assets/jquery/jquery-1.12.4.js"></script>
+<script src="${pageContext.request.contextPath}/assets/js/jquery-1.12.4.js"></script>
 <c:import url="/assets/js/reservation/confirmReservationJs.jsp"></c:import>
 
 <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/bootstrap/css/bootstrap.css">

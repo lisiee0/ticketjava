@@ -7,7 +7,7 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 
-<script src="${pageContext.request.contextPath}/assets/jquery/jquery-1.12.4.js"></script>
+<script src="${pageContext.request.contextPath}/assets/js/jquery-1.12.4.js"></script>
 <script src="${pageContext.request.contextPath}/assets/bootstrap/js/bootstrap.js"></script>
 <script src="${pageContext.request.contextPath}/assets/js/venues/venue${rezProdInfo.hallNo}.js"></script>
 <c:import url="/assets/js/reservation/notireqJs.jsp"></c:import>

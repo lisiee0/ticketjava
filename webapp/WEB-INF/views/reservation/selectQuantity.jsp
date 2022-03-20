@@ -13,7 +13,7 @@
 <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/bootstrap/css/bootstrap.css">
 <link href="${pageContext.request.contextPath}/assets/css/reservation/reservation.css" rel="stylesheet" type="text/css">
 <link href="${pageContext.request.contextPath}/assets/css/reservation/reservation4.css" rel="stylesheet" type="text/css">
-<script src="${pageContext.request.contextPath}/assets/jquery/jquery-1.12.4.js"></script>
+<script src="${pageContext.request.contextPath}/assets/js/jquery-1.12.4.js"></script>
 
 
 </head>
