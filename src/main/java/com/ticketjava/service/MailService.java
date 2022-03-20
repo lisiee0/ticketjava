@@ -4,6 +4,7 @@ import java.util.Map;
 
 import javax.servlet.http.HttpSession;
 
+import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 
 import com.ticketjava.util.MailAuth;
@@ -12,6 +13,7 @@ import com.ticketjava.util.PasswordHash;
 @Service
 public class MailService {
 
+	@Async
 	public void sendMailAuth(String email, HttpSession session) {
 		String authKey = PasswordHash.getSalt();
 		session.setAttribute(email, authKey);

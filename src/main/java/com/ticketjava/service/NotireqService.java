@@ -106,10 +106,6 @@ public class NotireqService {
 
 			// 6. Users (결과 userNo 리스트) > email로 내용 전송								    
 			List<String> emailList = userDao.selectEmail(notireqList);
-
-			/*
-			 * List<String>test = new ArrayList<>(); test.add("dldnjswns134@naver.com");
-			 */
 			NotiMail.sendMail(emailList, notiDataVo);
 			
 			notireqDao.updateNotiTimes(notireqList);
