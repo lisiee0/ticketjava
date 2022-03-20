@@ -408,7 +408,10 @@
 
 <script>
 
-//저장버튼 클릭할때 - 파라미터 방식
+
+//에이작스 리뷰작성 시작
+
+//저장버튼 클릭할때 
 $("#btnReviewSubmit").on("click", function() {	
 
 	console.log("저장버튼 클릭 액션(ajax 방식)");
@@ -424,30 +427,24 @@ $("#btnReviewSubmit").on("click", function() {
 			rating : rating,
 			prodNo : prodNo,
 			userNo : userNo
-		
 	}; // var guestbookVo
 
-	
 	$.ajax({
-
 		url : "${pageContext.request.contextPath}/review/writeReview",
 		type : "post",
 		data : reviewVo, // 위에서 만든 객체를 그대로 이어 쓴다
 		
-		success : function(res) {
+		success : function(result) {
 			/*성공시 처리해야될 코드 작성*/
-			console.log(res);
-			render(res, "up")
-			/*
-			render(result, "up"); 
+			console.log(result);
+			render(result, "up")
 
 			//입력버튼 초기화 
-			$("#review").val("");
-			$("#rating").val("");
-			$("#prodNo").val("");
-			$("#userNo").val("");
-			*/
-
+			$("#text-review").val(""); // 리뷰내용
+			$("[name='rating']:checked").val(""); // 점수
+			$("#prodNo").val(""); // 작품번호
+			$("#userNo").val(""); // 유저번호
+			
 		},
 		error : function(XHR, status, error) {
 			console.error(status + " : " + error);
@@ -456,17 +453,60 @@ $("#btnReviewSubmit").on("click", function() {
 }); // #btnSubmit function
 
 
+$(document).ready(function() {
+console.log("리스트 요청");
+fetchList();
+
+}); // document . ready
+
+		
+function fetchList() { // 리스트 가져오기 (그리기를 시키는 기능)
+
+$.ajax({
+url : "${pageContext.request.contextPath}/product/info",
+type : "post", 
+
+//응답항목 받을때
+dataType : "json",
+success : function(reviewList) { // json -> js 로 변환
+	/*성공시 처리해야될 코드 작성*/
+	console.log(reviewList);
+
+	for (var i = 0; i < reviewList.length; i++) {
+		render(reviewList[i], "down"); // 방명록 리스트 출력
+	}
+},
+error : function(XHR, status, error) {
+	console.error(status + " : " + error);
+}
+}); // ajax
+
+}; // function fetchList
 
 
+function render(reviewVo, updown) { // 1명씩 정보를 받아 처리 button의 data-no 소문자만 인식 대문자넣으면 에러 
+console.log("테이블 출력");
+var str = '';
+str += ' 	<tr> ';
+str += ' 		<td><span class="star"> ★★★★★ <span style="width: ' + reviewVo.rating + '0%;">★★★★★</span> ';
+str += ' 		<input type="range" oninput="drawStar(this)" value="1" step="1" min="0" max="10"></span> ' + reviewVo.rating + '</td> ';
+str += ' 		<td> ' + reviewVo.content + '</td> ';
+str += ' 		<td> ' + reviewVo.userName + '</td> ';
+str += ' 		<td> ' + reviewVo.regDate + '<input type="hidden" name="userNo" value=" ' + reviewVo.userNo + ' "></td> ';
+str += ' 	</tr> ';
+str += ' ';
 
+if (updown == 'down') {
+	$("#reviewListArea").append(str); // .html 을 쓰면 바꿔치는 기능때문에 마지막글 만 출력 
+} else if (updown == 'up') {
+	$("#reviewListArea").prepend(str);
+} else {
+	console.log("방향오류");
+};
 
+};			
 
-
-
-
-
-
-
+//에이작스 리뷰작성 종료
 
 
 
@@ -566,66 +606,6 @@ $("#btnReviewSubmit").on("click", function() {
 	});    	
 		
 	
-	//에이작스 후기 (리뷰) 
-$(document).ready(function() {
-	console.log("리스트 요청");
-	fetchList();
-
-}); // document . ready
-
-
-////////////////////////////////////////////////////////////
-
-////////////////////////////////////////////////////////////
-
-
-			
-
-function fetchList() { // 리스트 가져오기 (그리기를 시키는 기능)
-
-$.ajax({
-	url : "${pageContext.request.contextPath}/product/info",
-	type : "post", 
-	
-	//응답항목 받을때
-	dataType : "json",
-	success : function(reviewList) { // json -> js 로 변환
-		/*성공시 처리해야될 코드 작성*/
-		console.log(reviewList);
-
-		for (var i = 0; i < reviewList.length; i++) {
-			render(reviewList[i], "down"); // 방명록 리스트 출력
-		}
-	},
-	error : function(XHR, status, error) {
-		console.error(status + " : " + error);
-	}
-}); // ajax
-
-}; // function fetchList
-
-
-function render(reviewVo, updown) { // 1명씩 정보를 받아 처리 button의 data-no 소문자만 인식 대문자넣으면 에러 
-	console.log("테이블 출력");
-	var str = '';
-	str += ' 	<tr> ';
-	str += ' 		<td><span class="star"> ★★★★★ <span style="width: ' + reviewVo.rating + '0%;">★★★★★</span> ';
-	str += ' 		<input type="range" oninput="drawStar(this)" value="1" step="1" min="0" max="10"></span> ' + reviewVo.rating + '</td> ';
-	str += ' 		<td> ' + reviewVo.content + '</td> ';
-	str += ' 		<td> ' + reviewVo.userName + '</td> ';
-	str += ' 		<td> ' + reviewVo.regDate + '<input type="hidden" name="userNo" value=" ' + reviewVo.userNo + ' "></td> ';
-	str += ' 	</tr> ';
-	str += ' ';
-
-	if (updown == 'down') {
-		$("#reviewListArea").append(str); // .html 을 쓰면 바꿔치는 기능때문에 마지막글 만 출력 
-	} else if (updown == 'up') {
-		$("#reviewListArea").prepend(str);
-	} else {
-		console.log("방향오류");
-	};
-
-};			
 	
 </script>
 
