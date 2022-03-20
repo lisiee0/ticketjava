@@ -36,5 +36,9 @@ public class ReviewService {
 		System.out.println("리뷰 서비스 reviewVo "+reviewVo);
 	}
 	
+	public ReviewVo getOneReview(ReviewVo reviewVo) {
+		return reviewDao.getOneReview(reviewVo);
+	}
+	
 	
 } // The end of ReservationService

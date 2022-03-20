@@ -41,14 +41,19 @@ public class ReviewController {
 //	상품 상세보기 후기(리뷰) 작성
 	@ResponseBody
 	@RequestMapping("/writeReview")
-	public String writeReview (ReviewVo reviewVo,
-			@RequestParam(value="prodNo")int prodNo, 
-			@RequestParam(value="userNo")int userNo,
-			@RequestParam(value="rating")int rating,
-			@RequestParam(value="content")String content) {
+	public ReviewVo writeReview (@ModelAttribute ReviewVo reviewVo) {
 		System.out.println("프로덕컨트롤러 reviewVo "+reviewVo);
+		
 		reviewService.writeReview(reviewVo);
-		return "redirect:/product/productInfo";
+		
+		System.out.println("프로덕컨트롤러 reviewVo "+reviewVo);
+		
+		//review 번호로 리뷰를 가져온다
+		ReviewVo rVo = reviewService.getOneReview(reviewVo);
+		System.out.println("컨트롤러 번호로 리뷰가져오기 reviewVo "+rVo);
+		return rVo; 
+		
+		/* return "redirect:/product/productInfo"; */
 	}
 	
 	

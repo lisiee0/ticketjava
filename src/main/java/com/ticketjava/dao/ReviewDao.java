@@ -37,8 +37,14 @@ public class ReviewDao {
 		return reviewListProduct;
 	}
 	
+//	리뷰저장
 	public void writeReview(ReviewVo reviewVo) {
 		sqlSession.insert("review.insertReview", reviewVo);
+	}
+	
+//	리뷰 하나만 가져오기
+	public ReviewVo getOneReview(ReviewVo reviewVo) {
+		return sqlSession.selectOne("review.getOneReview", reviewVo);
 	}
 	
 	

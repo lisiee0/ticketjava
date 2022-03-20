@@ -58,17 +58,40 @@ order	by regdate desc
 <!-- 리뷰작성 product 
 리뷰no 상품no 유저no 컨텐츠 평점 등록일 -->
 <insert id="insertReview" parameterType="ReviewVo">
+	
+	<selectKey keyProperty="reviewNo" resultType="int" order="BEFORE">
+		select seq_review_no.nextval from dual
+	</selectKey>
+	
 	<![CDATA[
 	INSERT INTO review VALUES (
-	seq_review_no.nextval,
-	#{prodNo}, 
-	#{userNo}, 
-	#{content}, 
-	#{rating}, 
-	sysdate
+		#{reviewNo},
+		#{prodNo}, 
+		#{userNo}, 
+		#{content}, 
+		#{rating}, 
+		sysdate
 	)
 	]]>
 </insert>
+
+
+<select id="getOneReview" parameterType="ReviewVo" resultType="ReviewVo">
+
+	<![CDATA[
+		select		review_no reviewNo, 
+					prod_no prodNo, 
+					user_no userNo, 
+					content, 
+					rating, 
+					regdate regDate
+					
+		from		review
+		where		review_no = #{reviewNo}	
+	
+	]]>
+</select>
+
 
 
 </mapper>
