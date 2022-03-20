@@ -1,13 +1,10 @@
 package com.ticketjava.service;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
-
-import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 
 import com.ticketjava.dao.NotificationDao;
@@ -19,7 +16,6 @@ import com.ticketjava.util.NotiMail;
 import com.ticketjava.vo.NotiDataVo;
 import com.ticketjava.vo.NotificationVo;
 import com.ticketjava.vo.NotireqVo;
-import com.ticketjava.vo.UserVo;
 
 @Service
 public class NotireqService {
@@ -74,7 +70,7 @@ public class NotireqService {
 			return "fail";
 	}
 	
-	
+	@Async
 	public void notiSend(int selseatNo) {
 		// 1. selseat 예매취소(selseatNo) -->  rezNo, grade, section, col, num
 		// 2. reserve(rezNo) >  prodNo, viewDate
