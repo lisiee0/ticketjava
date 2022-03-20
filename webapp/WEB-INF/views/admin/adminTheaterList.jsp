@@ -85,7 +85,7 @@
 								<tbody id="tList">
 									<c:forEach items="${hallList.hList}" var="vo">
 										<tr>
-											<td>${vo.theaterName}</td>
+											<td><strong>${vo.theaterName}</strong></td>
 											<c:choose>
 												<c:when test="${vo.hallName eq null}">
 													<td>-</td>

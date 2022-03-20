@@ -83,13 +83,17 @@ public class AdminController {
 		return "admin/theaterSearchResult";
 	}
 	
-	/* 공지사항 */
+	///////////////////
+	/*    공지사항     */
+	//////////////////
+	
 	
 	// 공지사항 리스트 불러오기
 	@RequestMapping("/noticeList")
-	public String noticeList(Model model) {
+	public String noticeList(@RequestParam(value="crtPage", required= false, defaultValue= "1") int crtPage,
+							 Model model) {
 		
-		model.addAttribute("noticeList", adminService.getNoticeList());
+		model.addAttribute("noticeList", adminService.getNoticeList(crtPage));
 		return "admin/adminNoticeList";
 	}
 	

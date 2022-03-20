@@ -118,3 +118,13 @@
 #file {
 	margin-top: 8px;
 }
+
+
+.notice-table {
+	vertical-align: middle;
+}
+
+.notice-table tbody>tr>td {
+	height: 45.3px;
+	vertical-align: middle;
+}

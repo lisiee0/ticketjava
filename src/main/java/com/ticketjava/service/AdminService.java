@@ -126,7 +126,7 @@ public class AdminService {
 	
 	public void modifyHall(HallVo vo, MultipartFile file) {
 		
-		if (file != null) { // 로고파일 수정
+		if (file.isEmpty() != true) { // 로고파일 수정
 			
 			String saveDir= "C:\\javaStudy\\upload";
 			String orgName= file.getOriginalFilename(); // 원본파일명
@@ -163,8 +163,22 @@ public class AdminService {
 	}
 	
 	
-	public List<NoticeVo> getNoticeList() {
-		return nd.getNoticeList();
+	public Map<String, Object> getNoticeList(int crtPage) {
+		
+		int listCnt= 10; // 한 페이지당 글 개수
+		int startRnum= (crtPage-1)*listCnt +1; // 시작글 번호
+		int endRnum= (startRnum+listCnt) -1; // 마지막글 번호
+		
+		Paging paging= new Paging();
+		paging.setPageNo(crtPage);
+		paging.setPageSize(listCnt);
+		paging.setTotalCount(nd.noticeCnt());
+		
+		Map<String, Object> nMap= new HashMap<String, Object>();
+		nMap.put("notice", nd.pagingNotice(startRnum, endRnum));
+		nMap.put("paging", paging);
+		
+		return nMap;
 	}
 	
 	

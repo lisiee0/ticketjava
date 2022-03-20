@@ -56,7 +56,7 @@
 				
 						<!-- content body -->
 						<div id="list">
-							<table class="table listTable">
+							<table class="table listTable table-hover notice-table">
 								<colgroup>
 									<col width="14.5%">
 									<col width="51%">
@@ -72,9 +72,9 @@
 									</tr>
 								</thead>
 								<tbody>
-									<c:forEach items="${noticeList}" var="vo">
+									<c:forEach items="${noticeList.notice}" var="vo">
 										<tr>
-											<td>${vo.theaterName}</td>
+											<td><strong>${vo.theaterName}</strong></td>
 											<td>${vo.content}</td>
 											<td>${vo.regDate}</td>
 											<td>
@@ -85,6 +85,31 @@
 									</c:forEach>
 								</tbody>					
 							</table>
+							
+							<!-- 페이징 -->
+							<div class="row paging">				
+								<nav>
+								  <ul class="pagination">
+								  	<li><a href="javascript:PageMove(${noticeList.paging.firstPageNo})"><span class="glyphicon glyphicon-triangle-left"></span></a></li>
+									<li class= ${noticeList.paging.pageNo eq noticeList.paging.firstPageNo ? "disabled" : ""}><a href="javascript:PageMove(${noticeList.paging.prevPageNo})"><span class="glyphicon glyphicon-menu-left"></span></a></li>
+						
+									<c:forEach var="i" begin="${noticeList.paging.startPageNo}" end="${noticeList.paging.endPageNo}" step="1">
+										<c:choose>
+											<c:when test="${i eq noticeList.paging.pageNo}">
+												<li class= ${noticeList.paging.pageNo eq i ? "active" : ""}><a href="javascript:PageMove(${i})">${i}</a></li>
+											</c:when>
+											<c:otherwise>
+												<li class= ${noticeList.paging.pageNo eq i ? "active" : ""}><a href="javascript:PageMove(${i})">${i}</a></li>
+											</c:otherwise>
+										</c:choose>
+									</c:forEach>
+									
+								    <li class= ${noticeList.paging.pageNo eq noticeList.paging.finalPageNo ? "disabled" : ""}><a href="javascript:PageMove(${noticeList.paging.nextPageNo})"><span class="glyphicon glyphicon-menu-right"></span></a></li>
+								    <li><a href="javascript:PageMove(${noticeList.paging.finalPageNo})"><span class="glyphicon glyphicon-triangle-right"></span></a></li>
+								  </ul>
+								</nav>
+							</div>
+							
 						</div>
 						<!-- // content body -->
 						
@@ -101,5 +126,14 @@
 	<!-- //wrap -->
 
 </body>
+
+
+<script>
+
+	function PageMove(page) {
+		location.href = "${pageContext.request.contextPath}/admin/noticeList?crtPage=" + page;
+	}
+
+</script>
 
 </html>
