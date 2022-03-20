@@ -45,11 +45,11 @@
 							
 							<div class="floatRight">
 								<ul class="floatRight">
-									<li class="regionList"><a href="${pageContext.request.contextPath}/product/region?cateNo=0">전체</a></li>
-									<li class="regionList"><a href="${pageContext.request.contextPath}/product/region?cateNo=1">서울/경기</a></li>
-									<li class="regionList"><a href="${pageContext.request.contextPath}/product/region?cateNo=2">강원/충청</a></li>
-									<li class="regionList"><a href="${pageContext.request.contextPath}/product/region?cateNo=3">전라</a></li>
-									<li class="regionList"><a href="${pageContext.request.contextPath}/product/region?cateNo=4">경상/제주</a></li>
+									<li class=${param.cateNo eq 0 ? "regionList-sel" : "regionList"}><a href="${pageContext.request.contextPath}/product/region?cateNo=0">전체</a></li>
+									<li class=${param.cateNo eq 1 ? "regionList-sel" : "regionList"}><a href="${pageContext.request.contextPath}/product/region?cateNo=1">서울/경기</a></li>
+									<li class=${param.cateNo eq 2 ? "regionList-sel" : "regionList"}><a href="${pageContext.request.contextPath}/product/region?cateNo=2">강원/충청</a></li>
+									<li class=${param.cateNo eq 3 ? "regionList-sel" : "regionList"}><a href="${pageContext.request.contextPath}/product/region?cateNo=3">전라</a></li>
+									<li class=${param.cateNo eq 4 ? "regionList-sel" : "regionList"}><a href="${pageContext.request.contextPath}/product/region?cateNo=4">경상/제주</a></li>
 								</ul>
 							</div>
 						</div>
