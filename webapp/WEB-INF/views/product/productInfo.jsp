@@ -75,7 +75,7 @@
 	width: 0;
 	position: absolute;
 	left: 0;
-	color: red;
+	color: gold;
 	overflow: hidden;
 	pointer-events: none;
 }

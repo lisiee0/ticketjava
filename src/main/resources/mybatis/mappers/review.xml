@@ -5,20 +5,20 @@
 	<!-- 리뷰리스트 for 마이페이지 -->
 	<select id="reviewMypageList" parameterType="ReviewVo" resultType="ReviewVo">
 		<![CDATA[
-select	
-        p.prodname prodName,
-        r.review_no reviewNo,
-        r.prod_no prodNo,
-        r.user_no userNo,
-        r.content content,
-        r.rating rating,
-        to_char(r.regdate, 'yy-mm-dd hh24:mi') regDate
-        
-from	review r, product p
-where	r.prod_no = p.prod_no
-and		r.user_no= #{userNo}
-order	by reviewNo desc		
-]]>
+			select	
+			        p.prodname prodName,
+			        r.review_no reviewNo,
+			        r.prod_no prodNo,
+			        r.user_no userNo,
+			        r.content content,
+			        r.rating rating,
+			        to_char(r.regdate, 'yy-mm-dd hh24:mi') regDate
+			        
+			from	review r, product p
+			where	r.prod_no = p.prod_no
+			and		r.user_no= #{userNo}
+			order	by reviewNo desc		
+		]]>
 	</select>
 
 	<!-- 리뷰 삭제 at 마이페이지 -->
@@ -26,9 +26,9 @@ order	by reviewNo desc
 	<delete id="deleteReview" parameterType="ReviewVo">
 		
 		<![CDATA[
-		
-DELETE FROM		review
-where			review_no = #{reviewNo}
+					
+			DELETE FROM		review
+			where			review_no = #{reviewNo}
 
 		]]>
 	</delete>
@@ -36,22 +36,22 @@ where			review_no = #{reviewNo}
 	<!-- 리뷰페이지 for product -->
 	<select id="reviewProductList" parameterType="ReviewVo" resultType="ReviewVo">
 		<![CDATA[
-select
-        r.review_no reviewNo,
-        r.prod_no prodNo,
-        p.prodname prodName,
-        r.user_no userNo,
-        u.name userName,
-        r.content content,
-        r.rating rating,
-        to_char(r.regdate, 'yy-mm-dd hh24:mi') regDate
-        
-from	review r, product p, users u
-where	r.prod_no = p.prod_no
-and     u.user_no = r.user_no
-and		r.prod_no = #{prodNo}
-order	by regdate desc	
-]]>
+			select
+			        r.review_no reviewNo,
+			        r.prod_no prodNo,
+			        p.prodname prodName,
+			        r.user_no userNo,
+			        u.name userName,
+			        r.content content,
+			        r.rating rating,
+			        to_char(r.regdate, 'yy-mm-dd hh24:mi') regDate
+			        
+			from	review r, product p, users u
+			where	r.prod_no = p.prod_no
+			and     u.user_no = r.user_no
+			and		r.prod_no = #{prodNo}
+			order	by regdate desc	
+		]]>
 
 	</select>
 
@@ -75,19 +75,23 @@ order	by regdate desc
 	]]>
 </insert>
 
-
+<!-- 에이잭스용 1개 리뷰 불러오는 쿼리 -->
 <select id="getOneReview" parameterType="ReviewVo" resultType="ReviewVo">
 
 	<![CDATA[
+
 		select		review_no reviewNo, 
 					prod_no prodNo, 
-					user_no userNo, 
+					u.user_no userNo, 
+                    u.name userName,
+                    u.id id,
 					content, 
 					rating, 
-					regdate regDate
+					to_char(r.regdate, 'yy-mm-dd hh24:mi') regDate
 					
-		from		review
-		where		review_no = #{reviewNo}	
+		from		review r, users u
+		where		u.user_no = r.user_no
+        and         review_no = #{reviewNo}	
 	
 	]]>
 </select>
