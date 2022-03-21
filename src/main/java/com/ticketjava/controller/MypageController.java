@@ -70,7 +70,6 @@ public class MypageController {
 	
 	
 //	예매 좌석 부분 취소
-//	@ResponseBody json 사용하기
 	@RequestMapping("/requestCancelTicket")
 	public String requestCancelTicket(Model model,@RequestParam(value="selseatNo") int selseatNo, @RequestParam(value="rezNo") int rezNo) {
 		System.out.println("MypageController reserveSeatCancel 예매 좌석 삭제 실행");
@@ -140,9 +139,11 @@ public class MypageController {
 		
 		UserVo authUser = (UserVo)session.getAttribute("authUser");
 		int userNo = authUser.getUserNo();
-//		List<ReviewVo> reviewList = reviewService.getReviewListMypage(userNo);
+		Map<String, Object> rMap = reviewService.getReviewListMypagePaging(userNo, crtPage);
 		
 //		model.addAttribute("reviewList",reviewList);
+		model.addAttribute("rMap", rMap);
+		System.out.println("컨트롤러 알맵 출력"+rMap);
 		
 		return "mypage/userReview";
 	}

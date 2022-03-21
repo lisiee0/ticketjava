@@ -123,7 +123,10 @@
 
 									<div id="paging">
 										<ul>
-											<li><a href="">◀</a></li>
+											
+								<c:if test="${requestScope.rMap.prev eq true}">
+									<li><a href="${pageContext.request.contextPath}/mypage/userReview?crtPage=${requestScope.rMap.startPageBtnNo-1}&userNo=${requestScope.rMap.userNo}">◀</a></li>
+								</c:if>
 											<li><a href="">1</a></li>
 											<li><a href="">2</a></li>
 											<li><a href="">3</a></li>

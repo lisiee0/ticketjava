@@ -47,6 +47,9 @@ public class ReviewDao {
 	}
 	
 	
+	
+	
+	
 //	리뷰 삭제 마이페이지
 	public void userReviewDelete(int reviewNo) {
 		sqlSession.delete("review.deleteReview", reviewNo);
