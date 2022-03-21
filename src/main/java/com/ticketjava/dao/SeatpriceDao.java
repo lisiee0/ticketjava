@@ -6,7 +6,6 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import com.ticketjava.vo.ProductVo;
 import com.ticketjava.vo.SeatpriceVo;
 
 @Repository
@@ -26,6 +25,13 @@ public class SeatpriceDao {
 
 		sqlSession.insert("seatprice.seatpriceAdd", seatpriceVo);
 	}
+	
+	//공연 수정 등급별 가격 가져오기
+	public List<SeatpriceVo> bmgetSeatPrice(int prodNo) {
+		System.out.println("SeatpriceDao > bmgetSeatPrice");
+		
+		return sqlSession.selectList("seatprice.bmgetSeatPrice", prodNo);
+	} 
 	
 	
 }

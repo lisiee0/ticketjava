@@ -52,7 +52,7 @@ public class BusinessController {
 	public DetailVo productUpload(@RequestBody ProductVo productVo, DetailVo detailVo) {
 		System.out.println("BusinessController > form() > productUpload");
 
-		businessService.productUpload(productVo, detailVo);
+		businessService.productUpload(productVo, detailVo, null);
 		return detailVo;
 	}
 

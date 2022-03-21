@@ -2,6 +2,22 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="seatprice">
 
+
+	<!-- 공연 수정 등급별 가격 가져오기 -->
+	<select id="bmgetSeatPrice" parameterType="int" resultType="SeatpriceVo">
+		<![CDATA[
+                    
+			select 	s.seatprice_no seatpriceNo,
+			       	p.prod_no 	prodNo,
+			        	s.grade 		grade,
+			        	s.price		price
+			from 	seatprice s, product p
+			where 	p.prod_no = s.prod_no
+			        	and p.prod_no = #{prodNo}
+
+		]]>
+	</select>
+
 	<select id="selectList" parameterType="int" resultType="SeatpriceVo">
 		<![CDATA[
 			select grade,
@@ -11,7 +27,7 @@
 			order by price desc
 		]]>
 	</select>
-	
+
 	<!-- 등급별 가격 추가 -->
 	<insert id="seatpriceAdd" parameterType="SeatpriceVo">
 		<![CDATA[

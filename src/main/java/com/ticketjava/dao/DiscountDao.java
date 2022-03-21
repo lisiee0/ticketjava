@@ -14,6 +14,14 @@ public class DiscountDao {
 
 	@Autowired
 	private SqlSession sqlSession;
+	
+	//공연 수정 상시 할인 가져오기
+	public List<DiscountVo> bmgetDis(int prodNo) {
+		System.out.println("SeatpriceDao > bmgetDis");
+		
+		return sqlSession.selectList("discount.bmgetDis", prodNo);
+	} 
+	
 
 	public List<DiscountVo> selectList(int prodNo) {
 		// TODO Auto-generlated method stub

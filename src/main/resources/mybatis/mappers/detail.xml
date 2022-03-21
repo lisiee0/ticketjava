@@ -2,6 +2,23 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="detail">
 
+	<!-- detail 폼에서 공연번호 가져오기 -->
+	<select id="bmgetDetail" parameterType="int" resultType="DetailVo">
+
+		<![CDATA[
+			select 	d.detail_no detailNo,
+					d.prod_no prodNo,
+					d.prodpath prodPath,
+					d.castingpath castingPath,
+					d.addedpath addedPath
+			from 	detail d, product p
+			where 	d.prod_no = p.prod_no
+			and 		p.prod_no = #{prodNo}
+		]]>
+
+	</select>
+
+
 	<select id="getDetail" parameterType="DetailVo" resultType="DetailVo">
 		<![CDATA[
 			select			detail_no detailNo, 
@@ -57,21 +74,6 @@
 		]]>
 	</update>
 
-	<!-- detail 폼에서 공연번호 가져오기 -->
-	<select id="bmgetDetail" parameterType="int" resultType="DetailVo">
-
-		<![CDATA[
-			select 	d.detail_no detailNo,
-					d.prod_no prodNo,
-					d.prodpath prodPath,
-					d.castingpath castingPath,
-					d.addedpath addedPath
-			from 	detail d, product p
-			where 	d.prod_no = p.prod_no
-			and 		p.prod_no = #{prodNo}
-		]]>
-
-	</select>
 
 
 </mapper>

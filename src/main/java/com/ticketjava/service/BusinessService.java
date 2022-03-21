@@ -24,6 +24,7 @@ import com.ticketjava.vo.DiscountVo;
 import com.ticketjava.vo.HallVo;
 import com.ticketjava.vo.ProductVo;
 import com.ticketjava.vo.SeatpriceVo;
+import com.ticketjava.vo.TheaterVo;
 
 @Service
 public class BusinessService {
@@ -56,7 +57,7 @@ public class BusinessService {
 	}
 
 	// 공연 업로드 (파일 제외)
-	public void productUpload(ProductVo productVo, DetailVo detailVo) {
+	public void productUpload(ProductVo productVo, DetailVo detailVo, TheaterVo theaterVo) {
 		System.out.println("BusinessServiece > productUpload");
 
 		// productDao로 값을 넘김
@@ -65,15 +66,13 @@ public class BusinessService {
 
 		// detailVo 테이블의 prodNo를 productVo 테이블의 prodNo로 설정.
 		int prodNo = productVo.getProdNo();
-		System.out.println(prodNo);
 		detailVo.setProdNo(prodNo);
 
 		// detailDao로 값을 넘김
 		td.detailNoAdd(detailVo);
-		System.out.println("AFTER : " + productVo);
 
 		// theaterDao로 값을 넘김
-		thd.theaterAdd(null);
+		thd.theaterAdd(theaterVo);
 
 		// seatPriceDao로 값을 넘김
 		List<SeatpriceVo> seatpriceList = productVo.getSeatpriceList();
@@ -81,8 +80,7 @@ public class BusinessService {
 		for (SeatpriceVo seatpriceVo : seatpriceList) {
 			seatpriceVo.setProdNo(prodNo);
 			sd.seatpriceAdd(seatpriceVo);
-		}
-		;
+		};
 
 		// discountDao로 값을 넘김
 		List<DiscountVo> discountList = productVo.getProductDisList();
@@ -90,8 +88,7 @@ public class BusinessService {
 		for (DiscountVo discountVo : discountList) {
 			discountVo.setProdNo(prodNo);
 			dd.alwaysdisAdd(discountVo);
-		}
-		;
+		};
 	}
 
 	// 공연 파일 업로드
@@ -155,30 +152,35 @@ public class BusinessService {
 	public Map<String, Object> bmgetProduct(int prodNo) {
 		System.out.println("BusinessServiece > bmgetProduct()");
 		
-		Map<String, Object> bmgProductMap = new HashMap<String, Object>();
+		Map<String, Object> bmProductMap = new HashMap<String, Object>();
 		
 		//공연정보
 		ProductVo bmgetProduct = pd.bmgetProduct(prodNo);
-		bmgProductMap.put("bmgetProduct", bmgetProduct)	;
+		bmProductMap.put("bmgetProduct", bmgetProduct)	;
 				
 		//시설정보 가져오기
 		List<HallVo> bmHallList = hd.bmHallList();
-		bmgProductMap.put("bmHallList", bmHallList)	;	
+		bmProductMap.put("bmHallList", bmHallList)	;	
 		
 		//상세정보 리스트 가져오기
-		
+		DetailVo bmgetDetail = td.bmgetDetail(prodNo);
+		bmProductMap.put("bmgetDetail", bmgetDetail);
 		
 		//상시할인 리스트 가져오기
+		List<SeatpriceVo> seatpriceList = sd.bmgetSeatPrice(prodNo);
+		bmProductMap.put("seatpriceList", seatpriceList);
+		
 				
 		//좌석 등급별 리스트 가져오기
-		DetailVo bmgetDetail = td.bmgetDetail(prodNo);
-		bmgProductMap.put("bmgetDetail", bmgetDetail);
-				
+		List<DiscountVo> productDisList = dd.bmgetDis(prodNo);
+		bmProductMap.put("productDisList", productDisList);
 		
 		System.out.println("=============================");
 		System.out.println(bmgetProduct);
 		System.out.println(bmHallList);
 		System.out.println(bmgetDetail);
+		System.out.println(seatpriceList);
+		System.out.println(productDisList);
 		
 		return null;
 	}
