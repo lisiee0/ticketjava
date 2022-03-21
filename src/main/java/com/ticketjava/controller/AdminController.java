@@ -83,11 +83,11 @@ public class AdminController {
 		return "admin/theaterSearchResult";
 	}
 	
-	///////////////////
-	/*    공지사항     */
-	//////////////////
 	
-	
+	///////////////////////////////
+	/*           공지사항          */
+	//////////////////////////////
+
 	// 공지사항 리스트 불러오기
 	@RequestMapping("/noticeList")
 	public String noticeList(@RequestParam(value="crtPage", required= false, defaultValue= "1") int crtPage,
