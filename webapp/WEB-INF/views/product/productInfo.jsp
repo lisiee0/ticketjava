@@ -239,7 +239,7 @@
 								<tbody id="reviewListArea">
 									<c:forEach items="${product.review}" var="vo">
 									<tr>
-										<td><span class="star"> ★★★★★ <span style="width: ${vo.rating}0%;">★★★★★</span> 
+										<td><span class="star"> ★★★★★ <span style="width: ${vo.rating*2}0%;">★★★★★</span> 
 										<input type="range" oninput="drawStar(this)" value="1" step="1" min="0"
 												max="10"></span> ${vo.rating}</td>
 										<td>${vo.content}</td>
