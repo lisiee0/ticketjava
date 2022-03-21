@@ -288,7 +288,7 @@
 												<input type="radio" id="2-stars" name="rating" value="2" /> 
 												<label for="2-stars" class="star">★</label> 
 												<input type="radio" id="1-star" name="rating" value="1" /> 
-												<label for="1-star" class="star">★</label>
+												<label for="1-star" class="star">★</label> 
 											</div>
 										</div>
 
