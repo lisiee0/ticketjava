@@ -98,5 +98,58 @@
 </select>
 
 
+<select id="getReviewListMypagePaging" parameterType="ReviewVo" resultType="ReviewVo">
+
+	<![CDATA[
+	select 
+	        rt.rn,
+	        rt.prodName,
+	        rt.reviewNo,
+	        rt.prodNo,
+	        rt.userNo,
+	        rt.content,
+	        rt.rating,
+	        rt.regDate    
+	from (select 	
+	            rownum rn,
+	            ot.prodName,
+	            ot.reviewNo,
+	            ot.prodNo,
+	            ot.userNo,
+	            ot.content,
+	            ot.rating,
+	            ot.regDate    
+	            from (select
+	                        p.prodname prodName,
+	                        r.review_no reviewNo,
+	                        r.prod_no prodNo,
+	                        r.user_no userNo,
+	                        r.content content,
+	                        r.rating rating,
+	                        to_char(r.regdate, 'yy-mm-dd hh24:mi') regDate
+	                    
+	            from	    review r, product p
+	            where	    r.prod_no = p.prod_no
+	            and		    r.user_no= #{userNo}
+	            order	    by reviewNo desc
+	            ) ot
+	        )rt
+	where rn >= #{startRnum}
+	and rn <= #{endRnum}
+	]]>
+	
+</select>
+
+
+<select id="totalCnt" resultType="int">
+	<![CDATA[
+	
+	select	count(*)
+	from	review r, users u
+	where	r.user_no = u.user_no
+	
+	]]>
+</select>
+
 
 </mapper>

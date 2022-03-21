@@ -1,6 +1,8 @@
 package com.ticketjava.dao;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,6 +25,27 @@ public class ReviewDao {
 		return reviewListMypage;
 	}
 
+//	리뷰 리스트 마이페이지 페이징
+	public List<ReviewVo> getReviewListMypagePaging (int startRnum, int endRnum) {
+	System.out.println("ReviewDao 페이징");	
+	
+	Map<String, Integer> map = new HashMap<String, Integer>();
+	map.put("startRnum", startRnum);
+	map.put("endRnum", endRnum);
+	
+	List<ReviewVo> reviewList = sqlSession.selectList("review.getReviewListMypagePaging", map);
+	System.out.println("ReviewDao reviewList 페이징 갯수 출력"+reviewList);
+	
+	return reviewList;
+	
+	}
+	
+//	전체 글 갯수 가져오기 페이징용
+	public int selectTotal() {
+		System.out.println("ReviewDao.selectTotal 실행");
+		return sqlSession.selectOne("review.totalCnt"); 
+	}
+	
 	
 //	리뷰 삭제 마이페이지
 	public void userReviewDelete(int reviewNo) {

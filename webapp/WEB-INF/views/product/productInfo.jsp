@@ -425,7 +425,7 @@ $("#btnReviewSubmit").on("click", function() {
 			prodNo : prodNo,
 			userNo : userNo
 	}; // var guestbookVo
-
+	
 	console.log(reviewVo);
 	
 	$.ajax({

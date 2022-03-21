@@ -85,7 +85,7 @@
 											</tr>
 										</thead>
 
-										<c:forEach items="${requestScope.reviewList}" var="reviewList">
+										<c:forEach items="${requestScope.rMap.reviewList}" var="reviewList">
 											<tbody>
 												<tr>
 													<td>${reviewList.reviewNo}</td>
