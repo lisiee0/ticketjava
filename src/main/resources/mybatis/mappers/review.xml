@@ -98,6 +98,7 @@
 </select>
 
 
+<!-- 마이페이지 페이징 -->
 <select id="getReviewListMypagePaging" parameterType="ReviewVo" resultType="ReviewVo">
 
 	<![CDATA[
@@ -140,7 +141,7 @@
 	
 </select>
 
-
+<!-- 페이징을 위한 토탈카운트 -->>
 <select id="totalCnt" resultType="int">
 	<![CDATA[
 	
