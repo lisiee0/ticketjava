@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>티켓자바 헤더</title>
-
+<script src="${pageContext.request.contextPath}/assets/jquery/jquery-1.12.4.js"></script>
 </head>
 
 <body>
@@ -13,7 +13,7 @@
 			<div id="headerContainerFluid" class="container">
 					
 				<div id="header" class="clearfix no-drag no-ghost">
-					<ul>
+					<ul id="userMenu">
 						<c:choose>
 							<c:when test="${authUser eq null}">
 								
@@ -22,19 +22,25 @@
 							</c:when>
 							
 							<c:when test="${authUser.usertype == 1}"> <!-- 개인 -->
-								<li><a href="${pageContext.request.contextPath}/mypage/reserveAlram"><img src="${pageContext.request.contextPath}/assets/image/index/bell-normal.png"></a></li>
-								<li><a href="${pageContext.request.contextPath}/mypage/reserveAlram"><img src="${pageContext.request.contextPath}/assets/image/index/bell-new.png"></a></li>
-								<li><a href="${pageContext.request.contextPath}/mypage/reserveList">${authUser.name}님</a></li>
+								
+								<li class="userName">
+									<a href="${pageContext.request.contextPath}/mypage/reserveAlram"><img src="${pageContext.request.contextPath}/assets/image/index/bell-normal.png"></a>
+									<a href="${pageContext.request.contextPath}/mypage/reserveAlram"><img src="${pageContext.request.contextPath}/assets/image/index/bell-new.png"></a>
+									<a href="${pageContext.request.contextPath}/mypage/">${authUser.name}님</a>
+								</li>
+								<li><a href="${pageContext.request.contextPath}/mypage/reserveList">예메확인/취소</a></li>
 								<li><a href="${pageContext.request.contextPath}/user/logout">로그아웃</a></li>
 							</c:when>
 							
 							<c:when test="${authUser.usertype == 2}"> <!-- 사업자  -->
-								<li><a href="${pageContext.request.contextPath}/bm/">${authUser.name}님</a></li>
+								<li class="userName">${authUser.name}님</li>
+								<li><a href="${pageContext.request.contextPath}/bm/">공연관리</a></li>
 								<li><a href="${pageContext.request.contextPath}/user/logout">로그아웃</a></li>
 							</c:when>
 							
 							<c:otherwise> <!-- 사이트 관리자 -->
-								<li><a href="${pageContext.request.contextPath}/admin/"><span class="glyphicon glyphicon-cog"></span>&nbsp;${authUser.name}님</a></li>
+								<li class="userName">${authUser.name}님</li>
+								<li><a href="${pageContext.request.contextPath}/admin/"><span class="glyphicon glyphicon-cog"></span> 관리자 메뉴</a></li>
 								<li><a href="${pageContext.request.contextPath}/user/logout">로그아웃</a></li>
 							</c:otherwise>
 							
@@ -107,6 +113,10 @@
 		</nav>
 		<!-- 네비바 구역 종료 -->
 
-
 </body>
+
+<script>
+	$('ul#userMenu li').eq(0).css('border','none');
+</script>
+
 </html>
