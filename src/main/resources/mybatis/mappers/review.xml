@@ -141,48 +141,50 @@
 	</select>
 
 
-<<<<<<< HEAD
-<!-- 마이페이지 페이징 -->
-<select id="getReviewListMypagePaging" parameterType="ReviewVo" resultType="ReviewVo">
 
-	<![CDATA[
-	select 
-	        rt.rn,
-	        rt.prodName,
-	        rt.reviewNo,
-	        rt.prodNo,
-	        rt.userNo,
-	        rt.content,
-	        rt.rating,
-	        rt.regDate    
-	from (select 	
-	            rownum rn,
-	            ot.prodName,
-	            ot.reviewNo,
-	            ot.prodNo,
-	            ot.userNo,
-	            ot.content,
-	            ot.rating,
-	            ot.regDate    
-	            from (select
-	                        p.prodname prodName,
-	                        r.review_no reviewNo,
-	                        r.prod_no prodNo,
-	                        r.user_no userNo,
-	                        r.content content,
-	                        r.rating rating,
-	                        to_char(r.regdate, 'yy-mm-dd hh24:mi') regDate
-	                    
-	            from	    review r, product p
-	            where	    r.prod_no = p.prod_no
-	            and		    r.user_no= #{userNo}
-	            order	    by reviewNo desc
-	            ) ot
-	        )rt
-	where rn >= #{startRnum}
-	and rn <= #{endRnum}
-	]]>
-=======
+	<!-- 마이페이지 페이징 -->
+	<select id="getReviewListMypagePaging" parameterType="ReviewVo" resultType="ReviewVo">
+	
+		<![CDATA[
+		select 
+		        rt.rn,
+		        rt.prodName,
+		        rt.reviewNo,
+		        rt.prodNo,
+		        rt.userNo,
+		        rt.content,
+		        rt.rating,
+		        rt.regDate    
+		from (select 	
+		            rownum rn,
+		            ot.prodName,
+		            ot.reviewNo,
+		            ot.prodNo,
+		            ot.userNo,
+		            ot.content,
+		            ot.rating,
+		            ot.regDate    
+		            from (select
+		                        p.prodname prodName,
+		                        r.review_no reviewNo,
+		                        r.prod_no prodNo,
+		                        r.user_no userNo,
+		                        r.content content,
+		                        r.rating rating,
+		                        to_char(r.regdate, 'yy-mm-dd hh24:mi') regDate
+		                    
+		            from	    review r, product p
+		            where	    r.prod_no = p.prod_no
+		            and		    r.user_no= #{userNo}
+		            order	    by reviewNo desc
+		            ) ot
+		        )rt
+		where rn >= #{startRnum}
+		and rn <= #{endRnum}
+		]]>
+	</select>
+	
+	<!-- 페이징을 위한 토탈카운트 -->
 	<select id="totalCnt" resultType="int">
 		<![CDATA[
 		
@@ -192,17 +194,9 @@
 		
 		]]>
 	</select>
->>>>>>> refs/remotes/origin/master
-	
-<<<<<<< HEAD
-</select>
 
-<!-- 페이징을 위한 토탈카운트 -->>
-<select id="totalCnt" resultType="int">
-	<![CDATA[
-=======
->>>>>>> refs/remotes/origin/master
-	
+
+
 	<!-- 상품별 리뷰 총개수 -->
 	<select id="reviewCntbyprodNo" parameterType="int" resultType="int">
 		<![CDATA[
@@ -236,10 +230,10 @@
 										                content,
 										                rating,
 										                regdate
-									        from    review r, product p
-									        where   r.prod_no=p.prod_no
-									        and     r.prod_no= #{prodNo}
-									        order by regdate desc))
+									        from    	review r, product p
+									        where   	r.prod_no=p.prod_no
+									        and     	r.prod_no= #{prodNo}
+									        order by 	regdate desc))
 			where rn between #{startRnum} and #{endRnum}	
 		]]>
 	</select>
