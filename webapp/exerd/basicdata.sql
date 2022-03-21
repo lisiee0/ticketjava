@@ -112,11 +112,11 @@ insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.n
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 1, 0, 50, '타임 세일', '22/03/07','22/03/20');
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 1, 0, 60, '문화의날', '22/03/10','22/03/20');
 
-insert into review values (SEQ_REVIEW_NO.nextval, 1, 3, '재미있게 잘봤습니다. 다음에 재관람 할인으로 또 보러 갈게요', 8, sysdate);
-insert into review values (SEQ_REVIEW_NO.nextval, 1, 4, '재미있게 잘봤습니다. 강추합니다.', 10, sysdate);
-insert into review values (SEQ_REVIEW_NO.nextval, 1, 5, '주차공간이 협소해서 주차하는데만 2시간 걸렸어요. 9점 드립니다.', 9, sysdate);
-insert into review values (SEQ_REVIEW_NO.nextval, 1, 6, '연출이 상당히 인상깊었습니다.', 10, sysdate);
-insert into review values (SEQ_REVIEW_NO.nextval, 1, 7, '오랜만에 가족들과 본 공연인데 다들 만족했습니다. 감사합니다', 8, sysdate);
+insert into review values (SEQ_REVIEW_NO.nextval, 1, 3, '재미있게 잘봤습니다. 다음에 재관람 할인으로 또 보러 갈게요', 4, sysdate);
+insert into review values (SEQ_REVIEW_NO.nextval, 1, 4, '재미있게 잘봤습니다. 강추합니다.', 5, sysdate);
+insert into review values (SEQ_REVIEW_NO.nextval, 1, 5, '주차공간이 협소해서 주차하는데만 2시간 걸렸어요. 4점 드립니다.', 4, sysdate);
+insert into review values (SEQ_REVIEW_NO.nextval, 1, 6, '연출이 상당히 인상깊었습니다.', 4, sysdate);
+insert into review values (SEQ_REVIEW_NO.nextval, 1, 7, '오랜만에 가족들과 본 공연인데 다들 만족했습니다. 감사합니다', 5, sysdate);
 ---------------------------------------------------------------
 
 -----2아이다----------------------------------------
@@ -138,11 +138,11 @@ insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.n
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 2, 0, 50, '타임 세일', '22/03/07','22/03/20');
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 2, 0, 60, '문화의날', '22/03/10','22/03/20');
 
-insert into review values (SEQ_REVIEW_NO.nextval, 2, 3, '재미있게 잘봤습니다. 다음에 재관람 할인으로 또 보러 갈게요', 8, sysdate);
-insert into review values (SEQ_REVIEW_NO.nextval, 2, 4, '재미있게 잘봤습니다. 강추합니다.', 8, sysdate);
-insert into review values (SEQ_REVIEW_NO.nextval, 2, 5, '주차공간이 협소해서 주차하는데만 2시간 걸렸어요. 9점 드립니다.', 9, sysdate);
-insert into review values (SEQ_REVIEW_NO.nextval, 2, 6, '연출이 상당히 인상깊었습니다.', 8, sysdate);
-insert into review values (SEQ_REVIEW_NO.nextval, 2, 7, '오랜만에 가족들과 본 공연인데 다들 만족했습니다. 감사합니다', 7, sysdate);
+insert into review values (SEQ_REVIEW_NO.nextval, 2, 3, '재미있게 잘봤습니다. 다음에 재관람 할인으로 또 보러 갈게요', 4, sysdate);
+insert into review values (SEQ_REVIEW_NO.nextval, 2, 4, '재미있게 잘봤습니다. 강추합니다.', 4, sysdate);
+insert into review values (SEQ_REVIEW_NO.nextval, 2, 5, '주차공간이 협소해서 주차하는데만 2시간 걸렸어요. 3점 드립니다.', 3, sysdate);
+insert into review values (SEQ_REVIEW_NO.nextval, 2, 6, '연출이 상당히 인상깊었습니다.', 5, sysdate);
+insert into review values (SEQ_REVIEW_NO.nextval, 2, 7, '오랜만에 가족들과 본 공연인데 다들 만족했습니다. 감사합니다', 3, sysdate);
 ---------------------------------------------------------------
 
 -----3엑스칼리버----------------------------------------
@@ -166,9 +166,9 @@ insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) va
 
 insert into review values (SEQ_REVIEW_NO.nextval, 3, 3, '재미있게 잘봤습니다. 다음에 재관람 할인으로 또 보러 갈게요', 5, sysdate);
 insert into review values (SEQ_REVIEW_NO.nextval, 3, 4, '재미있게 잘봤습니다. 강추합니다.', 5, sysdate);
-insert into review values (SEQ_REVIEW_NO.nextval, 3, 5, '주차공간이 협소해서 주차하는데만 2시간 걸렸어요. 9점 드립니다.', 9, sysdate);
+insert into review values (SEQ_REVIEW_NO.nextval, 3, 5, '주차공간이 협소해서 주차하는데만 2시간 걸렸지만. 5점 드립니다.', 4, sysdate);
 insert into review values (SEQ_REVIEW_NO.nextval, 3, 6, '연출이 상당히 인상깊었습니다.', 5, sysdate);
-insert into review values (SEQ_REVIEW_NO.nextval, 3, 7, '오랜만에 가족들과 본 공연인데 다들 만족했습니다. 감사합니다', 5, sysdate);
+insert into review values (SEQ_REVIEW_NO.nextval, 3, 7, '오랜만에 가족들과 본 공연인데 다들 만족했습니다. 감사합니다', 4, sysdate);
 ---------------------------------------------------------------
 
 -----4지킬앤하이드----------------------------------------
@@ -190,11 +190,11 @@ insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.n
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 4, 0, 50, '타임 세일', '22/03/07','22/03/20');
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 4, 0, 60, '문화의날', '22/03/10','22/03/20');
 
-insert into review values (SEQ_REVIEW_NO.nextval, 4, 3, '재미있게 잘봤습니다. 다음에 재관람 할인으로 또 보러 갈게요', 10, sysdate);
-insert into review values (SEQ_REVIEW_NO.nextval, 4, 4, '재미있게 잘봤습니다. 강추합니다.', 10, sysdate);
-insert into review values (SEQ_REVIEW_NO.nextval, 4, 5, '주차공간이 협소해서 주차하는데만 2시간 걸렸어요. 9점 드립니다.', 10, sysdate);
-insert into review values (SEQ_REVIEW_NO.nextval, 4, 6, '연출이 상당히 인상깊었습니다.', 8, sysdate);
-insert into review values (SEQ_REVIEW_NO.nextval, 4, 7, '오랜만에 가족들과 본 공연인데 다들 만족했습니다. 감사합니다', 7, sysdate);
+insert into review values (SEQ_REVIEW_NO.nextval, 4, 3, '재미있게 잘봤습니다. 다음에 재관람 할인으로 또 보러 갈게요', 4, sysdate);
+insert into review values (SEQ_REVIEW_NO.nextval, 4, 4, '재미있게 잘봤습니다. 강추합니다.', 4, sysdate);
+insert into review values (SEQ_REVIEW_NO.nextval, 4, 5, '주차공간이 협소해서 주차하는데만 2시간 걸렸어요. 9점 드립니다.', 4, sysdate);
+insert into review values (SEQ_REVIEW_NO.nextval, 4, 6, '연출이 상당히 인상깊었습니다.', 4, sysdate);
+insert into review values (SEQ_REVIEW_NO.nextval, 4, 7, '오랜만에 가족들과 본 공연인데 다들 만족했습니다. 감사합니다', 5, sysdate);
 ---------------------------------------------------------------
 
 -----5킹아더----------------------------------------
@@ -218,7 +218,7 @@ insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) va
 
 insert into review values (SEQ_REVIEW_NO.nextval, 5, 3, '재미있게 잘봤습니다. 다음에 재관람 할인으로 또 보러 갈게요', 2, sysdate);
 insert into review values (SEQ_REVIEW_NO.nextval, 5, 4, '재미있게 잘봤습니다. 강추합니다.', 1, sysdate);
-insert into review values (SEQ_REVIEW_NO.nextval, 5, 5, '주차공간이 협소해서 주차하는데만 2시간 걸렸어요. 9점 드립니다.', 9, sysdate);
+insert into review values (SEQ_REVIEW_NO.nextval, 5, 5, '주차공간이 협소해서 주차하는데만 2시간 걸렸어요. 9점 드립니다.', 4, sysdate);
 insert into review values (SEQ_REVIEW_NO.nextval, 5, 6, '연출이 상당히 인상깊었습니다.', 3, sysdate);
 insert into review values (SEQ_REVIEW_NO.nextval, 5, 7, '오랜만에 가족들과 본 공연인데 다들 만족했습니다. 감사합니다', 4, sysdate);
 ---------------------------------------------------------------
@@ -244,7 +244,7 @@ insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) va
 
 insert into review values (SEQ_REVIEW_NO.nextval, 6, 3, '재미있게 잘봤습니다. 다음에 재관람 할인으로 또 보러 갈게요', 2, sysdate);
 insert into review values (SEQ_REVIEW_NO.nextval, 6, 4, '재미있게 잘봤습니다. 강추합니다.', 1, sysdate);
-insert into review values (SEQ_REVIEW_NO.nextval, 6, 5, '주차공간이 협소해서 주차하는데만 2시간 걸렸어요. 9점 드립니다.', 9, sysdate);
+insert into review values (SEQ_REVIEW_NO.nextval, 6, 5, '주차공간이 협소해서 주차하는데만 2시간 걸렸어요. 9점 드립니다.', 4, sysdate);
 insert into review values (SEQ_REVIEW_NO.nextval, 6, 6, '연출이 상당히 인상깊었습니다.', 3, sysdate);
 insert into review values (SEQ_REVIEW_NO.nextval, 6, 7, '오랜만에 가족들과 본 공연인데 다들 만족했습니다. 감사합니다', 4, sysdate);
 ---------------------------------------------------------------
@@ -268,11 +268,11 @@ insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.n
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 7, 0, 50, '타임 세일', '22/03/07','22/03/20');
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 7, 0, 60, '문화의날', '22/03/10','22/03/20');
 
-insert into review values (SEQ_REVIEW_NO.nextval, 7, 3, '재미있게 잘봤습니다. 다음에 재관람 할인으로 또 보러 갈게요', 2, sysdate);
-insert into review values (SEQ_REVIEW_NO.nextval, 7, 4, '재미있게 잘봤습니다. 강추합니다.', 1, sysdate);
-insert into review values (SEQ_REVIEW_NO.nextval, 7, 5, '주차공간이 협소해서 주차하는데만 2시간 걸렸어요. 9점 드립니다.', 9, sysdate);
-insert into review values (SEQ_REVIEW_NO.nextval, 7, 6, '연출이 상당히 인상깊었습니다.', 3, sysdate);
-insert into review values (SEQ_REVIEW_NO.nextval, 7, 7, '오랜만에 가족들과 본 공연인데 다들 만족했습니다. 감사합니다', 4, sysdate);
+insert into review values (SEQ_REVIEW_NO.nextval, 7, 3, '재미있게 잘봤습니다. 다음에 재관람 할인으로 또 보러 갈게요', 5, sysdate);
+insert into review values (SEQ_REVIEW_NO.nextval, 7, 4, '재미있게 잘봤습니다. 강추합니다.', 5, sysdate);
+insert into review values (SEQ_REVIEW_NO.nextval, 7, 5, '주차공간이 협소해서 주차하는데만 2시간 걸렸어요. 9점 드립니다.', 5, sysdate);
+insert into review values (SEQ_REVIEW_NO.nextval, 7, 6, '연출이 상당히 인상깊었습니다.', 5, sysdate);
+insert into review values (SEQ_REVIEW_NO.nextval, 7, 7, '오랜만에 가족들과 본 공연인데 다들 만족했습니다. 감사합니다', 5, sysdate);
 ---------------------------------------------------------------
 
 -----8아몬드----------------------------------------
@@ -294,11 +294,11 @@ insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.n
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 8, 0, 50, '타임 세일', '22/03/07','22/03/20');
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 8, 0, 60, '문화의날', '22/03/10','22/03/20');
 
-insert into review values (SEQ_REVIEW_NO.nextval, 8, 3, '재미있게 잘봤습니다. 다음에 재관람 할인으로 또 보러 갈게요', 2, sysdate);
-insert into review values (SEQ_REVIEW_NO.nextval, 8, 4, '재미있게 잘봤습니다. 강추합니다.', 1, sysdate);
-insert into review values (SEQ_REVIEW_NO.nextval, 8, 5, '주차공간이 협소해서 주차하는데만 2시간 걸렸어요. 9점 드립니다.', 9, sysdate);
-insert into review values (SEQ_REVIEW_NO.nextval, 8, 6, '연출이 상당히 인상깊었습니다.', 3, sysdate);
-insert into review values (SEQ_REVIEW_NO.nextval, 8, 7, '오랜만에 가족들과 본 공연인데 다들 만족했습니다. 감사합니다', 4, sysdate);
+insert into review values (SEQ_REVIEW_NO.nextval, 8, 3, '재미있게 잘봤습니다. 다음에 재관람 할인으로 또 보러 갈게요', 5, sysdate);
+insert into review values (SEQ_REVIEW_NO.nextval, 8, 4, '재미있게 잘봤습니다. 강추합니다.', 5, sysdate);
+insert into review values (SEQ_REVIEW_NO.nextval, 8, 5, '주차공간이 협소해서 주차하는데만 2시간 걸렸어요. 9점 드립니다.', 4, sysdate);
+insert into review values (SEQ_REVIEW_NO.nextval, 8, 6, '연출이 상당히 인상깊었습니다.', 5, sysdate);
+insert into review values (SEQ_REVIEW_NO.nextval, 8, 7, '오랜만에 가족들과 본 공연인데 다들 만족했습니다. 감사합니다', 5, sysdate);
 ---------------------------------------------------------------
 
 -----9프리다----------------------------------------
@@ -322,9 +322,9 @@ insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) va
 
 insert into review values (SEQ_REVIEW_NO.nextval, 9, 3, '재미있게 잘봤습니다. 다음에 재관람 할인으로 또 보러 갈게요', 4, sysdate);
 insert into review values (SEQ_REVIEW_NO.nextval, 9, 4, '재미있게 잘봤습니다. 강추합니다.', 3, sysdate);
-insert into review values (SEQ_REVIEW_NO.nextval, 9, 5, '주차공간이 협소해서 주차하는데만 2시간 걸렸어요. 9점 드립니다.', 9, sysdate);
-insert into review values (SEQ_REVIEW_NO.nextval, 9, 6, '연출이 상당히 인상깊었습니다.', 10, sysdate);
-insert into review values (SEQ_REVIEW_NO.nextval, 9, 7, '오랜만에 가족들과 본 공연인데 다들 만족했습니다. 감사합니다', 10, sysdate);
+insert into review values (SEQ_REVIEW_NO.nextval, 9, 5, '주차공간이 협소해서 주차하는데만 2시간 걸렸어요. 9점 드립니다.', 4, sysdate);
+insert into review values (SEQ_REVIEW_NO.nextval, 9, 6, '연출이 상당히 인상깊었습니다.', 5, sysdate);
+insert into review values (SEQ_REVIEW_NO.nextval, 9, 7, '오랜만에 가족들과 본 공연인데 다들 만족했습니다. 감사합니다', 5, sysdate);
 ---------------------------------------------------------------
 
 
@@ -349,9 +349,9 @@ insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) va
 
 insert into review values (SEQ_REVIEW_NO.nextval, 10, 3, '재미있게 잘봤습니다. 다음에 재관람 할인으로 또 보러 갈게요', 4, sysdate);
 insert into review values (SEQ_REVIEW_NO.nextval, 10, 4, '재미있게 잘봤습니다. 강추합니다.', 3, sysdate);
-insert into review values (SEQ_REVIEW_NO.nextval, 10, 5, '주차공간이 협소해서 주차하는데만 2시간 걸렸어요. 9점 드립니다.', 9, sysdate);
+insert into review values (SEQ_REVIEW_NO.nextval, 10, 5, '주차공간이 협소해서 주차하는데만 2시간 걸렸어요. 9점 드립니다.', 4, sysdate);
 insert into review values (SEQ_REVIEW_NO.nextval, 10, 6, '연출이 상당히 인상깊었습니다.', 1, sysdate);
-insert into review values (SEQ_REVIEW_NO.nextval, 10, 7, '오랜만에 가족들과 본 공연인데 다들 만족했습니다. 감사합니다', 8, sysdate);
+insert into review values (SEQ_REVIEW_NO.nextval, 10, 7, '오랜만에 가족들과 본 공연인데 다들 만족했습니다. 감사합니다', 3, sysdate);
 
 /******************************************************/
 /** 연극 (play) 등록 **/
@@ -377,11 +377,11 @@ insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.n
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 11, 0, 50, '타임 세일', '22/03/07','22/03/20');
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 11, 0, 60, '문화의날', '22/03/10','22/03/20');
 
-insert into review values (SEQ_REVIEW_NO.nextval, 11, 3, '시간가는 줄 모르고 몰입하게 되네요. 강추합니다!', 10, sysdate);
-insert into review values (SEQ_REVIEW_NO.nextval, 11, 4, '재미있게 잘봤습니다. 연극 좋아하시는 분들은 꼭 보세요.', 10, sysdate);
-insert into review values (SEQ_REVIEW_NO.nextval, 11, 5, '배우들의 연기가 일품입니다. 무대 연출 또한 훌륭했습니다.', 9, sysdate);
-insert into review values (SEQ_REVIEW_NO.nextval, 11, 6, '극장이 전철과 가깝고 극장안 편의시설 또한 최고였습니다.', 10, sysdate);
-insert into review values (SEQ_REVIEW_NO.nextval, 11, 7, '오랜만에 가족들과 본 연극인데 다들 재밌게 봤습니다. 감사합니다', 10, sysdate);
+insert into review values (SEQ_REVIEW_NO.nextval, 11, 3, '시간가는 줄 모르고 몰입하게 되네요. 강추합니다!', 5, sysdate);
+insert into review values (SEQ_REVIEW_NO.nextval, 11, 4, '재미있게 잘봤습니다. 연극 좋아하시는 분들은 꼭 보세요.', 5, sysdate);
+insert into review values (SEQ_REVIEW_NO.nextval, 11, 5, '배우들의 연기가 일품입니다. 무대 연출 또한 훌륭했습니다.', 4, sysdate);
+insert into review values (SEQ_REVIEW_NO.nextval, 11, 6, '극장이 전철과 가깝고 극장안 편의시설 또한 최고였습니다.', 5, sysdate);
+insert into review values (SEQ_REVIEW_NO.nextval, 11, 7, '오랜만에 가족들과 본 연극인데 다들 재밌게 봤습니다. 감사합니다', 5, sysdate);
 
 
 -----12.쉬어매드니스------------------------------------
@@ -404,11 +404,11 @@ insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.n
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 12, 0, 50, '타임 세일', '22/03/07','22/03/20');
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 12, 0, 60, '문화의날', '22/03/10','22/03/20');
 
-insert into review values (SEQ_REVIEW_NO.nextval, 12, 3, '시간가는 줄 모르고 몰입하게 되네요. 강추합니다!', 9, sysdate);
-insert into review values (SEQ_REVIEW_NO.nextval, 12, 4, '재미있게 잘봤습니다. 연극 좋아하시는 분들은 꼭 보세요.', 10, sysdate);
-insert into review values (SEQ_REVIEW_NO.nextval, 12, 5, '배우들의 연기가 일품입니다. 무대 연출 또한 훌륭했습니다.', 9, sysdate);
-insert into review values (SEQ_REVIEW_NO.nextval, 12, 6, '극장이 전철과 가깝고 극장안 편의시설 또한 최고였습니다.', 9, sysdate);
-insert into review values (SEQ_REVIEW_NO.nextval, 12, 7, '오랜만에 가족들과 본 연극인데 다들 재밌게 봤습니다. 감사합니다', 10, sysdate);
+insert into review values (SEQ_REVIEW_NO.nextval, 12, 3, '시간가는 줄 모르고 몰입하게 되네요. 강추합니다!', 5, sysdate);
+insert into review values (SEQ_REVIEW_NO.nextval, 12, 4, '재미있게 잘봤습니다. 연극 좋아하시는 분들은 꼭 보세요.', 5, sysdate);
+insert into review values (SEQ_REVIEW_NO.nextval, 12, 5, '배우들의 연기가 일품입니다. 무대 연출 또한 훌륭했습니다.', 5, sysdate);
+insert into review values (SEQ_REVIEW_NO.nextval, 12, 6, '극장이 전철과 가깝고 극장안 편의시설 또한 최고였습니다.', 5, sysdate);
+insert into review values (SEQ_REVIEW_NO.nextval, 12, 7, '오랜만에 가족들과 본 연극인데 다들 재밌게 봤습니다. 감사합니다', 5, sysdate);
 
 
 -----13.비클래스------------------------------------
@@ -431,11 +431,11 @@ insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.n
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 13, 0, 50, '타임 세일', '22/03/07','22/03/20');
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 13, 0, 60, '문화의날', '22/03/10','22/03/20');
 
-insert into review values (SEQ_REVIEW_NO.nextval, 13, 3, '시간가는 줄 모르고 몰입하게 되네요. 강추합니다!', 8, sysdate);
-insert into review values (SEQ_REVIEW_NO.nextval, 13, 4, '재미있게 잘봤습니다. 연극 좋아하시는 분들은 꼭 보세요.', 7, sysdate);
-insert into review values (SEQ_REVIEW_NO.nextval, 13, 5, '배우들의 연기가 일품입니다. 무대 연출 또한 훌륭했습니다.', 7, sysdate);
-insert into review values (SEQ_REVIEW_NO.nextval, 13, 6, '극장이 전철과 가깝고 극장안 편의시설 또한 최고였습니다.', 8, sysdate);
-insert into review values (SEQ_REVIEW_NO.nextval, 13, 7, '오랜만에 가족들과 본 연극인데 다들 재밌게 봤습니다. 감사합니다', 10, sysdate);
+insert into review values (SEQ_REVIEW_NO.nextval, 13, 3, '시간가는 줄 모르고 몰입하게 되네요. 강추합니다!', 4, sysdate);
+insert into review values (SEQ_REVIEW_NO.nextval, 13, 4, '재미있게 잘봤습니다. 연극 좋아하시는 분들은 꼭 보세요.', 5, sysdate);
+insert into review values (SEQ_REVIEW_NO.nextval, 13, 5, '배우들의 연기가 일품입니다. 무대 연출 또한 훌륭했습니다.', 5, sysdate);
+insert into review values (SEQ_REVIEW_NO.nextval, 13, 6, '극장이 전철과 가깝고 극장안 편의시설 또한 최고였습니다.', 5, sysdate);
+insert into review values (SEQ_REVIEW_NO.nextval, 13, 7, '오랜만에 가족들과 본 연극인데 다들 재밌게 봤습니다. 감사합니다', 5, sysdate);
 
 
 -----14.옥탑방고양이------------------------------------
@@ -458,9 +458,9 @@ insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.n
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 14, 0, 50, '타임 세일', '22/03/07','22/03/20');
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 14, 0, 60, '문화의날', '22/03/10','22/03/20');
 
-insert into review values (SEQ_REVIEW_NO.nextval, 14, 3, '시간가는 줄 모르고 몰입하게 되네요. 강추합니다!', 8, sysdate);
-insert into review values (SEQ_REVIEW_NO.nextval, 14, 4, '재미있게 잘봤습니다. 연극 좋아하시는 분들은 꼭 보세요.', 7, sysdate);
-insert into review values (SEQ_REVIEW_NO.nextval, 14, 5, '배우들의 연기가 일품입니다. 무대 연출 또한 훌륭했습니다.', 7, sysdate);
+insert into review values (SEQ_REVIEW_NO.nextval, 14, 3, '시간가는 줄 모르고 몰입하게 되네요. 강추합니다!', 5, sysdate);
+insert into review values (SEQ_REVIEW_NO.nextval, 14, 4, '재미있게 잘봤습니다. 연극 좋아하시는 분들은 꼭 보세요.', 5, sysdate);
+insert into review values (SEQ_REVIEW_NO.nextval, 14, 5, '배우들의 연기가 일품입니다. 무대 연출 또한 훌륭했습니다.', 4, sysdate);
 insert into review values (SEQ_REVIEW_NO.nextval, 14, 6, '극장이 전철과 가깝고 극장안 편의시설 또한 최고였습니다.', 4, sysdate);
 insert into review values (SEQ_REVIEW_NO.nextval, 14, 7, '오랜만에 가족들과 본 연극인데 다들 재밌게 봤습니다. 감사합니다', 5, sysdate);
 
@@ -485,9 +485,9 @@ insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.n
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 15, 0, 50, '타임 세일', '22/03/07','22/03/20');
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 15, 0, 60, '문화의날', '22/03/10','22/03/20');
 
-insert into review values (SEQ_REVIEW_NO.nextval, 15, 3, '시간가는 줄 모르고 몰입하게 되네요. 강추합니다!', 8, sysdate);
-insert into review values (SEQ_REVIEW_NO.nextval, 15, 4, '재미있게 잘봤습니다. 연극 좋아하시는 분들은 꼭 보세요.', 6, sysdate);
-insert into review values (SEQ_REVIEW_NO.nextval, 15, 5, '배우들의 연기가 일품입니다. 무대 연출 또한 훌륭했습니다.', 6, sysdate);
+insert into review values (SEQ_REVIEW_NO.nextval, 15, 3, '시간가는 줄 모르고 몰입하게 되네요. 강추합니다!', 3, sysdate);
+insert into review values (SEQ_REVIEW_NO.nextval, 15, 4, '재미있게 잘봤습니다. 연극 좋아하시는 분들은 꼭 보세요.', 1, sysdate);
+insert into review values (SEQ_REVIEW_NO.nextval, 15, 5, '배우들의 연기가 일품입니다. 무대 연출 또한 훌륭했습니다.', 1, sysdate);
 insert into review values (SEQ_REVIEW_NO.nextval, 15, 6, '극장이 전철과 가깝고 극장안 편의시설 또한 최고였습니다.', 4, sysdate);
 insert into review values (SEQ_REVIEW_NO.nextval, 15, 7, '오랜만에 가족들과 본 연극인데 다들 재밌게 봤습니다. 감사합니다', 5, sysdate);
 
@@ -512,9 +512,9 @@ insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.n
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 16, 0, 50, '타임 세일', '22/03/07','22/03/20');
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 16, 0, 60, '문화의날', '22/03/10','22/03/20');
 
-insert into review values (SEQ_REVIEW_NO.nextval, 16, 3, '시간가는 줄 모르고 몰입하게 되네요. 강추합니다!', 8, sysdate);
-insert into review values (SEQ_REVIEW_NO.nextval, 16, 4, '재미있게 잘봤습니다. 연극 좋아하시는 분들은 꼭 보세요.', 7, sysdate);
-insert into review values (SEQ_REVIEW_NO.nextval, 16, 5, '배우들의 연기가 일품입니다. 무대 연출 또한 훌륭했습니다.', 7, sysdate);
+insert into review values (SEQ_REVIEW_NO.nextval, 16, 3, '시간가는 줄 모르고 몰입하게 되네요. 강추합니다!', 5, sysdate);
+insert into review values (SEQ_REVIEW_NO.nextval, 16, 4, '재미있게 잘봤습니다. 연극 좋아하시는 분들은 꼭 보세요.', 4, sysdate);
+insert into review values (SEQ_REVIEW_NO.nextval, 16, 5, '배우들의 연기가 일품입니다. 무대 연출 또한 훌륭했습니다.', 4, sysdate);
 insert into review values (SEQ_REVIEW_NO.nextval, 16, 6, '극장이 전철과 가깝고 극장안 편의시설 또한 최고였습니다.', 4, sysdate);
 insert into review values (SEQ_REVIEW_NO.nextval, 16, 7, '오랜만에 가족들과 본 연극인데 다들 재밌게 봤습니다. 감사합니다', 5, sysdate);
 
@@ -539,11 +539,11 @@ insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.n
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 17, 0, 50, '타임 세일', '22/03/07','22/03/20');
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 17, 0, 60, '문화의날', '22/03/10','22/03/20');
 
-insert into review values (SEQ_REVIEW_NO.nextval, 17, 3, '시간가는 줄 모르고 몰입하게 되네요. 강추합니다!', 10, sysdate);
-insert into review values (SEQ_REVIEW_NO.nextval, 17, 4, '재미있게 잘봤습니다. 연극 좋아하시는 분들은 꼭 보세요.', 10, sysdate);
-insert into review values (SEQ_REVIEW_NO.nextval, 17, 5, '배우들의 연기가 일품입니다. 무대 연출 또한 훌륭했습니다.', 10, sysdate);
-insert into review values (SEQ_REVIEW_NO.nextval, 17, 6, '극장이 전철과 가깝고 극장안 편의시설 또한 최고였습니다.', 10, sysdate);
-insert into review values (SEQ_REVIEW_NO.nextval, 17, 7, '오랜만에 가족들과 본 연극인데 다들 재밌게 봤습니다. 감사합니다', 10, sysdate);
+insert into review values (SEQ_REVIEW_NO.nextval, 17, 3, '시간가는 줄 모르고 몰입하게 되네요. 강추합니다!', 5, sysdate);
+insert into review values (SEQ_REVIEW_NO.nextval, 17, 4, '재미있게 잘봤습니다. 연극 좋아하시는 분들은 꼭 보세요.', 5, sysdate);
+insert into review values (SEQ_REVIEW_NO.nextval, 17, 5, '배우들의 연기가 일품입니다. 무대 연출 또한 훌륭했습니다.', 5, sysdate);
+insert into review values (SEQ_REVIEW_NO.nextval, 17, 6, '극장이 전철과 가깝고 극장안 편의시설 또한 최고였습니다.', 5, sysdate);
+insert into review values (SEQ_REVIEW_NO.nextval, 17, 7, '오랜만에 가족들과 본 연극인데 다들 재밌게 봤습니다. 감사합니다', 5, sysdate);
 
 
 -----18.나의PS파트너------------------------------------
@@ -566,9 +566,9 @@ insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.n
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 18, 0, 50, '타임 세일', '22/03/07','22/03/20');
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 18, 0, 60, '문화의날', '22/03/10','22/03/20');
 
-insert into review values (SEQ_REVIEW_NO.nextval, 18, 3, '시간가는 줄 모르고 몰입하게 되네요. 강추합니다!', 8, sysdate);
-insert into review values (SEQ_REVIEW_NO.nextval, 18, 4, '재미있게 잘봤습니다. 연극 좋아하시는 분들은 꼭 보세요.', 7, sysdate);
-insert into review values (SEQ_REVIEW_NO.nextval, 18, 5, '배우들의 연기가 일품입니다. 무대 연출 또한 훌륭했습니다.', 7, sysdate);
+insert into review values (SEQ_REVIEW_NO.nextval, 18, 3, '시간가는 줄 모르고 몰입하게 되네요. 강추합니다!', 3, sysdate);
+insert into review values (SEQ_REVIEW_NO.nextval, 18, 4, '재미있게 잘봤습니다. 연극 좋아하시는 분들은 꼭 보세요.', 2, sysdate);
+insert into review values (SEQ_REVIEW_NO.nextval, 18, 5, '배우들의 연기가 일품입니다. 무대 연출 또한 훌륭했습니다.', 2, sysdate);
 insert into review values (SEQ_REVIEW_NO.nextval, 18, 6, '극장이 전철과 가깝고 극장안 편의시설 또한 최고였습니다.', 4, sysdate);
 insert into review values (SEQ_REVIEW_NO.nextval, 18, 7, '오랜만에 가족들과 본 연극인데 다들 재밌게 봤습니다. 감사합니다', 5, sysdate);
 
@@ -593,9 +593,9 @@ insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.n
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 19, 0, 50, '타임 세일', '22/03/07','22/03/20');
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 19, 0, 60, '문화의날', '22/03/10','22/03/20');
 
-insert into review values (SEQ_REVIEW_NO.nextval, 19, 3, '시간가는 줄 모르고 몰입하게 되네요. 강추합니다!', 8, sysdate);
-insert into review values (SEQ_REVIEW_NO.nextval, 19, 4, '재미있게 잘봤습니다. 연극 좋아하시는 분들은 꼭 보세요.', 7, sysdate);
-insert into review values (SEQ_REVIEW_NO.nextval, 19, 5, '배우들의 연기가 일품입니다. 무대 연출 또한 훌륭했습니다.', 7, sysdate);
+insert into review values (SEQ_REVIEW_NO.nextval, 19, 3, '시간가는 줄 모르고 몰입하게 되네요. 강추합니다!', 3, sysdate);
+insert into review values (SEQ_REVIEW_NO.nextval, 19, 4, '재미있게 잘봤습니다. 연극 좋아하시는 분들은 꼭 보세요.', 2, sysdate);
+insert into review values (SEQ_REVIEW_NO.nextval, 19, 5, '배우들의 연기가 일품입니다. 무대 연출 또한 훌륭했습니다.', 2, sysdate);
 insert into review values (SEQ_REVIEW_NO.nextval, 19, 6, '극장이 전철과 가깝고 극장안 편의시설 또한 최고였습니다.', 4, sysdate);
 insert into review values (SEQ_REVIEW_NO.nextval, 19, 7, '오랜만에 가족들과 본 연극인데 다들 재밌게 봤습니다. 감사합니다', 5, sysdate);
 
@@ -620,9 +620,9 @@ insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.n
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 20, 0, 50, '타임 세일', '22/03/07','22/03/20');
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 20, 0, 60, '문화의날', '22/03/10','22/03/20');
 
-insert into review values (SEQ_REVIEW_NO.nextval, 20, 3, '시간가는 줄 모르고 몰입하게 되네요. 강추합니다!', 8, sysdate);
-insert into review values (SEQ_REVIEW_NO.nextval, 20, 4, '재미있게 잘봤습니다. 연극 좋아하시는 분들은 꼭 보세요.', 7, sysdate);
-insert into review values (SEQ_REVIEW_NO.nextval, 20, 5, '배우들의 연기가 일품입니다. 무대 연출 또한 훌륭했습니다.', 7, sysdate);
+insert into review values (SEQ_REVIEW_NO.nextval, 20, 3, '시간가는 줄 모르고 몰입하게 되네요. 강추합니다!', 4, sysdate);
+insert into review values (SEQ_REVIEW_NO.nextval, 20, 4, '재미있게 잘봤습니다. 연극 좋아하시는 분들은 꼭 보세요.', 4, sysdate);
+insert into review values (SEQ_REVIEW_NO.nextval, 20, 5, '배우들의 연기가 일품입니다. 무대 연출 또한 훌륭했습니다.', 4, sysdate);
 insert into review values (SEQ_REVIEW_NO.nextval, 20, 6, '극장이 전철과 가깝고 극장안 편의시설 또한 최고였습니다.', 4, sysdate);
 insert into review values (SEQ_REVIEW_NO.nextval, 20, 7, '오랜만에 가족들과 본 연극인데 다들 재밌게 봤습니다. 감사합니다', 5, sysdate);
 
@@ -650,11 +650,11 @@ insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.n
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 21, 0, 50, '타임 세일', '22/03/07','22/03/20');
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 21, 0, 60, '문화의날', '22/03/10','22/03/20');
 
-insert into review values (SEQ_REVIEW_NO.nextval, 21, 3, '후회없는 선택입니다. 제가 좋아하는 노래들이라 더욱 감동적이었습니다', 10, sysdate);
-insert into review values (SEQ_REVIEW_NO.nextval, 21, 4, '연인과 함께 듣기 좋은 노래들입니다.', 10, sysdate);
-insert into review values (SEQ_REVIEW_NO.nextval, 21, 5, '음향장치들이 무대의 생동감을 더해줘서 좋았습니다.', 10, sysdate);
-insert into review values (SEQ_REVIEW_NO.nextval, 21, 6, '직원들의 안내가 매우 친절해서 콘서트 시작 전에 기분이 좋았습니다.', 7, sysdate);
-insert into review values (SEQ_REVIEW_NO.nextval, 21, 7, '오랫동안 기억에 남을만한 추억이었습니다 감사합니다.', 8, sysdate);
+insert into review values (SEQ_REVIEW_NO.nextval, 21, 3, '후회없는 선택입니다. 제가 좋아하는 노래들이라 더욱 감동적이었습니다', 5, sysdate);
+insert into review values (SEQ_REVIEW_NO.nextval, 21, 4, '연인과 함께 듣기 좋은 노래들입니다.', 5, sysdate);
+insert into review values (SEQ_REVIEW_NO.nextval, 21, 5, '음향장치들이 무대의 생동감을 더해줘서 좋았습니다.', 5, sysdate);
+insert into review values (SEQ_REVIEW_NO.nextval, 21, 6, '직원들의 안내가 매우 친절해서 콘서트 시작 전에 기분이 좋았습니다.', 4, sysdate);
+insert into review values (SEQ_REVIEW_NO.nextval, 21, 7, '오랫동안 기억에 남을만한 추억이었습니다 감사합니다.', 4, sysdate);
 
 
 -----22.국카스텐------------------------------------
@@ -677,11 +677,11 @@ insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.n
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 22, 0, 50, '타임 세일', '22/03/07','22/03/20');
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 22, 0, 60, '문화의날', '22/03/10','22/03/20');
 
-insert into review values (SEQ_REVIEW_NO.nextval, 22, 3, '후회없는 선택입니다. 제가 좋아하는 노래들이라 더욱 감동적이었습니다', 7, sysdate);
-insert into review values (SEQ_REVIEW_NO.nextval, 22, 4, '연인과 함께 듣기 좋은 노래들입니다.', 6, sysdate);
+insert into review values (SEQ_REVIEW_NO.nextval, 22, 3, '후회없는 선택입니다. 제가 좋아하는 노래들이라 더욱 감동적이었습니다', 2, sysdate);
+insert into review values (SEQ_REVIEW_NO.nextval, 22, 4, '연인과 함께 듣기 좋은 노래들입니다.', 1, sysdate);
 insert into review values (SEQ_REVIEW_NO.nextval, 22, 5, '음향장치들이 무대의 생동감을 더해줘서 좋았습니다.', 5, sysdate);
 insert into review values (SEQ_REVIEW_NO.nextval, 22, 6, '직원들의 안내가 매우 친절해서 콘서트 시작 전에 기분이 좋았습니다.', 5, sysdate);
-insert into review values (SEQ_REVIEW_NO.nextval, 22, 7, '오랫동안 기억에 남을만한 추억이었습니다 감사합니다.', 6, sysdate);
+insert into review values (SEQ_REVIEW_NO.nextval, 22, 7, '오랫동안 기억에 남을만한 추억이었습니다 감사합니다.', 1, sysdate);
 
 
 -----23.이달의어썸------------------------------------
@@ -704,11 +704,11 @@ insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.n
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 23, 0, 50, '타임 세일', '22/03/07','22/03/20');
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 23, 0, 60, '문화의날', '22/03/10','22/03/20');
 
-insert into review values (SEQ_REVIEW_NO.nextval, 23, 3, '후회없는 선택입니다. 제가 좋아하는 노래들이라 더욱 감동적이었습니다', 9, sysdate);
-insert into review values (SEQ_REVIEW_NO.nextval, 23, 4, '연인과 함께 듣기 좋은 노래들입니다.', 10, sysdate);
-insert into review values (SEQ_REVIEW_NO.nextval, 23, 5, '음향장치들이 무대의 생동감을 더해줘서 좋았습니다.', 9, sysdate);
-insert into review values (SEQ_REVIEW_NO.nextval, 23, 6, '직원들의 안내가 매우 친절해서 콘서트 시작 전에 기분이 좋았습니다.', 9, sysdate);
-insert into review values (SEQ_REVIEW_NO.nextval, 23, 7, '오랫동안 기억에 남을만한 추억이었습니다 감사합니다.', 9, sysdate);
+insert into review values (SEQ_REVIEW_NO.nextval, 23, 3, '후회없는 선택입니다. 제가 좋아하는 노래들이라 더욱 감동적이었습니다', 5, sysdate);
+insert into review values (SEQ_REVIEW_NO.nextval, 23, 4, '연인과 함께 듣기 좋은 노래들입니다.', 5, sysdate);
+insert into review values (SEQ_REVIEW_NO.nextval, 23, 5, '음향장치들이 무대의 생동감을 더해줘서 좋았습니다.', 4, sysdate);
+insert into review values (SEQ_REVIEW_NO.nextval, 23, 6, '직원들의 안내가 매우 친절해서 콘서트 시작 전에 기분이 좋았습니다.', 5, sysdate);
+insert into review values (SEQ_REVIEW_NO.nextval, 23, 7, '오랫동안 기억에 남을만한 추억이었습니다 감사합니다.', 5, sysdate);
 
 
 -----24.김문정only------------------------------------
@@ -731,11 +731,11 @@ insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.n
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 24, 0, 50, '타임 세일', '22/03/07','22/03/20');
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 24, 0, 60, '문화의날', '22/03/10','22/03/20');
 
-insert into review values (SEQ_REVIEW_NO.nextval, 24, 3, '후회없는 선택입니다. 제가 좋아하는 노래들이라 더욱 감동적이었습니다', 7, sysdate);
-insert into review values (SEQ_REVIEW_NO.nextval, 24, 4, '연인과 함께 듣기 좋은 노래들입니다.', 6, sysdate);
+insert into review values (SEQ_REVIEW_NO.nextval, 24, 3, '후회없는 선택입니다. 제가 좋아하는 노래들이라 더욱 감동적이었습니다', 2, sysdate);
+insert into review values (SEQ_REVIEW_NO.nextval, 24, 4, '연인과 함께 듣기 좋은 노래들입니다.', 1, sysdate);
 insert into review values (SEQ_REVIEW_NO.nextval, 24, 5, '음향장치들이 무대의 생동감을 더해줘서 좋았습니다.', 5, sysdate);
 insert into review values (SEQ_REVIEW_NO.nextval, 24, 6, '직원들의 안내가 매우 친절해서 콘서트 시작 전에 기분이 좋았습니다.', 5, sysdate);
-insert into review values (SEQ_REVIEW_NO.nextval, 24, 7, '오랫동안 기억에 남을만한 추억이었습니다 감사합니다.', 6, sysdate);
+insert into review values (SEQ_REVIEW_NO.nextval, 24, 7, '오랫동안 기억에 남을만한 추억이었습니다 감사합니다.', 1, sysdate);
 
 
 
@@ -759,11 +759,11 @@ insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.n
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 25, 0, 50, '타임 세일', '22/03/07','22/03/20');
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 25, 0, 60, '문화의날', '22/03/10','22/03/20');
 
-insert into review values (SEQ_REVIEW_NO.nextval, 25, 3, '후회없는 선택입니다. 제가 좋아하는 노래들이라 더욱 감동적이었습니다', 9, sysdate);
-insert into review values (SEQ_REVIEW_NO.nextval, 25, 4, '연인과 함께 듣기 좋은 노래들입니다.', 10, sysdate);
-insert into review values (SEQ_REVIEW_NO.nextval, 25, 5, '음향장치들이 무대의 생동감을 더해줘서 좋았습니다.', 10, sysdate);
-insert into review values (SEQ_REVIEW_NO.nextval, 25, 6, '직원들의 안내가 매우 친절해서 콘서트 시작 전에 기분이 좋았습니다.', 10, sysdate);
-insert into review values (SEQ_REVIEW_NO.nextval, 25, 7, '오랫동안 기억에 남을만한 추억이었습니다 감사합니다.', 10, sysdate);
+insert into review values (SEQ_REVIEW_NO.nextval, 25, 3, '후회없는 선택입니다. 제가 좋아하는 노래들이라 더욱 감동적이었습니다', 5, sysdate);
+insert into review values (SEQ_REVIEW_NO.nextval, 25, 4, '연인과 함께 듣기 좋은 노래들입니다.', 5, sysdate);
+insert into review values (SEQ_REVIEW_NO.nextval, 25, 5, '음향장치들이 무대의 생동감을 더해줘서 좋았습니다.', 5, sysdate);
+insert into review values (SEQ_REVIEW_NO.nextval, 25, 6, '직원들의 안내가 매우 친절해서 콘서트 시작 전에 기분이 좋았습니다.', 5, sysdate);
+insert into review values (SEQ_REVIEW_NO.nextval, 25, 7, '오랫동안 기억에 남을만한 추억이었습니다 감사합니다.', 5, sysdate);
 
 
 
@@ -787,10 +787,10 @@ insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.n
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 26, 0, 50, '타임 세일', '22/03/07','22/03/20');
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 26, 0, 60, '문화의날', '22/03/10','22/03/20');
 
-insert into review values (SEQ_REVIEW_NO.nextval, 26, 3, '후회없는 선택입니다. 제가 좋아하는 노래들이라 더욱 감동적이었습니다', 9, sysdate);
-insert into review values (SEQ_REVIEW_NO.nextval, 26, 4, '연인과 함께 듣기 좋은 노래들입니다.', 10, sysdate);
-insert into review values (SEQ_REVIEW_NO.nextval, 26, 5, '음향장치들이 무대의 생동감을 더해줘서 좋았습니다.', 5, sysdate);
-insert into review values (SEQ_REVIEW_NO.nextval, 26, 6, '직원들의 안내가 매우 친절해서 콘서트 시작 전에 기분이 좋았습니다.', 10, sysdate);
+insert into review values (SEQ_REVIEW_NO.nextval, 26, 3, '후회없는 선택입니다. 제가 좋아하는 노래들이라 더욱 감동적이었습니다', 4, sysdate);
+insert into review values (SEQ_REVIEW_NO.nextval, 26, 4, '연인과 함께 듣기 좋은 노래들입니다.', 3, sysdate);
+insert into review values (SEQ_REVIEW_NO.nextval, 26, 5, '음향장치들이 무대의 생동감을 더해줘서 좋았습니다.', 2, sysdate);
+insert into review values (SEQ_REVIEW_NO.nextval, 26, 6, '직원들의 안내가 매우 친절해서 콘서트 시작 전에 기분이 좋았습니다.', 3, sysdate);
 insert into review values (SEQ_REVIEW_NO.nextval, 26, 7, '오랫동안 기억에 남을만한 추억이었습니다 감사합니다.', 4, sysdate);
 
 
@@ -815,11 +815,11 @@ insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.n
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 27, 0, 50, '타임 세일', '22/03/07','22/03/20');
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 27, 0, 60, '문화의날', '22/03/10','22/03/20');
 
-insert into review values (SEQ_REVIEW_NO.nextval, 27, 3, '후회없는 선택입니다. 제가 좋아하는 노래들이라 더욱 감동적이었습니다', 9, sysdate);
-insert into review values (SEQ_REVIEW_NO.nextval, 27, 4, '연인과 함께 듣기 좋은 노래들입니다.', 10, sysdate);
-insert into review values (SEQ_REVIEW_NO.nextval, 27, 5, '음향장치들이 무대의 생동감을 더해줘서 좋았습니다.', 6, sysdate);
-insert into review values (SEQ_REVIEW_NO.nextval, 27, 6, '직원들의 안내가 매우 친절해서 콘서트 시작 전에 기분이 좋았습니다.', 7, sysdate);
-insert into review values (SEQ_REVIEW_NO.nextval, 27, 7, '오랫동안 기억에 남을만한 추억이었습니다 감사합니다.', 10, sysdate);
+insert into review values (SEQ_REVIEW_NO.nextval, 27, 3, '후회없는 선택입니다. 제가 좋아하는 노래들이라 더욱 감동적이었습니다', 4, sysdate);
+insert into review values (SEQ_REVIEW_NO.nextval, 27, 4, '연인과 함께 듣기 좋은 노래들입니다.', 5, sysdate);
+insert into review values (SEQ_REVIEW_NO.nextval, 27, 5, '음향장치들이 무대의 생동감을 더해줘서 좋았습니다.', 5, sysdate);
+insert into review values (SEQ_REVIEW_NO.nextval, 27, 6, '직원들의 안내가 매우 친절해서 콘서트 시작 전에 기분이 좋았습니다.', 4, sysdate);
+insert into review values (SEQ_REVIEW_NO.nextval, 27, 7, '오랫동안 기억에 남을만한 추억이었습니다 감사합니다.', 4, sysdate);
 
 
 
@@ -843,11 +843,11 @@ insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.n
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 28, 0, 50, '타임 세일', '22/03/07','22/03/20');
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 28, 0, 60, '문화의날', '22/03/10','22/03/20');
 
-insert into review values (SEQ_REVIEW_NO.nextval, 28, 3, '후회없는 선택입니다. 제가 좋아하는 노래들이라 더욱 감동적이었습니다', 9, sysdate);
-insert into review values (SEQ_REVIEW_NO.nextval, 28, 4, '연인과 함께 듣기 좋은 노래들입니다.', 10, sysdate);
-insert into review values (SEQ_REVIEW_NO.nextval, 28, 5, '음향장치들이 무대의 생동감을 더해줘서 좋았습니다.', 10, sysdate);
-insert into review values (SEQ_REVIEW_NO.nextval, 28, 6, '직원들의 안내가 매우 친절해서 콘서트 시작 전에 기분이 좋았습니다.', 10, sysdate);
-insert into review values (SEQ_REVIEW_NO.nextval, 28, 7, '오랫동안 기억에 남을만한 추억이었습니다 감사합니다.', 10, sysdate);
+insert into review values (SEQ_REVIEW_NO.nextval, 28, 3, '후회없는 선택입니다. 제가 좋아하는 노래들이라 더욱 감동적이었습니다', 4, sysdate);
+insert into review values (SEQ_REVIEW_NO.nextval, 28, 4, '연인과 함께 듣기 좋은 노래들입니다.', 4, sysdate);
+insert into review values (SEQ_REVIEW_NO.nextval, 28, 5, '음향장치들이 무대의 생동감을 더해줘서 좋았습니다.', 4, sysdate);
+insert into review values (SEQ_REVIEW_NO.nextval, 28, 6, '직원들의 안내가 매우 친절해서 콘서트 시작 전에 기분이 좋았습니다.', 5, sysdate);
+insert into review values (SEQ_REVIEW_NO.nextval, 28, 7, '오랫동안 기억에 남을만한 추억이었습니다 감사합니다.', 4, sysdate);
 
 
 
@@ -871,11 +871,11 @@ insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.n
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 29, 0, 50, '타임 세일', '22/03/07','22/03/20');
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 29, 0, 60, '문화의날', '22/03/10','22/03/20');
 
-insert into review values (SEQ_REVIEW_NO.nextval, 29, 3, '후회없는 선택입니다. 제가 좋아하는 노래들이라 더욱 감동적이었습니다', 9, sysdate);
-insert into review values (SEQ_REVIEW_NO.nextval, 29, 4, '연인과 함께 듣기 좋은 노래들입니다.', 10, sysdate);
-insert into review values (SEQ_REVIEW_NO.nextval, 29, 5, '음향장치들이 무대의 생동감을 더해줘서 좋았습니다.', 10, sysdate);
-insert into review values (SEQ_REVIEW_NO.nextval, 29, 6, '직원들의 안내가 매우 친절해서 콘서트 시작 전에 기분이 좋았습니다.', 10, sysdate);
-insert into review values (SEQ_REVIEW_NO.nextval, 29, 7, '오랫동안 기억에 남을만한 추억이었습니다 감사합니다.', 10, sysdate);
+insert into review values (SEQ_REVIEW_NO.nextval, 29, 3, '후회없는 선택입니다. 제가 좋아하는 노래들이라 더욱 감동적이었습니다', 4, sysdate);
+insert into review values (SEQ_REVIEW_NO.nextval, 29, 4, '연인과 함께 듣기 좋은 노래들입니다.', 3, sysdate);
+insert into review values (SEQ_REVIEW_NO.nextval, 29, 5, '음향장치들이 무대의 생동감을 더해줘서 좋았습니다.', 4, sysdate);
+insert into review values (SEQ_REVIEW_NO.nextval, 29, 6, '직원들의 안내가 매우 친절해서 콘서트 시작 전에 기분이 좋았습니다.', 2, sysdate);
+insert into review values (SEQ_REVIEW_NO.nextval, 29, 7, '오랫동안 기억에 남을만한 추억이었습니다 감사합니다.', 4, sysdate);
 
 
 
@@ -899,11 +899,11 @@ insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.n
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 30, 0, 50, '타임 세일', '22/03/07','22/03/20');
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 30, 0, 60, '문화의날', '22/03/10','22/03/20');
 
-insert into review values (SEQ_REVIEW_NO.nextval, 30, 3, '후회없는 선택입니다. 제가 좋아하는 노래들이라 더욱 감동적이었습니다', 9, sysdate);
-insert into review values (SEQ_REVIEW_NO.nextval, 30, 4, '연인과 함께 듣기 좋은 노래들입니다.', 10, sysdate);
-insert into review values (SEQ_REVIEW_NO.nextval, 30, 5, '음향장치들이 무대의 생동감을 더해줘서 좋았습니다.', 10, sysdate);
-insert into review values (SEQ_REVIEW_NO.nextval, 30, 6, '직원들의 안내가 매우 친절해서 콘서트 시작 전에 기분이 좋았습니다.', 10, sysdate);
-insert into review values (SEQ_REVIEW_NO.nextval, 30, 7, '오랫동안 기억에 남을만한 추억이었습니다 감사합니다.', 10, sysdate);
+insert into review values (SEQ_REVIEW_NO.nextval, 30, 3, '후회없는 선택입니다. 제가 좋아하는 노래들이라 더욱 감동적이었습니다', 4, sysdate);
+insert into review values (SEQ_REVIEW_NO.nextval, 30, 4, '연인과 함께 듣기 좋은 노래들입니다.', 2, sysdate);
+insert into review values (SEQ_REVIEW_NO.nextval, 30, 5, '음향장치들이 무대의 생동감을 더해줘서 좋았습니다.', 1, sysdate);
+insert into review values (SEQ_REVIEW_NO.nextval, 30, 6, '직원들의 안내가 매우 친절해서 콘서트 시작 전에 기분이 좋았습니다.', 3, sysdate);
+insert into review values (SEQ_REVIEW_NO.nextval, 30, 7, '오랫동안 기억에 남을만한 추억이었습니다 감사합니다.', 5, sysdate);
 
 /******************************************************/
 /** 스포츠 (sports) 등록 **/
@@ -930,11 +930,11 @@ insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.n
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 31, 0, 50, '타임 세일', '22/03/07','22/03/20');
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 31, 0, 60, '문화의날', '22/03/10','22/03/20');
 
-insert into review values (SEQ_REVIEW_NO.nextval, 31, 3, 'K리그 화이팅', 9, sysdate);
-insert into review values (SEQ_REVIEW_NO.nextval, 31, 4, '경기력이 갈수록 좋아지니까 더 재밌습니다', 10, sysdate);
-insert into review values (SEQ_REVIEW_NO.nextval, 31, 5, '주차공간이 다소 협소합니다. 주차하실분은 30분전에 가시는걸 추천합니다', 7, sysdate);
-insert into review values (SEQ_REVIEW_NO.nextval, 31, 6, '편의시설이 훌륭합니다', 10, sysdate);
-insert into review values (SEQ_REVIEW_NO.nextval, 31, 7, '뜨거운 응원의 열기를 느낄 수 있어 좋았습니다.', 8, sysdate);
+insert into review values (SEQ_REVIEW_NO.nextval, 31, 3, 'K리그 화이팅', 4, sysdate);
+insert into review values (SEQ_REVIEW_NO.nextval, 31, 4, '경기력이 갈수록 좋아지니까 더 재밌습니다', 5, sysdate);
+insert into review values (SEQ_REVIEW_NO.nextval, 31, 5, '주차공간이 다소 협소합니다. 주차하실분은 30분전에 가시는걸 추천합니다', 2, sysdate);
+insert into review values (SEQ_REVIEW_NO.nextval, 31, 6, '편의시설이 훌륭합니다', 5, sysdate);
+insert into review values (SEQ_REVIEW_NO.nextval, 31, 7, '뜨거운 응원의 열기를 느낄 수 있어 좋았습니다.', 3, sysdate);
 
 -----32.수원삼성------------------------------------
 
@@ -956,11 +956,11 @@ insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.n
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 32, 0, 50, '타임 세일', '22/03/07','22/03/20');
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 32, 0, 60, '문화의날', '22/03/10','22/03/20');
 
-insert into review values (SEQ_REVIEW_NO.nextval, 32, 3, 'K리그 화이팅', 9, sysdate);
-insert into review values (SEQ_REVIEW_NO.nextval, 32, 4, '경기력이 갈수록 좋아지니까 더 재밌습니다', 10, sysdate);
-insert into review values (SEQ_REVIEW_NO.nextval, 32, 5, '주차공간이 다소 협소합니다. 주차하실분은 30분전에 가시는걸 추천합니다', 10, sysdate);
-insert into review values (SEQ_REVIEW_NO.nextval, 32, 6, '편의시설이 훌륭합니다', 10, sysdate);
-insert into review values (SEQ_REVIEW_NO.nextval, 32, 7, '뜨거운 응원의 열기를 느낄 수 있어 좋았습니다.', 10, sysdate);
+insert into review values (SEQ_REVIEW_NO.nextval, 32, 3, 'K리그 화이팅', 5, sysdate);
+insert into review values (SEQ_REVIEW_NO.nextval, 32, 4, '경기력이 갈수록 좋아지니까 더 재밌습니다', 5, sysdate);
+insert into review values (SEQ_REVIEW_NO.nextval, 32, 5, '주차공간이 다소 협소합니다. 주차하실분은 30분전에 가시는걸 추천합니다', 5, sysdate);
+insert into review values (SEQ_REVIEW_NO.nextval, 32, 6, '편의시설이 훌륭합니다', 5, sysdate);
+insert into review values (SEQ_REVIEW_NO.nextval, 32, 7, '뜨거운 응원의 열기를 느낄 수 있어 좋았습니다.', 5, sysdate);
 
 
 
@@ -984,11 +984,11 @@ insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.n
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 33, 0, 50, '타임 세일', '22/03/07','22/03/20');
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 33, 0, 60, '문화의날', '22/03/10','22/03/20');
 
-insert into review values (SEQ_REVIEW_NO.nextval, 33, 3, 'K리그 화이팅',8, sysdate);
-insert into review values (SEQ_REVIEW_NO.nextval, 33, 4, '경기력이 갈수록 좋아지니까 더 재밌습니다', 10, sysdate);
-insert into review values (SEQ_REVIEW_NO.nextval, 33, 5, '주차공간이 다소 협소합니다. 주차하실분은 30분전에 가시는걸 추천합니다', 10, sysdate);
-insert into review values (SEQ_REVIEW_NO.nextval, 33, 6, '편의시설이 훌륭합니다', 8, sysdate);
-insert into review values (SEQ_REVIEW_NO.nextval, 33, 7, '뜨거운 응원의 열기를 느낄 수 있어 좋았습니다.', 10, sysdate);
+insert into review values (SEQ_REVIEW_NO.nextval, 33, 3, 'K리그 화이팅',3, sysdate);
+insert into review values (SEQ_REVIEW_NO.nextval, 33, 4, '경기력이 갈수록 좋아지니까 더 재밌습니다', 5, sysdate);
+insert into review values (SEQ_REVIEW_NO.nextval, 33, 5, '주차공간이 다소 협소합니다. 주차하실분은 30분전에 가시는걸 추천합니다', 5, sysdate);
+insert into review values (SEQ_REVIEW_NO.nextval, 33, 6, '편의시설이 훌륭합니다', 3, sysdate);
+insert into review values (SEQ_REVIEW_NO.nextval, 33, 7, '뜨거운 응원의 열기를 느낄 수 있어 좋았습니다.', 5, sysdate);
 
 
 -----34.부천FC------------------------------------
@@ -1011,11 +1011,11 @@ insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.n
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 34, 0, 50, '타임 세일', '22/03/07','22/03/20');
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 34, 0, 60, '문화의날', '22/03/10','22/03/20');
 
-insert into review values (SEQ_REVIEW_NO.nextval, 34, 3, 'K리그 화이팅',8, sysdate);
-insert into review values (SEQ_REVIEW_NO.nextval, 34, 4, '경기력이 갈수록 좋아지니까 더 재밌습니다', 10, sysdate);
-insert into review values (SEQ_REVIEW_NO.nextval, 34, 5, '주차공간이 다소 협소합니다. 주차하실분은 30분전에 가시는걸 추천합니다', 10, sysdate);
-insert into review values (SEQ_REVIEW_NO.nextval, 34, 6, '편의시설이 훌륭합니다', 8, sysdate);
-insert into review values (SEQ_REVIEW_NO.nextval, 34, 7, '뜨거운 응원의 열기를 느낄 수 있어 좋았습니다.', 10, sysdate);
+insert into review values (SEQ_REVIEW_NO.nextval, 34, 3, 'K리그 화이팅', 4, sysdate);
+insert into review values (SEQ_REVIEW_NO.nextval, 34, 4, '경기력이 갈수록 좋아지니까 더 재밌습니다', 5, sysdate);
+insert into review values (SEQ_REVIEW_NO.nextval, 34, 5, '주차공간이 다소 협소합니다. 주차하실분은 30분전에 가시는걸 추천합니다', 5, sysdate);
+insert into review values (SEQ_REVIEW_NO.nextval, 34, 6, '편의시설이 훌륭합니다', 4, sysdate);
+insert into review values (SEQ_REVIEW_NO.nextval, 34, 7, '뜨거운 응원의 열기를 느낄 수 있어 좋았습니다.', 5, sysdate);
 
 
 
@@ -1040,11 +1040,11 @@ insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.n
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 35, 0, 50, '타임 세일', '22/03/07','22/03/20');
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 35, 0, 60, '문화의날', '22/03/10','22/03/20');
 
-insert into review values (SEQ_REVIEW_NO.nextval, 35, 3, 'K리그 화이팅',8, sysdate);
-insert into review values (SEQ_REVIEW_NO.nextval, 35, 4, '경기력이 갈수록 좋아지니까 더 재밌습니다', 10, sysdate);
-insert into review values (SEQ_REVIEW_NO.nextval, 35, 5, '주차공간이 다소 협소합니다. 주차하실분은 30분전에 가시는걸 추천합니다', 10, sysdate);
-insert into review values (SEQ_REVIEW_NO.nextval, 35, 6, '편의시설이 훌륭합니다', 8, sysdate);
-insert into review values (SEQ_REVIEW_NO.nextval, 35, 7, '뜨거운 응원의 열기를 느낄 수 있어 좋았습니다.', 10, sysdate);
+insert into review values (SEQ_REVIEW_NO.nextval, 35, 3, 'K리그 화이팅',4, sysdate);
+insert into review values (SEQ_REVIEW_NO.nextval, 35, 4, '경기력이 갈수록 좋아지니까 더 재밌습니다', 4, sysdate);
+insert into review values (SEQ_REVIEW_NO.nextval, 35, 5, '주차공간이 다소 협소합니다. 주차하실분은 30분전에 가시는걸 추천합니다', 5, sysdate);
+insert into review values (SEQ_REVIEW_NO.nextval, 35, 6, '편의시설이 훌륭합니다', 4, sysdate);
+insert into review values (SEQ_REVIEW_NO.nextval, 35, 7, '뜨거운 응원의 열기를 느낄 수 있어 좋았습니다.', 4, sysdate);
 
 
 
@@ -1068,10 +1068,10 @@ insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.n
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 36, 0, 50, '타임 세일', '22/03/07','22/03/20');
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 36, 0, 60, '문화의날', '22/03/10','22/03/20');
 
-insert into review values (SEQ_REVIEW_NO.nextval, 36, 3, 'K리그 화이팅',8, sysdate);
+insert into review values (SEQ_REVIEW_NO.nextval, 36, 3, 'K리그 화이팅',3, sysdate);
 insert into review values (SEQ_REVIEW_NO.nextval, 36, 4, '경기력이 갈수록 좋아지니까 더 재밌습니다', 5, sysdate);
 insert into review values (SEQ_REVIEW_NO.nextval, 36, 5, '주차공간이 다소 협소합니다. 주차하실분은 30분전에 가시는걸 추천합니다', 5, sysdate);
-insert into review values (SEQ_REVIEW_NO.nextval, 36, 6, '편의시설이 훌륭합니다', 8, sysdate);
+insert into review values (SEQ_REVIEW_NO.nextval, 36, 6, '편의시설이 훌륭합니다', 3, sysdate);
 insert into review values (SEQ_REVIEW_NO.nextval, 36, 7, '뜨거운 응원의 열기를 느낄 수 있어 좋았습니다.', 5, sysdate);
 
 
@@ -1096,11 +1096,11 @@ insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.n
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 37, 0, 50, '타임 세일', '22/03/07','22/03/20');
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 37, 0, 60, '문화의날', '22/03/10','22/03/20');
 
-insert into review values (SEQ_REVIEW_NO.nextval, 37, 3, 'K리그 화이팅',8, sysdate);
-insert into review values (SEQ_REVIEW_NO.nextval, 37, 4, '경기력이 갈수록 좋아지니까 더 재밌습니다', 10, sysdate);
-insert into review values (SEQ_REVIEW_NO.nextval, 37, 5, '주차공간이 다소 협소합니다. 주차하실분은 30분전에 가시는걸 추천합니다', 9, sysdate);
-insert into review values (SEQ_REVIEW_NO.nextval, 37, 6, '편의시설이 훌륭합니다', 8, sysdate);
-insert into review values (SEQ_REVIEW_NO.nextval, 37, 7, '뜨거운 응원의 열기를 느낄 수 있어 좋았습니다.', 10, sysdate);
+insert into review values (SEQ_REVIEW_NO.nextval, 37, 3, 'K리그 화이팅', 5, sysdate);
+insert into review values (SEQ_REVIEW_NO.nextval, 37, 4, '경기력이 갈수록 좋아지니까 더 재밌습니다', 5, sysdate);
+insert into review values (SEQ_REVIEW_NO.nextval, 37, 5, '주차공간이 다소 협소합니다. 주차하실분은 30분전에 가시는걸 추천합니다', 4, sysdate);
+insert into review values (SEQ_REVIEW_NO.nextval, 37, 6, '편의시설이 훌륭합니다', 5, sysdate);
+insert into review values (SEQ_REVIEW_NO.nextval, 37, 7, '뜨거운 응원의 열기를 느낄 수 있어 좋았습니다.', 5, sysdate);
 
 
 -----38.성남 FC------------------------------------
@@ -1123,11 +1123,11 @@ insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.n
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 38, 0, 50, '타임 세일', '22/03/07','22/03/20');
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 38, 0, 60, '문화의날', '22/03/10','22/03/20');
 
-insert into review values (SEQ_REVIEW_NO.nextval, 38, 3, 'K리그 화이팅',9, sysdate);
-insert into review values (SEQ_REVIEW_NO.nextval, 38, 4, '경기력이 갈수록 좋아지니까 더 재밌습니다', 10, sysdate);
-insert into review values (SEQ_REVIEW_NO.nextval, 38, 5, '주차공간이 다소 협소합니다. 주차하실분은 30분전에 가시는걸 추천합니다', 9, sysdate);
-insert into review values (SEQ_REVIEW_NO.nextval, 38, 6, '편의시설이 훌륭합니다', 9, sysdate);
-insert into review values (SEQ_REVIEW_NO.nextval, 38, 7, '뜨거운 응원의 열기를 느낄 수 있어 좋았습니다.', 10, sysdate);
+insert into review values (SEQ_REVIEW_NO.nextval, 38, 3, 'K리그 화이팅',4, sysdate);
+insert into review values (SEQ_REVIEW_NO.nextval, 38, 4, '경기력이 갈수록 좋아지니까 더 재밌습니다', 5, sysdate);
+insert into review values (SEQ_REVIEW_NO.nextval, 38, 5, '주차공간이 다소 협소합니다. 주차하실분은 30분전에 가시는걸 추천합니다', 4, sysdate);
+insert into review values (SEQ_REVIEW_NO.nextval, 38, 6, '편의시설이 훌륭합니다', 4, sysdate);
+insert into review values (SEQ_REVIEW_NO.nextval, 38, 7, '뜨거운 응원의 열기를 느낄 수 있어 좋았습니다.', 5, sysdate);
 
 /******************************************************/
 /** 전시 (exhibition) 등록 **/
@@ -1153,11 +1153,11 @@ insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.n
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 39, 0, 50, '타임 세일', '22/03/07','22/03/20');
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 39, 0, 60, '문화의날', '22/03/10','22/03/20');
 
-insert into review values (SEQ_REVIEW_NO.nextval, 39, 3, '기묘하네요.',9, sysdate);
-insert into review values (SEQ_REVIEW_NO.nextval, 39, 4, '신기합니다. 한번쯤은 볼만한 전시회입니다.', 6, sysdate);
-insert into review values (SEQ_REVIEW_NO.nextval, 39, 5, '주차공간이 다소 협소합니다. 주차하실분은 50분전에 가시는걸 추천합니다', 9, sysdate);
-insert into review values (SEQ_REVIEW_NO.nextval, 39, 6, '아이들이 너무 좋아하네요. 재미있었습니다', 9, sysdate);
-insert into review values (SEQ_REVIEW_NO.nextval, 39, 7, '교육용으로도 손색없습니다.', 7, sysdate);
+insert into review values (SEQ_REVIEW_NO.nextval, 39, 3, '기묘하네요.',4, sysdate);
+insert into review values (SEQ_REVIEW_NO.nextval, 39, 4, '신기합니다. 한번쯤은 볼만한 전시회입니다.', 1, sysdate);
+insert into review values (SEQ_REVIEW_NO.nextval, 39, 5, '주차공간이 다소 협소합니다. 주차하실분은 50분전에 가시는걸 추천합니다', 4, sysdate);
+insert into review values (SEQ_REVIEW_NO.nextval, 39, 6, '아이들이 너무 좋아하네요. 재미있었습니다', 4, sysdate);
+insert into review values (SEQ_REVIEW_NO.nextval, 39, 7, '교육용으로도 손색없습니다.', 2, sysdate);
 
 -----40.hybe------------------------------------
 
@@ -1179,11 +1179,11 @@ insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.n
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 40, 0, 50, '타임 세일', '22/03/07','22/03/20');
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 40, 0, 60, '문화의날', '22/03/10','22/03/20');
 
-insert into review values (SEQ_REVIEW_NO.nextval, 40, 3, '기묘하네요.', 7, sysdate);
-insert into review values (SEQ_REVIEW_NO.nextval, 40, 4, '신기합니다. 한번쯤은 볼만한 전시회입니다.', 6, sysdate);
-insert into review values (SEQ_REVIEW_NO.nextval, 40, 5, '주차공간이 다소 협소합니다. 주차하실분은 50분전에 가시는걸 추천합니다', 9, sysdate);
-insert into review values (SEQ_REVIEW_NO.nextval, 40, 6, '아이들이 너무 좋아하네요. 재미있었습니다', 7, sysdate);
-insert into review values (SEQ_REVIEW_NO.nextval, 40, 7, '교육용으로도 손색없습니다.', 7, sysdate);
+insert into review values (SEQ_REVIEW_NO.nextval, 40, 3, '기묘하네요.', 2, sysdate);
+insert into review values (SEQ_REVIEW_NO.nextval, 40, 4, '신기합니다. 한번쯤은 볼만한 전시회입니다.', 1, sysdate);
+insert into review values (SEQ_REVIEW_NO.nextval, 40, 5, '주차공간이 다소 협소합니다. 주차하실분은 50분전에 가시는걸 추천합니다', 4, sysdate);
+insert into review values (SEQ_REVIEW_NO.nextval, 40, 6, '아이들이 너무 좋아하네요. 재미있었습니다', 2, sysdate);
+insert into review values (SEQ_REVIEW_NO.nextval, 40, 7, '교육용으로도 손색없습니다.', 2, sysdate);
 
 
 -----41.팀버튼------------------------------------
@@ -1206,11 +1206,11 @@ insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.n
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 41, 0, 50, '타임 세일', '22/03/07','22/03/20');
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 41, 0, 60, '문화의날', '22/03/10','22/03/20');
 
-insert into review values (SEQ_REVIEW_NO.nextval, 41, 3, '기묘하네요.', 10, sysdate);
-insert into review values (SEQ_REVIEW_NO.nextval, 41, 4, '신기합니다. 한번쯤은 볼만한 전시회입니다.', 10, sysdate);
-insert into review values (SEQ_REVIEW_NO.nextval, 41, 5, '주차공간이 다소 협소합니다. 주차하실분은 50분전에 가시는걸 추천합니다', 9, sysdate);
-insert into review values (SEQ_REVIEW_NO.nextval, 41, 6, '아이들이 너무 좋아하네요. 재미있었습니다', 9, sysdate);
-insert into review values (SEQ_REVIEW_NO.nextval, 41, 7, '교육용으로도 손색없습니다.', 10, sysdate);
+insert into review values (SEQ_REVIEW_NO.nextval, 41, 3, '기묘하네요.', 5, sysdate);
+insert into review values (SEQ_REVIEW_NO.nextval, 41, 4, '신기합니다. 한번쯤은 볼만한 전시회입니다.', 5, sysdate);
+insert into review values (SEQ_REVIEW_NO.nextval, 41, 5, '주차공간이 다소 협소합니다. 주차하실분은 50분전에 가시는걸 추천합니다', 4, sysdate);
+insert into review values (SEQ_REVIEW_NO.nextval, 41, 6, '아이들이 너무 좋아하네요. 재미있었습니다', 5, sysdate);
+insert into review values (SEQ_REVIEW_NO.nextval, 41, 7, '교육용으로도 손색없습니다.', 5, sysdate);
 
 
 -----42.데이비드------------------------------------
@@ -1233,11 +1233,11 @@ insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.n
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 42, 0, 50, '타임 세일', '22/03/07','22/03/20');
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 42, 0, 60, '문화의날', '22/03/10','22/03/20');
 
-insert into review values (SEQ_REVIEW_NO.nextval, 42, 3, '기묘하네요.', 9, sysdate);
-insert into review values (SEQ_REVIEW_NO.nextval, 42, 4, '신기합니다. 한번쯤은 볼만한 전시회입니다.', 7, sysdate);
-insert into review values (SEQ_REVIEW_NO.nextval, 42, 5, '주차공간이 다소 협소합니다. 주차하실분은 50분전에 가시는걸 추천합니다', 9, sysdate);
-insert into review values (SEQ_REVIEW_NO.nextval, 42, 6, '아이들이 너무 좋아하네요. 재미있었습니다', 9, sysdate);
-insert into review values (SEQ_REVIEW_NO.nextval, 42, 7, '교육용으로도 손색없습니다.', 9, sysdate);
+insert into review values (SEQ_REVIEW_NO.nextval, 42, 3, '기묘하네요.', 4, sysdate);
+insert into review values (SEQ_REVIEW_NO.nextval, 42, 4, '신기합니다. 한번쯤은 볼만한 전시회입니다.', 4, sysdate);
+insert into review values (SEQ_REVIEW_NO.nextval, 42, 5, '주차공간이 다소 협소합니다. 주차하실분은 50분전에 가시는걸 추천합니다', 5, sysdate);
+insert into review values (SEQ_REVIEW_NO.nextval, 42, 6, '아이들이 너무 좋아하네요. 재미있었습니다', 5, sysdate);
+insert into review values (SEQ_REVIEW_NO.nextval, 42, 7, '교육용으로도 손색없습니다.', 4, sysdate);
 
 
 -----43.로그아웃------------------------------------
@@ -1260,11 +1260,11 @@ insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.n
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 43, 0, 50, '타임 세일', '22/03/07','22/03/20');
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 43, 0, 60, '문화의날', '22/03/10','22/03/20');
 
-insert into review values (SEQ_REVIEW_NO.nextval, 43, 3, '기묘하네요.', 9, sysdate);
-insert into review values (SEQ_REVIEW_NO.nextval, 43, 4, '신기합니다. 한번쯤은 볼만한 전시회입니다.', 10, sysdate);
-insert into review values (SEQ_REVIEW_NO.nextval, 43, 5, '주차공간이 다소 협소합니다. 주차하실분은 50분전에 가시는걸 추천합니다', 9, sysdate);
-insert into review values (SEQ_REVIEW_NO.nextval, 43, 6, '아이들이 너무 좋아하네요. 재미있었습니다', 9, sysdate);
-insert into review values (SEQ_REVIEW_NO.nextval, 43, 7, '교육용으로도 손색없습니다.', 9, sysdate);
+insert into review values (SEQ_REVIEW_NO.nextval, 43, 3, '기묘하네요.', 5, sysdate);
+insert into review values (SEQ_REVIEW_NO.nextval, 43, 4, '신기합니다. 한번쯤은 볼만한 전시회입니다.', 5, sysdate);
+insert into review values (SEQ_REVIEW_NO.nextval, 43, 5, '주차공간이 다소 협소합니다. 주차하실분은 50분전에 가시는걸 추천합니다', 5, sysdate);
+insert into review values (SEQ_REVIEW_NO.nextval, 43, 6, '아이들이 너무 좋아하네요. 재미있었습니다', 5, sysdate);
+insert into review values (SEQ_REVIEW_NO.nextval, 43, 7, '교육용으로도 손색없습니다.', 5, sysdate);
 
 -----44.반고흐------------------------------------
 
@@ -1286,11 +1286,11 @@ insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.n
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 44, 0, 50, '타임 세일', '22/03/07','22/03/20');
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 44, 0, 60, '문화의날', '22/03/10','22/03/20');
 
-insert into review values (SEQ_REVIEW_NO.nextval, 44, 3, '기묘하네요.', 9, sysdate);
-insert into review values (SEQ_REVIEW_NO.nextval, 44, 4, '신기합니다. 한번쯤은 볼만한 전시회입니다.', 8, sysdate);
-insert into review values (SEQ_REVIEW_NO.nextval, 44, 5, '주차공간이 다소 협소합니다. 주차하실분은 50분전에 가시는걸 추천합니다', 9, sysdate);
-insert into review values (SEQ_REVIEW_NO.nextval, 44, 6, '아이들이 너무 좋아하네요. 재미있었습니다', 7, sysdate);
-insert into review values (SEQ_REVIEW_NO.nextval, 44, 7, '교육용으로도 손색없습니다.', 7, sysdate);
+insert into review values (SEQ_REVIEW_NO.nextval, 44, 3, '기묘하네요.', 4, sysdate);
+insert into review values (SEQ_REVIEW_NO.nextval, 44, 4, '신기합니다. 한번쯤은 볼만한 전시회입니다.', 5, sysdate);
+insert into review values (SEQ_REVIEW_NO.nextval, 44, 5, '주차공간이 다소 협소합니다. 주차하실분은 50분전에 가시는걸 추천합니다', 4, sysdate);
+insert into review values (SEQ_REVIEW_NO.nextval, 44, 6, '아이들이 너무 좋아하네요. 재미있었습니다', 4, sysdate);
+insert into review values (SEQ_REVIEW_NO.nextval, 44, 7, '교육용으로도 손색없습니다.', 4, sysdate);
 
 -----45.에디슨과학------------------------------------
 
@@ -1312,11 +1312,11 @@ insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.n
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 45, 0, 50, '타임 세일', '22/03/07','22/03/20');
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 45, 0, 60, '문화의날', '22/03/10','22/03/20');
 
-insert into review values (SEQ_REVIEW_NO.nextval, 45, 3, '기묘하네요.', 9, sysdate);
-insert into review values (SEQ_REVIEW_NO.nextval, 45, 4, '신기합니다. 한번쯤은 볼만한 전시회입니다.', 8, sysdate);
+insert into review values (SEQ_REVIEW_NO.nextval, 45, 3, '기묘하네요.', 4, sysdate);
+insert into review values (SEQ_REVIEW_NO.nextval, 45, 4, '신기합니다. 한번쯤은 볼만한 전시회입니다.', 3, sysdate);
 insert into review values (SEQ_REVIEW_NO.nextval, 45, 5, '주차공간이 다소 협소합니다. 주차하실분은 50분전에 가시는걸 추천합니다', 5, sysdate);
-insert into review values (SEQ_REVIEW_NO.nextval, 45, 6, '아이들이 너무 좋아하네요. 재미있었습니다', 7, sysdate);
-insert into review values (SEQ_REVIEW_NO.nextval, 45, 7, '교육용으로도 손색없습니다.', 7, sysdate);
+insert into review values (SEQ_REVIEW_NO.nextval, 45, 6, '아이들이 너무 좋아하네요. 재미있었습니다', 2, sysdate);
+insert into review values (SEQ_REVIEW_NO.nextval, 45, 7, '교육용으로도 손색없습니다.', 2, sysdate);
 
 
 -----46.한국스토리------------------------------------
@@ -1339,11 +1339,11 @@ insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.n
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 46, 0, 50, '타임 세일', '22/03/07','22/03/20');
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 46, 0, 60, '문화의날', '22/03/10','22/03/20');
 
-insert into review values (SEQ_REVIEW_NO.nextval, 46, 3, '기묘하네요.', 9, sysdate);
-insert into review values (SEQ_REVIEW_NO.nextval, 46, 4, '신기합니다. 한번쯤은 볼만한 전시회입니다.', 8, sysdate);
-insert into review values (SEQ_REVIEW_NO.nextval, 46, 5, '주차공간이 다소 협소합니다. 주차하실분은 50분전에 가시는걸 추천합니다', 9, sysdate);
-insert into review values (SEQ_REVIEW_NO.nextval, 46, 6, '아이들이 너무 좋아하네요. 재미있었습니다', 9, sysdate);
-insert into review values (SEQ_REVIEW_NO.nextval, 46, 7, '교육용으로도 손색없습니다.', 7, sysdate);
+insert into review values (SEQ_REVIEW_NO.nextval, 46, 3, '기묘하네요.', 4, sysdate);
+insert into review values (SEQ_REVIEW_NO.nextval, 46, 4, '신기합니다. 한번쯤은 볼만한 전시회입니다.', 5, sysdate);
+insert into review values (SEQ_REVIEW_NO.nextval, 46, 5, '주차공간이 다소 협소합니다. 주차하실분은 50분전에 가시는걸 추천합니다', 4, sysdate);
+insert into review values (SEQ_REVIEW_NO.nextval, 46, 6, '아이들이 너무 좋아하네요. 재미있었습니다', 5, sysdate);
+insert into review values (SEQ_REVIEW_NO.nextval, 46, 7, '교육용으로도 손색없습니다.', 5, sysdate);
 
 
 
@@ -1367,11 +1367,11 @@ insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.n
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 47, 0, 50, '타임 세일', '22/03/07','22/03/20');
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 47, 0, 60, '문화의날', '22/03/10','22/03/20');
 
-insert into review values (SEQ_REVIEW_NO.nextval, 47, 3, '기묘하네요.', 8, sysdate);
-insert into review values (SEQ_REVIEW_NO.nextval, 47, 4, '신기합니다. 한번쯤은 볼만한 전시회입니다.', 8, sysdate);
+insert into review values (SEQ_REVIEW_NO.nextval, 47, 3, '기묘하네요.', 3, sysdate);
+insert into review values (SEQ_REVIEW_NO.nextval, 47, 4, '신기합니다. 한번쯤은 볼만한 전시회입니다.', 3, sysdate);
 insert into review values (SEQ_REVIEW_NO.nextval, 47, 5, '주차공간이 다소 협소합니다. 주차하실분은 50분전에 가시는걸 추천합니다', 4, sysdate);
 insert into review values (SEQ_REVIEW_NO.nextval, 47, 6, '아이들이 너무 좋아하네요. 재미있었습니다', 5, sysdate);
-insert into review values (SEQ_REVIEW_NO.nextval, 47, 7, '교육용으로도 손색없습니다.', 7, sysdate);
+insert into review values (SEQ_REVIEW_NO.nextval, 47, 7, '교육용으로도 손색없습니다.', 2, sysdate);
 
 
 
@@ -1395,11 +1395,11 @@ insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.n
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 48, 0, 50, '타임 세일', '22/03/07','22/03/20');
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 48, 0, 60, '문화의날', '22/03/10','22/03/20');
 
-insert into review values (SEQ_REVIEW_NO.nextval, 48, 3, '기묘하네요.', 8, sysdate);
-insert into review values (SEQ_REVIEW_NO.nextval, 48, 4, '신기합니다. 한번쯤은 볼만한 전시회입니다.', 8, sysdate);
+insert into review values (SEQ_REVIEW_NO.nextval, 48, 3, '기묘하네요.', 3, sysdate);
+insert into review values (SEQ_REVIEW_NO.nextval, 48, 4, '신기합니다. 한번쯤은 볼만한 전시회입니다.', 3, sysdate);
 insert into review values (SEQ_REVIEW_NO.nextval, 48, 5, '주차공간이 다소 협소합니다. 주차하실분은 50분전에 가시는걸 추천합니다', 4, sysdate);
 insert into review values (SEQ_REVIEW_NO.nextval, 48, 6, '아이들이 너무 좋아하네요. 재미있었습니다', 5, sysdate);
-insert into review values (SEQ_REVIEW_NO.nextval, 48, 7, '교육용으로도 손색없습니다.', 7, sysdate);
+insert into review values (SEQ_REVIEW_NO.nextval, 48, 7, '교육용으로도 손색없습니다.', 2, sysdate);
 
 ------ 추가 데이터 ------------------------------
 insert into product values (seq_prod_no.nextval, 2, 20, '뮤지컬 <빈센트 반 고흐>', 1, '2022-04-15', '2022-05-31', '2022-03-15', '2022-05-31', TO_DATE('2022-03-01 19:00', 'YYYY-MM-DD HH24:MI'), 110, 2, '※ 티켓자바 오픈 시스템 작업을 위해 매월 10일 오전 10시 ~ 오전 10시 59분까지 티켓자바 예매페이지의 모든 예매가 일시 마감됩니다.', '취소일자에 따라서 취소수수료가 부과됩니다.예매 일 기준보다 관람일 기준이 우선 적용됩니다. 단, 예매 당일 밤 12시 이전 취소 시에는 취소수수료가 없으며, 예매 수수료도 환불됩니다.(취소기한 내에 한함)', 1, 'van.png');
