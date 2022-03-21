@@ -8,4 +8,16 @@
 	</buildSpec>
 	<natures>
 	</natures>
+	<linkedResources>
+		<link>
+			<name>.settings/ReviewService.java</name>
+			<type>1</type>
+			<locationURI>egit-internal:///C:/javaStudy/ticketjava/.git/$4$WORKTREE:o7/src/main/java/com/ticketjava/service/ReviewService.java</locationURI>
+		</link>
+		<link>
+			<name>.settings/productInfo.jsp</name>
+			<type>1</type>
+			<locationURI>egit-internal:///C:/javaStudy/ticketjava/.git/$4$WORKTREE:o7/webapp/WEB-INF/views/product/productInfo.jsp</locationURI>
+		</link>
+	</linkedResources>
 </projectDescription>

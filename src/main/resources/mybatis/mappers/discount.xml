@@ -108,7 +108,13 @@
 		
 		<![CDATA[
 			insert into	 discount
-			values		 (#{dcNo}, #{prodNo}, #{dcName}, #{beginDc}, #{endDc}, #{dcRate}, #{dcType})
+			values		 (#{dcNo}, 
+						  #{prodNo}, 
+						  #{dcName}, 
+						  #{beginDc}, 
+						  (to_date(#{endDc})+1)-(1/(24*60*60)),
+						  #{dcRate}, 
+						  #{dcType})
 		]]>
 	</insert>
 

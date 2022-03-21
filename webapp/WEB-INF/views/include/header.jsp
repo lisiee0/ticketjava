@@ -65,17 +65,22 @@
 				<div class="row">
 				
 					<!-- 로고 검색자리 그리드 시작 -->
-					<div class="col-xs-3 no-drag no-ghost" id="ticketJavaLogo">
+					<div class="col-xs-4 no-drag no-ghost" id="ticketJavaLogo">
 						<a href="http://localhost:8088/ticketjava/"><img src="${pageContext.request.contextPath}/assets/image/index/ticketjava_main_logo.png"></a>
 					</div>
 					
-					<div class="col-xs-9 searchBar">
+					<div class="col-xs-4 searchBar">
 						<form action="${pageContext.request.contextPath}/product/search" method="post">
-							<input type="text" class="form-control dis vm zp" placeholder="내가 찾는 티켓은.." name="keyword" value="">
-							<button type="submit" class="btn btn-primary index-search"><span class="glyphicon glyphicon-search"></span></button>
+							<div class="input-group search-group">
+								<input type="text" class="form-control dis vm zp" placeholder="" name="keyword" value="">
+								<span class="input-group-btn">
+									<button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-search"></span></button>
+								</span>
+							</div><!-- /.col-sm-6 -->
 						</form>
 					</div>
-
+					<div class="col-xs-4">
+					</div>
 				</div>
 				<!-- 로고 검색자리 그리드 종료 -->
 			</div>
