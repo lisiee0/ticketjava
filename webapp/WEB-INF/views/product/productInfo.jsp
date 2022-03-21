@@ -448,7 +448,7 @@ $("#btnReviewSubmit").on("click", function() {
 		}
 	}); // ajax
 }); // #btnSubmit function
-
+ 
 
 $(document).ready(function() {
 	console.log("리스트 요청");
