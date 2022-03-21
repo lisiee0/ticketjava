@@ -6,6 +6,8 @@
 <meta charset="UTF-8">
 <title>TicketJava Standard layout include</title>
 
+<script src="${pageContext.request.contextPath}/assets/jquery/jquery-1.12.4.js"></script>
+
 <!-- 부트스트랩 Bootstrap core CSS -->
 <link href="${pageContext.request.contextPath}/assets/bootstrap/css/bootstrap.css" rel="stylesheet">
 
@@ -63,4 +65,10 @@
 	<!-- wrap 종료 -->
 
 </body>
+
+<script>
+	$('#lastBtn').on('click',function(){
+		location.href='${pageContext.request.contextPath}/user/joinForm';
+	});
+</script>
 </html>
