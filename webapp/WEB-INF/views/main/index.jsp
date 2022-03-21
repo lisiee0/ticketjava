@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt"  prefix="fmt"%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -34,13 +36,16 @@
 		<!-- 컨텐츠 구역 시작 -->
 		<article class="container-fluid zp">
 
+
+			<c:set var="rand" value="<%= java.lang.Math.floor(java.lang.Math.random()*5)+1 %>" />
+			<fmt:parseNumber var= "randomVideo" integerOnly= "true" value= "${rand}" />
 			<!-- 영상 재생 구역 시작 -->
 			<section class="productVideo">
 				<div class="mainVideo">
 					<!-- 영상재생이 안될때 대신 보여주는 이미지 -->
-					<img src="${pageContext.request.contextPath}/assets/image/index/thumbnail_ticketjava_desktop.png">
+					<%-- <img src="${pageContext.request.contextPath}/assets/image/index/thumbnail_ticketjava_desktop.png"> --%>
 					<video loop="" muted="" autoplay="" playsinline="" webkit-playsinline="true">
-						<source type="video/mp4" src="assets/video/video_index.mp4">
+						<source id="videoSrc" type="video/mp4" src="${pageContext.request.contextPath}/assets/video/video${randomVideo}.mp4">
 					</video>
 				</div>
 
@@ -212,6 +217,5 @@
 <!-- 카운터 기능을 위한 js -->
 <script src="${pageContext.request.contextPath}/assets/js/jquery.countTo.min.js"></script>
 <script src="${pageContext.request.contextPath}/assets/js/indexCounter.js"></script>
-
 
 </html>
