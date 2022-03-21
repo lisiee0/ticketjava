@@ -591,8 +591,7 @@ function render(reviewVo, updown) { // 1명씩 정보를 받아 처리 button의
 		
 	function PageMove(page) {
 
-		location.href = "${pageContext.request.contextPath}/product/info?prodNo=${param.prodNo}&crtPage=" + page;
-		lacation.href = $('#review')
+		location.href = "${pageContext.request.contextPath}/product/info?prodNo=${param.prodNo}&crtPage=" + page+ "#review"
 	}
 	
 </script>
