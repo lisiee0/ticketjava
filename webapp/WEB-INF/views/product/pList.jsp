@@ -19,6 +19,20 @@
 
 </head>
 
+<style>
+#testcolor {
+	background-color: #f4f4f4;
+}
+
+.productInfo {
+	
+
+}
+
+
+</style>
+
+
 <body>
 	<div id="wrap">
 		<!-- header & nav -->

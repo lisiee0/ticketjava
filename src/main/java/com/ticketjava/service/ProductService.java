@@ -79,14 +79,24 @@ public class ProductService {
 	
 	
 	// 특정 상품 상세정보 불러오기
-	public Map<String, Object> getProduct(int prodNo) {
+	public Map<String, Object> getProduct(int prodNo, int crtPage) {
+		
+		int listCnt= 5; // 한 페이지당 글 개수
+		int startRnum= (crtPage-1)*listCnt +1; // 시작글 번호
+		int endRnum= (startRnum+listCnt) -1; // 마지막글 번호
+		
+		Paging paging= new Paging();
+		paging.setPageNo(crtPage);
+		paging.setPageSize(listCnt);
+		paging.setTotalCount(rd.reviewCntbyprodNo(prodNo));
 		
 		Map<String, Object> pMap= new HashMap<String, Object>();
 		pMap.put("vo", pd.getProduct(prodNo));
 		pMap.put("seatPrice", sd.selectList(prodNo));
 		pMap.put("detail", dd.getDetail(prodNo));
 		pMap.put("theater", hd.getHallbyprodNo(prodNo));
-		pMap.put("review", rd.getReviewListProduct(prodNo));
+		pMap.put("review", rd.pagingrList(prodNo, startRnum, endRnum));
+		pMap.put("paging", paging);
 		
 		return pMap;
 	}
