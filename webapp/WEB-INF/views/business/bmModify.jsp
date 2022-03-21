@@ -84,7 +84,7 @@
 							<div class="form-group">
 								<label class="form-text col-md-2 form-id" for="">공연명</label>
 								<div class="col-md-6">
-									<input type="text" class="form-control" id="prodName" name="${prodVo.prodName}" placeholder="${prodVo.prodName}">
+									<input type="text" class="form-control" id="prodName" name="prodName" value="${bmgProductMap.prodName}" placeholder="${bmgProductMap.prodName}">
 								</div>
 							</div>
 
@@ -112,7 +112,7 @@
 								<label class="form-text col-md-2 form-id" for="">공연 구분</label>
 
 								<div class="col-md-3">
-									<select class="form-control" id="prodType" name="prodType">
+									<select class="form-control" id="prodType" name="prodType" value="${prodVo.prodType}">
 										<option value="1">연극</option>
 										<option value="2">뮤지컬</option>
 										<option value="3">콘서트</option>
@@ -127,10 +127,10 @@
 							<div class="form-group">
 								<label class="form-text col-md-2 form-id" for="">공연 기간</label>
 								<div class="col-md-4">
-									<input type="date" class="form-control" id="beginShow" name="beginShow">
+									<input type="date" class="form-control" id="beginShow" name="beginShow" value="${prodVo.beginShow}">
 								</div>
 								<div class="col-md-4">
-									<input type="date" class="form-control" id="endShow" name="endShow">
+									<input type="date" class="form-control" id="endShow" name="endShow" value="${prodVo.endShow}">
 								</div>
 							</div>
 
@@ -139,10 +139,10 @@
 							<div class="form-group">
 								<label class="form-text col-md-2 form-id" for="">예매 기간</label>
 								<div class="col-md-4">
-									<input type="date" class="form-control" id="beginRez" name="beginRez">
+									<input type="date" class="form-control" id="beginRez" name="beginRez" value="${prodVo.beginShow}">
 								</div>
 								<div class="col-md-4">
-									<input type="date" class="form-control" id="endRez" name="endRez">
+									<input type="date" class="form-control" id="endRez" name="endRez" ${prodVo.endRez}>
 								</div>
 							</div>
 
@@ -151,7 +151,7 @@
 							<div class="form-group">
 								<label class="form-text col-md-2 form-id" for="">공연 시작시간</label>
 								<div class="col-md-4">
-									<input type="time" class="form-control" id="showTime" name="showTime">
+									<input type="time" class="form-control" id="showTime" name="showTime" value="${prodVo.showTime}">
 								</div>
 							</div>
 
@@ -160,17 +160,17 @@
 							<div class="form-group">
 								<label class="form-text col-md-2 form-id" for="">관람 시간</label>
 								<div class="col-md-4">
-									<input type="text" class="form-control" id="viewTime" name="viewTime">
+									<input type="text" class="form-control" id="viewTime" name="viewTime" value="${prodVo.viewTime}">
 								</div>
 							</div>
 
 
 							<!--관람 등급-->
 
-							<div class="form-group">
+							<div class="form-group" name="viewGrade" value="${prodVo.viewGrade}">
 								<label class="form-text col-md-2 form-id" for="">관람 등급</label>
 								<div class="col-md-1">
-									<label for="ageall">전체</label> <input type="radio" name="viewGrade" value="1">
+									<label for="ageall">전체</label> <input type="radio"  value="1">
 								</div>
 								<div class="col-md-1">
 									<label for="age8">8세</label> <input type="radio" name="viewGrade" value="2">
@@ -223,7 +223,7 @@
 							<div class="form-group">
 								<label class="form-text col-md-2 form-id" for="">공지사항</label>
 								<div class="col-md-8">
-									<textarea class="form-control textWay" id="notice" name="notice" placeholder="내용을 입력해주세요"></textarea>
+									<textarea class="form-control textWay" id="notice" name="notice" placeholder="${prodVo.notice}">${prodVo.notice}</textarea>
 								</div>
 							</div>
 
@@ -259,7 +259,7 @@
 							<div class="form-group">
 								<label class="form-text col-md-2 form-id" for="">공연 포스터</label>
 								<div class="col-md-8">
-									<input type="file" id="posterPath" name="posterPath" value="">
+									<input type="file" id="posterPath" name="posterPath" value="${prodVo.posterPath}">
 								</div>
 							</div>
 
@@ -291,13 +291,13 @@
 							<div class="form-group">
 								<label class="form-text col-md-2 form-id" for="">예매/취소 안내</label>
 								<div class="col-md-8">
-									<textarea class="form-control textWay" id="cancelInfo" name="cancelInfo" placeholder="내용을 입력해주세요"></textarea>
+									<textarea class="form-control textWay" id="cancelInfo" name="${prodVo.cancelInfo}" placeholder="${prodVo.cancelInfo}">${prodVo.cancelInfo}</textarea>
 								</div>
 							</div>
 
 							<!-- 공연 등록! -->
 							<div id="btnLocation">
-								<button type="button" class="btn btn-primary" id="addbtn">공연 등록</button>
+								<button type="button" class="btn btn-primary" id="addbtn">공연 수정</button>
 							</div>
 							<!-- hidden -->
 							<div>

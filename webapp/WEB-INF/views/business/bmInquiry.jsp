@@ -45,10 +45,10 @@
 							<li><a href="${pageContext.request.contextPath}/bm/">공연 목록</a></li>
 							<li><a href="#">공연 수정</a></li>
 						</ul>
-						<ul>
-							<li><h3>문의 관리</h3></li>
-							<li><a href="#">문의내역</a></li>
-						</ul>
+						<!-- 						<ul> -->
+						<!-- 							<li><h3>문의 관리</h3></li> -->
+						<!-- 							<li><a href="#">문의내역</a></li> -->
+						<!-- 						</ul> -->
 					</div>
 				</div>
 				<!-- //aside -->
@@ -64,6 +64,13 @@
 					<div id="content">
 
 						<!-- content-head -->
+						<div id="row" class="searchBox">
+							<div class="col-xs-10"></div>
+							<div class="col-xs-1">
+								<a href="${pageContext.request.contextPath}/bm/bmForm" class="btn btn-primary position">공연 등록</a>
+							</div>
+
+						</div>
 						<div id="content-head">
 							<h3>공연 목록</h3>
 							<div id="location">
@@ -82,17 +89,10 @@
 						<!-- content body -->
 						<div id="board">
 							<div id="list">
-								<div id="row" class="searchBox">
-									<div class="col-xs-10"></div>
-									<div class="col-xs-2">
-										<a href="${pageContext.request.contextPath}/bm/bmForm" class="btn btn-primary position">공연 등록</a>
-									</div>
-
-								</div>
 								<table>
 									<colgroup>
 										<col style="width: 7%">
-				w						<col style="">
+										<col style="">
 										<col style="">
 										<col style="">
 										<col style="width: 16%">

@@ -150,13 +150,45 @@ public class BusinessService {
 			System.out.println("오류 발생");
 		}
 	}
-	//공연목록 불러오기
-	public List<ProductVo> bmgetProduct(int prodNo) {
+
+	// 공연수정 불러오기
+	public Map<String, Object> bmgetProduct(int prodNo) {
+		System.out.println("BusinessServiece > bmgetProduct()");
 		
-		return pd.bmgetProduct(prodNo);
+		Map<String, Object> bmgProductMap = new HashMap<String, Object>();
+		
+		//공연정보
+		ProductVo bmgetProduct = pd.bmgetProduct(prodNo);
+		bmgProductMap.put("bmgetProduct", bmgetProduct)	;
+				
+		//시설정보 가져오기
+		List<HallVo> bmHallList = hd.bmHallList();
+		bmgProductMap.put("bmHallList", bmHallList)	;	
+		
+		//상세정보 리스트 가져오기
+		
+		
+		//상시할인 리스트 가져오기
+				
+		//좌석 등급별 리스트 가져오기
+		DetailVo bmgetDetail = td.bmgetDetail(prodNo);
+		bmgProductMap.put("bmgetDetail", bmgetDetail);
+				
+		
+		System.out.println("=============================");
+		System.out.println(bmgetProduct);
+		System.out.println(bmHallList);
+		System.out.println(bmgetDetail);
+		
+		return null;
 	}
 	
-	
+	// 공연수정 파일정보 불러오기
+//	public ProductVo bmgetDetail(int prodNo) {
+//		System.out.println("BusinessServiece > bmgetDetail()");
+//
+//		return td.bmgetDetail(prodNo);
+//	}
 
 	// 공연 목록 삭제
 //	public void productDelete(ProductVo productVo) {

@@ -39,7 +39,7 @@ public class ProductDao {
 	}
 	
 	//공연 수정 정보 가져오기
-	public List<ProductVo> bmgetProduct(int prodNo) {
+	public ProductVo bmgetProduct(int prodNo) {
 		System.out.println("ProductDao > bmgetProduct");
 		
 		return sqlsession.selectOne("product.bmgetProduct", prodNo);

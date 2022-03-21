@@ -57,6 +57,7 @@
 	<select id="bmgetProduct" parameterType="ProductVo" resultType="productVo">
 		<![CDATA[
 			select 	p.prod_no 	prodNo,
+			          u.user_no   	userNo,
 				    	h.hall_no 	hallNo,
 				    	p.prodname	prodName,
 				    	p.prodtype 	prodType,
@@ -72,8 +73,10 @@
 				    	p.status		status,
 				    	p.posterpath	posterPath
     
-			from 	product p, hall h
+			from 	product p, hall h, users u
 			where 	p.hall_no = h.hall_no
+					and p.user_no = u.user_no
+					and p.prod_no = #{prodNo}
 		
 		]]>
 	</select>

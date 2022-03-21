@@ -1,6 +1,7 @@
 package com.ticketjava.controller;
 
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -70,11 +71,15 @@ public class BusinessController {
 	public String bmModify(@RequestParam("prodNo") int prodNo, Model model, @ModelAttribute ProductVo productVo) {
 		System.out.println("BusinessController >  bmModify");
 		
-		List<ProductVo> bmgetProduct = businessService.bmgetProduct(prodNo);
+		Map<String, Object> bmgProductMap  = businessService.bmgetProduct(prodNo);
 
-		model.addAttribute("prodVo", bmgetProduct);
+		model.addAttribute("bmgProductMap", bmgProductMap);
+		
 		return "business/bmModify";
 	}
+	
+	
+	
 
 	// 공연 할인정보 추가
 	@RequestMapping("/discount")

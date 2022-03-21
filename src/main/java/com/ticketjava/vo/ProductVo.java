@@ -27,7 +27,7 @@ public class ProductVo {
 	private String hallName; // 시설명
 	
 	private List<SeatpriceVo> seatpriceList; // 등급별 좌석 리스트
-	private List<DiscountVo> productDisList; // 공연별 상시할인 정보
+	private List<DiscountVo> productDisList; // 공연별 상시할인 정보 
 
 	
 	private int detailNo; // 상세정보 번호
