@@ -42,8 +42,8 @@
 							</c:if>
 						</form>	
 						<div id="helperArea">
-							<button class="form-control btn-default helper" type="button">아이디 찾기</button>
-							<button class="form-control btn-default helper" type="button">비밀번호 찾기</button>
+							<button id="findId" class="form-control btn-default helper" type="button">아이디 찾기</button>
+							<button id="findPassword" class="form-control btn-default helper" type="button">비밀번호 찾기</button>
 							<button id="lastBtn" class="form-control helper" type="button">회원가입</button>
 						</div>
 						
@@ -62,17 +62,31 @@
 
 	</div>
 	<!-- wrap 종료 -->
-	<input type="hidden" id="result" value="${param.result}"> 
+	<input type="hidden" id="result" value="${param.result}">
+	<input type="hidden" id="pageContext" value="${pageContext.request.contextPath}"> 
 </body>
 
 <script>
-	$('#lastBtn').on('click',function(){
-		location.href='${pageContext.request.contextPath}/user/joinForm';
-	});
-	
+	var pageContext = $('#pageContext').val();
 	if( $('#result').val() == 'fail'){
 		alert('로그인 정보가 일치하지 않습니다.');
 	}
+
+	
+	$('#findId').on('click',function(){
+		location.href = pageContext+'/user/findId';
+	});
+	
+	$('#findPassword').on('click',function(){
+		location.href = pageContext+'/user/findPassword';
+	});
+
+	$('#lastBtn').on('click',function(){
+		location.href=pageContext+'/user/joinForm';
+	});
+	
+	
+	
 	
 </script>
 </html>

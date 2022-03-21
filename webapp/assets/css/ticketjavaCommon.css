@@ -14,19 +14,27 @@ body {
 	background-color: #fff;
 }
 
-
 #ticketJavaLogo {
+	padding:0px;
 	margin-bottom:0px;
 	padding-bottom:30px;
 	padding-left:0px;
 }
 
+#headerContainer{
+	padding:0px;
+	border-bottom:1px solid #f0f0f0;
+	margin-bottom:20px;
+	background-color:#fafafa;
+}
 
+#headerContainerFluid {
+	background-color:#fafafa;
+}
 
 /* 레이아웃 */
 #header {
 	padding: 0px 0px 0px 0px; 
-	background-color: #FFFFFF;
 }
 
 /* 해더(header: 로고, 로그인관련 버튼) */
@@ -38,13 +46,14 @@ body {
 
 #header	h1>a {
 	float: right; 
-	margin: 10px 0px 0px 0px; 
+	margin: 5px 0px 0px 0px; 
 	font-size: 35px; 
 	color:#79B30B; 
 }
 
 #header ul {
-	float: right;  
+	float: right;
+	margin-bottom:5px; 
 }
 
 /* 로그인 리스트 블릿마크 제거 */
@@ -52,7 +61,7 @@ body {
 	list-style:none; 
 	padding-left:0px; 
 	float: left; 
-	margin: 25px 0px 0px 10px;
+	margin: 5px 0px 0px 10px;
 }
 
 #header ul>li .btn_s {
@@ -65,8 +74,10 @@ body {
 /* 헤더 로그인 회원가입 링크 밑줄 제거 */
 #header ul>li>a {
 	text-decoration-line : none;
-	font-size : 13px;
+	font-size : 12px;
 	font-family: 'Noto Sans KR', sans-serif;
+	color:#999;
+	font-weight:300;
 }
 
 /* 헤더 네비바의 규격 */

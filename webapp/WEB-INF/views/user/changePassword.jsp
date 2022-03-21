@@ -38,7 +38,7 @@
 
 						<!-- Nav tabs -->
 						<ul class="nav nav-tabs">
-							<li><a href="">아이디 찾기</a></li>
+							<li><a href="${pageContext.request.contextPath}/user/findId">아이디 찾기</a></li>
 							<li class="active"><a href="">비밀번호 찾기</a></li>
 						</ul>
 
