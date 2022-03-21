@@ -76,8 +76,7 @@ body {
 
 /************* 검색창 (로고 옆 네비바 위) ******************/
 .searchBar{
-	padding-left:45px;
-	padding-top:10px;
+	padding: 10px 10px 0px 10px;
 }
 
 .searchBar input{
@@ -103,6 +102,13 @@ body {
 	background-color: #5189f1;	
 }
 
+input[name=keyword] {
+	border:1px solid #6697f2;
+}
+
+.search-group button, .search-group input{
+	border-radius:0px;
+}
 
 /****************** 네비게이션 바 ******************/
 div.navbox{
