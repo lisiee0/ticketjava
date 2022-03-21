@@ -485,7 +485,7 @@ function render(reviewVo, updown) { // 1명씩 정보를 받아 처리 button의
 console.log("테이블 출력");
 var str = '';
 str += ' 	<tr> ';
-str += ' 		<td><span class="star"> ★★★★★ <span style="width: ' + reviewVo.rating + '0%;">★★★★★</span> ';
+str += ' 		<td><span class="star"> ★★★★★ <span style="width: ' + reviewVo.rating*2 + '0%;">★★★★★</span> ';
 str += ' 		<input type="range" oninput="drawStar(this)" value="1" step="1" min="0" max="10"></span> ' + reviewVo.rating + '</td> ';
 str += ' 		<td> ' + reviewVo.content + '</td> ';
 str += ' 		<td> ' + reviewVo.userName + '</td> ';
