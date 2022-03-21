@@ -240,8 +240,7 @@
 									<c:forEach items="${product.review}" var="vo">
 									<tr>
 										<td><span class="star"> ★★★★★ <span style="width: ${vo.rating*2}0%;">★★★★★</span> 
-										<input type="range" oninput="drawStar(this)" value="1" step="1" min="0"
-												max="10"></span> ${vo.rating}</td>
+										<input type="range" oninput="drawStar(this)" value="1" step="1" min="0" max="5"></span> ${vo.rating}</td>
 										<td>${vo.content}</td>
 										<td>${vo.userName}</td>
 										<td>${vo.regDate}<input type="hidden" name="userNo" value="${vo.userNo}"></td>
@@ -265,7 +264,7 @@
 								<c:when test="${empty sessionScope.authUser}">
 									<form action="${pageContext.request.contextPath}/product/writeReview" method="get">
 										<textarea class="form-control" name="content" placeholder="후기를 남기려면 로그인 해야합니다" disabled></textarea>
-										<br> <span class="star"> ★★★★★ <span>★★★★★</span> <input type="range" oninput="drawStar(this)" value="1" step="1" min="0" max="10">
+										<br> <span class="star"> ★★★★★ <span>★★★★★</span> <input type="range" oninput="drawStar(this)" value="1" step="1" min="0" max="5">
 										</span> <input type="hidden" name="prodNo" value="${product.vo.prodNo}"> <input type="hidden" name="userNo" value="">
 
 										<button type="submit" class="btn btn-primary position" disabled>등록</button>
@@ -450,43 +449,13 @@ $("#btnReviewSubmit").on("click", function() {
 }); // #btnSubmit function
 
 
-$(document).ready(function() {
-console.log("리스트 요청");
-fetchList();
-
-}); // document . ready
-
-		
-function fetchList() { // 리스트 가져오기 (그리기를 시키는 기능)
-
-$.ajax({
-url : "${pageContext.request.contextPath}/product/info",
-type : "post", 
-
-//응답항목 받을때
-dataType : "json",
-success : function(reviewList) { // json -> js 로 변환
-	/*성공시 처리해야될 코드 작성*/
-	console.log(reviewList);
-
-	for (var i = 0; i < reviewList.length; i++) {
-		render(reviewList[i], "down"); // 방명록 리스트 출력
-	}
-},
-error : function(XHR, status, error) {
-	console.error(status + " : " + error);
-}
-}); // ajax
-
-}; // function fetchList
-
 
 function render(reviewVo, updown) { // 1명씩 정보를 받아 처리 button의 data-no 소문자만 인식 대문자넣으면 에러 
 console.log("테이블 출력");
 var str = '';
 str += ' 	<tr> ';
-str += ' 		<td><span class="star"> ★★★★★ <span style="width: ' + reviewVo.rating + '0%;">★★★★★</span> ';
-str += ' 		<input type="range" oninput="drawStar(this)" value="1" step="1" min="0" max="10"></span> ' + reviewVo.rating + '</td> ';
+str += ' 		<td><span class="star"> ★★★★★ <span style="width: ' + reviewVo.rating*2 + '0%;">★★★★★</span> ';
+str += ' 		<input type="range" oninput="drawStar(this)" value="1" step="1" min="0" max="5"></span> ' + reviewVo.rating + '</td> ';
 str += ' 		<td> ' + reviewVo.content + '</td> ';
 str += ' 		<td> ' + reviewVo.userName + '</td> ';
 str += ' 		<td> ' + reviewVo.regDate + '<input type="hidden" name="userNo" value=" ' + reviewVo.userNo + ' "></td> ';
@@ -567,7 +536,7 @@ if (updown == 'down') {
 	
 	 /* 리뷰 별점 */
 	const drawStar = (target) => {
-    document.querySelector(`.star span`).style.width = `${target.value * 10}%`;
+    document.querySelector('.star span').style.width = '${target.value * 20}%';
   };
 		
 	/* 공연장 정보 지도 */
