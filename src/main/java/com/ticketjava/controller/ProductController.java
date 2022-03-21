@@ -58,9 +58,10 @@ public class ProductController {
 	
 	// 상품 상세보기
 	@RequestMapping("/info")
-	public String productInfo(@RequestParam("prodNo") int prodNo, Model model) {
+	public String productInfo(@RequestParam(value="crtPage", required= false, defaultValue= "1") int crtPage,
+							  @RequestParam("prodNo") int prodNo, Model model) {
 		
-		model.addAttribute("product", productService.getProduct(prodNo));
+		model.addAttribute("product", productService.getProduct(prodNo, crtPage));
 		return "product/productInfo";
 	}
 	
