@@ -76,7 +76,7 @@ body {
 
 /************* 검색창 (로고 옆 네비바 위) ******************/
 .searchBar{
-	padding: 10px 10px 0px 10px;
+	padding: 10px 0px 0px 0px;
 }
 
 .searchBar input{
@@ -108,6 +108,11 @@ input[name=keyword] {
 
 .search-group button, .search-group input{
 	border-radius:0px;
+}
+
+.glyphicon-search{
+	padding-left:2px;
+	padding-right:2px;
 }
 
 /****************** 네비게이션 바 ******************/
