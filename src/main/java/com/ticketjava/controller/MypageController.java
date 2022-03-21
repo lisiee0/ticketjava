@@ -134,16 +134,16 @@ public class MypageController {
 	}
 	
 	
-//	후기 리뷰 관리
+//	후기 리뷰 관리 마이페이지
 	@RequestMapping("/userReview")
-	public String getReviewListMypage(Model model, HttpSession session) {
+	public String getReviewListMypage(@RequestParam(value="crtPage", required= false, defaultValue= "1") int crtPage, Model model, HttpSession session) {
 		System.out.println("MypageController userReview");
 		
 		UserVo authUser = (UserVo)session.getAttribute("authUser");
 		int userNo = authUser.getUserNo();
-		List<ReviewVo> reviewList = reviewService.getReviewListMypage(userNo);
+//		List<ReviewVo> reviewList = reviewService.getReviewListMypage(userNo);
 		
-		model.addAttribute("reviewList",reviewList);
+//		model.addAttribute("reviewList",reviewList);
 		
 		return "mypage/userReview";
 	}
