@@ -539,11 +539,11 @@ insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.n
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 17, 0, 50, '타임 세일', '22/03/07','22/03/20');
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 17, 0, 60, '문화의날', '22/03/10','22/03/20');
 
-insert into review values (SEQ_REVIEW_NO.nextval, 17, 3, '시간가는 줄 모르고 몰입하게 되네요. 강추합니다!', 5, sysdate);
-insert into review values (SEQ_REVIEW_NO.nextval, 17, 4, '재미있게 잘봤습니다. 연극 좋아하시는 분들은 꼭 보세요.', 5, sysdate);
-insert into review values (SEQ_REVIEW_NO.nextval, 17, 5, '배우들의 연기가 일품입니다. 무대 연출 또한 훌륭했습니다.', 5, sysdate);
-insert into review values (SEQ_REVIEW_NO.nextval, 17, 6, '극장이 전철과 가깝고 극장안 편의시설 또한 최고였습니다.', 5, sysdate);
-insert into review values (SEQ_REVIEW_NO.nextval, 17, 7, '오랜만에 가족들과 본 연극인데 다들 재밌게 봤습니다. 감사합니다', 5, sysdate);
+insert into review values (SEQ_REVIEW_NO.nextval, 17, 3, '시간가는 줄 모르고 몰입하게 되네요. 강추합니다!', 4, sysdate);
+insert into review values (SEQ_REVIEW_NO.nextval, 17, 4, '재미있게 잘봤습니다. 연극 좋아하시는 분들은 꼭 보세요.', 4, sysdate);
+insert into review values (SEQ_REVIEW_NO.nextval, 17, 5, '배우들의 연기가 일품입니다. 무대 연출 또한 훌륭했습니다.', 3, sysdate);
+insert into review values (SEQ_REVIEW_NO.nextval, 17, 6, '극장이 전철과 가깝고 극장안 편의시설 또한 최고였습니다.', 3, sysdate);
+insert into review values (SEQ_REVIEW_NO.nextval, 17, 7, '오랜만에 가족들과 본 연극인데 다들 재밌게 봤습니다. 감사합니다', 2, sysdate);
 
 
 -----18.나의PS파트너------------------------------------
