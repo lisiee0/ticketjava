@@ -39,10 +39,17 @@ public class ProductDao {
 	}
 	
 	//공연 수정 정보 가져오기
-	public ProductVo bmgetProduct(int prodNo) {
-		System.out.println("ProductDao > bmgetProduct");
+	public ProductVo bmGetProduct(int prodNo) {
+		System.out.println("ProductDao > bmGetProduct");
 		
-		return sqlsession.selectOne("product.bmgetProduct", prodNo);
+		return sqlsession.selectOne("product.bmGetProduct", prodNo);
+	}
+	
+	//공연 수정
+	public int bmproModify(ProductVo productVo) {
+		System.out.println("ProductDao > bmproModify");
+		
+		return sqlsession.update("product.bmproModify", productVo);
 	}
 	
 	//공연 삭제

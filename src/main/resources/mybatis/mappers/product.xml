@@ -54,7 +54,7 @@
 	</update>
 
 	<!-- 공연번호 가져오기 -->
-	<select id="bmgetProduct" parameterType="ProductVo" resultType="productVo">
+	<select id="bmGetProduct" parameterType="ProductVo" resultType="productVo">
 		<![CDATA[
 			select 	p.prod_no 	prodNo,
 			          u.user_no   	userNo,
@@ -80,6 +80,28 @@
 		
 		]]>
 	</select>
+
+	<!-- 공연 목록 업데이트 -->
+	<update id="bmproModify" parameterType="ProductVo">
+        <![CDATA[
+			update 	product
+			set 		prodname = 	#{prodName},
+					prodtype = 	#{prodType},
+					beginshow = 	#{beginShow},
+					endshow = 	#{endShow},
+					beginrez = 	#{beginRez},
+					endrez = 		#{endRez},
+					showtime = 	to_date(#{showTime},'HH24:MI'),
+					viewtime = 	#{viewTime},
+					viewgrade = 	#{viewGrade},
+					notice = 		#{notice},
+					cancelinfo = 	#{cancelInfo},
+					status = 		1,
+					posterpath = 	#{posterPath}
+					
+			where 	prod_no = #{prodNo};
+        ]]>
+	</update>
 
 
 	<!-- 공연 삭제 -->

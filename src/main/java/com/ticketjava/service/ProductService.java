@@ -79,7 +79,7 @@ public class ProductService {
 	
 	
 	// 특정 상품 상세정보 불러오기
-	public Map<String, Object> getProduct(int prodNo) {
+	public Map<String, Object> getProduct(int prodNo, int crtPage) {
 		
 		Map<String, Object> pMap= new HashMap<String, Object>();
 		pMap.put("vo", pd.getProduct(prodNo));
