@@ -32,15 +32,20 @@ public class UserController {
 						RedirectAttributes redirectAttributes,
 						HttpSession session) {
 		UserVo authUser = userService.getAuthUser(userVo);
-		if(authUser != null) {
-			session.setAttribute("authUser", authUser);
-		}
 		
-		if(prodNo > 0) {
-			redirectAttributes.addAttribute("prodNo", prodNo);
-			return "redirect:/product/info";
+		if(authUser == null) {
+			return "redirect:loginForm?result=fail";
 		}
-		return "redirect:/";
+		else {
+			session.setAttribute("authUser", authUser);
+			if(prodNo > 0) {
+				redirectAttributes.addAttribute("prodNo", prodNo);
+				return "redirect:/product/info";
+			}
+			else {
+				return "redirect:/";
+			}
+		}
 	}
 	
 	
