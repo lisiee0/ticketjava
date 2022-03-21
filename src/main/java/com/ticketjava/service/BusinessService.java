@@ -24,7 +24,6 @@ import com.ticketjava.vo.DiscountVo;
 import com.ticketjava.vo.HallVo;
 import com.ticketjava.vo.ProductVo;
 import com.ticketjava.vo.SeatpriceVo;
-import com.ticketjava.vo.TheaterVo;
 
 @Service
 public class BusinessService {
@@ -41,7 +40,7 @@ public class BusinessService {
 	private SeatpriceDao sd;
 	@Autowired
 	private TheaterDao thd;
-	
+
 	// 공연 목록 불러오기
 	public List<ProductVo> getProductList() {
 		System.out.println("BusinessServiece > bmInquiry");
@@ -50,7 +49,7 @@ public class BusinessService {
 	}
 
 	// 공연 목록 불러오기
-	public List<HallVo> bmAddSearch() {
+	public List<HallVo> bmHallList() {
 		System.out.println("BusinessServiece > bmAddSearch");
 
 		return hd.bmHallList();
@@ -59,7 +58,7 @@ public class BusinessService {
 	// 공연 업로드 (파일 제외)
 	public void productUpload(ProductVo productVo, DetailVo detailVo) {
 		System.out.println("BusinessServiece > productUpload");
-		
+
 		// productDao로 값을 넘김
 		pd.productUpload(productVo);
 		System.out.println("BEFORE : " + productVo);
@@ -72,27 +71,27 @@ public class BusinessService {
 		// detailDao로 값을 넘김
 		td.detailNoAdd(detailVo);
 		System.out.println("AFTER : " + productVo);
-		
-		//theaterDao로 값을 넘김
+
+		// theaterDao로 값을 넘김
 		thd.theaterAdd(null);
-		
-		
-		
+
 		// seatPriceDao로 값을 넘김
 		List<SeatpriceVo> seatpriceList = productVo.getSeatpriceList();
-		
-		for(SeatpriceVo seatpriceVo: seatpriceList) {
+
+		for (SeatpriceVo seatpriceVo : seatpriceList) {
 			seatpriceVo.setProdNo(prodNo);
 			sd.seatpriceAdd(seatpriceVo);
-		};
-		
+		}
+		;
+
 		// discountDao로 값을 넘김
 		List<DiscountVo> discountList = productVo.getProductDisList();
-		
-		for(DiscountVo discountVo: discountList) {
+
+		for (DiscountVo discountVo : discountList) {
 			discountVo.setProdNo(prodNo);
 			dd.alwaysdisAdd(discountVo);
-		};
+		}
+		;
 	}
 
 	// 공연 파일 업로드
@@ -134,7 +133,7 @@ public class BusinessService {
 
 		System.out.println("order name : " + order + ", 파일 이름: " + file.getOriginalFilename());
 
-//		// db 저장
+		// db 저장
 		if (order == 1) { // order : 1
 			pd.posterAdd(productVo);
 			System.out.println(order + "번 파일을 Dao로 넘겼습니다.");
@@ -151,20 +150,20 @@ public class BusinessService {
 			System.out.println("오류 발생");
 		}
 	}
-
-	// 공연 노출 여부
-	public void bmStatus(ProductVo productVo) {
-		System.out.println("BusinessService > bmStatus");
-
+	//공연목록 불러오기
+	public List<ProductVo> bmgetProduct(int prodNo) {
+		
+		return pd.bmgetProduct(prodNo);
 	}
+	
+	
 
 	// 공연 목록 삭제
-	public void productDelete(ProductVo productVo) {
-		System.out.println("BusinessService > productDelete");
-
-		pd.productDelete(productVo);
-	}
-
+//	public void productDelete(ProductVo productVo) {
+//		System.out.println("BusinessService > productDelete");
+//
+//		pd.productDelete(productVo);
+//	}
 
 	public Map<String, Object> selectProdDiscount(int prodNo) {
 

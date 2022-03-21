@@ -38,12 +38,19 @@ public class ProductDao {
 		return sqlsession.update("product.posterAdd", productVo);
 	}
 	
-	//공연 삭제
-	public int productDelete(ProductVo productVo) {
-		System.out.println("ProductDao > productDelete");
+	//공연 수정 정보 가져오기
+	public List<ProductVo> bmgetProduct(int prodNo) {
+		System.out.println("ProductDao > bmgetProduct");
 		
-		return sqlsession.delete("product.productDelete", productVo);
+		return sqlsession.selectOne("product.bmgetProduct", prodNo);
 	}
+	
+	//공연 삭제
+//	public int productDelete(ProductVo productVo) {
+//		System.out.println("ProductDao > productDelete");
+//		
+//		return sqlsession.delete("product.productDelete", productVo);
+//	}
 	
 	
 	

@@ -113,7 +113,7 @@
 										</tr>
 									</thead>
 									<tbody>
-										<c:forEach items="${productList}" var="vo" varStatus="vS">
+										<c:forEach items="${productList}" var="vo">
 											<tr>
 												<td>${vo.prodNo}</td>
 												<td class=""><a href="${pageContext.request.contextPath}/product/info?prodNo=${vo.prodNo}" name="prodName">${vo.prodName}</a></td>
@@ -125,7 +125,7 @@
 												</select>
 													<button type="button" class="btn btn-outline-primary" id="showbTn">확인</button></td>
 												<td><a class="eventdis" data-no="${vo.prodNo}" href="${pageContext.request.contextPath}/bm/discount?prodNo=${vo.prodNo}">이벤트 할인 추가</a></td>
-												<td><a href="#">수정</a></td>
+												<td><a data-no="${vo.prodNo}" href="${pageContext.request.contextPath}/bm/bmModify?prodNo=${vo.prodNo}">수정</a></td>
 												<%--<td><a href="${pageContext.request.contextPath}/bm/bmDelete?prodNo=${vo.prodNo}">삭제</a></td> --%>
 											</tr>
 
