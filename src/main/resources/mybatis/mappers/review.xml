@@ -56,100 +56,142 @@
 
 	</select>
 
-<!-- 리뷰작성 product 
-리뷰no 상품no 유저no 컨텐츠 평점 등록일 -->
-<insert id="insertReview" parameterType="ReviewVo">
+	<!-- 리뷰작성 product 
+	리뷰no 상품no 유저no 컨텐츠 평점 등록일 -->
+	<insert id="insertReview" parameterType="ReviewVo">
+		
+		<selectKey keyProperty="reviewNo" resultType="int" order="BEFORE">
+			select seq_review_no.nextval from dual
+		</selectKey>
+		
+		<![CDATA[
+		INSERT INTO review VALUES (
+			#{reviewNo},
+			#{prodNo}, 
+			#{userNo}, 
+			#{content}, 
+			#{rating}, 
+			sysdate
+		)
+		]]>
+	</insert>
+
+	<!-- 에이잭스용 1개 리뷰 불러오는 쿼리 -->
+	<select id="getOneReview" parameterType="ReviewVo" resultType="ReviewVo">
 	
-	<selectKey keyProperty="reviewNo" resultType="int" order="BEFORE">
-		select seq_review_no.nextval from dual
-	</selectKey>
+		<![CDATA[
 	
-	<![CDATA[
-	INSERT INTO review VALUES (
-		#{reviewNo},
-		#{prodNo}, 
-		#{userNo}, 
-		#{content}, 
-		#{rating}, 
-		sysdate
-	)
-	]]>
-</insert>
+			select		review_no reviewNo, 
+						prod_no prodNo, 
+						u.user_no userNo, 
+	                    u.name userName,
+	                    u.id id,
+						content, 
+						rating, 
+						to_char(r.regdate, 'yy-mm-dd hh24:mi') regDate
+						
+			from		review r, users u
+			where		u.user_no = r.user_no
+	        and         review_no = #{reviewNo}	
+		
+		]]>
+	</select>
 
-<!-- 에이잭스용 1개 리뷰 불러오는 쿼리 -->
-<select id="getOneReview" parameterType="ReviewVo" resultType="ReviewVo">
 
-	<![CDATA[
-
-		select		review_no reviewNo, 
-					prod_no prodNo, 
-					u.user_no userNo, 
-                    u.name userName,
-                    u.id id,
-					content, 
-					rating, 
-					to_char(r.regdate, 'yy-mm-dd hh24:mi') regDate
-					
-		from		review r, users u
-		where		u.user_no = r.user_no
-        and         review_no = #{reviewNo}	
+	<select id="getReviewListMypagePaging" parameterType="ReviewVo" resultType="ReviewVo">
 	
-	]]>
-</select>
+		<![CDATA[
+		select 
+		        rt.rn,
+		        rt.prodName,
+		        rt.reviewNo,
+		        rt.prodNo,
+		        rt.userNo,
+		        rt.content,
+		        rt.rating,
+		        rt.regDate    
+		from (select 	
+		            rownum rn,
+		            ot.prodName,
+		            ot.reviewNo,
+		            ot.prodNo,
+		            ot.userNo,
+		            ot.content,
+		            ot.rating,
+		            ot.regDate    
+		            from (select
+		                        p.prodname prodName,
+		                        r.review_no reviewNo,
+		                        r.prod_no prodNo,
+		                        r.user_no userNo,
+		                        r.content content,
+		                        r.rating rating,
+		                        to_char(r.regdate, 'yy-mm-dd hh24:mi') regDate
+		                    
+		            from	    review r, product p
+		            where	    r.prod_no = p.prod_no
+		            and		    r.user_no= #{userNo}
+		            order	    by reviewNo desc
+		            ) ot
+		        )rt
+		where rn >= #{startRnum}
+		and rn <= #{endRnum}
+		]]>
+		
+	</select>
 
 
-<select id="getReviewListMypagePaging" parameterType="ReviewVo" resultType="ReviewVo">
-
-	<![CDATA[
-	select 
-	        rt.rn,
-	        rt.prodName,
-	        rt.reviewNo,
-	        rt.prodNo,
-	        rt.userNo,
-	        rt.content,
-	        rt.rating,
-	        rt.regDate    
-	from (select 	
-	            rownum rn,
-	            ot.prodName,
-	            ot.reviewNo,
-	            ot.prodNo,
-	            ot.userNo,
-	            ot.content,
-	            ot.rating,
-	            ot.regDate    
-	            from (select
-	                        p.prodname prodName,
-	                        r.review_no reviewNo,
-	                        r.prod_no prodNo,
-	                        r.user_no userNo,
-	                        r.content content,
-	                        r.rating rating,
-	                        to_char(r.regdate, 'yy-mm-dd hh24:mi') regDate
-	                    
-	            from	    review r, product p
-	            where	    r.prod_no = p.prod_no
-	            and		    r.user_no= #{userNo}
-	            order	    by reviewNo desc
-	            ) ot
-	        )rt
-	where rn >= #{startRnum}
-	and rn <= #{endRnum}
-	]]>
+	<select id="totalCnt" resultType="int">
+		<![CDATA[
+		
+		select	count(*)
+		from	review r, users u
+		where	r.user_no = u.user_no
+		
+		]]>
+	</select>
 	
-</select>
-
-
-<select id="totalCnt" resultType="int">
-	<![CDATA[
 	
-	select	count(*)
-	from	review r, users u
-	where	r.user_no = u.user_no
+	<!-- 상품별 리뷰 총개수 -->
+	<select id="reviewCntbyprodNo" parameterType="int" resultType="int">
+		<![CDATA[
+			select 		count(*)
+			from 		review r, product p
+			where 		r.prod_no= p.prod_no
+			and 		r.prod_no= #{prodNo}
+		]]>
+	</select>
 	
-	]]>
-</select>
-
+	<!-- 상품별 리뷰 리스트(페이징) -->
+	<select id="pagingrListbyprodNo" parameterType="map" resultType="ReviewVo">
+		<![CDATA[
+			select				rn,
+						        reviewNo,
+						        prodNo,
+						        userNo,
+						        content,
+						        rating,
+						        regdate
+			from 				(select  	rownum rn,
+							                reviewNo,
+							                prodNo,
+							                userNo,
+							                content,
+							                rating,
+							                regdate
+        						from        (select   	review_no reviewNo,
+										                r.prod_no prodNo,
+										                r.user_no userNo,
+										                content,
+										                rating,
+										                regdate
+									        from    review r, product p
+									        where   r.prod_no=p.prod_no
+									        and     r.prod_no= #{prodNo}
+									        order by regdate desc))
+			where rn between #{startRnum} and #{endRnum}	
+		]]>
+	</select>
+	
 
 </mapper>

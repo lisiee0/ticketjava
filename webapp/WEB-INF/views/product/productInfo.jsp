@@ -240,8 +240,7 @@
 									<c:forEach items="${product.review}" var="vo">
 									<tr>
 										<td><span class="star"> ★★★★★ <span style="width: ${vo.rating*2}0%;">★★★★★</span> 
-										<input type="range" oninput="drawStar(this)" value="1" step="1" min="0"
-												max="10"></span> ${vo.rating}</td>
+										<input type="range" oninput="drawStar(this)" value="1" step="1" min="0" max="5"></span> ${vo.rating}</td>
 										<td>${vo.content}</td>
 										<td>${vo.userName}</td>
 										<td>${vo.regDate}<input type="hidden" name="userNo" value="${vo.userNo}"></td>
@@ -250,6 +249,30 @@
 								</tbody>
 							</table>
 							
+							
+							<!-- 페이징 -->
+							<div class="row paging">				
+								<nav>
+								  <ul class="pagination pagination-sm">
+								  	<li><a href="javascript:PageMove(${product.paging.firstPageNo})"><span class="glyphicon glyphicon-triangle-left"></span></a></li>
+									<li class= ${product.paging.pageNo eq product.paging.firstPageNo ? "disabled" : ""}><a href="javascript:PageMove(${product.paging.prevPageNo})"><span class="glyphicon glyphicon-menu-left"></span></a></li>
+						
+									<c:forEach var="i" begin="${product.paging.startPageNo}" end="${product.paging.endPageNo}" step="1">
+										<c:choose>
+											<c:when test="${i eq product.paging.pageNo}">
+												<li class= ${product.paging.pageNo eq i ? "active" : ""}><a href="javascript:PageMove(${i})">${i}</a></li>
+											</c:when>
+											<c:otherwise>
+												<li class= ${product.paging.pageNo eq i ? "active" : ""}><a href="javascript:PageMove(${i})">${i}</a></li>
+											</c:otherwise>
+										</c:choose>
+									</c:forEach>
+									
+								    <li class= ${product.paging.pageNo eq product.paging.finalPageNo ? "disabled" : ""}><a href="javascript:PageMove(${product.paging.nextPageNo})"><span class="glyphicon glyphicon-menu-right"></span></a></li>
+								    <li><a href="javascript:PageMove(${product.paging.finalPageNo})"><span class="glyphicon glyphicon-triangle-right"></span></a></li>
+								  </ul>
+								</nav>
+							</div>
 					
 							<!-- <button type="button" class="btn btn-primary position btnReviewSubmit">후기등록</button>  -->
 
@@ -265,7 +288,7 @@
 								<c:when test="${empty sessionScope.authUser}">
 									<form action="${pageContext.request.contextPath}/product/writeReview" method="get">
 										<textarea class="form-control" name="content" placeholder="후기를 남기려면 로그인 해야합니다" disabled></textarea>
-										<br> <span class="star"> ★★★★★ <span>★★★★★</span> <input type="range" oninput="drawStar(this)" value="1" step="1" min="0" max="10">
+										<br> <span class="star"> ★★★★★ <span>★★★★★</span> <input type="range" oninput="drawStar(this)" value="1" step="1" min="0" max="5">
 										</span> <input type="hidden" name="prodNo" value="${product.vo.prodNo}"> <input type="hidden" name="userNo" value="">
 
 										<button type="submit" class="btn btn-primary position" disabled>등록</button>
@@ -455,7 +478,7 @@ function render(reviewVo, updown) { // 1명씩 정보를 받아 처리 button의
 	var str = '';
 	str += ' 	<tr> ';
 	str += ' 		<td><span class="star"> ★★★★★ <span style="width: ' + reviewVo.rating*2 + '0%;">★★★★★</span> ';
-	str += ' 		<input type="range" oninput="drawStar(this)" value="1" step="1" min="0" max="10"></span> ' + reviewVo.rating + '</td> ';
+	str += ' 		<input type="range" oninput="drawStar(this)" value="1" step="1" min="0" max="5"></span> ' + reviewVo.rating + '</td> ';
 	str += ' 		<td> ' + reviewVo.content + '</td> ';
 	str += ' 		<td> ' + reviewVo.userName + '</td> ';
 	str += ' 		<td> ' + reviewVo.regDate + '<input type="hidden" name="userNo" value=" ' + reviewVo.userNo + ' "></td> ';
@@ -531,7 +554,7 @@ function render(reviewVo, updown) { // 1명씩 정보를 받아 처리 button의
 	
 	 /* 리뷰 별점 */
 	const drawStar = (target) => {
-    document.querySelector(`.star span`).style.width = `${target.value * 10}%`;
+    document.querySelector('.star span').style.width = '${target.value * 20}%';
   };
 		
 	/* 공연장 정보 지도 */
@@ -566,7 +589,10 @@ function render(reviewVo, updown) { // 1명씩 정보를 받아 처리 button의
 	    } 
 	});    	
 		
-	
+	function PageMove(page) {
+
+		location.href = "${pageContext.request.contextPath}/product/info?prodNo=${param.prodNo}&crtPage=" + page;	
+	}
 	
 </script>
 
