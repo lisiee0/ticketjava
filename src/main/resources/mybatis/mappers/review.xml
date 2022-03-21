@@ -41,6 +41,7 @@
 			        r.prod_no prodNo,
 			        p.prodname prodName,
 			        r.user_no userNo,
+			        u.id id,
 			        u.name userName,
 			        r.content content,
 			        r.rating rating,
