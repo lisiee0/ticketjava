@@ -40,7 +40,6 @@
 							<c:if test="${param.prodNo != null}">
 								<input type="hidden" name="prodNo" value="${param.prodNo}">
 							</c:if>
-							
 						</form>	
 						<div id="helperArea">
 							<button class="form-control btn-default helper" type="button">아이디 찾기</button>
@@ -63,12 +62,17 @@
 
 	</div>
 	<!-- wrap 종료 -->
-
+	<input type="hidden" id="result" value="${param.result}"> 
 </body>
 
 <script>
 	$('#lastBtn').on('click',function(){
 		location.href='${pageContext.request.contextPath}/user/joinForm';
 	});
+	
+	if( $('#result').val() == 'fail'){
+		alert('로그인 정보가 일치하지 않습니다.');
+	}
+	
 </script>
 </html>

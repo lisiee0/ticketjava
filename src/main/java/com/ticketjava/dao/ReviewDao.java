@@ -71,4 +71,22 @@ public class ReviewDao {
 	}
 	
 	
+	// 상품별 리뷰 총개수
+	public int reviewCntbyprodNo(int prodNo) {
+		return sqlSession.selectOne("review.reviewCntbyprodNo", prodNo);
+	}
+	
+	// 상품별 리뷰 리스트 (페이징)
+	public List<ReviewVo> pagingrList(int prodNo, int startRnum, int endRnum) {
+		
+		Map<String, Integer> map= new HashMap<String, Integer>();
+		map.put("prodNo", prodNo);
+		map.put("startRnum", startRnum);
+		map.put("endRnum", endRnum);
+		
+		return sqlSession.selectList("pagingrListbyprodNo", map);
+	}
+	
+	
+	
 } // The end of ReservationDao
