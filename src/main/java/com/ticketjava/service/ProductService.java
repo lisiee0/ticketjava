@@ -89,7 +89,7 @@ public class ProductService {
 		paging.setPageNo(crtPage);
 		paging.setPageSize(listCnt);
 		paging.setTotalCount(rd.reviewCntbyprodNo(prodNo));
-		
+	
 		Map<String, Object> pMap= new HashMap<String, Object>();
 		pMap.put("vo", pd.getProduct(prodNo));
 		pMap.put("seatPrice", sd.selectList(prodNo));

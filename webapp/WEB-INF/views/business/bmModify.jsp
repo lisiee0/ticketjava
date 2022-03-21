@@ -84,7 +84,7 @@
 							<div class="form-group">
 								<label class="form-text col-md-2 form-id" for="">공연명</label>
 								<div class="col-md-6">
-									<input type="text" class="form-control" id="prodName" name="prodName" value="${bmgProductMap.prodName}" placeholder="${bmgProductMap.prodName}">
+									<input type="text" class="form-control" id="prodName" name="prodName" value="${bmProductMap.bmGetProduct.prodName}" placeholder="${bmProductMap.bmGetProduct.prodName}">
 								</div>
 							</div>
 
@@ -98,8 +98,11 @@
 										<div class="col-md-6">
 											<select class="form-control" name="theaterNo">
 												<option selected>공연장을 선택해주세요.</option>
-												<c:forEach items="${selectList}"  var="vo">
-													<option id="hallNo" name="hallNo" value="${vo.hallNo}">${vo.theaterName}, ${vo.hallName}, ${vo.hallNo}</option>
+												<c:forEach items="${bmProductMap.bmGetHallList}" var="vo">
+													<option id="hallNo" value="${vo.hallNo}" 
+													<c:if test ="${bmProductMap.bmGetProduct.hallNo eq vo.hallNo}">selected="selected"</c:if>>
+														${vo.theaterName},${vo.hallName},${vo.hallNo}
+													</option>
 												</c:forEach>
 											</select>
 										</div>
@@ -112,7 +115,7 @@
 								<label class="form-text col-md-2 form-id" for="">공연 구분</label>
 
 								<div class="col-md-3">
-									<select class="form-control" id="prodType" name="prodType" value="${prodVo.prodType}">
+									<select class="form-control" id="prodType" name="prodType">
 										<option value="1">연극</option>
 										<option value="2">뮤지컬</option>
 										<option value="3">콘서트</option>
@@ -127,10 +130,10 @@
 							<div class="form-group">
 								<label class="form-text col-md-2 form-id" for="">공연 기간</label>
 								<div class="col-md-4">
-									<input type="date" class="form-control" id="beginShow" name="beginShow" value="${prodVo.beginShow}">
+									<input type="date" class="form-control" id="beginShow" name="beginShow" value="${bmProductMap.bmGetProduct.beginShow}">
 								</div>
 								<div class="col-md-4">
-									<input type="date" class="form-control" id="endShow" name="endShow" value="${prodVo.endShow}">
+									<input type="date" class="form-control" id="endShow" name="endShow" value="${bmProductMap.bmGetProduct.endShow}">
 								</div>
 							</div>
 
@@ -139,10 +142,10 @@
 							<div class="form-group">
 								<label class="form-text col-md-2 form-id" for="">예매 기간</label>
 								<div class="col-md-4">
-									<input type="date" class="form-control" id="beginRez" name="beginRez" value="${prodVo.beginShow}">
+									<input type="date" class="form-control" id="beginRez" name="beginRez" value="${bmProductMap.bmGetProduct.beginRez}">
 								</div>
 								<div class="col-md-4">
-									<input type="date" class="form-control" id="endRez" name="endRez" ${prodVo.endRez}>
+									<input type="date" class="form-control" id="endRez" name="endRez" value="${bmProductMap.bmGetProduct.endRez}">
 								</div>
 							</div>
 
@@ -151,7 +154,7 @@
 							<div class="form-group">
 								<label class="form-text col-md-2 form-id" for="">공연 시작시간</label>
 								<div class="col-md-4">
-									<input type="time" class="form-control" id="showTime" name="showTime" value="${prodVo.showTime}">
+									<input type="time" class="form-control" id="showTime" name="showTime" value="${bmProductMap.bmGetProduct.showTime}">
 								</div>
 							</div>
 
@@ -160,30 +163,102 @@
 							<div class="form-group">
 								<label class="form-text col-md-2 form-id" for="">관람 시간</label>
 								<div class="col-md-4">
-									<input type="text" class="form-control" id="viewTime" name="viewTime" value="${prodVo.viewTime}">
+									<input type="text" class="form-control" id="viewTime" name="viewTime" value="${bmProductMap.bmGetProduct.viewTime}">
 								</div>
 							</div>
 
 
 							<!--관람 등급-->
 
-							<div class="form-group" name="viewGrade" value="${prodVo.viewGrade}">
+							<div class="form-group">
 								<label class="form-text col-md-2 form-id" for="">관람 등급</label>
-								<div class="col-md-1">
-									<label for="ageall">전체</label> <input type="radio"  value="1">
-								</div>
-								<div class="col-md-1">
-									<label for="age8">8세</label> <input type="radio" name="viewGrade" value="2">
-								</div>
-								<div class="col-md-1">
-									<label for="age12">12세</label> <input type="radio" name="viewGrade" value="3">
-								</div>
-								<div class="col-md-1">
-									<label for="age15">15세</label> <input type="radio" name="viewGrade" value="4">
-								</div>
-								<div class="col-md-1">
-									<label for="age15">18세</label> <input type="radio" name="viewGrade" value="5">
-								</div>
+								<c:if test="${bmProductMap.bmGetProduct.viewGrade == '1'}">
+									<div class="col-md-1">
+										<label for="ageall">전체</label> <input type="radio" name="viewGrade" value="1" checked="checked">
+									</div>
+									<div class="col-md-1">
+										<label for="age8">8세</label> <input type="radio" name="viewGrade" value="2">
+									</div>
+									<div class="col-md-1">
+										<label for="age12">12세</label> <input type="radio" name="viewGrade" value="3">
+									</div>
+									<div class="col-md-1">
+										<label for="age15">15세</label> <input type="radio" name="viewGrade" value="4">
+									</div>
+									<div class="col-md-1">
+										<label for="age15">18세</label> <input type="radio" name="viewGrade" value="5">
+									</div>
+								</c:if>
+								<c:if test="${bmProductMap.bmGetProduct.viewGrade == '2'}">
+									<div class="col-md-1">
+										<label for="ageall">전체</label> <input type="radio" name="viewGrade" value="1">
+									</div>
+									<div class="col-md-1">
+										<label for="age8">8세</label> <input type="radio" name="viewGrade" value="2" checked="checked">
+									</div>
+									<div class="col-md-1">
+										<label for="age12">12세</label> <input type="radio" name="viewGrade" value="3">
+									</div>
+									<div class="col-md-1">
+										<label for="age15">15세</label> <input type="radio" name="viewGrade" value="4">
+									</div>
+									<div class="col-md-1">
+										<label for="age15">18세</label> <input type="radio" name="viewGrade" value="5">
+									</div>
+								</c:if>
+								<c:if test="${bmProductMap.bmGetProduct.viewGrade == '3'}">
+									<div class="col-md-1">
+										<label for="ageall">전체</label> <input type="radio" name="viewGrade" value="1">
+									</div>
+									<div class="col-md-1">
+										<label for="age8">8세</label> <input type="radio" name="viewGrade" value="2">
+									</div>
+									<div class="col-md-1">
+										<label for="age12">12세</label> <input type="radio" name="viewGrade" value="3" checked="checked">
+									</div>
+									<div class="col-md-1">
+										<label for="age15">15세</label> <input type="radio" name="viewGrade" value="4">
+									</div>
+									<div class="col-md-1">
+										<label for="age15">18세</label> <input type="radio" name="viewGrade" value="5">
+									</div>
+								</c:if>
+								<c:if test="${bmProductMap.bmGetProduct.viewGrade == '4'}">
+									<div class="col-md-1">
+										<label for="ageall">전체</label> <input type="radio" name="viewGrade" value="1">
+									</div>
+									<div class="col-md-1">
+										<label for="age8">8세</label> <input type="radio" name="viewGrade" value="2">
+									</div>
+									<div class="col-md-1">
+										<label for="age12">12세</label> <input type="radio" name="viewGrade" value="3">
+									</div>
+									<div class="col-md-1">
+										<label for="age15">15세</label> <input type="radio" name="viewGrade" value="4" checked="checked">
+									</div>
+									<div class="col-md-1">
+										<label for="age15">18세</label> <input type="radio" name="viewGrade" value="5">
+									</div>
+								</c:if>
+								<c:if test="${bmProductMap.bmGetProduct.viewGrade == '5'}">
+									<div class="col-md-1">
+										<label for="ageall">전체</label> <input type="radio" name="viewGrade" value="1">
+									</div>
+									<div class="col-md-1">
+										<label for="age8">8세</label> <input type="radio" name="viewGrade" value="2">
+									</div>
+									<div class="col-md-1">
+										<label for="age12">12세</label> <input type="radio" name="viewGrade" value="3">
+									</div>
+									<div class="col-md-1">
+										<label for="age15">15세</label> <input type="radio" name="viewGrade" value="4">
+									</div>
+									<div class="col-md-1">
+										<label for="age15">18세</label> <input type="radio" name="viewGrade" value="5" checked="checked">
+									</div>
+								</c:if>
+
+
 							</div>
 
 
@@ -195,7 +270,7 @@
 									<!--좌석 선택 -->
 									<div class="form-group">
 										<div class="col-md-4">
-											<select class="form-control" id="grade" name="grade">
+											<select class="form-control" id="grade" name="grade" value="${bmProductMap.bmGetProduct.prodName}">
 												<option value="VIP">VIP석</option>
 												<option value="R">R석</option>
 												<option value="S">S석</option>
@@ -223,7 +298,7 @@
 							<div class="form-group">
 								<label class="form-text col-md-2 form-id" for="">공지사항</label>
 								<div class="col-md-8">
-									<textarea class="form-control textWay" id="notice" name="notice" placeholder="${prodVo.notice}">${prodVo.notice}</textarea>
+									<textarea class="form-control textWay" id="notice" name="notice" placeholder="${bmProductMap.bmGetProduct.notice}">${bmProductMap.bmGetProduct.notice}</textarea>
 								</div>
 							</div>
 
@@ -259,7 +334,7 @@
 							<div class="form-group">
 								<label class="form-text col-md-2 form-id" for="">공연 포스터</label>
 								<div class="col-md-8">
-									<input type="file" id="posterPath" name="posterPath" value="${prodVo.posterPath}">
+									<input type="file" id="posterPath" name="posterPath" value="${bmProductMap.bmGetProduct.posterPath}">
 								</div>
 							</div>
 
@@ -291,7 +366,7 @@
 							<div class="form-group">
 								<label class="form-text col-md-2 form-id" for="">예매/취소 안내</label>
 								<div class="col-md-8">
-									<textarea class="form-control textWay" id="cancelInfo" name="${prodVo.cancelInfo}" placeholder="${prodVo.cancelInfo}">${prodVo.cancelInfo}</textarea>
+									<textarea class="form-control textWay" id="cancelInfo" name="cancelInfo" placeholder="${bmProductMap.bmGetProduct.cancelInfo}">${bmProductMap.bmGetProduct.cancelInfo}</textarea>
 								</div>
 							</div>
 
@@ -445,28 +520,17 @@
 		console.log(JSON.stringify(ProductVo));
 
 		$.ajax({
-			url : "${pageContext.request.contextPath}/bm/bmUpload",
+			url : "${pageContext.request.contextPath}/bm/bmModify",
 			type : "post",
-			traditional : true,
 			contentType : "application/json",
 			data : JSON.stringify(ProductVo),
 
 			/* 성공 시 처리해야 될 코드 작성 */
-			success : function(detailVo) {
-				console.log(detailVo)
+			dataType : "text",
+			success : function(result) {
+				console.log(result)
 
-				//첨부파일
-				var posterPath = $("#posterPath")[0].files[0]
-
-				var prodPath = $("#prodPath")[0].files[0]
-				var castingPath = $("#castingPath")[0].files[0]
-				var addedPath = $("#addedPath")[0].files[0]
-
-				fileupload(detailVo, posterPath, 1);
-
-				fileupload(detailVo, prodPath, 2);
-				fileupload(detailVo, castingPath, 3);
-				fileupload(detailVo, addedPath, 4);
+				window.location.href = "${pageContext.request.contextPath}/bm/";     //
 			},
 			error : function(XHR, status, error) {
 				console.error(status + " : " + error);
@@ -475,32 +539,32 @@
 
 	});
 
-	function fileupload(detailVo, file, order) {
-		var formData = new FormData();
+// 	function fileupload(detailVo, file, order) {
+// 		var formData = new FormData();
 
-		formData.append('prodNo', detailVo.prodNo);
-		formData.append('detailNo', detailVo.detailNo);
-		formData.append('file', file);
-		formData.append('order', order);
+// 		formData.append('prodNo', detailVo.prodNo);
+// 		formData.append('detailNo', detailVo.detailNo);
+// 		formData.append('file', file);
+// 		formData.append('order', order);
 
-		$.ajax({
-			url : "${pageContext.request.contextPath}/bm/bmfileUpload",
-			type : "post",
-			traditional : true,
-			/* contentType : "application/json",*/
-			contentType : false,
-			processData : false,
-			data : formData,
+// 		$.ajax({
+// 			url : "${pageContext.request.contextPath}/bm/bmfileUpload",
+// 			type : "post",
+// 			traditional : true,
+// 			/* contentType : "application/json",*/
+// 			contentType : false,
+// 			processData : false,
+// 			data : formData,
 
-			/* dataType : "json", */
-			success : function(result) {
-				console.log(result)
-			},
-			error : function(XHR, status, error) {
-				console.error(status + " : " + error);
-			}
-		});
-	}
+// 			/* dataType : "json", */
+// 			success : function(result) {
+// 				console.log(result)
+// 			},
+// 			error : function(XHR, status, error) {
+// 				console.error(status + " : " + error);
+// 			}
+// 		});
+//	}
 </script>
 </html>
 

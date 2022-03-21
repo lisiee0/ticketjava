@@ -17,7 +17,7 @@ public class DiscountDao {
 	
 	//공연 수정 상시 할인 가져오기
 	public List<DiscountVo> bmgetDis(int prodNo) {
-		System.out.println("SeatpriceDao > bmgetDis");
+		System.out.println("DiscountDao > bmgetDis");
 		
 		return sqlSession.selectList("discount.bmgetDis", prodNo);
 	} 

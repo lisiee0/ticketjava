@@ -67,25 +67,33 @@ public class BusinessController {
 	}
 
 	// 공연 수정폼
-	@RequestMapping(value = "bmModify", method = { RequestMethod.GET, RequestMethod.POST })
-	public String bmModify(@RequestParam("prodNo") int prodNo, Model model, @ModelAttribute ProductVo productVo) {
-		System.out.println("BusinessController >  bmModify");
-		
-		Map<String, Object> bmgProductMap  = businessService.bmgetProduct(prodNo);
+	@RequestMapping(value = "bmModifyForm", method = { RequestMethod.GET, RequestMethod.POST })
+	public String bmModifyForm(@RequestParam("prodNo") int prodNo, Model model, @ModelAttribute ProductVo productVo) {
+		System.out.println("BusinessController >  bmModifyForm");
 
-		model.addAttribute("bmgProductMap", bmgProductMap);
-		
+		Map<String, Object> bmProductMap = businessService.bmgetProduct(prodNo);
+
+		model.addAttribute("bmProductMap", bmProductMap);
+
 		return "business/bmModify";
 	}
-	
-	
-	
+
+	// 공지사항 수정
+	@ResponseBody
+	@RequestMapping(value = "bmModify", method = { RequestMethod.GET, RequestMethod.POST })
+	public int bmModify(@ModelAttribute ProductVo productVo) {
+		System.out.println("BusinessController >  bmModify");
+
+		int count = businessService.bmModify(productVo);
+		return count;
+	}
 
 	// 공연 할인정보 추가
 	@RequestMapping("/discount")
 	public String bmDisAdd(@RequestParam("prodNo") int prodNo, Model model) {
 		System.out.println("BusinessController > bmDisAdd");
 		System.out.println(prodNo);
+		
 		model.addAttribute("prodDis", businessService.selectProdDiscount(prodNo));
 		return "business/bmDisAdd";
 	}
