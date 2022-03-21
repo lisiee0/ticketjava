@@ -12,9 +12,9 @@
 #content-head #location ul>li.last:after {content: none; }
 
 /* 폼 관련 */
-input[type="text"]{height: 25px; font-size:12px;}
-input[type="password"]{height: 25px; font-size:12px;}
-textarea{font-size:12px;}
+.input[type="text"]{height: 25px; font-size:12px;}
+.input[type="password"]{height: 25px; font-size:12px;}
+.textarea{font-size:12px;}
 
 
 /* font *(기본값 12px) */
