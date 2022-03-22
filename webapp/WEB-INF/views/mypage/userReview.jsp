@@ -122,7 +122,7 @@
 													<td id="space" class="text-left"><a href="product/info?prodNo=${reviewList.prodNo}">${reviewList.prodName}</a></td>
 													<td id="space">${reviewList.content}</td>
 													<td><span class="star"> ★★★★★ <span style="width: ${reviewList.rating*2}0%;">★★★★★</span> 
-										<input type="range" oninput="drawStar(this)" value="1" step="1" min="0" max="5"></span> ${reviewList.rating}</td>
+													<input type="range" oninput="drawStar(this)" value="1" step="1" min="0" max="5"></span> ${reviewList.rating} </td>
 
 													<td>${reviewList.regDate}</td>
 													<td><a href="#">[수정]</a> <a href="${pageContext.request.contextPath}/mypage/userReviewDelete?reviewNo=${reviewList.reviewNo}">[삭제]</a>

@@ -55,7 +55,7 @@
 	-webkit-text-fill-color: #fff58c;
 }
 
-/*평점 출력용 골드스타 (구 레드스트) */
+/*평점 출력용 골드스타 (구 레드스타) */
 .star {
 	position: relative;
 	font-size: 2rem;
