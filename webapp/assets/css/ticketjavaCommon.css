@@ -21,16 +21,17 @@ body {
 	padding-left:0px;
 }
 
-#headerContainer{
-	padding:0px;
+#headerContainerFluid {
+	background-color:#fafafa;
 	border-bottom:1px solid #f0f0f0;
 	margin-bottom:20px;
 	background-color:#fafafa;
 }
 
-#headerContainerFluid {
+#headerContainer{
 	background-color:#fafafa;
 }
+
 
 /* 레이아웃 */
 #header {
