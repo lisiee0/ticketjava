@@ -27,7 +27,7 @@
 		
 		
 		
-		<div class="container-fluid">
+		<div id="bc" class="container-fluid">
 			<div class="container">
 				<div class="row">
 					<h2 class="pageMenu section">랭킹</h2>

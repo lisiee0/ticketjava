@@ -26,7 +26,7 @@
 
 
 		<!-- 컨텐츠 구역 시작 -->
-		<div class="container-fluid contentsOut">
+		<div id="bc" class="container-fluid contentsOut">
 			<div class="container zp">
 				
 				<div id="containerMain">

@@ -79,12 +79,15 @@
 	overflow: hidden;
 	pointer-events: none;
 }
+
+
+
 </style>
 
 </head>
 
 
-<body data-spy="scroll" data-target=".navbar-example">
+<body>
 	<div id="wrap">
 		<!-- header & nav -->
 		<c:import url="/WEB-INF/views/include/header.jsp"></c:import>
@@ -158,22 +161,24 @@
 							</div>
 
 
-							<div class="col-xs-3 np" id="calArea">
-								<!-- 캘린더 api 구현 위치 -->
-								<form id="rezArea" method="post" target="reserve" action="${pageContext.request.contextPath}/reservation/selectSeat">
-									<c:import url="/WEB-INF/views/include/calendar.jsp"></c:import>
-									<input id="prodNo" type="hidden" name="prodNo" value="${product.vo.prodNo}">
-									<c:choose>
-										<c:when test="${!empty param.viewDate}">
-											<input id="viewDate" type="hidden" name="viewDate" value="${param.viewDate}">
-										</c:when>
-										<c:otherwise>
-											<input id="viewDate" type="hidden" name="viewDate" value="">
-										</c:otherwise>
-									</c:choose>
-									<button type="submit" id="rezBtn" class="btn btn-primary btn-block">예매하기</button>
-								</form>
-								<input id="beginshow" type="hidden" value="${product.vo.beginShow}"> <input id="endshow" type="hidden" value="${product.vo.endShow}">
+							<div class="col-xs-3 np banner" id="calArea">
+								<div class="inner">
+									<!-- 캘린더 api 구현 위치 -->
+									<form id="rezArea" method="post" target="reserve" action="${pageContext.request.contextPath}/reservation/selectSeat">
+										<c:import url="/WEB-INF/views/include/calendar.jsp"></c:import>
+										<input id="prodNo" type="hidden" name="prodNo" value="${product.vo.prodNo}">
+										<c:choose>
+											<c:when test="${!empty param.viewDate}">
+												<input id="viewDate" type="hidden" name="viewDate" value="${param.viewDate}">
+											</c:when>
+											<c:otherwise>
+												<input id="viewDate" type="hidden" name="viewDate" value="">
+											</c:otherwise>
+										</c:choose>
+										<button type="submit" id="rezBtn" class="btn btn-primary btn-block">예매하기</button>
+									</form>
+									<input id="beginshow" type="hidden" value="${product.vo.beginShow}"> <input id="endshow" type="hidden" value="${product.vo.endShow}">
+								</div>
 							</div>
 						</div>
 					</div>
@@ -428,7 +433,6 @@
 
 <script>
 
-
 //에이작스 리뷰작성 시작
 
 //저장버튼 클릭할때 
@@ -497,6 +501,7 @@ function render(reviewVo, updown) { // 1명씩 정보를 받아 처리 button의
 
 //에이작스 리뷰작성 종료
 
+
 	$(function(){
 		var viewDate = $('#viewDate').val();
 		if ( viewDate != ''){
@@ -555,7 +560,7 @@ function render(reviewVo, updown) { // 1명씩 정보를 받아 처리 button의
 	 /* 리뷰 별점 */
 	const drawStar = (target) => {
     document.querySelector('.star span').style.width = '${target.value * 20}%';
-  };
+  	};
 		
 	/* 공연장 정보 지도 */
 	var mapContainer = document.getElementById('map'),   // 지도를 표시할 div 
@@ -593,6 +598,9 @@ function render(reviewVo, updown) { // 1명씩 정보를 받아 처리 button의
 
 		location.href = "${pageContext.request.contextPath}/product/info?prodNo=${param.prodNo}&crtPage=" + page+ "#review"
 	}
+	
+	
+	
 	
 </script>
 
