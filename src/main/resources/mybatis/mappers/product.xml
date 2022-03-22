@@ -96,7 +96,7 @@
 					viewgrade = 	#{viewGrade},
 					notice = 		#{notice},
 					cancelinfo = 	#{cancelInfo}
-			where 	prod_no = #{prodNo};
+			where 	prod_no = #{prodNo}
         ]]>
 	</update>
 
