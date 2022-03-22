@@ -532,7 +532,8 @@ CREATE TABLE noti (
 	noti_no NUMBER NOT NULL, /* 알림 번호 */
 	user_no NUMBER, /* 회원번호 */
 	content VARCHAR2(500), /* 알림 내용 */
-	notitime DATE /* 알림 시간 */
+	notitime DATE, /* 알림 시간 */
+	read number /* 조회 여부 */
 );
 
 COMMENT ON TABLE noti IS '취소 알림 리스트';
@@ -545,6 +546,7 @@ COMMENT ON COLUMN noti.content IS '알림 내용';
 
 COMMENT ON COLUMN noti.notitime IS '알림 시간';
 
+COMMENT ON COLUMN noti.read IS '조회 여부';
 
 ALTER TABLE noti
 	ADD
