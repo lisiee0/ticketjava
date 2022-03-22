@@ -6,11 +6,12 @@
 	<insert id="insertList" parameterType="map">
 		<foreach collection="list" item="item">
 			insert into noti
-			( noti_no, user_no, content, notiTime )
+			( noti_no, user_no, content, notiTime, read )
 			values( seq_noti_no.nextval,
 				   #{item.userNo},
 				   #{item.content},
-				   sysdate
+				   sysdate,
+				   0
 			)
 		</foreach>
 	</insert>
@@ -19,7 +20,8 @@
 		<![CDATA[
 			select noti_no notiNo,
 				   content,
-				   to_char(notiTime, 'yy-mm-dd hh24:mi') notiTime
+				   to_char(notiTime, 'yy-mm-dd hh24:mi') notiTime,
+				   read
 			from noti
 			where user_no = #{userNo}
 			order by notiTime desc
@@ -33,4 +35,20 @@
 		]]>
 	</delete>
 	
+	<update id="updateRead" parameterType="int">
+		<![CDATA[ 
+			update noti
+			set read = 1
+			where noti_no = #{notiNo}
+		]]>
+	</update>
+	
+	<select id="selectUnread" parameterType="int" resultType="int">
+		<![CDATA[
+			select count(*)
+			from noti
+			where user_no = #{userNo} and
+				  read = 0
+		]]>
+	</select>
 </mapper>

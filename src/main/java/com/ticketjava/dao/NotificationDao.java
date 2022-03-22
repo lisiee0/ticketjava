@@ -26,6 +26,14 @@ public class NotificationDao {
 	public int deleteNoti(int notiNo) {
 		return sqlSession.delete("notification.deleteNoti", notiNo);
 	}
+
+	public void updateRead(int notiNo) {
+		sqlSession.update("notification.updateRead", notiNo);
+	}
+
+	public int selectUnread(int userNo) {
+		return sqlSession.selectOne("notification.selectUnread", userNo);
+	}
 	
 	
 	

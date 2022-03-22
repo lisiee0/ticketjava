@@ -16,7 +16,6 @@
 					<ul id="userMenu">
 						<c:choose>
 							<c:when test="${authUser eq null}">
-								
 								<li><a href="${pageContext.request.contextPath}/user/loginForm">로그인</a></li>
 								<li><a href="${pageContext.request.contextPath}/user/joinForm">회원가입</a></li>
 							</c:when>
@@ -24,8 +23,7 @@
 							<c:when test="${authUser.usertype == 1}"> <!-- 개인 -->
 								
 								<li class="userName">
-									<a href="${pageContext.request.contextPath}/mypage/reserveAlram"><img src="${pageContext.request.contextPath}/assets/image/index/bell-normal.png"></a>
-									<a href="${pageContext.request.contextPath}/mypage/reserveAlram"><img src="${pageContext.request.contextPath}/assets/image/index/bell-new.png"></a>
+									<a href="${pageContext.request.contextPath}/mypage/reserveAlram"><img id="bell" src=""></a>
 									<a href="${pageContext.request.contextPath}/mypage/">${authUser.name}님</a>
 								</li>
 								<li><a href="${pageContext.request.contextPath}/mypage/reserveList">예매확인/취소</a></li>
@@ -117,6 +115,23 @@
 
 <script>
 	$('ul#userMenu li').eq(0).css('border','none');
+	
+	$.ajax({
+		url: "${pageContext.request.contextPath}/notification/unread",
+		type : "post",
+		dataType: "json",
+		success : function(result){
+			if(result == 'unread'){
+				$('#bell').attr('src', '${pageContext.request.contextPath}/assets/image/index/bell-new.png');
+			}
+			else{
+				$('#bell').attr('src', '${pageContext.request.contextPath}/assets/image/index/bell-normal.png');
+			}
+		},
+		error : function(XHR, status, error) {
+			console.error(status + " : " + error);
+		}
+	});
 </script>
 
 </html>

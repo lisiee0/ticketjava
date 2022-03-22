@@ -6,15 +6,17 @@ public class NotificationVo {
 	private int userNo;
 	private String content;
 	private String notiTime;
-
+	private int read;
+	
 	public NotificationVo() {
 	}
 
-	public NotificationVo(int notiNo, int userNo, String content, String notiTime) {
+	public NotificationVo(int notiNo, int userNo, String content, String notiTime, int read) {
 		this.notiNo = notiNo;
 		this.userNo = userNo;
 		this.content = content;
 		this.notiTime = notiTime;
+		this.read = read;
 	}
 
 	public int getNotiNo() {
@@ -49,10 +51,13 @@ public class NotificationVo {
 		this.notiTime = notiTime;
 	}
 
-	@Override
-	public String toString() {
-		return "NotificationVo [notiNo=" + notiNo + ", userNo=" + userNo + ", content=" + content + ", notiTime="
-				+ notiTime + "]";
+	public int getRead() {
+		return read;
 	}
 
+	public void setRead(int read) {
+		this.read = read;
+	}
+
+	
 }

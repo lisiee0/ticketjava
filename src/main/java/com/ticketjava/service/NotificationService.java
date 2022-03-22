@@ -68,7 +68,7 @@ public class NotificationService {
 			
 			//5. noti (결과 userNo 리스트 ) > 알림 번호(시퀀스), 내용 ( viewDate+showTime , prodName, section ) , 알림 시간 (sysdate)   
 			String content = ""
-					+ "<a target='_blank' href='http://localhost:8088/ticketjava/product/info?prodNo="+notiDataVo.getProdNo()+"&viewDate="+notiDataVo.getViewDate()+"'>"
+					+ "<a class='content' target='_blank' href='http://localhost:8088/ticketjava/product/info?prodNo="+notiDataVo.getProdNo()+"&viewDate="+notiDataVo.getViewDate()+"'>"
 					+ notiDataVo.getViewDate()+" "+notiDataVo.getShowTime()+" "+notiDataVo.getProdName()+" "+notiDataVo.getGrade().toUpperCase()+"석 "
 					+ notiDataVo.getSection()+"구역 "+notiDataVo.getCol()+"열 "+notiDataVo.getNum()+"번 좌석 취소 안내"
 					+ "</a>";
@@ -91,5 +91,20 @@ public class NotificationService {
 			notireqDao.deleteDoneReq(notireqList);
 		}
 	}
+
+	public void read(int notiNo) {
+		notificationDao.updateRead(notiNo);
+	}
+
+	public String unread(int userNo) {
+		int count = notificationDao.selectUnread(userNo);
+		
+		if(count > 0)
+			return "unread";
+		else
+			return "read";
+	}
+	
+	
 	
 }

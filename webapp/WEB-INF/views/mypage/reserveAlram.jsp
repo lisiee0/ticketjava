@@ -82,7 +82,14 @@
 										<tbody>
 											<c:forEach items="${notiList}" var="vo">
 												<tr id="tr${vo.notiNo}">
-													<td class="text-left">${vo.content}</td>
+													<c:choose>
+														<c:when test="${vo.read == 0}">
+															<td class="unread text-left">${vo.content}</td>
+														</c:when>
+														<c:otherwise>
+															<td class="read text-left">${vo.content}</td>
+														</c:otherwise>
+													</c:choose>
 													<td>${vo.notiTime}</td>
 													<td><button type="button" class="delBtn btn btn-outline-primary" data-notino="${vo.notiNo}">삭제</button></td>
 												</tr>
@@ -162,6 +169,10 @@
 			}
 		});
 		
+	});
+	
+	$('.content').on('click',function(){
+		alert( $(this).closest('td').attr('class') );
 	});
 </script>
 
