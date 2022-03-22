@@ -83,7 +83,6 @@ public class BusinessController {
 	@RequestMapping(value = "bmModify", method = { RequestMethod.GET, RequestMethod.POST })
 	public int bmModify(@RequestBody ProductVo productVo) {
 		System.out.println("BusinessController >  bmModify");
-		System.out.println("BusinessController > " + productVo);
 		
 		int count = businessService.bmModify(productVo);
 		return count;

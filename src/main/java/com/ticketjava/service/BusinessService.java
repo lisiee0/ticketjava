@@ -73,10 +73,6 @@ public class BusinessService {
 		td.detailNoAdd(detailVo);
 		System.out.println("BusinessServiece > detailNoAdd");
 
-		// theaterDao로 값을 넘김
-		thd.theaterAdd(theaterVo);
-		System.out.println("BusinessServiece > theaterAdd");
-
 		// seatPriceDao로 값을 넘김
 		List<SeatpriceVo> seatpriceList = productVo.getSeatpriceList();
 
@@ -194,7 +190,6 @@ public class BusinessService {
 	// 공연정보 수정 등록
 	public int bmModify(ProductVo productVo) {
 		System.out.println("BusinessServiece > bmModify()");
-		System.out.println("BusinessServiece > " + productVo);
 
 		// ProductDao로 값을 넘기
 		return pd.bmproModify(productVo);
