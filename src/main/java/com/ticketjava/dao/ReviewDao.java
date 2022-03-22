@@ -92,6 +92,10 @@ public class ReviewDao {
 		return sqlSession.selectList("pagingrListbyprodNo", map);
 	}
 	
+	public void userReviewModify (int reviewNo) {
+		System.out.println("ReviewDao.userReviewModify 실행");
+		sqlSession.update("review.ReviewUpdate", reviewNo);
+	} 
 	
 	
 } // The end of ReservationDao

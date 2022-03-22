@@ -96,4 +96,10 @@ public class ReviewService {
 	}
 	
 	
+//	리뷰 수정
+	public void userReviewModify (int reviewNo) {
+		reviewDao.userReviewModify(reviewNo);
+	} 
+	
+	
 } // The end of ReservationService
