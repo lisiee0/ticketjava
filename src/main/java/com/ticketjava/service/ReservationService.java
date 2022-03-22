@@ -27,11 +27,21 @@ public class ReservationService {
 	private NotificationService notificationService;
 	
 	public int preoccupy(ReservationVo reservationVo, int userNo) {
+		List<SelseatVo> selseatList = reservationVo.getSelseatList();
+		for(SelseatVo selseatVo : selseatList) {
+			Map <String, Object> map = new HashMap<>();
+			map.put("selseatVo", selseatVo);
+			map.put("reservationVo", reservationVo);
+			int count = selseatDao.selectOccupyForPre(map);
+			if(count > 0)
+				return -1;
+		}
+		
 		reservationVo.setUserNo(userNo);
 		reservationDao.insertPre(reservationVo);
 		int rezNo = reservationVo.getRezNo();
 		
-		List<SelseatVo> selseatList = reservationVo.getSelseatList();
+		
 		for(SelseatVo selseatVo : selseatList) {
 			selseatVo.setRezNo(rezNo);
 			selseatDao.insertPre(selseatVo);

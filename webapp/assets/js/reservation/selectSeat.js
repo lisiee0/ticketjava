@@ -118,7 +118,11 @@ $(function(){
 			dataType: "json",
 			success : function(rezNo){
 				console.log(rezNo);
-				
+				if(rezNo == -1) {
+					alert('예약된 좌석이 포함돼있습니다.');
+					location.reload();
+					return false;
+				}
 				$('#seatForm').append('<input type="hidden" name="rezNo" value="'+rezNo+'">');
 				$('#seatForm').submit();
 			},

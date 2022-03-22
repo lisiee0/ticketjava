@@ -34,7 +34,22 @@
 			      viewDate = #{viewDate} and
 			      s.status != 0
 		]]>
-		
+	</select>
+	
+	
+	<select id="selectOccupyForPre" resultType="int" parameterType="map">
+		<![CDATA[
+			select count(*)
+			from selseat s, reserve r
+			where s.rez_no = r.rez_no and
+			      prod_no = 	#{reservationVo.prodNo} 	and
+			      viewDate = 	#{reservationVo.viewDate} 	and
+			      grade = 		#{selseatVo.grade} 			and
+			      section = 	#{selseatVo.section} 		and
+			      col = 		#{selseatVo.col} 			and
+			      num = 		#{selseatVo.num} 			and
+			      s.status != 0
+		]]>
 	</select>
 	
 	<update id="updateDcPay" parameterType="SelseatVo">
