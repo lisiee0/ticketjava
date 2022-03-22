@@ -21,8 +21,8 @@
 
 </head>
 
-
 <style>
+
 /*평점 출력용 골드스타 (구 레드스타) */
 .star {
 	position: relative;
@@ -47,8 +47,6 @@
 	overflow: hidden;
 	pointer-events: none;
 }
-
-
 </style>
 
 
@@ -103,7 +101,14 @@
 							<div id="board">
 								<div id="list">
 									<table>
-
+										<colgroup>
+											<col width="10%">
+											<col width="20%">
+											<col width="25%">
+											<col width="20%">
+											<col width="15%">
+											<col width="10%">
+										</colgroup>
 										<thead>
 											<tr>
 												<th>번호</th>
@@ -115,31 +120,21 @@
 											</tr>
 										</thead>
 
-										<c:forEach items="${requestScope.rMap.reviewList}" var="reviewList">
-											<tbody>
+										<tbody>
+											<c:forEach items="${requestScope.rMap.reviewList}" var="reviewList">
 												<tr>
 													<td>${reviewList.reviewNo}</td>
 													<td id="space" class="text-left"><a href="product/info?prodNo=${reviewList.prodNo}">${reviewList.prodName}</a></td>
 													<td id="space">${reviewList.content}</td>
-													<td><span class="star"> ★★★★★ <span style="width: ${reviewList.rating*2}0%;">★★★★★</span> 
-													<input type="range" oninput="drawStar(this)" value="1" step="1" min="0" max="5"></span> ${reviewList.rating} </td>
+													<td><span class="star"> ★★★★★ <span style="width: ${reviewList.rating*2}0%;">★★★★★</span> <input type="range" oninput="drawStar(this)" value="1" step="1"
+															min="0" max="10"
+														></span> ${reviewList.rating}</td>
 
 													<td>${reviewList.regDate}</td>
 													<td><a href="#">[수정]</a> <a href="${pageContext.request.contextPath}/mypage/userReviewDelete?reviewNo=${reviewList.reviewNo}">[삭제]</a>
 												</tr>
-											</tbody>
-										</c:forEach>
-										<!--
-										<tr>
-											<td>123</td>
-											<td class="text-left"><a href="#">뮤지컬 라이온킹 오리지널 내한..</a></td>
-											<td>별로네요</td>
-											<td>불만족(if satis=1)</td>
-											<td>2020-12-23</td>
-											<td><button class="btn btn-primary btnM" type="submit" id="btn-submit">수정</button>
-												<button class="btn btn-primary" type="submit" id="btn-submit">삭제</button></td>
-										</tr>
-  										-->
+											</c:forEach>
+										</tbody>
 
 									</table>
 
@@ -168,6 +163,8 @@
 										<div class="clear"></div>
 									</div>
 									<!-- //paging -->
+
+
 									<div id="row" class="searchBox">
 										<div class="col-xs-8"></div>
 										<div class="col-xs-2">
@@ -210,7 +207,7 @@
 
 /* 리뷰 별점 */
 const drawStar = (target) => {
-document.querySelector('.star span').style.width = '${target.value * 20}%';
+document.querySelector('.star span').style.width = '${target.value * 10}%';
 	};
 	
 </script>

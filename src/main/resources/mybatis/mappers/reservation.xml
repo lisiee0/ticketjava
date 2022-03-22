@@ -95,88 +95,89 @@
 	<!-- 마이페이지 예매내역 리스트 -->
 	<select id="reserveList" resultType="ReserveDetailVo" parameterType="ReserveDetailVo">
 	<![CDATA[
-select
-        r.rez_no rezNo, 
-        to_char(r.rezdate, 'yy-mm-dd hh24:mi') rezdate,
-        r.prod_no prodNo,
-        p.prodname prodname,
-        to_char(r.viewdate, 'yy-mm-dd hh24:mi') viewdate,
-        r.ticketCount ticketCount,
-        r.status status
-        
-from (select 
-				r.rez_no,
-				r.user_no,
-				r.rezdate,
-				r.viewdate,
-				r.status,
-				r.prod_no,
-				count(s.selseat_no) ticketCount
-				
-      from		reserve r, selseat s
-      where		r.rez_no = s.rez_no
-      			and s.status = 1
-      group by	r.rez_no, r.user_no, r.rezdate, r.viewdate, r.status, r.prod_no) r, product p
-where r.user_no = #{userNo} and
-	  r.prod_no = p.prod_no
+			select
+			        r.rez_no rezNo, 
+			        to_char(r.rezdate, 'yy-mm-dd hh24:mi') rezdate,
+			        r.prod_no prodNo,
+			        p.prodname prodname,
+			        to_char(r.viewdate, 'yy-mm-dd hh24:mi') viewdate,
+			        r.ticketCount ticketCount,
+			        r.status status
+			        
+			from (select 
+							r.rez_no,
+							r.user_no,
+							r.rezdate,
+							r.viewdate,
+							r.status,
+							r.prod_no,
+							count(s.selseat_no) ticketCount
+							
+			      from		reserve r, selseat s
+			      where		r.rez_no = s.rez_no
+			      			
+			      group by	r.rez_no, r.user_no, r.rezdate, r.viewdate, r.status, r.prod_no) r, product p
+			
+			where	r.prod_no = p.prod_no
+			and		r.user_no = #{userNo}
 	  
-]]>
+	]]>	
 	</select>
 
 
 	<!-- 예매정보 상세 -->
 	<select id="reserveDetail" resultType="ReserveDetailVo" parameterType="int">
-<![CDATA[
-select 
-        u.user_no userNo,
-        p.prod_no prodNo,
-        u.name name,
-        p.prodname prodname,
-        to_char(showTime, 'hh24:mi') showTime,
-        t.theatername theatername,
-        h.hallname hallname,
-        to_char(r.viewdate, 'yy.mm.dd') viewdate,
-        r.rez_no rezNo,
-        to_char(r.rezdate, 'yy.mm.dd') rezdate
-        
-from	reserve r, users u, product p, theater t, hall h
-where	r.user_no= u.user_no
-and     p.prod_no= r.prod_no
-and     p.hall_no= h.hall_no
-and     t.theater_no= h.theater_no
-and     r.rez_no= #{rezNo}
-]]>
+		<![CDATA[
+			select 
+			        u.user_no userNo,
+			        p.prod_no prodNo,
+			        u.name name,
+			        p.prodname prodname,
+			        to_char(showTime, 'hh24:mi') showTime,
+			        t.theatername theatername,
+			        h.hallname hallname,
+			        to_char(r.viewdate, 'yy.mm.dd') viewdate,
+			        r.rez_no rezNo,
+			        to_char(r.rezdate, 'yy.mm.dd') rezdate
+			        
+			from	reserve r, users u, product p, theater t, hall h
+			where	r.user_no= u.user_no
+			and     p.prod_no= r.prod_no
+			and     p.hall_no= h.hall_no
+			and     t.theater_no= h.theater_no
+			and     r.rez_no= #{rezNo}
+		]]>
 	</select>
 
 	<!-- 예매 정보 상세 좌석 -->
 	<select id="reserveSeatList" resultType="ReserveDetailVo" parameterType="int">
-<![CDATA[
-select
-        selseat_no selseatNo,
-        dcName,
-        grade,
-        section,
-        col,
-        num,
-        payment,
-        status
-from	selseat s, discount d
-where	s.dc_no = d.dc_no(+) 
-and		rez_no = #{rezNo}
-]]>
+		<![CDATA[
+			select
+			        selseat_no selseatNo,
+			        dcName,
+			        grade,
+			        section,
+			        col,
+			        num,
+			        payment,
+			        status
+			from	selseat s, discount d
+			where	s.dc_no = d.dc_no(+) 
+			and		rez_no = #{rezNo}
+		]]>
 	</select>
 
 
 
 	<!-- 예매 좌석 취소 status 1->0 변경 -->
 	<select id="reserveSeatCancel" resultType="ReserveDetailVo" parameterType="ReserveDetailVo">
-<![CDATA[
-
-UPDATE selseat
-SET status = 0
-WHERE selseat_no = #{selseatNo}
-
-]]>
+		<![CDATA[
+		
+			UPDATE	selseat
+			SET		status = 0
+			WHERE	selseat_no = #{selseatNo}
+			
+		]]>
 	</select>
 
 
