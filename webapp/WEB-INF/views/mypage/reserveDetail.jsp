@@ -103,9 +103,9 @@
 											</tr>
 											<tr>
 												<th>지불총액</th>
-												<td>${rMap.totalPayment.totalPayment}</td>
+												<td>${rMap.reserveDetail.totalPayment}원</td>
 												<th>총 좌석수</th>
-												<td>${rMap.totalPayment.selseatCount}</td>
+												<td>${rMap.reserveDetail.selseatCount}석</td>
 											</tr>
 											
 										</tbody>
