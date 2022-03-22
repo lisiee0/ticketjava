@@ -59,7 +59,7 @@ public class ReviewService {
 //		끝글 번호
 		int endRnum = (startRnum + listCnt) - 1 ; // 1이면 11-1 = 10
 		
-		List<ReviewVo> reviewList = reviewDao.getReviewListMypagePaging(startRnum, endRnum);
+		List<ReviewVo> reviewList = reviewDao.getReviewListMypagePaging(crtPage, userNo, startRnum, endRnum);
 		
 //		#페이징 버튼
 		int totalCnt = reviewDao.selectTotal();
@@ -90,7 +90,7 @@ public class ReviewService {
 		};
 		
 		Map<String, Object> rMap = new HashMap<String, Object>();
-		rMap.put("vo", reviewDao.getReviewListMypagePaging(userNo, crtPage));
+		rMap.put("vo", reviewDao.getReviewListMypagePaging(crtPage, userNo, startRnum, endRnum));
 		rMap.put("prev", prev);
 		rMap.put("next", next);
 		rMap.put("startPageBtnNo", startPageBtnNo);

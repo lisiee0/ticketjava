@@ -132,7 +132,7 @@ public class MypageController {
 	}
 	
 	
-//	후기 리뷰 관리 마이페이지
+//	후기 리뷰 관리 마이페이지 페이징
 	@RequestMapping("/userReview")
 	public String getReviewListMypage(@RequestParam(value="crtPage", required= false, defaultValue= "1") int crtPage, Model model, HttpSession session) {
 		System.out.println("MypageController userReview");
@@ -147,6 +147,9 @@ public class MypageController {
 		
 		return "mypage/userReview";
 	}
+	
+	
+	
 	
 	@RequestMapping("/userReviewDelete")
 	public String userReviewDelete(@RequestParam("reviewNo") int reviewNo) {

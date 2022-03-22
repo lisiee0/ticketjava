@@ -26,12 +26,14 @@ public class ReviewDao {
 	}
 
 //	리뷰 리스트 마이페이지 페이징
-	public List<ReviewVo> getReviewListMypagePaging (int startRnum, int endRnum) {
+	public List<ReviewVo> getReviewListMypagePaging (int userNo, int crtPage, int startRnum, int endRnum) {
 	System.out.println("ReviewDao 페이징");	
 	
 	Map<String, Integer> map = new HashMap<String, Integer>();
 	map.put("startRnum", startRnum);
 	map.put("endRnum", endRnum);
+	map.put("userNo", userNo);
+	map.put("crtPage", crtPage);
 	
 	List<ReviewVo> reviewList = sqlSession.selectList("review.getReviewListMypagePaging", map);
 	System.out.println("ReviewDao reviewList 페이징 갯수 출력"+reviewList);
