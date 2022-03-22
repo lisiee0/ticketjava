@@ -80,10 +80,11 @@
 											<tr>
 												<th>번호</th>
 												<!-- 취소알림 신청번호 -->
-												<th>알림신청일</th>
 												<th>상품명</th>
 												<th>구역</th>
 												<th>남은 횟수</th>
+												<th>알림신청일</th>
+												<th>희망관람일</th>
 												<th>설정</th>
 												<th>알림상태</th>
 											</tr>
@@ -97,7 +98,6 @@
 											<c:forEach items="${reqList}" var="vo"> 
 												<tr>
 													<td class="reqNo">${vo.reqNo}</td>
-													<td>${vo.reqDate}</td>
 													<td><a href="${pageContext.request.contextPath}/product/info?prodNo=${vo.prodNo}">${vo.prodName}</a></td>
 													<td>${vo.selSection}</td>
 													<td>
@@ -110,8 +110,10 @@
 															</c:otherwise>
 														</c:choose>
 													</td>
+													<td>${vo.reqDate}</td>
+													<td>${vo.viewDate}</td>
 													<td>
-														<button type="button" id="chgSetBtn" class="btn btn-primary" data-prodno="${vo.prodNo}" data-viewdate="${vo.viewDate}">변경</button>
+														<button type="button" class="btn btn-primary chgSetBtn" data-prodno="${vo.prodNo}" data-viewdate="${vo.viewDate}">변경</button>
 													</td>
 													<td>
 														<c:choose>
@@ -155,13 +157,19 @@
 	</div>
 	<!-- wrap 종료 -->
 
+	<form id="notireqForm" action="${pageContext.request.contextPath}/notireq/notireq" method="post" target="notireq">
+		<input type="hidden" name="prodNo" value="">
+		<input type="hidden" name="viewDate" value="">
+	</form>
 </body>
 
 <script>
-	$('#chgSetBtn').on('click',function(){
-		var viewDate = $(this).data('viewdate');
-		var prodNo= $(this).data('prodno');
-		window.open('${pageContext.request.contextPath}/notireq/notireq?prodNo='+prodNo+'&viewDate='+viewDate,'notireqForm', 'width=970, height=800, left=300, top=100');
+	$('.chgSetBtn').on('click',function(){
+		$('[name=viewDate]').val ( $(this).data('viewdate') );
+		$('[name=prodNo]').val( $(this).data('prodno') );
+		
+		window.open('','notireq', 'width=970, height=800, left=400, top=300');
+		$('#notireqForm').submit();
 	});
 	
  	$('#activeBtn').on('click',function(){
