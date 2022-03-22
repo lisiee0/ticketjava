@@ -172,7 +172,8 @@
 						        userNo,
 						        content,
 						        rating,
-						        regdate
+						        to_char(regdate, 'YY-MM-DD HH24:MI') regDate,
+						        name userName
 			from 				(select  	rownum rn,
 							                reviewNo,
 							                prodNo,
@@ -189,8 +190,9 @@
 									        from    	review r, product p
 									        where   	r.prod_no=p.prod_no
 									        and     	r.prod_no= #{prodNo}
-									        order by 	regdate desc))
-			where rn between #{startRnum} and #{endRnum}	
+									        order by 	regdate desc)) o, users u
+			where				o.userNo= u.user_no		        
+			and   				rn between #{startRnum} and #{endRnum}	
 		]]>
 	</select>
 	
