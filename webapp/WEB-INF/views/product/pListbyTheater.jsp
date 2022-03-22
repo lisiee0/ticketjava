@@ -36,13 +36,13 @@
 						<div class="row">
 							<div class="col-xs-3"></div>
 							
-							<div class="col-xs-6 div-border">
+							<div class="col-xs-6 div-border ">
 								<!-- 공연장 로고 -->
 								<div class="col-xs-4 np">
 									<img id="logo" src="${pageContext.request.contextPath}/upload/${map.vo.logoPath}">
 								</div>
-								<div class="col-xs-8 theater-info">
-									<p class="title">${map.vo.theaterName}</p><br>
+								<div class="col-xs-8 theater-info bgc">
+									<p class="title">${map.vo.theaterName}</p>
 									<p>주소 : ${map.vo.address} ${map.vo.address2}</p>
 									<p>대표전화 : ${map.vo.phone}</p>
 									<p>홈페이지 : <a href="${map.vo.homePage}">${map.vo.homePage}</a></p>
