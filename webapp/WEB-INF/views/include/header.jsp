@@ -110,28 +110,30 @@
 			<!-- container 종료 -->
 		</nav>
 		<!-- 네비바 구역 종료 -->
-
+	<input type="hidden" id="userType" value="${authUser.usertype}">
 </body>
 
 <script>
 	$('ul#userMenu li').eq(0).css('border','none');
 	
-	/* $.ajax({
-		url: "${pageContext.request.contextPath}/notification/unread",
-		type : "post",
-		dataType: "json",
-		success : function(result){
-			if(result == 'unread'){
-				$('#bell').attr('src', '${pageContext.request.contextPath}/assets/image/index/bell-new.png');
+	if( $('#userType').val() == 1 ){
+		$.ajax({
+			url: "${pageContext.request.contextPath}/notification/unread",
+			type : "post",
+			dataType: "json",
+			success : function(result){
+				if(result == 'unread'){
+					$('#bell').attr('src', '${pageContext.request.contextPath}/assets/image/index/bell-new.png');
+				}
+				else{
+					$('#bell').attr('src', '${pageContext.request.contextPath}/assets/image/index/bell-normal.png');
+				}
+			},
+			error : function(XHR, status, error) {
+				console.error(status + " : " + error);
 			}
-			else{
-				$('#bell').attr('src', '${pageContext.request.contextPath}/assets/image/index/bell-normal.png');
-			}
-		},
-		error : function(XHR, status, error) {
-			console.error(status + " : " + error);
-		}
-	}); */
+		});
+	}
 </script>
 
 </html>
