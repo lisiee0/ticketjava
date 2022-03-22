@@ -20,6 +20,7 @@
 
 </head>
 
+
 <body>
 	<div id="wrap">
 		<!-- header & nav -->
@@ -32,7 +33,7 @@
 				<div class="row">
 					
 					<div class="container np">
-						<div class="row section">
+						<div class="row section region_nav">
 							<div class="floatLeft">
 								<c:choose>
 									<c:when test="${param.cateNo eq 1}"><h2 class="pageMenu nm margintop">지역<small>서울/경기</small></h2></c:when>
