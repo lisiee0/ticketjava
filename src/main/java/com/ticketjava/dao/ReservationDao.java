@@ -64,6 +64,12 @@ public class ReservationDao {
 	}
 
 	
+//	마이페이지 예매내역 상세 지불총액 좌석수 출력
+	public int getReserveDetailpayment (int rezNo) {
+		return sqlSession.selectOne("reservation.reserveDetailpayment", rezNo);
+	}
+
+	
 //	마이페이지 예매내역 상세 좌석 리스트 
 	public List<ReserveDetailVo> getReserveSeatList(int rezNo) {
 		System.out.println("ReservationDao getReserveSeat 예매 상세내역보기");
@@ -72,6 +78,7 @@ public class ReservationDao {
 		
 		return reserveSeatList;
 	}
+	
 	
 	
 //	예매 좌석 부분 취소

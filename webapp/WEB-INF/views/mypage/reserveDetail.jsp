@@ -101,6 +101,13 @@
 												<th>예매자</th>
 												<td>${rMap.reserveDetail.name}</td>
 											</tr>
+											<tr>
+												<th>지불총액</th>
+												<td>${rMap.totalPayment.totalPayment}</td>
+												<th>총 좌석수</th>
+												<td>${rMap.totalPayment.selseatCount}</td>
+											</tr>
+											
 										</tbody>
 									</table>
 

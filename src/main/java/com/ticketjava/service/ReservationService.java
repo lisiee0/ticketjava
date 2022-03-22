@@ -107,10 +107,12 @@ public class ReservationService {
 		
 		ReserveDetailVo reserveDetail = reservationDao.getReserveDetail(rezNo);
 		List<ReserveDetailVo> reserveSeatList = reservationDao.getReserveSeatList(rezNo);
+		int totalPayment = reservationDao.getReserveDetailpayment(rezNo);
 		
 		Map<String, Object> rMap = new HashMap<String, Object>();
 		rMap.put("reserveDetail", reserveDetail);
 		rMap.put("reserveSeatList", reserveSeatList);
+		rMap.put("totalPayment", totalPayment);
 		
 		return rMap;
 	}
