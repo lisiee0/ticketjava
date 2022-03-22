@@ -145,17 +145,21 @@ body {
 
 .productInfo {
 	
-	box-shadow: 0px 3px rgba(0, 0, 0, 0.1);
+	border-bottom: 5px solid #dfdfdf;
+	box-shadow: 0px 10px 15px grey;
 	background-color: white; 
 	width: 237px;
 	height: 101.5px;
 }
 
-
+.productInfo p{
+	font-size: 15px;
+}
 
 .productInfo .title, .theater-info .title {
-	font-size: 15px;
+	font-size: 18px;
 	font-weight: bolder;
+	margin-bottom: 7px;
 	
 	overflow:hidden;
 	white-space : nowrap;

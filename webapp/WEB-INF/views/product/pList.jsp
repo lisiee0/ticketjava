@@ -19,16 +19,6 @@
 
 </head>
 
-<style>
-
-.productInfo {
-	
-
-}
-
-
-</style>
-
 
 <body>
 	<div id="wrap">
