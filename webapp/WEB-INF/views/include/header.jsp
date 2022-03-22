@@ -116,7 +116,7 @@
 <script>
 	$('ul#userMenu li').eq(0).css('border','none');
 	
-	$.ajax({
+	/* $.ajax({
 		url: "${pageContext.request.contextPath}/notification/unread",
 		type : "post",
 		dataType: "json",
@@ -131,7 +131,7 @@
 		error : function(XHR, status, error) {
 			console.error(status + " : " + error);
 		}
-	});
+	}); */
 </script>
 
 </html>
