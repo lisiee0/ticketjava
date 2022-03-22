@@ -28,7 +28,7 @@
 									<a href="${pageContext.request.contextPath}/mypage/reserveAlram"><img src="${pageContext.request.contextPath}/assets/image/index/bell-new.png"></a>
 									<a href="${pageContext.request.contextPath}/mypage/">${authUser.name}님</a>
 								</li>
-								<li><a href="${pageContext.request.contextPath}/mypage/reserveList">예메확인/취소</a></li>
+								<li><a href="${pageContext.request.contextPath}/mypage/reserveList">예매확인/취소</a></li>
 								<li><a href="${pageContext.request.contextPath}/user/logout">로그아웃</a></li>
 							</c:when>
 							
