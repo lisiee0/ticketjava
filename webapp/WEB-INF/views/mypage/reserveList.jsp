@@ -123,8 +123,14 @@
 												</tr>
 											</thead>
 
-											<c:forEach items="${requestScope.reserveList}" var="reserveList">
 												<tbody>
+												
+												<!-- 예매 내역이 없을 경우 출력 -->
+												<c:if test="${reserveList eq null }">
+												<tr><td>예매 내역이 없습니다</td></tr>
+												</c:if>
+												
+											<c:forEach items="${requestScope.reserveList}" var="reserveList">
 													<tr>
 														<td>${reserveList.rezNo}</td>
 														<td>${reserveList.rezdate}</td>
@@ -143,8 +149,8 @@
 														<td><button type="submit" class="btn btn-primary" onclick="location.href='reserveDetail?rezNo=${reserveList.rezNo}'">자세히</button></td>
 													</tr>
 
-												</tbody>
 											</c:forEach>
+												</tbody>
 										</table>
 
 
