@@ -148,6 +148,12 @@ public class MypageController {
 	}
 	
 	
+//	리뷰 수정
+	@RequestMapping("/userReviewModify")
+	public String userReviewModify(@RequestParam("reviewNo") int reviewNo, Model model) {
+		System.out.println("MypageControlller userReviewModify");
+		return "mypage/userReviewModify";
+	}
 	
 	
 	@RequestMapping("/userReviewDelete")

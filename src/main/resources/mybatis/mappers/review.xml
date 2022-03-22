@@ -195,6 +195,19 @@
 			and   				rn between #{startRnum} and #{endRnum}	
 		]]>
 	</select>
-	
+
+
+<!-- 리뷰 수정 -->	
+<update id="ReviewUpdate" parameterType="ReviewVo">
+	<![CDATA[
+		update 		review
+		set
+		content		=	#{content},
+		rating		=	#{rating},
+		regdate		=	sysdate
+		where 		review_no = #{reviewNo}
+	]]>
+</update>
+
 
 </mapper>

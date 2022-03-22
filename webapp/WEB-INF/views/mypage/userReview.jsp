@@ -177,7 +177,7 @@
 													</td>
 													<td>${reviewList.regDate}</td>
 													<td>
-													<button type="submit" class="btn btn-primary" onclick="location.href='#'">수정</button> 
+													<button type="submit" class="btn btn-primary" onclick="location.href='userReviewModify?reviewNo=${reviewList.reviewNo}'">수정</button> 
 													<button type="submit" class="btn btn-primary" onclick="location.href='userReviewDelete?reviewNo=${reviewList.reviewNo}'">삭제</button>
 													</td>
 												</tr>

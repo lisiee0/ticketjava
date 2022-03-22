@@ -80,8 +80,6 @@
 	pointer-events: none;
 }
 
-
-
 </style>
 
 </head>
