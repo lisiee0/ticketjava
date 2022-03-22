@@ -6,6 +6,9 @@
 <meta charset="UTF-8">
 <title>TicketJava 마이페이지 예매내역 및 취소</title>
 
+<!-- 티잡 파비콘 -->
+<link rel="icon" type="image/png" sizes="32x32" href="${pageContext.request.contextPath}/assets/image/index/favicon-32x32.png">
+
 <!-- 부트스트랩 Bootstrap core CSS -->
 <link href="${pageContext.request.contextPath}/assets/bootstrap/css/bootstrap.css" rel="stylesheet">
 
