@@ -141,7 +141,6 @@ public class MypageController {
 		int userNo = authUser.getUserNo();
 		Map<String, Object> rMap = reviewService.getReviewListMypagePaging(userNo, crtPage);
 		
-//		model.addAttribute("reviewList",reviewList);
 		model.addAttribute("rMap", rMap);
 		System.out.println("컨트롤러 알맵 출력"+rMap);
 		

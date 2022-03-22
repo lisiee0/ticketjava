@@ -40,8 +40,6 @@ public class ReviewService {
 		System.out.println("ReviewService getReviewListMypagePaging");
 		
 
-//		#리스트 가져오기
-		
 //		페이지 당 글 갯수 10개
 		int listCnt = 10;
 		
@@ -49,9 +47,6 @@ public class ReviewService {
 		if (crtPage <= 0) { // 마이너스 페이지 입력이 들어오면 그냥 1페이지로 간다
 			crtPage = 1;
 		}
-		
-//		현재페이지 처리 삼항연산자 방식 간단한if문 (위와 같은 동작)
-//		crtPage = 조건(crtPage>0) ? 참crtPage : 거짓(crtPage=1);  
 		
 //		시작글 번호 
 		int startRnum = (crtPage-1) * listCnt + 1 ; // 1페이지라면1 6페이지라면51 
@@ -63,7 +58,6 @@ public class ReviewService {
 		
 //		#페이징 버튼
 		int totalCnt = reviewDao.selectTotal();
-//		System.out.println("BoardService.totalCnt 출력 "+totalCnt);
 		
 //		페이지당 버튼 갯수
 		int pageBtnCount = 5;
@@ -98,8 +92,6 @@ public class ReviewService {
 		rMap.put("pageBtnCount", pageBtnCount);
 		rMap.put("reviewList", reviewList);
 		
-		System.out.println("리뷰 r맵 출력 "+rMap);
-//		return reviewDao.getReviewListMypage(userNo);
 		return rMap;
 	}
 	
