@@ -86,12 +86,16 @@
 											</tr>
 										</thead>
 										<tbody>
+										<!-- 취소 알림 설정한 것 이 없으면 출력 -->
+												<c:if test="${vo.reqList eq null }">
+												<tr><td>취소 알림이 없습니다</td></tr>
+												</c:if>
 												
 											<c:forEach items="${reqList}" var="vo"> 
 												<tr>
 													<td class="reqNo">${vo.reqNo}</td>
 													<td>${vo.reqDate}</td>
-													<td><a href="#">${vo.prodName}</a></td>
+													<td><a href="${pageContext.request.contextPath}/product/info?prodNo=${vo.prodNo}">${vo.prodName}</a></td>
 													<td>${vo.selSection}</td>
 													<td>
 														<c:choose>
