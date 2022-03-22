@@ -33,7 +33,7 @@
 		
 
 		<!-- 컨텐츠 구역 시작 -->
-		<div class="container-fluid zp">
+		<div id="bc" class="container-fluid zp">
 			<div class="container">
 				<div class="row">
 					
