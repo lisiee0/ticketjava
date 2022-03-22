@@ -10,7 +10,7 @@
 
 <body>
 		<div id="headerContainer" class="container-fluid">
-			<div id="headerContainerFluid" class="container">
+			<div id="headerContainerFluid" class="container zp">
 					
 				<div id="header" class="clearfix no-drag no-ghost">
 					<ul id="userMenu">
