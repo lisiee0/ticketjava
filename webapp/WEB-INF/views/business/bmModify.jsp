@@ -99,7 +99,7 @@
 											<select class="form-control" name="theaterNo">
 												<option selected>공연장을 선택해주세요.</option>
 												<c:forEach items="${bmProductMap.bmGetHallList}" var="vo">
-													<option id="hallNo" name="hallNo" value="${bmProductMap.bmGetProduct.hallNo}" <c:if test ="${bmProductMap.bmGetProduct.hallNo eq vo.hallNo}">selected="selected"</c:if>>${vo.theaterName},${vo.hallName},${vo.hallNo}</option>
+													<option id="hallNo" value="${bmProductMap.bmGetProduct.hallNo}" <c:if test ="${bmProductMap.bmGetProduct.hallNo eq vo.hallNo}">selected="selected"</c:if>>${vo.theaterName},${vo.hallName},${vo.hallNo}</option>
 												</c:forEach>
 											</select>
 										</div>
@@ -353,7 +353,7 @@
 							<div class="form-group">
 								<label class="form-text col-md-2 form-id" for="">공연 정보</label>
 								<div class="col-md-8">
-									<input type="file" id="prodPath" name="prodPath" value="">
+									<input type="file" id="prodPath" name="prodPath" value="${bmProductMap.bmGetDetail.prodPath}">
 								</div>
 							</div>
 
@@ -361,7 +361,7 @@
 							<div class="form-group">
 								<label class="form-text col-md-2 form-id" for="">캐스팅 정보</label>
 								<div class="col-md-8">
-									<input type="file" id="castingPath" name="castingPath" value="">
+									<input type="file" id="castingPath" name="castingPath" value="${bmProductMap.bmGetDetail.castingPath}">
 								</div>
 							</div>
 
@@ -369,7 +369,7 @@
 							<div class="form-group">
 								<label class="form-text col-md-2 form-id" for="">부가 정보</label>
 								<div class="col-md-8">
-									<input type="file" id="addedPath" name="addedPath" value="">
+									<input type="file" id="addedPath" name="addedPath" value="${bmProductMap.bmGetDetail.addedPath}">
 								</div>
 							</div>
 
@@ -553,7 +553,7 @@
 									success : function(result) {
 										console.log(result)
 
-										window.location.href = "${pageContext.request.contextPath}/bm/"; //
+										window.location.href = "${pageContext.request.contextPath}/bm/";
 									},
 									error : function(XHR, status, error) {
 										console.error(status + " : " + error);

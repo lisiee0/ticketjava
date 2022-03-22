@@ -177,7 +177,7 @@ public class BusinessService {
 //		System.out.println(bmGetProduct);
 //		System.out.println(bmGetHallList);
 //		System.out.println(bmGetDetail);
-		System.out.println(seatpriceList);
+//		System.out.println(seatpriceList);
 //		System.out.println(productDisList);
 		return bmProductMap;
 	}
