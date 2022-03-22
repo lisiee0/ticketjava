@@ -83,7 +83,8 @@ public class BusinessService {
 		for (SeatpriceVo seatpriceVo : seatpriceList) {
 			seatpriceVo.setProdNo(prodNo);
 			sd.seatpriceAdd(seatpriceVo);
-		};
+		}
+		;
 		System.out.println("BusinessServiece > seatpriceList");
 
 		// discountDao로 값을 넘김
@@ -92,7 +93,8 @@ public class BusinessService {
 		for (DiscountVo discountVo : discountList) {
 			discountVo.setProdNo(prodNo);
 			dd.alwaysdisAdd(discountVo);
-		};
+		}
+		;
 		System.out.println("BusinessServiece > discountList");
 	}
 
@@ -156,48 +158,47 @@ public class BusinessService {
 	// 공연수정 불러오기
 	public Map<String, Object> bmgetProduct(int prodNo) {
 		System.out.println("BusinessServiece > bmgetProduct()");
-		
+
 		Map<String, Object> bmProductMap = new HashMap<String, Object>();
-		
-		//공연정보
+
+		// 공연정보
 		ProductVo bmGetProduct = pd.bmGetProduct(prodNo);
-		bmProductMap.put("bmGetProduct", bmGetProduct)	;
-				
-		//시설정보 가져오기
+		bmProductMap.put("bmGetProduct", bmGetProduct);
+
+		// 시설정보 가져오기
 		List<HallVo> bmGetHallList = hd.bmHallList();
-		bmProductMap.put("bmGetHallList", bmGetHallList)	;	
-		
-		//상세정보 리스트 가져오기
+		bmProductMap.put("bmGetHallList", bmGetHallList);
+
+		// 상세정보 리스트 가져오기
 		DetailVo bmGetDetail = td.bmgetDetail(prodNo);
 		bmProductMap.put("bmGetDetail", bmGetDetail);
-		
-		//상시할인 리스트 가져오기
+
+		// 상시할인 리스트 가져오기
 		List<SeatpriceVo> seatpriceList = sd.bmgetSeatPrice(prodNo);
 		bmProductMap.put("seatpriceList", seatpriceList);
-		
-				
-		//좌석 등급별 리스트 가져오기
+
+		// 좌석 등급별 리스트 가져오기
 		List<DiscountVo> productDisList = dd.bmgetDis(prodNo);
 		bmProductMap.put("productDisList", productDisList);
-		
+
 		System.out.println("=============================");
 		System.out.println(bmGetProduct);
 		System.out.println(bmGetHallList);
 		System.out.println(bmGetDetail);
 		System.out.println(seatpriceList);
 		System.out.println(productDisList);
-		
+
 		return bmProductMap;
 	}
-	
-	
-	//공연정보 수정 등록
+
+	// 공연정보 수정 등록
 	public int bmModify(ProductVo productVo) {
 		System.out.println("BusinessServiece > bmModify()");
-		
-		//ProductDao로 값을 넘기
-		 return pd.bmproModify(productVo);
-		
+		System.out.println("BusinessServiece > " + productVo);
+
+		// ProductDao로 값을 넘기
+		return pd.bmproModify(productVo);
+
 	}
 	// 공연수정 파일정보 불러오기
 //	public ProductVo bmgetDetail(int prodNo) {

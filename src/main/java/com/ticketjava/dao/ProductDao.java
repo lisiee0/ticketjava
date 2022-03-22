@@ -45,7 +45,7 @@ public class ProductDao {
 		return sqlsession.selectOne("product.bmGetProduct", prodNo);
 	}
 	
-	//공연 수정
+	//공연 수정 << 파일 제외
 	public int bmproModify(ProductVo productVo) {
 		System.out.println("ProductDao > bmproModify");
 		

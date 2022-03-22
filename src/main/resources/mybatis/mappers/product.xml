@@ -81,7 +81,7 @@
 		]]>
 	</select>
 
-	<!-- 공연 목록 업데이트 -->
+	<!-- 공연 수정 -->
 	<update id="bmproModify" parameterType="ProductVo">
         <![CDATA[
 			update 	product

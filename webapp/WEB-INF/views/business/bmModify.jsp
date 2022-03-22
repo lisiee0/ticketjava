@@ -512,8 +512,8 @@
 			cancelInfo : $("#cancelInfo").val(),
 			notice : $("#notice").val(),
 			status : $("#status").val(),
-/* 			seatpriceList : seatpriceList,
-			productDisList : productDisList */
+			seatpriceList : seatpriceList,
+			productDisList : productDisList
 
 		}
 
