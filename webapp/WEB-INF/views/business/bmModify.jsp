@@ -99,7 +99,7 @@
 											<select class="form-control" name="theaterNo">
 												<option selected>공연장을 선택해주세요.</option>
 												<c:forEach items="${bmProductMap.bmGetHallList}" var="vo">
-													<option id="hallNo" value="${vo.hallNo}" <c:if test ="${bmProductMap.bmGetProduct.hallNo eq vo.hallNo}">selected="selected"</c:if>>${vo.theaterName},${vo.hallName},${vo.hallNo}</option>
+													<option id="hallNo" name="hallNo" value="${bmProductMap.bmGetProduct.hallNo}" <c:if test ="${bmProductMap.bmGetProduct.hallNo eq vo.hallNo}">selected="selected"</c:if>>${vo.theaterName},${vo.hallName},${vo.hallNo}</option>
 												</c:forEach>
 											</select>
 										</div>
@@ -267,7 +267,7 @@
 									<!--좌석 선택 -->
 									<div class="form-group">
 										<div class="col-md-4">
-											<select class="form-control" id="grade" name="grade" value="${bmProductMap.bmGetProduct.prodName}">
+											<select class="form-control" id="grade" name="grade">
 												<option value="VIP">VIP석</option>
 												<option value="R">R석</option>
 												<option value="S">S석</option>
@@ -281,8 +281,22 @@
 										&nbsp;
 										<!--등급별 가격 추가 -->
 										<button type="button" id="addGrade" class="btn">+</button>
+										<button type="button" id="delGrade" class="btn">-</button>
 										<br>
 									</div>
+
+									<c:forEach items="${bmProductMap.seatpriceList}" var="seatListVo">
+										<div class="form-group">
+											<div class="col-md-4">
+												<input type="text" class="form-control selGrade" name="grade" value="${seatListVo.grade}" readonly>
+											</div>
+
+											<div class="col-md-4">
+												<input type="text" class="form-control selPrice" name="price" value="${seatListVo.price}">
+											</div>
+											<input type="hidden" class="seatpriceNo" name="seatpriceNo" value="${seatListVo.seatpriceNo}">
+										</div>
+									</c:forEach>
 
 									<!--좌석추가 Script -->
 									<div id="bmNameArea"></div>
@@ -425,22 +439,21 @@
 						console.log(selp);
 
 						$("#bmNameArea")
-								.append(
+								.prepend(
 										'<div class="form-group">'
 												+ '<div class="col-md-4">'
 												+ '<input type="text" class="form-control selGrade" name="grade" value="' + gra + '" readonly>'
 												+ '</div>'
 												+ '<div class="col-md-4">'
-												+ '<input type="text" class="form-control selPrice" name="price" value="' + selp + '" readonly>'
-												+ '</div>'
-												+ '&nbsp;'
-												+ '<button type="button" id="delGrade" class="btn">-</button>'
+												+ '<input type="text" class="form-control selPrice" name="price" value="' + selp + '">'
+												+ '</div>' + '&nbsp;'
 												+ '</div>');
 					});
 
 	//등급삭제 버튼
 	$("#delGrade").on("click", function() {
 		$(".selGrade").remove();
+		$(".selPrice").remove();
 	});
 
 	var productDisList = []
@@ -485,17 +498,20 @@
 			.on(
 					"click",
 					function() {
-						console.log("공연저장");
+						console.log("공연수정");
 
 						//좌석 등급별 가격 배열
 						var seatpriceList = [];
 						var selGradeList = $(".selGrade");
 						var selPriceList = $(".selPrice");
+						var selNoList = $(".seatpriceNo");
+						
 
 						for (var i = 0; i < selGradeList.length; i++) {
 							var seatprice = {
 								grade : selGradeList.eq(i).val(),
-								price : selPriceList.eq(i).val()
+								price : selPriceList.eq(i).val(),
+								seatpriceNo : selNoList.eq(i).val()
 							};
 							seatpriceList.push(seatprice);
 						}

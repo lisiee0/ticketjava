@@ -45,5 +45,18 @@
 		]]>
 	</insert>
 
+	<!-- 등급별 가격 수정 -->
+	<update id="seatpriceModify" parameterType="SeatpriceVo">
+        <![CDATA[
+		update 	seatprice 
+		
+		set 		price = #{price}
+		
+		where 	prod_no = #{prodNo}
+		and		seatprice_no = #{seatpriceNo}
+        ]]>
+	</update>
+
+
 
 </mapper>

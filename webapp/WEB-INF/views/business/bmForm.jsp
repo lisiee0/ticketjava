@@ -98,8 +98,8 @@
 										<div class="col-md-6">
 											<select class="form-control" name="theaterNo">
 												<option selected>공연장을 선택해주세요.</option>
-												<c:forEach items="${selectList}"  var="vo">
-													<option id="hallNo" name="hallNo" value="${vo.hallNo}">${vo.theaterName}, ${vo.hallName}, ${vo.hallNo}</option>
+												<c:forEach items="${selectList}" var="vo">
+													<option id="hallNo" name="hallNo" value="${vo.hallNo}">${vo.theaterName},${vo.hallName},${vo.hallNo}</option>
 												</c:forEach>
 											</select>
 										</div>
@@ -195,7 +195,7 @@
 									<!--좌석 선택 -->
 									<div class="form-group">
 										<div class="col-md-4">
-											<select class="form-control" id="grade" name="grade">
+											<select class="form-control" id="grade" name="grade" value="${bmProductMap.bmGetProduct.prodName}">
 												<option value="VIP">VIP석</option>
 												<option value="R">R석</option>
 												<option value="S">S석</option>
@@ -209,7 +209,16 @@
 										&nbsp;
 										<!--등급별 가격 추가 -->
 										<button type="button" id="addGrade" class="btn">+</button>
+										<button type="button" id="delGrade" class="btn">-</button>
 										<br>
+									</div>
+									<div class="form-group">
+										<div class="col-md-4">
+											<input type="hidden" class="form-control selGrade" readonly>
+										</div>
+										<div class="col-md-4">
+											<input type="hidden" class="form-control selPrice" readonly>
+										</div>
 									</div>
 
 									<!--좌석추가 Script -->
@@ -345,25 +354,23 @@
 						var gra = $("#grade").val();
 						var selp = $("#price").val();
 						console.log(gra);
-						console.log(selp);
 
 						$("#bmNameArea")
-								.append(
+								.prepend(
 										'<div class="form-group">'
 												+ '<div class="col-md-4">'
 												+ '<input type="text" class="form-control selGrade" name="grade" value="' + gra + '" readonly>'
 												+ '</div>'
 												+ '<div class="col-md-4">'
-												+ '<input type="text" class="form-control selPrice" name="price" value="' + selp + '" readonly>'
-												+ '</div>'
-												+ '&nbsp;'
-												+ '<button type="button" id="delGrade" class="btn">-</button>'
+												+ '<input type="text" class="form-control selPrice" name="price" value="">'
+												+ '</div>' + '&nbsp;'
 												+ '</div>');
 					});
 
 	//등급삭제 버튼
 	$("#delGrade").on("click", function() {
 		$(".selGrade").remove();
+		$(".selPrice").remove();
 	});
 
 	var productDisList = []

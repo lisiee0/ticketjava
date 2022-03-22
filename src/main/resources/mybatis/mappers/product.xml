@@ -85,7 +85,8 @@
 	<update id="bmproModify" parameterType="ProductVo">
         <![CDATA[
 			update 	product
-			set 		prodname = 	#{prodName},
+			set 		hall_no = 	#{hallNo},
+					prodname = 	#{prodName},
 					prodtype = 	#{prodType},
 					beginshow = 	#{beginShow},
 					endshow = 	#{endShow},
