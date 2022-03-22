@@ -26,6 +26,49 @@
 
 <style>
 
+/* 평점 출력용 골드스타 */
+.star-print {
+	float: center;
+	text-align: center; 
+	font-size: 2rem;
+	width: 5em;
+	-webkit-text-stroke-width: 1px;
+	-webkit-text-stroke-color: #2b2a29;
+	-webkit-text-fill-color: gold;
+	
+}
+
+/* 평점 입력용 골드스타 */
+.star-rating {
+	display: flex;
+	flex-direction: row-reverse;
+	font-size: 2.25rem;
+	line-height: 2.5rem;
+	justify-content: space-around;
+	padding: 0 0.2em;
+	text-align: center;
+	width: 5em;
+}
+
+.star-rating input {
+	display: none;
+}
+
+.star-rating label {
+	-webkit-text-fill-color: transparent; /* Will override color (regardless of order) */
+	-webkit-text-stroke-width: 1px;
+	-webkit-text-stroke-color: #2b2a29;
+	cursor: pointer;
+}
+
+.star-rating :checked ~ label {
+	-webkit-text-fill-color: gold;
+}
+
+.star-rating label:hover, .star-rating label:hover ~ label {
+	-webkit-text-fill-color: #fff58c;
+}
+
 /*평점 출력용 골드스타 (구 레드스타) */
 .star {
 	position: relative;
@@ -105,12 +148,12 @@
 								<div id="list">
 									<table>
 										<colgroup>
-											<col width="10%">
-											<col width="20%">
+											<col width="5%">
 											<col width="25%">
-											<col width="20%">
+											<col width="25%">
 											<col width="15%">
-											<col width="10%">
+											<col width="15%">
+											<col width="15%">
 										</colgroup>
 										<thead>
 											<tr>
@@ -129,12 +172,14 @@
 													<td>${reviewList.reviewNo}</td>
 													<td id="space" class="text-left"><a href="product/info?prodNo=${reviewList.prodNo}">${reviewList.prodName}</a></td>
 													<td id="space">${reviewList.content}</td>
-													<td><span class="star"> ★★★★★ <span style="width: ${reviewList.rating*2}0%;">★★★★★</span> <input type="range" oninput="drawStar(this)" value="1" step="1"
-															min="0" max="10"
-														></span> ${reviewList.rating}</td>
-
+													<td>
+														<div class="star-print"> <c:forEach var="i" begin="1" end="${reviewList.rating}"> ★ </c:forEach> </div>
+													</td>
 													<td>${reviewList.regDate}</td>
-													<td><a href="#">[수정]</a> <a href="${pageContext.request.contextPath}/mypage/userReviewDelete?reviewNo=${reviewList.reviewNo}">[삭제]</a>
+													<td>
+													<button type="submit" class="btn btn-primary" onclick="location.href='#'">수정</button> 
+													<button type="submit" class="btn btn-primary" onclick="location.href='userReviewDelete?reviewNo=${reviewList.reviewNo}'">삭제</button>
+													</td>
 												</tr>
 											</c:forEach>
 										</tbody>
@@ -205,14 +250,5 @@
 	<!-- wrap 종료 -->
 </body>
 
-
-<script type="text/javascript">
-
-/* 리뷰 별점 */
-const drawStar = (target) => {
-document.querySelector('.star span').style.width = '${target.value * 10}%';
-	};
-	
-</script>
 
 </html>
