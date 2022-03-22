@@ -95,10 +95,7 @@
 					viewtime = 	#{viewTime},
 					viewgrade = 	#{viewGrade},
 					notice = 		#{notice},
-					cancelinfo = 	#{cancelInfo},
-					status = 		1,
-					posterpath = 	#{posterPath}
-					
+					cancelinfo = 	#{cancelInfo}
 			where 	prod_no = #{prodNo};
         ]]>
 	</update>
