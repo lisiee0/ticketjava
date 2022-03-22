@@ -79,9 +79,9 @@ public class BusinessController {
 	}
 
 	// 공지사항 수정
-	@ResponseBody
+	
 	@RequestMapping(value = "bmModify", method = { RequestMethod.GET, RequestMethod.POST })
-	public int bmModify(@ModelAttribute ProductVo productVo) {
+	public int bmModify(@RequestBody ProductVo productVo) {
 		System.out.println("BusinessController >  bmModify");
 		System.out.println("BusinessController > " + productVo);
 		

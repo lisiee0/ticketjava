@@ -99,10 +99,7 @@
 											<select class="form-control" name="theaterNo">
 												<option selected>공연장을 선택해주세요.</option>
 												<c:forEach items="${bmProductMap.bmGetHallList}" var="vo">
-													<option id="hallNo" value="${vo.hallNo}" 
-													<c:if test ="${bmProductMap.bmGetProduct.hallNo eq vo.hallNo}">selected="selected"</c:if>>
-														${vo.theaterName},${vo.hallName},${vo.hallNo}
-													</option>
+													<option id="hallNo" value="${vo.hallNo}" <c:if test ="${bmProductMap.bmGetProduct.hallNo eq vo.hallNo}">selected="selected"</c:if>>${vo.theaterName},${vo.hallName},${vo.hallNo}</option>
 												</c:forEach>
 											</select>
 										</div>
@@ -376,7 +373,12 @@
 							</div>
 							<!-- hidden -->
 							<div>
-								<input type="hidden" id="status" name="status" value="1"> <input type="hidden" id="userNo" name="userNo" value="2">
+								<!-- 공연 노출 여부 -->
+								<input type="hidden" id="status" name="status" value="1">
+								<!-- 공연 번호 -->
+								<input type="hidden" id="prodNo" name="prodNo" value="${bmProductMap.bmGetProduct.prodNo}">
+								<!-- 사업자 아이디 -->
+								<input type="hidden" id="userNo" name="userNo" value="2">
 							</div>
 
 						</div>
@@ -479,92 +481,97 @@
 			});
 
 	//공연정보 클릭할때
-	$("#addbtn").on("click", function() {
-		console.log("공연저장");
+	$("#addbtn")
+			.on(
+					"click",
+					function() {
+						console.log("공연저장");
 
-		//좌석 등급별 가격 배열
-		var seatpriceList = [];
-		var selGradeList = $(".selGrade");
-		var selPriceList = $(".selPrice");
+						//좌석 등급별 가격 배열
+						var seatpriceList = [];
+						var selGradeList = $(".selGrade");
+						var selPriceList = $(".selPrice");
 
-		for (var i = 0; i < selGradeList.length; i++) {
-			var seatprice = {
-				grade : selGradeList.eq(i).val(),
-				price : selPriceList.eq(i).val()
-			};
-			seatpriceList.push(seatprice);
-		}
+						for (var i = 0; i < selGradeList.length; i++) {
+							var seatprice = {
+								grade : selGradeList.eq(i).val(),
+								price : selPriceList.eq(i).val()
+							};
+							seatpriceList.push(seatprice);
+						}
 
-		// 상시 할인 
+						// 상시 할인 
 
-		var ProductVo = {
-			prodName : $("#prodName").val(),
-			userNo : $("#userNo").val(),
-			hallNo : $("#hallNo").val(),
-			prodType : $("#prodType").val(),
-			beginShow : $("#beginShow").val(),
-			endShow : $("#endShow").val(),
-			beginRez : $("#beginRez").val(),
-			endRez : $("#endRez").val(),
-			showTime : $("#showTime").val(),
-			viewTime : $("#viewTime").val(),
-			viewGrade : $("input[name=viewGrade]").eq(0).val(),
-			cancelInfo : $("#cancelInfo").val(),
-			notice : $("#notice").val(),
-			status : $("#status").val(),
-			seatpriceList : seatpriceList,
-			productDisList : productDisList
+						var ProductVo = {
+							prodNo : $("#prodNo").val(),
+							prodName : $("#prodName").val(),
+							userNo : $("#userNo").val(),
+							hallNo : $("#hallNo").val(),
+							prodType : $("#prodType").val(),
+							beginShow : $("#beginShow").val(),
+							endShow : $("#endShow").val(),
+							beginRez : $("#beginRez").val(),
+							endRez : $("#endRez").val(),
+							showTime : $("#showTime").val(),
+							viewTime : $("#viewTime").val(),
+							viewGrade : $("input[name=viewGrade]").eq(0).val(),
+							cancelInfo : $("#cancelInfo").val(),
+							notice : $("#notice").val(),
+							status : $("#status").val(),
+							seatpriceList : seatpriceList,
+							productDisList : productDisList
 
-		}
+						}
 
-		console.log(JSON.stringify(ProductVo));
+						console.log(JSON.stringify(ProductVo));
 
-		$.ajax({
-			url : "${pageContext.request.contextPath}/bm/bmModify",
-			type : "post",
-			contentType : "application/json",
-			data : JSON.stringify(ProductVo),
+						$
+								.ajax({
+									url : "${pageContext.request.contextPath}/bm/bmModify",
+									type : "post",
+									contentType : "application/json",
+									data : JSON.stringify(ProductVo),
 
-			/* 성공 시 처리해야 될 코드 작성 */
-			dataType : "text",
-			success : function(result) {
-				console.log(result)
+									/* 성공 시 처리해야 될 코드 작성 */
+									dataType : "text",
+									success : function(result) {
+										console.log(result)
 
-				window.location.href = "${pageContext.request.contextPath}/bm/";     //
-			},
-			error : function(XHR, status, error) {
-				console.error(status + " : " + error);
-			}
-		});
+										window.location.href = "${pageContext.request.contextPath}/bm/"; //
+									},
+									error : function(XHR, status, error) {
+										console.error(status + " : " + error);
+									}
+								});
 
-	});
+					});
 
-// 	function fileupload(detailVo, file, order) {
-// 		var formData = new FormData();
+	// 	function fileupload(detailVo, file, order) {
+	// 		var formData = new FormData();
 
-// 		formData.append('prodNo', detailVo.prodNo);
-// 		formData.append('detailNo', detailVo.detailNo);
-// 		formData.append('file', file);
-// 		formData.append('order', order);
+	// 		formData.append('prodNo', detailVo.prodNo);
+	// 		formData.append('detailNo', detailVo.detailNo);
+	// 		formData.append('file', file);
+	// 		formData.append('order', order);
 
-// 		$.ajax({
-// 			url : "${pageContext.request.contextPath}/bm/bmfileUpload",
-// 			type : "post",
-// 			traditional : true,
-// 			/* contentType : "application/json",*/
-// 			contentType : false,
-// 			processData : false,
-// 			data : formData,
+	// 		$.ajax({
+	// 			url : "${pageContext.request.contextPath}/bm/bmfileUpload",
+	// 			type : "post",
+	// 			traditional : true,
+	// 			/* contentType : "application/json",*/
+	// 			contentType : false,
+	// 			processData : false,
+	// 			data : formData,
 
-// 			/* dataType : "json", */
-// 			success : function(result) {
-// 				console.log(result)
-// 			},
-// 			error : function(XHR, status, error) {
-// 				console.error(status + " : " + error);
-// 			}
-// 		});
-//	}
+	// 			/* dataType : "json", */
+	// 			success : function(result) {
+	// 				console.log(result)
+	// 			},
+	// 			error : function(XHR, status, error) {
+	// 				console.error(status + " : " + error);
+	// 			}
+	// 		});
+	//	}
 </script>
 </html>
 
