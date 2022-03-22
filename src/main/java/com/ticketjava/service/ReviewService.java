@@ -43,7 +43,7 @@ public class ReviewService {
 //		#리스트 가져오기
 		
 //		페이지 당 글 갯수 10개
-		int listCnt = 12;
+		int listCnt = 10;
 		
 //		현재페이지 처리 if문 방식
 		if (crtPage <= 0) { // 마이너스 페이지 입력이 들어오면 그냥 1페이지로 간다
