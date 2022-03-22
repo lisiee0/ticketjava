@@ -18,7 +18,7 @@
 
 <!-- 개인 css (폴더로 관리 권장 ex assets/css/mypage/ticketing.css) -->
 <link href="${pageContext.request.contextPath}/assets/css/mypage/ticketjavaMypageCommon.css" rel="stylesheet" type="text/css">
-
+<link href="${pageContext.request.contextPath}/assets/css/mypage/reserveAlram.css" rel="stylesheet" type="text/css">
 </head>
 
 
@@ -84,10 +84,10 @@
 												<tr id="tr${vo.notiNo}">
 													<c:choose>
 														<c:when test="${vo.read == 0}">
-															<td class="unread text-left">${vo.content}</td>
+															<td class="unread text-left" data-notino="${vo.notiNo}">${vo.content}</td>
 														</c:when>
 														<c:otherwise>
-															<td class="read text-left">${vo.content}</td>
+															<td class="read text-left" data-notino="${vo.notiNo}">${vo.content}</td>
 														</c:otherwise>
 													</c:choose>
 													<td>${vo.notiTime}</td>
@@ -172,7 +172,26 @@
 	});
 	
 	$('.content').on('click',function(){
-		alert( $(this).closest('td').attr('class') );
+		var td = $(this).closest('td');
+		var notiNo = td.data('notino');
+		
+		$.ajax({
+			url: "${pageContext.request.contextPath}/notification/read",
+			type : "post",
+			data : {notiNo:notiNo},
+			dataType: "json",
+			success : function(result){
+				if ( td.hasClass('unread') ) {
+					td.removeClass('unread');
+					td.addClass('read');
+				}
+			},
+			error : function(XHR, status, error) {
+				console.error(status + " : " + error);
+			}
+		});
+		
+		
 	});
 </script>
 

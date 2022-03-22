@@ -1,0 +1,9 @@
+@charset "UTF-8";
+
+.unread>.content{
+	color:#6697F2;
+}
+
+.read>.content{
+	color:#ccc;
+}
