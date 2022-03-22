@@ -24,7 +24,7 @@
 
 <style>
 
-/* 평점 골드스타 */
+/* 평점 입력용 골드스타 */
 .star-rating {
 	display: flex;
 	flex-direction: row-reverse;
@@ -55,7 +55,7 @@
 	-webkit-text-fill-color: #fff58c;
 }
 
-/*평점 레드스타 나중에 css 분리 작업 */
+/*평점 출력용 골드스타 (구 레드스트) */
 .star {
 	position: relative;
 	font-size: 2rem;

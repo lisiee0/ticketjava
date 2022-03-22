@@ -22,6 +22,36 @@
 </head>
 
 
+<style>
+/*평점 출력용 골드스타 (구 레드스타) */
+.star {
+	position: relative;
+	font-size: 2rem;
+	color: #dedede;
+}
+
+.star input {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	left: 0;
+	opacity: 0;
+	cursor: pointer;
+}
+
+.star span {
+	width: 0;
+	position: absolute;
+	left: 0;
+	color: gold;
+	overflow: hidden;
+	pointer-events: none;
+}
+
+
+</style>
+
+
 <body>
 	<div id="wrap">
 
@@ -91,17 +121,11 @@
 													<td>${reviewList.reviewNo}</td>
 													<td id="space" class="text-left"><a href="product/info?prodNo=${reviewList.prodNo}">${reviewList.prodName}</a></td>
 													<td id="space">${reviewList.content}</td>
-													<td><c:choose>
-															<c:when test="${reviewList.rating >= 10}"> ★★★★★ </c:when>
-															<c:when test="${reviewList.rating >= 8}"> ★★★★ </c:when>
-															<c:when test="${reviewList.rating >= 6}"> ★★★ </c:when>
-															<c:when test="${reviewList.rating >= 4}"> ★★ </c:when>
-															<c:otherwise> ★ </c:otherwise>
-														</c:choose> ${reviewList.rating}</td>
+													<td><span class="star"> ★★★★★ <span style="width: ${reviewList.rating*2}0%;">★★★★★</span> 
+										<input type="range" oninput="drawStar(this)" value="1" step="1" min="0" max="5"></span> ${reviewList.rating}</td>
+
 													<td>${reviewList.regDate}</td>
-													<td>
-													<a href="#">[수정]</a>
-													<a href="${pageContext.request.contextPath}/mypage/userReviewDelete?reviewNo=${reviewList.reviewNo}">[삭제]</a>
+													<td><a href="#">[수정]</a> <a href="${pageContext.request.contextPath}/mypage/userReviewDelete?reviewNo=${reviewList.reviewNo}">[삭제]</a>
 												</tr>
 											</tbody>
 										</c:forEach>
@@ -123,21 +147,22 @@
 
 									<div id="paging">
 										<ul>
-											
-								<c:if test="${requestScope.rMap.prev eq true}">
-									<li><a href="${pageContext.request.contextPath}/mypage/userReview?crtPage=${requestScope.rMap.startPageBtnNo-1}&userNo=${requestScope.rMap.userNo}">◀</a></li>
-								</c:if>
-											<li><a href="">1</a></li>
-											<li><a href="">2</a></li>
-											<li><a href="">3</a></li>
-											<li><a href="">4</a></li>
-											<li class="active"><a href="">5</a></li>
-											<li><a href="">6</a></li>
-											<li><a href="">7</a></li>
-											<li><a href="">8</a></li>
-											<li><a href="">9</a></li>
-											<li><a href="">10</a></li>
-											<li><a href="">▶</a></li>
+
+											<c:if test="${requestScope.rMap.prev eq true}">
+												<li><a href="${pageContext.request.contextPath}/mypage/userReview?crtPage=${requestScope.rMap.startPageBtnNo-1}&userNo=${requestScope.rMap.userNo}">◀</a></li>
+											</c:if>
+
+											<!-- 현재 페이지 볼드처리 -->
+											<c:forEach begin="${requestScope.rMap.startPageBtnNo}" end="${requestScope.rMap.endPageBtnNo}" step="1" var="page">
+
+												<li class=${rMap.crtPageNo eq page ? "active" : ""}><a href="${pageContext.request.contextPath}/mypage/userReview?crtPage=${page}">${page}</a></li>
+
+											</c:forEach>
+
+											<c:if test="${requestScope.rMap.next eq true}">
+												<li><a href="${pageContext.request.contextPath}/mypage/userReview?crtPage=${requestScope.rMap.endPageBtnNo+1}">▶</a></li>
+											</c:if>
+
 										</ul>
 
 										<div class="clear"></div>
@@ -179,4 +204,15 @@
 	</div>
 	<!-- wrap 종료 -->
 </body>
+
+
+<script type="text/javascript">
+
+/* 리뷰 별점 */
+const drawStar = (target) => {
+document.querySelector('.star span').style.width = '${target.value * 20}%';
+	};
+	
+</script>
+
 </html>
