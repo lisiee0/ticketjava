@@ -12,7 +12,9 @@ public class ReserveDetailVo {
 	private int payment; // 결제금액
 	private int status; // 상태 예매취소(1예매 0취소)
 	private int ticketCount; // 매수 (카운트 (예매번호) 그룹바이 회원번호)
-
+	private int selseatCount; // 예매번호별 총 좌석 갯수
+	private int totalPayment; //지불금 총액
+	
 	private String name; // 이름 (예매자)
 	private String prodname; // 공연명 상품명
 	private String showTime;
@@ -29,13 +31,14 @@ public class ReserveDetailVo {
 	private String dcName;
 
 	
-
+	
 	public ReserveDetailVo() {
 	}
-	
+
 	public ReserveDetailVo(int userNo, int rezNo, int prodNo, int theaterNo, int selseatNo, String grade, int payment,
-			int status, int ticketCount, String name, String prodname, String showTime, String theatername,
-			String hallname, String rezdate, String viewdate, String section, int col, int num, String dcName) {
+			int status, int ticketCount, int selseatCount, int totalPayment, String name, String prodname,
+			String showTime, String theatername, String hallname, String rezdate, String viewdate, String section,
+			int col, int num, String dcName) {
 		this.userNo = userNo;
 		this.rezNo = rezNo;
 		this.prodNo = prodNo;
@@ -45,44 +48,11 @@ public class ReserveDetailVo {
 		this.payment = payment;
 		this.status = status;
 		this.ticketCount = ticketCount;
+		this.selseatCount = selseatCount;
+		this.totalPayment = totalPayment;
 		this.name = name;
 		this.prodname = prodname;
 		this.showTime = showTime;
-		this.theatername = theatername;
-		this.hallname = hallname;
-		this.rezdate = rezdate;
-		this.viewdate = viewdate;
-		this.section = section;
-		this.col = col;
-		this.num = num;
-		this.dcName = dcName;
-	}
-
-	public String getShowTime() {
-		return showTime;
-	}
-
-	public void setShowTime(String showTime) {
-		this.showTime = showTime;
-	}
-
-	
-
-
-	public ReserveDetailVo(int userNo, int rezNo, int prodNo, int theaterNo, int selseatNo, String grade, int payment,
-			int status, int ticketCount, String name, String prodname, String theatername, String hallname,
-			String rezdate, String viewdate, String section, int col, int num, String dcName) {
-		this.userNo = userNo;
-		this.rezNo = rezNo;
-		this.prodNo = prodNo;
-		this.theaterNo = theaterNo;
-		this.selseatNo = selseatNo;
-		this.grade = grade;
-		this.payment = payment;
-		this.status = status;
-		this.ticketCount = ticketCount;
-		this.name = name;
-		this.prodname = prodname;
 		this.theatername = theatername;
 		this.hallname = hallname;
 		this.rezdate = rezdate;
@@ -165,6 +135,22 @@ public class ReserveDetailVo {
 		this.ticketCount = ticketCount;
 	}
 
+	public int getSelseatCount() {
+		return selseatCount;
+	}
+
+	public void setSelseatCount(int selseatCount) {
+		this.selseatCount = selseatCount;
+	}
+
+	public int getTotalPayment() {
+		return totalPayment;
+	}
+
+	public void setTotalPayment(int totalPayment) {
+		this.totalPayment = totalPayment;
+	}
+
 	public String getName() {
 		return name;
 	}
@@ -179,6 +165,14 @@ public class ReserveDetailVo {
 
 	public void setProdname(String prodname) {
 		this.prodname = prodname;
+	}
+
+	public String getShowTime() {
+		return showTime;
+	}
+
+	public void setShowTime(String showTime) {
+		this.showTime = showTime;
 	}
 
 	public String getTheatername() {
@@ -249,12 +243,16 @@ public class ReserveDetailVo {
 	public String toString() {
 		return "ReserveDetailVo [userNo=" + userNo + ", rezNo=" + rezNo + ", prodNo=" + prodNo + ", theaterNo="
 				+ theaterNo + ", selseatNo=" + selseatNo + ", grade=" + grade + ", payment=" + payment + ", status="
-				+ status + ", ticketCount=" + ticketCount + ", name=" + name + ", prodname=" + prodname + ", showTime="
-				+ showTime + ", theatername=" + theatername + ", hallname=" + hallname + ", rezdate=" + rezdate
-				+ ", viewdate=" + viewdate + ", section=" + section + ", col=" + col + ", num=" + num + ", dcName="
-				+ dcName + "]";
+				+ status + ", ticketCount=" + ticketCount + ", selseatCount=" + selseatCount + ", totalPayment="
+				+ totalPayment + ", name=" + name + ", prodname=" + prodname + ", showTime=" + showTime
+				+ ", theatername=" + theatername + ", hallname=" + hallname + ", rezdate=" + rezdate + ", viewdate="
+				+ viewdate + ", section=" + section + ", col=" + col + ", num=" + num + ", dcName=" + dcName + "]";
 	}
 
+	
+
+
+	
 	
 
 } // The end of ReserveDetailVo

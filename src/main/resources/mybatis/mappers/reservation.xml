@@ -149,6 +149,21 @@
 		]]>
 	</select>
 
+
+	<!-- 예매정보 상세 지불 총액, 좌석수 출력 -->
+	<select id="reserveDetailpayment" resultType="ReserveDetailVo" parameterType="int">
+		<![CDATA[
+		select		
+					sum(payment) totalPayment, 
+					count(*) selseatCount
+					
+		from		selseat
+		WHERE		status = 1
+		and			rez_no = #{rezNo}
+		]]>
+	</select>
+
+
 	<!-- 예매 정보 상세 좌석 -->
 	<select id="reserveSeatList" resultType="ReserveDetailVo" parameterType="int">
 		<![CDATA[
