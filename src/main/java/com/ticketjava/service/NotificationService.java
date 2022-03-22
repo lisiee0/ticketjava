@@ -38,7 +38,6 @@ public class NotificationService {
 
 	public List<NotificationVo> myNoti(int userNo) {
 		return notificationDao.selectByUser(userNo);
-		
 	}
 
 	public String deleteNoti(int notiNo) {
@@ -73,16 +72,13 @@ public class NotificationService {
 					+ notiDataVo.getSection()+"구역 "+notiDataVo.getCol()+"열 "+notiDataVo.getNum()+"번 좌석 취소 안내"
 					+ "</a>";
 			
-			List <NotificationVo> notificationList = new ArrayList<>();
 			for(NotireqVo notireqVo : notireqList) {
 				NotificationVo n = new NotificationVo();
 				n.setUserNo(notireqVo.getUserNo());
 				n.setContent(content);
-				
-				notificationList.add(n);
+				notificationDao.insert(n);
 			}
-			notificationDao.insertList(notificationList);
-
+			
 			// 6. Users (결과 userNo 리스트) > email로 내용 전송								    
 			List<String> emailList = userDao.selectEmail(notireqList);
 			NotiMail.sendMail(emailList, notiDataVo);

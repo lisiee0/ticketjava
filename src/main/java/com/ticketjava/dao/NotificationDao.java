@@ -14,8 +14,8 @@ public class NotificationDao {
 	@Autowired
 	private SqlSession sqlSession;
 
-	public void insertList(List<NotificationVo> notificationList) {
-		sqlSession.insert("notification.insertList", notificationList);
+	public void insert(NotificationVo notificationVo) {
+		sqlSession.insert("notification.insert", notificationVo);
 		
 	}
 

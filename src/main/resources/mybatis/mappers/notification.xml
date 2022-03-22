@@ -3,17 +3,18 @@
 <mapper namespace="notification">
 	
 	
-	<insert id="insertList" parameterType="map">
-		<foreach collection="list" item="item">
-			insert into noti
-			( noti_no, user_no, content, notiTime, read )
-			values( seq_noti_no.nextval,
-				   #{item.userNo},
-				   #{item.content},
-				   sysdate,
-				   0
+	<insert id="insert" parameterType="NotificationVo">
+			insert into noti(noti_no,
+					  user_no,
+					  content,
+					  read,
+					  notitime )
+			values(seq_noti_no.nextval,
+				   #{userNo},
+				   #{content},
+				   0,
+				   sysdate
 			)
-		</foreach>
 	</insert>
 	
 	<select id="selectByUser" parameterType="int" resultType="NotificationVo">
