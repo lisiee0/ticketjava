@@ -9,9 +9,8 @@ a:active {text-decoration:none;}
 a:hover {text-decoration:none;}
 
 .pageMenu {
-	font-size: 29px;
+	font-size: 32px;
 	font-weight: bold;
-	/* width: 1000px; */
 	padding: 0px;
 	margin: 0px 0px 10px 0px;
 }
@@ -65,9 +64,9 @@ a:hover {text-decoration:none;}
 }
 
 .cateMenu {
-	font-size: 17px;
+	font-size: 25px;
 	font-weight: bold;
-	margin: 0px 0px 8px 0px;
+	margin: 0px 0px 10px 0px;
 }
 
 .b-cateMenu {
@@ -84,9 +83,11 @@ a:hover {text-decoration:none;}
 	margin: 0px 0px 15px 0px;
 }
 
+
 .np {
 	padding: 0px;
 }
+
 
 .nm {
 	margin: 0px;

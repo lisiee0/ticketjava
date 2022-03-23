@@ -45,7 +45,7 @@
 								<div class="col-xs-4 np">
 									<img id="logo" src="${pageContext.request.contextPath}/upload/${map.vo.logoPath}">
 								</div>
-								<div class="col-xs-8 theater-info bgc">
+								<div class="col-xs-8 theater-info">
 									<p class="title">${map.vo.theaterName}</p>
 									<p>주소 : ${map.vo.address} ${map.vo.address2}</p>
 									<p>대표전화 : ${map.vo.phone}</p>
