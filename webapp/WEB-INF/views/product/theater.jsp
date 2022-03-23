@@ -58,6 +58,7 @@
 												<div>
 													<a href="${pageContext.request.contextPath}/product/listbyTheater?theaterNo=${vo.theaterNo}"><img class="theater-logo img-thumbnail img-rounded last-logo np" data-no="${vo.theaterNo}" src="${pageContext.request.contextPath}/upload/${vo.logoPath}"></a>
 												</div>
+												
 											</li>
 										</c:when>
 										<c:otherwise>
@@ -65,6 +66,7 @@
 												<div>
 													<a href="${pageContext.request.contextPath}/product/listbyTheater?theaterNo=${vo.theaterNo}"><img class="theater-logo img-thumbnail img-rounded np" src="${pageContext.request.contextPath}/upload/${vo.logoPath}"></a>
 												</div>
+												
 											</li>
 										</c:otherwise>
 									</c:choose>

@@ -128,3 +128,10 @@
 	height: 45.3px;
 	vertical-align: middle;
 }
+
+
+.searchBtn {
+	width: 200px;
+	height: 34px;
+	display: inline-block;
+}

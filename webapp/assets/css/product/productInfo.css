@@ -239,6 +239,7 @@ body {
 	width: 176px;
 	height: 70px;
 	margin: 0px 17px 17px 0px;
+	box-shadow: 0px 2px 5px grey;
 }
 
 .last-logo {
@@ -454,7 +455,7 @@ body {
 }
 
 .img-thumbnail {
-	border: 2px solid #ddd;
+	border: 1.5px solid #cccccc;
 }
 
 #map {
@@ -485,4 +486,9 @@ body {
 
 .region_nav {
 	height: 46.9px;
+}
+
+.boxShadow{
+	height:5px;
+	background: linear-gradient(to bottom, #d7d7d7 5%, #f4f4f4);
 }
