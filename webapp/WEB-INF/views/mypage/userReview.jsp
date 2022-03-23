@@ -23,78 +23,10 @@
 <link href="${pageContext.request.contextPath}/assets/css/mypage/ticketjavaMypageCommon.css" rel="stylesheet" type="text/css">
 <link href="${pageContext.request.contextPath}/assets/css/mypage/mypageUserReview.css" rel="stylesheet" type="text/css">
 
+<!-- 별점 디자인 css -->
+<link href="${pageContext.request.contextPath}/assets/css/starRating.css" rel="stylesheet">
+
 </head>
-
-<style>
-
-/* 평점 출력용 골드스타 */
-.star-print {
-	float: center;
-	text-align: center; 
-	font-size: 2rem;
-	width: 5em;
-	-webkit-text-stroke-width: 1px;
-	-webkit-text-stroke-color: #2b2a29;
-	-webkit-text-fill-color: gold;
-	
-}
-
-/* 평점 입력용 골드스타 */
-.star-rating {
-	display: flex;
-	flex-direction: row-reverse;
-	font-size: 2.25rem;
-	line-height: 2.5rem;
-	justify-content: space-around;
-	padding: 0 0.2em;
-	text-align: center;
-	width: 5em;
-}
-
-.star-rating input {
-	display: none;
-}
-
-.star-rating label {
-	-webkit-text-fill-color: transparent; /* Will override color (regardless of order) */
-	-webkit-text-stroke-width: 1px;
-	-webkit-text-stroke-color: #2b2a29;
-	cursor: pointer;
-}
-
-.star-rating :checked ~ label {
-	-webkit-text-fill-color: gold;
-}
-
-.star-rating label:hover, .star-rating label:hover ~ label {
-	-webkit-text-fill-color: #fff58c;
-}
-
-/*평점 출력용 골드스타 (구 레드스타) */
-.star {
-	position: relative;
-	font-size: 2rem;
-	color: #dedede;
-}
-
-.star input {
-	width: 100%;
-	height: 100%;
-	position: absolute;
-	left: 0;
-	opacity: 0;
-	cursor: pointer;
-}
-
-.star span {
-	width: 0;
-	position: absolute;
-	left: 0;
-	color: gold;
-	overflow: hidden;
-	pointer-events: none;
-}
-</style>
 
 
 <body>

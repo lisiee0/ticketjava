@@ -22,9 +22,13 @@
 <link href="${pageContext.request.contextPath}/assets/css/indcom.css" rel="stylesheet">
 <link href="${pageContext.request.contextPath}/assets/css/product/productInfo.css" rel="stylesheet">
 
+<!-- 별점 디자인 css -->
+<link href="${pageContext.request.contextPath}/assets/css/starRating.css" rel="stylesheet">
+
 <!-- 제이쿼리 부트스트랩 -->
 <script type="text/javascript" src="${pageContext.request.contextPath}/assets/js/jquery-1.12.4.js"> </script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/assets/bootstrap/js/bootstrap.js"> </script>
+
 
 </head>
 
