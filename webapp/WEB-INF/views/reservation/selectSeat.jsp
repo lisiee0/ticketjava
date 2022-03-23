@@ -18,6 +18,7 @@
 <script src="${pageContext.request.contextPath}/assets/js/seat/seatPlanDraggable.js"></script>
 
 <script src="${pageContext.request.contextPath}/assets/bootstrap/js/bootstrap.js"></script>
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 <script src="${pageContext.request.contextPath}/assets/js/venues/venue${rezProdInfo.hallNo}.js"></script>
 <script src="${pageContext.request.contextPath}/assets/js/reservation/selectSeat.js"></script>
 
@@ -138,8 +139,23 @@
 		</div>
 	</div>
 	
+	<div class="modal fade" id="myModal">
+	  <div class="modal-dialog">
+	    <div class="modal-content">
+	      <div class="modal-body">
+			<div class="g-recaptcha" data-sitekey="6LfrjgMfAAAAAAAOMc65PrUGhUnBvpJEL_CLGy_i" data-callback="modalClose"></div>
+	      </div>
+	    </div>
+	  </div>
+	</div>
 	
 	<input id="pageContext" type="hidden" value="${pageContext.request.contextPath}">
 </body>
 
+
+<script>
+	function modalClose() {
+		$("#myModal").modal("hide");
+	}
+</script>
 </html>

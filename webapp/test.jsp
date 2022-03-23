@@ -2,23 +2,35 @@
     pageEncoding="UTF-8"%>
 <!doctype html>
 <html> 
+
+<head>
+	<script src="${pageContext.request.contextPath}/assets/js/jquery-1.12.4.js"></script>
+	<script src="${pageContext.request.contextPath}/assets/bootstrap/js/bootstrap.js"></script>
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/assets/bootstrap/css/bootstrap.css">
+	 <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+</head>
 <body> 
-    <!-- jQuery --> 
-    <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js" ></script> 
-	<!-- iamport.payment.js --> 
-    <script type="text/javascript" src="https://cdn.iamport.kr/js/iamport.payment-1.2.0.js"></script>
 			
-    <div> 
-        <h2>IAMPORT 결제 데모</h2> 
-        <li> 
-           	<button id="iamportPayment" type="button">결제테스트</button> 
-        </li> 
-    </div> 
+	<div class="modal fade" id="myModal">
+	  <div class="modal-dialog">
+	    <div class="modal-content">
+	      <div class="modal-body">
+			<div class="g-recaptcha" data-sitekey="6LfrjgMfAAAAAAAOMc65PrUGhUnBvpJEL_CLGy_i" data-callback="modalClose"></div>
+	      </div>
+	    </div>
+	  </div>
+	</div>
  
 </body>
 
 <script>
+"use strict";
 
+$(function() {
+	
+});
+
+	
 </script>
 
 </html>

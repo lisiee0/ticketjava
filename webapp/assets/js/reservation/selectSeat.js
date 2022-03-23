@@ -1,4 +1,13 @@
 $(function(){
+	
+	// capcha
+	$('#myModal').modal({
+	    backdrop: 'static',
+	    keyboard: false
+	})
+	$("#myModal").modal("show");
+	
+	
 	var pageContext = $('#pageContext').val();
 	var viewDate = $('[name=viewDate]').val();
 	var prodNo = $('[name=prodNo]').val();
@@ -146,5 +155,6 @@ $(function(){
 		});
 	}
 	
+    
 	
 });
