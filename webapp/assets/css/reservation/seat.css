@@ -66,14 +66,14 @@
 }
 
 #seatPlanBox #seatRefresh{
-	color:#ddd;
+	color:#ccc;
 	position:absolute;
 	top:5px;
-	left:615px;
+	left:607px;
 	display:inline;
 	z-index:3;
 	padding:3px 7px;
-	font-size:20px;
+	font-size:25px;
 	cursor:pointer;
 }
 
