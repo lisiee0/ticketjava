@@ -65,12 +65,12 @@
 			</div>
 			
 			<div id="seatPlanBox">
+				<div id="seatRefresh"> <span class="glyphicon glyphicon-refresh" aria-hidden="true"></span> </div>
 				<div id="draggable">						
 					<div id="seatPlan">
 						
 						<div id="seatPlanDiv">
 							<div id="stageArea">stage</div>
-							
 						</div>
 						
 					</div>
@@ -147,7 +147,7 @@
 	      </div>
 	    </div>
 	  </div>
-	</div>
+	</div>	
 	
 	<input id="pageContext" type="hidden" value="${pageContext.request.contextPath}">
 </body>

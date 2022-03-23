@@ -46,31 +46,43 @@ $(function(){
 	
 	
 	
-
-
-	var seatno=0;
-	for(var section = 0; section < seatMap.length; section++ ){
-		
-		var sectionCh = String.fromCharCode(section+65);
-		$("#seatPlanDiv").append('<table id="seatArea'+sectionCh+'"> <tr> <th class="center" colspan="100%">'+ sectionCh +'</tr></thead> </table>');
-		
-		for(var col=0; col<seatMap[section].length; col++) {
-			
-			$('#seatArea'+sectionCh).append('<tr id="col'+col+'"></tr>');
-
-			var num=1;
-			for(var s=0; s<=seatMap[section][col].length;s++){
-				
-				if(s<seatMap[section][col].length){
-					render(seatMap[section][col][s], col, sectionCh);
-				}
-				else{
-					renderCol(col, sectionCh);
-				}
-					
-			}
-		}
+fetchSeatPlan(seatMap);
 	
+	/* 좌석 새로고침 */
+	$('#seatRefresh').on('click',function(){
+		console.log('좌석 새로고침');
+		deleteSeatPlan();
+		fetchSeatPlan(seatMap);
+	});
+	
+	var seatno;
+	var num;
+	function fetchSeatPlan(seatMap){
+		seatno=0;
+		num=0;
+		for(var section = 0; section < seatMap.length; section++ ){
+		
+			var sectionCh = String.fromCharCode(section+65);
+			$("#seatPlanDiv").append('<table id="seatArea'+sectionCh+'"> <tr> <th class="center" colspan="100%">'+ sectionCh +'</tr></thead> </table>');
+			
+			for(var col=0; col<seatMap[section].length; col++) {
+				
+				$('#seatArea'+sectionCh).append('<tr id="col'+col+'"></tr>');
+	
+				num=1;
+				for(var s=0; s<=seatMap[section][col].length;s++){
+					
+					if(s<seatMap[section][col].length){
+						render(seatMap[section][col][s], col, sectionCh);
+					}
+					else{
+						renderCol(col, sectionCh);
+					}
+						
+				}
+			}
+		
+		}
 	}
 	
 	function render(seat,col, sectionCh){
@@ -103,4 +115,8 @@ $(function(){
 		seatno++;
 	}
 
+	function deleteSeatPlan(){
+		var seatPlan = $('#seatPlanDiv>table');
+		seatPlan.remove();
+	}
 });

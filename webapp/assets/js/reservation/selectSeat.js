@@ -105,6 +105,11 @@ $(function(){
 		$('#seatForm').submit();
 	});
 	
+	/* 좌석 새로고침 */
+	$('#seatRefresh').on('click',function(){
+		fetchOccupy(rezVo);
+		$('#choiceTable tbody').html('');
+	});
 	
 	function fetchOccupy(rezVo) {
 		 $.ajax({

@@ -6,6 +6,7 @@
 	background-color:gray;
 	overflow-x:hidden;
 	overflow-y:hidden;
+	position:relative;
 }
 
 #seatPlan{
@@ -62,6 +63,18 @@
 #seatPlanDiv label{
 	width:10px;
 	height:10px;
+}
+
+#seatPlanBox #seatRefresh{
+	color:#ddd;
+	position:absolute;
+	top:5px;
+	left:615px;
+	display:inline;
+	z-index:3;
+	padding:3px 7px;
+	font-size:20px;
+	cursor:pointer;
 }
 
 input[type="checkbox"] {
