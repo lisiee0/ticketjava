@@ -52,6 +52,7 @@
 													<p class="text-left">${tvo.beginShow} ~ ${tvo.endShow}</p>
 													<p class="text-left">${tvo.theaterName} ${tvo.hallName}</p>
 												</div>
+												<div class="boxShadow"></div>
 											</li>
 										</c:when>
 										<c:otherwise>
@@ -64,6 +65,7 @@
 													<p class="text-left">${tvo.beginShow} ~ ${tvo.endShow}</p>
 													<p class="text-left">${tvo.theaterName} ${tvo.hallName}</p>
 												</div>
+												<div class="boxShadow"></div>
 											</li>
 										</c:otherwise>	
 									</c:choose>	
@@ -92,6 +94,7 @@
 													<p class="text-left">${avo.beginShow} ~ ${avo.endShow}</p>
 													<p class="text-left">${avo.theaterName} ${avo.hallName}</p>
 												</div>
+												<div class="boxShadow"></div>
 											</li>
 										</c:when>
 										<c:otherwise>
@@ -104,6 +107,7 @@
 													<p class="text-left">${avo.beginShow} ~ ${avo.endShow}</p>
 													<p class="text-left">${avo.theaterName} ${avo.hallName}</p>
 												</div>
+												<div class="boxShadow"></div>
 											</li>
 										</c:otherwise>	
 									</c:choose>	
