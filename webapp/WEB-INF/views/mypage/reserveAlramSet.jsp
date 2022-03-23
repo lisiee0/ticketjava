@@ -6,8 +6,9 @@
 <meta charset="UTF-8">
 <title>TicketJava 마이페이지 취소알림</title>
 
-<!-- 티잡 파비콘 -->
-<link rel="icon" type="image/png" sizes="32x32" href="${pageContext.request.contextPath}/assets/image/index/favicon-32x32.png">
+<!-- 티잡 파비콘 파란손 배경없음 -->
+<link rel="icon" type="image/png" sizes="32x32" href="${pageContext.request.contextPath}/assets/image/index/favicon-32x32_ticketjava_nobackground.png">
+
 
 <script src="${pageContext.request.contextPath}/assets/jquery/jquery-1.12.4.js"></script>
 

@@ -9,6 +9,10 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>air datepicker</title>
 
+<!-- 티잡 파비콘 파란손 배경없음 -->
+<link rel="icon" type="image/png" sizes="32x32" href="${pageContext.request.contextPath}/assets/image/index/favicon-32x32_ticketjava_nobackground.png">
+
+
 <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/air-datepicker/dist/css/datepicker.min.css">
 <script src="${pageContext.request.contextPath}/assets/air-datepicker/jquery-3.1.1.min.js"></script>
 <script src="${pageContext.request.contextPath}/assets/air-datepicker/dist/js/datepicker.min.js"></script>
