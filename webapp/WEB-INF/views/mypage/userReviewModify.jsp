@@ -26,64 +26,9 @@
 <script type="text/javascript" src="${pageContext.request.contextPath}/assets/js/jquery-1.12.4.js"> </script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/assets/bootstrap/js/bootstrap.js"> </script>
 
-<style>
+<!-- 별점 디자인 css -->
+<link href="${pageContext.request.contextPath}/assets/css/starRating.css" rel="stylesheet">
 
-/* 평점 입력용 골드스타 */
-.star-rating {
-	display: flex;
-	flex-direction: row-reverse;
-	font-size: 2.25rem;
-	line-height: 2.5rem;
-	justify-content: space-around;
-	padding: 0 0.2em;
-	text-align: center;
-	width: 5em;
-}
-
-.star-rating input {
-	display: none;
-}
-
-.star-rating label {
-	-webkit-text-fill-color: transparent; /* Will override color (regardless of order) */
-	-webkit-text-stroke-width: 1px;
-	-webkit-text-stroke-color: #2b2a29;
-	cursor: pointer;
-}
-
-.star-rating :checked ~ label {
-	-webkit-text-fill-color: gold;
-}
-
-.star-rating label:hover, .star-rating label:hover ~ label {
-	-webkit-text-fill-color: #fff58c;
-}
-
-/*평점 출력용 골드스타 (구 레드스타) */
-.star {
-	position: relative;
-	font-size: 2rem;
-	color: #dedede;
-}
-
-.star input {
-	width: 100%;
-	height: 100%;
-	position: absolute;
-	left: 0;
-	opacity: 0;
-	cursor: pointer;
-}
-
-.star span {
-	width: 0;
-	position: absolute;
-	left: 0;
-	color: gold;
-	overflow: hidden;
-	pointer-events: none;
-}
-</style>
 
 </head>
 
@@ -172,23 +117,28 @@
 						<div class="row">
 
 							<div>
-								<textarea class="form-control" id="text-review" name="content" placeholder="${reviewList.content}"></textarea>
-
+							<form action="${pageContext.request.contextPath}/mypage/userReviewModifyAction" method="get">
+								<textarea class="form-control" id="text-review" name="content" placeholder="">${reviewList.content}</textarea>
+									<div> 예전 평점 : ${reviewList.rating}점 
+									<div class="star-print"> <c:forEach var="i" begin="1" end="${reviewList.rating}"> ★ </c:forEach> </div> 
+									</div>
 								<div class="ratingStarBox">
 									<!--골드스타 5점 만점 -->
 									<div class="star-rating space-x-4 mx-auto">
 										<input type="radio" id="5-stars" name="rating" value="5" /> <label for="5-stars" class="star pr-4">★</label> <input type="radio" id="4-stars" name="rating" value="4" />
 										<label for="4-stars" class="star">★</label> <input type="radio" id="3-stars" name="rating" value="3" /> <label for="3-stars" class="star">★</label> <input type="radio"
 											id="2-stars" name="rating" value="2"
-										/> <label for="2-stars" class="star">★</label> <input type="radio" id="1-star" name="rating" value="1" /> <label for="1-star" class="star">★</label> ${reviewList.rating}점
+										/> <label for="2-stars" class="star">★</label> <input type="radio" id="1-star" name="rating" value="1" /> <label for="1-star" class="star">★</label> 
 									</div>
+									
 								</div>
 
-								<input type="hidden" id="prodNo" name="prodNo" value="${product.vo.prodNo}">
+								<input type="hidden" id="prodNo" name="prodNo" value="${reviewList.prodNo}">
 								<input type="hidden" id="userNo" name="userNo" value="${authUser.userNo}">
 								<input type="hidden" id="reviewNo" name="reviewNo" value="${reviewList.reviewNo}">
 
 								<button type="button" id="btnReviewSubmit" class="btn btn-primary position">후기 수정</button>
+								</form>
 							</div>
 
 

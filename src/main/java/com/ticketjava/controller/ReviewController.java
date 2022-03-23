@@ -51,9 +51,8 @@ public class ReviewController {
 		//review 번호로 리뷰를 가져온다
 		ReviewVo rVo = reviewService.getOneReview(reviewVo);
 		System.out.println("컨트롤러 번호로 리뷰가져오기 reviewVo "+rVo);
+	
 		return rVo; 
-		
-		/* return "redirect:/product/productInfo"; */
 	}
 	
 	

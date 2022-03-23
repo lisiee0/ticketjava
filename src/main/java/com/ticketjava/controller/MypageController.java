@@ -8,6 +8,7 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -19,6 +20,7 @@ import com.ticketjava.service.UserService;
 import com.ticketjava.vo.NotificationVo;
 import com.ticketjava.vo.NotireqVo;
 import com.ticketjava.vo.ReserveDetailVo;
+import com.ticketjava.vo.ReviewVo;
 import com.ticketjava.vo.UserVo;
 
 @Controller
@@ -131,7 +133,6 @@ public class MypageController {
 		return "mypage/reserveAndCancel";
 	}
 	
-	
 //	후기 리뷰 관리 마이페이지 페이징
 	@RequestMapping("/userReview")
 	public String getReviewListMypage(@RequestParam(value="crtPage", required= false, defaultValue= "1") int crtPage, Model model, HttpSession session) {
@@ -147,15 +148,52 @@ public class MypageController {
 		return "mypage/userReview";
 	}
 	
-	
-//	리뷰 수정
-	@RequestMapping("/userReviewModify")
-	public String userReviewModify(@RequestParam("reviewNo") int reviewNo, Model model) {
-		System.out.println("MypageControlller userReviewModify");
-		return "mypage/userReviewModify";
+//	후기 리뷰 관리 for 마이페이지 페이징
+	@RequestMapping("/userReview2")
+	public String getReviewListMypage2(@RequestParam(value="crtPage", required= false, defaultValue= "1") int crtPage, Model model, HttpSession session) {
+		System.out.println("MypageController userReview");
+		
+		UserVo authUser = (UserVo)session.getAttribute("authUser");
+		int userNo = authUser.getUserNo();
+		System.out.println("컨트롤러 userNo"+userNo);
+		Map<String, Object> rMap = reviewService.getReviewListMypagePaging(userNo, crtPage);
+		model.addAttribute("rMap", rMap);
+		
+		System.out.println("rMap "+rMap);
+		System.out.println("model "+model);
+		
+//		System.out.println("컨트롤러 알맵 출력"+rMap);
+		
+		return "mypage/userReview";
 	}
 	
 	
+//	리뷰 수정폼
+	@RequestMapping("/userReviewModify")
+	public String userReviewModify(@RequestParam("reviewNo") int reviewNo, Model model, @ModelAttribute ReviewVo reviewVo) {
+		System.out.println("MypageControlller userReviewModify");
+		
+//		ReviewVo rVo = reviewService.getOneReview(reviewVo);
+//		List<ReviewVo> reqList = reviewService.getOneReview(reviewVo);
+		ReviewVo reviewList = reviewService.getOneReview(reviewVo);
+
+		model.addAttribute("reviewList", reviewList);
+		
+//		return rVo;
+		return "mypage/userReviewModify";
+	}
+	
+//	리뷰 수정
+	@RequestMapping("/userReviewModifyAction")
+	public String userReviewModifyAction (ReviewVo reviewVo, @RequestParam("reviewNo") int reviewNo,@RequestParam("rating") int rating,@RequestParam("content") String content) {
+		System.out.println("MypageControlller userReviewModifyAction");
+		
+		reviewService.reviewModifyAction(reviewVo, reviewNo, rating, content);
+		
+		return "redirect:/mypage/userReview";
+	}
+	
+//	리뷰 삭제
 	@RequestMapping("/userReviewDelete")
 	public String userReviewDelete(@RequestParam("reviewNo") int reviewNo) {
 		System.out.println("MypageController userReviewDelete "+reviewNo);

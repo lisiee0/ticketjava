@@ -19,10 +19,24 @@ public class ReviewDao {
 //	리뷰 리스트 마이페이지용
 	public List<ReviewVo> getReviewListMypage(int userNo) {
 		System.out.println("ReviewDao getReviewListMypage");
-		
+		System.out.println("다오 userNo "+userNo);
 		List<ReviewVo> reviewListMypage = sqlSession.selectList("review.reviewMypageList", userNo);
-		
+		System.out.println("다오 getReviewListMypage "+reviewListMypage);
 		return reviewListMypage;
+	}
+
+//	리뷰 리스트 마이페이지 페이징2
+	public List<ReviewVo> getReviewListMypagePaging2 (int userNo, int startRnum, int endRnum) {
+	System.out.println("ReviewDao 페이징");	
+	
+	Map<String, Integer> map = new HashMap<String, Integer>();
+	map.put("userNo", userNo);
+	map.put("startRnum", startRnum);
+	map.put("endRnum", endRnum);
+	System.out.println("리뷰다오 리뷰페이징 map "+map);
+	List<ReviewVo> reviewList = sqlSession.selectList("review.getReviewListMypagePaging", map);
+	System.out.println("리뷰 다오 reviewList "+reviewList);
+	return reviewList;
 	}
 
 //	리뷰 리스트 마이페이지 페이징
@@ -39,16 +53,20 @@ public class ReviewDao {
 	System.out.println("ReviewDao reviewList 페이징 갯수 출력"+reviewList);
 	
 	return reviewList;
-	
 	}
 	
+//	전체 글 갯수 가져오기 페이징용
+	public int getCntUserReview(int userNo) {
+		System.out.println("ReviewDao.selectTotal 실행");
+		return sqlSession.selectOne("review.getCntUserReview", userNo); 
+	}
+	
+
 //	전체 글 갯수 가져오기 페이징용
 	public int selectTotal() {
 		System.out.println("ReviewDao.selectTotal 실행");
 		return sqlSession.selectOne("review.totalCnt"); 
 	}
-	
-	
 	
 	
 	
@@ -92,10 +110,20 @@ public class ReviewDao {
 		return sqlSession.selectList("pagingrListbyprodNo", map);
 	}
 	
-	public void userReviewModify (int reviewNo) {
+	public void reviewModifyAction (ReviewVo reviewVo, int reviewNo, int rating, String content) {
 		System.out.println("ReviewDao.userReviewModify 실행");
-		sqlSession.update("review.ReviewUpdate", reviewNo);
+		
+		Map<String, Integer> map= new HashMap<>();
+		map.put("reviewNo", reviewNo);
+		map.put("rating", rating);
+//		map.put("content", content);
+		
+		sqlSession.update("review.ReviewUpdate", map);
 	} 
+	
+	
+	
+	
 	
 	
 } // The end of ReservationDao
