@@ -41,7 +41,6 @@
 		<!-- 컨텐츠 구역 시작 -->
 		<article class="container-fluid zp">
 
-
 			<c:set var="rand" value="<%= java.lang.Math.floor(java.lang.Math.random()*8)+1 %>" />
 			<fmt:parseNumber var= "randomVideo" integerOnly= "true" value= "${rand}" />
 			<!-- 영상 재생 구역 시작 -->
