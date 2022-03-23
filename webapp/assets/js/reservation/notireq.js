@@ -114,7 +114,7 @@ $(function(){
 		});
 	}
 	
-	function fetchMyReq(notireqVo); {
+	function fetchMyReq(notireqVo) {
 		$.ajax({
 			url: pageContext+"/notireq/myNotireq",
 			type : "post",
