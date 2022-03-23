@@ -103,7 +103,7 @@
 											<select class="form-control" name="theaterNo">
 												<option selected>공연장을 선택해주세요.</option>
 												<c:forEach items="${selectList}" var="vo">
-													<option id="hallNo" name="hallNo" value="${vo.hallNo}">${vo.theaterName},${vo.hallName},${vo.hallNo}</option>
+													<option id="hallNo" name="hallNo" value="${vo.hallNo}">${vo.theaterName},${vo.hallName}</option>
 												</c:forEach>
 											</select>
 										</div>

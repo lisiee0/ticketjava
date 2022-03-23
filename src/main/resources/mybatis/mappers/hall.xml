@@ -5,16 +5,14 @@
 	<!-- 사업자 페이지 (민석) -->
 	<!-- 공연장 리스트 -->
 	<select id="bmhallList" parameterType="HallVo" resultType="HallVo">
-		<![CDATA[
-			select  	p.prod_no prodNo,
-            			h.hall_no hallNo,
-            			h.hallname hallName,
-            			t.theatername theaterName
-        
-			from 	product p, hall h, theater t
-			where 	p.hall_no = h.hall_no
-        				and h.theater_no = t.theater_no
-        		order by 	t.theater_no asc
+		<![CDATA[        		
+        		select 	h.hall_no 	hallNo,
+       				t.theater_no 	theaterNo,
+        				h.hallname 	hallName,
+        				t.theatername 	theaterName
+			from 	hall h, theater t
+			where 	h.theater_no = t.theater_no
+			order by 	h.hall_no asc
 			
 		]]>
 	</select>

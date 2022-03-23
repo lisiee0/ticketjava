@@ -58,12 +58,11 @@ public class BusinessController {
 
 	// 공연 파일업로드
 	@RequestMapping(value = "bmfileUpload", method = { RequestMethod.GET, RequestMethod.POST })
-	public String bmfileUpload(@RequestParam("prodNo") int prodNo, ProductVo productVo, DetailVo detailVo,
+	public void bmfileUpload(@RequestParam("prodNo") int prodNo, ProductVo productVo, DetailVo detailVo,
 			MultipartFile file, int order) {
 		System.out.println("BusinessController > form() > bmfileUplad");
 
 		businessService.productFileUpload(file, productVo, detailVo, order);
-		return "1";
 	}
 
 	// 공연 수정폼
@@ -90,10 +89,11 @@ public class BusinessController {
 
 	// 공연 수정폼 파일 업로드
 	@RequestMapping(value = "bmfileUploadModify", method = { RequestMethod.GET, RequestMethod.POST })
-	public void bmfileUploadModify(@RequestParam("prodNo") int prodNo) {
+	public void bmfileUploadModify(@RequestParam("prodNo") int prodNo, ProductVo productVo, DetailVo detailVo,
+			MultipartFile file, int order) {
 		System.out.println("BusinessController > form() > bmfileUploadModify");
 
-		//businessService.productFileUpload(file, productVo, detailVo, order);
+		businessService.productFileUpload(file, productVo, detailVo, order);
 	}
 
 

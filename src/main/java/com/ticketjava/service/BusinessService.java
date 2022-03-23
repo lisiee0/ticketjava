@@ -199,7 +199,7 @@ public class BusinessService {
 	}
 
 	// 공연정보 수정 파일등록
-	public void productFileUploadModify(MultipartFile file, ProductVo productVo, DetailVo detailVo, int order) {
+	public int productFileUploadModify(MultipartFile file, ProductVo productVo, DetailVo detailVo, int order) {
 		System.out.println("BusinessServiece > productFileUploadModify()");
 
 		// 파일업로드
@@ -248,6 +248,7 @@ public class BusinessService {
 		} else {
 			System.out.println("오류 발생");
 		}
+		return order;
 	}
 
 	// 공연 목록 삭제
