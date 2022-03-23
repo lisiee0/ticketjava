@@ -49,9 +49,10 @@
 												</div>
 												<div class="productInfo">
 													<p class="text-left title"><strong>${tvo.prodName}</strong></p>
-													<p class="text-left">${tvo.beginShow} ~ ${tvo.endShow}</p>
-													<p class="text-left">${tvo.theaterName} ${tvo.hallName}</p>
+													<p class="text-left content">${tvo.beginShow} ~ ${tvo.endShow}</p>
+													<p class="text-left content">${tvo.theaterName} ${tvo.hallName}</p>
 												</div>
+												<div class="boxShadow"></div>
 											</li>
 										</c:when>
 										<c:otherwise>
@@ -61,9 +62,10 @@
 												</div>
 												<div class="productInfo">
 													<p class="text-left title"><strong>${tvo.prodName}</strong></p>
-													<p class="text-left">${tvo.beginShow} ~ ${tvo.endShow}</p>
-													<p class="text-left">${tvo.theaterName} ${tvo.hallName}</p>
+													<p class="text-left content">${tvo.beginShow} ~ ${tvo.endShow}</p>
+													<p class="text-left content">${tvo.theaterName} ${tvo.hallName}</p>
 												</div>
+												<div class="boxShadow"></div>
 											</li>
 										</c:otherwise>	
 									</c:choose>	
@@ -89,9 +91,10 @@
 												</div>
 												<div class="productInfo">
 													<p class="text-left title"><strong>${avo.prodName}</strong></p>
-													<p class="text-left">${avo.beginShow} ~ ${avo.endShow}</p>
-													<p class="text-left">${avo.theaterName} ${avo.hallName}</p>
+													<p class="text-left content">${avo.beginShow} ~ ${avo.endShow}</p>
+													<p class="text-left content">${avo.theaterName} ${avo.hallName}</p>
 												</div>
+												<div class="boxShadow"></div>
 											</li>
 										</c:when>
 										<c:otherwise>
@@ -101,9 +104,10 @@
 												</div>
 												<div class="productInfo">
 													<p class="text-left title"><strong>${avo.prodName}</strong></p>
-													<p class="text-left">${avo.beginShow} ~ ${avo.endShow}</p>
-													<p class="text-left">${avo.theaterName} ${avo.hallName}</p>
+													<p class="text-left content">${avo.beginShow} ~ ${avo.endShow}</p>
+													<p class="text-left content">${avo.theaterName} ${avo.hallName}</p>
 												</div>
+												<div class="boxShadow"></div>
 											</li>
 										</c:otherwise>	
 									</c:choose>	

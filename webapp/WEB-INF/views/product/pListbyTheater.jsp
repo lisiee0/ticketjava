@@ -71,9 +71,10 @@
 												</div>
 												<div class="productInfo avp">
 													<p class="text-left title"><strong>${vo.prodName}</strong></p>
-													<p class="text-left">${vo.beginShow} ~ ${vo.endShow}</p>
-													<p class="text-left">${vo.theaterName} ${vo.hallName}</p>
+													<p class="text-left content">${vo.beginShow} ~ ${vo.endShow}</p>
+													<p class="text-left content">${vo.theaterName} ${vo.hallName}</p>
 												</div>
+												<div class="boxShadow"></div>
 											</li>
 										</c:when>
 										<c:otherwise>
@@ -83,9 +84,10 @@
 												</div>
 												<div class="productInfo avp">
 													<p class="text-left title"><strong>${vo.prodName}</strong></p>
-													<p class="text-left">${vo.beginShow} ~ ${vo.endShow}</p>
-													<p class="text-left">${vo.theaterName} ${vo.hallName}</p>
+													<p class="text-left content">${vo.beginShow} ~ ${vo.endShow}</p>
+													<p class="text-left content">${vo.theaterName} ${vo.hallName}</p>
 												</div>
+												<div class="boxShadow"></div>
 											</li>
 										</c:otherwise>
 									</c:choose>
