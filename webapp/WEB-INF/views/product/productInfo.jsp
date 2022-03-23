@@ -26,66 +26,6 @@
 <script type="text/javascript" src="${pageContext.request.contextPath}/assets/js/jquery-1.12.4.js"> </script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/assets/bootstrap/js/bootstrap.js"> </script>
 
-<style>
-
-/* 평점 입력용 골드스타 */
-.star-rating {
-	display: flex;
-	flex-direction: row-reverse;
-	font-size: 2.25rem;
-	line-height: 2.5rem;
-	justify-content: space-around;
-	padding: 0 0.2em;
-	text-align: center;
-	width: 5em;
-}
-
-.star-rating input {
-	display: none;
-}
-
-.star-rating label {
-	-webkit-text-fill-color: transparent; /* Will override color (regardless of order) */
-	-webkit-text-stroke-width: 1px;
-	-webkit-text-stroke-color: #2b2a29;
-	cursor: pointer;
-}
-
-.star-rating :checked ~ label {
-	-webkit-text-fill-color: gold;
-}
-
-.star-rating label:hover, .star-rating label:hover ~ label {
-	-webkit-text-fill-color: #fff58c;
-}
-
-/*평점 출력용 골드스타 (구 레드스타) */
-.star {
-	position: relative;
-	font-size: 2rem;
-	color: #dedede;
-}
-
-.star input {
-	width: 100%;
-	height: 100%;
-	position: absolute;
-	left: 0;
-	opacity: 0;
-	cursor: pointer;
-}
-
-.star span {
-	width: 0;
-	position: absolute;
-	left: 0;
-	color: gold;
-	overflow: hidden;
-	pointer-events: none;
-}
-
-</style>
-
 </head>
 
 
@@ -246,8 +186,8 @@
 								<tbody id="reviewListArea">
 									<c:forEach items="${product.review}" var="vo">
 									<tr>
-										<td><span class="star"> ★★★★★ <span style="width: ${vo.rating*2}0%;">★★★★★</span> 
-										<input type="range" oninput="drawStar(this)" value="1" step="1" min="0" max="5"></span> ${vo.rating}</td>
+										<td><label id="starb" class="star"> ★★★★★ <span style="width: ${vo.rating*2}0%;">★★★★★</span> 
+										</label> ${vo.rating}</td>
 										<td>${vo.content}</td>
 										<td>${vo.userName}</td>
 										<td>${vo.regDate}<input type="hidden" name="userNo" value="${vo.userNo}"></td>
@@ -483,8 +423,8 @@ function render(reviewVo, updown) { // 1명씩 정보를 받아 처리 button의
 	console.log("테이블 출력");
 	var str = '';
 	str += ' 	<tr> ';
-	str += ' 		<td><span class="star"> ★★★★★ <span style="width: ' + reviewVo.rating*2 + '0%;">★★★★★</span> ';
-	str += ' 		<input type="range" oninput="drawStar(this)" value="1" step="1" min="0" max="5"></span> ' + reviewVo.rating + '</td> ';
+	str += ' 		<td><label id="starb" class="star"> ★★★★★ <span style="width: ' + reviewVo.rating*2 + '0%;">★★★★★</span> ';
+	str += ' 		</label> ' + reviewVo.rating + '</td> ';
 	str += ' 		<td> ' + reviewVo.content + '</td> ';
 	str += ' 		<td> ' + reviewVo.userName + '</td> ';
 	str += ' 		<td> ' + reviewVo.regDate + '<input type="hidden" name="userNo" value=" ' + reviewVo.userNo + ' "></td> ';
@@ -561,7 +501,7 @@ function render(reviewVo, updown) { // 1명씩 정보를 받아 처리 button의
 	
 	 /* 리뷰 별점 */
 	const drawStar = (target) => {
-    document.querySelector('.star span').style.width = '${target.value * 20}%';
+    document.querySelector('.star label').style.width = '${target.value * 20}%';
   	};
 		
 	/* 공연장 정보 지도 */
