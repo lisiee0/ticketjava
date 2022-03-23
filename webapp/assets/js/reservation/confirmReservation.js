@@ -23,7 +23,31 @@ $(function(){
 				phone:phone,
 				email:email
 			};
-			finalPayment(rezVo);
+			
+			var IMP = window.IMP;
+	        IMP.init('iamport'); 
+	        IMP.request_pay({
+	        	pg: 'inicis',
+	            pay_method: 'card',
+	            merchant_uid: 'merchant_' + new Date().getTime(),
+	            name: '주문명:결제테스트',
+	            amount: 100, 
+
+	            buyer_email: 'test@test.com',
+	            buyer_name: 'test',
+	            buyer_tel: '010-1234-5678',
+	            m_redirect_url: 'https://www.yourdomain.com/payments/complete'
+
+	        }, function (rsp) {
+	            if (rsp.success) {
+					
+	            } else {
+					finalPayment(rezVo);
+	            }
+	        });
+        
+        
+			
 		}
 	});
 	
@@ -52,5 +76,9 @@ $(function(){
 			}
 		});
 	}
+	
+	$("#check_module").click(function () {
+        
+    });
 	
 });

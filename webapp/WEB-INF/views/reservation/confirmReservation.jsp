@@ -12,8 +12,8 @@
 <!-- 티잡 파비콘 파란손 배경없음 -->
 <link rel="icon" type="image/png" sizes="32x32" href="${pageContext.request.contextPath}/assets/image/index/favicon-32x32_ticketjava_nobackground.png">
 
-
 <script src="${pageContext.request.contextPath}/assets/js/jquery-1.12.4.js"></script>
+<script type="text/javascript" src="https://service.iamport.kr/js/iamport.payment-1.1.5.js"></script>
 <script src="${pageContext.request.contextPath}/assets/js/reservation/confirmReservation.js"></script>
 
 <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/bootstrap/css/bootstrap.css">
