@@ -119,66 +119,51 @@
 
 								<div class="rezSeatList">
 									<h4>예매내역 및 좌석</h4>
-									<form action="requestCancelTicket" name="cancelticket" method="get">
+									<form action="${pageContext.request.contextPath}/mypage/requestCancelTicket" method="post">
+									
 										<table>
-											<tbody>
-
+											<thead>
 												<tr>
-													<!-- 일괄취소기능 <th scope="col"><input type="checkbox" disabled></th> -->
+													<th scope="col"><input type="checkbox" disabled></th>
 													<th scope="col">좌석등급</th>
 													<th scope="col">권종</th>
 													<th scope="col">좌석섹션</th>
 													<th scope="col">좌석번호(col/num)</th>
 													<th scope="col">가격</th>
 													<th scope="col">예매상태</th>
-													<th scope="col">관리</th>
 												</tr>
-
+											</thead>
+												
+											<tbody>
 												<c:forEach items="${requestScope.rMap.reserveSeatList}" var="vo">
 													<tr>
-														<!-- <td><input type="checkbox" name="selseatNo" value="${vo.selseatNo}" /> -->
+														<td><c:if test="${vo.status eq 1}"><input type="checkbox" name="selseatNo" value="${vo.selseatNo}" /></c:if></td>
 														<td>${vo.grade}석</td>
-														<td>${vo.dcName}<c:if test="${empty vo.dcName}">일반</c:if>
-														</td>
+														<td>${vo.dcName}<c:if test="${empty vo.dcName}">일반</c:if></td>
 														<td>${vo.section}구역</td>
 														<td>${vo.col}열${vo.num}번</td>
 														<td>${vo.payment}원</td>
-														<td><c:choose>
-																<c:when test="${vo.status==1}">
+														<td>
+															<c:choose>
+																<c:when test="${vo.status eq 1}">
 																	정상 예매중
 																</c:when>
 																<c:otherwise>
 																	취소됨
 																</c:otherwise>
-															</c:choose></td>
-														<td><c:choose>
-																<c:when test="${vo.status==1}">
-
-																	<form action="${pageContext.request.contextPath}/mypage/requestCancelTicket" method="get">
-																		<input type="hidden" name="selseatNo" value="${vo.selseatNo}"> <input type="hidden" name="rezNo" value="${vo.rezNo}">
-																		<button type="submit" class="btn btn-primary">예매취소</button>
-																	</form>
-
-																	<!--
-																	<a href="${pageContext.request.contextPath}/mypage/requestCancelTicket?selseatNo=${vo.selseatNo}&rezNo=${vo.rezNo}">[예매취소]</a>
-																	<button onclick="requestCancel()">예매취소</button>
-																	<a href="#" onClick="alert('작업중입니다')">[예매취소]</a> 
-																	 -->
-																</c:when>
-																<c:otherwise>
-																	-
-																</c:otherwise>
-															</c:choose></td>
+															</c:choose>
+														</td>								
 													</tr>
 												</c:forEach>
-
 											</tbody>
-
 										</table>
-
+										<div><button type="submit" class="btn">예매취소</button></div>
 									</form>
+									
 								</div>
 								<!-- //rezSeatList -->
+								
+								
 
 								<div class="cancelRule">
 									<h4>취소 유의사항</h4>

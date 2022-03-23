@@ -126,13 +126,15 @@ public class ReservationService {
 	}
 	
 //	예매 좌석 부분 취소 기능
-	public void deleteReserveSeat (int selseatNo) {
+	public void deleteReserveSeat (List<Integer> selseatNo) {
 		System.out.println("ReservationService deleteReserveSeat 실행");
-		reservationDao.deleteReserveSeat(selseatNo);
-		notificationService.notiSend(selseatNo);
 		
-		System.out.println("리저브 서비스 selseatNo "+selseatNo);
+		for (int i= 0; i<selseatNo.size(); i++) {
+			reservationDao.deleteReserveSeat(selseatNo.get(i));
+			notificationService.notiSend(selseatNo.get(i));
+		}
 	}
+	
 
 	public ReservationVo checkRezHistory(ReservationVo reservationVo, int userNo) {
 		reservationVo.setUserNo(userNo);
