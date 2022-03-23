@@ -183,7 +183,7 @@ public class MypageController {
 		return "mypage/userReviewModify";
 	}
 	
-//	리뷰 수정
+//	리뷰 수정  
 	@RequestMapping("/userReviewModifyAction")
 	public String userReviewModifyAction (ReviewVo reviewVo, @RequestParam("reviewNo") int reviewNo,@RequestParam("rating") int rating,@RequestParam("content") String content) {
 		System.out.println("MypageControlller userReviewModifyAction");
