@@ -21,6 +21,7 @@ import com.ticketjava.vo.NotificationVo;
 import com.ticketjava.vo.NotireqVo;
 import com.ticketjava.vo.ReserveDetailVo;
 import com.ticketjava.vo.ReviewVo;
+import com.ticketjava.vo.SelseatVo;
 import com.ticketjava.vo.UserVo;
 
 @Controller
@@ -73,15 +74,12 @@ public class MypageController {
 	
 //	예매 좌석 부분 취소
 	@RequestMapping("/requestCancelTicket")
-	public String requestCancelTicket(Model model,@RequestParam(value="selseatNo") int selseatNo, @RequestParam(value="rezNo") int rezNo) {
+	public String requestCancelTicket(Model model, @RequestParam("selseatNo") List<Integer> selseatNo) {
 		System.out.println("MypageController reserveSeatCancel 예매 좌석 삭제 실행");
-		
+
 		reservationService.deleteReserveSeat(selseatNo);
-		System.out.println("컨트롤러 selseatNo "+selseatNo);
 		return "redirect:/mypage/reserveList";
 	}
-	
-	
 
 	
 //	마이페이지 문의내역
@@ -140,6 +138,7 @@ public class MypageController {
 		
 		UserVo authUser = (UserVo)session.getAttribute("authUser");
 		int userNo = authUser.getUserNo();
+		System.out.println(userNo);
 		Map<String, Object> rMap = reviewService.getReviewListMypagePaging(userNo, crtPage);
 		
 		model.addAttribute("rMap", rMap);
