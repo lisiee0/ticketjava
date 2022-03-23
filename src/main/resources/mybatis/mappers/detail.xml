@@ -47,7 +47,7 @@
 		]]>
 	</insert>
 
-	<!-- 공연 이미지파일 업데이트 <<<<< 캐스팅 정보 -->
+	<!-- 공연 이미지파일 업데이트 <<<<< 공연 정보 -->
 	<update id="prodAdd" parameterType="DetailVo">
 		<![CDATA[
 			update 	detail
@@ -73,6 +73,8 @@
 			where 	detail_no = #{detailNo}
 		]]>
 	</update>
+
+	<!--수정 -->
 
 
 

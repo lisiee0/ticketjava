@@ -63,7 +63,7 @@ public class BusinessController {
 		System.out.println("BusinessController > form() > bmfileUplad");
 
 		businessService.productFileUpload(file, productVo, detailVo, order);
-		return "redirect:/bm/";
+		return "1";
 	}
 
 	// 공연 수정폼
@@ -83,17 +83,26 @@ public class BusinessController {
 	@RequestMapping(value = "bmModify", method = { RequestMethod.GET, RequestMethod.POST })
 	public int bmModify(@RequestBody ProductVo productVo) {
 		System.out.println("BusinessController >  bmModify");
-		
+
 		int count = businessService.bmModify(productVo);
 		return count;
 	}
+
+	// 공연 수정폼 파일 업로드
+	@RequestMapping(value = "bmfileUploadModify", method = { RequestMethod.GET, RequestMethod.POST })
+	public void bmfileUploadModify(@RequestParam("prodNo") int prodNo) {
+		System.out.println("BusinessController > form() > bmfileUploadModify");
+
+		//businessService.productFileUpload(file, productVo, detailVo, order);
+	}
+
 
 	// 공연 할인정보 추가
 	@RequestMapping("/discount")
 	public String bmDisAdd(@RequestParam("prodNo") int prodNo, Model model) {
 		System.out.println("BusinessController > bmDisAdd");
 		System.out.println(prodNo);
-		
+
 		model.addAttribute("prodDis", businessService.selectProdDiscount(prodNo));
 		return "business/bmDisAdd";
 	}

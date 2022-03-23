@@ -366,7 +366,7 @@
 												+ '<input type="text" class="form-control selGrade" name="grade" value="' + gra + '" readonly>'
 												+ '</div>'
 												+ '<div class="col-md-4">'
-												+ '<input type="text" class="form-control selPrice" name="price" value="">'
+												+ '<input type="text" class="form-control selPrice" name="price" value="' + selp + '">'
 												+ '</div>' + '&nbsp;'
 												+ '</div>');
 					});
@@ -478,6 +478,9 @@
 				fileupload(detailVo, prodPath, 2);
 				fileupload(detailVo, castingPath, 3);
 				fileupload(detailVo, addedPath, 4);
+				
+				
+				//window.location.href = "${pageContext.request.contextPath}/bm/";
 			},
 			error : function(XHR, status, error) {
 				console.error(status + " : " + error);

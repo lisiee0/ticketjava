@@ -5,7 +5,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.ticketjava.vo.DetailVo;
-import com.ticketjava.vo.ProductVo;
 
 @Repository
 public class DetailDao {
@@ -43,11 +42,37 @@ public class DetailDao {
 		sqlsession.update("detail.addedAdd", detailVo);
 	}
 	
+	
+	//////////////////////////////////////////////////////////////////////
+	
 	//공연 수정 상세정보 가져오기
 	public DetailVo bmgetDetail(int prodNo) {
 		System.out.println("DetailDao > bmgetDetail");
 		
 		return sqlsession.selectOne("detail.bmgetDetail", prodNo);
+	}
+	
+
+	// 공연 이미지파일 수정 <<<<< 공연 정보
+	public void prodmodify(DetailVo detailVo) {
+		System.out.println("DetailDao > prodmodify");
+
+		sqlsession.update("detail.prodmodify", detailVo);
+	}
+	
+
+	// 공연 이미지파일 수정 <<<<< 캐스팅 정보
+	public void castingModify(DetailVo detailVo) {
+		System.out.println("DetailDao > castingModify");
+
+		sqlsession.update("detail.castingAdd", detailVo);
+	}
+
+	// 공연 이미지파일 수정 <<<<< 부가 정보
+	public void addedModify(DetailVo detailVo) {
+		System.out.println("DetailDao > addedModify");
+
+		sqlsession.update("detail.addedAdd", detailVo);
 	}
 
 	// 호준이형님이 작업하신거
