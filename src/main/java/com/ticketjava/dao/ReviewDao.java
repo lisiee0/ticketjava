@@ -113,10 +113,10 @@ public class ReviewDao {
 	public void reviewModifyAction (ReviewVo reviewVo, int reviewNo, int rating, String content) {
 		System.out.println("ReviewDao.userReviewModify 실행");
 		
-		Map<String, Integer> map= new HashMap<>();
+		Map<String, Object> map= new HashMap<>();
 		map.put("reviewNo", reviewNo);
 		map.put("rating", rating);
-//		map.put("content", content);
+		map.put("content", content);
 		
 		sqlSession.update("review.ReviewUpdate", map);
 	} 

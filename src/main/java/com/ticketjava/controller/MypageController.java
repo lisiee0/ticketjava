@@ -140,15 +140,13 @@ public class MypageController {
 		
 		UserVo authUser = (UserVo)session.getAttribute("authUser");
 		int userNo = authUser.getUserNo();
-		Map<String, Object> rMap = reviewService.getReviewListMypagePaging(userNo, crtPage);
 		
-		model.addAttribute("rMap", rMap);
-		System.out.println("컨트롤러 알맵 출력"+rMap);
+		model.addAttribute("rMap", reviewService.getReviewListMypagePaging(userNo, crtPage));
 		
 		return "mypage/userReview";
 	}
 	
-//	후기 리뷰 관리 for 마이페이지 페이징
+//	후기 리뷰 관리 for 마이페이지 페이징2
 	@RequestMapping("/userReview2")
 	public String getReviewListMypage2(@RequestParam(value="crtPage", required= false, defaultValue= "1") int crtPage, Model model, HttpSession session) {
 		System.out.println("MypageController userReview");
