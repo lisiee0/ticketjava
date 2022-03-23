@@ -99,7 +99,7 @@
 											<select class="form-control" name="theaterNo">
 												<option selected>공연장을 선택해주세요.</option>
 												<c:forEach items="${bmProductMap.bmGetHallList}" var="vo">
-													<option id="hallNo" value="${bmProductMap.bmGetProduct.hallNo}" <c:if test ="${bmProductMap.bmGetProduct.hallNo eq vo.hallNo}">selected="selected"</c:if>>${vo.theaterName},${vo.hallName},${vo.hallNo}</option>
+													<option id="hallNo" name="hallNo" value="${bmProductMap.bmGetProduct.hallNo}" <c:if test ="${bmProductMap.bmGetProduct.hallNo eq vo.hallNo}">selected="selected"</c:if>>${vo.theaterName},${vo.hallName},${vo.hallNo}</option>
 												</c:forEach>
 											</select>
 										</div>
@@ -496,98 +496,109 @@
 	//공연정보 클릭할때
 	$("#addbtn")
 			.on(
-					"click",
-					function() {
-						console.log("공연수정");
+		"click",
+		function() {
+			console.log("공연수정");
+	
+			//좌석 등급별 가격 배열
+			var seatpriceList = [];
+			var selGradeList = $(".selGrade");
+			var selPriceList = $(".selPrice");
+			var selNoList = $(".seatpriceNo");
+	
+			for (var i = 0; i < selGradeList.length; i++) {
+				var seatprice = {
+					grade : selGradeList.eq(i).val(),
+					price : selPriceList.eq(i).val(),
+					seatpriceNo : selNoList.eq(i).val()
+				};
+				seatpriceList.push(seatprice);
+			}
+	
+			// 상시 할인 
+	
+			var ProductVo = {
+				prodNo : $("#prodNo").val(),
+				prodName : $("#prodName").val(),
+				userNo : $("#userNo").val(),
+				hallNo : $("#hallNo").val(),
+				prodType : $("#prodType").val(),
+				beginShow : $("#beginShow").val(),
+				endShow : $("#endShow").val(),
+				beginRez : $("#beginRez").val(),
+				endRez : $("#endRez").val(),
+				showTime : $("#showTime").val(),
+				viewTime : $("#viewTime").val(),
+				viewGrade : $("input[name=viewGrade]").eq(0).val(),
+				cancelInfo : $("#cancelInfo").val(),
+				notice : $("#notice").val(),
+				status : $("#status").val(),
+				seatpriceList : seatpriceList,
+				productDisList : productDisList
+	
+			}
+	
+			console.log(JSON.stringify(ProductVo));
+	
+			$
+			.ajax({
+				url : "${pageContext.request.contextPath}/bm/bmModify",
+				type : "post",
+				contentType : "application/json",
+				data : JSON.stringify(ProductVo),
 
-						//좌석 등급별 가격 배열
-						var seatpriceList = [];
-						var selGradeList = $(".selGrade");
-						var selPriceList = $(".selPrice");
-						var selNoList = $(".seatpriceNo");
-						
+				/* 성공 시 처리해야 될 코드 작성 */
+				dataType : "text",
+				success : function(result) {
+					console.log(result)
 
-						for (var i = 0; i < selGradeList.length; i++) {
-							var seatprice = {
-								grade : selGradeList.eq(i).val(),
-								price : selPriceList.eq(i).val(),
-								seatpriceNo : selNoList.eq(i).val()
-							};
-							seatpriceList.push(seatprice);
-						}
+					//첨부파일
+/* 					var posterPath = $("#posterPath")[0].files[0]
+					var prodPath = $("#prodPath")[0].files[0]
+					var castingPath = $("#castingPath")[0].files[0]
+					var addedPath = $("#addedPath")[0].files[0]
 
-						// 상시 할인 
+					fileupload(result, posterPath, 1);
 
-						var ProductVo = {
-							prodNo : $("#prodNo").val(),
-							prodName : $("#prodName").val(),
-							userNo : $("#userNo").val(),
-							hallNo : $("#hallNo").val(),
-							prodType : $("#prodType").val(),
-							beginShow : $("#beginShow").val(),
-							endShow : $("#endShow").val(),
-							beginRez : $("#beginRez").val(),
-							endRez : $("#endRez").val(),
-							showTime : $("#showTime").val(),
-							viewTime : $("#viewTime").val(),
-							viewGrade : $("input[name=viewGrade]").eq(0).val(),
-							cancelInfo : $("#cancelInfo").val(),
-							notice : $("#notice").val(),
-							status : $("#status").val(),
-							seatpriceList : seatpriceList,
-							productDisList : productDisList
+					fileupload(result, prodPath, 2);
+					fileupload(result, castingPath, 3);
+					fileupload(result, addedPath, 4); */
 
-						}
+					window.location.href = "${pageContext.request.contextPath}/bm/";
+				},
+				error : function(XHR, status, error) {
+					console.error(status + " : " + error);
+				}
+			});
 
-						console.log(JSON.stringify(ProductVo));
+		});
 
-						$
-								.ajax({
-									url : "${pageContext.request.contextPath}/bm/bmModify",
-									type : "post",
-									contentType : "application/json",
-									data : JSON.stringify(ProductVo),
+	function fileupload(result, file, order) {
+		var formData = new FormData();
 
-									/* 성공 시 처리해야 될 코드 작성 */
-									dataType : "text",
-									success : function(result) {
-										console.log(result)
+		formData.append('prodNo', result.prodNo);
+		formData.append('detailNo', result.detailNo);
+		formData.append('file', file);
+		formData.append('order', order);
 
-										window.location.href = "${pageContext.request.contextPath}/bm/";
-									},
-									error : function(XHR, status, error) {
-										console.error(status + " : " + error);
-									}
-								});
+		$.ajax({
+			url : "${pageContext.request.contextPath}/bm/bmfileUpload",
+			type : "post",
+			traditional : true,
+			/* contentType : "application/json",*/
+			contentType : false,
+			processData : false,
+			data : formData,
 
-					});
-
-	// 	function fileupload(detailVo, file, order) {
-	// 		var formData = new FormData();
-
-	// 		formData.append('prodNo', detailVo.prodNo);
-	// 		formData.append('detailNo', detailVo.detailNo);
-	// 		formData.append('file', file);
-	// 		formData.append('order', order);
-
-	// 		$.ajax({
-	// 			url : "${pageContext.request.contextPath}/bm/bmfileUpload",
-	// 			type : "post",
-	// 			traditional : true,
-	// 			/* contentType : "application/json",*/
-	// 			contentType : false,
-	// 			processData : false,
-	// 			data : formData,
-
-	// 			/* dataType : "json", */
-	// 			success : function(result) {
-	// 				console.log(result)
-	// 			},
-	// 			error : function(XHR, status, error) {
-	// 				console.error(status + " : " + error);
-	// 			}
-	// 		});
-	//	}
+			/* dataType : "json", */
+			success : function(result) {
+				console.log(result)
+			},
+			error : function(XHR, status, error) {
+				console.error(status + " : " + error);
+			}
+		});
+	}
 </script>
 </html>
 

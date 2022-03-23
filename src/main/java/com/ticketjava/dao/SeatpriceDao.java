@@ -36,7 +36,6 @@ public class SeatpriceDao {
 	//공연 등급별 가격 수정
 	public int seatpriceModify(SeatpriceVo seatpriceVo){
 		System.out.println("SeatpriceDao > seatpriceModify");
-		System.out.println(seatpriceVo);
 		
 		return sqlSession.update("seatprice.seatpriceModify", seatpriceVo);	
 	}

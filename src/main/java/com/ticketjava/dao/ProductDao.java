@@ -52,6 +52,13 @@ public class ProductDao {
 		return sqlsession.update("product.bmproModify", productVo);
 	}
 	
+	//공연 수정 << 포스터 정보
+	public int posModify(ProductVo productVo) {
+		System.out.println("ProductDao > posModify");
+		
+		return sqlsession.update("poster.posModify", productVo);
+	}
+	
 	//공연 삭제
 //	public int productDelete(ProductVo productVo) {
 //		System.out.println("ProductDao > productDelete");

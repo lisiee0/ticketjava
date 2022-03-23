@@ -53,6 +53,8 @@
 		]]>
 	</update>
 
+
+
 	<!-- 공연번호 가져오기 -->
 	<select id="bmGetProduct" parameterType="ProductVo" resultType="productVo">
 		<![CDATA[
@@ -99,6 +101,15 @@
 					cancelinfo = 	#{cancelInfo}
 			where 	prod_no = #{prodNo}
         ]]>
+	</update>
+
+	<!-- 공연 이미지파일 수정 <<<<< 포스터 정보 -->
+	<update id="posModify" parameterType="ProductVo">
+		<![CDATA[
+			update 	product
+			set 		posterPath = #{posterPath}
+			where 	prod_no = #{prodNo}
+		]]>
 	</update>
 
 
