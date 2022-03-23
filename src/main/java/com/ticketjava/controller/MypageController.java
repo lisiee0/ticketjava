@@ -138,11 +138,6 @@ public class MypageController {
 		
 		UserVo authUser = (UserVo)session.getAttribute("authUser");
 		int userNo = authUser.getUserNo();
-<<<<<<< HEAD
-		System.out.println(userNo);
-		Map<String, Object> rMap = reviewService.getReviewListMypagePaging(userNo, crtPage);
-=======
->>>>>>> branch 'master' of https://github.com/lisiee0/ticketjava.git
 		
 		model.addAttribute("rMap", reviewService.getReviewListMypagePaging(userNo, crtPage));
 		
