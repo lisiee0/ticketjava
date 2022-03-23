@@ -1,9 +1,12 @@
 $(function(){
 	var pageContext = $('#pageContext').val();
+	
+	/* 다음 단계 버튼 클릭 시 */
 	$('#nextBtn').on('click', function(){
 		var phone = $('#phone').val();
 		var email = $('#email').val();
 		
+		/* 입력, 체크박스 체크 확인 */
 		if(phone == '')
 			alert('휴대폰 번호를 입력해주세요');
 		else if(email == '')
@@ -24,6 +27,7 @@ $(function(){
 		}
 	});
 	
+	/* 최종 결제 */
 	function finalPayment(rezVo) {
 		$.ajax({
 			url: pageContext+"/reservation/finalPayment",

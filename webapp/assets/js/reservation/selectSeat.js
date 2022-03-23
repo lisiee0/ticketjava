@@ -8,8 +8,7 @@ $(function(){
 			prodNo: prodNo
 	};
 	
-	/* 예매 좌석 가져오기*/
-	fetchOccupy(rezVo);
+	fetchOccupy(rezVo); // 예매된 좌석 가져오기
 	
 	
 	/* 잔여석 계산 */
@@ -87,8 +86,7 @@ $(function(){
 				selseatList:selseatList
 		};
 		
-		/* 좌석 선점 */
-		preoccupy(rezVo);
+		preoccupy(rezVo); // 좌석 선점
 		
 	});
 	

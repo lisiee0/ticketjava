@@ -75,7 +75,6 @@
 	if( $('#result').val() == 'fail'){
 		alert('로그인 정보가 일치하지 않습니다.');
 	}
-
 	
 	$('#findId').on('click',function(){
 		location.href = pageContext+'/user/findId';
