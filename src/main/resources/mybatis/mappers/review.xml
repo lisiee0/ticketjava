@@ -16,8 +16,8 @@
 			        
 			from	review r, product p
 			where	r.prod_no = p.prod_no
-			and		r.user_no= #{userNo}
-			order	by reviewNo desc		
+			and		r.user_no = #{userNo}
+			order	by regDate desc	
 		]]>
 	</select>
 
@@ -98,6 +98,7 @@
 	</select>
 
 
+
 	<!-- 마이페이지 페이징 -->
 	<select id="getReviewListMypagePaging" parameterType="map" resultType="ReviewVo">
 	
@@ -140,6 +141,61 @@
 		]]>
 	</select>
 	
+
+	<!-- 리뷰페이지 for 마이페이지 페이징 -->
+	<select id="getReviewListMypagePaging2" parameterType="map" resultType="ReviewVo">
+	
+		<![CDATA[
+		select 
+		        rt.rn,
+		        rt.prodName,
+		        rt.reviewNo,
+		        rt.prodNo,
+		        rt.userNo,
+		        rt.content,
+		        rt.rating,
+		        rt.regDate    
+		from (select 	
+		            rownum rn,
+		            ot.prodName,
+		            ot.reviewNo,
+		            ot.prodNo,
+		            ot.userNo,
+		            ot.content,
+		            ot.rating,
+		            ot.regDate    
+		            from (select
+		                        p.prodname prodName,
+		                        r.review_no reviewNo,
+		                        r.prod_no prodNo,
+		                        r.user_no userNo,
+		                        r.content content,
+		                        r.rating rating,
+		                        to_char(r.regdate, 'yy-mm-dd hh24:mi') regDate
+		                    
+		            from	    review r, product p
+		            where	    r.prod_no = p.prod_no
+		            and		    r.user_no= #{userNo}
+		            order	    by regDate desc
+		            ) ot
+		        )rt
+		where rn between #{startRnum} and #{endRnum}
+		
+		]]>
+	</select>
+	
+	<!-- 유저 별 리뷰 갯수 - 페이징을 위한 토탈카운트 -->
+	<select id="getCntUserReview" parameterType="int" resultType="int">
+		<![CDATA[
+		
+		select	count(*)
+		from	review 
+		where	user_no = #{userNo}
+		
+		]]>
+	</select>
+
+
 	<!-- 페이징을 위한 토탈카운트 -->
 	<select id="totalCnt" resultType="int">
 		<![CDATA[
@@ -150,8 +206,7 @@
 		
 		]]>
 	</select>
-
-
+	
 
 	<!-- 상품별 리뷰 총개수 -->
 	<select id="reviewCntbyprodNo" parameterType="int" resultType="int">
