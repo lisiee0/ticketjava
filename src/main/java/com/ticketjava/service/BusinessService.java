@@ -58,6 +58,8 @@ public class BusinessService {
 		System.out.println("BusinessServiece > productUpload");
 
 		// productDao로 값을 넘김
+		productVo.setNotice(productVo.getNotice().replace(" ", "&nbsp;").replace("\n", "<br>"));
+		productVo.setCancelInfo(productVo.getCancelInfo().replace(" ", "&nbsp;").replace("\n", "<br>"));
 		pd.productUpload(productVo);
 
 		// detailVo 테이블의 prodNo를 productVo 테이블의 prodNo로 설정.

@@ -27,6 +27,7 @@ public class ReviewService {
 	}
 
 	public void writeReview(ReviewVo reviewVo) {
+		reviewVo.setContent(reviewVo.getContent().replace(" ", "&nbsp;").replace("\n", "<br>"));
 		reviewDao.writeReview(reviewVo);
 		System.out.println("리뷰 서비스 reviewVo " + reviewVo);
 	}

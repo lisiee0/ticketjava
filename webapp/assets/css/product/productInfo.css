@@ -63,7 +63,12 @@ body {
 .review-qna {
 	font-size: 14px;
 	text-align: center;
+	vertical-align: middle;
 	padding: 0px;
+}
+
+.review-qna tbody>tr>td {
+	vertical-align: middle;
 }
 
 #text-review, #qna {
