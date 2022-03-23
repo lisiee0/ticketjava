@@ -480,7 +480,7 @@
 				fileupload(detailVo, addedPath, 4);
 				
 				
-				//window.location.href = "${pageContext.request.contextPath}/bm/";
+				window.location.href = "${pageContext.request.contextPath}/bm/";
 			},
 			error : function(XHR, status, error) {
 				console.error(status + " : " + error);
