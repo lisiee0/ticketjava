@@ -144,17 +144,22 @@ body {
 
 
 .productInfo {
+	padding: 10px 0px 0px 15px;
 	background-color: white; 
 	width: 237px;
 	height: 101.5px;
 }
 
 .productInfo p{
-	font-size: 15px;
+	font-size: 14px;
+}
+
+.productInfo p.content{
+	color:#767676;
 }
 
 .productInfo .title, .theater-info .title {
-	font-size: 18px;
+	font-size: 16px;
 	font-weight: bolder;
 	margin-bottom: 7px;
 	
@@ -164,7 +169,7 @@ body {
 }
 
 .boxShadow{
-	height:7px;
+	height:5px;
 	background: linear-gradient(to bottom, #d7d7d7 5%, #f4f4f4);
 }
 
