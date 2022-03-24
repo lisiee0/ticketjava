@@ -1,13 +1,13 @@
 package com.ticketjava.dao;
 
 import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.ticketjava.vo.DiscountVo;
-import com.ticketjava.vo.SeatpriceVo;
 
 @Repository
 public class DiscountDao {
@@ -23,9 +23,9 @@ public class DiscountDao {
 	} 
 	
 
-	public List<DiscountVo> selectList(int prodNo) {
+	public List<DiscountVo> selectList(Map<String, Object> dcSelData) {
 		// TODO Auto-generlated method stub
-		return sqlSession.selectList("discount.selectList", prodNo);
+		return sqlSession.selectList("discount.selectList", dcSelData);
 	}
 
 	public List<DiscountVo> selectProdDiscount(int prodNo) {

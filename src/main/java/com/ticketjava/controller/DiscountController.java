@@ -1,11 +1,13 @@
 package com.ticketjava.controller;
 
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -23,8 +25,8 @@ public class DiscountController {
 	/* 공연별 할인 정보 */
 	@ResponseBody
 	@PostMapping("/discountList")
-	public List<DiscountVo> discountList(@RequestParam(value="prodNo") int prodNo) {
-		return discountService.discountList(prodNo);
+	public List<DiscountVo> discountList(@RequestBody Map<String, Object> dcSelData) {
+		return discountService.discountList(dcSelData);
 	}
 	
 	

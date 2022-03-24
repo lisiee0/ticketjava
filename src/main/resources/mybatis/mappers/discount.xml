@@ -17,7 +17,7 @@
 		]]>
 	</select>
 
-	<select id="selectList" parameterType="int" resultType="DiscountVo">
+	<select id="selectList" parameterType="map" resultType="DiscountVo">
 		<![CDATA[
 			select dc_no dcNo,
 				   dcname dcName,
@@ -26,7 +26,8 @@
 				   dcrate dcRate,
 				   dctype dcType
 			from discount
-			where prod_no = #{prodNo}
+			where prod_no = #{prodNo} and
+			(beginDc is null  or ( to_date(#{viewDate}) >= beginDc and to_date(#{viewDate}) <= endDc))
 			order by begindc desc ,dctype, dcrate
 		]]>
 	</select>
