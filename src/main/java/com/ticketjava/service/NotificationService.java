@@ -1,6 +1,5 @@
 package com.ticketjava.service;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -65,7 +64,7 @@ public class NotificationService {
 			//4. notireq(prodNo, viewDate, section, status==1?)  >  결과 userNo 리스트   
 			List<NotireqVo> notireqList = notireqDao.selectTargetUser(notiDataVo);
 			
-			//5. noti (결과 userNo 리스트 ) > 알림 번호(시퀀스), 내용 ( viewDate+showTime , prodName, section ) , 알림 시간 (sysdate)   
+			//5. noti > 알림 번호(시퀀스), 내용 ( viewDate+showTime , prodName, section ) , 알림 시간 (sysdate)   
 			String content = ""
 					+ "<a class='content' target='_blank' href='http://localhost:8088/ticketjava/product/info?prodNo="+notiDataVo.getProdNo()+"&viewDate="+notiDataVo.getViewDate()+"'>"
 					+ notiDataVo.getViewDate()+" "+notiDataVo.getShowTime()+" "+notiDataVo.getProdName()+" "+notiDataVo.getGrade().toUpperCase()+"석 "
@@ -79,7 +78,7 @@ public class NotificationService {
 				notificationDao.insert(n);
 			}
 			
-			// 6. Users (결과 userNo 리스트) > email로 내용 전송								    
+			// 6. Users > email로 내용 전송								    
 			List<String> emailList = userDao.selectEmail(notireqList);
 			NotiMail.sendMail(emailList, notiDataVo);
 			

@@ -27,24 +27,24 @@ public class ReservationService {
 	private NotificationService notificationService;
 	
 	public int preoccupy(ReservationVo reservationVo, int userNo) {
-		List<SelseatVo> selseatList = reservationVo.getSelseatList();
+		List<SelseatVo> selseatList = reservationVo.getSelseatList();	// 선택한 좌석 리스트
 		for(SelseatVo selseatVo : selseatList) {
 			Map <String, Object> map = new HashMap<>();
 			map.put("selseatVo", selseatVo);
 			map.put("reservationVo", reservationVo);
-			int count = selseatDao.selectOccupyForPre(map);
+			int count = selseatDao.selectOccupyForPre(map);			// 좌석이 예매되었는지 확인
 			if(count > 0)
 				return -1;
 		}
 		
 		reservationVo.setUserNo(userNo);
-		reservationDao.insertPre(reservationVo);
-		int rezNo = reservationVo.getRezNo();
+		reservationDao.insertPre(reservationVo);	// 좌석 선점을 위한 예매번호 insert
+		int rezNo = reservationVo.getRezNo();		// 예매번호 반환
 		
 		
 		for(SelseatVo selseatVo : selseatList) {
 			selseatVo.setRezNo(rezNo);
-			selseatDao.insertPre(selseatVo);
+			selseatDao.insertPre(selseatVo);	// 좌석 선점
 		}
 		
 		return rezNo;
