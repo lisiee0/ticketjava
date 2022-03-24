@@ -24,7 +24,7 @@ public class ReviewDao {
 		System.out.println("다오 getReviewListMypage "+reviewListMypage);
 		return reviewListMypage;
 	}
-
+/*
 //	리뷰 리스트 마이페이지 페이징2
 	public List<ReviewVo> getReviewListMypagePaging2 (int userNo, int startRnum, int endRnum) {
 	System.out.println("ReviewDao 페이징");	
@@ -38,24 +38,19 @@ public class ReviewDao {
 	System.out.println("리뷰 다오 reviewList "+reviewList);
 	return reviewList;
 	}
-
+*/
 //	리뷰 리스트 마이페이지 페이징
-	public List<ReviewVo> getReviewListMypagePaging (int userNo, int crtPage, int startRnum, int endRnum) {
-	System.out.println("ReviewDao 페이징");	
+	public List<ReviewVo> getReviewListMypagePaging (int userNo, int startRnum, int endRnum) {
 	
 	Map<String, Integer> map = new HashMap<String, Integer>();
 	map.put("startRnum", startRnum);
 	map.put("endRnum", endRnum);
 	map.put("userNo", userNo);
-	map.put("crtPage", crtPage);
-	
-	List<ReviewVo> reviewList = sqlSession.selectList("review.getReviewListMypagePaging", map);
-	System.out.println("ReviewDao reviewList 페이징 갯수 출력"+reviewList);
-	
-	return reviewList;
+
+	return sqlSession.selectList("review.getReviewListMypagePaging", map);
 	}
 	
-//	전체 글 갯수 가져오기 페이징용
+//	userNo별 리뷰 갯수 가져오기 페이징용
 	public int getCntUserReview(int userNo) {
 		System.out.println("ReviewDao.selectTotal 실행");
 		return sqlSession.selectOne("review.getCntUserReview", userNo); 

@@ -100,50 +100,52 @@
 										</thead>
 
 										<tbody>
-											<c:forEach items="${requestScope.rMap.reviewList}" var="reviewList">
+											<c:forEach items="${review.pagingList}" var="vo">
 												<tr>
-													<td>${reviewList.reviewNo}</td>
-													<td id="space" class="text-left"><a href="product/info?prodNo=${reviewList.prodNo}">${reviewList.prodName}</a></td>
-													<td id="space">${reviewList.content}</td>
+													<td>${vo.reviewNo}</td>
+													<td id="space" class="text-left"><a href="product/info?prodNo=${vo.prodNo}">${vo.prodName}</a></td>
+													<td id="space">${vo.content}</td>
 													<td>
-														<div class="star-print"> <c:forEach var="i" begin="1" end="${reviewList.rating}"> ★ </c:forEach> </div>
+														<div class="star-print"> <c:forEach var="i" begin="1" end="${vo.rating}"> ★ </c:forEach> </div>
 													</td>
-													<td>${reviewList.regDate}</td>
+													<td>${vo.regDate}</td>
 													<td>
-													<button type="submit" class="btn btn-primary" onclick="location.href='userReviewModify?reviewNo=${reviewList.reviewNo}'">수정</button> 
-													<button type="submit" class="btn btn-primary" onclick="location.href='userReviewDelete?reviewNo=${reviewList.reviewNo}'">삭제</button>
+													<button type="submit" class="btn btn-primary" onclick="location.href='userReviewModify?reviewNo=${vo.reviewNo}'">수정</button> 
+													<button type="submit" class="btn btn-primary" onclick="location.href='userReviewDelete?reviewNo=${vo.reviewNo}'">삭제</button>
 													</td>
 												</tr>
 											</c:forEach>
 										</tbody>
 
 									</table>
-
-
-
-									<div id="paging">
-										<ul>
-
-											<c:if test="${requestScope.rMap.prev eq true}">
-												<li><a href="${pageContext.request.contextPath}/mypage/userReview?crtPage=${requestScope.rMap.startPageBtnNo-1}&userNo=${requestScope.rMap.userNo}">◀</a></li>
-											</c:if>
-
-											<!-- 현재 페이지 볼드처리 -->
-											<c:forEach begin="${requestScope.rMap.startPageBtnNo}" end="${requestScope.rMap.endPageBtnNo}" step="1" var="page">
-
-												<li class=${rMap.crtPageNo eq page ? "active" : ""}><a href="${pageContext.request.contextPath}/mypage/userReview?crtPage=${page}">${page}</a></li>
-
+									
+									
+									<!-- 페이징 -->
+									<div class="row paging">				
+										<nav>
+										  <ul class="pagination">
+										  	<li><a href="javascript:PageMove(${review.paging.firstPageNo})"><span class="glyphicon glyphicon-triangle-left"></span></a></li>
+											<li class= ${review.paging.pageNo eq review.paging.firstPageNo ? "disabled" : ""}><a href="javascript:PageMove(${review.paging.prevPageNo})"><span class="glyphicon glyphicon-menu-left"></span></a></li>
+								
+											<c:forEach var="i" begin="${review.paging.startPageNo}" end="${review.paging.endPageNo}" step="1">
+												<c:choose>
+													<c:when test="${i eq review.paging.pageNo}">
+														<li class= ${review.paging.pageNo eq i ? "active" : ""}><a href="javascript:PageMove(${i})">${i}</a></li>
+													</c:when>
+													<c:otherwise>
+														<li class= ${review.paging.pageNo eq i ? "active" : ""}><a href="javascript:PageMove(${i})">${i}</a></li>
+													</c:otherwise>
+												</c:choose>
 											</c:forEach>
-
-											<c:if test="${requestScope.rMap.next eq true}">
-												<li><a href="${pageContext.request.contextPath}/mypage/userReview?crtPage=${requestScope.rMap.endPageBtnNo+1}">▶</a></li>
-											</c:if>
-
-										</ul>
-
-										<div class="clear"></div>
+											
+										    <li class= ${review.paging.pageNo eq review.paging.finalPageNo ? "disabled" : ""}><a href="javascript:PageMove(${review.paging.nextPageNo})"><span class="glyphicon glyphicon-menu-right"></span></a></li>
+										    <li><a href="javascript:PageMove(${review.paging.finalPageNo})"><span class="glyphicon glyphicon-triangle-right"></span></a></li>
+										  </ul>
+										</nav>
 									</div>
-									<!-- //paging -->
+
+
+
 
 
 									<div id="row" class="searchBox">
@@ -182,6 +184,16 @@
 	</div>
 	<!-- wrap 종료 -->
 </body>
+
+
+<script>
+
+	function PageMove(page) {
+
+		location.href = "${pageContext.request.contextPath}/mypage/userReview?crtPage=" + page;	
+	}
+
+</script>
 
 
 </html>

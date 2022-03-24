@@ -138,30 +138,30 @@ public class MypageController {
 		
 		UserVo authUser = (UserVo)session.getAttribute("authUser");
 		int userNo = authUser.getUserNo();
-		
-		model.addAttribute("rMap", reviewService.getReviewListMypagePaging(userNo, crtPage));
+		System.out.println(userNo);
+		model.addAttribute("review", reviewService.getReviewListMypagePaging(crtPage, userNo));
 		
 		return "mypage/userReview";
 	}
 	
-//	후기 리뷰 관리 for 마이페이지 페이징2
-	@RequestMapping("/userReview2")
-	public String getReviewListMypage2(@RequestParam(value="crtPage", required= false, defaultValue= "1") int crtPage, Model model, HttpSession session) {
-		System.out.println("MypageController userReview");
-		
-		UserVo authUser = (UserVo)session.getAttribute("authUser");
-		int userNo = authUser.getUserNo();
-		System.out.println("컨트롤러 userNo"+userNo);
-		Map<String, Object> rMap = reviewService.getReviewListMypagePaging(userNo, crtPage);
-		model.addAttribute("rMap", rMap);
-		
-		System.out.println("rMap "+rMap);
-		System.out.println("model "+model);
-		
-//		System.out.println("컨트롤러 알맵 출력"+rMap);
-		
-		return "mypage/userReview";
-	}
+////	후기 리뷰 관리 for 마이페이지 페이징2
+//	@RequestMapping("/userReview2")
+//	public String getReviewListMypage2(@RequestParam(value="crtPage", required= false, defaultValue= "1") int crtPage, Model model, HttpSession session) {
+//		System.out.println("MypageController userReview");
+//		
+//		UserVo authUser = (UserVo)session.getAttribute("authUser");
+//		int userNo = authUser.getUserNo();
+//		System.out.println("컨트롤러 userNo"+userNo);
+//		Map<String, Object> rMap = reviewService.getReviewListMypagePaging(userNo, crtPage);
+//		model.addAttribute("rMap", rMap);
+//		
+//		System.out.println("rMap "+rMap);
+//		System.out.println("model "+model);
+//		
+////		System.out.println("컨트롤러 알맵 출력"+rMap);
+//		
+//		return "mypage/userReview";
+//	}
 	
 	
 //	리뷰 수정폼

@@ -38,31 +38,25 @@ public class ReviewService {
 	}
 
 //	마이페이지 리뷰 리스트 페이징2
-	public Map<String, Object> getReviewListMypagePaging2 (int crtPage, int userNo) {
+	public Map<String, Object> getReviewListMypagePaging (int crtPage, int userNo) {
 		System.out.println("ReviewService getReviewListMypagePaging");
 		
 		int listCnt= 10; // 한 페이지당 글 개수
 		int startRnum= (crtPage-1)*listCnt +1; // 시작글 번호
 		int endRnum= (startRnum+listCnt) -1; // 마지막글 번호
 
-		System.out.println("서비스 userNo "+userNo);
 		Paging paging= new Paging();
 		paging.setPageNo(crtPage);
 		paging.setPageSize(listCnt);
 		paging.setTotalCount(reviewDao.getCntUserReview(userNo));
 		
-		System.out.println("Paging "+paging.getTotalCount());
-		
 		Map<String, Object> rMap = new HashMap<String, Object>();
-		rMap.put("reviewList", reviewDao.getReviewListMypage(userNo));
-		rMap.put("reviewListPaging", reviewDao.getReviewListMypagePaging2(userNo, startRnum, endRnum));
+		rMap.put("pagingList", reviewDao.getReviewListMypagePaging(userNo, startRnum, endRnum));
 		rMap.put("paging", paging);
-		
-		System.out.println("서비스 rMap 출력 "+rMap);
-		return rMap;
-		
-	}
 
+		return rMap;	
+	}
+/*
 //	마이페이지 리뷰 리스트 페이징
 	public Map<String, Object> getReviewListMypagePaging (int crtPage, int userNo) {
 		System.out.println("ReviewService getReviewListMypagePaging");
@@ -122,7 +116,7 @@ public class ReviewService {
 		
 		return rMap;
 	}
-	
+*/	
 	
 //	리뷰 수정
 	public void reviewModifyAction (ReviewVo reviewVo, int reviewNo, int rating, String content) {

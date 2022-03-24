@@ -18,3 +18,6 @@ table {
 	word-break:break-all;
 }
 
+.paging {
+	text-align: center;
+}
