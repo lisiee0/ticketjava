@@ -92,8 +92,8 @@
 										</thead>
 										<tbody>
 										<!-- 취소 알림 설정한 것 이 없으면 출력 -->
-												<c:if test="${vo.reqList eq null }">
-												<tr><td>취소 알림이 없습니다</td></tr>
+												<c:if test="${empty reqList}">
+												<tr><td colspan="100%">취소 알림이 없습니다</td></tr>
 												</c:if>
 												
 											<c:forEach items="${reqList}" var="vo"> 

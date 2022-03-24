@@ -84,6 +84,10 @@
 											</tr>
 										</thead>
 										<tbody>
+										<c:if test="${empty notiList}">
+												<tr><td colspan="3">취소 알림이 없습니다</td></tr>
+												</c:if>
+												
 											<c:forEach items="${notiList}" var="vo">
 												<tr id="tr${vo.notiNo}">
 													<c:choose>

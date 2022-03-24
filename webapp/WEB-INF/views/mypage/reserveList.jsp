@@ -75,11 +75,11 @@
 
 							<!-- content body -->
 							<div id="content-body">
-								<div class="ticketingDate">
+								<!-- <div class="ticketingDate">
 									<form action="" name="" method="get">
 										<div>
 											기간선택
-											<!-- 1일을 기준으로 기간 날짜를 결정 1달 30일 페이지 기본값 7일-->
+											1일을 기준으로 기간 날짜를 결정 1달 30일 페이지 기본값 7일
 											<label for="rdo-week">7일</label> <input type="radio" id="rdo-week" name="duration" value="7" checked> <label for="rdo-month">1개월</label> <input type="radio"
 												id="rdo-month" name="duration" value="30"
 											> <label for="rdo-3month">3개월</label> <input type="radio" id="rdo-3month" name="duration" value="60">
@@ -92,7 +92,7 @@
 												<option value="TicketBuy">예매일</option>
 												<option value="TicketUse">관람일</option>
 											</select> <select id="yearBox" name="year" class="form-control"></select>
-											<!-- yearBox는 클라의 현재 년도를 js로 받아와서 select방식 출력 -->
+											yearBox는 클라의 현재 년도를 js로 받아와서 select방식 출력
 											<select id="monthBox" name="month" class="form-control">
 												<option value="">해당월선택</option>
 												<option value="1jan">01월</option>
@@ -112,7 +112,7 @@
 											<button type="button" class="btn btn-primary">조회</button>
 										</div>
 									</form>
-								</div>
+								</div> -->
 
 								<div id="board">
 									<div id="list">
@@ -129,7 +129,9 @@
 											</thead>
 
 											<tbody>
-
+												<c:if test="${empty reserveList}">
+												<tr><td colspan="100%">예매내역이 없습니다</td></tr>
+												</c:if>
 												<!-- 예매 내역이 없을 경우 출력 -->
 												<c:if test="${reserveList eq null }">
 													<tr>
@@ -162,7 +164,7 @@
 
 
 
-										<div id="paging">
+										<!-- <div id="paging">
 											<ul>
 												<li><a href="">◀</a></li>
 												<li><a href="">1</a></li>
@@ -190,7 +192,7 @@
 													<button type="submit" class="btn-primary formSearchBoardButton">검색</button>
 												</form>
 											</div>
-										</div>
+										</div> -->
 										<!-- //searchBox -->
 
 									</div>
