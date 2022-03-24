@@ -22,7 +22,6 @@
 	</select>
 
 	<!-- 리뷰 삭제 at 마이페이지 -->
-
 	<delete id="deleteReview" parameterType="ReviewVo">
 		
 		<![CDATA[
