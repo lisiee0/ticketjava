@@ -80,19 +80,20 @@
 										<div>
 											기간선택
 											<!-- 1일을 기준으로 기간 날짜를 결정 1달 30일 페이지 기본값 7일-->
-											<label for="rdo-duration">7일</label> <input type="radio" id="rdo-week" name="duration" value="7" checked> <label for="rdo-duration">1개월</label> <input
+											<label for="rdo-duration">7일</label> <input type="radio" id="rdo-week" name="duration" value="7" checked>  <label for="rdo-duration">1개월</label> <input
 												type="radio" id="rdo-month" name="duration" value="30"
-											> <label for="rdo-duration">3개월</label> <input type="radio" id="rdo-3month" name="duration" value="60">
+											>  <label for="rdo-duration">3개월</label> <input type="radio" id="rdo-3month" name="duration" value="60">
 
 										</div>
+										<div>조회기간</div>
 										<div>
-											조회기간 <select name="durationType">
+											<select id="typeBox" name="durationType" class="form-control">
 												<option value="">구분</option>
 												<option value="TicketBuy">예매일</option>
 												<option value="TicketUse">관람일</option>
-											</select> <select id="yearBox" name="year"></select>
+											</select> <select id="yearBox" name="year" class="form-control"></select>
 											<!-- yearBox는 클라의 현재 년도를 js로 받아와서 select방식 출력 -->
-											<select id="monthBox" name="month">
+											<select id="monthBox" name="month" class="form-control">
 												<option value="">해당월선택</option>
 												<option value="1jan">01월</option>
 												<option value="2feb">02월</option>
@@ -106,7 +107,7 @@
 												<option value="10">10월</option>
 												<option value="11">11월</option>
 												<option value="12">12월</option>
-											</select> <input type="date" value="2022-02-23">
+											</select> <input id="dateBox" type="date" value="2022-02-23" class="form-control">
 
 											<button type="button" class="btn btn-primary">조회</button>
 										</div>
@@ -180,7 +181,7 @@
 										<div id="row" class="searchBox">
 											<div class="col-xs-8"></div>
 											<div class="col-xs-2">
-												<input type="text" class="form-control formSearchBoard" placeholder="문의내역 검색" value="">
+												<input type="text" class="form-control formSearchBoard" placeholder="예매내역 검색" value="">
 											</div>
 											<div class="col-xs-2">
 												<form class="">

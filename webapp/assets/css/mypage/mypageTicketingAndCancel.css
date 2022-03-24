@@ -2,5 +2,35 @@
 
 /* 예매내역 날짜 선택 바 */
 .ticketingDate {
-	margin: 10px 0px 20px 50px;
+	margin: 10px 0px 30px 50px;
+	font-size: 20px;
 }	
+
+.ticketingDate div>select {
+	float: left; 
+	margin: 5px 3px 5px 0px;
+}
+
+
+.ticketingDate div>button {
+	float: right;
+	margin: 5px 3px 5px 0px; 
+}
+
+#typeBox {
+	width:100px;
+}
+
+#yearBox {
+	width:100px;
+}
+
+#monthBox {
+	width:150px;
+}
+
+#dateBox {
+	width:200px;
+	float: left; 
+	margin: 5px 3px 5px 0px;
+}
