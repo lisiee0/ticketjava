@@ -21,7 +21,6 @@ import com.ticketjava.vo.NotificationVo;
 import com.ticketjava.vo.NotireqVo;
 import com.ticketjava.vo.ReserveDetailVo;
 import com.ticketjava.vo.ReviewVo;
-import com.ticketjava.vo.SelseatVo;
 import com.ticketjava.vo.UserVo;
 
 @Controller

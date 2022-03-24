@@ -21,9 +21,9 @@ import com.ticketjava.dao.SeatpriceDao;
 import com.ticketjava.vo.DetailVo;
 import com.ticketjava.vo.DiscountVo;
 import com.ticketjava.vo.HallVo;
+import com.ticketjava.vo.Paging;
 import com.ticketjava.vo.ProductVo;
 import com.ticketjava.vo.SeatpriceVo;
-import com.ticketjava.vo.TheaterVo;
 
 @Service
 public class BusinessService {
@@ -38,14 +38,35 @@ public class BusinessService {
 	private HallDao hd;
 	@Autowired
 	private SeatpriceDao sd;
-
+	/*
 	// 공연 목록 불러오기
 	public List<ProductVo> getProductList() {
 		System.out.println("BusinessServiece > bmInquiry");
 
 		return pd.getProductList();
 	}
+	*/
+	
+	public Map<String, Object> getPagingList(int crtPage, int userNo) {
+		
+		int listCnt= 10; // 한 페이지당 글 개수
+		int startRnum= (crtPage-1)*listCnt +1; // 시작글 번호
+		int endRnum= (startRnum+listCnt) -1; // 마지막글 번호
 
+		Paging paging= new Paging();
+		paging.setPageNo(crtPage);
+		paging.setPageSize(listCnt);
+		paging.setTotalCount(pd.totalCnt(userNo));
+		
+		Map<String, Object> rMap = new HashMap<String, Object>();
+		rMap.put("pagingList", pd.getPagingList(userNo, startRnum, endRnum));
+		rMap.put("paging", paging);
+
+		return rMap;	
+	}
+	
+	
+	
 	// 공연 목록 불러오기
 	public List<HallVo> bmHallList() {
 		System.out.println("BusinessServiece > bmAddSearch");

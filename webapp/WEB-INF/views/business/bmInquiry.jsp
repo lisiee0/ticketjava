@@ -117,15 +117,23 @@
 										</tr>
 									</thead>
 									<tbody>
-										<c:forEach items="${productList}" var="vo">
+										<c:forEach items="${product.pagingList}" var="vo">
 											<tr>
 												<td>${vo.prodNo}</td>
-												<td class=""><a href="${pageContext.request.contextPath}/product/info?prodNo=${vo.prodNo}" name="prodName">${vo.prodName}</a></td>
-												<td><a href="#" name="theaterName">${vo.theaterName}</a></td>
+												<td class=""><a href="${pageContext.request.contextPath}/product/info?prodNo=${vo.prodNo}">${vo.prodName}</a></td>
+												<td>${vo.theaterName} ${vo.hallName}</td>
 												<td>${vo.beginShow}~${vo.endShow}</td>
 												<td><select name="status" id="status">
-														<option value="0">노출 off</option>
-														<option value="1">노출 on</option>
+														<c:choose>
+															<c:when test="${vo.status eq 1}">
+																<option value="0">노출 off</option>
+																<option value="1" selected>노출 on</option>
+															</c:when>
+															<c:otherwise>
+																<option value="0" selected>노출 off</option>
+																<option value="1">노출 on</option>
+															</c:otherwise>
+														</c:choose>
 												</select>
 													<button type="button" class="btn btn-outline-primary" id="showbTn">확인</button></td>
 												<td><a class="eventdis" data-no="${vo.prodNo}" href="${pageContext.request.contextPath}/bm/discount?prodNo=${vo.prodNo}">이벤트 할인 추가</a></td>
@@ -135,9 +143,31 @@
 
 										</c:forEach>
 									</tbody>
-
-
 								</table>
+								
+								<!-- 페이징 -->
+								<div class="row paging">				
+									<nav>
+									  <ul class="pagination">
+									  	<li><a href="javascript:PageMove(${product.paging.firstPageNo})"><span class="glyphicon glyphicon-triangle-left"></span></a></li>
+										<li class= ${product.paging.pageNo eq product.paging.firstPageNo ? "disabled" : ""}><a href="javascript:PageMove(${product.paging.prevPageNo})"><span class="glyphicon glyphicon-menu-left"></span></a></li>
+							
+										<c:forEach var="i" begin="${product.paging.startPageNo}" end="${product.paging.endPageNo}" step="1">
+											<c:choose>
+												<c:when test="${i eq product.paging.pageNo}">
+													<li class= ${product.paging.pageNo eq i ? "active" : ""}><a href="javascript:PageMove(${i})">${i}</a></li>
+												</c:when>
+												<c:otherwise>
+													<li class= ${product.paging.pageNo eq i ? "active" : ""}><a href="javascript:PageMove(${i})">${i}</a></li>
+												</c:otherwise>
+											</c:choose>
+										</c:forEach>
+										
+									    <li class= ${product.paging.pageNo eq product.paging.finalPageNo ? "disabled" : ""}><a href="javascript:PageMove(${product.paging.nextPageNo})"><span class="glyphicon glyphicon-menu-right"></span></a></li>
+									    <li><a href="javascript:PageMove(${product.paging.finalPageNo})"><span class="glyphicon glyphicon-triangle-right"></span></a></li>
+									  </ul>
+									</nav>
+								</div>
 
 
 							</div>
@@ -178,6 +208,13 @@
 	var No = $('#status').val
 
 	console.log(No);
+	
+	
+	function PageMove(page) {
+
+		location.href = "${pageContext.request.contextPath}/bm/?crtPage=" + page;	
+	}
+	
 </script>
 
 </html>

@@ -23,6 +23,22 @@ public class ProductDao {
 
 		return sqlsession.selectList("product.getProductList");
 	}
+	
+	// userNo(사업자별) 상품 총 개수
+	public int totalCnt(int userNo) {
+		return sqlsession.selectOne("product.totalCnt", userNo);
+	}
+	
+	// 공연 리스트(페이징)
+	public List<ProductVo> getPagingList(int userNo, int startRnum, int endRnum) {
+		
+		Map<String, Integer> map= new HashMap<String, Integer>();
+		map.put("userNo", userNo);
+		map.put("startRnum", startRnum);
+		map.put("endRnum", endRnum);
+		
+		return sqlsession.selectList("product.getPagingList", map);
+	}
 
 	// 공연 추가
 	public int productUpload(ProductVo productVo) {

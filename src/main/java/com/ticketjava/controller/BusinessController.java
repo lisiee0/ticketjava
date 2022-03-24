@@ -1,7 +1,8 @@
 package com.ticketjava.controller;
 
-import java.util.List;
 import java.util.Map;
+
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -17,6 +18,7 @@ import org.springframework.web.multipart.MultipartFile;
 import com.ticketjava.service.BusinessService;
 import com.ticketjava.vo.DetailVo;
 import com.ticketjava.vo.ProductVo;
+import com.ticketjava.vo.UserVo;
 
 @Controller
 @RequestMapping("/bm")
@@ -27,14 +29,16 @@ public class BusinessController {
 
 	// 공연 목록 불러오기
 	@RequestMapping(value = "/", method = { RequestMethod.GET, RequestMethod.POST })
-	public String bmInquiry(Model model) {
+	public String bmInquiry(@RequestParam(value="crtPage", required= false, defaultValue= "1") int crtPage, 
+							HttpSession session ,Model model) {
 		System.out.println("BusinessController > bmInquiry");
+		
+		
+		UserVo authUser = (UserVo)session.getAttribute("authUser");
+		int userNo = authUser.getUserNo();
 
-		List<ProductVo> productList = businessService.getProductList();
-
-		model.addAttribute("productList", productList);
+		model.addAttribute("product", businessService.getPagingList(crtPage, userNo));
 		return "business/bmInquiry";
-
 	}
 
 	// 공연 등록 폼
