@@ -105,15 +105,15 @@
 												<td>${rMap.reserveDetail.name}</td>
 											</tr>
 											<tr>
-												<th>지불총액</th>
-												<td>${rMap.reserveDetail.totalPayment}원</td>
+												<th>지불 총액</th>
+												<td>${rMap.reserveDetail.totalPayment+2000}원</td>
 												<th>총 좌석수</th>
 												<td>${rMap.reserveDetail.selseatCount}석</td>
 											</tr>
 											
 										</tbody>
 									</table>
-
+								<div class="noticePee">지불 총액은 수수료 2000원이 포함된 금액입니다.</div>
 
 
 								</div>

@@ -97,6 +97,14 @@
 	color : #6697f2;
 }
 
+
+/* 수수료 안내 2000원 */
+.noticePee {
+	margin: 0px 0px 20px 5px;
+	font-size: 13px;
+	text-align: right;
+}
+
 /* 취소 정책 알림 */
 .cancelRule {
 	margin: 10px 0px 0px 10px;

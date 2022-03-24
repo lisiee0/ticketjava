@@ -148,7 +148,8 @@
 								sum(payment) totalPayment, 
 								count(*) selseatCount
 			            from		selseat
-			            WHERE		status = 1) pay, reserve r, users u, product p, theater t, hall h
+			            WHERE		status = 1
+			            and 		rez_no = #{rezNo} ) pay, reserve r, users u, product p, theater t, hall h
 			                                   
 			where	r.user_no = u.user_no
 			and     p.prod_no = r.prod_no
