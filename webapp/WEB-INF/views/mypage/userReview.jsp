@@ -119,7 +119,6 @@
 
 									</table>
 									
-									
 									<!-- 페이징 -->
 									<div class="row paging">				
 										<nav>
@@ -143,9 +142,6 @@
 										  </ul>
 										</nav>
 									</div>
-
-
-
 
 
 									<div id="row" class="searchBox">
