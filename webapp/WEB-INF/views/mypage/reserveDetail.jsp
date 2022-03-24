@@ -85,8 +85,9 @@
 											</tr>
 											<tr>
 												<th>예매자 연락처</th>
-												<td>${rMap.reserveDetail.phone}
-												<%-- <c:choose>
+												<td>${rMap.reserveDetail.phone}<br>
+												${rMap.reserveDetail.email}
+												<%-- 예매상태 <c:choose>
 														<c:when test="${rMap.reserveDetail.status eq 0}">
 															비활성
 														</c:when>
