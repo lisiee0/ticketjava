@@ -29,7 +29,7 @@ $(function(){
 			return false;
 		}
 		
-		dupCheck(id);
+		dupCheckFn(id);
 	});
 	
 	/* 인증번호 발송 버튼 클릭 시 */
@@ -83,7 +83,7 @@ $(function(){
 			$('#jform').submit();
 	});
 	
-	function dupCheck(id){
+	function dupCheckFn(id){
 		$.ajax({
 			url: pageContext+"/user/dupCheck",
 			type : "post",

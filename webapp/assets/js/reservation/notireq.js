@@ -145,6 +145,8 @@ $(function(){
 	
 	
 	function addNotireq(notireqVo){
+		var notiTimes = notireqVo.notiTimes;
+		var selSection = notireqVo.selSection;
 		$.ajax({
 			url: pageContext+"/notireq/addNotireq",
 			type : "post",
