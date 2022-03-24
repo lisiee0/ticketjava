@@ -175,7 +175,7 @@ body {
 
 .boxShadow{
 	height:5px;
-	background: linear-gradient(to bottom, #d7d7d7 5%, #f4f4f4);
+	background: linear-gradient(to bottom, #d7d7d7, #eee 60% ,#f4f4f4);
 }
 
 .list-width {
