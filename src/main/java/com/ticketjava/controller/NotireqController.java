@@ -27,6 +27,7 @@ public class NotireqController {
 	@Autowired
 	private NotireqService notireqService;
 	
+	/* 알림 신청 페이지 */
 	@PostMapping("/notireq")
 	public String notireq(@RequestParam("prodNo") int prodNo,
 						  Model model) {
@@ -36,29 +37,33 @@ public class NotireqController {
 		return "reservation/notireq";
 	}
 	
+	/* 내 신청 */
 	@ResponseBody
-	@RequestMapping("/myNotireq")
+	@PostMapping("/myNotireq")
 	public NotireqVo myNotireq (@ModelAttribute NotireqVo notireqVo, HttpSession session) {
 		int userNo = ((UserVo)session.getAttribute("authUser")).getUserNo();
 		return notireqService.myNotireq(notireqVo, userNo);
 	}
 	
+	/* 알림 신청하기 */
 	@ResponseBody
-	@RequestMapping("/addNotireq")
+	@PostMapping("/addNotireq")
 	public String addNotireq(@ModelAttribute NotireqVo notireqVo, HttpSession session) {
 		int userNo = ((UserVo)session.getAttribute("authUser")).getUserNo();
 		return notireqService.addNotireq(notireqVo, userNo);
 	}
 	
+	/* 알림 취소 */
 	@ResponseBody
-	@RequestMapping("/reqDel")
+	@PostMapping("/reqDel")
 	public String reqDel(@ModelAttribute NotireqVo notireqVo, HttpSession session) {
 		int userNo = ((UserVo)session.getAttribute("authUser")).getUserNo();
 		return notireqService.reqDel(notireqVo, userNo);
 	}
 	
+	/* 알림 여부 on off */
 	@ResponseBody
-	@RequestMapping("/notiToggle")
+	@PostMapping("/notiToggle")
 	public String notiToggle(@ModelAttribute NotireqVo notireqVo) {
 		
 		return notireqService.notiToggle(notireqVo);

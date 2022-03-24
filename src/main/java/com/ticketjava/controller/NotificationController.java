@@ -19,13 +19,15 @@ public class NotificationController {
 	@Autowired
 	private NotificationService notificationService;
 	
+	/* 알림 내역 삭제 */
 	@ResponseBody
-	@RequestMapping("/deleteNoti")
+	@PostMapping("/deleteNoti")
 	public String deleteNoti(@RequestParam("notiNo") int notiNo) {
 		
 		return notificationService.deleteNoti(notiNo);
 	}
 	
+	/* 읽은 알림으로 표시 */
 	@ResponseBody
 	@PostMapping("/read")
 	public String read(@RequestParam("notiNo") int notiNo) {
@@ -33,6 +35,7 @@ public class NotificationController {
 		return "";
 	}
 	
+	/* 읽지 않은 알림이 있는지 확인 */
 	@ResponseBody
 	@PostMapping("/unread")
 	public String unread(HttpSession session) {

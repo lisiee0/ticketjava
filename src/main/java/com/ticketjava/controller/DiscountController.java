@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -19,8 +20,9 @@ public class DiscountController {
 	@Autowired
 	private DiscountService discountService;
 	
+	/* 공연별 할인 정보 */
 	@ResponseBody
-	@RequestMapping("/discountList")
+	@PostMapping("/discountList")
 	public List<DiscountVo> discountList(@RequestParam(value="prodNo") int prodNo) {
 		return discountService.discountList(prodNo);
 	}
