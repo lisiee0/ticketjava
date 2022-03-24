@@ -80,9 +80,9 @@
 										<div>
 											기간선택
 											<!-- 1일을 기준으로 기간 날짜를 결정 1달 30일 페이지 기본값 7일-->
-											<label for="rdo-duration">7일</label> <input type="radio" id="rdo-week" name="duration" value="7" checked>  <label for="rdo-duration">1개월</label> <input
-												type="radio" id="rdo-month" name="duration" value="30"
-											>  <label for="rdo-duration">3개월</label> <input type="radio" id="rdo-3month" name="duration" value="60">
+											<label for="rdo-week">7일</label> <input type="radio" id="rdo-week" name="duration" value="7" checked> <label for="rdo-month">1개월</label> <input type="radio"
+												id="rdo-month" name="duration" value="30"
+											> <label for="rdo-3month">3개월</label> <input type="radio" id="rdo-3month" name="duration" value="60">
 
 										</div>
 										<div>조회기간</div>
@@ -128,14 +128,16 @@
 												</tr>
 											</thead>
 
-												<tbody>
-												
+											<tbody>
+
 												<!-- 예매 내역이 없을 경우 출력 -->
 												<c:if test="${reserveList eq null }">
-												<tr><td>예매 내역이 없습니다</td></tr>
+													<tr>
+														<td>예매 내역이 없습니다</td>
+													</tr>
 												</c:if>
-												
-											<c:forEach items="${requestScope.reserveList}" var="reserveList">
+
+												<c:forEach items="${requestScope.reserveList}" var="reserveList">
 													<tr>
 														<td>${reserveList.rezNo}</td>
 														<td>${reserveList.rezdate}</td>
@@ -154,8 +156,8 @@
 														<td><button type="submit" class="btn btn-primary" onclick="location.href='reserveDetail?rezNo=${reserveList.rezNo}'">자세히</button></td>
 													</tr>
 
-											</c:forEach>
-												</tbody>
+												</c:forEach>
+											</tbody>
 										</table>
 
 
