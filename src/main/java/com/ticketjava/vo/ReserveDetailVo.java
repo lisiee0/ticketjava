@@ -18,6 +18,8 @@ public class ReserveDetailVo {
 	private String name; // 이름 (예매자)
 	private String prodname; // 공연명 상품명
 	private String showTime;
+	private String phone; // 예매자 연락처 전화번호
+	private String email; // 예매자 연락처 이메일
 	
 	private String theatername; // 장소 (예술의전당 오페라극장)
 	private String hallname; // 시설 (1관 2관)
@@ -37,8 +39,8 @@ public class ReserveDetailVo {
 
 	public ReserveDetailVo(int userNo, int rezNo, int prodNo, int theaterNo, int selseatNo, String grade, int payment,
 			int status, int ticketCount, int selseatCount, int totalPayment, String name, String prodname,
-			String showTime, String theatername, String hallname, String rezdate, String viewdate, String section,
-			int col, int num, String dcName) {
+			String showTime, String phone, String email, String theatername, String hallname, String rezdate,
+			String viewdate, String section, int col, int num, String dcName) {
 		this.userNo = userNo;
 		this.rezNo = rezNo;
 		this.prodNo = prodNo;
@@ -53,6 +55,8 @@ public class ReserveDetailVo {
 		this.name = name;
 		this.prodname = prodname;
 		this.showTime = showTime;
+		this.phone = phone;
+		this.email = email;
 		this.theatername = theatername;
 		this.hallname = hallname;
 		this.rezdate = rezdate;
@@ -175,6 +179,22 @@ public class ReserveDetailVo {
 		this.showTime = showTime;
 	}
 
+	public String getPhone() {
+		return phone;
+	}
+
+	public void setPhone(String phone) {
+		this.phone = phone;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
 	public String getTheatername() {
 		return theatername;
 	}
@@ -244,13 +264,13 @@ public class ReserveDetailVo {
 		return "ReserveDetailVo [userNo=" + userNo + ", rezNo=" + rezNo + ", prodNo=" + prodNo + ", theaterNo="
 				+ theaterNo + ", selseatNo=" + selseatNo + ", grade=" + grade + ", payment=" + payment + ", status="
 				+ status + ", ticketCount=" + ticketCount + ", selseatCount=" + selseatCount + ", totalPayment="
-				+ totalPayment + ", name=" + name + ", prodname=" + prodname + ", showTime=" + showTime
-				+ ", theatername=" + theatername + ", hallname=" + hallname + ", rezdate=" + rezdate + ", viewdate="
-				+ viewdate + ", section=" + section + ", col=" + col + ", num=" + num + ", dcName=" + dcName + "]";
+				+ totalPayment + ", name=" + name + ", prodname=" + prodname + ", showTime=" + showTime + ", phone="
+				+ phone + ", email=" + email + ", theatername=" + theatername + ", hallname=" + hallname + ", rezdate="
+				+ rezdate + ", viewdate=" + viewdate + ", section=" + section + ", col=" + col + ", num=" + num
+				+ ", dcName=" + dcName + "]";
 	}
 
 	
-
 
 	
 	

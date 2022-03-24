@@ -133,6 +133,8 @@
 						        p.prod_no prodNo,
 						        u.name name,
 						        p.prodname prodname,
+                                r.email,
+                                r.phone,
 						        to_char(showTime, 'hh24:mi') showTime,
 						        t.theatername theatername,
 						        h.hallname hallname,

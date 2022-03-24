@@ -84,15 +84,16 @@
 												<td>${rMap.reserveDetail.theatername} ${rMap.reserveDetail.hallname}</td>
 											</tr>
 											<tr>
-												<th>예매상태</th>
-												<td><c:choose>
+												<th>예매자 연락처</th>
+												<td>${rMap.reserveDetail.phone}
+												<%-- <c:choose>
 														<c:when test="${rMap.reserveDetail.status eq 0}">
 															비활성
 														</c:when>
 														<c:otherwise>
 															활성
 														</c:otherwise>
-													</c:choose></td>
+													</c:choose> --%></td>
 												<th>예매일</th>
 												<td>${rMap.reserveDetail.rezdate}</td>
 											</tr>
@@ -157,7 +158,7 @@
 												</c:forEach>
 											</tbody>
 										</table>
-										<div><button type="submit" class="btn">예매취소</button></div>
+										<div><button type="submit" class="btn btn-outline-primary">예매취소</button></div>
 									</form>
 									
 								</div>

@@ -78,6 +78,23 @@
 /* 예매내역 및 취소 예매좌석 */
 .rezSeatList {
 	margin:10px 0px 10px 0px;
+	text-align: center;
+}
+
+.rezSeatList table>thead>tr>th {
+	padding: 20px 0px 20px 0px;
+	text-align: center;	
+	font-size: 15px;
+	background-color: #f8f8f8;
+}
+
+.rezSeatList table>tbody>tr>td {
+	text-align: center;	
+}
+
+.rezSeatList btn:hover{
+	background-color : #6697f2;	
+	color : #6697f2;
 }
 
 /* 취소 정책 알림 */
