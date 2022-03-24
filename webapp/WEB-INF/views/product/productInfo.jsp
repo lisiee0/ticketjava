@@ -30,6 +30,7 @@
 
 
 <body>
+	<a href="javascript:window:scrollTo(0,0);" id="back_to_top"><span class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span><br>TOP</a>
 	<div id="wrap">
 		<!-- header & nav -->
 		<c:import url="/WEB-INF/views/include/header.jsp"></c:import>
