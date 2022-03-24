@@ -54,7 +54,7 @@ public class BusinessService {
 	}
 
 	// 공연 업로드 (파일 제외)
-	public void productUpload(ProductVo productVo, DetailVo detailVo, TheaterVo theaterVo) {
+	public void productUpload(ProductVo productVo, DetailVo detailVo) {
 		System.out.println("BusinessServiece > productUpload");
 
 		// productDao로 값을 넘김

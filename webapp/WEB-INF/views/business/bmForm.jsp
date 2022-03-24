@@ -100,14 +100,15 @@
 
 									<div class="form-group">
 										<div class="col-md-6">
-											<select class="form-control" name="theaterNo">
-												<option selected>공연장을 선택해주세요.</option>
+											<select class="form-control" id="hallNo" name="hallNo">
 												<c:forEach items="${selectList}" var="vo">
-													<option id="hallNo" name="hallNo" value="${vo.hallNo}">${vo.theaterName},${vo.hallName}</option>
+													<option value="${vo.hallNo}">${vo.theaterName},${vo.hallName}</option>
 												</c:forEach>
+												<option selected="selected">공연장을 선택해주세요.</option>
 											</select>
 										</div>
 									</div>
+
 								</div>
 							</div>
 
@@ -415,79 +416,82 @@
 			});
 
 	//공연정보 클릭할때
-	$("#addbtn").on("click", function() {
-		console.log("공연저장");
+	$("#addbtn")
+			.on(
+					"click",
+					function() {
+						console.log("공연저장");
 
-		//좌석 등급별 가격 배열
-		var seatpriceList = [];
-		var selGradeList = $(".selGrade");
-		var selPriceList = $(".selPrice");
+						//좌석 등급별 가격 배열
+						var seatpriceList = [];
+						var selGradeList = $(".selGrade");
+						var selPriceList = $(".selPrice");
 
-		for (var i = 0; i < selGradeList.length; i++) {
-			var seatprice = {
-				grade : selGradeList.eq(i).val(),
-				price : selPriceList.eq(i).val()
-			};
-			seatpriceList.push(seatprice);
-		}
+						for (var i = 0; i < selGradeList.length; i++) {
+							var seatprice = {
+								grade : selGradeList.eq(i).val(),
+								price : selPriceList.eq(i).val()
+							};
+							seatpriceList.push(seatprice);
+						}
 
-		// 상시 할인 
+						// 공연 등록
 
-		var ProductVo = {
-			prodName : $("#prodName").val(),
-			userNo : $("#userNo").val(),
-			hallNo : $("#hallNo").val(),
-			prodType : $("#prodType").val(),
-			beginShow : $("#beginShow").val(),
-			endShow : $("#endShow").val(),
-			beginRez : $("#beginRez").val(),
-			endRez : $("#endRez").val(),
-			showTime : $("#showTime").val(),
-			viewTime : $("#viewTime").val(),
-			viewGrade : $("input[name=viewGrade]").eq(0).val(),
-			cancelInfo : $("#cancelInfo").val(),
-			notice : $("#notice").val(),
-			status : $("#status").val(),
-			seatpriceList : seatpriceList,
-			productDisList : productDisList
+						var ProductVo = {
+							prodName : $("#prodName").val(),
+							userNo : $("#userNo").val(),
+							hallNo : $("#hallNo").val(),
+							prodType : $("#prodType").val(),
+							beginShow : $("#beginShow").val(),
+							endShow : $("#endShow").val(),
+							beginRez : $("#beginRez").val(),
+							endRez : $("#endRez").val(),
+							showTime : $("#showTime").val(),
+							viewTime : $("#viewTime").val(),
+							viewGrade : $("input[name=viewGrade]").eq(0).val(),
+							cancelInfo : $("#cancelInfo").val(),
+							notice : $("#notice").val(),
+							status : $("#status").val(),
+							seatpriceList : seatpriceList,
+							productDisList : productDisList
 
-		}
+						}
 
-		console.log(JSON.stringify(ProductVo));
+						console.log(JSON.stringify(ProductVo));
 
-		$.ajax({
-			url : "${pageContext.request.contextPath}/bm/bmUpload",
-			type : "post",
-			traditional : true,
-			contentType : "application/json",
-			data : JSON.stringify(ProductVo),
+						$
+								.ajax({
+									url : "${pageContext.request.contextPath}/bm/bmUpload",
+									type : "post",
+									traditional : true,
+									contentType : "application/json",
+									data : JSON.stringify(ProductVo),
 
-			/* 성공 시 처리해야 될 코드 작성 */
-			success : function(detailVo) {
-				console.log(detailVo)
+									/* 성공 시 처리해야 될 코드 작성 */
+									success : function(detailVo) {
+										console.log(detailVo)
 
-				//첨부파일
-				var posterPath = $("#posterPath")[0].files[0]
+										//첨부파일
+										var posterPath = $("#posterPath")[0].files[0]
 
-				var prodPath = $("#prodPath")[0].files[0]
-				var castingPath = $("#castingPath")[0].files[0]
-				var addedPath = $("#addedPath")[0].files[0]
+										var prodPath = $("#prodPath")[0].files[0]
+										var castingPath = $("#castingPath")[0].files[0]
+										var addedPath = $("#addedPath")[0].files[0]
 
-				fileupload(detailVo, posterPath, 1);
+										fileupload(detailVo, posterPath, 1);
 
-				fileupload(detailVo, prodPath, 2);
-				fileupload(detailVo, castingPath, 3);
-				fileupload(detailVo, addedPath, 4);
-				
-				
-				window.location.href = "${pageContext.request.contextPath}/bm/";
-			},
-			error : function(XHR, status, error) {
-				console.error(status + " : " + error);
-			}
-		});
+										fileupload(detailVo, prodPath, 2);
+										fileupload(detailVo, castingPath, 3);
+										fileupload(detailVo, addedPath, 4);
 
-	});
+										window.location.href = "${pageContext.request.contextPath}/bm/";
+									},
+									error : function(XHR, status, error) {
+										console.error(status + " : " + error);
+									}
+								});
+
+					});
 
 	function fileupload(detailVo, file, order) {
 		var formData = new FormData();

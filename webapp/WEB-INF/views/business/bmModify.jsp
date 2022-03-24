@@ -87,7 +87,7 @@
 
 							<div class="form-group">
 								<label class="form-text col-md-2 form-id" for="">공연명</label>
-								<div class="col-md-6">
+								<div class="col-md-6">	
 									<input type="text" class="form-control" id="prodName" name="prodName" value="${bmProductMap.bmGetProduct.prodName}" placeholder="${bmProductMap.bmGetProduct.prodName}">
 								</div>
 							</div>
@@ -100,16 +100,17 @@
 
 									<div class="form-group">
 										<div class="col-md-6">
-											<select class="form-control" name="theaterNo">
-												<option selected>공연장을 선택해주세요.</option>
+											<select class="form-control" name="hallNo">
 												<c:forEach items="${bmProductMap.bmGetHallList}" var="vo">
 													<option id="hallNo" name="hallNo" value="${bmProductMap.bmGetProduct.hallNo}" <c:if test ="${bmProductMap.bmGetProduct.hallNo eq vo.hallNo}">selected="selected"</c:if>>${vo.theaterName},${vo.hallName},${vo.hallNo}</option>
 												</c:forEach>
+												<option selected>공연장을 선택해주세요.</option>
 											</select>
 										</div>
 									</div>
 								</div>
 							</div>
+
 
 							<!-- 공연 구분 -->
 							<div class="form-group">
@@ -557,16 +558,16 @@
 										console.log(result)
 
 										//첨부파일
-/* 										var posterPath = $("#posterPath")[0].files[0]
-										var prodPath = $("#prodPath")[0].files[0]
-										var castingPath = $("#castingPath")[0].files[0]
-										var addedPath = $("#addedPath")[0].files[0]
+										/* 										var posterPath = $("#posterPath")[0].files[0]
+										 var prodPath = $("#prodPath")[0].files[0]
+										 var castingPath = $("#castingPath")[0].files[0]
+										 var addedPath = $("#addedPath")[0].files[0]
 
-										fileupload(result, posterPath, 1);
+										 fileupload(result, posterPath, 1);
 
-										fileupload(result, prodPath, 2);
-										fileupload(result, castingPath, 3);
-										fileupload(result, addedPath, 4); */
+										 fileupload(result, prodPath, 2);
+										 fileupload(result, castingPath, 3);
+										 fileupload(result, addedPath, 4); */
 
 										window.location.href = "${pageContext.request.contextPath}/bm/";
 									},
