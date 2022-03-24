@@ -37,7 +37,7 @@
 				<div id="containerMain">
 					<div></div>
 					<div id="formArea">
-						<form action="${pageContext.request.contextPath}/user/login" action="post">
+						<form action="${pageContext.request.contextPath}/user/login" method="post">
 							<input class="form-control" name="id" type="text" placeholder="아이디">
 							<input class="form-control" name="password" type="password" placeholder="패스워드">
 							<button id="loginBtn" class="form-control btn-primary" type="submit">로그인</button>
