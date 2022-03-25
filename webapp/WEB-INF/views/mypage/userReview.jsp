@@ -82,10 +82,10 @@
 									<table>
 										<colgroup>
 											<%-- <col width="5%"> --%>
-											<col width="25%">
-											<col width="25%">
-											<col width="20%">
+											<col width="24%">
+											<col width="32%">
 											<col width="15%">
+											<col width="14%">
 											<col width="15%">
 										</colgroup>
 										<thead>
@@ -105,9 +105,8 @@
 													<%-- <td>${vo.reviewNo}</td> --%>
 													<td id="space" class="text-left-margin"><a href="product/info?prodNo=${vo.prodNo}">${vo.prodName}</a></td>
 													<td id="space">${vo.content}</td>
-													<td>
-														<div class="star-print"> <c:forEach var="i" begin="1" end="${vo.rating}"> ★ </c:forEach> </div>
-													</td>
+													<td><label id="starb" class="star">★★★★★<span style="width: ${vo.rating*2}0%;">★★★★★</span> 
+													</label></td>
 													<td>${vo.regDate}</td>
 													<td>
 													<button type="submit" class="btn btn-primary" onclick="location.href='userReviewModify?reviewNo=${vo.reviewNo}'">수정</button> 
@@ -188,6 +187,11 @@
 
 		location.href = "${pageContext.request.contextPath}/mypage/userReview?crtPage=" + page;	
 	}
+	
+	 /* 리뷰 별점 */
+	const drawStar = (target) => {
+    document.querySelector('.star label').style.width = '${target.value * 20}%';
+  	};
 
 </script>
 

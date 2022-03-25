@@ -15,7 +15,7 @@
 /* 테이블 틀 고정에 출력 텍스트 맞춤 */
 table {
 	table-layout:fixed;
-	word-break:break-all;
+	/* word-break:break-all; */
 }
 
 .paging {
