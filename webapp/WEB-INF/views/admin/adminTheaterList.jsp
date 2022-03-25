@@ -69,8 +69,8 @@
 						<div id="list">
 							<table class="table listTable table-hover">
 							<colgroup>
-								<col width="13%">
-								<col width="13%">
+								<col width="15%">
+								<col width="11%">
 								<col width="30%">
 								<col width="13%">
 								<col width="16%">
