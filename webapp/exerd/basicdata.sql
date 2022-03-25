@@ -105,12 +105,12 @@ insert into seatprice values (seq_seatprice_no.nextval, 1, 's', 100000);
 insert into seatprice values (seq_seatprice_no.nextval, 1, 'a', 80000);
 insert into seatprice values (seq_seatprice_no.nextval, 1, 'b', 60000);
 
-insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 1, 0, 50, '국가유공자 할인');
+insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 1, 0, 35, '국가유공자 할인');
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 1, 0, 20, '지역주민 할인');
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 1, 0, 20, '재관람 할인');
-insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 1, 0, 50, '장애인 할인');
+insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 1, 0, 40, '장애인 할인');
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 1, 0, 50, '타임 세일', '22/03/07','22/03/20');
-insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 1, 0, 60, '문화의날', '22/03/10','22/03/20');
+insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 1, 0, 55, '문화의날', '22/03/10','22/03/20');
 
 insert into review values (SEQ_REVIEW_NO.nextval, 1, 3, '재미있게 잘봤습니다. 다음에 재관람 할인으로 또 보러 갈게요', 4, sysdate);
 insert into review values (SEQ_REVIEW_NO.nextval, 1, 4, '재미있게 잘봤습니다. 강추합니다.', 5, sysdate);
@@ -131,12 +131,12 @@ insert into seatprice values (seq_seatprice_no.nextval, 2, 's', 100000);
 insert into seatprice values (seq_seatprice_no.nextval, 2, 'a', 80000);
 insert into seatprice values (seq_seatprice_no.nextval, 2, 'b', 60000);
 
-insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 2, 0, 50, '국가유공자 할인');
+insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 2, 0, 35, '국가유공자 할인');
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 2, 0, 20, '지역주민 할인');
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 2, 0, 20, '재관람 할인');
-insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 2, 0, 50, '장애인 할인');
+insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 2, 0, 40, '장애인 할인');
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 2, 0, 50, '타임 세일', '22/03/07','22/03/20');
-insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 2, 0, 60, '문화의날', '22/03/10','22/03/20');
+insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 2, 0, 55, '문화의날', '22/03/10','22/03/20');
 
 insert into review values (SEQ_REVIEW_NO.nextval, 2, 3, '재미있게 잘봤습니다. 다음에 재관람 할인으로 또 보러 갈게요', 4, sysdate);
 insert into review values (SEQ_REVIEW_NO.nextval, 2, 4, '재미있게 잘봤습니다. 강추합니다.', 4, sysdate);
@@ -157,12 +157,12 @@ insert into seatprice values (seq_seatprice_no.nextval, 3, 's', 100000);
 insert into seatprice values (seq_seatprice_no.nextval, 3, 'a', 80000);
 insert into seatprice values (seq_seatprice_no.nextval, 3, 'b', 60000);
 
-insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 3, 0, 50, '국가유공자 할인');
+insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 3, 0, 35, '국가유공자 할인');
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 3, 0, 20, '지역주민 할인');
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 3, 0, 20, '재관람 할인');
-insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 3, 0, 50, '장애인 할인');
+insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 3, 0, 40, '장애인 할인');
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 3, 0, 50, '타임 세일', '22/03/07','22/03/20');
-insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 3, 0, 60, '문화의날', '22/03/10','22/03/20');
+insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 3, 0, 55, '문화의날', '22/03/10','22/03/20');
 
 insert into review values (SEQ_REVIEW_NO.nextval, 3, 3, '재미있게 잘봤습니다. 다음에 재관람 할인으로 또 보러 갈게요', 5, sysdate);
 insert into review values (SEQ_REVIEW_NO.nextval, 3, 4, '재미있게 잘봤습니다. 강추합니다.', 5, sysdate);
@@ -183,12 +183,12 @@ insert into seatprice values (seq_seatprice_no.nextval, 4, 's', 100000);
 insert into seatprice values (seq_seatprice_no.nextval, 4, 'a', 80000);
 insert into seatprice values (seq_seatprice_no.nextval, 4, 'b', 60000);
 
-insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 4, 0, 50, '국가유공자 할인');
+insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 4, 0, 35, '국가유공자 할인');
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 4, 0, 20, '지역주민 할인');
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 4, 0, 20, '재관람 할인');
-insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 4, 0, 50, '장애인 할인');
+insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 4, 0, 40, '장애인 할인');
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 4, 0, 50, '타임 세일', '22/03/07','22/03/20');
-insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 4, 0, 60, '문화의날', '22/03/10','22/03/20');
+insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 4, 0, 55, '문화의날', '22/03/10','22/03/20');
 
 insert into review values (SEQ_REVIEW_NO.nextval, 4, 3, '재미있게 잘봤습니다. 다음에 재관람 할인으로 또 보러 갈게요', 4, sysdate);
 insert into review values (SEQ_REVIEW_NO.nextval, 4, 4, '재미있게 잘봤습니다. 강추합니다.', 4, sysdate);
@@ -209,12 +209,12 @@ insert into seatprice values (seq_seatprice_no.nextval, 5, 's', 100000);
 insert into seatprice values (seq_seatprice_no.nextval, 5, 'a', 80000);
 insert into seatprice values (seq_seatprice_no.nextval, 5, 'b', 60000);
 
-insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 5, 0, 50, '국가유공자 할인');
+insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 5, 0, 35, '국가유공자 할인');
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 5, 0, 20, '지역주민 할인');
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 5, 0, 20, '재관람 할인');
-insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 5, 0, 50, '장애인 할인');
+insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 5, 0, 40, '장애인 할인');
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 5, 0, 50, '타임 세일', '22/03/07','22/03/20');
-insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 5, 0, 60, '문화의날', '22/03/10','22/03/20');
+insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 5, 0, 55, '문화의날', '22/03/10','22/03/20');
 
 insert into review values (SEQ_REVIEW_NO.nextval, 5, 3, '재미있게 잘봤습니다. 다음에 재관람 할인으로 또 보러 갈게요', 2, sysdate);
 insert into review values (SEQ_REVIEW_NO.nextval, 5, 4, '재미있게 잘봤습니다. 강추합니다.', 1, sysdate);
@@ -235,12 +235,12 @@ insert into seatprice values (seq_seatprice_no.nextval, 6, 's', 100000);
 insert into seatprice values (seq_seatprice_no.nextval, 6, 'a', 80000);
 insert into seatprice values (seq_seatprice_no.nextval, 6, 'b', 60000);
 
-insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 6, 0, 50, '국가유공자 할인');
+insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 6, 0, 35, '국가유공자 할인');
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 6, 0, 20, '지역주민 할인');
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 6, 0, 20, '재관람 할인');
-insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 6, 0, 50, '장애인 할인');
+insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 6, 0, 40, '장애인 할인');
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 6, 0, 50, '타임 세일', '22/03/07','22/03/20');
-insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 6, 0, 60, '문화의날', '22/03/10','22/03/20');
+insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 6, 0, 60, '스페셜데이', '22/03/10','22/03/20');
 
 insert into review values (SEQ_REVIEW_NO.nextval, 6, 3, '재미있게 잘봤습니다. 다음에 재관람 할인으로 또 보러 갈게요', 2, sysdate);
 insert into review values (SEQ_REVIEW_NO.nextval, 6, 4, '재미있게 잘봤습니다. 강추합니다.', 1, sysdate);
@@ -261,12 +261,12 @@ insert into seatprice values (seq_seatprice_no.nextval, 7, 's', 100000);
 insert into seatprice values (seq_seatprice_no.nextval, 7, 'a', 80000);
 insert into seatprice values (seq_seatprice_no.nextval, 7, 'b', 60000);
 
-insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 7, 0, 50, '국가유공자 할인');
+insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 7, 0, 35, '국가유공자 할인');
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 7, 0, 20, '지역주민 할인');
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 7, 0, 20, '재관람 할인');
-insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 7, 0, 50, '장애인 할인');
+insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 7, 0, 40, '장애인 할인');
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 7, 0, 50, '타임 세일', '22/03/07','22/03/20');
-insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 7, 0, 60, '문화의날', '22/03/10','22/03/20');
+insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 7, 0, 55, '문화의날', '22/03/10','22/03/20');
 
 insert into review values (SEQ_REVIEW_NO.nextval, 7, 3, '재미있게 잘봤습니다. 다음에 재관람 할인으로 또 보러 갈게요', 5, sysdate);
 insert into review values (SEQ_REVIEW_NO.nextval, 7, 4, '재미있게 잘봤습니다. 강추합니다.', 5, sysdate);
@@ -287,12 +287,12 @@ insert into seatprice values (seq_seatprice_no.nextval, 8, 's', 100000);
 insert into seatprice values (seq_seatprice_no.nextval, 8, 'a', 80000);
 insert into seatprice values (seq_seatprice_no.nextval, 8, 'b', 60000);
 
-insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 8, 0, 50, '국가유공자 할인');
+insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 8, 0, 35, '국가유공자 할인');
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 8, 0, 20, '지역주민 할인');
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 8, 0, 20, '재관람 할인');
-insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 8, 0, 50, '장애인 할인');
+insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 8, 0, 40, '장애인 할인');
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 8, 0, 50, '타임 세일', '22/03/07','22/03/20');
-insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 8, 0, 60, '문화의날', '22/03/10','22/03/20');
+insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 8, 0, 55, '문화의날', '22/03/10','22/03/20');
 
 insert into review values (SEQ_REVIEW_NO.nextval, 8, 3, '재미있게 잘봤습니다. 다음에 재관람 할인으로 또 보러 갈게요', 5, sysdate);
 insert into review values (SEQ_REVIEW_NO.nextval, 8, 4, '재미있게 잘봤습니다. 강추합니다.', 5, sysdate);
@@ -313,12 +313,12 @@ insert into seatprice values (seq_seatprice_no.nextval, 9, 's', 100000);
 insert into seatprice values (seq_seatprice_no.nextval, 9, 'a', 80000);
 insert into seatprice values (seq_seatprice_no.nextval, 9, 'b', 60000);
 
-insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 9, 0, 50, '국가유공자 할인');
+insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 9, 0, 35, '국가유공자 할인');
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 9, 0, 20, '지역주민 할인');
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 9, 0, 20, '재관람 할인');
-insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 9, 0, 50, '장애인 할인');
+insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 9, 0, 40, '장애인 할인');
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 9, 0, 50, '타임 세일', '22/03/07','22/03/20');
-insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 9, 0, 60, '문화의날', '22/03/10','22/03/20');
+insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 9, 0, 80, '앵콜 공연', '22/03/10','22/03/20');
 
 insert into review values (SEQ_REVIEW_NO.nextval, 9, 3, '재미있게 잘봤습니다. 다음에 재관람 할인으로 또 보러 갈게요', 4, sysdate);
 insert into review values (SEQ_REVIEW_NO.nextval, 9, 4, '재미있게 잘봤습니다. 강추합니다.', 3, sysdate);
@@ -340,12 +340,12 @@ insert into seatprice values (seq_seatprice_no.nextval, 10, 's', 100000);
 insert into seatprice values (seq_seatprice_no.nextval, 10, 'a', 80000);
 insert into seatprice values (seq_seatprice_no.nextval, 10, 'b', 60000);
 
-insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 10, 0, 50, '국가유공자 할인');
+insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 10, 0, 35, '국가유공자 할인');
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 10, 0, 20, '지역주민 할인');
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 10, 0, 20, '재관람 할인');
-insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 10, 0, 50, '장애인 할인');
+insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 10, 0, 40, '장애인 할인');
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 10, 0, 50, '타임 세일', '22/03/07','22/03/20');
-insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 10, 0, 60, '문화의날', '22/03/10','22/03/20');
+insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 10, 0, 55, '문화의날', '22/03/10','22/03/20');
 
 insert into review values (SEQ_REVIEW_NO.nextval, 10, 3, '재미있게 잘봤습니다. 다음에 재관람 할인으로 또 보러 갈게요', 4, sysdate);
 insert into review values (SEQ_REVIEW_NO.nextval, 10, 4, '재미있게 잘봤습니다. 강추합니다.', 3, sysdate);
@@ -370,12 +370,12 @@ insert into seatprice values (seq_seatprice_no.nextval, 11, 's', 100000);
 insert into seatprice values (seq_seatprice_no.nextval, 11, 'a', 80000);
 insert into seatprice values (seq_seatprice_no.nextval, 11, 'b', 60000);
 
-insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 11, 0, 50, '국가유공자 할인');
+insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 11, 0, 35, '국가유공자 할인');
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 11, 0, 20, '지역주민 할인');
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 11, 0, 20, '재관람 할인');
-insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 11, 0, 50, '장애인 할인');
+insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 11, 0, 40, '장애인 할인');
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 11, 0, 50, '타임 세일', '22/03/07','22/03/20');
-insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 11, 0, 60, '문화의날', '22/03/10','22/03/20');
+insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 11, 0, 55, '문화의날', '22/03/10','22/03/20');
 
 insert into review values (SEQ_REVIEW_NO.nextval, 11, 3, '시간가는 줄 모르고 몰입하게 되네요. 강추합니다!', 5, sysdate);
 insert into review values (SEQ_REVIEW_NO.nextval, 11, 4, '재미있게 잘봤습니다. 연극 좋아하시는 분들은 꼭 보세요.', 5, sysdate);
@@ -397,12 +397,12 @@ insert into seatprice values (seq_seatprice_no.nextval, 12, 's', 100000);
 insert into seatprice values (seq_seatprice_no.nextval, 12, 'a', 80000);
 insert into seatprice values (seq_seatprice_no.nextval, 12, 'b', 60000);
 
-insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 12, 0, 50, '국가유공자 할인');
+insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 12, 0, 35, '국가유공자 할인');
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 12, 0, 20, '지역주민 할인');
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 12, 0, 20, '재관람 할인');
-insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 12, 0, 50, '장애인 할인');
+insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 12, 0, 40, '장애인 할인');
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 12, 0, 50, '타임 세일', '22/03/07','22/03/20');
-insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 12, 0, 60, '문화의날', '22/03/10','22/03/20');
+insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 12, 0, 55, '문화의날', '22/03/10','22/03/20');
 
 insert into review values (SEQ_REVIEW_NO.nextval, 12, 3, '시간가는 줄 모르고 몰입하게 되네요. 강추합니다!', 5, sysdate);
 insert into review values (SEQ_REVIEW_NO.nextval, 12, 4, '재미있게 잘봤습니다. 연극 좋아하시는 분들은 꼭 보세요.', 5, sysdate);
@@ -424,12 +424,12 @@ insert into seatprice values (seq_seatprice_no.nextval, 13, 's', 100000);
 insert into seatprice values (seq_seatprice_no.nextval, 13, 'a', 80000);
 insert into seatprice values (seq_seatprice_no.nextval, 13, 'b', 60000);
 
-insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 13, 0, 50, '국가유공자 할인');
+insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 13, 0, 35, '국가유공자 할인');
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 13, 0, 20, '지역주민 할인');
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 13, 0, 20, '재관람 할인');
-insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 13, 0, 50, '장애인 할인');
+insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 13, 0, 40, '장애인 할인');
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 13, 0, 50, '타임 세일', '22/03/07','22/03/20');
-insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 13, 0, 60, '문화의날', '22/03/10','22/03/20');
+insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 13, 0, 55, '문화의날', '22/03/10','22/03/20');
 
 insert into review values (SEQ_REVIEW_NO.nextval, 13, 3, '시간가는 줄 모르고 몰입하게 되네요. 강추합니다!', 4, sysdate);
 insert into review values (SEQ_REVIEW_NO.nextval, 13, 4, '재미있게 잘봤습니다. 연극 좋아하시는 분들은 꼭 보세요.', 5, sysdate);
@@ -451,12 +451,12 @@ insert into seatprice values (seq_seatprice_no.nextval, 14, 's', 100000);
 insert into seatprice values (seq_seatprice_no.nextval, 14, 'a', 80000);
 insert into seatprice values (seq_seatprice_no.nextval, 14, 'b', 60000);
 
-insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 14, 0, 50, '국가유공자 할인');
+insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 14, 0, 35, '국가유공자 할인');
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 14, 0, 20, '지역주민 할인');
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 14, 0, 20, '재관람 할인');
-insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 14, 0, 50, '장애인 할인');
+insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 14, 0, 40, '장애인 할인');
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 14, 0, 50, '타임 세일', '22/03/07','22/03/20');
-insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 14, 0, 60, '문화의날', '22/03/10','22/03/20');
+insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 14, 0, 55, '문화의날', '22/03/10','22/03/20');
 
 insert into review values (SEQ_REVIEW_NO.nextval, 14, 3, '시간가는 줄 모르고 몰입하게 되네요. 강추합니다!', 5, sysdate);
 insert into review values (SEQ_REVIEW_NO.nextval, 14, 4, '재미있게 잘봤습니다. 연극 좋아하시는 분들은 꼭 보세요.', 5, sysdate);
@@ -478,12 +478,12 @@ insert into seatprice values (seq_seatprice_no.nextval, 15, 's', 100000);
 insert into seatprice values (seq_seatprice_no.nextval, 15, 'a', 80000);
 insert into seatprice values (seq_seatprice_no.nextval, 15, 'b', 60000);
 
-insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 15, 0, 50, '국가유공자 할인');
+insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 15, 0, 35, '국가유공자 할인');
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 15, 0, 20, '지역주민 할인');
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 15, 0, 20, '재관람 할인');
-insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 15, 0, 50, '장애인 할인');
+insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 15, 0, 40, '장애인 할인');
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 15, 0, 50, '타임 세일', '22/03/07','22/03/20');
-insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 15, 0, 60, '문화의날', '22/03/10','22/03/20');
+insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 15, 0, 55, '문화의날', '22/03/10','22/03/20');
 
 insert into review values (SEQ_REVIEW_NO.nextval, 15, 3, '시간가는 줄 모르고 몰입하게 되네요. 강추합니다!', 3, sysdate);
 insert into review values (SEQ_REVIEW_NO.nextval, 15, 4, '재미있게 잘봤습니다. 연극 좋아하시는 분들은 꼭 보세요.', 1, sysdate);
@@ -505,12 +505,12 @@ insert into seatprice values (seq_seatprice_no.nextval, 16, 's', 100000);
 insert into seatprice values (seq_seatprice_no.nextval, 16, 'a', 80000);
 insert into seatprice values (seq_seatprice_no.nextval, 16, 'b', 60000);
 
-insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 16, 0, 50, '국가유공자 할인');
+insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 16, 0, 35, '국가유공자 할인');
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 16, 0, 20, '지역주민 할인');
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 16, 0, 20, '재관람 할인');
-insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 16, 0, 50, '장애인 할인');
+insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 16, 0, 40, '장애인 할인');
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 16, 0, 50, '타임 세일', '22/03/07','22/03/20');
-insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 16, 0, 60, '문화의날', '22/03/10','22/03/20');
+insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 16, 0, 55, '문화의날', '22/03/10','22/03/20');
 
 insert into review values (SEQ_REVIEW_NO.nextval, 16, 3, '시간가는 줄 모르고 몰입하게 되네요. 강추합니다!', 5, sysdate);
 insert into review values (SEQ_REVIEW_NO.nextval, 16, 4, '재미있게 잘봤습니다. 연극 좋아하시는 분들은 꼭 보세요.', 4, sysdate);
@@ -532,12 +532,12 @@ insert into seatprice values (seq_seatprice_no.nextval, 17, 's', 100000);
 insert into seatprice values (seq_seatprice_no.nextval, 17, 'a', 80000);
 insert into seatprice values (seq_seatprice_no.nextval, 17, 'b', 60000);
 
-insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 17, 0, 50, '국가유공자 할인');
+insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 17, 0, 35, '국가유공자 할인');
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 17, 0, 20, '지역주민 할인');
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 17, 0, 20, '재관람 할인');
-insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 17, 0, 50, '장애인 할인');
+insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 17, 0, 40, '장애인 할인');
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 17, 0, 50, '타임 세일', '22/03/07','22/03/20');
-insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 17, 0, 60, '문화의날', '22/03/10','22/03/20');
+insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 17, 0, 55, '문화의날', '22/03/10','22/03/20');
 
 insert into review values (SEQ_REVIEW_NO.nextval, 17, 3, '시간가는 줄 모르고 몰입하게 되네요. 강추합니다!', 4, sysdate);
 insert into review values (SEQ_REVIEW_NO.nextval, 17, 4, '재미있게 잘봤습니다. 연극 좋아하시는 분들은 꼭 보세요.', 4, sysdate);
@@ -559,12 +559,12 @@ insert into seatprice values (seq_seatprice_no.nextval, 18, 's', 100000);
 insert into seatprice values (seq_seatprice_no.nextval, 18, 'a', 80000);
 insert into seatprice values (seq_seatprice_no.nextval, 18, 'b', 60000);
 
-insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 18, 0, 50, '국가유공자 할인');
+insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 18, 0, 35, '국가유공자 할인');
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 18, 0, 20, '지역주민 할인');
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 18, 0, 20, '재관람 할인');
-insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 18, 0, 50, '장애인 할인');
+insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 18, 0, 40, '장애인 할인');
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 18, 0, 50, '타임 세일', '22/03/07','22/03/20');
-insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 18, 0, 60, '문화의날', '22/03/10','22/03/20');
+insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 18, 0, 55, '문화의날', '22/03/10','22/03/20');
 
 insert into review values (SEQ_REVIEW_NO.nextval, 18, 3, '시간가는 줄 모르고 몰입하게 되네요. 강추합니다!', 3, sysdate);
 insert into review values (SEQ_REVIEW_NO.nextval, 18, 4, '재미있게 잘봤습니다. 연극 좋아하시는 분들은 꼭 보세요.', 2, sysdate);
@@ -586,12 +586,12 @@ insert into seatprice values (seq_seatprice_no.nextval, 19, 's', 100000);
 insert into seatprice values (seq_seatprice_no.nextval, 19, 'a', 80000);
 insert into seatprice values (seq_seatprice_no.nextval, 19, 'b', 60000);
 
-insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 19, 0, 50, '국가유공자 할인');
+insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 19, 0, 35, '국가유공자 할인');
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 19, 0, 20, '지역주민 할인');
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 19, 0, 20, '재관람 할인');
-insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 19, 0, 50, '장애인 할인');
+insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 19, 0, 40, '장애인 할인');
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 19, 0, 50, '타임 세일', '22/03/07','22/03/20');
-insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 19, 0, 60, '문화의날', '22/03/10','22/03/20');
+insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 19, 0, 55, '문화의날', '22/03/10','22/03/20');
 
 insert into review values (SEQ_REVIEW_NO.nextval, 19, 3, '시간가는 줄 모르고 몰입하게 되네요. 강추합니다!', 3, sysdate);
 insert into review values (SEQ_REVIEW_NO.nextval, 19, 4, '재미있게 잘봤습니다. 연극 좋아하시는 분들은 꼭 보세요.', 2, sysdate);
@@ -613,12 +613,12 @@ insert into seatprice values (seq_seatprice_no.nextval, 20, 's', 100000);
 insert into seatprice values (seq_seatprice_no.nextval, 20, 'a', 80000);
 insert into seatprice values (seq_seatprice_no.nextval, 20, 'b', 60000);
 
-insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 20, 0, 50, '국가유공자 할인');
+insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 20, 0, 35, '국가유공자 할인');
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 20, 0, 20, '지역주민 할인');
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 20, 0, 20, '재관람 할인');
-insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 20, 0, 50, '장애인 할인');
+insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 20, 0, 40, '장애인 할인');
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 20, 0, 50, '타임 세일', '22/03/07','22/03/20');
-insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 20, 0, 60, '문화의날', '22/03/10','22/03/20');
+insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 20, 0, 55, '문화의날', '22/03/10','22/03/20');
 
 insert into review values (SEQ_REVIEW_NO.nextval, 20, 3, '시간가는 줄 모르고 몰입하게 되네요. 강추합니다!', 4, sysdate);
 insert into review values (SEQ_REVIEW_NO.nextval, 20, 4, '재미있게 잘봤습니다. 연극 좋아하시는 분들은 꼭 보세요.', 4, sysdate);
@@ -643,12 +643,12 @@ insert into seatprice values (seq_seatprice_no.nextval, 21, 's', 100000);
 insert into seatprice values (seq_seatprice_no.nextval, 21, 'a', 80000);
 insert into seatprice values (seq_seatprice_no.nextval, 21, 'b', 60000);
 
-insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 21, 0, 50, '국가유공자 할인');
+insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 21, 0, 35, '국가유공자 할인');
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 21, 0, 20, '지역주민 할인');
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 21, 0, 20, '재관람 할인');
-insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 21, 0, 50, '장애인 할인');
+insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 21, 0, 40, '장애인 할인');
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 21, 0, 50, '타임 세일', '22/03/07','22/03/20');
-insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 21, 0, 60, '문화의날', '22/03/10','22/03/20');
+insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 21, 0, 55, '문화의날', '22/03/10','22/03/20');
 
 insert into review values (SEQ_REVIEW_NO.nextval, 21, 3, '후회없는 선택입니다. 제가 좋아하는 노래들이라 더욱 감동적이었습니다', 5, sysdate);
 insert into review values (SEQ_REVIEW_NO.nextval, 21, 4, '연인과 함께 듣기 좋은 노래들입니다.', 5, sysdate);
@@ -670,12 +670,12 @@ insert into seatprice values (seq_seatprice_no.nextval, 22, 's', 100000);
 insert into seatprice values (seq_seatprice_no.nextval, 22, 'a', 80000);
 insert into seatprice values (seq_seatprice_no.nextval, 22, 'b', 60000);
 
-insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 22, 0, 50, '국가유공자 할인');
+insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 22, 0, 35, '국가유공자 할인');
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 22, 0, 20, '지역주민 할인');
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 22, 0, 20, '재관람 할인');
-insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 22, 0, 50, '장애인 할인');
+insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 22, 0, 40, '장애인 할인');
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 22, 0, 50, '타임 세일', '22/03/07','22/03/20');
-insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 22, 0, 60, '문화의날', '22/03/10','22/03/20');
+insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 22, 0, 55, '문화의날', '22/03/10','22/03/20');
 
 insert into review values (SEQ_REVIEW_NO.nextval, 22, 3, '후회없는 선택입니다. 제가 좋아하는 노래들이라 더욱 감동적이었습니다', 2, sysdate);
 insert into review values (SEQ_REVIEW_NO.nextval, 22, 4, '연인과 함께 듣기 좋은 노래들입니다.', 1, sysdate);
@@ -697,12 +697,12 @@ insert into seatprice values (seq_seatprice_no.nextval, 23, 's', 100000);
 insert into seatprice values (seq_seatprice_no.nextval, 23, 'a', 80000);
 insert into seatprice values (seq_seatprice_no.nextval, 23, 'b', 60000);
 
-insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 23, 0, 50, '국가유공자 할인');
+insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 23, 0, 35, '국가유공자 할인');
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 23, 0, 20, '지역주민 할인');
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 23, 0, 20, '재관람 할인');
-insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 23, 0, 50, '장애인 할인');
+insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 23, 0, 40, '장애인 할인');
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 23, 0, 50, '타임 세일', '22/03/07','22/03/20');
-insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 23, 0, 60, '문화의날', '22/03/10','22/03/20');
+insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 23, 0, 55, '문화의날', '22/03/10','22/03/20');
 
 insert into review values (SEQ_REVIEW_NO.nextval, 23, 3, '후회없는 선택입니다. 제가 좋아하는 노래들이라 더욱 감동적이었습니다', 5, sysdate);
 insert into review values (SEQ_REVIEW_NO.nextval, 23, 4, '연인과 함께 듣기 좋은 노래들입니다.', 5, sysdate);
@@ -724,12 +724,12 @@ insert into seatprice values (seq_seatprice_no.nextval, 24, 's', 100000);
 insert into seatprice values (seq_seatprice_no.nextval, 24, 'a', 80000);
 insert into seatprice values (seq_seatprice_no.nextval, 24, 'b', 60000);
 
-insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 24, 0, 50, '국가유공자 할인');
+insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 24, 0, 35, '국가유공자 할인');
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 24, 0, 20, '지역주민 할인');
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 24, 0, 20, '재관람 할인');
-insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 24, 0, 50, '장애인 할인');
+insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 24, 0, 40, '장애인 할인');
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 24, 0, 50, '타임 세일', '22/03/07','22/03/20');
-insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 24, 0, 60, '문화의날', '22/03/10','22/03/20');
+insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 24, 0, 70, '예술인 할인', '22/03/10','22/03/20');
 
 insert into review values (SEQ_REVIEW_NO.nextval, 24, 3, '후회없는 선택입니다. 제가 좋아하는 노래들이라 더욱 감동적이었습니다', 2, sysdate);
 insert into review values (SEQ_REVIEW_NO.nextval, 24, 4, '연인과 함께 듣기 좋은 노래들입니다.', 1, sysdate);
@@ -752,12 +752,12 @@ insert into seatprice values (seq_seatprice_no.nextval, 25, 's', 100000);
 insert into seatprice values (seq_seatprice_no.nextval, 25, 'a', 80000);
 insert into seatprice values (seq_seatprice_no.nextval, 25, 'b', 60000);
 
-insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 25, 0, 50, '국가유공자 할인');
+insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 25, 0, 35, '국가유공자 할인');
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 25, 0, 20, '지역주민 할인');
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 25, 0, 20, '재관람 할인');
-insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 25, 0, 50, '장애인 할인');
+insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 25, 0, 40, '장애인 할인');
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 25, 0, 50, '타임 세일', '22/03/07','22/03/20');
-insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 25, 0, 60, '문화의날', '22/03/10','22/03/20');
+insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 25, 0, 55, '문화의날', '22/03/10','22/03/20');
 
 insert into review values (SEQ_REVIEW_NO.nextval, 25, 3, '후회없는 선택입니다. 제가 좋아하는 노래들이라 더욱 감동적이었습니다', 5, sysdate);
 insert into review values (SEQ_REVIEW_NO.nextval, 25, 4, '연인과 함께 듣기 좋은 노래들입니다.', 5, sysdate);
@@ -780,12 +780,12 @@ insert into seatprice values (seq_seatprice_no.nextval, 26, 's', 100000);
 insert into seatprice values (seq_seatprice_no.nextval, 26, 'a', 80000);
 insert into seatprice values (seq_seatprice_no.nextval, 26, 'b', 60000);
 
-insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 26, 0, 50, '국가유공자 할인');
+insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 26, 0, 35, '국가유공자 할인');
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 26, 0, 20, '지역주민 할인');
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 26, 0, 20, '재관람 할인');
-insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 26, 0, 50, '장애인 할인');
+insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 26, 0, 40, '장애인 할인');
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 26, 0, 50, '타임 세일', '22/03/07','22/03/20');
-insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 26, 0, 60, '문화의날', '22/03/10','22/03/20');
+insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 26, 0, 65, '선우정아 생일', '22/03/10','22/03/20');
 
 insert into review values (SEQ_REVIEW_NO.nextval, 26, 3, '후회없는 선택입니다. 제가 좋아하는 노래들이라 더욱 감동적이었습니다', 4, sysdate);
 insert into review values (SEQ_REVIEW_NO.nextval, 26, 4, '연인과 함께 듣기 좋은 노래들입니다.', 3, sysdate);
@@ -808,12 +808,12 @@ insert into seatprice values (seq_seatprice_no.nextval, 27, 's', 100000);
 insert into seatprice values (seq_seatprice_no.nextval, 27, 'a', 80000);
 insert into seatprice values (seq_seatprice_no.nextval, 27, 'b', 60000);
 
-insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 27, 0, 50, '국가유공자 할인');
+insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 27, 0, 35, '국가유공자 할인');
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 27, 0, 20, '지역주민 할인');
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 27, 0, 20, '재관람 할인');
-insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 27, 0, 50, '장애인 할인');
+insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 27, 0, 40, '장애인 할인');
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 27, 0, 50, '타임 세일', '22/03/07','22/03/20');
-insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 27, 0, 60, '문화의날', '22/03/10','22/03/20');
+insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 27, 0, 55, '문화의날', '22/03/10','22/03/20');
 
 insert into review values (SEQ_REVIEW_NO.nextval, 27, 3, '후회없는 선택입니다. 제가 좋아하는 노래들이라 더욱 감동적이었습니다', 4, sysdate);
 insert into review values (SEQ_REVIEW_NO.nextval, 27, 4, '연인과 함께 듣기 좋은 노래들입니다.', 5, sysdate);
@@ -836,12 +836,12 @@ insert into seatprice values (seq_seatprice_no.nextval, 28, 's', 100000);
 insert into seatprice values (seq_seatprice_no.nextval, 28, 'a', 80000);
 insert into seatprice values (seq_seatprice_no.nextval, 28, 'b', 60000);
 
-insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 28, 0, 50, '국가유공자 할인');
+insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 28, 0, 35, '국가유공자 할인');
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 28, 0, 20, '지역주민 할인');
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 28, 0, 20, '재관람 할인');
-insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 28, 0, 50, '장애인 할인');
+insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 28, 0, 40, '장애인 할인');
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 28, 0, 50, '타임 세일', '22/03/07','22/03/20');
-insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 28, 0, 60, '문화의날', '22/03/10','22/03/20');
+insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 28, 0, 55, '문화의날', '22/03/10','22/03/20');
 
 insert into review values (SEQ_REVIEW_NO.nextval, 28, 3, '후회없는 선택입니다. 제가 좋아하는 노래들이라 더욱 감동적이었습니다', 4, sysdate);
 insert into review values (SEQ_REVIEW_NO.nextval, 28, 4, '연인과 함께 듣기 좋은 노래들입니다.', 4, sysdate);
@@ -864,12 +864,12 @@ insert into seatprice values (seq_seatprice_no.nextval, 29, 's', 100000);
 insert into seatprice values (seq_seatprice_no.nextval, 29, 'a', 80000);
 insert into seatprice values (seq_seatprice_no.nextval, 29, 'b', 60000);
 
-insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 29, 0, 50, '국가유공자 할인');
+insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 29, 0, 35, '국가유공자 할인');
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 29, 0, 20, '지역주민 할인');
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 29, 0, 20, '재관람 할인');
-insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 29, 0, 50, '장애인 할인');
+insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 29, 0, 40, '장애인 할인');
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 29, 0, 50, '타임 세일', '22/03/07','22/03/20');
-insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 29, 0, 60, '문화의날', '22/03/10','22/03/20');
+insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 29, 0, 75, '마지막공연', '22/03/10','22/03/20');
 
 insert into review values (SEQ_REVIEW_NO.nextval, 29, 3, '후회없는 선택입니다. 제가 좋아하는 노래들이라 더욱 감동적이었습니다', 4, sysdate);
 insert into review values (SEQ_REVIEW_NO.nextval, 29, 4, '연인과 함께 듣기 좋은 노래들입니다.', 3, sysdate);
@@ -892,12 +892,12 @@ insert into seatprice values (seq_seatprice_no.nextval, 30, 's', 100000);
 insert into seatprice values (seq_seatprice_no.nextval, 30, 'a', 80000);
 insert into seatprice values (seq_seatprice_no.nextval, 30, 'b', 60000);
 
-insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 30, 0, 50, '국가유공자 할인');
+insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 30, 0, 35, '국가유공자 할인');
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 30, 0, 20, '지역주민 할인');
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 30, 0, 20, '재관람 할인');
-insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 30, 0, 50, '장애인 할인');
+insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 30, 0, 40, '장애인 할인');
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 30, 0, 50, '타임 세일', '22/03/07','22/03/20');
-insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 30, 0, 60, '문화의날', '22/03/10','22/03/20');
+insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 30, 0, 55, '문화의날', '22/03/10','22/03/20');
 
 insert into review values (SEQ_REVIEW_NO.nextval, 30, 3, '후회없는 선택입니다. 제가 좋아하는 노래들이라 더욱 감동적이었습니다', 4, sysdate);
 insert into review values (SEQ_REVIEW_NO.nextval, 30, 4, '연인과 함께 듣기 좋은 노래들입니다.', 2, sysdate);
@@ -923,12 +923,12 @@ insert into seatprice values (seq_seatprice_no.nextval, 31, 's', 100000);
 insert into seatprice values (seq_seatprice_no.nextval, 31, 'a', 80000);
 insert into seatprice values (seq_seatprice_no.nextval, 31, 'b', 60000);
 
-insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 31, 0, 50, '국가유공자 할인');
+insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 31, 0, 35, '국가유공자 할인');
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 31, 0, 20, '지역주민 할인');
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 31, 0, 20, '재관람 할인');
-insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 31, 0, 50, '장애인 할인');
+insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 31, 0, 40, '장애인 할인');
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 31, 0, 50, '타임 세일', '22/03/07','22/03/20');
-insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 31, 0, 60, '문화의날', '22/03/10','22/03/20');
+insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 31, 0, 55, '문화의날', '22/03/10','22/03/20');
 
 insert into review values (SEQ_REVIEW_NO.nextval, 31, 3, 'K리그 화이팅', 4, sysdate);
 insert into review values (SEQ_REVIEW_NO.nextval, 31, 4, '경기력이 갈수록 좋아지니까 더 재밌습니다', 5, sysdate);
@@ -949,12 +949,12 @@ insert into seatprice values (seq_seatprice_no.nextval, 32, 's', 100000);
 insert into seatprice values (seq_seatprice_no.nextval, 32, 'a', 80000);
 insert into seatprice values (seq_seatprice_no.nextval, 32, 'b', 60000);
 
-insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 32, 0, 50, '국가유공자 할인');
+insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 32, 0, 35, '국가유공자 할인');
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 32, 0, 20, '지역주민 할인');
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 32, 0, 20, '재관람 할인');
-insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 32, 0, 50, '장애인 할인');
+insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 32, 0, 40, '장애인 할인');
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 32, 0, 50, '타임 세일', '22/03/07','22/03/20');
-insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 32, 0, 60, '문화의날', '22/03/10','22/03/20');
+insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 32, 0, 55, '문화의날', '22/03/10','22/03/20');
 
 insert into review values (SEQ_REVIEW_NO.nextval, 32, 3, 'K리그 화이팅', 5, sysdate);
 insert into review values (SEQ_REVIEW_NO.nextval, 32, 4, '경기력이 갈수록 좋아지니까 더 재밌습니다', 5, sysdate);
@@ -977,12 +977,12 @@ insert into seatprice values (seq_seatprice_no.nextval, 33, 's', 100000);
 insert into seatprice values (seq_seatprice_no.nextval, 33, 'a', 80000);
 insert into seatprice values (seq_seatprice_no.nextval, 33, 'b', 60000);
 
-insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 33, 0, 50, '국가유공자 할인');
+insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 33, 0, 35, '국가유공자 할인');
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 33, 0, 20, '지역주민 할인');
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 33, 0, 20, '재관람 할인');
-insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 33, 0, 50, '장애인 할인');
+insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 33, 0, 40, '장애인 할인');
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 33, 0, 50, '타임 세일', '22/03/07','22/03/20');
-insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 33, 0, 60, '문화의날', '22/03/10','22/03/20');
+insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 33, 0, 55, '문화의날', '22/03/10','22/03/20');
 
 insert into review values (SEQ_REVIEW_NO.nextval, 33, 3, 'K리그 화이팅',3, sysdate);
 insert into review values (SEQ_REVIEW_NO.nextval, 33, 4, '경기력이 갈수록 좋아지니까 더 재밌습니다', 5, sysdate);
@@ -1004,12 +1004,12 @@ insert into seatprice values (seq_seatprice_no.nextval, 34, 's', 100000);
 insert into seatprice values (seq_seatprice_no.nextval, 34, 'a', 80000);
 insert into seatprice values (seq_seatprice_no.nextval, 34, 'b', 60000);
 
-insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 34, 0, 50, '국가유공자 할인');
+insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 34, 0, 35, '국가유공자 할인');
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 34, 0, 20, '지역주민 할인');
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 34, 0, 20, '재관람 할인');
-insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 34, 0, 50, '장애인 할인');
+insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 34, 0, 40, '장애인 할인');
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 34, 0, 50, '타임 세일', '22/03/07','22/03/20');
-insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 34, 0, 60, '문화의날', '22/03/10','22/03/20');
+insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 34, 0, 55, '문화의날', '22/03/10','22/03/20');
 
 insert into review values (SEQ_REVIEW_NO.nextval, 34, 3, 'K리그 화이팅', 4, sysdate);
 insert into review values (SEQ_REVIEW_NO.nextval, 34, 4, '경기력이 갈수록 좋아지니까 더 재밌습니다', 5, sysdate);
@@ -1033,12 +1033,12 @@ insert into seatprice values (seq_seatprice_no.nextval, 35, 's', 100000);
 insert into seatprice values (seq_seatprice_no.nextval, 35, 'a', 80000);
 insert into seatprice values (seq_seatprice_no.nextval, 35, 'b', 60000);
 
-insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 35, 0, 50, '국가유공자 할인');
+insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 35, 0, 35, '국가유공자 할인');
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 35, 0, 20, '지역주민 할인');
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 35, 0, 20, '재관람 할인');
-insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 35, 0, 50, '장애인 할인');
+insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 35, 0, 40, '장애인 할인');
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 35, 0, 50, '타임 세일', '22/03/07','22/03/20');
-insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 35, 0, 60, '문화의날', '22/03/10','22/03/20');
+insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 35, 0, 55, '문화의날', '22/03/10','22/03/20');
 
 insert into review values (SEQ_REVIEW_NO.nextval, 35, 3, 'K리그 화이팅',4, sysdate);
 insert into review values (SEQ_REVIEW_NO.nextval, 35, 4, '경기력이 갈수록 좋아지니까 더 재밌습니다', 4, sysdate);
@@ -1061,12 +1061,12 @@ insert into seatprice values (seq_seatprice_no.nextval, 36, 's', 100000);
 insert into seatprice values (seq_seatprice_no.nextval, 36, 'a', 80000);
 insert into seatprice values (seq_seatprice_no.nextval, 36, 'b', 60000);
 
-insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 36, 0, 50, '국가유공자 할인');
+insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 36, 0, 35, '국가유공자 할인');
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 36, 0, 20, '지역주민 할인');
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 36, 0, 20, '재관람 할인');
-insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 36, 0, 50, '장애인 할인');
+insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 36, 0, 40, '장애인 할인');
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 36, 0, 50, '타임 세일', '22/03/07','22/03/20');
-insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 36, 0, 60, '문화의날', '22/03/10','22/03/20');
+insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 36, 0, 55, '문화의날', '22/03/10','22/03/20');
 
 insert into review values (SEQ_REVIEW_NO.nextval, 36, 3, 'K리그 화이팅',3, sysdate);
 insert into review values (SEQ_REVIEW_NO.nextval, 36, 4, '경기력이 갈수록 좋아지니까 더 재밌습니다', 5, sysdate);
@@ -1089,12 +1089,12 @@ insert into seatprice values (seq_seatprice_no.nextval, 37, 's', 100000);
 insert into seatprice values (seq_seatprice_no.nextval, 37, 'a', 80000);
 insert into seatprice values (seq_seatprice_no.nextval, 37, 'b', 60000);
 
-insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 37, 0, 50, '국가유공자 할인');
+insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 37, 0, 35, '국가유공자 할인');
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 37, 0, 20, '지역주민 할인');
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 37, 0, 20, '재관람 할인');
-insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 37, 0, 50, '장애인 할인');
+insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 37, 0, 40, '장애인 할인');
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 37, 0, 50, '타임 세일', '22/03/07','22/03/20');
-insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 37, 0, 60, '문화의날', '22/03/10','22/03/20');
+insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 37, 0, 55, '문화의날', '22/03/10','22/03/20');
 
 insert into review values (SEQ_REVIEW_NO.nextval, 37, 3, 'K리그 화이팅', 5, sysdate);
 insert into review values (SEQ_REVIEW_NO.nextval, 37, 4, '경기력이 갈수록 좋아지니까 더 재밌습니다', 5, sysdate);
@@ -1116,12 +1116,12 @@ insert into seatprice values (seq_seatprice_no.nextval, 38, 's', 100000);
 insert into seatprice values (seq_seatprice_no.nextval, 38, 'a', 80000);
 insert into seatprice values (seq_seatprice_no.nextval, 38, 'b', 60000);
 
-insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 38, 0, 50, '국가유공자 할인');
+insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 38, 0, 35, '국가유공자 할인');
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 38, 0, 20, '지역주민 할인');
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 38, 0, 20, '재관람 할인');
-insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 38, 0, 50, '장애인 할인');
+insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 38, 0, 40, '장애인 할인');
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 38, 0, 50, '타임 세일', '22/03/07','22/03/20');
-insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 38, 0, 60, '문화의날', '22/03/10','22/03/20');
+insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 38, 0, 55, '문화의날', '22/03/10','22/03/20');
 
 insert into review values (SEQ_REVIEW_NO.nextval, 38, 3, 'K리그 화이팅',4, sysdate);
 insert into review values (SEQ_REVIEW_NO.nextval, 38, 4, '경기력이 갈수록 좋아지니까 더 재밌습니다', 5, sysdate);
@@ -1146,12 +1146,12 @@ insert into seatprice values (seq_seatprice_no.nextval, 39, 's', 100000);
 insert into seatprice values (seq_seatprice_no.nextval, 39, 'a', 80000);
 insert into seatprice values (seq_seatprice_no.nextval, 39, 'b', 60000);
 
-insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 39, 0, 50, '국가유공자 할인');
+insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 39, 0, 35, '국가유공자 할인');
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 39, 0, 20, '지역주민 할인');
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 39, 0, 20, '재관람 할인');
-insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 39, 0, 50, '장애인 할인');
+insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 39, 0, 40, '장애인 할인');
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 39, 0, 50, '타임 세일', '22/03/07','22/03/20');
-insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 39, 0, 60, '문화의날', '22/03/10','22/03/20');
+insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 39, 0, 55, '문화의날', '22/03/10','22/03/20');
 
 insert into review values (SEQ_REVIEW_NO.nextval, 39, 3, '기묘하네요.',4, sysdate);
 insert into review values (SEQ_REVIEW_NO.nextval, 39, 4, '신기합니다. 한번쯤은 볼만한 전시회입니다.', 1, sysdate);
@@ -1172,12 +1172,12 @@ insert into seatprice values (seq_seatprice_no.nextval, 40, 's', 100000);
 insert into seatprice values (seq_seatprice_no.nextval, 40, 'a', 80000);
 insert into seatprice values (seq_seatprice_no.nextval, 40, 'b', 60000);
 
-insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 40, 0, 50, '국가유공자 할인');
+insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 40, 0, 35, '국가유공자 할인');
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 40, 0, 20, '지역주민 할인');
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 40, 0, 20, '재관람 할인');
-insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 40, 0, 50, '장애인 할인');
+insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 40, 0, 40, '장애인 할인');
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 40, 0, 50, '타임 세일', '22/03/07','22/03/20');
-insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 40, 0, 60, '문화의날', '22/03/10','22/03/20');
+insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 40, 0, 55, '문화의날', '22/03/10','22/03/20');
 
 insert into review values (SEQ_REVIEW_NO.nextval, 40, 3, '기묘하네요.', 2, sysdate);
 insert into review values (SEQ_REVIEW_NO.nextval, 40, 4, '신기합니다. 한번쯤은 볼만한 전시회입니다.', 1, sysdate);
@@ -1199,12 +1199,12 @@ insert into seatprice values (seq_seatprice_no.nextval, 41, 's', 100000);
 insert into seatprice values (seq_seatprice_no.nextval, 41, 'a', 80000);
 insert into seatprice values (seq_seatprice_no.nextval, 41, 'b', 60000);
 
-insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 41, 0, 50, '국가유공자 할인');
+insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 41, 0, 35, '국가유공자 할인');
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 41, 0, 20, '지역주민 할인');
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 41, 0, 20, '재관람 할인');
-insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 41, 0, 50, '장애인 할인');
+insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 41, 0, 40, '장애인 할인');
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 41, 0, 50, '타임 세일', '22/03/07','22/03/20');
-insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 41, 0, 60, '문화의날', '22/03/10','22/03/20');
+insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 41, 0, 55, '문화의날', '22/03/10','22/03/20');
 
 insert into review values (SEQ_REVIEW_NO.nextval, 41, 3, '기묘하네요.', 5, sysdate);
 insert into review values (SEQ_REVIEW_NO.nextval, 41, 4, '신기합니다. 한번쯤은 볼만한 전시회입니다.', 5, sysdate);
@@ -1226,12 +1226,12 @@ insert into seatprice values (seq_seatprice_no.nextval, 42, 's', 100000);
 insert into seatprice values (seq_seatprice_no.nextval, 42, 'a', 80000);
 insert into seatprice values (seq_seatprice_no.nextval, 42, 'b', 60000);
 
-insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 42, 0, 50, '국가유공자 할인');
+insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 42, 0, 35, '국가유공자 할인');
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 42, 0, 20, '지역주민 할인');
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 42, 0, 20, '재관람 할인');
-insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 42, 0, 50, '장애인 할인');
+insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 42, 0, 40, '장애인 할인');
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 42, 0, 50, '타임 세일', '22/03/07','22/03/20');
-insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 42, 0, 60, '문화의날', '22/03/10','22/03/20');
+insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 42, 0, 55, '문화의날', '22/03/10','22/03/20');
 
 insert into review values (SEQ_REVIEW_NO.nextval, 42, 3, '기묘하네요.', 4, sysdate);
 insert into review values (SEQ_REVIEW_NO.nextval, 42, 4, '신기합니다. 한번쯤은 볼만한 전시회입니다.', 4, sysdate);
@@ -1253,12 +1253,12 @@ insert into seatprice values (seq_seatprice_no.nextval, 43, 's', 100000);
 insert into seatprice values (seq_seatprice_no.nextval, 43, 'a', 80000);
 insert into seatprice values (seq_seatprice_no.nextval, 43, 'b', 60000);
 
-insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 43, 0, 50, '국가유공자 할인');
+insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 43, 0, 35, '국가유공자 할인');
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 43, 0, 20, '지역주민 할인');
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 43, 0, 20, '재관람 할인');
-insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 43, 0, 50, '장애인 할인');
+insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 43, 0, 40, '장애인 할인');
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 43, 0, 50, '타임 세일', '22/03/07','22/03/20');
-insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 43, 0, 60, '문화의날', '22/03/10','22/03/20');
+insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 43, 0, 55, '문화의날', '22/03/10','22/03/20');
 
 insert into review values (SEQ_REVIEW_NO.nextval, 43, 3, '기묘하네요.', 5, sysdate);
 insert into review values (SEQ_REVIEW_NO.nextval, 43, 4, '신기합니다. 한번쯤은 볼만한 전시회입니다.', 5, sysdate);
@@ -1279,12 +1279,12 @@ insert into seatprice values (seq_seatprice_no.nextval, 44, 's', 100000);
 insert into seatprice values (seq_seatprice_no.nextval, 44, 'a', 80000);
 insert into seatprice values (seq_seatprice_no.nextval, 44, 'b', 60000);
 
-insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 44, 0, 50, '국가유공자 할인');
+insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 44, 0, 35, '국가유공자 할인');
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 44, 0, 20, '지역주민 할인');
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 44, 0, 20, '재관람 할인');
-insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 44, 0, 50, '장애인 할인');
+insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 44, 0, 40, '장애인 할인');
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 44, 0, 50, '타임 세일', '22/03/07','22/03/20');
-insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 44, 0, 60, '문화의날', '22/03/10','22/03/20');
+insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 44, 0, 55, '문화의날', '22/03/10','22/03/20');
 
 insert into review values (SEQ_REVIEW_NO.nextval, 44, 3, '기묘하네요.', 4, sysdate);
 insert into review values (SEQ_REVIEW_NO.nextval, 44, 4, '신기합니다. 한번쯤은 볼만한 전시회입니다.', 5, sysdate);
@@ -1305,12 +1305,12 @@ insert into seatprice values (seq_seatprice_no.nextval, 45, 's', 100000);
 insert into seatprice values (seq_seatprice_no.nextval, 45, 'a', 80000);
 insert into seatprice values (seq_seatprice_no.nextval, 45, 'b', 60000);
 
-insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 45, 0, 50, '국가유공자 할인');
+insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 45, 0, 35, '국가유공자 할인');
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 45, 0, 20, '지역주민 할인');
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 45, 0, 20, '재관람 할인');
-insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 45, 0, 50, '장애인 할인');
+insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 45, 0, 40, '장애인 할인');
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 45, 0, 50, '타임 세일', '22/03/07','22/03/20');
-insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 45, 0, 60, '문화의날', '22/03/10','22/03/20');
+insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 45, 0, 55, '문화의날', '22/03/10','22/03/20');
 
 insert into review values (SEQ_REVIEW_NO.nextval, 45, 3, '기묘하네요.', 4, sysdate);
 insert into review values (SEQ_REVIEW_NO.nextval, 45, 4, '신기합니다. 한번쯤은 볼만한 전시회입니다.', 3, sysdate);
@@ -1332,12 +1332,12 @@ insert into seatprice values (seq_seatprice_no.nextval, 46, 's', 100000);
 insert into seatprice values (seq_seatprice_no.nextval, 46, 'a', 80000);
 insert into seatprice values (seq_seatprice_no.nextval, 46, 'b', 60000);
 
-insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 46, 0, 50, '국가유공자 할인');
+insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 46, 0, 35, '국가유공자 할인');
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 46, 0, 20, '지역주민 할인');
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 46, 0, 20, '재관람 할인');
-insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 46, 0, 50, '장애인 할인');
+insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 46, 0, 40, '장애인 할인');
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 46, 0, 50, '타임 세일', '22/03/07','22/03/20');
-insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 46, 0, 60, '문화의날', '22/03/10','22/03/20');
+insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 46, 0, 55, '문화의날', '22/03/10','22/03/20');
 
 insert into review values (SEQ_REVIEW_NO.nextval, 46, 3, '기묘하네요.', 4, sysdate);
 insert into review values (SEQ_REVIEW_NO.nextval, 46, 4, '신기합니다. 한번쯤은 볼만한 전시회입니다.', 5, sysdate);
@@ -1360,12 +1360,12 @@ insert into seatprice values (seq_seatprice_no.nextval, 47, 's', 100000);
 insert into seatprice values (seq_seatprice_no.nextval, 47, 'a', 80000);
 insert into seatprice values (seq_seatprice_no.nextval, 47, 'b', 60000);
 
-insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 47, 0, 50, '국가유공자 할인');
+insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 47, 0, 35, '국가유공자 할인');
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 47, 0, 20, '지역주민 할인');
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 47, 0, 20, '재관람 할인');
-insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 47, 0, 50, '장애인 할인');
+insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 47, 0, 40, '장애인 할인');
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 47, 0, 50, '타임 세일', '22/03/07','22/03/20');
-insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 47, 0, 60, '문화의날', '22/03/10','22/03/20');
+insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 47, 0, 55, '문화의날', '22/03/10','22/03/20');
 
 insert into review values (SEQ_REVIEW_NO.nextval, 47, 3, '기묘하네요.', 3, sysdate);
 insert into review values (SEQ_REVIEW_NO.nextval, 47, 4, '신기합니다. 한번쯤은 볼만한 전시회입니다.', 3, sysdate);
@@ -1388,12 +1388,12 @@ insert into seatprice values (seq_seatprice_no.nextval, 48, 's', 100000);
 insert into seatprice values (seq_seatprice_no.nextval, 48, 'a', 80000);
 insert into seatprice values (seq_seatprice_no.nextval, 48, 'b', 60000);
 
-insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 48, 0, 50, '국가유공자 할인');
+insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 48, 0, 35, '국가유공자 할인');
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 48, 0, 20, '지역주민 할인');
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 48, 0, 20, '재관람 할인');
-insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 48, 0, 50, '장애인 할인');
+insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 48, 0, 40, '장애인 할인');
 insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 48, 0, 50, '타임 세일', '22/03/07','22/03/20');
-insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 48, 0, 60, '문화의날', '22/03/10','22/03/20');
+insert into discount (dc_no, prod_no, dctype, dcrate, dcname, begindc, enddc) values(seq_dc_no.nextval, 48, 0, 55, '문화의날', '22/03/10','22/03/20');
 
 insert into review values (SEQ_REVIEW_NO.nextval, 48, 3, '기묘하네요.', 3, sysdate);
 insert into review values (SEQ_REVIEW_NO.nextval, 48, 4, '신기합니다. 한번쯤은 볼만한 전시회입니다.', 3, sysdate);
