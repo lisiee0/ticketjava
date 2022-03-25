@@ -43,22 +43,22 @@
 				<div class="row">
 					<h2 class="pageMenu section">${product.vo.prodName}</h2>
 
-					<div class="container bgc">
+					<div class="container">
 						<div class="row">
 							<!-- 포스터 위치 -->
-							<div class="col-xs-3 np">
+							<div class="col-xs-4 np">
 								<img id="mainPoster" src="${pageContext.request.contextPath}/upload/${product.vo.posterPath}">
 							</div>
 
-							<div class="col-xs-6 np" id="mainInfo">
-								<table id="infoTable">
+							<div class="col-xs-5 np" id="mainInfo">
+								<table class="infoTable">
 									<tr>
 										<th>장소</th>
 										<td>${product.vo.theaterName}${product.vo.hallName}</td>
 									</tr>
 									<tr>
 										<th>공연기간</th>
-										<td>${product.vo.beginShow}~${product.vo.endShow}</td>
+										<td>${product.vo.beginShow} ~ ${product.vo.endShow}</td>
 									</tr>
 									<tr>
 										<th>관람시간</th>
@@ -87,20 +87,39 @@
 											</c:otherwise>
 										</c:choose>
 									</tr>
-									<tr>
-										<th>가격</th>
-										<td>
-											<table id="priceTable">
-												<c:forEach items="${product.seatPrice}" var="vo">
-													<tr>
-														<td>${vo.grade}석</td>
-														<td>${vo.price}</td>
-													</tr>
-												</c:forEach>
-											</table>
-										</td>
-									</tr>
-								</table>
+									</table>
+									<div class="row line"></div>
+									<table class="infoTable">
+										<tr>
+											<th>가격</th>
+											<td>
+												<table id="priceTable">
+													<c:forEach items="${product.seatPrice}" var="vo">
+														<tr>
+															<td>${vo.grade}석</td>
+															<td><span class="point-color">${vo.price}</span>원</td>
+														</tr>
+													</c:forEach>
+												</table>
+											</td>
+										</tr>
+									</table>
+									<div class="row line"></div>
+									<table class="infoTable">
+										<tr>
+											<th>할인</th>
+											<td>
+												<table id="saleTable">
+													<c:forEach items="${product.seatPrice}" var="vo">
+														<tr>
+															<td>${vo.grade}석</td>
+															<td><span class="point-color">${vo.price}</span>원</td>
+														</tr>
+													</c:forEach>
+												</table>
+											</td>
+										</tr>
+									</table>
 							</div>
 
 
