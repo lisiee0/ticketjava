@@ -66,7 +66,7 @@ public class NotificationService {
 			
 			//5. noti > 알림 번호(시퀀스), 내용 ( viewDate+showTime , prodName, section ) , 알림 시간 (sysdate)   
 			String content = ""
-					+ "<a class='content' target='_blank' href='http://127.0.0.1:8088/ticketjava/product/info?prodNo="+notiDataVo.getProdNo()+"&viewDate="+notiDataVo.getViewDate()+"'>"
+					+ "<a class='content' target='_blank' href='/ticketjava/product/info?prodNo="+notiDataVo.getProdNo()+"&viewDate="+notiDataVo.getViewDate()+"'>"
 					+ notiDataVo.getViewDate()+" "+notiDataVo.getShowTime()+" "+notiDataVo.getProdName()+" "+notiDataVo.getGrade().toUpperCase()+"석 "
 					+ notiDataVo.getSection()+"구역 "+notiDataVo.getCol()+"열 "+notiDataVo.getNum()+"번 좌석 취소 안내"
 					+ "</a>";
