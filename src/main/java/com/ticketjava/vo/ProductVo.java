@@ -32,6 +32,9 @@ public class ProductVo {
 	
 	private int detailNo; // 상세정보 번호
 	private String seatpriceNo;	//등급별가격 번호
+	
+	private String dcName;
+	private String dcRate;
 
 	// 기본 생성자
 	public ProductVo() {
@@ -117,6 +120,40 @@ public class ProductVo {
 		this.productDisList = productDisList;
 		this.detailNo = detailNo;
 		this.seatpriceNo = seatpriceNo;
+	}
+	
+	
+
+	public ProductVo(int prodNo, int userNo, int hallNo, String prodName, int prodType, String beginShow,
+			String endShow, String beginRez, String endRez, String showTime, int viewTime, int viewGrade, String notice,
+			String cancelInfo, int status, String posterPath, String theaterName, String hallName,
+			List<SeatpriceVo> seatpriceList, List<DiscountVo> productDisList, int detailNo, String seatpriceNo,
+			String dcName, String dcRate) {
+		super();
+		this.prodNo = prodNo;
+		this.userNo = userNo;
+		this.hallNo = hallNo;
+		this.prodName = prodName;
+		this.prodType = prodType;
+		this.beginShow = beginShow;
+		this.endShow = endShow;
+		this.beginRez = beginRez;
+		this.endRez = endRez;
+		this.showTime = showTime;
+		this.viewTime = viewTime;
+		this.viewGrade = viewGrade;
+		this.notice = notice;
+		this.cancelInfo = cancelInfo;
+		this.status = status;
+		this.posterPath = posterPath;
+		this.theaterName = theaterName;
+		this.hallName = hallName;
+		this.seatpriceList = seatpriceList;
+		this.productDisList = productDisList;
+		this.detailNo = detailNo;
+		this.seatpriceNo = seatpriceNo;
+		this.dcName = dcName;
+		this.dcRate = dcRate;
 	}
 
 	// 메소드
@@ -288,7 +325,21 @@ public class ProductVo {
 		this.detailNo = detailNo;
 	}
 	
-	
+	public String getDcName() {
+		return dcName;
+	}
+
+	public void setDcName(String dcName) {
+		this.dcName = dcName;
+	}
+
+	public String getDcRate() {
+		return dcRate;
+	}
+
+	public void setDcRate(String dcRate) {
+		this.dcRate = dcRate;
+	}
 
 	public String getSeatpriceNo() {
 		return seatpriceNo;
@@ -307,7 +358,8 @@ public class ProductVo {
 				+ viewGrade + ", notice=" + notice + ", cancelInfo=" + cancelInfo + ", status=" + status
 				+ ", posterPath=" + posterPath + ", theaterName=" + theaterName + ", hallName=" + hallName
 				+ ", seatpriceList=" + seatpriceList + ", productDisList=" + productDisList + ", detailNo=" + detailNo
-				+ ", seatpriceNo=" + seatpriceNo + "]";
+				+ ", seatpriceNo=" + seatpriceNo + ", dcName=" + dcName + ", dcRate=" + dcRate + "]";
 	}
-	
+
+
 }

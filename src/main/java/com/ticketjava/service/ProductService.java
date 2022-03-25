@@ -165,6 +165,7 @@ public class ProductService {
 		rankMap.put("concert", pd.rank(3));
 		rankMap.put("sports", pd.rank(4));
 		rankMap.put("exhibition", pd.rank(5));
+		rankMap.put("bigdis", pd.bigdisList());
 		
 		return rankMap;
 	}

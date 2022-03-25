@@ -268,7 +268,7 @@
 
 										<div class="ratingStarBox">
 											<!--골드스타 5점 만점 -->
-											<div class="star-rating space-x-4 mx-auto">
+											<div class="star-rating space-x-4 mx-auto left-margin">
 												<input type="radio" id="5-stars" name="rating" value="5" /> 
 												<label for="5-stars" class="star pr-4">★</label> 
 												<input type="radio" id="4-stars" name="rating" value="4" /> 

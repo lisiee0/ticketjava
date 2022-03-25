@@ -218,4 +218,9 @@ public class ProductDao {
 	public List<ProductVo> rank(int prodType) {
 		return sqlsession.selectList("product.topListbyType", prodType);
 	}
+	
+	// 할인률 top5 (랭킹페이지)
+	public List<ProductVo> bigdisList() {
+		return sqlsession.selectList("product.bigdisList");
+	}
 }

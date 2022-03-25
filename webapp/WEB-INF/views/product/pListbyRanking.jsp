@@ -40,8 +40,33 @@
 						<div class="row">
 							<table class="rankingTable">
 								<tr>
+									<th>최대할인</th>
+									<td class="list-bgc">
+										<ul class="nav navbar-nav">
+											<c:forEach items="${rank.bigdis}" var="vo" varStatus="status">
+												<li class="rank-list">
+													<div>
+														<span class= ${status.count le 3 ? "flagtop" : "flag"}>${status.count}</span>
+														<a href="${pageContext.request.contextPath}/product/info?prodNo=${vo.prodNo}"><img class="rank-poster" src="${pageContext.request.contextPath}/upload/${vo.posterPath}"></a>
+													</div>
+													<div>
+														<p class="text-center title"><strong>${vo.prodName}</strong></p>
+														<p class="text-center">${vo.theaterName} ${vo.hallName}</p>
+														<p class="text-center">${vo.dcName} ${vo.dcRate}%</p>
+													</div>
+												</li>
+											</c:forEach>
+										</ul>
+									</td>
+									<td></td>
+								</tr>
+							</table>
+						</div>
+					
+						<div class="row">
+							<table class="rankingTable">
+								<tr>
 									<th>뮤지컬</th>
-									<td class="btnArea"><td>
 									<td class="list-bgc">
 										<ul class="nav navbar-nav">
 											<c:forEach items="${rank.musical}" var="vo" varStatus="status">
@@ -67,7 +92,6 @@
 							<table class="rankingTable">
 								<tr>
 									<th>연극</th>
-									<td class="btnArea"><td>
 									<td class="list-bgc">
 										<ul class="nav navbar-nav">
 											<c:forEach items="${rank.play}" var="vo" varStatus="status">
@@ -93,7 +117,6 @@
 							<table class="rankingTable">
 								<tr>
 									<th>콘서트</th>
-									<td class="btnArea"><td>
 									<td class="list-bgc">
 										<ul class="nav navbar-nav">
 											<c:forEach items="${rank.concert}" var="vo" varStatus="status">
@@ -119,7 +142,6 @@
 							<table class="rankingTable">
 								<tr>
 									<th>스포츠</th>
-									<td class="btnArea"><td>
 									<td class="list-bgc">
 										<ul class="nav navbar-nav">
 											<c:forEach items="${rank.sports}" var="vo" varStatus="status">
@@ -145,7 +167,6 @@
 							<table class="rankingTable">
 								<tr>
 									<th>전시</th>
-									<td class="btnArea"><td>
 									<td class="list-bgc">
 										<ul class="nav navbar-nav">
 											<c:forEach items="${rank.exhibition}" var="vo" varStatus="status">

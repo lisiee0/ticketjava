@@ -172,7 +172,7 @@ body {
 	font-size: 25px;
 	text-align: left;
 	vertical-align: top;
-	width: 80px;
+	width: 120px;
 }
 
 .rankingTable .nextBtn {
@@ -226,6 +226,13 @@ body {
 	color:#767676;
 }
 
+.rank-list p {
+	color:#767676;	
+}
+
+.rank-list .title {
+	color: black;	
+}
 .productInfo .title, .theater-info .title {
 	font-size: 16px;
 	font-weight: bolder;
@@ -439,6 +446,10 @@ body {
 	padding: 0 0.2em;
 	text-align: center;
 	width: 5em;
+}
+
+.left-margin {
+	margin-left: 17px;
 }
 
 .star-rating input {
