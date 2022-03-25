@@ -81,16 +81,16 @@
 								<div id="list">
 									<table>
 										<colgroup>
-											<col width="5%">
+											<%-- <col width="5%"> --%>
 											<col width="25%">
 											<col width="25%">
-											<col width="15%">
+											<col width="20%">
 											<col width="15%">
 											<col width="15%">
 										</colgroup>
 										<thead>
 											<tr>
-												<th>번호</th>
+												<!-- <th>번호</th> -->
 												<th>상품명</th>
 												<th>후기내용</th>
 												<th>평점</th>
@@ -102,8 +102,8 @@
 										<tbody>
 											<c:forEach items="${review.pagingList}" var="vo">
 												<tr>
-													<td>${vo.reviewNo}</td>
-													<td id="space" class="text-left"><a href="product/info?prodNo=${vo.prodNo}">${vo.prodName}</a></td>
+													<%-- <td>${vo.reviewNo}</td> --%>
+													<td id="space" class="text-left-margin"><a href="product/info?prodNo=${vo.prodNo}">${vo.prodName}</a></td>
 													<td id="space">${vo.content}</td>
 													<td>
 														<div class="star-print"> <c:forEach var="i" begin="1" end="${vo.rating}"> ★ </c:forEach> </div>
