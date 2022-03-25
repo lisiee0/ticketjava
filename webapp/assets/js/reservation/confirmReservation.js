@@ -30,7 +30,7 @@ $(function(){
 	        	pg: 'inicis',
 	            pay_method: 'card',
 	            merchant_uid: 'merchant_' + new Date().getTime(),
-	            name: '주문명:결제테스트',
+	            name: '상품명',
 	            amount: 100, 
 
 	            buyer_email: 'test@test.com',
@@ -47,7 +47,6 @@ $(function(){
 	        });
         
         
-			
 		}
 	});
 	
