@@ -117,6 +117,13 @@ body {
 	width: 50px;
 }
 
+.nav-border {
+	margin-top: 23px;
+	padding: 20px 0px 20px 0px;
+	border-top: 2px solid #d3d3d3;
+	border-bottom: 2px solid #d3d3d3;
+}
+
 .review-qna {
 	font-size: 14px;
 	text-align: center;

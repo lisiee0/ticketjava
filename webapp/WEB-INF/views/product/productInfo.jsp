@@ -146,9 +146,8 @@
 					</div>
 
 					<!-- 공연상세 페이지 네비 -->
-					<div class="container section">
-						<div class="row navbar-spy">
-
+					<div class="container nav-border">
+						<div>
 							<ul class="nav navbar-nav" role="tablist">
 								<li class="scroll"><a href="#prodPath">공연정보</a></li>
 								<li class="scroll"><a href="#castingPath">캐스팅정보</a></li>
@@ -158,7 +157,6 @@
 								<li class="scroll"><a href="#cancel">예매/취소안내</a></li>
 								<!-- <li class="scroll"><a href="#qnalist">Q&A</a></li> -->
 							</ul>
-
 						</div>
 					</div>
 

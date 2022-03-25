@@ -127,10 +127,12 @@
 								<div id="map"></div>
 							</div>
 							<div class="col-xs-6">
-								<p><strong>[공연장 정보]</strong></p><br>
-								<p>장소: ${map.vo.theaterName}</p>
-								<p>주소: ${map.vo.address} ${map.vo.address2}</p>
-								<p>대표번호: ${map.vo.phone}</p>
+								<div class="notice-black">
+									<p><strong>[공연장 정보]</strong></p><br>
+									<p>장소: ${map.vo.theaterName}</p>
+									<p>주소: ${map.vo.address} ${map.vo.address2}</p>
+									<p>대표번호: ${map.vo.phone}</p>
+								</div>
 							</div>
 						</div>
 					</div>
