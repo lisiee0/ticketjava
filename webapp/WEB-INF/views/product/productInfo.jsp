@@ -110,10 +110,10 @@
 											<th>할인</th>
 											<td>
 												<table id="saleTable">
-													<c:forEach items="${product.seatPrice}" var="vo">
+													<c:forEach items="${product.discount}" var="vo">
 														<tr>
-															<td>${vo.grade}석</td>
-															<td><span class="point-color">${vo.price}</span>원</td>
+															<td id="dcname">${vo.dcName}</td>
+															<td id="dcrate"><span class="point-color">${vo.dcRate}</span>%</td>
 														</tr>
 													</c:forEach>
 												</table>

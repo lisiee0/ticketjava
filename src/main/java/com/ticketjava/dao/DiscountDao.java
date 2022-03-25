@@ -70,5 +70,10 @@ public class DiscountDao {
 
 		sqlSession.insert("discount.discountUpload", disVo);
 	}
+	
+	// prodNo별(상품별) 할인정보 가져오기
+	public List<DiscountVo> disbyprod(int prodNo) {
+		return sqlSession.selectList("discount.disbyprod", prodNo);
+	}
 
 }

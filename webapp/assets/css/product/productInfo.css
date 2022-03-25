@@ -90,17 +90,31 @@ body {
 	padding: 1px 0px 0px 0px;
 }
 
-#priceTable tr, #saleTable tr {
+#priceTable tr {
 	height: 27px;
 	font-size: 18px;
 	text-align: left;
 } 
 
-#priceTable tr>td, #saleTable tr>td {
+#priceTable tr>td {
 	text-transform: uppercase;
 	font-size: 16px;
 	height: 25px;
 	width: 70px;
+}
+
+#saleTable tr {
+	height: 27px;
+	font-size: 16px;
+	text-align: left;	
+}
+
+#dcname {
+	width: 150px;
+}
+
+#dcrate {
+	width: 50px;
 }
 
 .review-qna {

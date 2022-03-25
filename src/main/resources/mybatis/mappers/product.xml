@@ -357,7 +357,7 @@
 			and     		p.prod_no= #{prodNo}
 		]]>
 	</select>
-
+	
 
 	<!-- 특정 공연장 예매가능 상품 리스트 -->
 	<select id="availListbyTheater" parameterType="ProductVo" resultType="ProductVo">

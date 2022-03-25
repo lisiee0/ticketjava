@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.ticketjava.dao.DetailDao;
+import com.ticketjava.dao.DiscountDao;
 import com.ticketjava.dao.HallDao;
 import com.ticketjava.dao.NoticeDao;
 import com.ticketjava.dao.ProductDao;
@@ -33,6 +34,8 @@ public class ProductService {
 	private HallDao hd;
 	@Autowired
 	private ReviewDao rd;
+	@Autowired
+	private DiscountDao disd;
 	
 	
 	// prodType별 TOP4 리스트 & 모든상품 리스트
@@ -96,6 +99,7 @@ public class ProductService {
 		pMap.put("detail", dd.getDetail(prodNo));
 		pMap.put("theater", hd.getHallbyprodNo(prodNo));
 		pMap.put("review", rd.pagingrList(prodNo, startRnum, endRnum));
+		pMap.put("discount", disd.disbyprod(prodNo));
 		pMap.put("paging", paging);
 		
 		return pMap;

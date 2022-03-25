@@ -120,10 +120,6 @@
 	</insert>
 
 
-
-
-
-
 	<select id="getDis" parameterType="DiscountVo" resultType="DiscountVo">
 		<![CDATA[
 			select			dc_no dcNo,
@@ -145,5 +141,24 @@
 			where 		dc_no= #{dcNo}
 		]]>
 	</delete>
+	
+	<!-- 상품상세정보 페이지- 할인정보 가져오기  -->
+	<select id="disbyprod" parameterType="int" resultType="DiscountVo">
+		<![CDATA[
+			select			dc_no dcNo,
+				            d.prod_no prodNo,
+				            dcname,
+				            begindc,
+				            enddc,
+				            dcrate,
+				            dctype
+			from        	product p, discount d
+			where       	p.prod_no= d.prod_no
+			and         	dctype= 0
+			and         	begindc is null
+			and         	p.prod_no= #{prodNo}
+			order by    	dcrate asc
+		]]>
+	</select>
 
 </mapper>
