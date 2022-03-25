@@ -3,3 +3,33 @@
 .paging {
 	text-align: center;
 }
+
+.position-left {
+	float: left;
+	height: 34px;
+}
+
+.adminform{
+	height: 34px;	
+}
+
+.position {
+	float: right;
+	width: 120px;
+	margin: 0px 0px 10px 0px;
+}
+
+.searchBtn {
+	width: 200px;
+	height: 34px;
+	display: inline-block;
+}
+
+.adBtn {
+	margin-bottom: 5px;
+}
+
+.np {
+	padding: 0px;
+	margin-top: 15px;
+}

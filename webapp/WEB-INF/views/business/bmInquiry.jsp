@@ -47,7 +47,7 @@
 						<ul>
 							<li><h3>공연 관리</h3></li>
 							<li><a href="${pageContext.request.contextPath}/bm/">공연 목록</a></li>
-							<!-- <li><a href="#">공연 수정</a></li> -->
+							<li><a href="#">공연 수정</a></li>
 						</ul>
 						<!-- 						<ul> -->
 						<!-- 							<li><h3>문의 관리</h3></li> -->
