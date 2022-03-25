@@ -83,7 +83,7 @@
 
 							<div class="col-xs-12 np clearfix">
 								<div class="position-left">
-									<form action="${pageContext.request.contextPath}/admin/theaterSearch" method="post" class="adminform">
+									<form action="${pageContext.request.contextPath}/bm/searchResult" method="post" class="adminform">
 										<input type="text" class="form-control searchBtn" name="key" placeholder="공연 검색">
 										<button type="submit" class="btn btn-primary index-search adBtn"><span class="glyphicon glyphicon-search"></span></button>
 									</form>
