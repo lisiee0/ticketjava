@@ -93,7 +93,7 @@
 										<button type="submit" class="btn btn-primary index-search adBtn"><span class="glyphicon glyphicon-search"></span></button>
 									</form>
 								</div>
-								<a href="${pageContext.request.contextPath}/admin/theaterAddpage" class="btn btn-primary position">공연 등록</a>
+								<a href="${pageContext.request.contextPath}/bm/bmForm" class="btn btn-primary position">공연 등록</a>
 							</div>
 						</div>
 						<!-- //content-head -->
