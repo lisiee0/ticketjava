@@ -29,6 +29,17 @@ public class ProductDao {
 		return sqlsession.selectOne("product.totalCnt", userNo);
 	}
 	
+	// userNo(사업자별) 검색결과 상품 총 개수
+	public int searchResultCnt(int userNo, String key) {
+		
+		Map<String, Object> map= new HashMap<String, Object>();
+		map.put("userNo", userNo);
+		map.put("key", key);
+		
+		return sqlsession.selectOne("product.searchResultCnt", map);
+	}
+	
+	
 	// 공연 리스트(페이징)
 	public List<ProductVo> getPagingList(int userNo, int startRnum, int endRnum) {
 		
@@ -39,6 +50,19 @@ public class ProductDao {
 		
 		return sqlsession.selectList("product.getPagingList", map);
 	}
+	
+	// 검색결과 공연 리스트(페이징)
+	public List<ProductVo> pagingSearchResult(int userNo, String key, int startRnum, int endRnum) {
+		
+		Map<String, Object> map= new HashMap<String, Object>();
+		map.put("userNo", userNo);
+		map.put("key", key);
+		map.put("startRnum", startRnum);
+		map.put("endRnum", endRnum);
+		
+		return sqlsession.selectList("product.pagingSearchResult", map);
+	}
+	
 
 	// 공연 추가
 	public int productUpload(ProductVo productVo) {

@@ -169,6 +169,61 @@
 			where rn between #{startRnum} and #{endRnum}   
 		]]>
 	</select>
+	
+	
+	<!-- userNo(사업자별) 검색결과 상품 총 개수 -->
+	<select id="searchResultCnt" parameterType="map" resultType="int">
+		<![CDATA[
+			select			count(*)
+			from 			product p, users u
+			where 			p.user_no= u.user_no
+			and 			u.user_no= #{userNo}
+            and             prodname like '%'||#{key}||'%'	
+		]]>
+	</select>
+	
+	
+	<!-- userNo(사업자별) 검색결과 상품 리스트(페이징) -->
+	<select id="pagingSearchResult" parameterType="map" resultType="ProductVo">
+		<![CDATA[
+			select			rn,
+					        prodNo,
+					        theatername,
+					        hallname,
+					        prodname,
+					        beginShow,
+					        endShow,
+					        userNo,
+					        status
+			from    		(select    	   rownum rn,
+						                   prodNo,
+						                   theatername,
+						                   hallname,
+						                   prodname,
+						                   beginShow,
+						                   endShow,
+						                   userNo,
+						                   status
+					        from       	   (select  	    p.prod_no prodNo,
+						                                    theatername,
+						                                    hallname,
+						                                    prodname,
+						                                    to_char(beginshow, 'YYYY-MM-DD') beginShow,
+						                                    to_char(endshow, 'YYYY-MM-DD') endShow,
+						                                    u.user_no userNo,
+						                                    status
+						                    from    	    product p, theater t, hall h, users u
+						                    where   	    p.hall_no = h.hall_no
+						                    and             h.theater_no = t.theater_no
+						                    and             p.user_no= u.user_no
+						                    and             u.user_no= #{userNo}
+                                            and             prodname like '%'||#{key}||'%'
+						                    order by        p.prod_no desc))
+			where rn between #{startRnum} and #{endRnum}
+		]]>
+	</select>
+	
+	
 
 
 

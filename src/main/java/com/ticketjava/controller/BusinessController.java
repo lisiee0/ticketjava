@@ -40,6 +40,19 @@ public class BusinessController {
 		model.addAttribute("product", businessService.getPagingList(crtPage, userNo));
 		return "business/bmInquiry";
 	}
+	
+	// 공연 검색결과 리스트
+	@RequestMapping("/searchResult")
+	public String bmSearchResult(@RequestParam(value="crtPage", required= false, defaultValue= "1") int crtPage,
+								 @RequestParam("key") String key ,HttpSession session ,Model model) {
+		
+		UserVo authUser = (UserVo)session.getAttribute("authUser");
+		int userNo = authUser.getUserNo();
+		
+		model.addAttribute("search", businessService.searchResult(crtPage, userNo, key));
+		
+		return "business/bmSearchResult";
+	}
 
 	// 공연 등록 폼
 	@RequestMapping(value = "bmForm", method = { RequestMethod.GET, RequestMethod.POST })
