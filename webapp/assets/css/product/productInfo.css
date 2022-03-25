@@ -128,8 +128,14 @@ body {
 	vertical-align: middle;
 }
 
-#text-review, #qna {
-	height: 100px;
+.disabled {
+	background-color: #e9e9e9;
+	margin: 0px 0px 15px 0px;
+}
+
+
+.textarea-size {
+	height: 200px;
 	margin: 20px 0px 0px 0px;
 }
 .review-qna th{
@@ -460,6 +466,9 @@ body {
 	-webkit-text-stroke-color: #2b2a29;
 }
 
+.star-margin {
+	margin-left: 20px;
+}
 
 
 .tag {
@@ -468,12 +477,20 @@ body {
 	margin-bottom: 5px;	
 }
 
-#notice {
+.notice {
 	font-size: 16px;
 	color: red;
 	font-weight: bold;
 	margin-bottom: 20px;
 }
+
+.notice-black {
+	font-size: 16px;
+	color: black;
+	font-weight: bold;
+	margin-bottom: 20px;
+}
+
 
 .title {
 	overflow:hidden;

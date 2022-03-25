@@ -169,7 +169,7 @@
 							<div class="col-xs-9 np" id="infoDetail">
 								<p class="tag">[공지사항]</p>
 								<br>
-								<div id="notice">${product.vo.notice}</div>
+								<div class="notice">${product.vo.notice}</div>
 								<p id="prodPath" class="tag">[공연정보]</p>
 								<img src="${pageContext.request.contextPath}/upload/${product.detail.prodPath}">
 
@@ -247,15 +247,15 @@
 					</div>
 
 					<!-- 후기작성 로그인해야 보임 -->
-					<div class="container bgc">
+					<div class="container disabled">
 
 						<div class="row">
 
 							<c:choose>
 								<c:when test="${empty sessionScope.authUser}">
 									<form action="${pageContext.request.contextPath}/product/writeReview" method="get">
-										<textarea class="form-control" name="content" placeholder="후기를 남기려면 로그인 해야합니다" disabled></textarea>
-										<br> <span class="star"> ★★★★★ <span>★★★★★</span> <input type="range" oninput="drawStar(this)" value="1" step="1" min="0" max="5">
+										<textarea class="form-control textarea-size" name="content" placeholder="후기를 남기려면 로그인 해주세요" disabled></textarea>
+										<br><span class="star star-margin"> ★★★★★ <span>★★★★★</span> <input type="range" oninput="drawStar(this)" value="1" step="1" min="0" max="5">
 										</span> <input type="hidden" name="prodNo" value="${product.vo.prodNo}"> <input type="hidden" name="userNo" value="">
 
 										<button type="submit" class="btn btn-primary position" disabled>등록</button>
@@ -304,13 +304,12 @@
 								<div id="map"></div>
 							</div>
 							<div class="col-xs-6">
-								<p>
-									<strong>[공연장 정보]</strong>
-								</p>
-								<br>
-								<p>장소: ${product.theater.theaterName} ${product.theater.hallName}</p>
-								<p>주소: ${product.theater.address} ${product.theater.address2}</p>
-								<p>대표번호: ${product.theater.phone}</p>
+								<div class="notice-black">
+									<p><strong>[공연장 정보]</strong></p><br>
+									<p>장소: ${product.theater.theaterName} ${product.theater.hallName}</p>
+									<p>주소: ${product.theater.address} ${product.theater.address2}</p>
+									<p>대표번호: ${product.theater.phone}</p>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -320,12 +319,10 @@
 					<div class="container section">
 						<div class="row">
 							<h4 id="cancel" class="cateMenu">예매/취소 안내</h4>
-							<p>예매 취소 시 주의사항
-							<p>
-							<p>티켓 예매 후 7일 이내에 취소 시, 취소수수료가 없습니다.</p>
-							<p>단, 예매 후 7일 이내라도 취소 시점이 공연일로부터 10일 이내라면 그에 해당하는 취소수수료가 부과됩니다.</p>
-							<p>예매 당일 자정(12:00) 전에 취소할 경우 예매 수수료가 환불되며, 그 이후에는 환불되지 않습니다.</p>
-							<p>예매티켓 취소는 아래 안내된 취소가능일 이내에만 할 수 있습니다.</p>
+							<div class="notice">
+								<p><strong>[예매 취소 시 주의사항]</strong></p><br>
+								${product.vo.cancelInfo}
+							</div>
 						</div>
 					</div>
 
