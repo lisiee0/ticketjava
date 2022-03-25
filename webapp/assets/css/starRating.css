@@ -5,10 +5,10 @@
 .star-rating {
 	display: flex;
 	flex-direction: row-reverse;
-	font-size: 2.25rem;
-	line-height: 2.5rem;
+	font-size: 2rem;
+	line-height: 2rem;
 	justify-content: space-around;
-	padding: 0 0.2em;
+	padding: 0 0.1rem;
 	text-align: center;
 	width: 5em;
 }

@@ -21,3 +21,11 @@ table {
 .paging {
 	text-align: center;
 }
+
+/* 테이블 상품명 좌측 마진 */
+.text-left-margin {
+	margin: 0px 0px 0px 1px;
+}
+
+
+
