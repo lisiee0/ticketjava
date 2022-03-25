@@ -47,6 +47,7 @@
 						<ul>
 							<li><h3>공연 관리</h3></li>
 							<li><a href="${pageContext.request.contextPath}/bm/">공연 목록</a></li>
+							<li><a href="#">공연 수정</a></li>
 						</ul>
 						<!-- 						<ul> -->
 						<!-- 							<li><h3>문의 관리</h3></li> -->
@@ -86,6 +87,7 @@
 							<div class="clear">
 								<!-- 파란줄 출력 -->
 							</div>
+
 							<div class="col-xs-12 np clearfix">
 								<div class="position-left">
 									<form action="${pageContext.request.contextPath}/admin/theaterSearch" method="post" class="adminform">
@@ -95,6 +97,7 @@
 								</div>
 								<a href="${pageContext.request.contextPath}/bm/bmForm" class="btn btn-primary position">공연 등록</a>
 							</div>
+
 						</div>
 						<!-- //content-head -->
 
@@ -129,7 +132,7 @@
 											<tr>
 												<td>${vo.prodNo}</td>
 												<td class=""><a href="${pageContext.request.contextPath}/product/info?prodNo=${vo.prodNo}">${vo.prodName}</a></td>
-												<td>${vo.theaterName}</td>
+												<td>${vo.theaterName} ${vo.hallName}</td>
 												<td>${vo.beginShow}~${vo.endShow}</td>
 												<td><select name="status" id="status">
 														<c:choose>
