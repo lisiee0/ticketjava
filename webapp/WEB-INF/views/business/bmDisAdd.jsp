@@ -54,10 +54,9 @@
 			<div class="disTable">
 				<table id="dateDiscount">
 					<colgroup>
-						<col style="">
-						<col style="">
-						<col style="">
-						<col style="width: 75%">
+						<col style="width:30%;">
+						<col style="width:30%;">
+						<col style="width:20%;">
 						<col style="">
 					</colgroup>
 					<tr>
@@ -68,18 +67,21 @@
 					<tr>
 						<td><input id="beginDc" class="form-control" type="date" name="beginDc"></td>
 						<td><input id="endDc" class="form-control" type="date" name="endDc"></td>
-						<td><select id="dcType" class="form-control" name="dcType">
+						<td>
+							<select id="dcType" class="form-control" name="dcType">
 								<option value="0">%</option>
 								<option value="1">원</option>
-						</select></td>
-						<td><input id="dcRate" class="form-control" type="text" name="dcRate" placeholder="% 또는 원"></td>
-						<td>
-							<button id="addBtn" class="btn btn-default" type="button">+</button>
+							</select>
 						</td>
+						<td><input id="dcRate" class="form-control" type="text" name="dcRate" placeholder="% 또는 원"></td>
+						
 					</tr>
 					<tr>
-						<td colspan="4">
+						<td colspan="3">
 							<input id="dcName" class="form-control" type="text" placeholder="할인 설명">
+						</td>
+						<td>
+							<button id="addBtn" class="btn btn-default" type="button">+</button>
 						</td>
 					</tr>
 				</table>
@@ -215,17 +217,23 @@
 	// 리스트 그리기
 	function render(vo, updown) {
 
+		var dcType= vo.dcType;
+		if(dcType ==  0)
+			dcType='%';
+		else
+			dcType='원';
+		
 		var str = '';
 		str += ' <table id="a'+vo.dcNo+'"> ';
 		str += ' 	<colgroup> ';
 		str += ' 		<col style="width: 55%;"> ';
-		str += ' 		<col style="width: 10%;"> ';
-		str += ' 		<col style="width: 25%;"> ';
+		str += ' 		<col style="width: 15%;"> ';
+		str += ' 		<col style="width: 20%;"> ';
 		str += ' 		<col style="width: 10%;"> ';
 		str += ' 	</colgroup> ';
 		str += ' 	<tr> ';
 		str += ' 		<td>'+vo.beginDc+' ~ '+vo.endDc+'</td> ';
-		str += ' 		<td>'+vo.dcRate+'</td> ';
+		str += ' 		<td>'+vo.dcRate+''+dcType+'</td> ';
 		str += ' 		<td>'+vo.dcName+'</td> ';
 		str += ' 		<td><button id="delBtn" class="btn btn-outline-primary" type="button" data-no="'+vo.dcNo+'">삭제</button></td> ';
 		str += ' 	</tr> ';
