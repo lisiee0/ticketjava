@@ -101,10 +101,10 @@
 									<div class="form-group">
 										<div class="col-md-6">
 											<select class="form-control" name="hallNo">
-												<c:forEach items="${bmProductMap.bmGetHallList}" var="vo">
-													<option id="hallNo" name="hallNo" value="${bmProductMap.bmGetProduct.hallNo}" <c:if test ="${bmProductMap.bmGetProduct.hallNo eq vo.hallNo}">selected="selected"</c:if>>${vo.theaterName},${vo.hallName},${vo.hallNo}</option>
-												</c:forEach>
 												<option selected>공연장을 선택해주세요.</option>
+												<c:forEach items="${bmProductMap.bmGetHallList}" var="vo">
+													<option id="hallNo" value="${bmProductMap.bmGetProduct.hallNo}" <c:if test ="${bmProductMap.bmGetProduct.hallNo eq vo.hallNo}">selected="selected"</c:if>>${vo.theaterName},${vo.hallName}</option>
+												</c:forEach>
 											</select>
 										</div>
 									</div>
