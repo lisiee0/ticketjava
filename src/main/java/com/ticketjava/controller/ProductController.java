@@ -65,6 +65,13 @@ public class ProductController {
 		return "product/productInfo";
 	}
 	
+	@RequestMapping("/preview")
+	public String productPreview(@RequestParam(value="crtPage", required= false, defaultValue= "1") int crtPage,
+					  @RequestParam("prodNo") int prodNo, Model model) {
+		
+		model.addAttribute("product", productService.getProduct(prodNo, crtPage));
+		return "product/productInfo";
+	}
 
 	// 상품 검색하기
 	@RequestMapping("/search")
