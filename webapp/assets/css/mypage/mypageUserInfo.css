@@ -1,0 +1,87 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
+
+body{
+	font-family: 'Noto Sans KR', sans-serif;
+}
+
+.clearfix{*zoom:1;}
+.clearfix:before, .clearfix:after {display: block; content: ""; line-height: 0;}
+.clearfix:after {clear: both;}
+
+
+html, body, div, span,h1, h2, h3, h4, h5, h6, p, a, img, strong, ol, ul, 
+li, fieldset, form, label, legend, table, tbody, tfoot, thead, tr, th, td{
+ 	margin: 0; 
+ 	padding: 0;
+ }
+ 
+ #containerMain {
+	display: grid;
+	grid-template-columns: 0.8fr 500px 0.8fr;
+	grid-template-rows: 1fr;
+	gap: 0px 0px;
+	grid-auto-flow: row;
+	grid-template-areas:". formArea .";
+}
+
+
+#containerMain #formArea{
+	margin-top:60px;
+	margin-bottom:60px;
+}
+
+#containerMain #formArea table{
+	width:100%;
+}
+
+#containerMain #formArea table th{
+	font-size: 19px;
+}
+
+#containerMain #formArea table tr{
+	height:50px;
+	padding:10px 0px;
+}
+
+#containerMain #formArea table td{
+	padding: 5px 0px;
+}
+
+#containerMain #formArea .form-control{
+	display:inline;
+}
+
+
+#containerMain #formArea input,
+#containerMain #formArea button{
+	height:40px;
+}
+
+
+#containerMain #formArea input[type=checkbox],
+#containerMain #formArea input[type=radio]{
+	width:15px;
+	height:15px;
+}
+
+#containerMain #formArea td.outlineBtn{
+	padding-left:10px;
+}
+
+
+/* 회원탈퇴 */
+
+.userOutnotice h3 {
+	font-size:30px;
+	text-align:center;
+}	
+
+.userOutnotice h4 {
+	margin : 10px 0px 0px 0px;
+	font-size:20px;
+	text-align:center;
+}
+
+

@@ -97,6 +97,20 @@
 	color : #6697f2;
 }
 
+/*예매 상태 - 정상예매중 취소됨*/
+.rezStatusOn {
+	color: #6697f2;
+	font-weight: bold;
+} 
+
+.rezStatusOff {
+	color: #D73201;
+}
+
+.rezGrade {
+	font-weight: bold;
+}
+
 
 /* 수수료 안내 2000원 */
 .noticePee {

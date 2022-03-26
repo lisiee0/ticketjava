@@ -20,9 +20,7 @@
 
 <!-- 개인 css (폴더로 관리 권장 ex assets/css/mypage/ticketing.css) -->
 <link href="${pageContext.request.contextPath}/assets/css/mypage/ticketjavaMypageCommon.css" rel="stylesheet" type="text/css">
-
-<link href="${pageContext.request.contextPath}/assets/css/login/member.css" rel="stylesheet">
-<link href="${pageContext.request.contextPath}/assets/css/login/modifyForm.css" rel="stylesheet">
+<link href="${pageContext.request.contextPath}/assets/css/mypage/mypageUserInfo.css" rel="stylesheet">
 
 
 </head>
@@ -72,7 +70,7 @@
 						<!-- //content-head -->
 
 
-						<div id="containerMain">
+						<section id="containerMain">
 							<div></div>
 							<div id="formArea">
 								<table>
@@ -154,7 +152,7 @@
 
 							<div></div>
 
-						</div>
+						</section>
 						<!-- //containerMain  -->
 
 

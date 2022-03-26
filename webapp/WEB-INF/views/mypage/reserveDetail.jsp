@@ -140,7 +140,7 @@
 												<c:forEach items="${requestScope.rMap.reserveSeatList}" var="vo">
 													<tr>
 														<td><c:if test="${vo.status eq 1}"><input type="checkbox" name="selseatNo" value="${vo.selseatNo}" /></c:if></td>
-														<td>${vo.grade}석</td>
+														<td><p class="rezGrade">${vo.grade}석</p></td>
 														<td>${vo.dcName}<c:if test="${empty vo.dcName}">일반</c:if></td>
 														<td>${vo.section}구역</td>
 														<td>${vo.col}열${vo.num}번</td>
@@ -148,10 +148,10 @@
 														<td>
 															<c:choose>
 																<c:when test="${vo.status eq 1}">
-																	정상 예매중
+																	<p class="rezStatusOn">정상 예매중</p>
 																</c:when>
 																<c:otherwise>
-																	취소됨
+																	<p class="rezStatusOff">취소됨</p>
 																</c:otherwise>
 															</c:choose>
 														</td>								
