@@ -85,7 +85,9 @@
 								<div class="position-left">
 									<form action="${pageContext.request.contextPath}/bm/searchResult" method="post" class="adminform">
 										<input type="text" class="form-control searchBtn" name="key" placeholder="공연 검색">
-										<button type="submit" class="btn btn-primary index-search adBtn"><span class="glyphicon glyphicon-search"></span></button>
+										<button type="submit" class="btn btn-primary index-search adBtn">
+											<span class="glyphicon glyphicon-search"></span>
+										</button>
 									</form>
 								</div>
 								<a href="${pageContext.request.contextPath}/bm/bmForm" class="btn btn-primary position">공연 등록</a>
@@ -124,8 +126,8 @@
 										<c:forEach items="${product.pagingList}" var="vo">
 											<tr>
 												<td>${vo.prodNo}</td>
-												<td class=""><a href="${pageContext.request.contextPath}/product/info?prodNo=${vo.prodNo}">${vo.prodName}</a></td>
-												<td>${vo.theaterName} ${vo.hallName}</td>
+												<td class="prodName"><a href="${pageContext.request.contextPath}/product/info?prodNo=${vo.prodNo}">${vo.prodName}</a></td>
+												<td>${vo.theaterName}${vo.hallName}</td>
 												<td>${vo.beginShow}~${vo.endShow}</td>
 												<td><select name="status" id="status">
 														<c:choose>
@@ -138,8 +140,8 @@
 																<option value="1">노출 on</option>
 															</c:otherwise>
 														</c:choose>
-												</select>
-													<button type="button" class="btn btn-outline-primary" id="showbTn">확인</button></td>
+													</select>
+													<a href="" onclick="${vo.status}.submit();"><span class="glyphicon glyphicon-pencil">확인</span></a>&nbsp;&nbsp;
 												<td><a class="eventdis" data-no="${vo.prodNo}" href="${pageContext.request.contextPath}/bm/discount?prodNo=${vo.prodNo}">이벤트 할인 추가</a></td>
 												<td><a data-no="${vo.prodNo}" href="${pageContext.request.contextPath}/bm/bmModifyForm?prodNo=${vo.prodNo}">수정</a></td>
 												<%--<td><a href="${pageContext.request.contextPath}/bm/bmDelete?prodNo=${vo.prodNo}">삭제</a></td> --%>
@@ -148,28 +150,28 @@
 										</c:forEach>
 									</tbody>
 								</table>
-								
+
 								<!-- 페이징 -->
-								<div class="row paging">				
+								<div class="row paging">
 									<nav>
-									  <ul class="pagination">
-									  	<li><a href="javascript:PageMove(${product.paging.firstPageNo})"><span class="glyphicon glyphicon-triangle-left"></span></a></li>
-										<li class= ${product.paging.pageNo eq product.paging.firstPageNo ? "disabled" : ""}><a href="javascript:PageMove(${product.paging.prevPageNo})"><span class="glyphicon glyphicon-menu-left"></span></a></li>
-							
-										<c:forEach var="i" begin="${product.paging.startPageNo}" end="${product.paging.endPageNo}" step="1">
-											<c:choose>
-												<c:when test="${i eq product.paging.pageNo}">
-													<li class= ${product.paging.pageNo eq i ? "active" : ""}><a href="javascript:PageMove(${i})">${i}</a></li>
-												</c:when>
-												<c:otherwise>
-													<li class= ${product.paging.pageNo eq i ? "active" : ""}><a href="javascript:PageMove(${i})">${i}</a></li>
-												</c:otherwise>
-											</c:choose>
-										</c:forEach>
-										
-									    <li class= ${product.paging.pageNo eq product.paging.finalPageNo ? "disabled" : ""}><a href="javascript:PageMove(${product.paging.nextPageNo})"><span class="glyphicon glyphicon-menu-right"></span></a></li>
-									    <li><a href="javascript:PageMove(${product.paging.finalPageNo})"><span class="glyphicon glyphicon-triangle-right"></span></a></li>
-									  </ul>
+										<ul class="pagination">
+											<li><a href="javascript:PageMove(${product.paging.firstPageNo})"><span class="glyphicon glyphicon-triangle-left"></span></a></li>
+											<li class=${product.paging.pageNo eq product.paging.firstPageNo ? "disabled" : ""}><a href="javascript:PageMove(${product.paging.prevPageNo})"><span class="glyphicon glyphicon-menu-left"></span></a></li>
+
+											<c:forEach var="i" begin="${product.paging.startPageNo}" end="${product.paging.endPageNo}" step="1">
+												<c:choose>
+													<c:when test="${i eq product.paging.pageNo}">
+														<li class=${product.paging.pageNo eq i ? "active" : ""}><a href="javascript:PageMove(${i})">${i}</a></li>
+													</c:when>
+													<c:otherwise>
+														<li class=${product.paging.pageNo eq i ? "active" : ""}><a href="javascript:PageMove(${i})">${i}</a></li>
+													</c:otherwise>
+												</c:choose>
+											</c:forEach>
+
+											<li class=${product.paging.pageNo eq product.paging.finalPageNo ? "disabled" : ""}><a href="javascript:PageMove(${product.paging.nextPageNo})"><span class="glyphicon glyphicon-menu-right"></span></a></li>
+											<li><a href="javascript:PageMove(${product.paging.finalPageNo})"><span class="glyphicon glyphicon-triangle-right"></span></a></li>
+										</ul>
 									</nav>
 								</div>
 
@@ -212,13 +214,12 @@
 	var No = $('#status').val
 
 	console.log(No);
-	
-	
+
 	function PageMove(page) {
 
-		location.href = "${pageContext.request.contextPath}/bm/?crtPage=" + page;	
+		location.href = "${pageContext.request.contextPath}/bm/?crtPage="
+				+ page;
 	}
-	
 </script>
 
 </html>

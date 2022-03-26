@@ -1,35 +1,54 @@
 @charset "UTF-8";
 
+#board #list table>tbody>tr>td {
+		font-size: 12px;
+}
+
+#board #list table>tbody>tr>.prodName {
+		font-weight: bold;
+}
+
+#board #list table>thead>tr {
+		border-top: 2px solid #808080;
+		border-bottom: 2px solid #808080;
+		background-color: #d9edf7;
+}
+
 .paging {
-	text-align: center;
+		text-align: center;
 }
 
 .position-left {
-	float: left;
-	height: 34px;
+		float: left;
+		height: 34px;
 }
 
-.adminform{
-	height: 34px;	
+.adminform {
+		height: 34px;
 }
 
 .position {
-	float: right;
-	width: 120px;
-	margin: 0px 0px 10px 0px;
+		float: right;
+		width: 120px;
+		margin: 0px 0px 10px 0px;
 }
 
 .searchBtn {
-	width: 200px;
-	height: 34px;
-	display: inline-block;
+		width: 200px;
+		height: 34px;
+		display: inline-block;
 }
 
 .adBtn {
-	margin-bottom: 5px;
+		margin-bottom: 5px;
 }
 
 .np {
-	padding: 0px;
-	margin-top: 15px;
+		padding: 0px;
+		margin-top: 15px;
+}
+
+#showbTn {
+		padding: 0px;
+		width: 5px;
 }

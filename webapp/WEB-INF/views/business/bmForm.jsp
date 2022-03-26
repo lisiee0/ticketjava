@@ -315,7 +315,7 @@
 							</div>
 							<!-- hidden -->
 							<div>
-								<input type="hidden" id="status" name="status" value="1"> <input type="hidden" id="userNo" name="userNo" value="2">
+								<input type="hidden" id="status" name="status" value="0"> <input type="hidden" id="userNo" name="userNo" value="2">
 							</div>
 
 						</div>
