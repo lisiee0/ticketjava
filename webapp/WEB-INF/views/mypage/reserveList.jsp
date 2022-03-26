@@ -144,7 +144,7 @@
 														<td>${reserveList.rezNo}</td>
 														<td>${reserveList.rezdate}</td>
 														<td class="text-left"><a href="${pageContext.request.contextPath}/product/info?prodNo=${reserveList.prodNo}">${reserveList.prodname}</a></td>
-														<td>${reserveList.viewdate}/${reserveList.ticketCount}매</td>
+														<td>${reserveList.showtime}/${reserveList.ticketCount}매</td>
 
 														<c:choose>
 															<c:when test="${reserveList.status eq 1}">

@@ -102,7 +102,8 @@
 			        p.prodname prodname,
 			        to_char(r.viewdate, 'yy-mm-dd') viewdate,
 			        r.ticketCount ticketCount,
-			        r.status status
+			        to_char(p.showtime, 'yy-mm-dd hh24:mi') showtime,
+                    r.status status
 			        
 			from (select 
 							r.rez_no,
@@ -112,15 +113,13 @@
 							r.status,
 							r.prod_no,
 							count(s.selseat_no) ticketCount
-							
 			      from		reserve r, selseat s
 			      where		r.rez_no = s.rez_no
-			      			
+                  and       s.status = 1
 			      group by	r.rez_no, r.user_no, r.rezdate, r.viewdate, r.status, r.prod_no) r, product p
 			
 			where	r.prod_no = p.prod_no
 			and		r.user_no = #{userNo}
-	  
 	]]>	
 	</select>
 
