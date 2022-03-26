@@ -100,7 +100,7 @@
 			        to_char(r.rezdate, 'yy-mm-dd hh24:mi') rezdate,
 			        r.prod_no prodNo,
 			        p.prodname prodname,
-			        to_char(r.viewdate, 'yy-mm-dd hh24:mi') viewdate,
+			        to_char(r.viewdate, 'yy-mm-dd') viewdate,
 			        r.ticketCount ticketCount,
 			        r.status status
 			        
