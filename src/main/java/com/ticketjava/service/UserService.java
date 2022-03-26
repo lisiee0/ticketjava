@@ -24,7 +24,18 @@ public class UserService {
 		userDao.insertUser(userVo);
 		
 	}
-
+	
+//	회원정보 수정
+	public void userModifyAction (UserVo userVo) {
+		String password = userVo.getPassword();	// 입력 비밀번호
+		String salt = PasswordHash.getSalt();	// 16자리 랜덤 문자열
+		userVo.setPassword( PasswordHash.getSHA256(password+salt)); // 회원가입 > 입력 비밀번호+랜덤 문자열 조합으로 해시함수 적용한 결과를 비밀번호로 저장 
+		userVo.setSalt(salt);	// 로그인을 위해 salt값도 같이 저장
+		
+		userDao.userModifyAction(userVo);
+	}
+	
+	
 	public UserVo getAuthUser(UserVo userVo) {
 		String salt = userDao.selectSalt(userVo.getId());
 		String inputPw = userVo.getPassword();
@@ -52,10 +63,6 @@ public class UserService {
 			return false;
 	}
 
-	
-	public void userModifyAction (UserVo userVo) {
-		userDao.userModifyAction(userVo);
-	}
 	
 	public void userOutAction (UserVo userVo, int userNo, String password) {
 		userDao.userOutAction(userVo, userNo, password);

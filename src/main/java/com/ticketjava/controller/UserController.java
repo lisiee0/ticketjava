@@ -113,25 +113,34 @@ public class UserController {
 
 //	회원정보 수정
 	@RequestMapping("/userModify")
-	public String userModify() {
-		System.out.println("UserControlller userModify");
+	public String userModify(HttpSession session, @ModelAttribute UserVo userVo) {
+		System.out.println("UserController userModify");
+		UserVo authUser = (UserVo)session.getAttribute("authUser");
+
+		System.out.println("authUser 출력"+authUser);
+		
 		return "user/userModify";
 	}
 	
 	@RequestMapping("/userModifyAction")
 	public String userModifyAction(@ModelAttribute UserVo userVo, Model model) {
-		System.out.println("UserControlller userModifyAction");
+		System.out.println("UserController userModifyAction");
 		
-		userService.userModifyAction(userVo);
+//		회원정보 변경 기능은 돌아가는데 오류 뿜뿜 -> 마음에 안든다
 		
+//		salt기능 authUser
 		UserVo authUser = userService.getAuthUser(userVo);
 		
+//		authuser 잘 가져오는지 확인
 		System.out.println("authUser 출력"+authUser);
 		
 		model.addAttribute("authUser", authUser); 
+
+//		최종 데이터 입력하기
+		userService.userModifyAction(userVo);
 		
-		return "";
-//		return "redirect:/";
+//		return "";
+		return "redirect:/";
 	}
 	
 	
@@ -139,14 +148,14 @@ public class UserController {
 //	회원탈퇴
 	@RequestMapping("/userOut")
 	public String userOut() {
-		System.out.println("UserControlller userOut");
+		System.out.println("UserController userOut");
 		return "user/userOut";
 	}
 	
 	
 	@RequestMapping("/userOutAction")
 	public String userOutAction(UserVo userVo, @RequestParam("userNo") int userNo, @RequestParam("password") String password) {
-		System.out.println("UserControlller userOutAction");
+		System.out.println("UserController userOutAction");
 		userService.userOutAction(userVo, userNo, password);
 		return "";
 //		return "redirect:/";

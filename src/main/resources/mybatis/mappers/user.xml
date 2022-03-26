@@ -100,13 +100,13 @@
 	<![CDATA[
 			update users set
 			 
-			password = #{password},
-			phone = #{phone},
-			postcode = #{postcode},
-			address = #{address},
-			address2 = #{address2},
-			email = #{email},
-			salt = #{salt}
+			password = 	#{password},
+			phone = 	#{phone},
+			postcode = 	#{postcode},
+			address = 	#{address},
+			address2 = 	#{address2},
+			email = 	#{email},
+			salt =		#{salt}
 			
 			where user_no = #{userNo}
 	]]>
