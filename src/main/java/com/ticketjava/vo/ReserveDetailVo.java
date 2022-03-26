@@ -25,22 +25,21 @@ public class ReserveDetailVo {
 	private String hallname; // 시설 (1관 2관)
 	private String rezdate; // 예매일
 	private String viewdate; // 관람일
-
+	private String showtime; // 공연시작시간 (product)
+	
 	private String section; // selseat 구역
 	private int col; // 열 (a열)
 	private int num; // 번호 (3번자리)
 
-	private String dcName;
+	private String dcName; // 할인설명
 
-	
-	
 	public ReserveDetailVo() {
 	}
 
 	public ReserveDetailVo(int userNo, int rezNo, int prodNo, int theaterNo, int selseatNo, String grade, int payment,
 			int status, int ticketCount, int selseatCount, int totalPayment, String name, String prodname,
 			String showTime, String phone, String email, String theatername, String hallname, String rezdate,
-			String viewdate, String section, int col, int num, String dcName) {
+			String viewdate, String showtime2, String section, int col, int num, String dcName) {
 		this.userNo = userNo;
 		this.rezNo = rezNo;
 		this.prodNo = prodNo;
@@ -61,6 +60,7 @@ public class ReserveDetailVo {
 		this.hallname = hallname;
 		this.rezdate = rezdate;
 		this.viewdate = viewdate;
+		showtime = showtime2;
 		this.section = section;
 		this.col = col;
 		this.num = num;
@@ -227,6 +227,14 @@ public class ReserveDetailVo {
 		this.viewdate = viewdate;
 	}
 
+	public String getShowtime() {
+		return showtime;
+	}
+
+	public void setShowtime(String showtime) {
+		this.showtime = showtime;
+	}
+
 	public String getSection() {
 		return section;
 	}
@@ -266,12 +274,12 @@ public class ReserveDetailVo {
 				+ status + ", ticketCount=" + ticketCount + ", selseatCount=" + selseatCount + ", totalPayment="
 				+ totalPayment + ", name=" + name + ", prodname=" + prodname + ", showTime=" + showTime + ", phone="
 				+ phone + ", email=" + email + ", theatername=" + theatername + ", hallname=" + hallname + ", rezdate="
-				+ rezdate + ", viewdate=" + viewdate + ", section=" + section + ", col=" + col + ", num=" + num
-				+ ", dcName=" + dcName + "]";
+				+ rezdate + ", viewdate=" + viewdate + ", showtime=" + showtime + ", section=" + section + ", col="
+				+ col + ", num=" + num + ", dcName=" + dcName + "]";
 	}
 
 	
-
+	
 	
 	
 
