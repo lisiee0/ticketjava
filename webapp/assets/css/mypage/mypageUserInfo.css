@@ -74,6 +74,7 @@ li, fieldset, form, label, legend, table, tbody, tfoot, thead, tr, th, td{
 /* 회원탈퇴 */
 
 .userOutnotice h3 {
+	margin:100px 0px 0px 0px;
 	font-size:30px;
 	text-align:center;
 }	

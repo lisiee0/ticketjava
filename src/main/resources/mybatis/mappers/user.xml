@@ -95,8 +95,30 @@
 		]]>
 	</select>
 	
-
+	<!-- 회원정보 변경 -->
+	<update id="updateUser" parameterType="UserVo">
+	<![CDATA[
+			update users set
+			 
+			password = #{password},
+			phone = #{phone},
+			postcode = #{postcode},
+			address = #{address},
+			address2 = #{address2},
+			email = #{email},
+			salt = #{salt}
+			
+			where user_no = #{userNo}
+	]]>
+	</update>
 	
-	
+	<!-- 회원 탈퇴 - 예매내역 있으면 탈퇴 불가 (userNo에 걸린 rezNo) -->
+	<delete id="deleteUser" parameterType="UserVo">
+	<![CDATA[
+			DELETE FROM users 
+			WHERE		user_no = #{userNo}
+			and			password = #{password}
+	]]>
+	</delete>
 	
 </mapper>

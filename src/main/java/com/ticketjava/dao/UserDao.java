@@ -1,6 +1,8 @@
 package com.ticketjava.dao;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -42,6 +44,20 @@ public class UserDao {
 		return sqlSession.selectOne("user.selectDupId", id);
 	}
 	
+//	회원 정보 수정
+	public void userModifyAction(UserVo userVo) {
+		sqlSession.update("user.updateUser", userVo);
+	}
 	
+//	회원 탈퇴 - 예매내역(rezNo) 있으면 탈퇴불가 
+	public void userOutAction(UserVo userVo, int userNo, String password) {
+		
+		Map<String, Object> map= new HashMap<>();
+		map.put("userVo", userVo);
+		map.put("userNo", userNo);
+		map.put("password", password);
+		
+		sqlSession.delete("user.deleteUser", map);
+	}
 	
 }

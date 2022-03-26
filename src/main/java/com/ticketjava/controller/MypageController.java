@@ -205,12 +205,36 @@ public class MypageController {
 		return "mypage/userModify";
 	}
 	
+	@RequestMapping("/userModifyAction")
+	public String userModifyAction(@ModelAttribute UserVo userVo, Model model) {
+		System.out.println("MypageControlller userModifyAction");
+		
+		userService.userModifyAction(userVo);
+		
+		UserVo authUser = userService.getAuthUser(userVo);
+		
+		model.addAttribute("authUser", authUser); 
+		
+		return "";
+//		return "redirect:/";
+	}
+	
+	
 	
 //	회원탈퇴
 	@RequestMapping("/userOut")
 	public String userOut() {
 		System.out.println("MypageController userOut");
 		return "mypage/userOut";
+	}
+	
+	
+	@RequestMapping("/userOutAction")
+	public String userOutAction(UserVo userVo, @RequestParam("userNo") int userNo, @RequestParam("password") String password) {
+		System.out.println("MypageController userOutAction");
+		userService.userOutAction(userVo, userNo, password);
+		return "";
+//		return "redirect:/";
 	}
 	
 	

@@ -73,6 +73,7 @@
 						<section id="containerMain">
 							<div></div>
 							<div id="formArea">
+							<form action="${pageContext.request.contextPath}/mypage/userModifyAction" method="get">
 								<table>
 									<colgroup>
 										<col style="width: 25%">
@@ -82,13 +83,13 @@
 									</colgroup>
 									<tr>
 										<th>아이디</th>
-										<td colspan="3"><input class="form-control" type="text" placeholder="guest1234"></td>
+										<td colspan="3"><input class="form-control" type="text" name="id" placeholder="${authUser.id}" readonly></td>
 										<td class="outlineBtn"></td>
 									</tr>
 
 									<tr>
 										<th>비밀번호</th>
-										<td colspan="3"><input class="form-control" type="password" placeholder="현재 비밀번호를 입력하세요" autofocus></td>
+										<td colspan="3"><input class="form-control" type="password" name="passwordOld" placeholder="현재 비밀번호를 입력하세요" autofocus></td>
 									</tr>
 
 									<tr>
@@ -98,38 +99,38 @@
 
 									<tr>
 										<th></th>
-										<td colspan="3"><input class="form-control" type="password" placeholder="변경할 비밀번호를 입력하세요"></td>
+										<td colspan="3"><input class="form-control" type="password" name="passwordNew" placeholder="변경할 비밀번호를 입력하세요"></td>
 									</tr>
 
 									<tr>
 										<th></th>
-										<td colspan="3"><input class="form-control" type="password" placeholder="변경할 비밀번호를 다시 입력하세요"></td>
+										<td colspan="3"><input class="form-control" type="password" name="passwordNew2" placeholder="변경할 비밀번호를 다시 입력하세요"></td>
 									</tr>
 
 									<tr>
 										<th>전화번호</th>
-										<td colspan="3"><input class="form-control" type="text" placeholder="01012345678"></td>
+										<td colspan="3"><input class="form-control" type="text" name="phone" placeholder="01012345678"></td>
 									</tr>
 
 									<tr>
 										<th>주소</th>
-										<td><input class="form-control" type="text" placeholder="우편번호" readonly></td>
+										<td><input class="form-control" type="text" name="postcode" placeholder="우편번호" readonly></td>
 										<td colspan="2" class="outlineBtn"><button class="form-control btn-outline-primary" type="button">우편번호 찾기</button></td>
 									</tr>
 
 									<tr>
 										<td></td>
-										<td colspan="3"><input class="form-control" type="text" placeholder="주소"></td>
+										<td colspan="3"><input class="form-control" type="text" name="address" placeholder="주소"></td>
 									</tr>
 
 									<tr>
 										<td></td>
-										<td colspan="3"><input class="form-control" type="text" placeholder="상세주소"></td>
+										<td colspan="3"><input class="form-control" type="text" name="address2" placeholder="상세주소"></td>
 									</tr>
 
 									<tr>
 										<th>이메일</th>
-										<td colspan="2"><input class="form-control" type="text" placeholder="이메일"></td>
+										<td colspan="2"><input class="form-control" type="text" name="email" placeholder="이메일"></td>
 										<td class="outlineBtn"><button class="form-control btn-outline-primary" type="button">인증번호 발송</button></td>
 									</tr>
 
@@ -144,9 +145,10 @@
 										</label></td>
 									</tr>
 									<tr>
-										<td colspan="4"><button id="joinBtn" class="form-control btn-primary">회원정보 수정</button></td>
+										<td colspan="4"><button type="submit" id="joinBtn" class="form-control btn-primary">회원정보 수정</button></td>
 									</tr>
 								</table>
+								</form>
 							</div>
 
 

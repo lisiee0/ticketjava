@@ -81,12 +81,14 @@
 								</div>
 								<div>
 									<h4>회원탈퇴시 혜택은 소멸하고, 가입정보는 즉시 파기되어 복구불가 합니다.</h4>
+									<h4>예매 내역이 있으면 탈퇴 할 수 없습니다.</h4>
 								</div>
 							</div>
 
 							<section id="containerMain">
 								<div></div>
 								<div id="formArea">
+								<form action="${pageContext.request.contextPath}/mypage/userOutAction" method="get">
 									<table>
 										<colgroup>
 											<col style="width: 25%">
@@ -97,18 +99,17 @@
 
 										<tr>
 											<th>아이디</th>
-											<td colspan="3"><input class="form-control" type="text" placeholder="guest1234"></td>
-
+											<td colspan="3"><input class="form-control" type="text" name="id" placeholder="${authUser.id}"></td>
 										</tr>
 
 										<tr>
 											<th>비밀번호</th>
-											<td colspan="3"><input class="form-control" type="password" placeholder="현재 비밀번호를 입력하세요"></td>
+											<td colspan="3"><input class="form-control" type="password" name="password" placeholder="현재 비밀번호를 입력하세요" autofocus></td>
 										</tr>
 
 										<tr>
 											<th></th>
-											<td colspan="3"><input class="form-control" type="password" placeholder="비밀번호를 다시 입력하세요"></td>
+											<td colspan="3"><input class="form-control" type="password" name="password2" placeholder="비밀번호를 다시 입력하세요"></td>
 										</tr>
 
 										<tr>
@@ -116,9 +117,11 @@
 											</label></td>
 										</tr>
 										<tr>
-											<td colspan="4"><button id="joinBtn" class="form-control btn-primary">티켓자바와 이별하기</button></td>
+											<td colspan="4"><button type="submit" id="joinBtn" class="form-control btn-primary">티켓자바와 이별하기</button></td>
 										</tr>
 									</table>
+									<input type="hidden" name="userNo" value="${authUser.userNo}">
+									</form>
 								</div>
 
 

@@ -53,4 +53,12 @@ public class UserService {
 	}
 
 	
+	public void userModifyAction (UserVo userVo) {
+		userDao.userModifyAction(userVo);
+	}
+	
+	public void userOutAction (UserVo userVo, int userNo, String password) {
+		userDao.userOutAction(userVo, userNo, password);
+	}
+	
 }
