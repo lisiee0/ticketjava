@@ -4,6 +4,7 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -108,4 +109,47 @@ public class UserController {
 		
 		return "user/changeSuccess";
 	}
+	
+
+//	회원정보 수정
+	@RequestMapping("/userModify")
+	public String userModify() {
+		System.out.println("MypageControlller userModify");
+		return "user/userModify";
+	}
+	
+	@RequestMapping("/userModifyAction")
+	public String userModifyAction(@ModelAttribute UserVo userVo, Model model) {
+		System.out.println("MypageControlller userModifyAction");
+		
+		userService.userModifyAction(userVo);
+		
+		UserVo authUser = userService.getAuthUser(userVo);
+		
+		model.addAttribute("authUser", authUser); 
+		
+		return "";
+//		return "redirect:/";
+	}
+	
+	
+	
+//	회원탈퇴
+	@RequestMapping("/userOut")
+	public String userOut() {
+		System.out.println("MypageController userOut");
+		return "user/userOut";
+	}
+	
+	
+	@RequestMapping("/userOutAction")
+	public String userOutAction(UserVo userVo, @RequestParam("userNo") int userNo, @RequestParam("password") String password) {
+		System.out.println("MypageController userOutAction");
+		userService.userOutAction(userVo, userNo, password);
+		return "";
+//		return "redirect:/";
+	}
+	
+	
+	
 }

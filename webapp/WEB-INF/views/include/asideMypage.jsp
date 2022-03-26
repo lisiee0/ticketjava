@@ -42,8 +42,8 @@
 			</ul>
 			<ul>
 				<li><h3>회원정보</h3></li>
-				<li><a href="${pageContext.request.contextPath}/mypage/userModify">회원정보</a></li>
-				<li><a href="${pageContext.request.contextPath}/mypage/userOut">탈퇴</a></li>
+				<li><a href="${pageContext.request.contextPath}/user/userModify">회원정보</a></li>
+				<li><a href="${pageContext.request.contextPath}/user/userOut">탈퇴</a></li>
 			</ul>
 		</div>
 	</nav>
