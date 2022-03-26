@@ -75,7 +75,7 @@
 					<div class="col-xs-4 searchBar">
 						<form action="${pageContext.request.contextPath}/product/search" method="post">
 							<div class="input-group search-group">
-								<input type="text" class="form-control dis vm zp" placeholder="" name="keyword" value="">
+								<input type="text" class="form-control dis vm" placeholder="" name="keyword" value="">
 								<span class="input-group-btn">
 									<button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-search"></span></button>
 								</span>
