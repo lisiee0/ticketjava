@@ -112,8 +112,9 @@ public class ReviewDao {
 		map.put("reviewNo", reviewNo);
 		map.put("rating", rating);
 		map.put("content", content);
-		
-		sqlSession.update("review.ReviewUpdate", map);
+
+		sqlSession.update("review.reviewUpdate", map); 
+				
 	} 
 	
 	

@@ -252,7 +252,7 @@
 
 
 <!-- 리뷰 수정 -->	
-<update id="ReviewUpdate" parameterType="ReviewVo">
+<update id="reviewUpdate" parameterType="ReviewVo">
 	<![CDATA[
 		update 		review
 		set
