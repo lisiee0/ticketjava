@@ -114,13 +114,13 @@ public class UserController {
 //	회원정보 수정
 	@RequestMapping("/userModify")
 	public String userModify() {
-		System.out.println("MypageControlller userModify");
+		System.out.println("UserControlller userModify");
 		return "user/userModify";
 	}
 	
 	@RequestMapping("/userModifyAction")
 	public String userModifyAction(@ModelAttribute UserVo userVo, Model model) {
-		System.out.println("MypageControlller userModifyAction");
+		System.out.println("UserControlller userModifyAction");
 		
 		userService.userModifyAction(userVo);
 		
@@ -137,14 +137,14 @@ public class UserController {
 //	회원탈퇴
 	@RequestMapping("/userOut")
 	public String userOut() {
-		System.out.println("MypageController userOut");
+		System.out.println("UserControlller userOut");
 		return "user/userOut";
 	}
 	
 	
 	@RequestMapping("/userOutAction")
 	public String userOutAction(UserVo userVo, @RequestParam("userNo") int userNo, @RequestParam("password") String password) {
-		System.out.println("MypageController userOutAction");
+		System.out.println("UserControlller userOutAction");
 		userService.userOutAction(userVo, userNo, password);
 		return "";
 //		return "redirect:/";

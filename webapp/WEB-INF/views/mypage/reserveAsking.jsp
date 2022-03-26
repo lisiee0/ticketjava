@@ -84,7 +84,8 @@
 											<th>답변</th>
 										</tr>
 									</thead>
-									<form action="" name="" method="get">
+
+									<form action="/askingAction" name="asking" method="get">
 										<tbody>
 
 											<tr>
