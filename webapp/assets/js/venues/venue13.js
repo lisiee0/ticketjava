@@ -3,131 +3,50 @@ $(function(){
 	var seatMap = [];
 	
 	var sectionA = [
-		'nnnvvvvv',
-		'nnnvvvvv',
-		'nrvvvvvv',
-		'nrvvvvvv',
-		'rvvvvvvv',
-		'rvvvvvvv',
-		'rvvvvvvv',
-		'rvvvvvvv',
-		'rrrrrrrr',
-		'rrrrrrrr'
+		'vvvvvvvvvvvvvvvvv',
+		'vvvvvvvvvvvvvvvvv',
+		'vvvvvvvvvvvvvvvvv',
+		'rrrrrrrrrrrrrrrrr',
+		'rrrrrrrrrrrrrrrrr',
+		'rrrrrrrrrrrrrrrrr'
 	];
 	seatMap.push(sectionA);
 	
 	var sectionB = [
-		'vvvvvvvvv',
-		'vvvvvvvvv',
-		'vvvvvvvvv',
-		'vvvvvvvvv',
-		'vvvvvvvvv',
-		'vvvvvvvvv',
-		'vvvvvvvvv',
-		'vvvvvvvvv',
-		'vvvvvvvvv',
-		'vvvvvvvvv'
+		'vvvvvvvvvvvvvvvvv',
+		'vvvvvvvvvvvvvvvvv',
+		'vvvvvvvvvvvvvvvvv',
+		'rrrrrrrrrrrrrrrrr',
+		'rrrrrrrrrrrrrrrrr',
+		'rrrrrrrrrrrrrrrrr'
 	];
 	seatMap.push(sectionB);
 	
 	var sectionC = [
-		'vvvvvnnn',
-		'vvvvvnnn',
-		'vvvvvvrn',
-		'vvvvvvrn',
-		'vvvvvvvr',
-		'vvvvvvvr',
-		'vvvvvvvr',
-		'vvvvvvvr',
-		'rrrrrrrr',
-		'rrrrrrrr'
+		'sssssssssssssssss',
+		'sssssssssssssssss',
+		'sssssssssssssssss',
+		'aaaaaaaaaaaaaaaaa',
+		'aaaaaaaaaaaaaaaaa',
+		'aaaaaaaaaaaaaaaaa'
 	];
 	seatMap.push(sectionC);
 	
-	
 	var sectionD = [
-		'nssssssssss',
-		'nssssssssss',
-		'sssssssssss',
-		'sssssssssss',
-		'nnsssssssss'
+		'sssssssssssssssss',
+		'sssssssssssssssss',
+		'sssssssssssssssss',
+		'aaaaaaaaaaaaaaaaa',
+		'aaaaaaaaaaaaaaaaa',
+		'aaaaaaaaaaaaaaaaa'
 	];
 	seatMap.push(sectionD);
 	
-	var sectionE = [
-		'nnrrrrnnnrrrrnn',
-		'nrrrrrrrrrrrrrn',
-		'nrrrrrrrrrrrrrn',
-		'sssssssssssssss',
-		'ssssssnnnssssss'
-	];
-	seatMap.push(sectionE);
 	
-	var sectionF = [
-		'ssssssssssn',
-		'ssssssssssn',
-		'sssssssssss',
-		'sssssssssss',
-		'sssssssssnn'
-	];
-	seatMap.push(sectionF);
-
-	var sectionG = [
-		'nnaaaaaaaaa',
-		'nnaaaaaaaaa',
-		'naaaaaaaaaa',
-		'naaaaaaaaaa',
-		'aaaaaaaaaaa'
-	];
-	seatMap.push(sectionG);
 	
-	var sectionH = [
-		'nnsssssssssssnn',
-		'nsssssssssssssn',
-		'naaaaaaaaaaaaan',
-		'aaaaaaaaaaaaaaa',
-		'aaaaaaaannnnnnn'
-	];
-	seatMap.push(sectionH);
 	
-	var sectionI = [
-		'aaaaaaaaann',
-		'aaaaaaaaann',
-		'aaaaaaaaaan',
-		'aaaaaaaaaan',
-		'aaaaaaaaaaa'
-	];
-	seatMap.push(sectionI);
 	
-	var sectionJ = [
-		'nnbbbbbbbbb',
-		'nnbbbbbbbbb',
-		'nbbbbbbbbbb',
-		'nbbbbbbbbbb',
-		'bbbbbbbbbbb'
-	];
-	seatMap.push(sectionJ);
-	
-	var sectionK = [
-		'nnbbbbbbbbbbbnn',
-		'nnbbbbbbbbbbbnn',
-		'nbbbbbbbbbbbbbn',
-		'nbbbbbbbbbbbbbn',
-		'bbbbbbbbbbbbbbb'
-	];
-	seatMap.push(sectionK);
-	
-	var sectionL = [
-		'bbbbbbbbbnn',
-		'bbbbbbbbbnn',
-		'bbbbbbbbbbn',
-		'bbbbbbbbbbn',
-		'bbbbbbbbbbb'
-	];
-	seatMap.push(sectionL);
-
-
-	fetchSeatPlan(seatMap);
+fetchSeatPlan(seatMap);
 	
 	/* 좌석 새로고침 */
 	$('#seatRefresh').on('click',function(){

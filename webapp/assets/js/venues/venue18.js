@@ -3,130 +3,25 @@ $(function(){
 	var seatMap = [];
 	
 	var sectionA = [
-		'nnnvvvvv',
-		'nnnvvvvv',
-		'nrvvvvvv',
-		'nrvvvvvv',
-		'rvvvvvvv',
-		'rvvvvvvv',
-		'rvvvvvvv',
-		'rvvvvvvv',
-		'rrrrrrrr',
-		'rrrrrrrr'
+		'vvv',
+		'vvv',
+		'vvv',
+		'vvv',
+		'vvv'
 	];
 	seatMap.push(sectionA);
 	
 	var sectionB = [
-		'vvvvvvvvv',
-		'vvvvvvvvv',
-		'vvvvvvvvv',
-		'vvvvvvvvv',
-		'vvvvvvvvv',
-		'vvvvvvvvv',
-		'vvvvvvvvv',
-		'vvvvvvvvv',
-		'vvvvvvvvv',
-		'vvvvvvvvv'
+		'vvv',
+		'vvv',
+		'vvv',
+		'vvv',
+		'vvv'
 	];
 	seatMap.push(sectionB);
 	
-	var sectionC = [
-		'vvvvvnnn',
-		'vvvvvnnn',
-		'vvvvvvrn',
-		'vvvvvvrn',
-		'vvvvvvvr',
-		'vvvvvvvr',
-		'vvvvvvvr',
-		'vvvvvvvr',
-		'rrrrrrrr',
-		'rrrrrrrr'
-	];
-	seatMap.push(sectionC);
 	
 	
-	var sectionD = [
-		'nssssssssss',
-		'nssssssssss',
-		'sssssssssss',
-		'sssssssssss',
-		'nnsssssssss'
-	];
-	seatMap.push(sectionD);
-	
-	var sectionE = [
-		'nnrrrrnnnrrrrnn',
-		'nrrrrrrrrrrrrrn',
-		'nrrrrrrrrrrrrrn',
-		'sssssssssssssss',
-		'ssssssnnnssssss'
-	];
-	seatMap.push(sectionE);
-	
-	var sectionF = [
-		'ssssssssssn',
-		'ssssssssssn',
-		'sssssssssss',
-		'sssssssssss',
-		'sssssssssnn'
-	];
-	seatMap.push(sectionF);
-
-	var sectionG = [
-		'nnaaaaaaaaa',
-		'nnaaaaaaaaa',
-		'naaaaaaaaaa',
-		'naaaaaaaaaa',
-		'aaaaaaaaaaa'
-	];
-	seatMap.push(sectionG);
-	
-	var sectionH = [
-		'nnsssssssssssnn',
-		'nsssssssssssssn',
-		'naaaaaaaaaaaaan',
-		'aaaaaaaaaaaaaaa',
-		'aaaaaaaannnnnnn'
-	];
-	seatMap.push(sectionH);
-	
-	var sectionI = [
-		'aaaaaaaaann',
-		'aaaaaaaaann',
-		'aaaaaaaaaan',
-		'aaaaaaaaaan',
-		'aaaaaaaaaaa'
-	];
-	seatMap.push(sectionI);
-	
-	var sectionJ = [
-		'nnbbbbbbbbb',
-		'nnbbbbbbbbb',
-		'nbbbbbbbbbb',
-		'nbbbbbbbbbb',
-		'bbbbbbbbbbb'
-	];
-	seatMap.push(sectionJ);
-	
-	var sectionK = [
-		'nnbbbbbbbbbbbnn',
-		'nnbbbbbbbbbbbnn',
-		'nbbbbbbbbbbbbbn',
-		'nbbbbbbbbbbbbbn',
-		'bbbbbbbbbbbbbbb'
-	];
-	seatMap.push(sectionK);
-	
-	var sectionL = [
-		'bbbbbbbbbnn',
-		'bbbbbbbbbnn',
-		'bbbbbbbbbbn',
-		'bbbbbbbbbbn',
-		'bbbbbbbbbbb'
-	];
-	seatMap.push(sectionL);
-
-
 	fetchSeatPlan(seatMap);
 	
 	/* 좌석 새로고침 */
@@ -151,13 +46,10 @@ $(function(){
 				$('#seatArea'+sectionCh).append('<tr id="col'+col+'"></tr>');
 	
 				num=1;
-				for(var s=0; s<=seatMap[section][col].length;s++){
+				for(var s=0; s<seatMap[section][col].length;s++){
 					
 					if(s<seatMap[section][col].length){
 						render(seatMap[section][col][s], col, sectionCh);
-					}
-					else{
-						renderCol(col, sectionCh);
 					}
 						
 				}
