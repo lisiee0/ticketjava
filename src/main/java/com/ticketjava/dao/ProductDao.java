@@ -223,4 +223,8 @@ public class ProductDao {
 	public List<ProductVo> bigdisList() {
 		return sqlsession.selectList("product.bigdisList");
 	}
+
+	public void updateExposure(ProductVo productVo) {
+		sqlsession.update("product.updateExposure", productVo);
+	}
 }
