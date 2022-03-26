@@ -126,6 +126,8 @@ public class UserController {
 		
 		UserVo authUser = userService.getAuthUser(userVo);
 		
+		System.out.println("authUser 출력"+authUser);
+		
 		model.addAttribute("authUser", authUser); 
 		
 		return "";
