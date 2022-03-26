@@ -53,5 +53,13 @@ public class SelseatDao {
 	public int selectOccupyForPre(Map<String, Object> map) {
 		return sqlSession.selectOne("selseat.selectOccupyForPre", map);
 	}
+
+	public int selectUserCount() {
+		return sqlSession.selectOne("selseat.selectUserCount");
+	}
+
+	public int selectCumulativeTime() {
+		return sqlSession.selectOne("selseat.selectCumulativeTime");
+	}
 	
 }

@@ -105,4 +105,22 @@
 			      s.status = 1
 		]]>
 	</select>
+	
+	<select id="selectUserCount" resultType="int">
+		<![CDATA[
+			select count(*)
+			from selseat
+			where status = 1
+		]]>
+	</select>
+	
+	<select id="selectCumulativeTime" resultType="int">
+		<![CDATA[
+			select sum(viewtime)
+			from selseat s, reserve r, product p
+			where s.status = 1 and
+				  s.rez_no = r.rez_no and
+				  r.prod_no = p.prod_no
+		]]>
+	</select>
 </mapper>
