@@ -1488,7 +1488,7 @@ insert into review values (SEQ_REVIEW_NO.nextval, 105, 7, '오랜만에 가족�
 ---------------------------------------------------------------
 Insert into USERS (USER_NO,ID,PASSWORD,NAME,PHONE,POSTCODE,ADDRESS,ADDRESS2,EMAIL,USERTYPE,JOINDATE,BIZNO,SALT) values (10,'hankyu','9dfbfbb14113a8c3e6577980484fded3f245bb71411ee4f0785eca0bf203bb3a','서한규','01012341234','13494','경기 성남시 분당구 판교역로 235','1155','2ser0m2@naver.com',1,to_date('22/03/27','RR/MM/DD'),null,'jZv2fUFOw8JlvUgf');
 
-Insert into RESERVE (REZ_NO,PROD_NO,USER_NO,REZDATE,VIEWDATE,PHONE,EMAIL,TOTALPAYMENT,STATUS) values (2,126,3,to_date('22/03/27','RR/MM/DD'),to_date('22/03/31','RR/MM/DD'),'01012347945','2ser0m2@naver.com',40882000,1);
+Insert into RESERVE (REZ_NO,PROD_NO,USER_NO,REZDATE,VIEWDATE,PHONE,EMAIL,TOTALPAYMENT,STATUS) values (2,105,3,to_date('22/03/27','RR/MM/DD'),to_date('22/03/31','RR/MM/DD'),'01012347945','2ser0m2@naver.com',40882000,1);
 ---------------------------------------------------------------
 
 Insert into SELSEAT (SELSEAT_NO,REZ_NO,DC_NO,GRADE,SECTION,COL,NUM,PAYMENT,STATUS,PRETIME) values (430,2,null,'vip','C',6,6,150000,1,to_date('22/03/27','RR/MM/DD'));
