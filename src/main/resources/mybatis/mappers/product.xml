@@ -353,7 +353,6 @@
 			from    		product p, hall h, theater t
 			where   		p.hall_no= h.hall_no
 			and     		h.theater_no= t.theater_no
-			and				status= 1
 			and     		p.prod_no= #{prodNo}
 		]]>
 	</select>
