@@ -217,15 +217,6 @@
 										<button type="button" id="delGrade" class="btn">-</button>
 										<br>
 									</div>
-									<div class="form-group">
-										<div class="col-md-4">
-											<input type="hidden" class="form-control selGrade" readonly>
-										</div>
-										<div class="col-md-4">
-											<input type="hidden" class="form-control selPrice" readonly>
-										</div>
-									</div>
-
 									<!--좌석추가 Script -->
 									<div id="bmNameArea"></div>
 
@@ -352,25 +343,22 @@
 	console.log()
 
 	//등급추가 버튼
-	$("#addGrade")
-			.on(
-					"click",
-					function() {
-						var gra = $("#grade").val();
-						var selp = $("#price").val();
-						console.log(gra);
+	$("#addGrade").on("click",function() {
+		var gra = $("#grade").val();
+		var selp = $("#price").val();
+		console.log(gra);
 
-						$("#bmNameArea")
-								.prepend(
-										'<div class="form-group">'
-												+ '<div class="col-md-4">'
-												+ '<input type="text" class="form-control selGrade" name="grade" value="' + gra + '" readonly>'
-												+ '</div>'
-												+ '<div class="col-md-4">'
-												+ '<input type="text" class="form-control selPrice" name="price" value="' + selp + '">'
-												+ '</div>' + '&nbsp;'
-												+ '</div>');
-					});
+		$("#bmNameArea")
+				.prepend(
+						'<div class="form-group">'
+								+ '<div class="col-md-4">'
+								+ '<input type="text" class="form-control selGrade" name="grade" value="' + gra + '" readonly>'
+								+ '</div>'
+								+ '<div class="col-md-4">'
+								+ '<input type="text" class="form-control selPrice" name="price" value="' + selp + '">'
+								+ '</div>' + '&nbsp;'
+								+ '</div>');
+	});
 
 	//등급삭제 버튼
 	$("#delGrade").on("click", function() {
