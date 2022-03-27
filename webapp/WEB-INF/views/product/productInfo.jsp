@@ -458,15 +458,7 @@ function render(reviewVo, updown) { // 1명씩 정보를 받아 처리 button의
 
 //에이작스 리뷰작성 종료
 
-
-	$(function(){
-		var viewDate = $('#viewDate').val();
-		if ( viewDate != ''){
-			window.open('', 'reserve', 'width=960, height=800, left=300, top=100');
-			$('#rezArea').submit();
-		}
-	});
-
+$(function(){ 
 	var today = new Date();
 	var beginshow = new Date($('#beginshow').val());
 	var md = new Date();
@@ -483,6 +475,31 @@ function render(reviewVo, updown) { // 1명씩 정보를 받아 처리 button의
 		minDate : new Date(md),
 	  	maxDate : new Date($('#endshow').val())
 	});
+	
+	
+	var paramViewDate = $('#viewDate').val();
+	var year = paramViewDate.substring(0,4);
+	var month = paramViewDate.substring(5,7);
+	var date = paramViewDate.substring(8);
+	if ( paramViewDate != ''){
+		var paramViewDate = new Date(paramViewDate);
+		var endShow = new Date($('#endshow').val());
+		
+		$('[data-date='+date+'][data-month='+(month-1)+'][data-year='+year+']').addClass('-selected-');
+		
+		console.log(year);
+		console.log(month);
+		console.log(date);
+		
+		
+		
+		if( paramViewDate >=  md && paramViewDate <= endShow ) {
+			window.open('', 'reserve', 'width=960, height=800, left=300, top=100');
+			$('#rezArea').submit();
+		} 
+	}
+	
+	
 	
 	$("#rezBtn").on("click", function() {
 		
@@ -556,7 +573,7 @@ function render(reviewVo, updown) { // 1명씩 정보를 받아 처리 button의
 		location.href = "${pageContext.request.contextPath}/product/info?prodNo=${param.prodNo}&crtPage=" + page+ "#review"
 	}
 	
-	
+});	
 	
 	
 </script>

@@ -45,6 +45,7 @@ public class ReservationController {
 		
 		if(!userService.loginCheck(session)) { 
 			model.addAttribute("prodNo", reservationVo.getProdNo()); // 예매하려는 공연 번호
+			model.addAttribute("viewDate",reservationVo.getViewDate());
 			return "error/requireLogin";
 		}
 		

@@ -44,6 +44,9 @@
 							<c:if test="${param.prodNo != null}">
 								<input type="hidden" name="prodNo" value="${param.prodNo}">
 							</c:if>
+							<c:if test="${param.viewDate != null}">
+								<input type="hidden" name="viewDate" value="${param.viewDate}">
+							</c:if>
 						</form>	
 						<div id="helperArea">
 							<button id="findId" class="form-control btn-default helper" type="button">아이디 찾기</button>

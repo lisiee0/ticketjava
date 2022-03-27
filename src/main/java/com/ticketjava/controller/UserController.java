@@ -32,6 +32,7 @@ public class UserController {
 	@PostMapping("/login")
 	public String login(@ModelAttribute UserVo userVo,
 						@RequestParam(value="prodNo", required=false, defaultValue="0") int prodNo,
+						@RequestParam(value="viewDate", required=false, defaultValue="0") String viewDate,
 						HttpSession session) {
 		
 		UserVo authUser = userService.getAuthUser(userVo);
@@ -41,7 +42,7 @@ public class UserController {
 		else {
 			session.setAttribute("authUser", authUser);
 			if(prodNo > 0) {
-				return "redirect:/product/info?prodNo="+prodNo;
+				return "redirect:/product/info?prodNo="+prodNo+"&viewDate="+viewDate;
 			}
 			else {
 				return "redirect:/";

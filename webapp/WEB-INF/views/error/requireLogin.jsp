@@ -18,6 +18,6 @@
 <script type="text/javascript">
 	alert('로그인 후 이용해주세요');
 	close();
-	opener.location.href = '${pageContext.request.contextPath}/user/loginForm?prodNo=${prodNo}';
+	opener.location.href = '${pageContext.request.contextPath}/user/loginForm?prodNo=${prodNo}&viewDate=${viewDate}';
 </script>
 </html>
