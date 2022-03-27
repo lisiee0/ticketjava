@@ -132,6 +132,7 @@
 						        p.prod_no prodNo,
 						        u.name name,
 						        p.prodname prodname,
+						        to_char(p.showtime, 'yy-mm-dd hh24:mi') showtime,
                                 r.email email,
                                 r.phone phone,
 						        to_char(showTime, 'hh24:mi') showTime,

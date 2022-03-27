@@ -38,54 +38,51 @@ public class BusinessService {
 	private HallDao hd;
 	@Autowired
 	private SeatpriceDao sd;
-	/*
-	// 공연 목록 불러오기
-	public List<ProductVo> getProductList() {
-		System.out.println("BusinessServiece > bmInquiry");
 
-		return pd.getProductList();
-	}
-	*/
+	/*
+	 * // 공연 목록 불러오기 public List<ProductVo> getProductList() {
+	 * System.out.println("BusinessServiece > bmInquiry");
+	 * 
+	 * return pd.getProductList(); }
+	 */
 	// 공연 목록 불러오기(페이징)
 	public Map<String, Object> getPagingList(int crtPage, int userNo) {
-		
-		int listCnt= 10; // 한 페이지당 글 개수
-		int startRnum= (crtPage-1)*listCnt +1; // 시작글 번호
-		int endRnum= (startRnum+listCnt) -1; // 마지막글 번호
 
-		Paging paging= new Paging();
+		int listCnt = 10; // 한 페이지당 글 개수
+		int startRnum = (crtPage - 1) * listCnt + 1; // 시작글 번호
+		int endRnum = (startRnum + listCnt) - 1; // 마지막글 번호
+
+		Paging paging = new Paging();
 		paging.setPageNo(crtPage);
 		paging.setPageSize(listCnt);
 		paging.setTotalCount(pd.totalCnt(userNo));
-		
+
 		Map<String, Object> pMap = new HashMap<String, Object>();
 		pMap.put("pagingList", pd.getPagingList(userNo, startRnum, endRnum));
 		pMap.put("paging", paging);
 
-		return pMap;	
+		return pMap;
 	}
-	
-	
+
 	// 공연 검색결과 불러오기(페이징)
 	public Map<String, Object> searchResult(int crtPage, int userNo, String key) {
-		
-		int listCnt= 10; // 한 페이지당 글 개수
-		int startRnum= (crtPage-1)*listCnt +1; // 시작글 번호
-		int endRnum= (startRnum+listCnt) -1; // 마지막글 번호
 
-		Paging paging= new Paging();
+		int listCnt = 10; // 한 페이지당 글 개수
+		int startRnum = (crtPage - 1) * listCnt + 1; // 시작글 번호
+		int endRnum = (startRnum + listCnt) - 1; // 마지막글 번호
+
+		Paging paging = new Paging();
 		paging.setPageNo(crtPage);
 		paging.setPageSize(listCnt);
 		paging.setTotalCount(pd.searchResultCnt(userNo, key));
-		
+
 		Map<String, Object> pMap = new HashMap<String, Object>();
 		pMap.put("resultList", pd.pagingSearchResult(userNo, key, startRnum, endRnum));
 		pMap.put("paging", paging);
-		
-		return pMap;	
+
+		return pMap;
 	}
-	
-	
+
 	// 공연 목록 불러오기
 	public List<HallVo> bmHallList() {
 		System.out.println("BusinessServiece > bmAddSearch");
@@ -254,7 +251,8 @@ public class BusinessService {
 		String exName = orgName.substring(orgName.lastIndexOf("."));
 
 		// 저장파일이름
-		String saveName = System.currentTimeMillis() + UUID.randomUUID().toString() + exName;
+		String saveName = orgName +  exName;
+//				System.currentTimeMillis() + UUID.randomUUID().toString() + 
 
 		// 파일패스 생성
 		String filePath = saveDir + "\\" + saveName;

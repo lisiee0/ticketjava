@@ -4,10 +4,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.ticketjava.service.ProductService;
+import com.ticketjava.vo.ProductVo;
 import com.ticketjava.vo.TheaterVo;
 
 @Controller
@@ -99,4 +102,11 @@ public class ProductController {
 		return "product/pListbyRanking";
 	}
 	
+	// 공연 노출
+	@ResponseBody
+	@PostMapping("/modifyExposure")
+	public String modifyExposure(@ModelAttribute ProductVo productVo) {
+		productService.modifyExposure(productVo);
+		return "";
+	}
 }

@@ -1,0 +1,38 @@
+@charset "UTF-8";
+
+#seatPlanDiv div#stageArea{
+	text-align:center;
+	width:40%;
+	height:30px;
+	color:white;
+	background-color:#474747;
+	border-radius:20px;
+	margin: 10px 0px 40px 170px;
+	font-size:17px;
+}
+
+#seatPlanDiv table#seatAreaA{
+	position:absolute;
+	top:120px;
+	left:170px;
+}
+
+#seatPlanDiv table#seatAreaB{
+	position:absolute;
+	top:120px;
+	left:340px;
+}
+
+
+#seatPlanDiv table#seatAreaC{
+	position:absolute;
+	top:280px;
+	left:170px;
+}
+
+#seatPlanDiv table#seatAreaD{
+	position:absolute;
+	top:280px;
+	left:340px;
+}
+

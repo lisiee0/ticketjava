@@ -68,14 +68,13 @@
 				
 					<!-- 로고 검색자리 그리드 시작 -->
 					<div class="col-xs-4 no-drag no-ghost" id="ticketJavaLogo">
-						<%-- 예매 캡챠 기능때문에 잠금 <a href="http://localhost:8088/ticketjava/"><img src="${pageContext.request.contextPath}/assets/image/index/ticketjava_main_logo.png"></a> --%>
-						<a href="http://127.0.0.1:8088/ticketjava/"><img src="${pageContext.request.contextPath}/assets/image/index/ticketjava_main_logo.png"></a>
+						<a href="${pageContext.request.contextPath}/"><img src="${pageContext.request.contextPath}/assets/image/index/ticketjava_main_logo.png"></a>
 					</div>
 					
 					<div class="col-xs-4 searchBar">
 						<form action="${pageContext.request.contextPath}/product/search" method="post">
 							<div class="input-group search-group">
-								<input type="text" class="form-control dis vm zp" placeholder="" name="keyword" value="">
+								<input type="text" class="form-control dis vm" placeholder="" name="keyword" value="">
 								<span class="input-group-btn">
 									<button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-search"></span></button>
 								</span>

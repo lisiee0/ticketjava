@@ -1,22 +1,31 @@
 @charset "UTF-8";
 
+#result{
+	height:570px;
+	padding:0px 15px;
+	background-color:#f4f4f4;
+	
+}
+
 /* 할인정보 추가 */
 #result > h2 {
     /* border: 1px solid; */
-    font-size: 32px;
+    font-size: 25px;
     font-weight: bolder;
-    padding: 30px 0 25px 20px;
+    padding:20px 0px 10px 0px;
+    text-align:center;
 }
 
 /* ol > h3 */
-.addTop ol h3 {
+.addTop h3 {
     /* border: 1px solid; */
     font-weight: bold;
-    font-size: 26px;
-    padding: 5px 0 5px 20px;
+    font-size: 18px;
+    padding: 5px 0 5px 0px;
+    margin-top:10px;
 }
 /* ol > li */
-.addTop ol li {
+.addTop li {
     /* border: 1px solid; */
     font-size: 16px;
     padding: 5px 0 15px 40px;
@@ -25,14 +34,15 @@
 /* table */
 #result .disTable{
     /* border: 10px solid; */
-    margin: 15px 0px 0px 0px;
+    margin: 5px 0px 0px 0px;
 }
 
 #result .disTable #dateDiscount,
 #result .disTable #dateDiscount2 {
     /* border: 1px solid; */
     width: 95%;
-    margin: 0px 0px 0px 20px;
+    margin: 0px 0px 0px 0px;
+    table-layout:fixed;
 }
 
 
@@ -40,8 +50,10 @@
 
 /* dateDiscount */
 #result .disTable #dateDiscount {
-    margin-bottom: 15px;
-    }
+    width:100%;
+    margin:0px 0px 10px 0px;
+    
+ }
 
 #result .disTable #dateDiscount .dateHead {
     text-align: center;
@@ -64,22 +76,37 @@
 /* distable2 */
 #result .disTable{
     /* border: 10px solid; */
-    margin: 15px 0px 0px 0px;
+    width:100%;
+    margin: 5px 0px 0px 0px;
 }
 
 #result .disTable table {
     /* border: 1px solid; */
-    width: 95%;
-    margin: 0px 0px 10px 20px;
+    width: 100%;
+    margin: 0px 0px 10px 0px;
 }
 #result .disTable .disFont{
     color: red;
     font-weight: bold;
 }
 
+#result .disTable #dcType{
+	text-align:center;
+}
+
+table tr td #addBtn{
+	width:100%;
+}
+
+#result #listArea {
+	height:180px;
+	overflow:auto;
+}
+
+
 /* 적용버튼 */
 #result #submitBtn {
-    margin: 70px 0px 15px 210px
+    margin: 20px 0px 15px 210px
 }
 #result #submitBtn #submitBtn2{
     width: 80px;

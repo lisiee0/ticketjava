@@ -15,6 +15,7 @@ import com.ticketjava.dao.ReviewDao;
 import com.ticketjava.dao.SeatpriceDao;
 import com.ticketjava.dao.TheaterDao;
 import com.ticketjava.vo.Paging;
+import com.ticketjava.vo.ProductVo;
 import com.ticketjava.vo.TheaterVo;
 
 @Service
@@ -168,6 +169,11 @@ public class ProductService {
 		rankMap.put("bigdis", pd.bigdisList());
 		
 		return rankMap;
+	}
+
+
+	public void modifyExposure(ProductVo productVo) {
+		pd.updateExposure(productVo);
 	}
 
 }

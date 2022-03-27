@@ -47,7 +47,6 @@
 						<ul>
 							<li><h3>공연 관리</h3></li>
 							<li><a href="${pageContext.request.contextPath}/bm/">공연 목록</a></li>
-							<li><a href="${pageContext.request.contextPath}/bm/bmForm">공연 등록</a></li>
 						</ul>
 						<!-- 						<ul> -->
 						<!-- 							<li><h3>문의 관리</h3></li> -->
@@ -128,7 +127,10 @@
 												<td>${vo.prodNo}</td>
 												<td class="prodName"><a href="${pageContext.request.contextPath}/product/info?prodNo=${vo.prodNo}">${vo.prodName}</a></td>
 												<td>${vo.theaterName}${vo.hallName}</td>
+												<td class="text-left"><a class="preview" href="${pageContext.request.contextPath}/product/preview?prodNo=${vo.prodNo}">${vo.prodName}</a></td>
+												<td class="text-left">${vo.theaterName} ${vo.hallName}</td>
 												<td>${vo.beginShow}~${vo.endShow}</td>
+
 												<td><select name="status" id="status">
 														<c:choose>
 															<c:when test="${vo.status eq 1}">
@@ -142,6 +144,20 @@
 														</c:choose>
 													</select>
 													<a href="" onclick="${vo.status}.submit();"><span class="glyphicon glyphicon-pencil">확인</span></a>&nbsp;&nbsp;
+												<td>
+													<select name="status" class="status" data-pno="${vo.prodNo}">
+															<c:choose>
+																<c:when test="${vo.status eq 1}">
+																	<option value="0">노출 off</option>
+																	<option value="1" selected>노출 on</option>
+																</c:when>
+																<c:otherwise>
+																	<option value="0" selected>노출 off</option>
+																	<option value="1">노출 on</option>
+																</c:otherwise>
+															</c:choose>
+													</select>
+												</td>
 												<td><a class="eventdis" data-no="${vo.prodNo}" href="${pageContext.request.contextPath}/bm/discount?prodNo=${vo.prodNo}">이벤트 할인 추가</a></td>
 												<td><a data-no="${vo.prodNo}" href="${pageContext.request.contextPath}/bm/bmModifyForm?prodNo=${vo.prodNo}">수정</a></td>
 												<%--<td><a href="${pageContext.request.contextPath}/bm/bmDelete?prodNo=${vo.prodNo}">삭제</a></td> --%>
@@ -214,7 +230,53 @@
 	var No = $('#status').val
 
 	console.log(No);
+<<<<<<< HEAD
 
+=======
+	
+	
+	$('.preview').on('click',function(){
+		var link = $(this).attr('href');
+		window.open(link, 'preview', 'width=1400, height=1000, top=100, left=300');
+		return false;
+	});
+	
+	
+	$('.status').on('change',function(){
+		var selVal = $(this).val();
+		var status;
+		if(selVal == 0)
+			status=1;
+		else
+			status=0;
+		
+		var prodNo = $(this).data('pno');
+		
+		var prodVo = {
+			prodNo : prodNo,
+			status : status
+		};
+		
+		$.ajax({
+			url: "${pageContext.request.contextPath}/product/modifyExposure",
+			type : "post",
+			data : prodVo,
+			dataType: "json",
+			success : function(){
+				if(status == 0)
+					alert('공연이 노출됩니다.');
+				else
+					alert('공연이 노출되지 않습니다.');
+			},
+			error : function(XHR, status, error) {
+				console.error(status + " : " + error);
+			}
+		});
+	})
+	
+	
+	
+>>>>>>> branch 'master' of https://github.com/lisiee0/ticketjava.git
 	function PageMove(page) {
 
 		location.href = "${pageContext.request.contextPath}/bm/?crtPage="

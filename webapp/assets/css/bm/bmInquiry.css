@@ -47,8 +47,14 @@
 		padding: 0px;
 		margin-top: 15px;
 }
-
 #showbTn {
 		padding: 0px;
 		width: 5px;
+}
+.text-left{
+	text-align:left;
+}
+
+.status{
+	height:34px;
 }

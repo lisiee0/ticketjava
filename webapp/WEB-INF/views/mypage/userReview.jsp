@@ -103,7 +103,7 @@
 											<c:forEach items="${review.pagingList}" var="vo">
 												<tr>
 													<%-- <td>${vo.reviewNo}</td> --%>
-													<td id="space" class="text-left-margin"><a href="product/info?prodNo=${vo.prodNo}">${vo.prodName}</a></td>
+													<td id="space" class="text-left-margin"><a href="${pageContext.request.contextPath}/product/info?prodNo=${vo.prodNo}">${vo.prodName}</a></td>
 													<td id="space">${vo.content}</td>
 													<td><label id="starb" class="star">★★★★★<span style="width: ${vo.rating*2}0%;">★★★★★</span> 
 													</label></td>

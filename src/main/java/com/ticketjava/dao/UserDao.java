@@ -20,7 +20,12 @@ public class UserDao {
 	public void insertUser(UserVo userVo) {
 		sqlSession.insert("user.insertUser", userVo);
 	}
-
+	
+//	회원 정보 수정
+	public void userModifyAction(UserVo userVo) {
+		sqlSession.update("user.updateUser", userVo);
+	}
+	
 	/*
 	 * public void insertBizman(UserVo userVo) {
 	 * sqlSession.insert("user.insertBizman", userVo);
@@ -43,11 +48,7 @@ public class UserDao {
 	public int selectDupId(String id) {
 		return sqlSession.selectOne("user.selectDupId", id);
 	}
-	
-//	회원 정보 수정
-	public void userModifyAction(UserVo userVo) {
-		sqlSession.update("user.updateUser", userVo);
-	}
+
 	
 //	회원 탈퇴 - 예매내역(rezNo) 있으면 탈퇴불가 
 	public void userOutAction(UserVo userVo, int userNo, String password) {

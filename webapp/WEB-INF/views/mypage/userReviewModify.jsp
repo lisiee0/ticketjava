@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>${product.vo.prodName}-티켓자바TicketJava</title>
+<title>${product.vo.prodName}-티켓자바 TicketJava 리뷰 수정</title>
 
 <!-- 티잡 파비콘 파란손 배경없음 -->
 <link rel="icon" type="image/png" sizes="32x32" href="${pageContext.request.contextPath}/assets/image/index/favicon-32x32_ticketjava_nobackground.png">
@@ -48,8 +48,9 @@
 
 					<div class="container bgc">
 						<div class="row">
+						
 							<!-- 포스터 위치 -->
-							<div class="col-xs-3 np">
+							<%-- <div class="col-xs-3 np">
 								<img id="mainPoster" src="${pageContext.request.contextPath}/upload/${product.vo.posterPath}">
 							</div>
 
@@ -104,7 +105,7 @@
 										</td>
 									</tr>
 								</table>
-							</div>
+							</div> --%>
 
 
 						</div>
@@ -137,7 +138,7 @@
 								<input type="hidden" id="userNo" name="userNo" value="${authUser.userNo}">
 								<input type="hidden" id="reviewNo" name="reviewNo" value="${reviewList.reviewNo}">
 
-								<button type="button" id="btnReviewSubmit" class="btn btn-primary position">후기 수정</button>
+								<button type="submit" id="btnReviewSubmit" class="btn btn-primary position">후기 수정</button>
 								</form>
 							</div>
 
