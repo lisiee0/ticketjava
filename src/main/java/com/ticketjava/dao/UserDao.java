@@ -58,6 +58,8 @@ public class UserDao {
 		map.put("userNo", userNo);
 		map.put("password", password);
 		
+		System.out.println("유저 다오 map 출력 "+map);
+		
 		sqlSession.delete("user.deleteUser", map);
 	}
 	

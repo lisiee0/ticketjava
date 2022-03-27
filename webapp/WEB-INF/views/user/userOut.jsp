@@ -77,7 +77,7 @@
 
 							<div class="userOutnotice">
 								<div>
-									<h3>이용에 불편을 드려 죄송합니다</h3>
+									<h3>${authUser.name} 님 이용에 불편을 드려 죄송합니다</h3>
 								</div>
 								<div>
 									<h4>회원탈퇴시 혜택은 소멸하고, 가입정보는 즉시 파기되어 복구불가 합니다.</h4>
@@ -88,7 +88,7 @@
 							<section id="containerMain">
 								<div></div>
 								<div id="formArea">
-								<form action="${pageContext.request.contextPath}/mypage/userOutAction" method="get">
+								<form action="${pageContext.request.contextPath}/user/userOutAction" method="get">
 									<table>
 										<colgroup>
 											<col style="width: 25%">
@@ -99,6 +99,11 @@
 
 										<%-- <tr>
 											<th>아이디</th>
+											<td colspan="3"><input class="form-control" type="text" name="id" placeholder="${authUser.id}"></td>
+										</tr> --%>
+
+										<%-- <tr>
+											<th>Uno ${authUser.userNo} name ${authUser.name}</th>
 											<td colspan="3"><input class="form-control" type="text" name="id" placeholder="${authUser.id}"></td>
 										</tr> --%>
 
