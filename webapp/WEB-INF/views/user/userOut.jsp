@@ -97,10 +97,10 @@
 											<col style="width: 25%">
 										</colgroup>
 
-										<tr>
+										<%-- <tr>
 											<th>아이디</th>
 											<td colspan="3"><input class="form-control" type="text" name="id" placeholder="${authUser.id}"></td>
-										</tr>
+										</tr> --%>
 
 										<tr>
 											<th>비밀번호</th>

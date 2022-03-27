@@ -93,10 +93,10 @@
 										<td class="outlineBtn"></td>
 									</tr> --%>
 									
-									<tr>
+									<%-- <tr>
 										<th> </th>
 										<td colspan="3">이름: ${authUser.name } 아이디:${authUser.id} 번호(${authUser.userNo })님의 회원정보</td>
-									</tr>
+									</tr> --%>
 
 									<tr>
 										<th>비밀번호</th>
