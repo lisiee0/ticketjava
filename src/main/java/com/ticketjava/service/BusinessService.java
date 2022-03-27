@@ -140,16 +140,18 @@ public class BusinessService {
 		String exName = orgName.substring(orgName.lastIndexOf("."));
 
 		// 저장파일이름
-		String saveName = System.currentTimeMillis() + UUID.randomUUID().toString() + exName;
+		String saveName = orgName + exName;
+		
+//		System.currentTimeMillis() + UUID.randomUUID().toString() 
 
 		// 파일패스 생성
-		String filePath = saveDir + "\\" + saveName;
+		String filePath = saveDir + "\\" + orgName;
 
 		// 포스터 이미지 설정
-		productVo.setPosterPath(filePath);
-		detailVo.setProdPath(filePath);
-		detailVo.setCastingPath(filePath);
-		detailVo.setAddedPath(filePath);
+		productVo.setPosterPath(orgName);
+		detailVo.setProdPath(orgName);
+		detailVo.setCastingPath(orgName);
+		detailVo.setAddedPath(orgName);
 
 		// 파일 저장
 		try {
