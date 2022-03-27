@@ -101,10 +101,10 @@
 									<div class="form-group">
 										<div class="col-md-6">
 											<select class="form-control" id="hallNo" name="hallNo">
+												<option selected="selected">공연장을 선택해주세요.</option>
 												<c:forEach items="${selectList}" var="vo">
 													<option value="${vo.hallNo}">${vo.theaterName},${vo.hallName}</option>
 												</c:forEach>
-												<option selected="selected">공연장을 선택해주세요.</option>
 											</select>
 										</div>
 									</div>
@@ -118,8 +118,8 @@
 
 								<div class="col-md-3">
 									<select class="form-control" id="prodType" name="prodType">
-										<option value="1">연극</option>
-										<option value="2">뮤지컬</option>
+										<option value="2">연극</option>
+										<option value="1">뮤지컬</option>
 										<option value="3">콘서트</option>
 										<option value="4">스포츠</option>
 										<option value="5">전시</option>
@@ -417,7 +417,7 @@
 
 						for (var i = 0; i < selGradeList.length; i++) {
 							var seatprice = {
-								grade : selGradeList.eq(i).val(),
+								grade : selGradeList.eq(i).val().toLowerCase(),
 								price : selPriceList.eq(i).val()
 							};
 							seatpriceList.push(seatprice);
