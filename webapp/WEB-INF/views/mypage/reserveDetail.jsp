@@ -121,7 +121,7 @@
 
 								<div class="rezSeatList">
 									<h4>예매내역 및 좌석</h4>
-									<form action="${pageContext.request.contextPath}/mypage/requestCancelTicket" method="post">
+									<form action="${pageContext.request.contextPath}/mypage/requestCancelTicket" method="post" id="requestCancel">
 									
 										<table>
 											<thead>
@@ -159,7 +159,7 @@
 												</c:forEach>
 											</tbody>
 										</table>
-										<div><button type="submit" class="btn btn-outline-primary">예매취소</button></div>
+										<div><button type="button" class="btn btn-outline-primary" onclick="requestCancel()">예매취소</button></div>
 									</form>
 									
 								</div>
@@ -222,11 +222,17 @@
 	function requestCancel() {
 
 		if (window.confirm('예매를 취소하시겠습니까? 예매취소를 복구할 수 없습니다') == true) {
-			//window.location.href = "${pageContext.request.contextPath}/mypage/requestCancelTicket?selseatNo=${vo.selseatNo}&rezNo=${vo.rezNo}";
-			document.location.href = "${pageContext.request.contextPath}/mypage/requestCancelTicket?selseatNo=${vo.selseatNo}&rezNo=${vo.rezNo}";
-			alert("취소되었습니다");
+			
+			document.getElementById('requestCancel').submit();
+			
+			alert("선택하신 좌석의 취소 처리가 완료 되었습니다");
+			
 		} else {
+			
+			alert("취소를 눌렀습니다.");
+			
 			return;
+			
 		}
 
 	};
