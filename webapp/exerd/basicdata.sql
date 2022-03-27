@@ -9,6 +9,7 @@ insert into users values (SEQ_USER_NO.nextval, 'ccc', '67b02c7418e5e82528fcfbc83
 insert into users values (SEQ_USER_NO.nextval, 'ddd', '9724be48956cbdd6b152c1fb2898f8674eb43cc982c1b583f95e0acd571cfb70', '강호동', '010-4444-4444', '05234', '서울 강서구 우현로 16', '힐스테이트', 'kang@naver.com', 1, sysdate, null, 'd4ovosyZgdN3qln5');
 insert into users values (SEQ_USER_NO.nextval, 'eee', '026dbcecdc6347c3f55aa2539548a3f2046533e28d860174090b3404a866c20d', '이정재', '010-5555-5555', '06234', '서울 강서구 우현로 17', '아이파크', 'ljj@naver.com', 1, sysdate, null, 'r67aTGZLqWMze0sg');
 insert into users values (SEQ_USER_NO.nextval, 'admin', 'b1be4dd8015e8d2402f3d002549970eb740d1d03432870cd8bde4e73c7eb51a6', '관리자', null, null, null, null, null, 0, sysdate, null, 'eyCIr8myhI93Z96i');
+insert into users values (SEQ_USER_NO.nextval, 'hwang', '4a39efd3eac0f9631a77577da4d72b53df1a9390fa2220c70b05275bea5f4527', '황일영', '010-1234-5678', '10370', '서울 도봉구 노해로 133', '100', 'test@test.com', 2, sysdate, '6789246218786', 'fdfBuYwHtgza52Vf');
 commit;
 
 /*******************************************************************************
