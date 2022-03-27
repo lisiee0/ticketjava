@@ -1409,6 +1409,22 @@ insert into product values (seq_prod_no.nextval, 2, 20, '뮤지컬 <빈센트 �
 insert into product values (seq_prod_no.nextval, 2, 20, '뮤지컬 <더 스톤>', 1, '2022-04-15', '2022-05-31', '2022-03-15', '2022-05-31', TO_DATE('2022-03-01 19:00', 'YYYY-MM-DD HH24:MI'), 110, 2, '※ 티켓자바 오픈 시스템 작업을 위해 매월 10일 오전 10시 ~ 오전 10시 59분까지 티켓자바 예매페이지의 모든 예매가 일시 마감됩니다.', '취소일자에 따라서 취소수수료가 부과됩니다.예매 일 기준보다 관람일 기준이 우선 적용됩니다. 단, 예매 당일 밤 12시 이전 취소 시에는 취소수수료가 없으며, 예매 수수료도 환불됩니다.(취소기한 내에 한함)', 1, 'stone.png');
 insert into product values (seq_prod_no.nextval, 2, 19, '뮤지컬 <웨스턴 스토리>', 1, '2022-04-15', '2022-05-31', '2022-03-15', '2022-05-31', TO_DATE('2022-03-01 19:00', 'YYYY-MM-DD HH24:MI'), 110, 2, '※ 티켓자바 오픈 시스템 작업을 위해 매월 10일 오전 10시 ~ 오전 10시 59분까지 티켓자바 예매페이지의 모든 예매가 일시 마감됩니다.', '취소일자에 따라서 취소수수료가 부과됩니다.예매 일 기준보다 관람일 기준이 우선 적용됩니다. 단, 예매 당일 밤 12시 이전 취소 시에는 취소수수료가 없으며, 예매 수수료도 환불됩니다.(취소기한 내에 한함)', 1, 'western.png');
 insert into product values (seq_prod_no.nextval, 2, 18, '뮤지컬 <난쟁이들>', 1, '2022-04-15', '2022-05-31', '2022-03-15', '2022-05-31', TO_DATE('2022-03-01 19:00', 'YYYY-MM-DD HH24:MI'), 110, 2, '※ 티켓자바 오픈 시스템 작업을 위해 매월 10일 오전 10시 ~ 오전 10시 59분까지 티켓자바 예매페이지의 모든 예매가 일시 마감됩니다.', '취소일자에 따라서 취소수수료가 부과됩니다.예매 일 기준보다 관람일 기준이 우선 적용됩니다. 단, 예매 당일 밤 12시 이전 취소 시에는 취소수수료가 없으며, 예매 수수료도 환불됩니다.(취소기한 내에 한함)', 1, 'nan.png');
+
+-----53 팀프로젝트 시연회----------------------------------------------------------------
+insert into product
+values (seq_prod_no.nextval, 9, 29, '팀 프로젝트 시연회', 1, '2022-03-28', '2022-03-28', '2022-03-28', '2022-03-28', TO_DATE('2022-03-28 14:30', 'YYYY-MM-DD HH24:MI'), 180, 1, 'HRD앱에서 입,퇴실 확인!<br>QR 개인소장 절대금지!<br>OT자료는 아래 TMS 주소에서 확인 가능합니다!<br><br><br>(TMS주소)<br>https://githrd.cafe24.com/student/index.php<br><br>(줌주소)<br>https://us02web.zoom.us/j/7656030770?pwd=WE51VGhWdTZHVDBITjhNVkQvZEtJQT09<br>회의 ID: 765 603 0770<br>암호 : global<br><br><학원 이메일> - 출결증빙서류<br>githrd00@naver.com<br><br><학원 FAX><br>02-3285-0012<br><br>(강사/강의)<br>연락처   : 황일영/010-3286-5102/iremys@gmail.com<br>공유폴더: https://bit.ly/3BgxbEY <br>깃허브   : https://github.com/codeclz2021<br>', '취소/환불 불가능합니다<br>좋은 하루 되십시오', 1, 'bono.jpg');
+
+insert into detail values (seq_detail_no.nextval, 53, 'prod1.jpg', 'cast1.png', 'addd1.png');
+
+insert into seatprice values (seq_seatprice_no.nextval, 53, 'vip', 10000);
+
+insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 53, 0, 1, '1퍼센트 할인');
+insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 53, 0, 2, '재수강 할인');
+insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 53, 0, 3, '얼리버드 할인');
+insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 53, 0, 4, '국가유공자 할인');
+
+-------------------------------------------------------------------------------------------
+
 insert into product values (seq_prod_no.nextval, 2, 17, '뮤지컬 <위대한 유산 [PIP]>', 1, '2022-04-15', '2022-05-31', '2022-03-15', '2022-05-31', TO_DATE('2022-03-01 19:00', 'YYYY-MM-DD HH24:MI'), 110, 2, '※ 티켓자바 오픈 시스템 작업을 위해 매월 10일 오전 10시 ~ 오전 10시 59분까지 티켓자바 예매페이지의 모든 예매가 일시 마감됩니다.', '취소일자에 따라서 취소수수료가 부과됩니다.예매 일 기준보다 관람일 기준이 우선 적용됩니다. 단, 예매 당일 밤 12시 이전 취소 시에는 취소수수료가 없으며, 예매 수수료도 환불됩니다.(취소기한 내에 한함)', 1, 'pip.png');
 insert into product values (seq_prod_no.nextval, 2, 20, '뮤지컬 <차미>', 1, '2022-04-15', '2022-05-31', '2022-03-15', '2022-05-31', TO_DATE('2022-03-01 19:00', 'YYYY-MM-DD HH24:MI'), 110, 2, '※ 티켓자바 오픈 시스템 작업을 위해 매월 10일 오전 10시 ~ 오전 10시 59분까지 티켓자바 예매페이지의 모든 예매가 일시 마감됩니다.', '취소일자에 따라서 취소수수료가 부과됩니다.예매 일 기준보다 관람일 기준이 우선 적용됩니다. 단, 예매 당일 밤 12시 이전 취소 시에는 취소수수료가 없으며, 예매 수수료도 환불됩니다.(취소기한 내에 한함)', 1, 'me.png');
 insert into product values (seq_prod_no.nextval, 2, 16, '뮤지컬 <블루헬멧 : 메이사의 노래>', 1, '2022-04-15', '2022-05-31', '2022-03-15', '2022-05-31', TO_DATE('2022-03-01 19:00', 'YYYY-MM-DD HH24:MI'), 110, 2, '※ 티켓자바 오픈 시스템 작업을 위해 매월 10일 오전 10시 ~ 오전 10시 59분까지 티켓자바 예매페이지의 모든 예매가 일시 마감됩니다.', '취소일자에 따라서 취소수수료가 부과됩니다.예매 일 기준보다 관람일 기준이 우선 적용됩니다. 단, 예매 당일 밤 12시 이전 취소 시에는 취소수수료가 없으며, 예매 수수료도 환불됩니다.(취소기한 내에 한함)', 1, 'helmet.png');
@@ -1462,49 +1478,34 @@ insert into product values (seq_prod_no.nextval, 2, 18, '전시 <구하우스 �
 insert into product values (seq_prod_no.nextval, 2, 19, '전시 <테디베어사파리>', 5, '2022-05-01', '2022-05-28', '2022-03-15', '2022-05-28', TO_DATE('2022-05-01 19:00', 'YYYY-MM-DD HH24:MI'), 110, 2, '※ 티켓자바 오픈 시스템 작업을 위해 매월 10일 오전 10시 ~ 오전 10시 59분까지 티켓자바 예매페이지의 모든 예매가 일시 마감됩니다.', '취소일자에 따라서 취소수수료가 부과됩니다.예매 일 기준보다 관람일 기준이 우선 적용됩니다. 단, 예매 당일 밤 12시 이전 취소 시에는 취소수수료가 없으며, 예매 수수료도 환불됩니다.(취소기한 내에 한함)', 1, 'xpel.png');
 insert into product values (seq_prod_no.nextval, 2, 20, '전시 <안성맞춤 천문과학관>', 5, '2022-05-01', '2022-05-28', '2022-03-15', '2022-05-28', TO_DATE('2022-05-01 19:00', 'YYYY-MM-DD HH24:MI'), 110, 2, '※ 티켓자바 오픈 시스템 작업을 위해 매월 10일 오전 10시 ~ 오전 10시 59분까지 티켓자바 예매페이지의 모든 예매가 일시 마감됩니다.', '취소일자에 따라서 취소수수료가 부과됩니다.예매 일 기준보다 관람일 기준이 우선 적용됩니다. 단, 예매 당일 밤 12시 이전 취소 시에는 취소수수료가 없으며, 예매 수수료도 환불됩니다.(취소기한 내에 한함)', 1, 'rhkgkr.png');
 
------105 레베카----------------------------------------
+-----106 레베카----------------------------------------
 insert into product
 values (seq_prod_no.nextval, 2, 1, '뮤지컬 <레베카>', 1, '2022-03-31', '2022-05-15', '2022-03-28', '2022-05-15', TO_DATE('2022-03-31 17:00', 'YYYY-MM-DD HH24:MI'), 150, 2, '뮤지컬〈레베카〉제작사 EMK뮤지컬컴퍼니 입니다. <br><br>막심役의 민영기 배우가 코로나 의심 증상으로 선제 검사를 진행, 확진 판정을 받아 관련해 캐스팅 변경 안내드립니다. <br><br>사전 예매하신 관객분들께 불편과 심려를 끼쳐 드려 죄송합니다. <br><br>〉4월03일(일) 19시00분 공연<br>막심役 캐스팅 변경 민영기 → 김준현 <br><br>캐스팅 변경과 관련해 각 예매처 고객센터를 통해 4월02일(토) 17시까지 취소 시 수수료 없이 가능합니다. <br>사전 예매하신 분들께 순차적으로 안내 문자 발송 드릴 예정입니다. <br><br>다시 한번 캐스팅 변경으로 인해 불편 드리는 점 사과드립니다.<br>', '<br>취소일자에 따라 아래와 같이 취소수수료가 부과됩니다. 예매일 기준보다 관람일 기준이 우선 적용됩니다.<br>단, 예매 당일 밤 12시 이전 취소 시에는 취소수수료가 없으며 예매수수료도 환불됩니다. (취소기한 내에 한함)<br><br>예매후 7일 이내 : 취소수수료 없음<br>예매후 8일 ~ 관람일 10일 전 : 뮤지컬/콘서트/클래식 등 공연 장당 4,000원, 연극/전시 등 입장권 장당 2,000원<br>(단, 최대 티켓금액의 10% 이내)<br>관람일 9일 전 ~ 7일 전 : 티켓금액의 10%<br>관람일 6일 전 ~ 3일 전 : 티켓금액의 20%<br>관람일 2일 전 ~ 1일 전 : 티켓금액의 30%<br>공연 취소 시 : 없음', 1, 'rebecca.png');
 
-insert into detail values (seq_detail_no.nextval, 105, 'prod.jpg', 'cast.jpg', 'addd.jpg');
+insert into detail values (seq_detail_no.nextval, 106, 'prod.jpg', 'cast.jpg', 'addd.jpg');
 
-insert into seatprice values (seq_seatprice_no.nextval, 105, 'vip', 150000);
-insert into seatprice values (seq_seatprice_no.nextval, 105, 'r', 130000);
-insert into seatprice values (seq_seatprice_no.nextval, 105, 's', 110000);
-insert into seatprice values (seq_seatprice_no.nextval, 105, 'a', 90000);
-insert into seatprice values (seq_seatprice_no.nextval, 105, 'b', 70000);
+insert into seatprice values (seq_seatprice_no.nextval, 106, 'vip', 150000);
+insert into seatprice values (seq_seatprice_no.nextval, 106, 'r', 130000);
+insert into seatprice values (seq_seatprice_no.nextval, 106, 's', 110000);
+insert into seatprice values (seq_seatprice_no.nextval, 106, 'a', 90000);
+insert into seatprice values (seq_seatprice_no.nextval, 106, 'b', 70000);
 
-insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 105, 0, 30, '초중고등학생 할인');
-insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 105, 0, 30, '재관람 할인');
-insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 105, 0, 50, '국가유공자 할인');
-insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 105, 0, 10, '티켓자바 신규회원 할인');
+insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 106, 0, 30, '초중고등학생 할인');
+insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 106, 0, 30, '재관람 할인');
+insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 106, 0, 50, '국가유공자 할인');
+insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 106, 0, 10, '티켓자바 신규회원 할인');
 
 
-insert into review values (SEQ_REVIEW_NO.nextval, 105, 3, '재미있게 잘봤습니다. 다음에 재관람 할인으로 또 보러 갈게요', 3, sysdate);
-insert into review values (SEQ_REVIEW_NO.nextval, 105, 4, '재미있게 잘봤습니다. 강추합니다.', 4, sysdate);
-insert into review values (SEQ_REVIEW_NO.nextval, 105, 5, '주차공간이 협소해서 주차하는데만 2시간 걸렸어요. 4점 드립니다.', 4, sysdate);
-insert into review values (SEQ_REVIEW_NO.nextval, 105, 6, '연출이 상당히 인상깊었습니다.', 4, sysdate);
-insert into review values (SEQ_REVIEW_NO.nextval, 105, 7, '오랜만에 가족들과 본 공연인데 다들 만족했습니다. 감사합니다', 4, sysdate);
+insert into review values (SEQ_REVIEW_NO.nextval, 106, 3, '재미있게 잘봤습니다. 다음에 재관람 할인으로 또 보러 갈게요', 3, sysdate);
+insert into review values (SEQ_REVIEW_NO.nextval, 106, 4, '재미있게 잘봤습니다. 강추합니다.', 4, sysdate);
+insert into review values (SEQ_REVIEW_NO.nextval, 106, 5, '주차공간이 협소해서 주차하는데만 2시간 걸렸어요. 4점 드립니다.', 4, sysdate);
+insert into review values (SEQ_REVIEW_NO.nextval, 106, 6, '연출이 상당히 인상깊었습니다.', 4, sysdate);
+insert into review values (SEQ_REVIEW_NO.nextval, 106, 7, '오랜만에 가족들과 본 공연인데 다들 만족했습니다. 감사합니다', 4, sysdate);
 ---------------------------------------------------------------
-
------106 팀프로젝트 시연회----------------------------------------
-insert into product
-values (seq_prod_no.nextval, 9, 29, '팀 프로젝트 시연회', 1, '2022-03-28', '2022-03-28', '2022-03-28', '2022-03-28', TO_DATE('2022-03-28 14:30', 'YYYY-MM-DD HH24:MI'), 180, 1, '시간이 참 빠르네요<br>엊그제 개강한거 같은데,<br>벌써 수료 ^^<br>모두 고생하셨습니다', '취소/환불 불가능합니다<br>좋은 하루 되십시오', 1, 'bono.jpg');
-
-insert into detail values (seq_detail_no.nextval, 106, 'prod1.jpg', 'cast1.png', 'addd1.png');
-
-insert into seatprice values (seq_seatprice_no.nextval, 106, 'vip', 10000);
-
-insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 106, 0, 1, '1퍼센트 할인');
-insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 106, 0, 2, '재수강 할인');
-insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 106, 0, 3, '얼리버드 할인');
-insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 106, 0, 4, '국가유공자 할인');
-
---------------------------------------------------------------------------
 
 Insert into USERS (USER_NO,ID,PASSWORD,NAME,PHONE,POSTCODE,ADDRESS,ADDRESS2,EMAIL,USERTYPE,JOINDATE,BIZNO,SALT) values (10,'hankyu','9dfbfbb14113a8c3e6577980484fded3f245bb71411ee4f0785eca0bf203bb3a','서한규','01012341234','13494','경기 성남시 분당구 판교역로 235','1155','2ser0m2@naver.com',1,to_date('22/03/27','RR/MM/DD'),null,'jZv2fUFOw8JlvUgf');
 
-Insert into RESERVE (REZ_NO,PROD_NO,USER_NO,REZDATE,VIEWDATE,PHONE,EMAIL,TOTALPAYMENT,STATUS) values (2,105,3,to_date('22/03/27','RR/MM/DD'),to_date('22/03/31','RR/MM/DD'),'01012347945','2ser0m2@naver.com',40882000,1);
+Insert into RESERVE (REZ_NO,PROD_NO,USER_NO,REZDATE,VIEWDATE,PHONE,EMAIL,TOTALPAYMENT,STATUS) values (2,106,3,to_date('22/03/27','RR/MM/DD'),to_date('22/03/31','RR/MM/DD'),'01012347945','2ser0m2@naver.com',40882000,1);
 ---------------------------------------------------------------
 
 Insert into SELSEAT (SELSEAT_NO,REZ_NO,DC_NO,GRADE,SECTION,COL,NUM,PAYMENT,STATUS,PRETIME) values (430,2,null,'vip','C',6,6,150000,1,to_date('22/03/27','RR/MM/DD'));
