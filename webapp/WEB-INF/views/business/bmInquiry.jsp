@@ -126,9 +126,9 @@
 											<tr>
 												<td>${vo.prodNo}</td>
 												<td class="prodName"><a href="${pageContext.request.contextPath}/product/info?prodNo=${vo.prodNo}">${vo.prodName}</a></td>
-												<td>${vo.theaterName}${vo.hallName}</td>
-												<td class="text-left"><a class="preview" href="${pageContext.request.contextPath}/product/preview?prodNo=${vo.prodNo}">${vo.prodName}</a></td>
-												<td class="text-left">${vo.theaterName} ${vo.hallName}</td>
+												<%-- <td>${vo.theaterName}${vo.hallName}</td> --%>
+												<%-- <td class="text-left"><a class="preview" href="${pageContext.request.contextPath}/product/preview?prodNo=${vo.prodNo}">${vo.prodName}</a></td> --%>
+												<td class="text-left">${vo.theaterName}${vo.hallName}</td>
 												<td>${vo.beginShow}~${vo.endShow}</td>
 
 												<td><select name="status" id="status">
@@ -142,21 +142,7 @@
 																<option value="1">노출 on</option>
 															</c:otherwise>
 														</c:choose>
-													</select>
-													<a href="" onclick="${vo.status}.submit();"><span class="glyphicon glyphicon-pencil">확인</span></a>&nbsp;&nbsp;
-												<td>
-													<select name="status" class="status" data-pno="${vo.prodNo}">
-															<c:choose>
-																<c:when test="${vo.status eq 1}">
-																	<option value="0">노출 off</option>
-																	<option value="1" selected>노출 on</option>
-																</c:when>
-																<c:otherwise>
-																	<option value="0" selected>노출 off</option>
-																	<option value="1">노출 on</option>
-																</c:otherwise>
-															</c:choose>
-													</select>
+												</select> <a href="" onclick="${vo.status}.submit();"><span class="glyphicon glyphicon-pencil">확인</span></a>&nbsp;&nbsp;
 												</td>
 												<td><a class="eventdis" data-no="${vo.prodNo}" href="${pageContext.request.contextPath}/bm/discount?prodNo=${vo.prodNo}">이벤트 할인 추가</a></td>
 												<td><a data-no="${vo.prodNo}" href="${pageContext.request.contextPath}/bm/bmModifyForm?prodNo=${vo.prodNo}">수정</a></td>
@@ -230,10 +216,7 @@
 	var No = $('#status').val
 
 	console.log(No);
-<<<<<<< HEAD
 
-=======
-	
 	
 	$('.preview').on('click',function(){
 		var link = $(this).attr('href');
@@ -273,10 +256,7 @@
 			}
 		});
 	})
-	
-	
-	
->>>>>>> branch 'master' of https://github.com/lisiee0/ticketjava.git
+
 	function PageMove(page) {
 
 		location.href = "${pageContext.request.contextPath}/bm/?crtPage="
