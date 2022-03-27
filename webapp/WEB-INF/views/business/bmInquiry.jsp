@@ -126,8 +126,6 @@
 											<tr>
 												<td>${vo.prodNo}</td>
 												<td class="prodName"><a href="${pageContext.request.contextPath}/product/info?prodNo=${vo.prodNo}">${vo.prodName}</a></td>
-												<%-- <td>${vo.theaterName}${vo.hallName}</td> --%>
-												<%-- <td class="text-left"><a class="preview" href="${pageContext.request.contextPath}/product/preview?prodNo=${vo.prodNo}">${vo.prodName}</a></td> --%>
 												<td class="text-left">${vo.theaterName}${vo.hallName}</td>
 												<td>${vo.beginShow}~${vo.endShow}</td>
 
