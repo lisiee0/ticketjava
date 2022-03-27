@@ -1486,6 +1486,22 @@ insert into review values (SEQ_REVIEW_NO.nextval, 105, 5, '주차공간이 협�
 insert into review values (SEQ_REVIEW_NO.nextval, 105, 6, '연출이 상당히 인상깊었습니다.', 4, sysdate);
 insert into review values (SEQ_REVIEW_NO.nextval, 105, 7, '오랜만에 가족들과 본 공연인데 다들 만족했습니다. 감사합니다', 4, sysdate);
 ---------------------------------------------------------------
+
+-----106 팀프로젝트 시연회----------------------------------------
+insert into product
+values (seq_prod_no.nextval, 9, 29, '팀 프로젝트 시연회', 1, '2022-03-28', '2022-03-28', '2022-03-28', '2022-03-28', TO_DATE('2022-03-28 14:30', 'YYYY-MM-DD HH24:MI'), 180, 1, '시간이 참 빠르네요<br>엊그제 개강한거 같은데,<br>벌써 수료 ^^<br>모두 고생하셨습니다', '취소/환불 불가능합니다<br>좋은 하루 되십시오', 1, 'bono.jpg');
+
+insert into detail values (seq_detail_no.nextval, 106, 'prod1.jpg', 'cast1.png', 'addd1.png');
+
+insert into seatprice values (seq_seatprice_no.nextval, 106, 'vip', 10000);
+
+insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 106, 0, 1, '1퍼센트 할인');
+insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 106, 0, 2, '재수강 할인');
+insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 106, 0, 3, '얼리버드 할인');
+insert into discount (dc_no, prod_no, dctype, dcrate, dcname) values(seq_dc_no.nextval, 106, 0, 4, '국가유공자 할인');
+
+--------------------------------------------------------------------------
+
 Insert into USERS (USER_NO,ID,PASSWORD,NAME,PHONE,POSTCODE,ADDRESS,ADDRESS2,EMAIL,USERTYPE,JOINDATE,BIZNO,SALT) values (10,'hankyu','9dfbfbb14113a8c3e6577980484fded3f245bb71411ee4f0785eca0bf203bb3a','서한규','01012341234','13494','경기 성남시 분당구 판교역로 235','1155','2ser0m2@naver.com',1,to_date('22/03/27','RR/MM/DD'),null,'jZv2fUFOw8JlvUgf');
 
 Insert into RESERVE (REZ_NO,PROD_NO,USER_NO,REZDATE,VIEWDATE,PHONE,EMAIL,TOTALPAYMENT,STATUS) values (2,105,3,to_date('22/03/27','RR/MM/DD'),to_date('22/03/31','RR/MM/DD'),'01012347945','2ser0m2@naver.com',40882000,1);
