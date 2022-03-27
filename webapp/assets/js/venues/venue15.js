@@ -128,27 +128,27 @@ $(function(){
 	}
 	
 	function render(seat,col, sectionCh){
+		var str = '';
+		str += '<td>';
+		 
 		if(seat == "n"){
-			$('#seatArea'+sectionCh+' #col'+col).append('<td><input class="n" type="checkbox" id="seat'+seatno+'"disabled><label for="seat'+seatno+'"></label> </td>');
+			str += '<input class="n" type="checkbox" id="seat'+seatno+'"disabled>';
 		}
-		else if(seat == "c"){
-			$('#seatArea'+sectionCh+' #col'+col).append('<td><input type="checkbox" id="seat'+seatno+'"checked> <label for="seat'+seatno+'"></label></td>');
-		}
-		else if(seat == "o"){
-			$('#seatArea'+sectionCh+' #col'+col).append('<td><input type="checkbox" id="seat'+seatno+'"disabled><label for="seat'+seatno+'"></label> </td>');
-		}
-		
 		else{
-			$('#seatArea'+sectionCh+' #col'+col).append(
-				'<td><input class="'+seat+'" type="checkbox" id="seat'+seatno+
-				'" data-section="'+sectionCh+'" data-col="'+(col+1)+'" data-num="'+num+'" ><label for="seat'+seatno+'"></label> </td>'
-			);
-		}
-		
-		if(seat != "n"){
+			if(seat == "o"){
+				str += '<input type="checkbox" id="seat'+seatno+'"disabled>';
+			}
+			else{
+				str += '<input class="'+seat+'" type="checkbox" id="seat'+seatno+
+					   '" data-section="'+sectionCh+'" data-col="'+(col+1)+'" data-num="'+num+'" >';
+			}
 			num++;
 		}
 		
+		str += '<label for="seat'+seatno+'"></label>';
+		str += '</td>';
+		
+		$('#seatArea'+sectionCh+' #col'+col).append(str);
 		seatno++;
 	}
 	

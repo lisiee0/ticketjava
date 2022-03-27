@@ -14,7 +14,7 @@
 <link href="${pageContext.request.contextPath}/assets/bootstrap/css/bootstrap.css" rel="stylesheet">
 
 <!-- 기본 css -->
-<link href="${pageContext.request.contextPath}./assets/css/ticketjavaCommon.css" rel="stylesheet" type="text/css">
+<link href="${pageContext.request.contextPath}/assets/css/ticketjavaCommon.css" rel="stylesheet" type="text/css">
 <link href="${pageContext.request.contextPath}/assets/css/ticketjavaCommonFooter.css" rel="stylesheet" type="text/css">
 
 <!-- 개인 css (폴더로 관리 권장 ex assets/css/mypage/ticketing.css) -->
@@ -40,7 +40,7 @@
 
 						<!-- Nav tabs -->
 						<ul class="nav nav-tabs">
-							<li><a href="">아이디 찾기</a></li>
+							<li><a href="${pageContext.request.contextPath}/user/findId">아이디 찾기</a></li>
 							<li class="active"><a href="">비밀번호 찾기</a></li>
 						</ul>
 
