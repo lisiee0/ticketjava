@@ -139,7 +139,6 @@ public class UserController {
 //		최종 데이터 입력하기
 		userService.userModifyAction(userVo);
 		
-//		return "";
 		return "redirect:/";
 	}
 	
@@ -157,8 +156,7 @@ public class UserController {
 	public String userOutAction(UserVo userVo, @RequestParam("userNo") int userNo, @RequestParam("password") String password) {
 		System.out.println("UserController userOutAction");
 		userService.userOutAction(userVo, userNo, password);
-		return "";
-//		return "redirect:/";
+		return "redirect:/";
 	}
 	
 	
