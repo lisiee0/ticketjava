@@ -13,14 +13,21 @@
 .currentPage {
 		color: #6697f2;
 }
+
 #content-head>h3 {
-		font-size : 28px;
+		font-size: 28px;
 		font-weight: bold;
 }
-
-#hallNameCss{
+/* 할인 정보 */
+#disDetail {
+		margin-left: 0px;
 		margin-bottom: 0px;
-		
+		font-size: 14px;
+		color: #6697f2;
+}
+
+#hallNameCss {
+		margin-bottom: 0px;
 }
 
 #admin-aside {
@@ -104,7 +111,6 @@
 .dcBox {
 		padding-top: 15px;
 		padding-bottom: 15px;
-
 }
 
 .pageMenu {
