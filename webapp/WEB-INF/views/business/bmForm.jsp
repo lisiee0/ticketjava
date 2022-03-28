@@ -93,7 +93,7 @@
 							</div>
 
 							<!-- 공연장명 -->
-							<div class="form-group">
+							<div class="form-group" id="hallNameCss">
 								<label class="form-text col-md-2 form-id" for="">공연장명</label>
 								<!-- 공연장명-->
 								<div class="col-md-8">
