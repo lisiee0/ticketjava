@@ -93,7 +93,7 @@
 							</div>
 
 							<!-- 공연장명 -->
-							<div class="form-group">
+							<div class="form-group" id="hallNameCss">
 								<label class="form-text col-md-2 form-id" for="">공연장명</label>
 								<!-- 공연장명-->
 								<div class="col-md-8">
@@ -234,7 +234,7 @@
 
 							<!-- 할인 정보 자리 -->
 							<div class="form-group">
-								<label class="form-text col-md-2 form-id" for="">할인 정보</label>
+								<label class="form-text col-md-2 form-id">할인 정보</label>
 								<div class="col-md-8">
 									<div class="form-group">
 										<div class="col-md-4">
@@ -255,7 +255,7 @@
 										</div>
 
 									</div>
-									<div class="form-group form-data">할인 정보</div>
+									<div class="form-group form-data" id="disDetail">할인 정보</div>
 									<div id="bmDisArea"></div>
 								</div>
 							</div>
@@ -358,6 +358,7 @@
 								+ '<input type="text" class="form-control selPrice" name="price" value="' + selp + '">'
 								+ '</div>' + '&nbsp;'
 								+ '</div>');
+		alert(gra + "\u00a0등급이\u00a0추가되었습니다.");
 	});
 
 	//등급삭제 버튼
