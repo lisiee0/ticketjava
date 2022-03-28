@@ -1,3 +1,5 @@
+grant create any job to ticketjava;
+
 /* 프로시저 삭제 */
 drop procedure "TICKETJAVA"."DELPRE";
 
