@@ -40,9 +40,9 @@ $(function(){
 
 	        }, function (rsp) {
 	            if (rsp.success) {
-					
-	            } else {
 					finalPayment(rezVo);
+	            } else {
+					
 	            }
 	        });
         
