@@ -10,8 +10,8 @@ BEGIN
                                 force => false);
 END;
 
-/* delPre 프로시저 생성 */
 
+/* delPre 프로시저 생성 */
 /* 선점 후 결제가 되지 않고 8분이 지난 예매내역 삭제 */
 create or replace procedure delPre
 is
